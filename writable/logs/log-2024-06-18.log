@@ -1,0 +1,499 @@
+INFO - 2024-06-18 17:45:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 17:45:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 17:46:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 17:46:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 17:46:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 17:46:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 17:46:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 17:46:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:03:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:03:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:03:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:03:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:03:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:52:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:53:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:53:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:53:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:53:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:53:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:54:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:54:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:54:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:54:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:56:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:58:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:58:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:59:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:59:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:59:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 18:59:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:00:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:00:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:00:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:00:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 19:10:10 --> CompileError: Multiple access type modifiers are not allowed
+in APPPATH\Controllers\Student\DefaultController.php on line 332.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Student\\DefaultController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Student\\DefaultController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Student\\DefaultController')
+ 4 SYSTEMPATH\CodeIgniter.php(901): class_exists('\\App\\Controllers\\Student\\DefaultController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-18 19:16:23 --> CompileError: Multiple access type modifiers are not allowed
+in APPPATH\Controllers\Student\DefaultController.php on line 339.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Student\\DefaultController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Student\\DefaultController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Student\\DefaultController')
+ 4 SYSTEMPATH\CodeIgniter.php(901): class_exists('\\App\\Controllers\\Student\\DefaultController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-18 19:16:30 --> CompileError: Multiple access type modifiers are not allowed
+in APPPATH\Controllers\Student\DefaultController.php on line 339.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Student\\DefaultController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Student\\DefaultController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Student\\DefaultController')
+ 4 SYSTEMPATH\CodeIgniter.php(901): class_exists('\\App\\Controllers\\Student\\DefaultController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-18 19:16:31 --> CompileError: Multiple access type modifiers are not allowed
+in APPPATH\Controllers\Student\DefaultController.php on line 339.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Student\\DefaultController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Student\\DefaultController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Student\\DefaultController')
+ 4 SYSTEMPATH\CodeIgniter.php(901): class_exists('\\App\\Controllers\\Student\\DefaultController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 19:17:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:17:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 19:17:03 --> ErrorException: Undefined array key "offer_price"
+in APPPATH\Controllers\Student\DefaultController.php on line 194.
+ 1 APPPATH\Controllers\Student\DefaultController.php(194): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "offer_price"', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Student\\DefaultController.php', 194)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->addToCartItem()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 19:19:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:19:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:19:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:19:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:32:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 19:32:58 --> ErrorException: Undefined property: App\Controllers\Student\DefaultController::$cartModel
+in APPPATH\Controllers\Student\DefaultController.php on line 308.
+ 1 APPPATH\Controllers\Student\DefaultController.php(308): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Student\\DefaultController::$cartModel', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Student\\DefaultController.php', 308)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->applyPromocode()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 19:33:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-18 19:33:18 --> mysqli_sql_exception: Illegal parameter data types int and row for operation '=' in C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `cart_it...', 0)
+#1 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cart_it...')
+#2 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cart_it...')
+#3 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cart_it...', Array, false)
+#4 C:\xampp\htdocs\mycamtp\app\Models\Student\DefaultModel.php(81): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\mycamtp\app\Controllers\Student\DefaultController.php(308): App\Models\Student\DefaultModel->getActiveCartItems(Array)
+#6 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(943): App\Controllers\Student\DefaultController->applyPromocode()
+#7 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+#8 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\mycamtp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-18 19:33:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Illegal parameter data types int and row for operation '='
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cart_items_table`.*, `subject_table`.`subject_name`, `subject_table`.`offer_price`, `subject_table`.`original_price`, `type_table`.`type_name`, `level_table`.`level_name`
+FROM `cart_items_table`
+LEFT JOIN `subject_table` ON `subject_table`.`subject_id`=`cart_items_table`.`subject_id`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `cart_items_table`.`deleted` = :cart_items_table.deleted:
+AND `category_table`.`deleted` = :category_table.deleted:
+AND `category_table`.`active` = :category_table.active:
+AND `level_table`.`deleted` = :level_table.deleted:
+AND `type_table`.`deleted` = :type_table.deleted:
+AND `subject_table`.`deleted` = :subject_table.deleted:
+AND `cart_items_table`.`cart_id` = :cart_items_table.cart_id:', [...], false)
+ 2 APPPATH\Models\Student\DefaultModel.php(81): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Student\DefaultController.php(308): App\Models\Student\DefaultModel->getActiveCartItems([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->applyPromocode()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-18 19:33:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Illegal parameter data types int and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cart_items_table`.*, `subject_table`.`subject_name`, `subject_table`.`offer_price`, `subject_table`.`original_price`, `type_table`.`type_name`, `level_table`.`level_name`
+FROM `cart_items_table`
+LEFT JOIN `subject_table` ON `subject_table`.`subject_id`=`cart_items_table`.`subject_id`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `cart_items_table`.`deleted` = 0
+AND `category_table`.`deleted` = 0
+AND `category_table`.`active` = 1
+AND `level_table`.`deleted` = 0
+AND `type_table`.`deleted` = 0
+AND `subject_table`.`deleted` = 0
+AND `cart_items_table`.`cart_id` = (1,\'2\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cart_items_table`.*, `subject_table`.`subject_name`, `subject_table`.`offer_price`, `subject_table`.`original_price`, `type_table`.`type_name`, `level_table`.`level_name`
+FROM `cart_items_table`
+LEFT JOIN `subject_table` ON `subject_table`.`subject_id`=`cart_items_table`.`subject_id`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `cart_items_table`.`deleted` = 0
+AND `category_table`.`deleted` = 0
+AND `category_table`.`active` = 1
+AND `level_table`.`deleted` = 0
+AND `type_table`.`deleted` = 0
+AND `subject_table`.`deleted` = 0
+AND `cart_items_table`.`cart_id` = (1,\'2\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cart_items_table`.*, `subject_table`.`subject_name`, `subject_table`.`offer_price`, `subject_table`.`original_price`, `type_table`.`type_name`, `level_table`.`level_name`
+FROM `cart_items_table`
+LEFT JOIN `subject_table` ON `subject_table`.`subject_id`=`cart_items_table`.`subject_id`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `cart_items_table`.`deleted` = :cart_items_table.deleted:
+AND `category_table`.`deleted` = :category_table.deleted:
+AND `category_table`.`active` = :category_table.active:
+AND `level_table`.`deleted` = :level_table.deleted:
+AND `type_table`.`deleted` = :type_table.deleted:
+AND `subject_table`.`deleted` = :subject_table.deleted:
+AND `cart_items_table`.`cart_id` = :cart_items_table.cart_id:', [...], false)
+ 4 APPPATH\Models\Student\DefaultModel.php(81): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Student\DefaultController.php(308): App\Models\Student\DefaultModel->getActiveCartItems([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->applyPromocode()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-18 19:33:18 --> [Caused by] mysqli_sql_exception: Illegal parameter data types int and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `cart_items_table`.*, `subject_table`.`subject_name`, `subject_table`.`offer_price`, `subject_table`.`original_price`, `type_table`.`type_name`, `level_table`.`level_name`
+FROM `cart_items_table`
+LEFT JOIN `subject_table` ON `subject_table`.`subject_id`=`cart_items_table`.`subject_id`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `cart_items_table`.`deleted` = 0
+AND `category_table`.`deleted` = 0
+AND `category_table`.`active` = 1
+AND `level_table`.`deleted` = 0
+AND `type_table`.`deleted` = 0
+AND `subject_table`.`deleted` = 0
+AND `cart_items_table`.`cart_id` = (1,\'2\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cart_items_table`.*, `subject_table`.`subject_name`, `subject_table`.`offer_price`, `subject_table`.`original_price`, `type_table`.`type_name`, `level_table`.`level_name`
+FROM `cart_items_table`
+LEFT JOIN `subject_table` ON `subject_table`.`subject_id`=`cart_items_table`.`subject_id`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `cart_items_table`.`deleted` = 0
+AND `category_table`.`deleted` = 0
+AND `category_table`.`active` = 1
+AND `level_table`.`deleted` = 0
+AND `type_table`.`deleted` = 0
+AND `subject_table`.`deleted` = 0
+AND `cart_items_table`.`cart_id` = (1,\'2\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cart_items_table`.*, `subject_table`.`subject_name`, `subject_table`.`offer_price`, `subject_table`.`original_price`, `type_table`.`type_name`, `level_table`.`level_name`
+FROM `cart_items_table`
+LEFT JOIN `subject_table` ON `subject_table`.`subject_id`=`cart_items_table`.`subject_id`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `cart_items_table`.`deleted` = 0
+AND `category_table`.`deleted` = 0
+AND `category_table`.`active` = 1
+AND `level_table`.`deleted` = 0
+AND `type_table`.`deleted` = 0
+AND `subject_table`.`deleted` = 0
+AND `cart_items_table`.`cart_id` = (1,\'2\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cart_items_table`.*, `subject_table`.`subject_name`, `subject_table`.`offer_price`, `subject_table`.`original_price`, `type_table`.`type_name`, `level_table`.`level_name`
+FROM `cart_items_table`
+LEFT JOIN `subject_table` ON `subject_table`.`subject_id`=`cart_items_table`.`subject_id`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `cart_items_table`.`deleted` = :cart_items_table.deleted:
+AND `category_table`.`deleted` = :category_table.deleted:
+AND `category_table`.`active` = :category_table.active:
+AND `level_table`.`deleted` = :level_table.deleted:
+AND `type_table`.`deleted` = :type_table.deleted:
+AND `subject_table`.`deleted` = :subject_table.deleted:
+AND `cart_items_table`.`cart_id` = :cart_items_table.cart_id:', [...], false)
+ 5 APPPATH\Models\Student\DefaultModel.php(81): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Student\DefaultController.php(308): App\Models\Student\DefaultModel->getActiveCartItems([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->applyPromocode()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-18 19:34:37 --> ErrorException: Cannot redeclare App\Models\Student\DefaultModel::getActiveCartItems()
+in APPPATH\Models\Student\DefaultModel.php on line 94.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-06-18 19:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-18 19:35:09 --> mysqli_sql_exception: Illegal parameter data types int and row for operation '=' in C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `cart_it...', 0)
+#1 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cart_it...')
+#2 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cart_it...')
+#3 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cart_it...', Array, false)
+#4 C:\xampp\htdocs\mycamtp\app\Models\Student\DefaultModel.php(81): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\mycamtp\app\Controllers\Student\DefaultController.php(308): App\Models\Student\DefaultModel->getActiveCartItems(Array)
+#6 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(943): App\Controllers\Student\DefaultController->applyPromocode()
+#7 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+#8 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\mycamtp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-18 19:35:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Illegal parameter data types int and row for operation '='
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cart_items_table`.*, `subject_table`.`subject_name`, `subject_table`.`offer_price`, `subject_table`.`original_price`, `type_table`.`type_name`, `level_table`.`level_name`
+FROM `cart_items_table`
+LEFT JOIN `subject_table` ON `subject_table`.`subject_id`=`cart_items_table`.`subject_id`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `cart_items_table`.`deleted` = :cart_items_table.deleted:
+AND `category_table`.`deleted` = :category_table.deleted:
+AND `category_table`.`active` = :category_table.active:
+AND `level_table`.`deleted` = :level_table.deleted:
+AND `type_table`.`deleted` = :type_table.deleted:
+AND `subject_table`.`deleted` = :subject_table.deleted:
+AND `cart_items_table`.`cart_id` = :cart_items_table.cart_id:', [...], false)
+ 2 APPPATH\Models\Student\DefaultModel.php(81): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Student\DefaultController.php(308): App\Models\Student\DefaultModel->getActiveCartItems([...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->applyPromocode()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-18 19:35:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Illegal parameter data types int and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cart_items_table`.*, `subject_table`.`subject_name`, `subject_table`.`offer_price`, `subject_table`.`original_price`, `type_table`.`type_name`, `level_table`.`level_name`
+FROM `cart_items_table`
+LEFT JOIN `subject_table` ON `subject_table`.`subject_id`=`cart_items_table`.`subject_id`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `cart_items_table`.`deleted` = 0
+AND `category_table`.`deleted` = 0
+AND `category_table`.`active` = 1
+AND `level_table`.`deleted` = 0
+AND `type_table`.`deleted` = 0
+AND `subject_table`.`deleted` = 0
+AND `cart_items_table`.`cart_id` = (1,\'2\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cart_items_table`.*, `subject_table`.`subject_name`, `subject_table`.`offer_price`, `subject_table`.`original_price`, `type_table`.`type_name`, `level_table`.`level_name`
+FROM `cart_items_table`
+LEFT JOIN `subject_table` ON `subject_table`.`subject_id`=`cart_items_table`.`subject_id`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `cart_items_table`.`deleted` = 0
+AND `category_table`.`deleted` = 0
+AND `category_table`.`active` = 1
+AND `level_table`.`deleted` = 0
+AND `type_table`.`deleted` = 0
+AND `subject_table`.`deleted` = 0
+AND `cart_items_table`.`cart_id` = (1,\'2\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cart_items_table`.*, `subject_table`.`subject_name`, `subject_table`.`offer_price`, `subject_table`.`original_price`, `type_table`.`type_name`, `level_table`.`level_name`
+FROM `cart_items_table`
+LEFT JOIN `subject_table` ON `subject_table`.`subject_id`=`cart_items_table`.`subject_id`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `cart_items_table`.`deleted` = :cart_items_table.deleted:
+AND `category_table`.`deleted` = :category_table.deleted:
+AND `category_table`.`active` = :category_table.active:
+AND `level_table`.`deleted` = :level_table.deleted:
+AND `type_table`.`deleted` = :type_table.deleted:
+AND `subject_table`.`deleted` = :subject_table.deleted:
+AND `cart_items_table`.`cart_id` = :cart_items_table.cart_id:', [...], false)
+ 4 APPPATH\Models\Student\DefaultModel.php(81): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Student\DefaultController.php(308): App\Models\Student\DefaultModel->getActiveCartItems([...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->applyPromocode()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-18 19:35:09 --> [Caused by] mysqli_sql_exception: Illegal parameter data types int and row for operation '='
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `cart_items_table`.*, `subject_table`.`subject_name`, `subject_table`.`offer_price`, `subject_table`.`original_price`, `type_table`.`type_name`, `level_table`.`level_name`
+FROM `cart_items_table`
+LEFT JOIN `subject_table` ON `subject_table`.`subject_id`=`cart_items_table`.`subject_id`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `cart_items_table`.`deleted` = 0
+AND `category_table`.`deleted` = 0
+AND `category_table`.`active` = 1
+AND `level_table`.`deleted` = 0
+AND `type_table`.`deleted` = 0
+AND `subject_table`.`deleted` = 0
+AND `cart_items_table`.`cart_id` = (1,\'2\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cart_items_table`.*, `subject_table`.`subject_name`, `subject_table`.`offer_price`, `subject_table`.`original_price`, `type_table`.`type_name`, `level_table`.`level_name`
+FROM `cart_items_table`
+LEFT JOIN `subject_table` ON `subject_table`.`subject_id`=`cart_items_table`.`subject_id`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `cart_items_table`.`deleted` = 0
+AND `category_table`.`deleted` = 0
+AND `category_table`.`active` = 1
+AND `level_table`.`deleted` = 0
+AND `type_table`.`deleted` = 0
+AND `subject_table`.`deleted` = 0
+AND `cart_items_table`.`cart_id` = (1,\'2\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cart_items_table`.*, `subject_table`.`subject_name`, `subject_table`.`offer_price`, `subject_table`.`original_price`, `type_table`.`type_name`, `level_table`.`level_name`
+FROM `cart_items_table`
+LEFT JOIN `subject_table` ON `subject_table`.`subject_id`=`cart_items_table`.`subject_id`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `cart_items_table`.`deleted` = 0
+AND `category_table`.`deleted` = 0
+AND `category_table`.`active` = 1
+AND `level_table`.`deleted` = 0
+AND `type_table`.`deleted` = 0
+AND `subject_table`.`deleted` = 0
+AND `cart_items_table`.`cart_id` = (1,\'2\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `cart_items_table`.*, `subject_table`.`subject_name`, `subject_table`.`offer_price`, `subject_table`.`original_price`, `type_table`.`type_name`, `level_table`.`level_name`
+FROM `cart_items_table`
+LEFT JOIN `subject_table` ON `subject_table`.`subject_id`=`cart_items_table`.`subject_id`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `cart_items_table`.`deleted` = :cart_items_table.deleted:
+AND `category_table`.`deleted` = :category_table.deleted:
+AND `category_table`.`active` = :category_table.active:
+AND `level_table`.`deleted` = :level_table.deleted:
+AND `type_table`.`deleted` = :type_table.deleted:
+AND `subject_table`.`deleted` = :subject_table.deleted:
+AND `cart_items_table`.`cart_id` = :cart_items_table.cart_id:', [...], false)
+ 5 APPPATH\Models\Student\DefaultModel.php(81): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Student\DefaultController.php(308): App\Models\Student\DefaultModel->getActiveCartItems([...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->applyPromocode()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 19:35:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:35:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:36:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:36:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:36:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:37:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:42:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:42:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:43:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:47:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:47:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:47:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:52:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:52:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:53:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:53:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:53:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:53:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:57:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:57:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:57:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:58:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:58:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:59:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:59:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 19:59:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:05:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:05:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:06:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 20:06:04 --> Error: Call to undefined method App\Controllers\Student\DefaultController::getActiveCartItems()
+in APPPATH\Controllers\Student\DefaultController.php on line 384.
+ 1 APPPATH\Controllers\Student\DefaultController.php(310): App\Controllers\Student\DefaultController->updateAfterDiscountAmt('2', 'update')
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->applyPromocode()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 20:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:06:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:06:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 20:06:49 --> ErrorException: foreach() argument must be of type array|object, string given
+in APPPATH\Controllers\Student\DefaultController.php on line 385.
+ 1 APPPATH\Controllers\Student\DefaultController.php(385): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, string given', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Student\\DefaultController.php', 385)
+ 2 APPPATH\Controllers\Student\DefaultController.php(374): App\Controllers\Student\DefaultController->updateAfterDiscountAmt()
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->removePromocode()
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 20:07:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:07:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:07:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:07:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:08:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:08:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:08:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:08:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:09:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 20:09:09 --> ErrorException: foreach() argument must be of type array|object, string given
+in APPPATH\Controllers\Student\DefaultController.php on line 385.
+ 1 APPPATH\Controllers\Student\DefaultController.php(385): CodeIgniter\Debug\Exceptions->errorHandler(2, 'foreach() argument must be of type array|object, string given', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Student\\DefaultController.php', 385)
+ 2 APPPATH\Controllers\Student\DefaultController.php(310): App\Controllers\Student\DefaultController->updateAfterDiscountAmt('2', 'update')
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->applyPromocode()
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 20:09:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:09:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:09:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 20:09:47 --> Error: Cannot use object of type stdClass as array
+in APPPATH\Controllers\Student\DefaultController.php on line 386.
+ 1 APPPATH\Controllers\Student\DefaultController.php(374): App\Controllers\Student\DefaultController->updateAfterDiscountAmt()
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->removePromocode()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 20:10:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:10:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:10:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:11:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:11:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:11:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-18 20:11:16 --> Error: Attempt to assign property "amt_after_discount" on null
+in APPPATH\Controllers\Student\DefaultController.php on line 389.
+ 1 APPPATH\Controllers\Student\DefaultController.php(374): App\Controllers\Student\DefaultController->updateAfterDiscountAmt()
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->removePromocode()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-18 20:11:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:11:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:11:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:11:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:12:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:14:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:14:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:17:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:17:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:17:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:17:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:17:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:19:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:19:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:19:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:19:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:19:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:19:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:19:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:20:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:20:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:20:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:20:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:20:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:20:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:20:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-18 20:20:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

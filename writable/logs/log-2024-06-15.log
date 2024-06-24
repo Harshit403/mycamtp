@@ -1,0 +1,779 @@
+INFO - 2024-06-15 04:37:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 04:38:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 04:38:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 04:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:05:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:06:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:16:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:16:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:17:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:17:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:46:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:46:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:46:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:46:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:46:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:46:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:46:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:46:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 05:46:52 --> ErrorException: Undefined property: stdClass::$type_id
+in APPPATH\Models\Admin\DashboardModel.php on line 54.
+ 1 APPPATH\Models\Admin\DashboardModel.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$type_id', 'C:\\xampp\\htdocs\\mycamtp\\app\\Models\\Admin\\DashboardModel.php', 54)
+ 2 APPPATH\Controllers\Admin\DashboardController.php(49): App\Models\Admin\DashboardModel->fetchCategoryListModel([...])
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Admin\DashboardController->fetchCatgoryListPage()
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DashboardController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 05:47:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:47:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:47:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:47:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:52:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:52:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:52:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:53:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 05:53:18 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('admin/<')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 05:54:00 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "<"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('admin/<')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('admin/<')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 05:54:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:54:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:54:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:54:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:54:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:54:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:54:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 05:55:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 05:55:30 --> CodeIgniter\Database\Exceptions\DatabaseException: You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 884.
+ 1 SYSTEMPATH\Model.php(663): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(869): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Admin\DashboardController.php(31): CodeIgniter\Model->__call('getData', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Admin\DashboardController->loadAddCategoryPage('1')
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DashboardController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 05:55:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 06:19:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 06:19:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 06:19:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 06:19:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 06:19:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:12:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:12:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:14:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:14:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:14:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 07:14:34 --> ErrorException: Undefined array key "category_id"
+in APPPATH\Controllers\Admin\DashboardController.php on line 67.
+ 1 APPPATH\Controllers\Admin\DashboardController.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "category_id"', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Admin\\DashboardController.php', 67)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Admin\DashboardController->updateCategoryStatus()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 07:14:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 07:14:37 --> ErrorException: Undefined array key "category_id"
+in APPPATH\Controllers\Admin\DashboardController.php on line 67.
+ 1 APPPATH\Controllers\Admin\DashboardController.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "category_id"', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Admin\\DashboardController.php', 67)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Admin\DashboardController->updateCategoryStatus()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 07:14:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 07:14:50 --> ErrorException: Undefined array key "category_id"
+in APPPATH\Controllers\Admin\DashboardController.php on line 67.
+ 1 APPPATH\Controllers\Admin\DashboardController.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "category_id"', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Admin\\DashboardController.php', 67)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Admin\DashboardController->updateCategoryStatus()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 07:14:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:14:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:15:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 07:15:05 --> ErrorException: Undefined array key "category_id"
+in APPPATH\Controllers\Admin\DashboardController.php on line 67.
+ 1 APPPATH\Controllers\Admin\DashboardController.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "category_id"', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Admin\\DashboardController.php', 67)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Admin\DashboardController->updateCategoryStatus()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 07:18:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 07:19:00 --> CodeIgniter\Exceptions\ConfigException: Config\App::$baseURL "/" is not a valid URL.
+in SYSTEMPATH\HTTP\SiteURI.php on line 199.
+ 1 SYSTEMPATH\HTTP\SiteURI.php(145): CodeIgniter\HTTP\SiteURI->normalizeBaseURL(Object(Config\App))
+ 2 SYSTEMPATH\HTTP\SiteURI.php(100): CodeIgniter\HTTP\SiteURI->determineBaseURL(Object(Config\App), null, null)
+ 3 SYSTEMPATH\HTTP\SiteURIFactory.php(224): CodeIgniter\HTTP\SiteURI->__construct(Object(Config\App), 'assets/admin_assets/img/avatars/1.png', null)
+ 4 SYSTEMPATH\HTTP\SiteURIFactory.php(45): CodeIgniter\HTTP\SiteURIFactory->createURIFromRoutePath('assets/admin_assets/img/avatars/1.png')
+ 5 SYSTEMPATH\Config\Services.php(805): CodeIgniter\HTTP\SiteURIFactory->createFromGlobals()
+ 6 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::uri(null, false)
+ 7 SYSTEMPATH\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('uri', [...])
+ 8 SYSTEMPATH\Config\Services.php(798): CodeIgniter\Config\BaseService::getSharedInstance('uri', null)
+ 9 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::uri()
+10 SYSTEMPATH\Config\Services.php(566): CodeIgniter\Config\BaseService::__callStatic('uri', [])
+11 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+12 SYSTEMPATH\Config\Services.php(524): CodeIgniter\Config\BaseService::__callStatic('incomingrequest', [...])
+13 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::request(Object(Config\App), false)
+14 SYSTEMPATH\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', [...])
+15 SYSTEMPATH\Config\Services.php(559): CodeIgniter\Config\BaseService::getSharedInstance('request', Object(Config\App))
+16 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::incomingrequest(Object(Config\App))
+17 SYSTEMPATH\Config\Services.php(539): CodeIgniter\Config\BaseService::__callStatic('incomingrequest', [...])
+18 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::createRequest(Object(Config\App))
+19 SYSTEMPATH\CodeIgniter.php(656): CodeIgniter\Config\BaseService::__callStatic('createRequest', [...])
+20 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->getRequestObject()
+21 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 07:19:00 --> ErrorException: Uncaught CodeIgniter\Exceptions\ConfigException: Config\App::$baseURL "/" is not a valid URL. in C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURI.php:199
+Stack trace:
+#0 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURI.php(145): CodeIgniter\HTTP\SiteURI->normalizeBaseURL(Object(Config\App))
+#1 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURI.php(100): CodeIgniter\HTTP\SiteURI->determineBaseURL(Object(Config\App), NULL, NULL)
+#2 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURIFactory.php(224): CodeIgniter\HTTP\SiteURI->__construct(Object(Config\App), 'assets/admin_as...', NULL)
+#3 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURIFactory.php(45): CodeIgniter\HTTP\SiteURIFactory->createURIFromRoutePath('assets/admin_as...')
+#4 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(805): CodeIgniter\HTTP\SiteURIFactory->createFromGlobals()
+#5 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri(NULL, false)
+#6 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#7 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(798): CodeIgniter\Config\BaseService::getSharedInstance('uri', NULL)
+#8 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri()
+#9 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(566): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#10 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#11 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(524): CodeIgniter\Config\BaseService::__callStatic('incomingrequest', Array)
+#12 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#13 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#14 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(520): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#15 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#16 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Debug\Exceptions.php(150): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#17 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\ConfigException))
+#18 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\ConfigException
+Config\App::$baseURL "/" is not a valid URL.
+#0 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURI.php(145): CodeIgniter\HTTP\SiteURI->normalizeBaseURL(Object(Config\App))
+#1 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURI.php(100): CodeIgniter\HTTP\SiteURI->determineBaseURL(Object(Config\App), NULL, NULL)
+#2 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURIFactory.php(224): CodeIgniter\HTTP\SiteURI->__construct(Object(Config\App), 'assets/admin_as...', NULL)
+#3 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURIFactory.php(45): CodeIgniter\HTTP\SiteURIFactory->createURIFromRoutePath('assets/admin_as...')
+#4 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(805): CodeIgniter\HTTP\SiteURIFactory->createFromGlobals()
+#5 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri(NULL, false)
+#6 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#7 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(798): CodeIgniter\Config\BaseService::getSharedInstance('uri', NULL)
+#8 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri()
+#9 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(566): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#10 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#11 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(524): CodeIgniter\Config\BaseService::__callStatic('incomingrequest', Array)
+#12 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(Object(Config\App), false)
+#13 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#14 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(559): CodeIgniter\Config\BaseService::getSharedInstance('request', Object(Config\App))
+#15 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::incomingrequest(Object(Config\App))
+#16 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(539): CodeIgniter\Config\BaseService::__callStatic('incomingrequest', Array)
+#17 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::createRequest(Object(Config\App))
+#18 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(656): CodeIgniter\Config\BaseService::__callStatic('createRequest', Array)
+#19 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->getRequestObject()
+#20 C:\xampp\htdocs\mycamtp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#21 {main}
+in SYSTEMPATH\HTTP\SiteURI.php on line 199.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-06-15 07:19:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:19:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 07:19:04 --> ErrorException: Undefined array key "category_id"
+in APPPATH\Controllers\Admin\DashboardController.php on line 67.
+ 1 APPPATH\Controllers\Admin\DashboardController.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "category_id"', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Admin\\DashboardController.php', 67)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Admin\DashboardController->updateCategoryStatus()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 07:19:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:19:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:19:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 07:19:16 --> ErrorException: Undefined array key "category_id"
+in APPPATH\Controllers\Admin\DashboardController.php on line 67.
+ 1 APPPATH\Controllers\Admin\DashboardController.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "category_id"', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Admin\\DashboardController.php', 67)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Admin\DashboardController->updateCategoryStatus()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 07:19:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:19:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:19:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 07:19:53 --> ErrorException: Undefined array key "category_id"
+in APPPATH\Controllers\Admin\DashboardController.php on line 67.
+ 1 APPPATH\Controllers\Admin\DashboardController.php(67): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "category_id"', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Admin\\DashboardController.php', 67)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Admin\DashboardController->updateCategoryStatus()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 07:21:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:21:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:22:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:22:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:22:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 07:22:27 --> ErrorException: Undefined variable $active
+in APPPATH\Controllers\Admin\DashboardController.php on line 69.
+ 1 APPPATH\Controllers\Admin\DashboardController.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $active', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Admin\\DashboardController.php', 69)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Admin\DashboardController->updateCategoryStatus()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 07:22:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:22:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:22:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 07:22:35 --> ErrorException: Undefined variable $active
+in APPPATH\Controllers\Admin\DashboardController.php on line 69.
+ 1 APPPATH\Controllers\Admin\DashboardController.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $active', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Admin\\DashboardController.php', 69)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Admin\DashboardController->updateCategoryStatus()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DashboardController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 07:23:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:23:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:23:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:24:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:24:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:28:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:28:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:38:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:38:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:38:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:38:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:39:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:39:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:39:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:39:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 07:53:50 --> Error: Undefined constant "STUDENT"
+in APPPATH\Config\Routes.php on line 11.
+ 1 SYSTEMPATH\Router\RouteCollection.php(345): require()
+ 2 SYSTEMPATH\CodeIgniter.php(811): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 07:54:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 07:54:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 07:56:44 --> Error: Class "App\Controller\BaseController" not found
+in APPPATH\Controllers\Student\DefaultController.php on line 5.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(311): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(290): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Student\\DefaultController.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Student\\DefaultController')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Student\\DefaultController')
+ 5 SYSTEMPATH\CodeIgniter.php(901): class_exists('\\App\\Controllers\\Student\\DefaultController', true)
+ 6 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 14:12:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:12:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:12:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:12:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:13:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:14:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:31:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:31:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 14:31:12 --> ErrorException: Attempt to read property "category_short_name" on array
+in APPPATH\Views\admin\level\add_level.php on line 16.
+ 1 APPPATH\Views\admin\level\add_level.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "category_short_name" on array', 'C:\\xampp\\htdocs\\mycamtp\\app\\Views\\admin\\level\\add_level.php', 16)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\mycamtp\\app\\Views\\admin\\level\\add_level.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('admin/level/add_level', [], true)
+ 5 APPPATH\Controllers\Admin\DashboardController.php(96): view('admin/level/add_level', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Admin\DashboardController->loadAddLevelPage()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DashboardController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 14:33:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:33:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 14:33:47 --> CodeIgniter\Exceptions\ConfigException: Config\App::$baseURL "/" is not a valid URL.
+in SYSTEMPATH\HTTP\SiteURI.php on line 199.
+ 1 SYSTEMPATH\HTTP\SiteURI.php(145): CodeIgniter\HTTP\SiteURI->normalizeBaseURL(Object(Config\App))
+ 2 SYSTEMPATH\HTTP\SiteURI.php(100): CodeIgniter\HTTP\SiteURI->determineBaseURL(Object(Config\App), null, null)
+ 3 SYSTEMPATH\HTTP\SiteURIFactory.php(224): CodeIgniter\HTTP\SiteURI->__construct(Object(Config\App), 'design_assets/images/mycsmtp_logo.jpg', null)
+ 4 SYSTEMPATH\HTTP\SiteURIFactory.php(45): CodeIgniter\HTTP\SiteURIFactory->createURIFromRoutePath('design_assets/images/mycsmtp_logo.jpg')
+ 5 SYSTEMPATH\Config\Services.php(805): CodeIgniter\HTTP\SiteURIFactory->createFromGlobals()
+ 6 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::uri(null, false)
+ 7 SYSTEMPATH\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('uri', [...])
+ 8 SYSTEMPATH\Config\Services.php(798): CodeIgniter\Config\BaseService::getSharedInstance('uri', null)
+ 9 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::uri()
+10 SYSTEMPATH\Config\Services.php(566): CodeIgniter\Config\BaseService::__callStatic('uri', [])
+11 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+12 SYSTEMPATH\Config\Services.php(524): CodeIgniter\Config\BaseService::__callStatic('incomingrequest', [...])
+13 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::request(Object(Config\App), false)
+14 SYSTEMPATH\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', [...])
+15 SYSTEMPATH\Config\Services.php(559): CodeIgniter\Config\BaseService::getSharedInstance('request', Object(Config\App))
+16 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::incomingrequest(Object(Config\App))
+17 SYSTEMPATH\Config\Services.php(539): CodeIgniter\Config\BaseService::__callStatic('incomingrequest', [...])
+18 SYSTEMPATH\Config\BaseService.php(258): CodeIgniter\Config\Services::createRequest(Object(Config\App))
+19 SYSTEMPATH\CodeIgniter.php(656): CodeIgniter\Config\BaseService::__callStatic('createRequest', [...])
+20 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->getRequestObject()
+21 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 14:33:47 --> ErrorException: Uncaught CodeIgniter\Exceptions\ConfigException: Config\App::$baseURL "/" is not a valid URL. in C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURI.php:199
+Stack trace:
+#0 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURI.php(145): CodeIgniter\HTTP\SiteURI->normalizeBaseURL(Object(Config\App))
+#1 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURI.php(100): CodeIgniter\HTTP\SiteURI->determineBaseURL(Object(Config\App), NULL, NULL)
+#2 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURIFactory.php(224): CodeIgniter\HTTP\SiteURI->__construct(Object(Config\App), 'design_assets/i...', NULL)
+#3 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURIFactory.php(45): CodeIgniter\HTTP\SiteURIFactory->createURIFromRoutePath('design_assets/i...')
+#4 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(805): CodeIgniter\HTTP\SiteURIFactory->createFromGlobals()
+#5 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri(NULL, false)
+#6 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#7 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(798): CodeIgniter\Config\BaseService::getSharedInstance('uri', NULL)
+#8 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri()
+#9 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(566): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#10 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#11 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(524): CodeIgniter\Config\BaseService::__callStatic('incomingrequest', Array)
+#12 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(NULL, false)
+#13 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#14 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(520): CodeIgniter\Config\BaseService::getSharedInstance('request', NULL)
+#15 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request()
+#16 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Debug\Exceptions.php(150): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#17 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(CodeIgniter\Exceptions\ConfigException))
+#18 {main}
+  thrown
+【Previous Exception】
+CodeIgniter\Exceptions\ConfigException
+Config\App::$baseURL "/" is not a valid URL.
+#0 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURI.php(145): CodeIgniter\HTTP\SiteURI->normalizeBaseURL(Object(Config\App))
+#1 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURI.php(100): CodeIgniter\HTTP\SiteURI->determineBaseURL(Object(Config\App), NULL, NULL)
+#2 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURIFactory.php(224): CodeIgniter\HTTP\SiteURI->__construct(Object(Config\App), 'design_assets/i...', NULL)
+#3 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\HTTP\SiteURIFactory.php(45): CodeIgniter\HTTP\SiteURIFactory->createURIFromRoutePath('design_assets/i...')
+#4 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(805): CodeIgniter\HTTP\SiteURIFactory->createFromGlobals()
+#5 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri(NULL, false)
+#6 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#7 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(798): CodeIgniter\Config\BaseService::getSharedInstance('uri', NULL)
+#8 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::uri()
+#9 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(566): CodeIgniter\Config\BaseService::__callStatic('uri', Array)
+#10 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::incomingrequest(Object(Config\App), false)
+#11 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(524): CodeIgniter\Config\BaseService::__callStatic('incomingrequest', Array)
+#12 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::request(Object(Config\App), false)
+#13 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(199): CodeIgniter\Config\BaseService::__callStatic('request', Array)
+#14 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(559): CodeIgniter\Config\BaseService::getSharedInstance('request', Object(Config\App))
+#15 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::incomingrequest(Object(Config\App))
+#16 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\Services.php(539): CodeIgniter\Config\BaseService::__callStatic('incomingrequest', Array)
+#17 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Config\BaseService.php(258): CodeIgniter\Config\Services::createRequest(Object(Config\App))
+#18 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(656): CodeIgniter\Config\BaseService::__callStatic('createRequest', Array)
+#19 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->getRequestObject()
+#20 C:\xampp\htdocs\mycamtp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#21 {main}
+in SYSTEMPATH\HTTP\SiteURI.php on line 199.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-06-15 14:34:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:35:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:35:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:37:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:37:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:37:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:37:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:37:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:37:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:37:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:37:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:37:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 14:38:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 17:40:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 17:40:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 17:40:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 17:41:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 17:42:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 17:52:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 17:52:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 17:52:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 17:52:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 17:52:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 17:52:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 17:52:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 17:53:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 17:53:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 17:53:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 17:53:29 --> ErrorException: Undefined variable $level_short_name
+in APPPATH\Views\student\level_list.php on line 16.
+ 1 APPPATH\Views\student\level_list.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $level_short_name', 'C:\\xampp\\htdocs\\mycamtp\\app\\Views\\student\\level_list.php', 16)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\mycamtp\\app\\Views\\student\\level_list.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('student/level_list', [], true)
+ 5 APPPATH\Controllers\Student\DefaultController.php(34): view('student/level_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchLevelList()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 17:54:06 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "category=cma&&level=test-level-short"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('type/category=cma&&level=test-level-short')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('type/category=cma&&level=test-level-short')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 17:54:18 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "category=cma&level=test-level-short"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('type/category=cma&level=test-level-short')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('type/category=cma&level=test-level-short')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 17:54:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 17:54:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 17:54:57 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "category=cma&&level=test_level_short"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('type/category=cma&&level=test_level_short')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('type/category=cma&&level=test_level_short')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 17:55:16 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "category=cma&&level=test_level_short"
+in SYSTEMPATH\Router\Router.php on line 704.
+ 1 SYSTEMPATH\Router\Router.php(195): CodeIgniter\Router\Router->checkDisallowedChars('type/category=cma&&level=test_level_short')
+ 2 SYSTEMPATH\CodeIgniter.php(825): CodeIgniter\Router\Router->handle('type/category=cma&&level=test_level_short')
+ 3 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 18:00:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 18:00:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 18:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 18:00:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 18:00:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 18:01:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-15 18:01:02 --> Error: Undefined constant "App\Controllers\Admin\PUBLIC_PATH"
+in APPPATH\Controllers\Admin\DashboardController.php on line 236.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Admin\DashboardController->addType()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DashboardController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 18:02:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 18:02:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 19:24:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 19:25:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 19:26:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 19:26:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 19:26:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 19:26:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 19:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 19:36:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 19:36:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 19:55:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 19:55:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 19:56:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-15 20:04:34 --> mysqli_sql_exception: Unknown column 'level_table.active' in 'where clause' in C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `level_t...', 0)
+#1 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `level_t...')
+#2 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `level_t...')
+#3 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `level_t...', Array, false)
+#4 C:\xampp\htdocs\mycamtp\app\Models\Student\DefaultModel.php(13): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\mycamtp\app\Controllers\Student\DefaultController.php(38): App\Models\Student\DefaultModel->fetchLevelListModel('cma')
+#6 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchLevelList()
+#7 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+#8 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\mycamtp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-15 20:04:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'level_table.active' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `level_table`.*, `category_table`.`category_short_name`
+FROM `level_table`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `level_table`.`deleted` = :level_table.deleted:
+AND `level_table`.`active` = :level_table.active:', [...], false)
+ 2 APPPATH\Models\Student\DefaultModel.php(13): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Student\DefaultController.php(38): App\Models\Student\DefaultModel->fetchLevelListModel('cma')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchLevelList()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 20:04:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'level_table.active' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `level_table`.*, `category_table`.`category_short_name`
+FROM `level_table`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `level_table`.`deleted` = 0
+AND `level_table`.`active` = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `level_table`.*, `category_table`.`category_short_name`
+FROM `level_table`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `level_table`.`deleted` = 0
+AND `level_table`.`active` = 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `level_table`.*, `category_table`.`category_short_name`
+FROM `level_table`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `level_table`.`deleted` = :level_table.deleted:
+AND `level_table`.`active` = :level_table.active:', [...], false)
+ 4 APPPATH\Models\Student\DefaultModel.php(13): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Student\DefaultController.php(38): App\Models\Student\DefaultModel->fetchLevelListModel('cma')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchLevelList()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 20:04:34 --> [Caused by] mysqli_sql_exception: Unknown column 'level_table.active' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `level_table`.*, `category_table`.`category_short_name`
+FROM `level_table`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `level_table`.`deleted` = 0
+AND `level_table`.`active` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `level_table`.*, `category_table`.`category_short_name`
+FROM `level_table`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `level_table`.`deleted` = 0
+AND `level_table`.`active` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `level_table`.*, `category_table`.`category_short_name`
+FROM `level_table`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `level_table`.`deleted` = 0
+AND `level_table`.`active` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `level_table`.*, `category_table`.`category_short_name`
+FROM `level_table`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `level_table`.`deleted` = :level_table.deleted:
+AND `level_table`.`active` = :level_table.active:', [...], false)
+ 5 APPPATH\Models\Student\DefaultModel.php(13): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Student\DefaultController.php(38): App\Models\Student\DefaultModel->fetchLevelListModel('cma')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchLevelList()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 20:04:39 --> mysqli_sql_exception: Unknown column 'level_table.active' in 'where clause' in C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `level_t...', 0)
+#1 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `level_t...')
+#2 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `level_t...')
+#3 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `level_t...', Array, false)
+#4 C:\xampp\htdocs\mycamtp\app\Models\Student\DefaultModel.php(13): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\mycamtp\app\Controllers\Student\DefaultController.php(38): App\Models\Student\DefaultModel->fetchLevelListModel('cma')
+#6 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchLevelList()
+#7 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+#8 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\mycamtp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-15 20:04:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'level_table.active' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `level_table`.*, `category_table`.`category_short_name`
+FROM `level_table`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `level_table`.`deleted` = :level_table.deleted:
+AND `level_table`.`active` = :level_table.active:', [...], false)
+ 2 APPPATH\Models\Student\DefaultModel.php(13): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Student\DefaultController.php(38): App\Models\Student\DefaultModel->fetchLevelListModel('cma')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchLevelList()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 20:04:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'level_table.active' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `level_table`.*, `category_table`.`category_short_name`
+FROM `level_table`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `level_table`.`deleted` = 0
+AND `level_table`.`active` = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `level_table`.*, `category_table`.`category_short_name`
+FROM `level_table`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `level_table`.`deleted` = 0
+AND `level_table`.`active` = 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `level_table`.*, `category_table`.`category_short_name`
+FROM `level_table`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `level_table`.`deleted` = :level_table.deleted:
+AND `level_table`.`active` = :level_table.active:', [...], false)
+ 4 APPPATH\Models\Student\DefaultModel.php(13): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Student\DefaultController.php(38): App\Models\Student\DefaultModel->fetchLevelListModel('cma')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchLevelList()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 20:04:39 --> [Caused by] mysqli_sql_exception: Unknown column 'level_table.active' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `level_table`.*, `category_table`.`category_short_name`
+FROM `level_table`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `level_table`.`deleted` = 0
+AND `level_table`.`active` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `level_table`.*, `category_table`.`category_short_name`
+FROM `level_table`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `level_table`.`deleted` = 0
+AND `level_table`.`active` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `level_table`.*, `category_table`.`category_short_name`
+FROM `level_table`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `level_table`.`deleted` = 0
+AND `level_table`.`active` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `level_table`.*, `category_table`.`category_short_name`
+FROM `level_table`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `level_table`.`deleted` = :level_table.deleted:
+AND `level_table`.`active` = :level_table.active:', [...], false)
+ 5 APPPATH\Models\Student\DefaultModel.php(13): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Student\DefaultController.php(38): App\Models\Student\DefaultModel->fetchLevelListModel('cma')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchLevelList()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 20:05:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 20:05:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 20:06:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 20:06:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 20:06:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-15 20:08:39 --> mysqli_sql_exception: Unknown column 'category_table.level_short_name' in 'where clause' in C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `type_ta...', 0)
+#1 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `type_ta...')
+#2 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `type_ta...')
+#3 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `type_ta...', Array, false)
+#4 C:\xampp\htdocs\mycamtp\app\Models\Student\DefaultModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\mycamtp\app\Controllers\Student\DefaultController.php(48): App\Models\Student\DefaultModel->fetchTYpeListModel('cma')
+#6 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchTypeList()
+#7 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+#8 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\mycamtp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-15 20:08:39 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'category_table.level_short_name' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `type_table`.*, `level_table`.`level_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`category_id`=`type_table`.`category_id`
+WHERE `type_table`.`deleted` = :type_table.deleted:
+AND `category_table`.`level_short_name` = :category_table.level_short_name:', [...], false)
+ 2 APPPATH\Models\Student\DefaultModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Student\DefaultController.php(48): App\Models\Student\DefaultModel->fetchTYpeListModel('cma')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchTypeList()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 20:08:39 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'category_table.level_short_name' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `type_table`.*, `level_table`.`level_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`category_id`=`type_table`.`category_id`
+WHERE `type_table`.`deleted` = 0
+AND `category_table`.`level_short_name` = \'cma\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `type_table`.*, `level_table`.`level_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`category_id`=`type_table`.`category_id`
+WHERE `type_table`.`deleted` = 0
+AND `category_table`.`level_short_name` = \'cma\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `type_table`.*, `level_table`.`level_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`category_id`=`type_table`.`category_id`
+WHERE `type_table`.`deleted` = :type_table.deleted:
+AND `category_table`.`level_short_name` = :category_table.level_short_name:', [...], false)
+ 4 APPPATH\Models\Student\DefaultModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Student\DefaultController.php(48): App\Models\Student\DefaultModel->fetchTYpeListModel('cma')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchTypeList()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 20:08:39 --> [Caused by] mysqli_sql_exception: Unknown column 'category_table.level_short_name' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `type_table`.*, `level_table`.`level_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`category_id`=`type_table`.`category_id`
+WHERE `type_table`.`deleted` = 0
+AND `category_table`.`level_short_name` = \'cma\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `type_table`.*, `level_table`.`level_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`category_id`=`type_table`.`category_id`
+WHERE `type_table`.`deleted` = 0
+AND `category_table`.`level_short_name` = \'cma\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `type_table`.*, `level_table`.`level_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`category_id`=`type_table`.`category_id`
+WHERE `type_table`.`deleted` = 0
+AND `category_table`.`level_short_name` = \'cma\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `type_table`.*, `level_table`.`level_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`category_id`=`type_table`.`category_id`
+WHERE `type_table`.`deleted` = :type_table.deleted:
+AND `category_table`.`level_short_name` = :category_table.level_short_name:', [...], false)
+ 5 APPPATH\Models\Student\DefaultModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Student\DefaultController.php(48): App\Models\Student\DefaultModel->fetchTYpeListModel('cma')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchTypeList()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-15 20:08:57 --> mysqli_sql_exception: Unknown column 'type_table.category_id' in 'on clause' in C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `type_ta...', 0)
+#1 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `type_ta...')
+#2 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `type_ta...')
+#3 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `type_ta...', Array, false)
+#4 C:\xampp\htdocs\mycamtp\app\Models\Student\DefaultModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\mycamtp\app\Controllers\Student\DefaultController.php(48): App\Models\Student\DefaultModel->fetchTYpeListModel('cma')
+#6 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchTypeList()
+#7 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+#8 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\mycamtp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-15 20:08:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'type_table.category_id' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `type_table`.*, `level_table`.`level_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`category_id`=`type_table`.`category_id`
+WHERE `type_table`.`deleted` = :type_table.deleted:
+AND `level_table`.`level_short_name` = :level_table.level_short_name:', [...], false)
+ 2 APPPATH\Models\Student\DefaultModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Student\DefaultController.php(48): App\Models\Student\DefaultModel->fetchTYpeListModel('cma')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchTypeList()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 20:08:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'type_table.category_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `type_table`.*, `level_table`.`level_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`category_id`=`type_table`.`category_id`
+WHERE `type_table`.`deleted` = 0
+AND `level_table`.`level_short_name` = \'cma\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `type_table`.*, `level_table`.`level_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`category_id`=`type_table`.`category_id`
+WHERE `type_table`.`deleted` = 0
+AND `level_table`.`level_short_name` = \'cma\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `type_table`.*, `level_table`.`level_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`category_id`=`type_table`.`category_id`
+WHERE `type_table`.`deleted` = :type_table.deleted:
+AND `level_table`.`level_short_name` = :level_table.level_short_name:', [...], false)
+ 4 APPPATH\Models\Student\DefaultModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Student\DefaultController.php(48): App\Models\Student\DefaultModel->fetchTYpeListModel('cma')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchTypeList()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-15 20:08:57 --> [Caused by] mysqli_sql_exception: Unknown column 'type_table.category_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `type_table`.*, `level_table`.`level_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`category_id`=`type_table`.`category_id`
+WHERE `type_table`.`deleted` = 0
+AND `level_table`.`level_short_name` = \'cma\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `type_table`.*, `level_table`.`level_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`category_id`=`type_table`.`category_id`
+WHERE `type_table`.`deleted` = 0
+AND `level_table`.`level_short_name` = \'cma\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `type_table`.*, `level_table`.`level_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`category_id`=`type_table`.`category_id`
+WHERE `type_table`.`deleted` = 0
+AND `level_table`.`level_short_name` = \'cma\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `type_table`.*, `level_table`.`level_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`category_id`=`type_table`.`category_id`
+WHERE `type_table`.`deleted` = :type_table.deleted:
+AND `level_table`.`level_short_name` = :level_table.level_short_name:', [...], false)
+ 5 APPPATH\Models\Student\DefaultModel.php(23): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Student\DefaultController.php(48): App\Models\Student\DefaultModel->fetchTYpeListModel('cma')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchTypeList()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-15 20:15:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 20:15:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 20:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 20:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 20:16:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 20:16:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-15 20:16:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

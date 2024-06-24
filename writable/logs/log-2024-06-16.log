@@ -1,0 +1,822 @@
+INFO - 2024-06-16 05:51:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 05:51:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 05:51:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 05:51:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 05:51:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 05:51:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 05:51:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 05:52:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 05:52:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 05:59:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 05:59:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 05:59:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-16 06:02:13 --> mysqli_sql_exception: Unknown column 'category_table.level_id' in 'on clause' in C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `type_ta...', 0)
+#1 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `type_ta...')
+#2 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `type_ta...')
+#3 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `type_ta...', Array, false)
+#4 C:\xampp\htdocs\mycamtp\app\Models\Student\DefaultModel.php(24): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\mycamtp\app\Controllers\Student\DefaultController.php(47): App\Models\Student\DefaultModel->fetchTypeListModel('test-level-shor...')
+#6 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchTypeList()
+#7 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+#8 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\mycamtp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-16 06:02:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'category_table.level_id' in 'on clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `type_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`level_id`=`level_table`.`level_id`
+WHERE `type_table`.`deleted` = :type_table.deleted:
+AND `level_table`.`level_short_name` = :level_table.level_short_name:', [...], false)
+ 2 APPPATH\Models\Student\DefaultModel.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Student\DefaultController.php(47): App\Models\Student\DefaultModel->fetchTypeListModel('test-level-short')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchTypeList()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 06:02:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'category_table.level_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `type_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`level_id`=`level_table`.`level_id`
+WHERE `type_table`.`deleted` = 0
+AND `level_table`.`level_short_name` = \'test-level-short\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `type_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`level_id`=`level_table`.`level_id`
+WHERE `type_table`.`deleted` = 0
+AND `level_table`.`level_short_name` = \'test-level-short\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `type_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`level_id`=`level_table`.`level_id`
+WHERE `type_table`.`deleted` = :type_table.deleted:
+AND `level_table`.`level_short_name` = :level_table.level_short_name:', [...], false)
+ 4 APPPATH\Models\Student\DefaultModel.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Student\DefaultController.php(47): App\Models\Student\DefaultModel->fetchTypeListModel('test-level-short')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchTypeList()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 06:02:13 --> [Caused by] mysqli_sql_exception: Unknown column 'category_table.level_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `type_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`level_id`=`level_table`.`level_id`
+WHERE `type_table`.`deleted` = 0
+AND `level_table`.`level_short_name` = \'test-level-short\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `type_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`level_id`=`level_table`.`level_id`
+WHERE `type_table`.`deleted` = 0
+AND `level_table`.`level_short_name` = \'test-level-short\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `type_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`level_id`=`level_table`.`level_id`
+WHERE `type_table`.`deleted` = 0
+AND `level_table`.`level_short_name` = \'test-level-short\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `type_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`level_id`=`level_table`.`level_id`
+WHERE `type_table`.`deleted` = :type_table.deleted:
+AND `level_table`.`level_short_name` = :level_table.level_short_name:', [...], false)
+ 5 APPPATH\Models\Student\DefaultModel.php(24): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Student\DefaultController.php(47): App\Models\Student\DefaultModel->fetchTypeListModel('test-level-short')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchTypeList()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 06:08:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:08:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:08:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:08:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:11:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:11:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:11:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:11:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:11:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:12:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:12:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:13:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:13:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:13:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:13:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 06:13:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-16 06:13:33 --> ErrorException: Undefined array key "type_short_name"
+in APPPATH\Controllers\Student\DefaultController.php on line 54.
+ 1 APPPATH\Controllers\Student\DefaultController.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "type_short_name"', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Student\\DefaultController.php', 54)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchSubjectList()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-16 06:13:50 --> mysqli_sql_exception: Unknown column 'suject_table.deleted' in 'where clause' in C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `subject...', 0)
+#1 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `subject...')
+#2 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `subject...')
+#3 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `subject...', Array, false)
+#4 C:\xampp\htdocs\mycamtp\app\Models\Student\DefaultModel.php(36): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\mycamtp\app\Controllers\Student\DefaultController.php(56): App\Models\Student\DefaultModel->fetchSubjectListModel('test-type-short')
+#6 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchSubjectList()
+#7 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+#8 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\mycamtp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-16 06:13:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'suject_table.deleted' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `subject_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `type_table`.`type_short_name`
+FROM `subject_table`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `suject_table`.`deleted` = :suject_table.deleted:
+AND `type_table`.`level_short_name` = :type_table.level_short_name:', [...], false)
+ 2 APPPATH\Models\Student\DefaultModel.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Student\DefaultController.php(56): App\Models\Student\DefaultModel->fetchSubjectListModel('test-type-short')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchSubjectList()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 06:13:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'suject_table.deleted' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `subject_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `type_table`.`type_short_name`
+FROM `subject_table`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `suject_table`.`deleted` = 0
+AND `type_table`.`level_short_name` = \'test-type-short\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `subject_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `type_table`.`type_short_name`
+FROM `subject_table`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `suject_table`.`deleted` = 0
+AND `type_table`.`level_short_name` = \'test-type-short\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `subject_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `type_table`.`type_short_name`
+FROM `subject_table`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `suject_table`.`deleted` = :suject_table.deleted:
+AND `type_table`.`level_short_name` = :type_table.level_short_name:', [...], false)
+ 4 APPPATH\Models\Student\DefaultModel.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Student\DefaultController.php(56): App\Models\Student\DefaultModel->fetchSubjectListModel('test-type-short')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchSubjectList()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 06:13:50 --> [Caused by] mysqli_sql_exception: Unknown column 'suject_table.deleted' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `subject_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `type_table`.`type_short_name`
+FROM `subject_table`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `suject_table`.`deleted` = 0
+AND `type_table`.`level_short_name` = \'test-type-short\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `subject_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `type_table`.`type_short_name`
+FROM `subject_table`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `suject_table`.`deleted` = 0
+AND `type_table`.`level_short_name` = \'test-type-short\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `subject_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `type_table`.`type_short_name`
+FROM `subject_table`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `suject_table`.`deleted` = 0
+AND `type_table`.`level_short_name` = \'test-type-short\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `subject_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `type_table`.`type_short_name`
+FROM `subject_table`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `suject_table`.`deleted` = :suject_table.deleted:
+AND `type_table`.`level_short_name` = :type_table.level_short_name:', [...], false)
+ 5 APPPATH\Models\Student\DefaultModel.php(36): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Student\DefaultController.php(56): App\Models\Student\DefaultModel->fetchSubjectListModel('test-type-short')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchSubjectList()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-16 07:13:20 --> mysqli_sql_exception: Table 'mycamtp_db.level_list' doesn't exist in C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\mycamtp\app\Models\BaseModel.php(58): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\mycamtp\app\Controllers\Student\DefaultController.php(27): App\Models\BaseModel->getInfo('level_list', '', Array)
+#6 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(943): App\Controllers\Student\DefaultController->auth()
+#7 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+#8 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\mycamtp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-16 07:13:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'mycamtp_db.level_list' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `level_list`
+WHERE `deleted` = :deleted:
+AND `active` = :active:', [...], false)
+ 2 APPPATH\Models\BaseModel.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Student\DefaultController.php(27): App\Models\BaseModel->getInfo('level_list', '', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 07:13:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'mycamtp_db.level_list' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `level_list`
+WHERE `deleted` = 0
+AND `active` = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `level_list`
+WHERE `deleted` = 0
+AND `active` = 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `level_list`
+WHERE `deleted` = :deleted:
+AND `active` = :active:', [...], false)
+ 4 APPPATH\Models\BaseModel.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Student\DefaultController.php(27): App\Models\BaseModel->getInfo('level_list', '', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->auth()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 07:13:20 --> [Caused by] mysqli_sql_exception: Table 'mycamtp_db.level_list' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `level_list`
+WHERE `deleted` = 0
+AND `active` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `level_list`
+WHERE `deleted` = 0
+AND `active` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `level_list`
+WHERE `deleted` = 0
+AND `active` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `level_list`
+WHERE `deleted` = :deleted:
+AND `active` = :active:', [...], false)
+ 5 APPPATH\Models\BaseModel.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Student\DefaultController.php(27): App\Models\BaseModel->getInfo('level_list', '', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->auth()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-16 07:13:37 --> mysqli_sql_exception: Unknown column 'active' in 'where clause' in C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\mycamtp\app\Models\BaseModel.php(58): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\mycamtp\app\Controllers\Student\DefaultController.php(27): App\Models\BaseModel->getInfo('level_table', '', Array)
+#6 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(943): App\Controllers\Student\DefaultController->auth()
+#7 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+#8 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\mycamtp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-16 07:13:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'active' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `level_table`
+WHERE `deleted` = :deleted:
+AND `active` = :active:', [...], false)
+ 2 APPPATH\Models\BaseModel.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Student\DefaultController.php(27): App\Models\BaseModel->getInfo('level_table', '', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->auth()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 07:13:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'active' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `level_table`
+WHERE `deleted` = 0
+AND `active` = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `level_table`
+WHERE `deleted` = 0
+AND `active` = 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `level_table`
+WHERE `deleted` = :deleted:
+AND `active` = :active:', [...], false)
+ 4 APPPATH\Models\BaseModel.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Student\DefaultController.php(27): App\Models\BaseModel->getInfo('level_table', '', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->auth()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 07:13:37 --> [Caused by] mysqli_sql_exception: Unknown column 'active' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *
+FROM `level_table`
+WHERE `deleted` = 0
+AND `active` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `level_table`
+WHERE `deleted` = 0
+AND `active` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `level_table`
+WHERE `deleted` = 0
+AND `active` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `level_table`
+WHERE `deleted` = :deleted:
+AND `active` = :active:', [...], false)
+ 5 APPPATH\Models\BaseModel.php(58): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Student\DefaultController.php(27): App\Models\BaseModel->getInfo('level_table', '', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->auth()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 07:13:50 --> Error: Cannot use object of type stdClass as array
+in APPPATH\Views\student\auth\student_auth.php on line 79.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('student/auth/student_auth', [], true)
+ 4 APPPATH\Controllers\Student\DefaultController.php(28): view('student/auth/student_auth', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->auth()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 07:16:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:18:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:18:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:21:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:25:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 07:25:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-16 15:06:34 --> Error: Cannot use object of type stdClass as array
+in APPPATH\Views\student\auth\student_auth.php on line 79.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('student/auth/student_auth', [], true)
+ 4 APPPATH\Controllers\Student\DefaultController.php(28): view('student/auth/student_auth', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->auth()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 16:57:29 --> ErrorException: Attempt to read property "level_name" on array
+in APPPATH\Views\student\subject_list.php on line 32.
+ 1 APPPATH\Views\student\subject_list.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "level_name" on array', 'C:\\xampp\\htdocs\\mycamtp\\app\\Views\\student\\subject_list.php', 32)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\mycamtp\\app\\Views\\student\\subject_list.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('student/subject_list', [], true)
+ 5 APPPATH\Controllers\Student\DefaultController.php(58): view('student/subject_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchSubjectList()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 16:58:57 --> ErrorException: Attempt to read property "level_name" on array
+in APPPATH\Views\student\subject_list.php on line 32.
+ 1 APPPATH\Views\student\subject_list.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "level_name" on array', 'C:\\xampp\\htdocs\\mycamtp\\app\\Views\\student\\subject_list.php', 32)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\mycamtp\\app\\Views\\student\\subject_list.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('student/subject_list', [], true)
+ 5 APPPATH\Controllers\Student\DefaultController.php(58): view('student/subject_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchSubjectList()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 17:00:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 17:00:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 17:00:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 17:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 17:00:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 17:01:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 17:01:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 17:01:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 17:01:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 17:01:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 17:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 17:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 17:01:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-16 17:03:34 --> mysqli_sql_exception: Unknown column 'level_table.level_short_name' in 'field list' in C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `subject...', 0)
+#1 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `subject...')
+#2 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `subject...')
+#3 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `subject...', Array, false)
+#4 C:\xampp\htdocs\mycamtp\app\Models\Student\DefaultModel.php(51): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\mycamtp\app\Controllers\Student\DefaultController.php(57): App\Models\Student\DefaultModel->fetchSubjectListModel('test-type-short')
+#6 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchSubjectList()
+#7 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+#8 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\mycamtp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-16 17:03:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'level_table.level_short_name' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `subject_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `type_table`.`type_short_name`, `level_table`.`level_name`, `type_table`.`type_name`, `category_table`.`category_name`
+FROM `subject_table`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+WHERE `subject_table`.`deleted` = :subject_table.deleted:
+AND `type_table`.`level_short_name` = :type_table.level_short_name:', [...], false)
+ 2 APPPATH\Models\Student\DefaultModel.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Student\DefaultController.php(57): App\Models\Student\DefaultModel->fetchSubjectListModel('test-type-short')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchSubjectList()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 17:03:34 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'level_table.level_short_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `subject_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `type_table`.`type_short_name`, `level_table`.`level_name`, `type_table`.`type_name`, `category_table`.`category_name`
+FROM `subject_table`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+WHERE `subject_table`.`deleted` = 0
+AND `type_table`.`level_short_name` = \'test-type-short\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `subject_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `type_table`.`type_short_name`, `level_table`.`level_name`, `type_table`.`type_name`, `category_table`.`category_name`
+FROM `subject_table`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+WHERE `subject_table`.`deleted` = 0
+AND `type_table`.`level_short_name` = \'test-type-short\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `subject_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `type_table`.`type_short_name`, `level_table`.`level_name`, `type_table`.`type_name`, `category_table`.`category_name`
+FROM `subject_table`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+WHERE `subject_table`.`deleted` = :subject_table.deleted:
+AND `type_table`.`level_short_name` = :type_table.level_short_name:', [...], false)
+ 4 APPPATH\Models\Student\DefaultModel.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Student\DefaultController.php(57): App\Models\Student\DefaultModel->fetchSubjectListModel('test-type-short')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchSubjectList()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 17:03:34 --> [Caused by] mysqli_sql_exception: Unknown column 'level_table.level_short_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `subject_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `type_table`.`type_short_name`, `level_table`.`level_name`, `type_table`.`type_name`, `category_table`.`category_name`
+FROM `subject_table`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+WHERE `subject_table`.`deleted` = 0
+AND `type_table`.`level_short_name` = \'test-type-short\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `subject_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `type_table`.`type_short_name`, `level_table`.`level_name`, `type_table`.`type_name`, `category_table`.`category_name`
+FROM `subject_table`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+WHERE `subject_table`.`deleted` = 0
+AND `type_table`.`level_short_name` = \'test-type-short\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `subject_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `type_table`.`type_short_name`, `level_table`.`level_name`, `type_table`.`type_name`, `category_table`.`category_name`
+FROM `subject_table`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+WHERE `subject_table`.`deleted` = 0
+AND `type_table`.`level_short_name` = \'test-type-short\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `subject_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `type_table`.`type_short_name`, `level_table`.`level_name`, `type_table`.`type_name`, `category_table`.`category_name`
+FROM `subject_table`
+LEFT JOIN `type_table` ON `type_table`.`type_id`=`subject_table`.`type_id`
+WHERE `subject_table`.`deleted` = :subject_table.deleted:
+AND `type_table`.`level_short_name` = :type_table.level_short_name:', [...], false)
+ 5 APPPATH\Models\Student\DefaultModel.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Student\DefaultController.php(57): App\Models\Student\DefaultModel->fetchSubjectListModel('test-type-short')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchSubjectList()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 17:04:15 --> ErrorException: Attempt to read property "level_name" on array
+in APPPATH\Views\student\subject_list.php on line 32.
+ 1 APPPATH\Views\student\subject_list.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "level_name" on array', 'C:\\xampp\\htdocs\\mycamtp\\app\\Views\\student\\subject_list.php', 32)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\mycamtp\\app\\Views\\student\\subject_list.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('student/subject_list', [], true)
+ 5 APPPATH\Controllers\Student\DefaultController.php(58): view('student/subject_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchSubjectList()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-16 17:07:23 --> mysqli_sql_exception: Unknown column 'level_table.type_name' in 'field list' in C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `type_ta...', 0)
+#1 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `type_ta...')
+#2 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `type_ta...')
+#3 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `type_ta...', Array, false)
+#4 C:\xampp\htdocs\mycamtp\app\Models\Student\DefaultModel.php(33): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\mycamtp\app\Controllers\Student\DefaultController.php(48): App\Models\Student\DefaultModel->fetchTypeListModel('test-level-shor...')
+#6 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchTypeList()
+#7 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+#8 C:\xampp\htdocs\mycamtp\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\mycamtp\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-06-16 17:07:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'level_table.type_name' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `type_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `level_table`.`type_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `type_table`.`deleted` = :type_table.deleted:
+AND `level_table`.`deleted` = :level_table.deleted:
+AND `category_table`.`deleted` = :category_table.deleted:
+AND `category_table`.`active` = :category_table.active:
+AND `level_table`.`level_short_name` = :level_table.level_short_name:', [...], false)
+ 2 APPPATH\Models\Student\DefaultModel.php(33): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Student\DefaultController.php(48): App\Models\Student\DefaultModel->fetchTypeListModel('test-level-short')
+ 4 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchTypeList()
+ 5 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 17:07:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'level_table.type_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 311.
+ 1 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `type_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `level_table`.`type_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `type_table`.`deleted` = 0
+AND `level_table`.`deleted` = 0
+AND `category_table`.`deleted` = 0
+AND `category_table`.`active` = 1
+AND `level_table`.`level_short_name` = \'test-level-short\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `type_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `level_table`.`type_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `type_table`.`deleted` = 0
+AND `level_table`.`deleted` = 0
+AND `category_table`.`deleted` = 0
+AND `category_table`.`active` = 1
+AND `level_table`.`level_short_name` = \'test-level-short\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `type_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `level_table`.`type_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `type_table`.`deleted` = :type_table.deleted:
+AND `level_table`.`deleted` = :level_table.deleted:
+AND `category_table`.`deleted` = :category_table.deleted:
+AND `category_table`.`active` = :category_table.active:
+AND `level_table`.`level_short_name` = :level_table.level_short_name:', [...], false)
+ 4 APPPATH\Models\Student\DefaultModel.php(33): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\Student\DefaultController.php(48): App\Models\Student\DefaultModel->fetchTypeListModel('test-level-short')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchTypeList()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 17:07:23 --> [Caused by] mysqli_sql_exception: Unknown column 'level_table.type_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 306.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `type_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `level_table`.`type_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `type_table`.`deleted` = 0
+AND `level_table`.`deleted` = 0
+AND `category_table`.`deleted` = 0
+AND `category_table`.`active` = 1
+AND `level_table`.`level_short_name` = \'test-level-short\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `type_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `level_table`.`type_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `type_table`.`deleted` = 0
+AND `level_table`.`deleted` = 0
+AND `category_table`.`deleted` = 0
+AND `category_table`.`active` = 1
+AND `level_table`.`level_short_name` = \'test-level-short\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `type_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `level_table`.`type_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `type_table`.`deleted` = 0
+AND `level_table`.`deleted` = 0
+AND `category_table`.`deleted` = 0
+AND `category_table`.`active` = 1
+AND `level_table`.`level_short_name` = \'test-level-short\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `type_table`.*, `level_table`.`level_short_name`, `category_table`.`category_short_name`, `level_table`.`type_name`
+FROM `type_table`
+LEFT JOIN `level_table` ON `level_table`.`level_id`=`type_table`.`level_id`
+LEFT JOIN `category_table` ON `category_table`.`category_id`=`level_table`.`category_id`
+WHERE `type_table`.`deleted` = :type_table.deleted:
+AND `level_table`.`deleted` = :level_table.deleted:
+AND `category_table`.`deleted` = :category_table.deleted:
+AND `category_table`.`active` = :category_table.active:
+AND `level_table`.`level_short_name` = :level_table.level_short_name:', [...], false)
+ 5 APPPATH\Models\Student\DefaultModel.php(33): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Student\DefaultController.php(48): App\Models\Student\DefaultModel->fetchTypeListModel('test-level-short')
+ 7 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->fetchTypeList()
+ 8 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-06-16 17:09:35 --> Error: Cannot use object of type stdClass as array
+in APPPATH\Views\student\auth\student_auth.php on line 79.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('student/auth/student_auth', [], true)
+ 4 APPPATH\Controllers\Student\DefaultController.php(28): view('student/auth/student_auth', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->auth()
+ 6 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 18:06:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 18:08:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-16 18:52:46 --> ErrorException: Undefined variable $am_pm
+in APPPATH\Views\student\dashboard.php on line 7.
+ 1 APPPATH\Views\student\dashboard.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $am_pm', 'C:\\xampp\\htdocs\\mycamtp\\app\\Views\\student\\dashboard.php', 7)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\mycamtp\\app\\Views\\student\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1178): CodeIgniter\View\View->render('student/dashboard', [], true)
+ 5 APPPATH\Controllers\Student\DefaultController.php(167): view('student/dashboard')
+ 6 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->loadDashboardPage()
+ 7 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 18:53:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 18:53:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 18:54:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 18:57:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 18:59:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:00:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:00:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:01:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:06:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:07:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:08:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:08:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:08:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:10:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:11:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-16 19:15:38 --> Error: Class "App\Controllers\BaseModel" not found
+in APPPATH\Controllers\BaseController.php on line 59.
+ 1 SYSTEMPATH\CodeIgniter.php(916): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 19:16:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:17:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:17:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-16 19:17:45 --> Error: Call to undefined method App\Controllers\Student\DefaultController::getCartDetails()
+in APPPATH\Controllers\Student\DefaultController.php on line 197.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->addToCartItem()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 19:18:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:18:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:20:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:24:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:26:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:26:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:27:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:27:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:27:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:27:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-16 19:31:02 --> ErrorException: Undefined array key "student_id"
+in APPPATH\Controllers\Student\DefaultController.php on line 247.
+ 1 APPPATH\Controllers\Student\DefaultController.php(247): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "student_id"', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Student\\DefaultController.php', 247)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->getCartItemsArray()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 19:32:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:32:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:32:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:32:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-16 19:32:48 --> ErrorException: Undefined property: App\Controllers\Student\DefaultController::$cartModel
+in APPPATH\Controllers\Student\DefaultController.php on line 250.
+ 1 APPPATH\Controllers\Student\DefaultController.php(250): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Student\\DefaultController::$cartModel', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Student\\DefaultController.php', 250)
+ 2 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->getCartItemsArray()
+ 3 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 19:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:35:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:36:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:36:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:39:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:39:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:42:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:51:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:51:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:53:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:53:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:53:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:53:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:54:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:54:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:54:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:54:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:54:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-16 19:55:01 --> Error: Call to undefined method App\Controllers\Student\DefaultController::validPromoCode()
+in APPPATH\Controllers\Student\DefaultController.php on line 279.
+ 1 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->removeCartItems()
+ 2 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 19:55:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:55:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:55:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:55:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:55:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:55:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:56:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:56:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:56:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:56:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:56:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:56:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:56:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:56:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:56:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:56:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:56:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:56:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:57:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:57:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 19:57:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:00:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:04:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:04:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:05:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:05:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-16 20:06:18 --> ArgumentCountError: Too few arguments to function log_message(), 1 passed in C:\xampp\htdocs\mycamtp\app\Controllers\BaseController.php on line 138 and at least 2 expected
+in SYSTEMPATH\Common.php on line 785.
+ 1 APPPATH\Controllers\BaseController.php(138): log_message('Undefined variable $cart_id')
+ 2 APPPATH\Controllers\Student\DefaultController.php(174): App\Controllers\BaseController->getCartId()
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->addToCartItem()
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 20:06:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-16 20:06:37 --> ArgumentCountError: Too few arguments to function log_message(), 1 passed in C:\xampp\htdocs\mycamtp\app\Controllers\BaseController.php on line 139 and at least 2 expected
+in SYSTEMPATH\Common.php on line 785.
+ 1 APPPATH\Controllers\BaseController.php(139): log_message('Undefined variable $cart_id')
+ 2 APPPATH\Controllers\Student\DefaultController.php(174): App\Controllers\BaseController->getCartId()
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->addToCartItem()
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 20:06:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-06-16 20:06:54 --> Undefined variable $cart_id
+INFO - 2024-06-16 20:11:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:11:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:11:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:11:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-16 20:11:43 --> ErrorException: Undefined property: App\Controllers\Student\DefaultController::$studentModel
+in APPPATH\Controllers\Student\DefaultController.php on line 306.
+ 1 APPPATH\Controllers\Student\DefaultController.php(306): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Student\\DefaultController::$studentModel', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Student\\DefaultController.php', 306)
+ 2 APPPATH\Controllers\Student\DefaultController.php(279): App\Controllers\Student\DefaultController->validPromoCode()
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->removeCartItems()
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 20:13:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:13:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:13:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:13:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:13:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-16 20:13:33 --> ErrorException: Undefined property: App\Controllers\Student\DefaultController::$dafaultModel
+in APPPATH\Controllers\Student\DefaultController.php on line 306.
+ 1 APPPATH\Controllers\Student\DefaultController.php(306): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Student\\DefaultController::$dafaultModel', 'C:\\xampp\\htdocs\\mycamtp\\app\\Controllers\\Student\\DefaultController.php', 306)
+ 2 APPPATH\Controllers\Student\DefaultController.php(279): App\Controllers\Student\DefaultController->validPromoCode()
+ 3 SYSTEMPATH\CodeIgniter.php(943): App\Controllers\Student\DefaultController->removeCartItems()
+ 4 SYSTEMPATH\CodeIgniter.php(503): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Student\DefaultController))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-06-16 20:13:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:13:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:14:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:14:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:14:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:14:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:19:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:20:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:20:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:20:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:20:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:20:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:20:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:20:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:21:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:21:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:21:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:23:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-06-16 20:23:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
