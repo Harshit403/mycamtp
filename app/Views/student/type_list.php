@@ -20,7 +20,7 @@
 					        </div>
 					        <h2><?=$typeRow->batch_info?></h2>
 					        <h3><?= $typeRow->type_name?></h3>
-					        <div style="overflow-y: auto"><?=$typeRow->type_more_details?></div>
+					        <div style="overflow-y: auto;text-align: left!important;"><?=$typeRow->type_more_details?></div>
 					        <div class="buttons">
 					            <a class="btn btn-sm btn-custom syllabus-btn" href="<?=base_url().$typeRow->schedule_file?>" download="<?=$typeRow->file_name?>"><i class="bi bi-arrow-down-circle"></i> Download Schedule</a>
 					            <a class="btn btn-sm fee-btn" href="<?=base_url()?>subject?category=<?=$typeRow->category_short_name?>&&level=<?=$typeRow->level_short_name?>&&type=<?=$typeRow->type_short_name?>"><i class="bi bi-book"></i> VIEW Subject</a>
