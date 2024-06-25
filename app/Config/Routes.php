@@ -30,6 +30,9 @@ $routes->post('/fetch-level-list',STUDENT.'DefaultController::fetchLevelListInfo
 $routes->get('/blog',STUDENT.'DefaultController::displayBlogDetails');
 $routes->get('/blog-list',STUDENT.'DefaultController::loadBlogListPage');
 
+$routes->get('/terms-and-condition',STUDENT.'DefaultController::loadTermsAndConditionPage');
+$routes->get('/cancel-and-refund',STUDENT.'DefaultController::loadCancelAndRefundPage');
+$routes->get('/privacy-policy',STUDENT.'DefaultController::loadPrivacyPolicy');
 
 
 // ADMIN

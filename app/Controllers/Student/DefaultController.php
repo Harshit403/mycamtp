@@ -715,6 +715,19 @@
 			return view('student/blog_list',$data);
 		}
 
+		public function loadTermsAndConditionPage(){
+			return view('student/terms_and_condition');
+		}
+
+		public function loadCancelAndRefundPage(){
+			return view('student/cancel_and_refund');
+		}
+
+		public function loadPrivacyPolicy(){
+			return view('student/priavcy_policy');
+		}
+
+
 		
 	}
 ?>
