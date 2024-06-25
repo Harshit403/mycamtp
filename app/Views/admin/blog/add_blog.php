@@ -42,5 +42,5 @@
 <script type="text/javascript">
     var pageType = 'add_blog';
 </script>
-<script type="text/javascript" src="<?=base_url()?>/assets/admin/js/blog.js?v=1.0.1"></script>
+<script type="text/javascript" src="<?=base_url()?>/assets/admin/js/blog.js?v=1.0.2"></script>
 <?= $this->endSection() ?>
