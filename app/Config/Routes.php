@@ -27,7 +27,8 @@ $routes->get('/purchase-status',STUDENT.'DefaultController::purchaseStatus');
 $routes->get('/logout',STUDENT.'DefaultController::logOutUser');
 $routes->get('/my-resources/paper/(:any)',STUDENT.'DefaultController::loadPaperListPage/$1');
 $routes->post('/fetch-level-list',STUDENT.'DefaultController::fetchLevelListInfo');
-
+$routes->get('/blog',STUDENT.'DefaultController::displayBlogDetails');
+$routes->get('/blog-list',STUDENT.'DefaultController::loadBlogListPage');
 
 
 

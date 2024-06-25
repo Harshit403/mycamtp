@@ -17,6 +17,7 @@
 		public function index(): string
 	    {
 	        $data['categoryDetails'] = $this->common->getInfo('category_table','',array('deleted'=>0,'active'=>1));
+	        $data['blog_list'] = $this->defaultModel->fetchBlogList(4);
 	        return view('student/index',$data);
 	    }
 
@@ -698,6 +699,21 @@
 	    	}
 	    	return json_encode($response);
 	    }
+
+	    public function displayBlogDetails(){
+	    	$getData = $this->request->getGet();
+	    	if (isset($getData['item'])) {
+	    		$data['blog_item'] = $this->common->getInfo('blog_table','row',array('blog_short_name'=>$getData['item']));
+	    		return view('student/blog_details',$data);
+	    	} else {
+	    		throw new Exception("Error Processing Request", 404);
+	    	}
+	    }
+
+	    public function loadBlogListPage(){
+			$data['blog_items'] = $this->defaultModel->fetchBlogList();
+			return view('student/blog_list',$data);
+		}
 
 		
 	}

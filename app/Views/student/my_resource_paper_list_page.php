@@ -1,4 +1,4 @@
-<?= $this->extend('layout/student_layout') ?>
+<?= $this->extend('student/layout/layout') ?>
 <?= $this->section('title') ?>
     Paper List
 <?= $this->endSection() ?>

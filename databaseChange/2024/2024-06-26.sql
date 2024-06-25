@@ -1,0 +1,1 @@
+ALTER TABLE `blog_table` ADD `blog_short_name` VARCHAR(250) NOT NULL AFTER `blog_heading`;

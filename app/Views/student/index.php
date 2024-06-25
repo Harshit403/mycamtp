@@ -167,7 +167,7 @@
     <section class="py-5 container" id="blog-section">
         <h1 class="text-uppercase text-center">Blogs</h1>
         <div class="row">
-            <div class="col-sm-3">
+            <!-- <div class="col-sm-3">
                 <div class="card">
                     <img src="<?=base_url()?>/assetItems/image/image1.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
@@ -206,13 +206,30 @@
                     <a href="#" class="btn btn-custom">Read More <i class="bi bi-arrow-right"></i></a>
                   </div>
                 </div>
-            </div>
+            </div> -->
+            <?php if (!empty($blog_list)): ?>
+              <?php foreach ($blog_list as $blogRow): ?>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img src="<?=base_url().$blogRow->blog_temp_image?>" class="card-img-top" alt="blog items image">
+                      <div class="card-body">
+                        <h5 class="card-title"><?=$blogRow->blog_heading?></h5>
+                        <p class="card-text"><?=$blogRow->blog_text?>.</p>
+                        <a href="<?=base_url()?>blog?item=<?=$blogRow->blog_short_name?>" class="btn btn-custom">Read More <i class="bi bi-arrow-right"></i></a>
+                      </div>
+                    </div>
+                </div>
+              <?php endforeach ?>
+            <?php endif ?>
+            
         </div>
-        <div class="row mt-2">
-            <div class="col-md-12 d-flex justify-content-end">
-                <a href="javascript:void(0)" class="btn btn-sm btn-custom">View More <i class="bi bi-arrow-right"></i></a>
-            </div>
-        </div>
+        <?php if (!empty($blog_list) && count($blog_list) > 4): ?>
+          <div class="row mt-2">
+              <div class="col-md-12 d-flex justify-content-end">
+                  <a href="<?=base_url()?>blog-list" class="btn btn-sm btn-custom">View More <i class="bi bi-arrow-right"></i></a>
+              </div>
+          </div>
+        <?php endif ?>
     </section>
     <section class="py-5 container" id="testimonial-screen">
         <h1 class="text-uppercase text-center">TESTIMONIALS</h1>

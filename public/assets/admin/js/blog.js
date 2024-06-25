@@ -97,6 +97,7 @@ $(document).ready(function() {
     $("#addBlogBtn").on('click', function() {
         var blog_id = $("#blog_id").val();
         var blog_heading = $.trim($("#blog_heading").val());
+        var blog_short_name = $.trim($("#blog_short_name").val());
         var formdata = new FormData();
         if (blog_heading == '') {
             bootbox.alert({
@@ -122,6 +123,7 @@ $(document).ready(function() {
             return false;
         }
         formdata.append('blog_text', blog_body);
+        formdata.append('blog_short_name', blog_short_name);
         if (blog_id != '') {
             formdata.append('blog_id', blog_id);
         }

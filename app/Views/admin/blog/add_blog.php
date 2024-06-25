@@ -14,6 +14,10 @@
                             <input type="text" id="blog_heading" class="form-control form-control-sm" placeholder="Blog Heading" value="<?=!empty($blog_data) ? $blog_data->blog_heading : '' ?>">
                         </div>
                         <div class="col-md-12">
+                            <label class="form-label">Short Blog Name</label>
+                            <input type="text" id="blog_short_name" class="form-control form-control-sm" placeholder="Blog Short Name" value="<?=!empty($blog_data) ? $blog_data->blog_short_name : '' ?>">
+                        </div>
+                        <div class="col-md-12">
                             <label class="form-label">Add Image</label>
                             <input type="file" id="preview_image" class="form-control form-control-sm" accept="image/*">
                         </div>

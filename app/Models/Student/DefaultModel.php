@@ -213,5 +213,16 @@
 	        $records = $builder->get()->getResultArray();
 	        return $records;
 	    }
+
+	    public function fetchBlogList($limit=''){
+	    	$builder = $this->db->table('blog_table');
+	    	$builder->where('active',1);
+	    	$builder->where('deleted',0);
+	    	if (!empty($limit)) {
+	    		$builder->limit($limit);
+	    	}
+	    	$records = $builder->get()->getResult();
+	        return $records;
+	    }
 	}
 ?>

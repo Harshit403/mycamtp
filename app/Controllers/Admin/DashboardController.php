@@ -899,6 +899,7 @@ class DashboardController extends BaseController
         }
         $data['blog_heading'] = $postData['blog_heading'];
         $data['blog_text'] = $postData['blog_text'];
+        $data['blog_short_name'] = $postData['blog_short_name'];
         if (isset($postData['blog_id'])) {
             $insertData = $this->common->dbAction('blog_table',$data,'update',array('blog_id'=>$postData['blog_id']));
             $type = 'updated';
