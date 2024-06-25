@@ -36,33 +36,36 @@
                     <h6 class="text-uppercase fw-bold">Products</h6>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
                     <p>
-                      <a href="#!" class="text-white">MDBootstrap</a>
+                      <a href="#!" class="text-white">CA Test Series</a>
                     </p>
                     <p>
-                      <a href="#!" class="text-white">MDWordPress</a>
+                      <a href="#!" class="text-white">CMA Test Series</a>
                     </p>
                     <p>
-                      <a href="#!" class="text-white">BrandFlow</a>
-                    </p>
-                    <p>
-                      <a href="#!" class="text-white">Bootstrap Angular</a>
+                      <a href="#!" class="text-white">CS Test Series</a>
                     </p>
                   </div>
                   <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <h6 class="text-uppercase fw-bold">Useful links</h6>
+                    <h6 class="text-uppercase fw-bold">Useful Links</h6>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
                     <p>
-                      <a href="#!" class="text-white">Your Account</a>
+                      <a href="#!" class="text-white">Terms and conditions</a>
                     </p>
                     <p>
-                      <a href="#!" class="text-white">Become an Affiliate</a>
+                      <a href="#!" class="text-white">Privacy Policy</a>
                     </p>
                     <p>
-                      <a href="#!" class="text-white">Shipping Rates</a>
+                      <a href="#!" class="text-white">Cancelation and Refund</a>
                     </p>
                     <p>
-                      <a href="#!" class="text-white">Help</a>
+                      <a href="#!" class="text-white">Shipping and Delivery</a>
                     </p>
+                   <p>
+                      <a href="#!" class="text-white">About Us</a>
+                   </p>
+                   <p>
+                      <a href="#!" class="text-white">Disclaimer</a>               
+                   </p>
                   </div>
                   <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                     <h6 class="text-uppercase fw-bold">Contact</h6>
