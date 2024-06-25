@@ -13,7 +13,7 @@
 		<div class="row">
 			<?php if (!empty($type_list)): ?>
 				<?php foreach ($type_list as $key => $typeRow): ?>
-					<div class="col-md-3 mb-3">
+					<div class="col-md-3 mb-3 d-flex justify-content-center">
 						<div class="card">
 					        <div class="header">
 					            <span class="students">⚡Popular</span>
