@@ -116,7 +116,7 @@
     var pageType = "student_auth_page";
     var baseUrl = "<?=base_url()?>";
     </script>
-    <script type="text/javascript" src="<?=base_url()?>assets/student/js/student_auth.js"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/student/js/student_auth.js?v=1.0.1"></script>
 </body>
 
 </html>

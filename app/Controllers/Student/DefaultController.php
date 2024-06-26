@@ -724,7 +724,19 @@
 		}
 
 		public function loadPrivacyPolicy(){
-			return view('student/priavcy_policy');
+			return view('student/privacy_policy');
+		}
+
+		public function loadShippingDelivery(){
+			return view('student/shipping_and_delivery');
+		}
+
+		public function loadAboutUs(){
+			return view('student/about_us');
+		}
+
+		public function loadDisclaimer(){
+			return view('student/disclaimer');
 		}
 
 

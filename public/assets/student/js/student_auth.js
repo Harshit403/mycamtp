@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    levelUpdate();
     $(".viewPassWord").on('click', function() {
         var type = $(this).closest(".inputBox").find('input').attr('type');
         $(this).closest(".inputBox").find('ion-icon').toggleAttrVal('name', "eye-outline", "eye-off-outline");
@@ -215,11 +216,17 @@ $(document).ready(function() {
     });
 
     $("#category_id").on('change', function() {
-        var category_id = $(this).data('category-id');
+        levelUpdate();
+    });
+
+    function levelUpdate() {
+        var category_id = $("#category_id").val();
         $.ajax({
             url: baseUrl + '/fetch-level-list',
             type: 'POST',
-            category_id: category_id,
+            data: {
+                category_id: category_id,
+            },
             dataType: 'json',
             success: function(res) {
                 var html = '';
@@ -227,11 +234,11 @@ $(document).ready(function() {
                     $.each(res.data, function(i, v) {
                         html += '<option value="' + v.level_id + '">' + v.level_name + '</option>';
                     });
-                    $("#current_level").html(html);
                 }
+                $("#current_level").html(html);
             }
-        })
-    })
+        });
+    }
 });
 $.fn.toggleAttrVal = function(attr, val1, val2) {
     var test = $(this).attr(attr);

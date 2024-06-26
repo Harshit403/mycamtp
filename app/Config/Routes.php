@@ -33,6 +33,9 @@ $routes->get('/blog-list',STUDENT.'DefaultController::loadBlogListPage');
 $routes->get('/terms-and-condition',STUDENT.'DefaultController::loadTermsAndConditionPage');
 $routes->get('/cancel-and-refund',STUDENT.'DefaultController::loadCancelAndRefundPage');
 $routes->get('/privacy-policy',STUDENT.'DefaultController::loadPrivacyPolicy');
+$routes->get('/shipping-and-dlivery',STUDENT.'DefaultController::loadShippingDelivery');
+$routes->get('/about-us',STUDENT.'DefaultController::loadAboutUs');
+$routes->get('/disclaimer',STUDENT.'DefaultController::loadDisclaimer');
 
 
 // ADMIN

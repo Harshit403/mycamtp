@@ -1,6 +1,6 @@
 <script src="<?=base_url()?>/assets/admin/design_assets/vendor/libs/jquery/jquery.js"></script>
 <script src="<?=base_url()?>/assets/admin/design_assets/vendor/libs/popper/popper.js"></script>
-<script src="<?=base_url()?>/assets/admin/design_assets/vendor/js/bootstrap.js"></script>
+<script src="<?=base_url()?>/assets/cdn/js/bootstrap.min.js"></script>
 <script src="<?=base_url()?>/assets/admin/design_assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/bootbox.min.js"></script>
 <script type="text/javascript">
