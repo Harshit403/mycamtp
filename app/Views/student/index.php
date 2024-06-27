@@ -1,5 +1,6 @@
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('content')?>
+
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="margin-top: 79px;">
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="10000">
@@ -30,7 +31,7 @@
     position: relative;
     width: 100%;
     max-width: 1200px; /* Adjust this value to set the maximum width for larger screens */
-    padding-bottom: 68.29%; /* 1400 / 2048 * 100% */
+    padding-top: 68.29%; /* 1400 / 2048 * 100% */
   }
 
   .aspect-ratio-box img {
