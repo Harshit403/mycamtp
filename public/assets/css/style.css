@@ -237,6 +237,10 @@
     height: 450px;
 }
 
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
 @media only screen and (max-width: 600px) {
     .dashboardContainerMobile {
         display: block;

@@ -16,7 +16,7 @@
             </a>
           </li>
         </ul>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style="margin-left: -4rem!important;border: none;">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -57,22 +57,25 @@
                             <a href="<?=base_url()?>auth?auth=login" class="btn text-white btn-sm btn-custom">Login <i class="bi bi-arrow-right"></i></a>
                             <a href="<?=base_url()?>auth?auth=register" class="btn text-white btn-sm btn-custom">Sign Up <i class="bi bi-arrow-right"></i></a>
                         </div>
-                        <?php else: ?>
-                          <div class="dropdown">
-                            <a class="dropdown-main" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                              <img src="<?=base_url()?>assetItems/image/image1.jpg" class="img-circle" style="height: 40px; width:40px;">
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" style="left: -118px;">
-                              <li><a class="dropdown-item" href="<?=base_url()?>dashboard">Dashboard</a></li>
-                              <li><a class="dropdown-item" href="#">Invoice</a></li>
-                              <li><a class="dropdown-item" href="<?=base_url()?>logout">Logout</a></li>
-                            </ul>
-                          </div>
+                        
+                          
                       <?php endif ?>
                   </li>
                 </ul>
           </div>
         </div>
+        <?php if (session()->get('studentDetails')!==null): ?>
+            <div class="dropdown signinDropdown" style="margin-left: -4rem!important;">
+              <a class="dropdown-main" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                <img src="<?=base_url()?>assetItems/image/image1.jpg" class="img-circle" style="height: 40px; width:40px;">
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" style="left: -118px;">
+                <li><a class="dropdown-item" href="<?=base_url()?>dashboard">Dashboard</a></li>
+                <li><a class="dropdown-item" href="#">Invoice</a></li>
+                <li><a class="dropdown-item" href="<?=base_url()?>logout">Logout</a></li>
+              </ul>
+            </div>
+        <?php endif ?>
       </div>
     </nav>
 </header>
