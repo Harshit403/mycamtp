@@ -6,6 +6,16 @@
    <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm p-3 bg-body rounded">
       <div class="container-fluid">
         <a class="navbar-brand fs-4" href="#">MYCAMTP</a>
+        <ul class="navbar-nav">
+          <li class="nav-item forMobileSection">
+            <a class="nav-link showCartBtn" href="javascript:void(0)" class="btn">
+              <div style="position: relative;">
+                <i class="bi bi-bag" style="font-size: 18px;"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary cartCount">0</span>
+              </div>
+            </a>
+          </li>
+        </ul>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -33,17 +43,16 @@
                    <li class="nav-item">
                     <a class="nav-link" href="<?=base_url()?>#faq-section">FAQ</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item forDesktopSection">
                     <a class="nav-link showCartBtn" href="javascript:void(0)" class="btn">
                       <div style="position: relative;">
                         <i class="bi bi-bag" style="font-size: 18px;"></i>
                         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary cartCount">0</span>
                       </div>
-                      
                     </a>
                   </li>
                   <li class="nav-item" style="margin-left:1rem !important; ">
-                      <?php if (session()->get('studentDetails')==null): ?>
+                    <?php if (session()->get('studentDetails')==null): ?>
                         <div class="d-flex justify-content-center align-items-center" style="gap:10px;">
                             <a href="<?=base_url()?>auth?auth=login" class="btn text-white btn-sm btn-custom">Login <i class="bi bi-arrow-right"></i></a>
                             <a href="<?=base_url()?>auth?auth=register" class="btn text-white btn-sm btn-custom">Sign Up <i class="bi bi-arrow-right"></i></a>
@@ -62,7 +71,7 @@
                       <?php endif ?>
                   </li>
                 </ul>
-            </div>
+          </div>
         </div>
       </div>
     </nav>

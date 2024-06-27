@@ -2,14 +2,14 @@
 <?=$this->section('content')?>
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="margin-top: 79px;">
       <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-          <img src="<?=base_url()?>carousel/assets/image1.jpg" class="d-block w-100 imgClass" alt="..." style="height:1400px; width: 2048px;">
+        <div class="carousel-item active" data-bs-interval="5000">
+          <img src="<?=base_url()?>carousel/assets/image1.jpg" class="d-block w-100 imgClass" alt="...">
         </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img src="<?=base_url()?>carousel/assets/image1.jpg" class="d-block w-100 imgClass" alt="..." style="height:1400px; width: 2048px;">
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="<?=base_url()?>carousel/assets/image1.jpg" class="d-block w-100 imgClass" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="<?=base_url()?>carousel/assets/image1.jpg" class="d-block w-100 imgClass" alt="..." style="height:1400px; width: 2048px;">
+          <img src="<?=base_url()?>carousel/assets/image1.jpg" class="d-block w-100 imgClass" alt="...">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
@@ -155,46 +155,6 @@
     <section class="py-5 container" id="blog-section">
         <h1 class="text-uppercase text-center">Blogs</h1>
         <div class="row">
-            <!-- <div class="col-sm-3">
-                <div class="card">
-                    <img src="<?=base_url()?>/assetItems/image/image1.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-custom">Read More <i class="bi bi-arrow-right"></i></a>
-                  </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card">
-                    <img src="<?=base_url()?>/assetItems/image/image1.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-custom">Read More <i class="bi bi-arrow-right"></i></a>
-                  </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card">
-                    <img src="<?=base_url()?>/assetItems/image/image1.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-custom">Read More <i class="bi bi-arrow-right"></i></a>
-                  </div>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card">
-                    <img src="<?=base_url()?>/assetItems/image/image1.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-custom">Read More <i class="bi bi-arrow-right"></i></a>
-                  </div>
-                </div>
-            </div> -->
             <?php if (!empty($blog_list)): ?>
               <?php foreach ($blog_list as $blogRow): ?>
                 <div class="col-sm-3">
@@ -202,7 +162,14 @@
                         <img src="<?=base_url().$blogRow->blog_temp_image?>" class="card-img-top" alt="blog items image">
                       <div class="card-body">
                         <h5 class="card-title"><?=$blogRow->blog_heading?></h5>
-                        <p class="card-text"><?=$blogRow->blog_text?>.</p>
+                        <?php
+                          $blogText = '';
+                          if (!empty($blogRow->blog_text)) {
+                            $blogText = strip_tags($blogRow->blog_text);
+                          }
+                          $blogText = strlen($blogText) > 20  ? substr($blogText, 0,20).'...' : $blogText;
+                        ?>
+                        <p class="card-text"><?=$blogText?></p>
                         <a href="<?=base_url()?>blog?item=<?=$blogRow->blog_short_name?>" class="btn btn-custom">Read More <i class="bi bi-arrow-right"></i></a>
                       </div>
                     </div>

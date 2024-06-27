@@ -31,10 +31,6 @@
     border-bottom: 2px solid #050C9C !important;
 }
 
-.imgClass {
-    height: 500px;
-}
-
 .btn-custom {
     background-color: #050C9C !important;
     color: #fff !important;
@@ -229,6 +225,18 @@
     display: block;
 }
 
+.forMobileSection {
+    display: none;
+}
+
+.forDesktopSection {
+    display: block;
+}
+
+.imgClass {
+    height: 450px !important;
+}
+
 @media only screen and (max-width: 600px) {
     .dashboardContainerMobile {
         display: block;
@@ -240,5 +248,17 @@
 
     .imageDisplay {
         display: none;
+    }
+
+    .forMobileSection {
+        display: block;
+    }
+
+    .forDesktopSection {
+        display: none;
+    }
+
+    .imgClass {
+        height: 100% !important;
     }
 }
