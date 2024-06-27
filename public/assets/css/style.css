@@ -234,7 +234,7 @@
 }
 
 .imgClass {
-    height: 450px !important;
+    height: 450px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -259,6 +259,6 @@
     }
 
     .imgClass {
-        height: 100% !important;
+        height: 100%;
     }
 }
