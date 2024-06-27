@@ -1,17 +1,47 @@
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('content')?>
-    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="margin-top: 79px;">
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-          <img src="<?=base_url()?>carousel/assets/image1.jpg" class="d-block w-100 imgClass" alt="..." style="height:400px; width: 2048px;">
-        </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img src="<?=base_url()?>carousel/assets/image1.jpg" class="d-block w-100 imgClass" alt="..." style="height:400px; width: 2048px;">
-        </div>
-        <div class="carousel-item">
-          <img src="<?=base_url()?>carousel/assets/image1.jpg" class="d-block w-100 imgClass" alt="..." style="height:400px; width: 2048px;">
-        </div>
-      </div>
+
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="margin-top: 79px;">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="<?=base_url()?>carousel/assets/image1.jpg" class="d-block w-100 imgClass" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="<?=base_url()?>carousel/assets/image1.jpg" class="d-block w-100 imgClass" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="<?=base_url()?>carousel/assets/image1.jpg" class="d-block w-100 imgClass" alt="...">
+    </div>
+  </div>
+</div>
+
+<style>
+  .imgClass {
+    width: 100%;
+    height: auto;
+  }
+
+  @media (min-width: 1200px) {
+    .imgClass {
+      height: 400px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1199.98px) {
+    .imgClass {
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .imgClass {
+      height: 200px;
+    }
+  }
+</style>
+
+
+
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
