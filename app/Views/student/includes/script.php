@@ -6,7 +6,7 @@
 <script type="text/javascript">
           var baseUrl = "<?=base_url()?>";
 </script>
-<script src="<?=base_url()?>/assets/student/js/cart.js?v=1.0.1"></script>
+<script src="<?=base_url()?>/assets/student/js/cart.js?v=1.0.2"></script>
 <script src="<?=base_url()?>/assets/student/js/common.js?v=1.0.0"></script>
 <script type="text/javascript">
 </script>       

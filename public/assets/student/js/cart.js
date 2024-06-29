@@ -24,7 +24,7 @@ $(document).ready(function() {
                             if (response.success) {
                                 $(".cartCount").html(response.totalQty);
                             } else {
-                                window.location.href = baseUrl + 'login';
+                                window.location.href = baseUrl + 'auth?auth=login';
                             }
                         }
                     });
