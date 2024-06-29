@@ -24,7 +24,7 @@ $(document).ready(function() {
                             if (response.success) {
                                 $(".cartCount").html(response.totalQty);
                             } else {
-                                window.location.href = baseUrl + 'sign-in';
+                                window.location.href = baseUrl + 'login';
                             }
                         }
                     });
@@ -169,6 +169,8 @@ $(document).ready(function() {
             });
         });
     }
+
+    fetchCartItems();
 
     function fetchCartItems() {
         $.ajax({
