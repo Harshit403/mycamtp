@@ -16,6 +16,18 @@
             </a>
           </li>
         </ul>
+        <?php if (session()->get('studentDetails')!==null): ?>
+            <div class="dropdown signinDropdown forMobileSection">
+              <a class="dropdown-main" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                <img src="<?=base_url()?>assetItems/image/image1.jpg" class="img-circle" style="height: 40px; width:40px;">
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" style="left: -118px;">
+                <li><a class="dropdown-item" href="<?=base_url()?>dashboard">Dashboard</a></li>
+                <li><a class="dropdown-item" href="#">Invoice</a></li>
+                <li><a class="dropdown-item" href="<?=base_url()?>logout">Logout</a></li>
+              </ul>
+            </div>
+        <?php endif ?>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style="margin-left: -4rem!important;border: none;">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -65,7 +77,7 @@
           </div>
         </div>
         <?php if (session()->get('studentDetails')!==null): ?>
-            <div class="dropdown signinDropdown" style="margin-left: -4rem!important;">
+            <div class="dropdown signinDropdown forDesktopSection">
               <a class="dropdown-main" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                 <img src="<?=base_url()?>assetItems/image/image1.jpg" class="img-circle" style="height: 40px; width:40px;">
               </a>

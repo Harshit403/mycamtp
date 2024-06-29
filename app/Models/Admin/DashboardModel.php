@@ -1614,6 +1614,7 @@ class DashboardModel extends Model
         $builder = $this->db->table('purchase_table');
         $builder->select('purchase_table.*,cart_table.student_id');
         $builder->join('cart_table','cart_table.cart_id=purchase_table.cart_id','left');
+        $builder->where('cart_table.student_id',$student_id);
         $builder->orderBy('purchase_table.create_date','desc');
         $response = $builder->get()->getResult();
         return $response;

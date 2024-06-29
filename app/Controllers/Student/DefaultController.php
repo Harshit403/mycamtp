@@ -169,9 +169,9 @@
 
 	    public function loadDashboardPage($item_type=''){
 			$data['fetchLevels'] = $this->defaultModel->fetchLevelListModel();
-			$data['fetch_sub'] ='';
+			$fetch_sub ='';
 			$data['schedule_list'] = '';
-	        $data['notes_sub'] = '';
+	        $subject_id_details = '';
 	        if(session()->get('studentDetails')!==null){
 	            $studentDetails = session()->get('studentDetails');
 	            $student_id = $studentDetails['id'];
@@ -194,15 +194,21 @@
 	            	$subject_id_details = $this->defaultModel->getFreeNotesSubjectList(3,$level_id);
 	            }
 	            $i = 0;
-		        // foreach ($fetch_sub as $key => $value) {
-		        // 	$fetch_sub[$i]['subject_id'] = $this->encryptValue($value['subject_id']);
-		        // 	$i++;
-		        // }
+	            if (!empty($fetch_sub)) {
+	            	foreach ($fetch_sub as $key => $value) {
+			        	$fetch_sub[$i]['subject_id'] = $this->encryptValue($value['subject_id']);
+			        	$i++;
+			        }
+	            }
+		        
 	            $i = 0;
-		        foreach ($subject_id_details as $key => $value) {
-		        	($subject_id_details[$i])->subject_id = $this->encryptValue($value->subject_id);
-		        	$i++;
-		        }
+	            if (!empty($subject_id_details)) {
+	            	foreach ($subject_id_details as $key => $value) {
+			        	($subject_id_details[$i])->subject_id = $this->encryptValue($value->subject_id);
+			        	$i++;
+			        }
+	            }
+		        
 		        $data['fetch_sub'] = $fetch_sub;
 	            $data['notes_sub'] = $subject_id_details;
 		        $data['item_type'] = $item_type;

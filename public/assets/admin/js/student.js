@@ -117,30 +117,34 @@ $(document).ready(function() {
             },
             dataType: 'json',
             success: function(res) {
-                console.log(res);
-                var html = '<div style="max-height:400px;overflow-y: scroll;overflow-x:hidden;">';
-                $.each(res, function(i, v) {
-                    var purchaseStatusColor = 'text-danger';
-                    if (v.payment_status == 'Pending') {
-                        purchaseStatusColor = 'text-warning';
-                    } else if (v.payment_status == 'Credit') {
-                        purchaseStatusColor = 'text-success';
-                    }
-                    html += '<div class="row m-2">' +
-                        '<div class="col-md-12">' +
-                        '<div class="card p-3">' +
-                        '<div class="row">' +
-                        '<div class="col-md-6">' + v.order_id + '</div>' +
-                        '<div class="col-md-6 d-flex justify-content-end">' + v.total_payment_amount + '</div>' +
-                        '</div>' +
-                        '<div class="row">' +
-                        '<div class="col-md-12 d-flex justify-content-end ' + purchaseStatusColor + '">' + v.payment_status + '</div>' +
-                        '<div class="col-md-12  d-flex justify-content-end"> <b>Purchase Date:</b> ' + v.create_date + '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>' +
-                        '</div>';
-                });
+                var html = '<div style="max-height:400px;overflow: auto;">';
+                if (res != '') {
+                    $.each(res, function(i, v) {
+                        var purchaseStatusColor = 'text-danger';
+                        if (v.payment_status == 'Pending') {
+                            purchaseStatusColor = 'text-warning';
+                        } else if (v.payment_status == 'PAID') {
+                            purchaseStatusColor = 'text-success';
+                        }
+                        html += '<div class="row m-2">' +
+                            '<div class="col-md-12">' +
+                            '<div class="card p-3">' +
+                            '<div class="row">' +
+                            '<div class="col-md-6">' + v.order_id + '</div>' +
+                            '<div class="col-md-6 d-flex justify-content-end">' + v.total_payment_amount + '</div>' +
+                            '</div>' +
+                            '<div class="row">' +
+                            '<div class="col-md-12 d-flex justify-content-end ' + purchaseStatusColor + '">' + v.payment_status + '</div>' +
+                            '<div class="col-md-12  d-flex justify-content-end"> <b>Purchase Date:</b> ' + v.create_date + '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    });
+                } else {
+                    html += 'No purchase history available';
+                }
+
                 html += '</div>';
                 $(dialog).find('#v-pills-purchase-history').html(html);
             }
@@ -188,103 +192,6 @@ $(document).ready(function() {
             }
         });
     }
-
-    // function fetchSubjectStatus(student_id) {
-    //     $.ajax({
-    //         url: baseUrl + 'admin/subject-list',
-    //         type: 'POST',
-    //         data: {
-    //             student_id: student_id,
-    //         },
-    //         dataType: 'json',
-    //         success: function(response) {
-    //             var html = '';
-    //             var html2 = '<div class="d-flex align-items-start">' +
-    //                 '<div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">' +
-    //                 '<button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Purchase History</button>' +
-    //                 '<button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Active Course</button>' +
-    //                 '<button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Block Course</button>' +
-    //                 '<button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Payment Mode</button>' +
-    //                 '</div>';
-    //             if (response.length > 0) {
-    //                 $.each(response, function(i, v) {
-    //                     // if (v.active == '1') {
-    //                     //     var check = 'checked';
-    //                     // } else {
-    //                     //     var check = '';
-    //                     // }
-    //                     // html += '<div class="row border border-1 mb-2">' +
-    //                     //     '<div class="col-md-8">' +
-    //                     //     '<div><b>Level : </b>' + v.level_name + '</div>' +
-    //                     //     '<div><b>Type : </b>' + v.type_name + '</div>' +
-    //                     //     '<div><b>Subject : </b>' + v.subject_name + '</div>' +
-    //                     //     '<div><b> Date of Purchase : </b>' + v.purchase_date + '</div>' +
-    //                     //     '<div><b>Payment Mode : </b>' + v.payment_mode + '</div>' +
-    //                     //     '<div><b>Amount Paid : </b>' + v.total_payment_amount + '</div>' +
-    //                     //     '<div><b>Promocode Used : </b>' + v.promo_code_name + '</div>' +
-    //                     //     '</div>' +
-    //                     //     '<div class="col-md-4 text-right d-flex align-items-center justify-content-end">' +
-    //                     //     '<div class="form-group">' +
-    //                     //     '<div class="custom-control custom-switch">' +
-    //                     //     '<input type="checkbox" class="custom-control-input activeToggleClass" id="activeBtn' + v.cart_items_id + '" ' + check + ' data-cart-items-id="' + v.cart_items_id + '">' +
-    //                     //     '<label class="custom-control-label" for="activeBtn' + v.cart_items_id + '"></label>' +
-    //                     //     '</div>' +
-    //                     //     '</div>' +
-    //                     //     '</div>' +
-    //                     //     '</div>';
-
-    //                 });
-    //                 html2 += '<div class="tab-content" id="v-pills-tabContent">' +
-    //                     '<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">purchase_history</div>' +
-    //                     '<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">active_course</div>' +
-    //                     '<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">Block Course</div>' +
-    //                     '<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">Payment Mode</div>' +
-    //                     '</div>';
-    //                 html2 += '</div>';
-    //                 let dialog = bootbox.dialog({
-    //                     title: 'Set Visibility',
-    //                     size: 'large',
-    //                     message: '<div style="max-height:400px;overflow-y: scroll;overflow-x:hidden;">' + html2 + '</div>',
-    //                     closeButton: false,
-    //                     buttons: {
-    //                         update: {
-    //                             label: 'Ok',
-    //                             className: 'btn-info',
-    //                         }
-    //                     }
-    //                 });
-    //                 dialog.init(function() {
-    //                     $(dialog).find(".activeToggleClass").on('change', function() {
-    //                         var status = $(this).is(":checked");
-    //                         var cart_items_id = $(this).data("cart-items-id");
-    //                         $.ajax({
-    //                             url: baseUrl + 'admin/change-subject-visibility',
-    //                             type: 'POST',
-    //                             data: {
-    //                                 active: (status == true ? '1' : '0'),
-    //                                 cart_items_id: cart_items_id,
-    //                             },
-    //                             dataType: 'json',
-    //                             success: function(data) {
-    //                                 if (data.success) {
-    //                                     bootbox.hideAll();
-    //                                     fetchSubjectStatus(student_id);
-    //                                 }
-    //                             }
-    //                         })
-    //                     });
-
-    //                 });
-    //             } else {
-    //                 bootbox.alert({
-    //                     message: "No subject is available",
-    //                     closeButton: false,
-    //                 });
-    //             }
-    //         }
-    //     })
-
-    // }
 
     $("#exportStudentDetails").on('click', function() {
         var searchData = $('.dataTables_filter input').val();

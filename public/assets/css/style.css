@@ -241,6 +241,11 @@
     box-shadow: none !important;
 }
 
+.signinDropdown {
+    margin-left: -1rem;
+}
+
+
 @media only screen and (max-width: 600px) {
     .dashboardContainerMobile {
         display: block;
@@ -260,6 +265,10 @@
 
     .forDesktopSection {
         display: none;
+    }
+
+    .signinDropdown {
+        margin-left: -3rem;
     }
 
     .imgClass {
