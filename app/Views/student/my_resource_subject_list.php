@@ -8,33 +8,6 @@
             <h2>Subject List</h2>
         </div>
         <div class="row my-4 subjectContainer">
-            <!-- <?php  
-                $gridListClass = !empty($fetchAvailbleSubject) ? 'grid-list' : '';
-            ?>
-            <ul class="<?=$gridListClass?>">
-                    <?php 
-                    if(!empty($fetchAvailbleSubject)){
-                        foreach ($fetchAvailbleSubject as $subjectRow) {
-                            ?>
-                                <li>
-                                    
-                                </li>
-                            <?php
-                        }
-                    } else {
-                        ?>
-                            <li style="display: flex; justify-content: center;">
-                                <div>
-                                    <div style="text-align: center;">
-                                        <i class="fas fa-lock" style="font-size: 100px;"></i>
-                                    </div>
-                                    <a class="h2 btn" href="<?=base_url()?>level/level-list">Buy any plan</a>
-                                </div>
-                            </li>
-                        <?php
-                    }
-                    ?>
-            </ul> -->
             <?php if (!empty($fetchAvailbleSubject)): ?>
                 <?php foreach ($fetchAvailbleSubject as $key => $subjectRow): ?>
                     <div class="col-md-3">

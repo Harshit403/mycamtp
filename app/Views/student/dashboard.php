@@ -35,9 +35,6 @@
 	    .largeBtn{
 	        background-color: #fafbff !important;
 	    }
-       /* .menuItemMobile{
-            background-color:#1AB79D !important; 
-        }*/
 	</style>
 	<section style="margin-top: 6rem;" class="container">
 		<?php

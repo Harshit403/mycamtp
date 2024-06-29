@@ -5,7 +5,9 @@
     </div>
    <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm p-3 bg-body rounded">
       <div class="container-fluid">
-        <a class="navbar-brand fs-4" href="#"><img src="<?=base_url()?>/assetItems/image/logo.jpg" style="height:3rem;"></a>
+        <a class="navbar-brand fs-4" href="<?=base_url()?>">
+          <img src="<?=base_url()?>/assetItems/image/logo.jpg" style="height:3rem;">
+        </a>
         <ul class="navbar-nav">
           <li class="nav-item forMobileSection">
             <a class="nav-link showCartBtn" href="javascript:void(0)" class="btn">
