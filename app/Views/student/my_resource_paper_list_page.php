@@ -3,7 +3,7 @@
     Paper List
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
-    <section class="container mt-3 mb-5 section">
+    <section class="container mt-5 mb-5 section">
         <div class="text-center">
             <h2>Paper List</h2>
         </div>

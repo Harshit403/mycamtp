@@ -25,7 +25,8 @@ $routes->post('/promo/remove-promocode',STUDENT.'DefaultController::removePromoc
 
 $routes->get('/purchase-status',STUDENT.'DefaultController::purchaseStatus');
 $routes->get('/logout',STUDENT.'DefaultController::logOutUser');
-$routes->get('/my-resources/paper/(:any)',STUDENT.'DefaultController::loadPaperListPage/$1');
+$routes->get('/my-resources/subject',STUDENT.'DefaultController::loadMyResourceSubjectPage');
+$routes->get('/my-resources/paper',STUDENT.'DefaultController::loadPaperListPage');
 $routes->post('/fetch-level-list',STUDENT.'DefaultController::fetchLevelListInfo');
 $routes->get('/blog',STUDENT.'DefaultController::displayBlogDetails');
 $routes->get('/blog-list',STUDENT.'DefaultController::loadBlogListPage');
@@ -38,16 +39,13 @@ $routes->get('/about-us',STUDENT.'DefaultController::loadAboutUs');
 $routes->get('/disclaimer',STUDENT.'DefaultController::loadDisclaimer');
 
 
+
 // ADMIN
-
 $routes->get('/login', ADMIN.'LoginController::loadLoginPage');
-
 $routes->post('/verify/adminlogin', ADMIN.'LoginController::verifyAdminLogin');
 $routes->get('/admin/logout',ADMIN.'LoginController::logoutAdmin');
 $routes->get('/page/access-denied',ADMIN.'LoginController::loadAccessDenied');
-
 $routes->get('/admin_panel',ADMIN.'DashboardController::loadAdminPanel',['filter' => 'authGuard']);
-
 // Category 
 $routes->get('/admin/add-category',ADMIN.'DashboardController::loadAddCategoryPage',['filter' => 'authGuard']);
 $routes->get('/admin/add-category/(:any)',ADMIN.'DashboardController::loadAddCategoryPage/$1',['filter' => 'authGuard']);

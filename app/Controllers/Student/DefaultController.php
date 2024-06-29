@@ -665,34 +665,45 @@
 			return redirect()->to('/auth?auth=login');
 		}
 
-		public function loadPaperListPage($subject_id='',$item_type=''){
-	        if(session()->get('studentDetails')!==null){
-	            $studentDetails = session()->get('studentDetails');
-	            $data['fetchLevels'] = $this->defaultModel->fetchLevelListModel();
-	            $data['item_type'] = $item_type;
-	            // $subject_id = $this->decryptValue($subject_id);
-	            if ($item_type!='free') {
-	                $cartIdArray = $this->getCartId();
-	                $validateSubject = '';
-	                if($cartIdArray['success']){
-	                    $cart_id = $cartIdArray['data'];
-	                    $validateSubject = $this->common->getInfo('cart_items_table','row',array('cart_id'=>$cart_id,'subject_id'=>$subject_id,'payment_status'=>'Credit'));
-	                }
-	                if(empty($validateSubject)){
-	                    throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
-	                } else {
-	                    if (!empty($subject_id)) {
-	                        $data['getPaperDetails'] = $this->defaultModel->getPaperListModel($subject_id);
-	                        return view('student/my_resource_paper_list_page',$data);
-	                    } else {
-	                        throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
-	                    }
-	                }
-	            } else{
-	                $data['getPaperDetails'] = $this->defaultModel->getPaperListModel($subject_id,'free');
-	                return view('student/my_resource_paper_list_page',$data);
-	            }
-	        }
+		public function loadPaperListPage(){
+			$getItem = $this->request->getGet();
+			if (isset($getItem['subject'])) {
+				$subject_short_name = $getItem['subject'];
+				if(session()->get('studentDetails')!==null){
+		            $studentDetails = session()->get('studentDetails');
+		            $data['fetchLevels'] = $this->defaultModel->fetchLevelListModel();
+		            $item_type = '';
+		            if (isset($getItem['item_type'])) {
+		            	$item_type = $getItem['item_type'];
+		            }
+		            $data['item_type'] = $item_type;
+		            if ($item_type!='free') {
+		                $cartIdArray = $this->getCartId();
+		                $validateSubject = '';
+		                if($cartIdArray['success']){
+		                    $cart_id = $cartIdArray['data'];
+		                    $validateSubject = $this->defaultModel->validatePurchasedSubject($subject_short_name,$cart_id);
+		                }
+		                if(empty($validateSubject)){
+
+		                    throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+		                } else {
+		                    if (!empty($subject_short_name)) {
+		                        $data['getPaperDetails'] = $this->defaultModel->getPaperListModel('','',$subject_short_name);
+		                        return view('student/my_resource_paper_list_page',$data);
+		                    } else {
+		                        throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+		                    }
+		                }
+		            } else{
+		                $data['getPaperDetails'] = $this->defaultModel->getPaperListModel('','free',$subject_short_name);
+		                return view('student/my_resource_paper_list_page',$data);
+		            }
+		        }
+			} else {
+                throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+			}
+	        
 	    }
 
 	    public function fetchLevelListInfo(){
@@ -745,6 +756,32 @@
 			return view('student/disclaimer');
 		}
 
+		public function loadMyResourceSubjectPage($item_type=''){
+	        $data['fetchAvailbleSubject'] ='';
+	        if(session()->get('studentDetails')!==null){
+	            $studentDetails = session()->get('studentDetails');
+	            $data['item_type'] = $item_type;
+	            if ($item_type!='free') {
+	                $cartIdArray = $this->getCartId();
+	                if($cartIdArray['success']){
+	                    $cart_id = $cartIdArray['data'];
+	                    $fetchAvailbleSubject = $this->defaultModel->fetchAvailableSubject($cart_id);
+	                }
+	            } else {
+	                $student_id = session()->get('studentDetails')['id'];
+	                $studentInfo = $this->common->getInfo('student_table','row',array('student_id'=>$student_id));
+	                $level_id = $studentInfo->current_level;
+	                // $fetchAvailbleSubject = $this->defaultModel->fetchFreeSubject('',$level_id);
+	            }
+	            $i = 0;
+	            foreach ($fetchAvailbleSubject as $key => $value) {
+	                $fetchAvailbleSubject[$i]['subject_id'] = $this->encryptValue($value['subject_id']);
+	                $i++;
+	            }
+	            $data['fetchAvailbleSubject'] = $fetchAvailbleSubject;
+	        }
+	        return view('student/my_resource_subject_list',$data);
+	    }
 
 		
 	}

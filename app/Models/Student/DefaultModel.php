@@ -37,9 +37,9 @@
 		public function fetchSubjectListModel($type_short_name=''){
 			$builder = $this->db->table('subject_table');
 			$builder->select('subject_table.*,level_table.level_short_name,category_table.category_short_name,type_table.type_short_name,level_table.level_name,type_table.type_name,category_table.category_name');
-			$builder->join('type_table','type_table.type_id=subject_table.type_id','left');
-			$builder->join('level_table','level_table.level_id=subject_table.level_id','left');
-			$builder->join('category_table','category_table.category_id=level_table.category_id','left');
+			$builder->join('type_table','type_table.type_id=subject_table.type_id');
+			$builder->join('level_table','level_table.level_id=subject_table.level_id');
+			$builder->join('category_table','category_table.category_id=level_table.category_id');
 			$builder->where('subject_table.deleted',0);
 			$builder->where('type_table.deleted',0);
 			$builder->where('level_table.deleted',0);
@@ -107,11 +107,11 @@
 
 	    public function fetchAvailableSubject($cart_id='',$limit=''){
 	        $builder = $this->db->table('cart_items_table');
-	        $builder->select('cart_items_table.*, subject_table.subject_name,type_table.type_name,level_table.level_name,type_table.schedule_file,type_table.access');
+	        $builder->select('cart_items_table.*, subject_table.subject_name,subject_table.subject_short_name,type_table.type_name,level_table.level_name,type_table.schedule_file,type_table.access');
 	        $builder->join('subject_table','subject_table.subject_id=cart_items_table.subject_id','left');
 	        $builder->join('type_table','type_table.type_id=subject_table.type_id','left');
 	        $builder->join('level_table','level_table.level_id=subject_table.level_id','left');
-	        $builder->join('category_table','level_table.level_id=subject_table.level_id','left');
+	        $builder->join('category_table','category_table.category_id=level_table.category_id','left');
 	        if (!empty($cart_id)) {
 	            $builder->where('cart_items_table.cart_id',$cart_id);
 	            $builder->where('cart_items_table.payment_status','PAID');
@@ -200,16 +200,22 @@
 	        return $response;
 	    }
 
-	    public function getPaperListModel($subject_id='',$type=''){
+	    public function getPaperListModel($subject_id='',$type='',$subject_short_name=''){
 	        $currentDateTime = date("Y-m-d H:i:s");
 	        $builder = $this->db->table('paper_table');
-	        $builder->where('subject_id',$subject_id);
-	        $builder->where('deleted','0');
-	        $builder->where('active','1');
-	        if (!empty($type) && $type=='free') {
-	            $builder->where('type','free');
+	        $builder->select('paper_table.*,subject_table.subject_short_name');
+	        $builder->join('subject_table','subject_table.subject_id=paper_table.subject_id');
+	        if (!empty($subject_id)) {
+	        	$builder->where('paper_table.subject_id',$subject_id);
+	        } else if ($subject_short_name) {
+	        	$builder->where('subject_table.subject_short_name',$subject_short_name);
 	        }
-	        $builder->where('schedule_date <=',$currentDateTime);
+	        $builder->where('paper_table.deleted','0');
+	        $builder->where('paper_table.active','1');
+	        if (!empty($type) && $type=='free') {
+	            $builder->where('paper_table.type','free');
+	        }
+	        $builder->where('paper_table.schedule_date <=',$currentDateTime);
 	        $records = $builder->get()->getResultArray();
 	        return $records;
 	    }
@@ -223,6 +229,19 @@
 	    	}
 	    	$records = $builder->get()->getResult();
 	        return $records;
+	    }
+
+	    public function validatePurchasedSubject($subject_short_name='',$cart_id=''){
+	    	$builder = $this->db->table('cart_items_table');
+	    	$builder->select('cart_items_table.*,');
+	    	$builder->where('cart_items_table.deleted',1);
+	    	$builder->where('cart_items_table.deleted',1);
+	    	$builder->where('cart_items_table.payment_status','PAID');
+	    	$builder->join('subject_table','subject_table.subject_id=cart_items_table.subject_id');
+	    	$builder->where('cart_items_table.cart_id',$cart_id);
+	    	$builder->where('subject_table.subject_short_name',$subject_short_name);
+	    	$records = $builder->get()->getResult();
+	    	return $records;
 	    }
 	}
 ?>

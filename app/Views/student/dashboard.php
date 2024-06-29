@@ -1,25 +1,31 @@
 <?= $this->extend('student/layout/dashboard_layout') ?>
 <?=$this->section('content')?>
 	<style type="text/css">
-	    .btnClass{
-	        width: 117px;
-	        height: 115px;
-	        border-radius: 6px;
-	        margin-top: 3rem;
-	        background-color: #FFF !important;
-	    }
+	    .flexMobileContainer{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            grid-gap: 10px;
+        }
+        .flexMobileContainer > .grid-Elem {
+            background-color: #fafbff !important;
+            flex: 1;
+        }
+        .grid-Elem .btnClass {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
 	    .btnClass:nth-of-type(3) {
 	      padding-right: 0px !important;
 	    }
 	    .btnClass > i{
 	        font-size: 40px;
-	        height: 70%;
-	        display: flex;
-	        justify-content: center;
-	        align-items: center;
 	        color: #1AB79D !important;
 	    }
-	    .btnClass > p{
+	    .btnClass > p, .largeBtn > p{
 	        font-weight: bold;
 	        font-size: 14px;
 	    }
@@ -27,10 +33,13 @@
 	        color: grey;
 	    }
 	    .largeBtn{
-	        background-color: #FFF !important;
+	        background-color: #fafbff !important;
 	    }
+       /* .menuItemMobile{
+            background-color:#1AB79D !important; 
+        }*/
 	</style>
-	<section style="margin-top: 79px;" class="container">
+	<section style="margin-top: 6rem;" class="container">
 		<?php
 	        $studentData = (session()->get('studentDetails')!==null) ? session()->get('studentDetails') : '';
 	        $timestamp = time();
@@ -65,16 +74,10 @@
                         <div class="col-12 font-weight-bold">
                             Connect With Us
                         </div>
-                        <div class="col-3">
+                        <div class="d-flex flex-wrap flex-row justify-content-around align-items-center">
                             <a href="https://Instagram.com/mycsmtp" style="color: #1AB79D;font-size: 20px;"><i class="bi bi-instagram"></i></a>
-                        </div>
-                        <div class="col-3">
                             <a href="https://telegram.dog/mycsmtp" style="color: #1AB79D;font-size: 20px;"><i class="bi bi-telegram"></i></a>
-                        </div>
-                        <div class="col-3">
                             <a href="https://facebook.com/mycsmtp" style="color: #1AB79D;font-size: 20px;"><i class="bi bi-facebook"></i></a>
-                        </div>
-                        <div class="col-3">
                             <a href="https://youtube.com/@mycsmtp" style="color: #1AB79D;font-size: 20px;"><i class="bi bi-youtube"></i></a>
                         </div>
                     </div>
@@ -82,45 +85,43 @@
             </div>
         </div>
         <div class="dashboardContainerMobile my-3" >
-            <div class="row">
-                <div class="col-12 " style="text-align: right;">
+            <!-- <div class="row"> -->
+               <!--  <div class="col-12 " style="text-align: right;">
                     <?php if (!empty($item_type) && $item_type=='free'): ?>
                         <a href="<?=base_url()?>dashboard" class="btn btn-success">Paid Content</a> 
                         <?php else: ?>
                         <a href="<?=base_url()?>dashboard/free" class="btn btn-success freeBtn">Free Content</a>   
                     <?php endif ?>
+                </div> -->
+            <div class="flexMobileContainer">
+                <div class="grid-Elem">
+                    <a href="<?=base_url()?>my-resources/subject" class="btn btnClass btn-sm"><i class="bi bi-newspaper"></i> <p>Test Paper</p></a>
                 </div>
-                <div class="col-4">
-                    <a href="<?=base_url()?>my-resources/subject/<?=$item_type?>" class="btn btnClass btn-sm"><i class="bi bi-newspaper"></i> <p>Test Paper</p></a>
+                <div class="grid-Elem">
+                     <a href="<?=base_url()?>notes/subject-list" class="btn btnClass btn-sm"><i class="bi bi-clipboard-fill"></i><p>Notes</p></a>
                 </div>
-                <div class="col-4">
-                    <a href="<?=base_url()?>notes/subject-list" class="btn btnClass btn-sm"><i class="bi bi-clipboard-fill"></i><p>Notes</p></a>
-                </div>
-                <div class="col-4">
+                <div class="grid-Elem">
                     <a href="<?=base_url()?>amendment/subject-list" class="btn btnClass btn-sm"><i class="bi bi-clipboard-fill"></i><p>Amendments</p></a>
                 </div>
-                <div class="col-4">
+                <div class="grid-Elem">
                     <a href="<?=base_url()?>qbank/subject-list" class="btn btnClass btn-sm"><i class="bi bi-book-fill"></i><p>Question Bank</p></a>
                 </div>
-                <div class="col-4">
+                <div class="grid-Elem">
                     <a href="<?=base_url()?>level/level-list" class="btn btnClass btn-sm"><i class="bi bi-cart-check-fill"></i><p>Buy Now</p></a>
                 </div>
-                <div class="col-4">
+                <div class="grid-Elem">
                     <a href="#" class="btn btnClass btn-sm"><i class="bi bi-people-fill"></i><p>Mentoring</p></a>
                 </div>
-                <div class="col-4">
-                    <a href="#" class="btn btnClass btn-sm"><i class="bi bi-chat-fill"></i> <p>Doubts</p></a>
-                </div>
-                <div class="col-4">
+                <div class="grid-Elem">
                     <a href="#" class="btn btnClass btn-sm"><i class="bi bi-calendar-fill"></i> <p>Schedule</p></a>
                 </div>
-                <div class="col-4">
+                <div class="grid-Elem">
                     <a href="<?=base_url()?>contact-us" class="btn btnClass btn-sm"><i class="bi bi-telephone-fill"></i><p>Contact Us</p></a>
                 </div>
-            </div>
-            <div class="row  mt-5">
-                <div class="col-md-12">
-                    <a href="#" style="width: 100% !important;height: 50px; font-size: 20px; font-weight: bold; text-align: left;" class="btn p-3 largeBtn"><i class="bi bi-chat-fill" style="color: #1AB79D"></i> Ask Your Query</a>
+                <div class="grid-Elem">
+                </div>
+                <div class="grid-Elem" style="flex-basis: 100%;">
+                    <a href="#" style="width: 100% !important;height: 50px; font-size: 20px; font-weight: bold; text-align: left;" class="btn p-3 largeBtn "><p><i class="bi bi-chat-fill" style="color: #1AB79D"></i> Ask Your Query</p></a>
                 </div>
             </div>
         </div>
@@ -136,7 +137,7 @@
                                 <h4 class="text-dark">My Test Papers</h4>
                             </div>
                             <div>
-                                <a href="<?=base_url()?>my-resources/subject/<?=$item_type?>" class="font-weight-bold text-decoration-underline">View More</a>
+                                <a href="<?=base_url()?>my-resources/subject" class="btn btn-sm btn-custom"><i class="bi bi-list"></i> View More</a>
                             </div>
                         </div>
                         <div class="card-body p-3">
@@ -146,7 +147,7 @@
                                         <li class="list-group-item">
                                             <div class="d-flex justify-content-between">
                                             <div><?=$value['subject_name']?></div>
-                                            <div><a class="btn btn-sm" style="background-color: #C7D2FE" href="<?=base_url()?>my-resources/paper/<?=$value['subject_id'].'/'.$item_type?>"><i class="bi bi-arrow-right"></i></a></div>
+                                            <div><a class="btn btn-sm" style="background-color: #C7D2FE" href="<?=base_url()?>my-resources/paper?subject=<?=$value['subject_short_name']?>"><i class="bi bi-arrow-right"></i></a></div>
                                             </div>
                                         </li>
                                     <?php endforeach ?>
@@ -185,7 +186,7 @@
                                 <h4 class="text-dark">My Notes</h4>
                             </div>
                             <div>
-                                <a href="<?=base_url()?>notes/subject-list/<?=$item_type?>" class="font-weight-bold text-decoration-underline">View More</a>
+                                <a href="<?=base_url()?>notes/subject-list/<?=$item_type?>" class="btn btn-sm btn-custom"><i class="bi bi-list"></i> View More</a>
                             </div>
                         </div>
                         <div class="card-body p-3">
@@ -234,7 +235,7 @@
                                 <h4 class="text-dark">Amendments</h4>
                             </div>
                             <div>
-                                <a href="<?=base_url()?>amendment/subject-list" class="font-weight-bold text-decoration-underline">View More</a>
+                                <a href="<?=base_url()?>amendment/subject-list" class=" btn btn-sm btn-custom"><i class="bi bi-list"></i> View More</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -284,7 +285,7 @@
                                     <h4 class="text-dark">Question Bank</h4>
                                 </div>
                                 <div>
-                                    <a href="<?=base_url()?>qbank/subject-list" class="font-weight-bold text-decoration-underline">View More</a>
+                                    <a href="<?=base_url()?>qbank/subject-list" class=" btn btn-sm btn-custom"><i class="bi bi-list"></i> View More</a>
                                 </div>
                             </div>
                             <div class="card-body">
