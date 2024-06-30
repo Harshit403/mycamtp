@@ -2,14 +2,13 @@
 <?=$this->section('content')?>
 
 <style>
-
 /* Custom card styles */
 .custom-category-child {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0;
+    margin: 10px 0; /* Adds 10px margin above and below each card */
 }
 
 .custom-category-card {
@@ -29,7 +28,7 @@
 }
 
 .custom-category-card-content {
-    font-size: 1.5em; /* Font size */
+    font-size: 1.2em; /* Reduced font size by 20% */
     color: white;
     font-weight: bold;
 }
@@ -38,30 +37,30 @@
 .custom-category-child::before {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%; /* Width of the pulse effect */
-    height: 40px; /* Reduced height of the pulse effect */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: calc(100% + 20px); /* Width of the pulse effect (increased to include margins) */
+    height: 60px; /* Height of the pulse effect (increased to include margins) */
     background: rgba(100, 81, 206, 0.4); /* Pulse effect color */
     border-radius: 15px; /* Border radius to match the card */
-    transform: translate(-50%, -50%);
     animation: pulse 2s infinite;
     z-index: -1;
 }
 
 @keyframes pulse {
     0% {
-        transform: translate(-50%, -50%) scale(1);
+        transform: scale(1);
         opacity: 1;
     }
     100% {
-        transform: translate(-50%, -50%) scale(1.2);
+        transform: scale(1.2);
         opacity: 0;
     }
 }
 
-
-	
 </style>
 
 <section class="container level_conatainer" style="padding-top: 5rem;">
