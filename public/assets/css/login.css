@@ -191,3 +191,7 @@ body {
     text-align: center;
     padding: 20px 0px;
 }
+
+p {
+    font-family: 'Montserrat', sans-serif;
+}
