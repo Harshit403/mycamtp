@@ -23,7 +23,7 @@
   </div>
     <section class="header-text container py-5" id="intro-section">
         <h1 class="text-uppercase text-center">The Key of <font class="text-success">success</font></h1>
-        <p></p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        <p style="background-color: #F1F0FE;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
