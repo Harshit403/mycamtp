@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0; /* Adds 10px margin above and below each card */
+    margin: 15px 0; /* Adds 10px margin above and below each card */
 }
 
 .custom-category-card {
