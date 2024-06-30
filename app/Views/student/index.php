@@ -30,7 +30,7 @@
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </section>
- <!--  <section class="py-5 category container" id="category-section">
+   <section class="py-5 category container" id="category-section">
         <h1 class="text-uppercase text-center">Category</h1>
         <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
           <?php if (!empty($categoryDetails)): ?>
@@ -41,8 +41,8 @@
               <?php endforeach ?>
           <?php endif ?>
         </div>
-    </section> -->
-
+</section>
+<!--
 <section class="py-3 category container" id="category-section">
     <h1 class="text-uppercase text-center mb-4">Category</h1>
     <div id="category-parent" class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
@@ -131,7 +131,7 @@
         opacity: 0;
     }
 }
-</style>
+</style> -->
 
 
     <section class="py-5 container" id="content-section">
@@ -384,6 +384,121 @@
         </div>
 
 
+<!-- <style>
+
+.unique-newsletter-box {
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    font-weight: bold;
+    color: #2D3748;
+}
+
+.unique-text-primary {
+    color: #6B46C1 !important;
+}
+
+.unique-btn-primary {
+    background-color: #6B46C1;
+    border-color: #6B46C1;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 15px 0;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.unique-btn-primary:hover,
+.unique-btn-primary:focus,
+.unique-btn-primary:active {
+    background-color: #553C9A;
+    border-color: #553C9A;
+    color: white; /* Ensures text stays white on hover and focus */
+}
+
+.unique-input {
+    border-radius: 50px;
+    border: 1px solid #E2E8F0;
+    padding: 15px;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.unique-checkmark {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: #6B46C1;
+    border-radius: 50%;
+    position: relative;
+}
+
+.unique-checkmark::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    transform: rotate(45deg);
+}
+
+@media (max-width: 576px) {
+    .unique-newsletter-box {
+        padding: 20px;
+    }
+
+    .unique-btn-primary {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .unique-input {
+        padding: 10px;
+    }
+}
+</style>
+
+      
+<div class="unique-newsletter-box">
+    <h6 class="unique-text-primary mb-2">NEWSLETTER</h6>
+    <h2 class="mb-4">Join to get exclusive contents for free.</h2>
+    <form class="mb-4">
+        <div class="form-group">
+            <input type="email" class="form-control unique-input" placeholder="Email address" required>
+        </div>
+        <button type="submit" class="btn unique-btn-primary btn-block">Join Now</button>
+    </form>
+    <ul class="list-unstyled">
+        <li class="d-flex align-items-center mb-2">
+            <span class="unique-checkmark"></span>
+            <span>Get weekly reports</span>
+        </li>
+        <li class="d-flex align-items-center mb-2">
+            <span class="unique-checkmark"></span>
+            <span>Unlimited free resources</span>
+        </li>
+        <li class="d-flex align-items-center">
+            <span class="unique-checkmark"></span>
+            <span>Premium contents</span>
+        </li>
+    </ul>
+</div> -->
+
+
+      
 
 
     </section>
