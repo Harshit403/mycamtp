@@ -382,6 +382,44 @@
                
             </div>
         </div>
+
+
+
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="text-center unique-newsletter-box">
+            <h6 class="unique-text-primary mb-2">NEWSLETTER</h6>
+            <h2 class="mb-4">Join to get exclusive contents for free.</h2>
+            <form class="mb-4">
+                <div class="form-group">
+                    <input type="email" class="form-control unique-input" placeholder="Email address" required>
+                </div>
+                <button type="submit" class="btn unique-btn-primary btn-block">Join Now</button>
+            </form>
+            <ul class="list-unstyled">
+                <li class="d-flex align-items-center mb-2">
+                    <span class="unique-checkmark"></span>
+                    <span>Get weekly reports</span>
+                </li>
+                <li class="d-flex align-items-center mb-2">
+                    <span class="unique-checkmark"></span>
+                    <span>Unlimited free resources</span>
+                </li>
+                <li class="d-flex align-items-center">
+                    <span class="unique-checkmark"></span>
+                    <span>Premium contents</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+      
+
+
+
+      
     </section>
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
