@@ -73,7 +73,7 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px 20px;
+    gap: 13px 20px;
 }
 
 /* Child class for each card */
@@ -86,8 +86,8 @@
 
 /* Card class */
 #category-parent .category-card {
-    width: 300px; /* Card width */
-    height: 100px; /* Card height */
+    width: 350px; /* Card width */
+    height: 85px; /* Card height */
     background: #6451CE; /* Card background color */
     border-radius: 15px; /* Card border radius */
     display: flex;
@@ -114,7 +114,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 300px; /* Width of the pulse effect */
+    width: 250px; /* Width of the pulse effect */
     height: 100px; /* Height of the pulse effect */
     background: rgba(100, 81, 206, 0.4); /* Pulse effect color */
     border-radius: 15px; /* Border radius to match the card */
