@@ -384,7 +384,83 @@
         </div>
 
 
+<style>
 
+.unique-newsletter-box {
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-weight: bold;
+    color: #2D3748;
+}
+
+.unique-text-primary {
+    color: #6B46C1 !important;
+}
+
+.unique-btn-primary {
+    background-color: #6B46C1;
+    border-color: #6B46C1;
+    font-weight: bold;
+    border-radius: 50px;
+}
+
+.unique-btn-primary:hover {
+    background-color: #553C9A;
+    border-color: #553C9A;
+}
+
+.unique-input {
+    border-radius: 50px;
+    border: 1px solid #E2E8F0;
+    padding: 15px;
+}
+
+.unique-checkmark {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: #6B46C1;
+    border-radius: 50%;
+    position: relative;
+}
+
+.unique-checkmark::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    transform: rotate(45deg);
+}
+
+@media (max-width: 576px) {
+    .unique-newsletter-box {
+        padding: 15px;
+    }
+
+    .unique-btn-primary {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .unique-input {
+        padding: 10px;
+    }
+}
+
+  
+</style>
 
       
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
