@@ -44,7 +44,7 @@
     </section> -->
 
 <section class="py-3 category container" id="category-section">
-    <h1 class="text-uppercase text-center mb-2">Category</h1>
+    <h1 class="text-uppercase text-center mb-4">Category</h1>
     <div id="category-parent" class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
         <?php if (!empty($categoryDetails)): ?>
             <?php foreach ($categoryDetails as $categoryRow): ?>
