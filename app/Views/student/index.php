@@ -48,15 +48,9 @@
     <div id="category-parent" class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
         <?php if (!empty($categoryDetails)): ?>
             <?php foreach ($categoryDetails as $categoryRow): ?>
-                <a class="category-link stretched-link" href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" style="text-decoration: none;">
-                    <div class="category-child">
-                        <div class="category-card">
-                            <div class="category-card-content">
-                                <?=$categoryRow->category_name?>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+                  <a class="strached-link" href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" style="text-decoration: none;"><div class="card">
+                      <h2><?=$categoryRow->category_name?></h2>
+                  </div></a>
             <?php endforeach ?>
         <?php endif ?>
     </div>
