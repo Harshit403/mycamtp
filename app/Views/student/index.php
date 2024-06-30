@@ -30,7 +30,7 @@
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </section>
-    <section class="py-5 category container" id="category-section">
+  <!--  <section class="py-5 category container" id="category-section">
         <h1 class="text-uppercase text-center">Category</h1>
         <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
           <?php if (!empty($categoryDetails)): ?>
@@ -41,7 +41,25 @@
               <?php endforeach ?>
           <?php endif ?>
         </div>
-    </section>
+    </section> -->
+
+<section class="py-5 category container" id="category-section">
+    <h1 class="text-uppercase text-center">Category</h1>
+    <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
+        <?php if (!empty($categoryDetails)): ?>
+            <?php foreach ($categoryDetails as $categoryRow): ?>
+                <a class="stretched-link" href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" style="text-decoration: none;">
+                    <div class="card text-white bg-primary mb-3" style="width: 18rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <div class="card-body text-center">
+                            <h2 class="card-title"><?=$categoryRow->category_name?></h2>
+                        </div>
+                    </div>
+                </a>
+            <?php endforeach ?>
+        <?php endif ?>
+    </div>
+</section>
+
     <section class="py-5 container" id="content-section">
         <h1 class="text-center text-uppercase">Our Goals</h1>
         <div class="row">
