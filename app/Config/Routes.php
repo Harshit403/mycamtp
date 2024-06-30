@@ -15,15 +15,15 @@ $routes->get('/type', STUDENT.'DefaultController::fetchTypeList');
 $routes->get('/subject', STUDENT.'DefaultController::fetchSubjectList');
 $routes->post('/register-details', STUDENT.'DefaultController::addStudentDetails');
 $routes->post('/sign-in', STUDENT.'DefaultController::verifyStudentLogin');
-$routes->get('/dashboard', STUDENT.'DefaultController::loadDashboardPage');
+$routes->get('/dashboard', STUDENT.'DefaultController::loadDashboardPage',['filter'=>'authGuard']);
 $routes->post('/add-to-cart', STUDENT.'DefaultController::addToCartItem');
-$routes->get('/fetch-active-cartitems', STUDENT.'DefaultController::getCartItemsArray');
+$routes->get('/fetch-active-cartitems', STUDENT.'DefaultController::getCartItemsArray',['filter'=>'authGuard']);
 $routes->post('/remove-cart-items', STUDENT.'DefaultController::removeCartItems');
 $routes->post('/checkout-cart-items', STUDENT.'DefaultController::checkoutPayments');
 $routes->post('/apply-promocode',STUDENT.'DefaultController::applyPromocode');
 $routes->post('/promo/remove-promocode',STUDENT.'DefaultController::removePromocode');
 
-$routes->get('/purchase-status',STUDENT.'DefaultController::purchaseStatus');
+$routes->get('/purchase-status',STUDENT.'DefaultController::purchaseStatus',['filter'=>'authGuard']);
 $routes->get('/logout',STUDENT.'DefaultController::logOutUser');
 $routes->post('/fetch-level-list',STUDENT.'DefaultController::fetchLevelListInfo');
 $routes->get('/blog',STUDENT.'DefaultController::displayBlogDetails');
@@ -37,15 +37,15 @@ $routes->get('/about-us',STUDENT.'DefaultController::loadAboutUs');
 $routes->get('/disclaimer',STUDENT.'DefaultController::loadDisclaimer');
 
 // my-resources
-$routes->get('/my-resources/subject',STUDENT.'DefaultController::loadMyResourceSubjectPage');
-$routes->get('/my-resources/paper',STUDENT.'DefaultController::loadPaperListPage');
-$routes->get('/my-resources/notes/subject-list',STUDENT.'DefaultController::loadNotesSubjectListPage');
-$routes->get('/my-resources/notes/notes-list',STUDENT.'DefaultController::loadNotesListPage');
-$routes->get('/my-resources/amendment/subject-list',STUDENT.'DefaultController::loadAmendmentSubjectList');
-$routes->get('/amendment/amendment-list',STUDENT.'DefaultController::loadAmendmentList');
+$routes->get('/my-resources/subject',STUDENT.'DefaultController::loadMyResourceSubjectPage',['filter'=>'authGuard']);
+$routes->get('/my-resources/paper',STUDENT.'DefaultController::loadPaperListPage',['filter'=>'authGuard']);
+$routes->get('/my-resources/notes/subject-list',STUDENT.'DefaultController::loadNotesSubjectListPage',['filter'=>'authGuard']);
+$routes->get('/my-resources/notes/notes-list',STUDENT.'DefaultController::loadNotesListPage',['filter'=>'authGuard']);
+$routes->get('/my-resources/amendment/subject-list',STUDENT.'DefaultController::loadAmendmentSubjectList',['filter'=>'authGuard']);
+$routes->get('/amendment/amendment-list',STUDENT.'DefaultController::loadAmendmentList',['filter'=>'authGuard']);
 
-$routes->get('/my-resources/qbank/subject-list','DefaultController::loadQbankSubjectList');
-$routes->get('/qbank/qbank-list','DefaultController::loadQbankList');
+$routes->get('/my-resources/qbank/subject-list',STUDENT.'DefaultController::loadQbankSubjectList',['filter'=>'authGuard']);
+$routes->get('/qbank/qbank-list',STUDENT.'DefaultController::loadQbankList',['filter'=>'authGuard']);
 
 
 

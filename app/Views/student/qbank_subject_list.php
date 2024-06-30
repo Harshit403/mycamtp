@@ -1,4 +1,4 @@
-<?= $this->extend('layout/student_layout') ?>
+<?= $this->extend('student/layout/layout') ?>
 <?= $this->section('title') ?>
     Subjects List
 <?= $this->endSection() ?>
@@ -12,8 +12,8 @@
                         <div class="col-md-3 <?=($i > 0) ? 'mb-2' : ''?>">
                             <div class="card" style="height: 12rem !important;">
                                 <div class="card-body p-3">
-                                    <img src="<?=base_url()?>images/icon.svg">
-                                    <a href="<?=base_url()?>qbank/qbank-list?<?=$value->subject_short_name?>" class="stretched-link"><h2 class="text-dark"><?=$value->subject_name?></h2></a>
+                                    <img src="<?=base_url()?>assetItems/image/icon.svg">
+                                    <a href="<?=base_url()?>qbank/qbank-list?subject=<?=$value->subject_short_name?>" class="stretched-link text-decoration-none"><h2 class="text-dark"><?=$value->subject_name?></h2></a>
                                 </div>
                             </div>
                         </div>

@@ -851,7 +851,6 @@
 	    public function loadQbankSubjectList(){
 	        if (session()->get('studentDetails')!==null) {
 	            $cart_id = $this->getCartId()['data'];
-
 	            if ($cart_id) {
 	                $subject_id_details = $this->defaultModel->getQbankSubjectList($cart_id);
 
@@ -862,14 +861,14 @@
 	    }
 
 	    public function loadQbankList(){
-	    	$getItem = $this->reqeust->getGet();
+	    	$getItem = $this->request->getGet();
 	    	if (isset($getItem['subject'])) {
 	    		$subject_short_name = $getItem['subject'];
-	    		if (!empty($subject_id)) {
+	    		if (!empty($subject_short_name)) {
 		            $data['qbank_list'] = $this->defaultModel->fetchQbankList($subject_short_name);
 		            return view('student/qbank_list',$data);
 		        } else{
-		            throw new Exception("Error Processing Request", 404);
+            		throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
 		        }
 	    	}
 	        

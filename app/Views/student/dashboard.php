@@ -92,7 +92,7 @@
                     <a href="<?=base_url()?>my-resources/subject" class="btn btnClass btn-sm"><i class="bi bi-newspaper"></i> <p>Test Paper</p></a>
                 </div>
                 <div class="grid-Elem">
-                     <a href="<?=base_url()?>notes/subject-list" class="btn btnClass btn-sm"><i class="bi bi-clipboard-fill"></i><p>Notes</p></a>
+                     <a href="<?=base_url()?>my-resources/notes/subject-list" class="btn btnClass btn-sm"><i class="bi bi-clipboard-fill"></i><p>Notes</p></a>
                 </div>
                 <div class="grid-Elem">
                     <a href="<?=base_url()?>my-resources/amendment/subject-list" class="btn btnClass btn-sm"><i class="bi bi-clipboard-fill"></i><p>Amendments</p></a>
@@ -101,13 +101,13 @@
                     <a href="<?=base_url()?>my-resources/qbank/subject-list" class="btn btnClass btn-sm"><i class="bi bi-book-fill"></i><p>Question Bank</p></a>
                 </div>
                 <div class="grid-Elem">
-                    <a href="<?=base_url()?>level/level-list" class="btn btnClass btn-sm"><i class="bi bi-cart-check-fill"></i><p>Buy Now</p></a>
+                    <a href="<?=base_url()?>#category-section" class="btn btnClass btn-sm"><i class="bi bi-cart-check-fill"></i><p>Buy Now</p></a>
                 </div>
                 <div class="grid-Elem">
                     <a href="#" class="btn btnClass btn-sm"><i class="bi bi-people-fill"></i><p>Mentoring</p></a>
                 </div>
                 <div class="grid-Elem">
-                    <a href="<?=base_url()?>contact-us" class="btn btnClass btn-sm"><i class="bi bi-telephone-fill"></i><p>Contact Us</p></a>
+                    <a href="<?=base_url()?>#contact-section" class="btn btnClass btn-sm"><i class="bi bi-telephone-fill"></i><p>Contact Us</p></a>
                 </div>
                 <div class="grid-Elem" style="flex-basis: 100%;">
                     <a href="#" style="width: 100% !important;height: 50px; font-size: 20px; font-weight: bold; text-align: left;" class="btn p-3 largeBtn "><p><i class="bi bi-chat-fill" style="color: #1AB79D"></i> Ask Your Query</p></a>
@@ -316,7 +316,7 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-center">
-                                <a href="<?=base_url()?>level/level-list" class="stretched-link"><i class="bi bi-cart-check-fill" style="font-size: 100px; pointer-events: none;"></i></a>
+                                <a href="<?=base_url()?>#category-section" class="stretched-link"><i class="bi bi-cart-check-fill" style="font-size: 100px; pointer-events: none;"></i></a>
                             </div>
                         </div>
                     </div>
@@ -355,7 +355,7 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-center">
-                                <a href="<?=base_url()?>contact-us" class="stretched-link"><i class="bi bi-telephone-fill" style="font-size: 100px; pointer-events: none;"></i></a>
+                                <a href="<?=base_url()?>#contact-section" class="stretched-link"><i class="bi bi-telephone-fill" style="font-size: 100px; pointer-events: none;"></i></a>
                             </div>
                         </div>
                     </div>
