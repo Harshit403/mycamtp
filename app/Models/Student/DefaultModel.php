@@ -146,7 +146,7 @@
 
 	    public function getAmendmentSubjectList($cart_id='',$limit=''){
 	        $builder = $this->db->table('cart_items_table');
-	        $builder->select('cart_items_table.*,subject_table.subject_name');
+	        $builder->select('cart_items_table.*,subject_table.subject_name,subject_table.subject_short_name');
 	        $builder->join('subject_table','subject_table.subject_id = cart_items_table.subject_id','left');
 	        $builder->join('amendment_table','cart_items_table.subject_id = amendment_table.subject_id');
 	        $builder->join('type_table','type_table.type_id = subject_table.type_id','left');
@@ -166,12 +166,12 @@
 
 	    public function getQbankSubjectList($cart_id='',$limit=''){
 	        $builder = $this->db->table('cart_items_table');
-	        $builder->select('cart_items_table.*,subject_table.subject_name');
+	        $builder->select('cart_items_table.*,subject_table.subject_name,subject_table.subject_short_name');
 	        $builder->join('subject_table','subject_table.subject_id = cart_items_table.subject_id','left');
 	        $builder->join('qbank_table','cart_items_table.subject_id = qbank_table.subject_id');
 	        $builder->join('type_table','type_table.type_id = subject_table.type_id','left');
 	        $builder->where('cart_items_table.cart_id',$cart_id);
-	        $builder->where('cart_items_table.payment_status','Credit');
+	        $builder->where('cart_items_table.payment_status','PAID');
 	        $builder->where('cart_items_table.active','1');
 	        $builder->where('cart_items_table.access','1');
 	        $builder->where('qbank_table.deleted',0);
@@ -190,7 +190,7 @@
 	        $builder->join('subject_table','subject_table.subject_id=cart_items_table.subject_id','left');
 	        $builder->join('type_table','type_table.type_id=subject_table.type_id','left');
 	        $builder->where('cart_id',$cart_id);
-	        $builder->where('payment_status','Credit');
+	        $builder->where('payment_status','PAID');
 	        $builder->where('cart_items_table.access','1');
 	        $builder->where('cart_items_table.active','1');
 	        $builder->groupBy('cart_items_table.subject_id');
@@ -245,11 +245,6 @@
 	    }
 
 	    public function getAvailableNotesList($subject_short_name=''){
-	    	// $builder = $this->db->table('notes_table');
-	    	// $builder->select('noets_table.*,subject_table.subject_short_name');
-	    	// $builder->join('subject_table','subject_table.subject_id=notes_table.subject_id');
-	    	// $builder->join('cart_table','subject_table.subject_id=notes_table.subject_id');
-	    	// $builder->where('subject_table.subject_short_name',$subject_short_name);
 	    	$builder = $this->db->table('cart_items_table');
 	    	$builder->select('notes_table.*,cart_items_table.payment_status,subject_table.subject_short_name');
 	    	$builder->join('notes_table','notes_table.subject_id=cart_items_table.subject_id');
@@ -259,5 +254,28 @@
 	    	$records = $builder->get()->getResult();
 	    	return $records;
 	    }
+
+	    public function fetchAmendmentList($subject_short_name){
+	    	$builder = $this->db->table('cart_items_table');
+	    	$builder->select('amendment_table.*,cart_items_table.payment_status,subject_table.subject_short_name');
+	    	$builder->join('amendment_table','amendment_table.subject_id=cart_items_table.subject_id');
+	    	$builder->join('subject_table','subject_table.subject_id=amendment_table.subject_id');
+	    	$builder->where('cart_items_table.payment_status','PAID');
+	    	$builder->where('subject_table.subject_short_name',$subject_short_name);
+	    	$records = $builder->get()->getResult();
+	    	return $records;
+	    }
+
+	    public function fetchQbankList($subject_short_name){
+	    	$builder = $this->db->table('cart_items_table');
+	    	$builder->select('qbank_table.*,cart_items_table.payment_status,subject_table.subject_short_name');
+	    	$builder->join('qbank_table','qbank_table.subject_id=cart_items_table.subject_id');
+	    	$builder->join('subject_table','subject_table.subject_id=qbank_table.subject_id');
+	    	$builder->where('cart_items_table.payment_status','PAID');
+	    	$builder->where('subject_table.subject_short_name',$subject_short_name);
+	    	$records = $builder->get()->getResult();
+	    	return $records;
+	    }
+
 	}
 ?>

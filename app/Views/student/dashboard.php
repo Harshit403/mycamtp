@@ -95,10 +95,10 @@
                      <a href="<?=base_url()?>notes/subject-list" class="btn btnClass btn-sm"><i class="bi bi-clipboard-fill"></i><p>Notes</p></a>
                 </div>
                 <div class="grid-Elem">
-                    <a href="<?=base_url()?>amendment/subject-list" class="btn btnClass btn-sm"><i class="bi bi-clipboard-fill"></i><p>Amendments</p></a>
+                    <a href="<?=base_url()?>my-resources/amendment/subject-list" class="btn btnClass btn-sm"><i class="bi bi-clipboard-fill"></i><p>Amendments</p></a>
                 </div>
                 <div class="grid-Elem">
-                    <a href="<?=base_url()?>qbank/subject-list" class="btn btnClass btn-sm"><i class="bi bi-book-fill"></i><p>Question Bank</p></a>
+                    <a href="<?=base_url()?>my-resources/qbank/subject-list" class="btn btnClass btn-sm"><i class="bi bi-book-fill"></i><p>Question Bank</p></a>
                 </div>
                 <div class="grid-Elem">
                     <a href="<?=base_url()?>level/level-list" class="btn btnClass btn-sm"><i class="bi bi-cart-check-fill"></i><p>Buy Now</p></a>
@@ -224,7 +224,7 @@
                                 <h4 class="text-dark">Amendments</h4>
                             </div>
                             <div>
-                                <a href="<?=base_url()?>amendment/subject-list" class=" btn btn-sm btn-custom"><i class="bi bi-list"></i> View More</a>
+                                <a href="<?=base_url()?>my-resources/amendment/subject-list" class=" btn btn-sm btn-custom"><i class="bi bi-list"></i> View More</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -234,7 +234,7 @@
                                         <li class="list-group-item">
                                             <div class="d-flex justify-content-between">
                                             <div><?=$amendmentRow->subject_name?></div>
-                                            <div><a class="btn btn-sm" style="background-color: #C7D2FE" href="<?=base_url()?>amendment/amendment-list/<?=$amendmentRow->subject_id?>"><i class="bi bi-arrow-right"></i></a></div>
+                                            <div><a class="btn btn-sm" style="background-color: #C7D2FE" href="<?=base_url()?>amendment/amendment-list?subject=<?=$amendmentRow->subject_short_name?>"><i class="bi bi-arrow-right"></i></a></div>
                                             </div>
                                         </li>
                                     <?php endforeach ?>
@@ -274,7 +274,7 @@
                                     <h4 class="text-dark">Question Bank</h4>
                                 </div>
                                 <div>
-                                    <a href="<?=base_url()?>qbank/subject-list" class=" btn btn-sm btn-custom"><i class="bi bi-list"></i> View More</a>
+                                    <a href="<?=base_url()?>my-resources/qbank/subject-list" class=" btn btn-sm btn-custom"><i class="bi bi-list"></i> View More</a>
                                 </div>
                             </div>
                             <div class="card-body">

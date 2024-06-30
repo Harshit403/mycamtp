@@ -41,7 +41,11 @@ $routes->get('/my-resources/subject',STUDENT.'DefaultController::loadMyResourceS
 $routes->get('/my-resources/paper',STUDENT.'DefaultController::loadPaperListPage');
 $routes->get('/my-resources/notes/subject-list',STUDENT.'DefaultController::loadNotesSubjectListPage');
 $routes->get('/my-resources/notes/notes-list',STUDENT.'DefaultController::loadNotesListPage');
+$routes->get('/my-resources/amendment/subject-list',STUDENT.'DefaultController::loadAmendmentSubjectList');
+$routes->get('/amendment/amendment-list',STUDENT.'DefaultController::loadAmendmentList');
 
+$routes->get('/my-resources/qbank/subject-list','DefaultController::loadQbankSubjectList');
+$routes->get('/qbank/qbank-list','DefaultController::loadQbankList');
 
 
 

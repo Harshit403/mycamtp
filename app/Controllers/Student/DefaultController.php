@@ -182,7 +182,7 @@
 		            	$fetch_sub = $this->defaultModel->fetchAvailableSubject($cart_id,3);
 		            	$subject_id_details = $this->defaultModel->getNotesSubjectList($cart_table->cart_id,3);
 		                $amendmentDetails = $this->defaultModel->getAmendmentSubjectList($cart_table->cart_id,3);
-		                $qbankDetails = $this->defaultModel->getQbankSubjectList($cart_table->cart_id,3);
+		                $qbankDetails = $this->defaultModel->getQbankSubjectList($cart_id,3);
 		                $data['amendment_sub'] = $amendmentDetails;
 		                $data['qbank_sub'] = $qbankDetails;
 		            	$data['schedule_list'] = $this->defaultModel->getScheduleList($cart_table->cart_id);
@@ -817,6 +817,62 @@
             	throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
 	    	}
 	    	
+	    }
+
+	    public function loadAmendmentSubjectList(){
+        if (session()->get('studentDetails')!==null) {
+	            $studentDetails = session()->get('studentDetails');
+	            $student_id = $studentDetails['id'];
+	            $cart_id = $this->getCartId()['data'];
+	            if ($cart_id) {
+	                $subject_id_details = $this->defaultModel->getAmendmentSubjectList($cart_id);
+	                $data['subject_id_details'] = $subject_id_details;
+	                return view('student/amendment_subject_list',$data);
+	            }
+	        }
+	    }
+
+	    public function loadAmendmentList(){
+	    	$getItem = $this->request->getGet();
+	    	if (isset($getItem['subject'])) {
+    			$subject_short_name = $getItem['subject'];
+	    		if (!empty($subject_short_name)) {
+		            $data['amendment_list'] = $this->defaultModel->fetchAmendmentList($subject_short_name);
+		            return view('student/amendment_list',$data);
+		        } else{
+            	throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+		        }
+	    	} else {
+            	throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+	    	}
+	        
+	    }
+
+	    public function loadQbankSubjectList(){
+	        if (session()->get('studentDetails')!==null) {
+	            $cart_id = $this->getCartId()['data'];
+
+	            if ($cart_id) {
+	                $subject_id_details = $this->defaultModel->getQbankSubjectList($cart_id);
+
+	                $data['subject_id_details'] = $subject_id_details;
+	                return view('student/qbank_subject_list',$data);
+	            }
+	        }
+	    }
+
+	    public function loadQbankList(){
+	    	$getItem = $this->reqeust->getGet();
+	    	if (isset($getItem['subject'])) {
+	    		$subject_short_name = $getItem['subject'];
+	    		if (!empty($subject_id)) {
+		            $data['qbank_list'] = $this->defaultModel->fetchQbankList($subject_short_name);
+		            return view('student/qbank_list',$data);
+		        } else{
+		            throw new Exception("Error Processing Request", 404);
+		        }
+	    	}
+	        
 	    }
 
 		

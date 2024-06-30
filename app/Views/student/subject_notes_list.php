@@ -10,7 +10,7 @@
                     <?php $i = 0;?>
                     <?php foreach ($subject_id_details as $value): ?>
                         <div class="col-md-3 <?=($i > 0) ? 'mb-2' : ''?>">
-                            <div class="card" style="height: 12rem !important;">
+                            <div class="card" style="height: 10rem !important;">
                                 <div class="card-body p-3">
                                     <img src="<?=base_url()?>/assetItems/image/icon.svg">
                                     <a href="<?=base_url()?>my-resources/notes/notes-list?subject=<?=$value->subject_short_name?>" class="stretched-link text-decoration-none"><h2 class="text-dark"><?=$value->subject_name?></h2></a>

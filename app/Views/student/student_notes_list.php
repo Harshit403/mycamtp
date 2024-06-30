@@ -21,7 +21,7 @@
                                 <tr>
                                     <td><?=$count;?></td>
                                     <td><?=!empty($value->notes_name) ? ($value->notes_name) : ''?></td>
-                                    <td><a href="<?=base_url().$value->attachment?>" class="btn btn-info" download="<?=!empty($value->notes_name) ? ($value->notes_name) : ''?>"><i class="fas fa-file-pdf fa-fw text-danger"></i> <b>Download</b></a></td>
+                                    <td><a href="<?=base_url().$value->attachment?>" class="btn btn-info" download="<?=!empty($value->notes_name) ? ($value->notes_name) : ''?>"><i class="bi bi-arrow-down-circle"></i> <b>Download</b></a></td>
                                 </tr>
                             
                         </div>
