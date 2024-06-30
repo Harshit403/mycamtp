@@ -3,7 +3,7 @@
     Subjects List
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
-    <section class="container mt-3 mb-5 section">
+    <section class="container mb-5 section mainContainer">
         <div class="notesSubContainer my-3">
             <div class="row">
                 <?php if (!empty($subject_id_details)): ?>

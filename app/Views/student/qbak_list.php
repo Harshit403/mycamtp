@@ -3,7 +3,7 @@
     Question Bank List
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
-    <section class="container mt-3 mb-5 section">
+    <section class="container mb-5 section mainContainer">
         <div class="notesContainer my-3">
             <div class="row">
                 <?php if (!empty($qbank_list)): ?>
