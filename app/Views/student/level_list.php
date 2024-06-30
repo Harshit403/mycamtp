@@ -1,7 +1,7 @@
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('content')?>
 
-<style>
+<!-- <style>
 /* Custom card styles */
 .custom-category-child {
     position: relative;
@@ -61,7 +61,7 @@
     }
 }
 
-</style>
+</style> -->
 
 <section class="container level_conatainer" style="padding-top: 5rem;">
     <h2 class="text-center">Test Text</h2>
@@ -73,7 +73,7 @@
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
-    <div class="row">
+<!--    <div class="row">
         <?php foreach ($level_list as $levelRow): ?>
             <div class="col-md-3">
                 <a href="<?=base_url()?>type?category=<?=$levelRow->category_short_name?>&&level=<?=$levelRow->level_short_name?>" style="text-decoration: none;">
@@ -87,7 +87,24 @@
                 </a>
             </div>
         <?php endforeach ?>
+    </div> -->
+
+	<div class="row">
+			<?php foreach ($level_list as $levelRow): ?>
+				<div class="col-md-3">
+					<a href="<?=base_url()?>type?category=<?=$levelRow->category_short_name?>&&level=<?=$levelRow->level_short_name?>" style="text-decoration: none;">
+						<div class="card card-success text-center">
+							<div class="card-body">
+								<?=$levelRow->level_name?>
+							</div>
+						</div>
+					</a>
+				</div>
+			<?php endforeach ?>
+			
     </div>
+
+
 </section>
 <?= $this->endSection() ?>
 
