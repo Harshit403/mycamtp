@@ -21,7 +21,7 @@
         <span class="visually-hidden">Next</span>
       </button>
   </div>
-    <section class="header-text container py-5" id="intro-section">
+    <section class="header-text container py-3" id="intro-section">
         <h1 class="text-uppercase text-center">The Key of <font class="text-success">success</font></h1>
         <p style="background-color: #F1F0FE;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -44,7 +44,7 @@
     </section> -->
 
 
-<section class="py-5 category container" id="category-section">
+<section class="py-3 category container" id="category-section">
     <h1 class="text-uppercase text-center">Category</h1>
     <div id="category-parent" class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
         <?php if (!empty($categoryDetails)): ?>
