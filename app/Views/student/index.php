@@ -44,7 +44,7 @@
     </section> -->
 
 <section class="py-3 category container" id="category-section">
-    <h1 class="text-uppercase text-center">Category</h1>
+    <h1 class="text-uppercase text-center mb-2">Category</h1>
     <div id="category-parent" class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
         <?php if (!empty($categoryDetails)): ?>
             <?php foreach ($categoryDetails as $categoryRow): ?>
@@ -139,7 +139,7 @@
         <div class="row">
             <div class="col-md-8">
                 <nav>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <div class="nav nav-tabs mb-2" id="nav-tab" role="tablist">
                         <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
                         <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
                         <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
