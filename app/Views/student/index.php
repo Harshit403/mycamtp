@@ -23,14 +23,14 @@
   </div>
     <section class="header-text container py-5" id="intro-section">
         <h1 class="text-uppercase text-center">The Key of <font class="text-success">success</font></h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        <p></p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </section>
-    <section class="py-5 category container" id="category-section">
+  <!--  <section class="py-5 category container" id="category-section">
         <h1 class="text-uppercase text-center">Category</h1>
         <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
           <?php if (!empty($categoryDetails)): ?>
@@ -41,7 +41,84 @@
               <?php endforeach ?>
           <?php endif ?>
         </div>
-    </section>
+    </section> -->
+
+<!-- <section class="py-5 category container" id="category-section">
+    <h1 class="text-uppercase text-center">Category</h1>
+    <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
+        <?php if (!empty($categoryDetails)): ?>
+            <?php foreach ($categoryDetails as $categoryRow): ?>
+                <a class="stretched-link" href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" style="text-decoration: none;">
+                    <div class="card text-white bg-primary mb-3" style="width: 18rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <div class="card-body text-center">
+                            <h2 class="card-title"><?=$categoryRow->category_name?></h2>
+                        </div>
+                    </div>
+                </a>
+            <?php endforeach ?>
+        <?php endif ?>
+    </div>
+</section> -->
+
+
+
+<section class="py-5 category container" id="category-section">
+    <h1 class="text-uppercase text-center">Category</h1>
+    <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
+        <?php if (!empty($categoryDetails)): ?>
+            <?php foreach ($categoryDetails as $categoryRow): ?>
+                <a class="stretched-link" href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" style="text-decoration: none;">
+                    <div class="custom-card card">
+                        <div class="card-body">
+                            <h2 class="card-title"><?=$categoryRow->category_name?></h2>
+                        </div>
+                        <div class="wave"></div>
+                    </div>
+                </a>
+            <?php endforeach ?>
+        <?php endif ?>
+    </div>
+</section>
+
+<style>
+.custom-card.card {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    width: 18rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden; /* To ensure the wave border effect is contained */
+    position: relative;
+    text-align: center;
+    font-size: 0.9rem;
+    animation: pulse 2s infinite;
+}
+
+.custom-card .card-body {
+    padding: 20px;
+}
+
+.custom-card .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* Placeholder wave image, replace with your own */
+    background-size: cover;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+     </style>
+
+
+
+
+
     <section class="py-5 container" id="content-section">
         <h1 class="text-center text-uppercase">Our Goals</h1>
         <div class="row">
