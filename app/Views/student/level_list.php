@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px 0;
 }
 
 .custom-category-card {
