@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
-
 * {
     padding: 0;
     margin: 0;
-    font-family: "Roboto", sans-serif;
 }
 
 .mainContainer {
@@ -281,9 +278,4 @@
     .imgClass {
         height: 100%;
     }
-}
-
-
-p {
-    font-family: 'Montserrat', sans-serif;
 }
