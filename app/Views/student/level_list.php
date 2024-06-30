@@ -8,7 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 15px 0; /* Adds 10px margin above and below each card */
+    margin: 13px 0; /* Adds 10px margin above and below each card */
 }
 
 .custom-category-card {
@@ -43,7 +43,7 @@
     bottom: 0;
     margin: auto;
     width: calc(100% + 20px); /* Width of the pulse effect (increased to include margins) */
-    height: 60px; /* Height of the pulse effect (increased to include margins) */
+    height: 50px; /* Height of the pulse effect (increased to include margins) */
     background: rgba(100, 81, 206, 0.4); /* Pulse effect color */
     border-radius: 15px; /* Border radius to match the card */
     animation: pulse 2s infinite;
