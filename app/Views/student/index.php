@@ -21,16 +21,16 @@
         <span class="visually-hidden">Next</span>
       </button>
   </div>
-    <section class="header-text container py-3" id="intro-section">
+    <section class="header-text container py-5" id="intro-section">
         <h1 class="text-uppercase text-center">The Key of <font class="text-success">success</font></h1>
-        <p class= "py-2 px-2 rounded" style="background-color: #F1F0FE;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </section>
-   <section class="py-5 category container" id="category-section">
+    <section class="py-5 category container" id="category-section">
         <h1 class="text-uppercase text-center">Category</h1>
         <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
           <?php if (!empty($categoryDetails)): ?>
@@ -41,105 +41,13 @@
               <?php endforeach ?>
           <?php endif ?>
         </div>
-</section>
-<!--
-<section class="py-3 category container" id="category-section">
-    <h1 class="text-uppercase text-center mb-4">Category</h1>
-    <div id="category-parent" class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
-        <?php if (!empty($categoryDetails)): ?>
-            <?php foreach ($categoryDetails as $categoryRow): ?>
-                <div class="category-child">
-                    <div class="category-card">
-                        <a class="stretched-link category-link" href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" style="text-decoration: none;">
-                            <div class="category-card-content">
-                                <?=$categoryRow->category_name?>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            <?php endforeach ?>
-        <?php endif ?>
-    </div>
-</section>
-
-
-
-<style> 
-/* Parent class for the container */
-#category-parent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px 0px;
-}
-
-/* Child class for each card */
-#category-parent .category-child {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Card class */
-#category-parent .category-card {
-    width: 360px; /* Card width */
-    height: 80px; /* Card height */
-    background: #6451CE; /* Card background color */
-    border-radius: 15px; /* Card border radius */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease-in-out;
-}
-
-#category-parent .category-card:hover {
-    transform: scale(1.05);
-}
-
-/* Content class */
-#category-parent .category-card-content {
-    font-size: 1.5em; /* Reduced font size */
-    color: white;
-    font-weight: bold;
-}
-
-/* Pulse effect for the card */
-#category-parent .category-child::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 320px; /* Width of the pulse effect */
-    height: 90px; /* Height of the pulse effect */
-    background: rgba(100, 81, 206, 0.4); /* Pulse effect color */
-    border-radius: 15px; /* Border radius to match the card */
-    transform: translate(-50%, -50%);
-    animation: pulse 2s infinite;
-    z-index: -1;
-}
-
-@keyframes pulse {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 0;
-    }
-}
-</style> -->
-
-
+    </section>
     <section class="py-5 container" id="content-section">
         <h1 class="text-center text-uppercase">Our Goals</h1>
         <div class="row">
             <div class="col-md-8">
                 <nav>
-                    <div class="nav nav-tabs mb-2" id="nav-tab" role="tablist">
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
                         <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
                         <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
@@ -382,125 +290,6 @@
                
             </div>
         </div>
-
-
-<!-- <style>
-
-.unique-newsletter-box {
-    max-width: 500px;
-    padding: 40px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-h2 {
-    font-weight: bold;
-    color: #2D3748;
-}
-
-.unique-text-primary {
-    color: #6B46C1 !important;
-}
-
-.unique-btn-primary {
-    background-color: #6B46C1;
-    border-color: #6B46C1;
-    color: white;
-    font-weight: bold;
-    border-radius: 50px;
-    padding: 15px 0;
-    transition: background-color 0.3s, border-color 0.3s;
-}
-
-.unique-btn-primary:hover,
-.unique-btn-primary:focus,
-.unique-btn-primary:active {
-    background-color: #553C9A;
-    border-color: #553C9A;
-    color: white; /* Ensures text stays white on hover and focus */
-}
-
-.unique-input {
-    border-radius: 50px;
-    border: 1px solid #E2E8F0;
-    padding: 15px;
-    width: 100%;
-    height: 50px;
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.unique-checkmark {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    background-color: #6B46C1;
-    border-radius: 50%;
-    position: relative;
-}
-
-.unique-checkmark::after {
-    content: '';
-    display: block;
-    width: 6px;
-    height: 12px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    position: absolute;
-    top: 3px;
-    left: 6px;
-    transform: rotate(45deg);
-}
-
-@media (max-width: 576px) {
-    .unique-newsletter-box {
-        padding: 20px;
-    }
-
-    .unique-btn-primary {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .unique-input {
-        padding: 10px;
-    }
-}
-</style>
-
-      
-<div class="unique-newsletter-box">
-    <h6 class="unique-text-primary mb-2">NEWSLETTER</h6>
-    <h2 class="mb-4">Join to get exclusive contents for free.</h2>
-    <form class="mb-4">
-        <div class="form-group">
-            <input type="email" class="form-control unique-input" placeholder="Email address" required>
-        </div>
-        <button type="submit" class="btn unique-btn-primary btn-block">Join Now</button>
-    </form>
-    <ul class="list-unstyled">
-        <li class="d-flex align-items-center mb-2">
-            <span class="unique-checkmark"></span>
-            <span>Get weekly reports</span>
-        </li>
-        <li class="d-flex align-items-center mb-2">
-            <span class="unique-checkmark"></span>
-            <span>Unlimited free resources</span>
-        </li>
-        <li class="d-flex align-items-center">
-            <span class="unique-checkmark"></span>
-            <span>Premium contents</span>
-        </li>
-    </ul>
-</div> -->
-
-
-      
-
-
     </section>
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
