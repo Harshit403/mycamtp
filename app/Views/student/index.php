@@ -383,15 +383,26 @@
             </div>
         </div>
 
-
 <style>
+  body {
+    background: linear-gradient(to bottom right, #ffffff, #f3f4f6);
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    color: #2D3748;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
 .unique-newsletter-box {
     max-width: 500px;
-    padding: 0px;
+    padding: 40px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 h2 {
@@ -406,19 +417,29 @@ h2 {
 .unique-btn-primary {
     background-color: #6B46C1;
     border-color: #6B46C1;
+    color: white;
     font-weight: bold;
     border-radius: 50px;
+    padding: 15px 0;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
-.unique-btn-primary:hover {
+.unique-btn-primary:hover,
+.unique-btn-primary:focus,
+.unique-btn-primary:active {
     background-color: #553C9A;
     border-color: #553C9A;
+    color: white; /* Ensures text stays white on hover and focus */
 }
 
 .unique-input {
     border-radius: 50px;
     border: 1px solid #E2E8F0;
     padding: 15px;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
 .unique-checkmark {
@@ -446,7 +467,7 @@ h2 {
 
 @media (max-width: 576px) {
     .unique-newsletter-box {
-        padding: 15px;
+        padding: 20px;
     }
 
     .unique-btn-primary {
@@ -458,42 +479,35 @@ h2 {
         padding: 10px;
     }
 }
-
-  
 </style>
 
       
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
-        <div class="text-center unique-newsletter-box">
-            <h6 class="unique-text-primary mb-2">NEWSLETTER</h6>
-            <h2 class="mb-4">Join to get exclusive contents for free.</h2>
-            <form class="mb-4">
-                <div class="form-group">
-                    <input type="email" class="form-control unique-input" placeholder="Email address" required>
-                </div>
-                <button type="submit" class="btn unique-btn-primary btn-block">Join Now</button>
-            </form>
-            <ul class="list-unstyled">
-                <li class="d-flex align-items-center mb-2">
-                    <span class="unique-checkmark"></span>
-                    <span>Get weekly reports</span>
-                </li>
-                <li class="d-flex align-items-center mb-2">
-                    <span class="unique-checkmark"></span>
-                    <span>Unlimited free resources</span>
-                </li>
-                <li class="d-flex align-items-center">
-                    <span class="unique-checkmark"></span>
-                    <span>Premium contents</span>
-                </li>
-            </ul>
+<div class="unique-newsletter-box">
+    <h6 class="unique-text-primary mb-2">NEWSLETTER</h6>
+    <h2 class="mb-4">Join to get exclusive contents for free.</h2>
+    <form class="mb-4">
+        <div class="form-group">
+            <input type="email" class="form-control unique-input" placeholder="Email address" required>
         </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <button type="submit" class="btn unique-btn-primary btn-block">Join Now</button>
+    </form>
+    <ul class="list-unstyled">
+        <li class="d-flex align-items-center mb-2">
+            <span class="unique-checkmark"></span>
+            <span>Get weekly reports</span>
+        </li>
+        <li class="d-flex align-items-center mb-2">
+            <span class="unique-checkmark"></span>
+            <span>Unlimited free resources</span>
+        </li>
+        <li class="d-flex align-items-center">
+            <span class="unique-checkmark"></span>
+            <span>Premium contents</span>
+        </li>
+    </ul>
+</div>
 
-      
+
     </section>
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
