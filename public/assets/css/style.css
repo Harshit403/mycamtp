@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+.mainContainer {
+    margin-top: 7rem !important;
+}
+
 .nav-item>.nav-link {
     font-weight: bold !important;
 }

@@ -126,7 +126,7 @@
 
 	    public function getNotesSubjectList($cart_id='',$limit=''){
 	        $builder = $this->db->table('cart_items_table');
-	        $builder->select('cart_items_table.*,subject_table.subject_name');
+	        $builder->select('cart_items_table.*,subject_table.subject_name,subject_table.subject_short_name');
 	        $builder->join('subject_table','subject_table.subject_id = cart_items_table.subject_id','left');
 	        $builder->join('notes_table','cart_items_table.subject_id = notes_table.subject_id');
 	        $builder->join('type_table','type_table.type_id = subject_table.type_id','left');
@@ -239,6 +239,22 @@
 	    	$builder->where('cart_items_table.payment_status','PAID');
 	    	$builder->join('subject_table','subject_table.subject_id=cart_items_table.subject_id');
 	    	$builder->where('cart_items_table.cart_id',$cart_id);
+	    	$builder->where('subject_table.subject_short_name',$subject_short_name);
+	    	$records = $builder->get()->getResult();
+	    	return $records;
+	    }
+
+	    public function getAvailableNotesList($subject_short_name=''){
+	    	// $builder = $this->db->table('notes_table');
+	    	// $builder->select('noets_table.*,subject_table.subject_short_name');
+	    	// $builder->join('subject_table','subject_table.subject_id=notes_table.subject_id');
+	    	// $builder->join('cart_table','subject_table.subject_id=notes_table.subject_id');
+	    	// $builder->where('subject_table.subject_short_name',$subject_short_name);
+	    	$builder = $this->db->table('cart_items_table');
+	    	$builder->select('notes_table.*,cart_items_table.payment_status,subject_table.subject_short_name');
+	    	$builder->join('notes_table','notes_table.subject_id=cart_items_table.subject_id');
+	    	$builder->join('subject_table','subject_table.subject_id=notes_table.subject_id');
+	    	$builder->where('cart_items_table.payment_status','PAID');
 	    	$builder->where('subject_table.subject_short_name',$subject_short_name);
 	    	$records = $builder->get()->getResult();
 	    	return $records;

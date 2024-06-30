@@ -25,8 +25,6 @@ $routes->post('/promo/remove-promocode',STUDENT.'DefaultController::removePromoc
 
 $routes->get('/purchase-status',STUDENT.'DefaultController::purchaseStatus');
 $routes->get('/logout',STUDENT.'DefaultController::logOutUser');
-$routes->get('/my-resources/subject',STUDENT.'DefaultController::loadMyResourceSubjectPage');
-$routes->get('/my-resources/paper',STUDENT.'DefaultController::loadPaperListPage');
 $routes->post('/fetch-level-list',STUDENT.'DefaultController::fetchLevelListInfo');
 $routes->get('/blog',STUDENT.'DefaultController::displayBlogDetails');
 $routes->get('/blog-list',STUDENT.'DefaultController::loadBlogListPage');
@@ -37,6 +35,13 @@ $routes->get('/privacy-policy',STUDENT.'DefaultController::loadPrivacyPolicy');
 $routes->get('/shipping-and-dlivery',STUDENT.'DefaultController::loadShippingDelivery');
 $routes->get('/about-us',STUDENT.'DefaultController::loadAboutUs');
 $routes->get('/disclaimer',STUDENT.'DefaultController::loadDisclaimer');
+
+// my-resources
+$routes->get('/my-resources/subject',STUDENT.'DefaultController::loadMyResourceSubjectPage');
+$routes->get('/my-resources/paper',STUDENT.'DefaultController::loadPaperListPage');
+$routes->get('/my-resources/notes/subject-list',STUDENT.'DefaultController::loadNotesSubjectListPage');
+$routes->get('/my-resources/notes/notes-list',STUDENT.'DefaultController::loadNotesListPage');
+
 
 
 

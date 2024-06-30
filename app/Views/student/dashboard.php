@@ -9,7 +9,7 @@
         }
         .flexMobileContainer > .grid-Elem {
             background-color: #fafbff !important;
-            flex: 1;
+            flex: 1 1 25%;
         }
         .grid-Elem .btnClass {
             display: flex;
@@ -18,9 +18,6 @@
             align-items: center;
         }
 
-	    .btnClass:nth-of-type(3) {
-	      padding-right: 0px !important;
-	    }
 	    .btnClass > i{
 	        font-size: 40px;
 	        color: #1AB79D !important;
@@ -110,12 +107,7 @@
                     <a href="#" class="btn btnClass btn-sm"><i class="bi bi-people-fill"></i><p>Mentoring</p></a>
                 </div>
                 <div class="grid-Elem">
-                    <a href="#" class="btn btnClass btn-sm"><i class="bi bi-calendar-fill"></i> <p>Schedule</p></a>
-                </div>
-                <div class="grid-Elem">
                     <a href="<?=base_url()?>contact-us" class="btn btnClass btn-sm"><i class="bi bi-telephone-fill"></i><p>Contact Us</p></a>
-                </div>
-                <div class="grid-Elem">
                 </div>
                 <div class="grid-Elem" style="flex-basis: 100%;">
                     <a href="#" style="width: 100% !important;height: 50px; font-size: 20px; font-weight: bold; text-align: left;" class="btn p-3 largeBtn "><p><i class="bi bi-chat-fill" style="color: #1AB79D"></i> Ask Your Query</p></a>
@@ -183,7 +175,7 @@
                                 <h4 class="text-dark">My Notes</h4>
                             </div>
                             <div>
-                                <a href="<?=base_url()?>notes/subject-list/<?=$item_type?>" class="btn btn-sm btn-custom"><i class="bi bi-list"></i> View More</a>
+                                <a href="<?=base_url()?>my-resources/notes/subject-list/<?=$item_type?>" class="btn btn-sm btn-custom"><i class="bi bi-list"></i> View More</a>
                             </div>
                         </div>
                         <div class="card-body p-3">
@@ -193,7 +185,7 @@
                                         <li class="list-group-item">
                                             <div class="d-flex justify-content-between">
                                             <div><?=$notesRow->subject_name?></div>
-                                            <div><a class="btn btn-sm" style="background-color: #C7D2FE" href="<?=base_url()?>notes/notes-list/<?=$notesRow->subject_id?>"><i class="bi bi-arrow-right"></i></a></div>
+                                            <div><a class="btn btn-sm" style="background-color: #C7D2FE" href="<?=base_url()?>my-resources/notes/notes-list/<?=$notesRow->subject_id?>"><i class="bi bi-arrow-right"></i></a></div>
                                             </div>
                                         </li>
                                     <?php endforeach ?>
@@ -351,42 +343,6 @@
                             </div>
                             <div class="card-body d-flex justify-content-center">
                                 <a href="#" class="stretched-link"><i class="bi bi-lock-fill" style="font-size: 100px; pointer-events: none;"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mt-3">
-                        <div class="card">
-                            <div class="card-header d-flex justify-content-between">
-                                <div class="d-flex flex-wrap" style="gap:10px;">
-                                    <img src="<?=base_url()?>assetItems/image/icon.svg">
-                                    <h4 class="text-dark">Schedule</h4>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <?php if (!empty($schedule_list)): ?>
-                                    <ul class="list-group">
-                                        <?php foreach ($schedule_list as $schdeuleRow): ?>
-                                            <li class="list-group-item">
-                                                <div class="d-flex justify-content-between">
-                                                <div><?=$schdeuleRow->type_name?></div>
-                                                <div><a class="btn btn-sm" style="background-color: #C7D2FE" href="<?=base_url().$schdeuleRow->schedule_file?>" target="_blank"><i class="bi bi-arrow-right"></i></a></div>
-                                                </div>
-                                            </li>
-                                        <?php endforeach ?>
-                                        <?php if (count($schedule_list) < 3): ?>
-                                            <?php
-                                                for ($i=0; $i < (3-count($schedule_list)) ; $i++) { 
-                                                    ?>
-                                                        <li class="list-group-item" style="height: 35px;">
-                                                        </li>
-                                                    <?php
-                                                }
-                                            ?>
-                                        <?php endif ?>
-                                    </ul>
-                                <?php else: ?>
-                                    <a href="#" class="stretched-link d-flex justify-content-center"><i class="bi bi-lock-fill" style="font-size: 100px; pointer-events: none;"></i></a>
-                                <?php endif ?>
                             </div>
                         </div>
                     </div>

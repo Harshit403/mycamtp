@@ -783,6 +783,42 @@
 	        return view('student/my_resource_subject_list',$data);
 	    }
 
+	    public function loadNotesSubjectListPage(){
+	    	if (session()->get('studentDetails')!==null) {
+	    		$cart_id =  $this->getCartId()['data'];
+	    		if (!empty($cart_id)) {
+	    			$data['subject_id_details'] = $this->defaultModel->getNotesSubjectList($cart_id);
+	    			return view('student/subject_notes_list',$data);
+    			} else {
+                	throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+	    		}
+	    	} else {
+            	throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+	    	}
+	    }
+
+	    public function loadNotesListPage(){
+	    	$getItem = $this->request->getGet();
+	    	if (isset($getItem['subject'])) {
+	    		if (session()->get('studentDetails')!==null) {
+		    		// $cart_id =  $this->getCartId()['data'];
+		    		$subject_short_name = $getItem['subject'];
+		    		if (!empty($subject_short_name)) {
+		    			$data['notes_list'] = $this->defaultModel->getAvailableNotesList($subject_short_name);
+		    			$data['subject_details'] = $this->common->getInfo('subject_table','row',array('subject_short_name'=>$subject_short_name));
+		    			return view('student/student_notes_list',$data);
+	    			} else {
+	                	throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+		    		}
+		    	} else {
+	            	throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+		    	}
+	    	} else {
+            	throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+	    	}
+	    	
+	    }
+
 		
 	}
 ?>
