@@ -112,7 +112,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 340px; /* Width of the pulse effect */
+    width: 320px; /* Width of the pulse effect */
     height: 90px; /* Height of the pulse effect */
     background: rgba(100, 81, 206, 0.4); /* Pulse effect color */
     border-radius: 15px; /* Border radius to match the card */
