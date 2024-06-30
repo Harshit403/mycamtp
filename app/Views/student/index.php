@@ -384,17 +384,6 @@
         </div>
 
 <style>
-  body {
-    background: linear-gradient(to bottom right, #ffffff, #f3f4f6);
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-    color: #2D3748;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
 
 .unique-newsletter-box {
     max-width: 500px;
