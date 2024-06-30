@@ -42,7 +42,7 @@
     right: 0;
     bottom: 0;
     margin: auto;
-    width: 370px; /* Width of the pulse effect (increased to include margins) */
+    width: 320px; /* Width of the pulse effect (increased to include margins) */
     height: 50px; /* Height of the pulse effect (increased to include margins) */
     background: rgba(100, 81, 206, 0.4); /* Pulse effect color */
     border-radius: 15px; /* Border radius to match the card */
