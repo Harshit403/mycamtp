@@ -43,23 +43,6 @@
         </div>
     </section> -->
 
-<!-- <section class="py-5 category container" id="category-section">
-    <h1 class="text-uppercase text-center">Category</h1>
-    <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
-        <?php if (!empty($categoryDetails)): ?>
-            <?php foreach ($categoryDetails as $categoryRow): ?>
-                <a class="stretched-link" href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" style="text-decoration: none;">
-                    <div class="card text-white bg-primary mb-3" style="width: 18rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                        <div class="card-body text-center">
-                            <h2 class="card-title"><?=$categoryRow->category_name?></h2>
-                        </div>
-                    </div>
-                </a>
-            <?php endforeach ?>
-        <?php endif ?>
-    </div>
-</section> -->
-
 
 
 <section class="py-5 category container" id="category-section">
@@ -68,11 +51,12 @@
         <?php if (!empty($categoryDetails)): ?>
             <?php foreach ($categoryDetails as $categoryRow): ?>
                 <a class="stretched-link" href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" style="text-decoration: none;">
-                    <div class="custom-card card">
-                        <div class="card-body">
-                            <h2 class="card-title"><?=$categoryRow->category_name?></h2>
+                    <div class="custom-card-container">
+                        <div class="custom-card">
+                            <div class="custom-card-content">
+                                <?=$categoryRow->category_name?>
+                            </div>
                         </div>
-                        <div class="wave"></div>
                     </div>
                 </a>
             <?php endforeach ?>
@@ -80,40 +64,66 @@
     </div>
 </section>
 
+
 <style>
-.custom-card.card {
-    background-color: #007bff; /* Bootstrap primary color */
+.custom-card-container {
+    position: relative; /* Added for pulse effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-card {
+    width: 300px; /* Card width */
+    height: 100px; /* Card height */
+    background: #6451CE; /* Card background color */
+    border-radius: 15px; /* Card border radius */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.custom-card:hover {
+    transform: scale(1.05);
+}
+
+.custom-card-content {
+    font-size: 1.5em; /* Reduced font size */
     color: white;
-    width: 18rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-    overflow: hidden; /* To ensure the wave border effect is contained */
-    position: relative;
-    text-align: center;
-    font-size: 0.9rem;
-    animation: pulse 2s infinite;
+    font-weight: bold;
 }
 
-.custom-card .card-body {
-    padding: 20px;
-}
-
-.custom-card .wave {
+/* Pulse effect */
+.custom-card-container::before {
+    content: "";
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 30px;
-    background: url('https://www.transparenttextures.com/patterns/asfalt-light.png'); /* Placeholder wave image, replace with your own */
-    background-size: cover;
+    top: 50%;
+    left: 50%;
+    width: 300px; /* Width of the pulse effect */
+    height: 100px; /* Height of the pulse effect */
+    background: rgba(100, 81, 206, 0.4); /* Pulse effect color */
+    border-radius: 15px; /* Border radius to match the card */
+    transform: translate(-50%, -50%);
+    animation: pulse 2s infinite;
+    z-index: -1;
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0;
+    }
 }
-     </style>
+
+
+  
+</style>
 
 
 
