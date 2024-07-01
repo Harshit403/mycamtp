@@ -57,56 +57,56 @@ $routes->get('/login', ADMIN.'LoginController::loadLoginPage');
 $routes->post('/verify/adminlogin', ADMIN.'LoginController::verifyAdminLogin');
 $routes->get('/admin/logout',ADMIN.'LoginController::logoutAdmin');
 $routes->get('/page/access-denied',ADMIN.'LoginController::loadAccessDenied');
-$routes->get('/admin_panel',ADMIN.'DashboardController::loadAdminPanel',['filter' => 'authGuard']);
+$routes->get('/admin_panel',ADMIN.'DashboardController::loadAdminPanel');
 // Category 
-$routes->get('/admin/add-category',ADMIN.'DashboardController::loadAddCategoryPage',['filter' => 'authGuard']);
-$routes->get('/admin/add-category/(:any)',ADMIN.'DashboardController::loadAddCategoryPage/$1',['filter' => 'authGuard']);
-$routes->post('/admin/add-category',ADMIN.'DashboardController::addCategory',['filter' => 'authGuard']);
-$routes->get('/admin/category-list',ADMIN.'DashboardController::loadCategoryListPage',['filter' => 'authGuard']);
-$routes->post('/admin/fetch-category-list',ADMIN.'DashboardController::fetchCatgoryListPage',['filter' => 'authGuard']);
-$routes->post('/admin/category-status',ADMIN.'DashboardController::updateCategoryStatus',['filter' => 'authGuard']);
-$routes->post('/admin/delete-category',ADMIN.'DashboardController::deleteCategory',['filter' => 'authGuard']);
+$routes->get('/admin/add-category',ADMIN.'DashboardController::loadAddCategoryPage');
+$routes->get('/admin/add-category/(:any)',ADMIN.'DashboardController::loadAddCategoryPage/$1');
+$routes->post('/admin/add-category',ADMIN.'DashboardController::addCategory');
+$routes->get('/admin/category-list',ADMIN.'DashboardController::loadCategoryListPage');
+$routes->post('/admin/fetch-category-list',ADMIN.'DashboardController::fetchCatgoryListPage');
+$routes->post('/admin/category-status',ADMIN.'DashboardController::updateCategoryStatus');
+$routes->post('/admin/delete-category',ADMIN.'DashboardController::deleteCategory');
 
 
 
 // level routes
-$routes->get('/admin/add-level',ADMIN.'DashboardController::loadAddLevelPage',['filter' => 'authGuard']);
-$routes->get('/admin/add-level/(:any)',ADMIN.'DashboardController::loadAddLevelPage/$1',['filter' => 'authGuard']);
-$routes->post('/admin/add-level',ADMIN.'DashboardController::addLevel',['filter' => 'authGuard']);
-$routes->get('/admin/level-list',ADMIN.'DashboardController::loadLevelListPage',['filter' => 'authGuard']);
-$routes->post('/admin/fetch-level-list',ADMIN.'DashboardController::fetchLevelListPage',['filter' => 'authGuard']);
+$routes->get('/admin/add-level',ADMIN.'DashboardController::loadAddLevelPage');
+$routes->get('/admin/add-level/(:any)',ADMIN.'DashboardController::loadAddLevelPage/$1');
+$routes->post('/admin/add-level',ADMIN.'DashboardController::addLevel');
+$routes->get('/admin/level-list',ADMIN.'DashboardController::loadLevelListPage');
+$routes->post('/admin/fetch-level-list',ADMIN.'DashboardController::fetchLevelListPage');
 // type routes
-$routes->get('/admin/add-type',ADMIN.'DashboardController::loadAddTypePage',['filter' => 'authGuard']);
-$routes->get('/admin/add-type/(:any)',ADMIN.'DashboardController::loadAddTypePage/$1',['filter' => 'authGuard']);
-$routes->post('/admin/add-type',ADMIN.'DashboardController::addType',['filter' => 'authGuard']);
-$routes->get('/admin/type-list',ADMIN.'DashboardController::loadTypeListPage',['filter' => 'authGuard']);
-$routes->post('/admin/fetch-type-list',ADMIN.'DashboardController::fetchTypeListPage',['filter' => 'authGuard']);
+$routes->get('/admin/add-type',ADMIN.'DashboardController::loadAddTypePage');
+$routes->get('/admin/add-type/(:any)',ADMIN.'DashboardController::loadAddTypePage/$1');
+$routes->post('/admin/add-type',ADMIN.'DashboardController::addType');
+$routes->get('/admin/type-list',ADMIN.'DashboardController::loadTypeListPage');
+$routes->post('/admin/fetch-type-list',ADMIN.'DashboardController::fetchTypeListPage');
 
 // subject routes
-$routes->get('/admin/add-subject',ADMIN.'DashboardController::loadAddSubjectPage',['filter' => 'authGuard']);
-$routes->get('/admin/add-subject/(:any)',ADMIN.'DashboardController::loadAddSubjectPage/$1',['filter' => 'authGuard']);
-$routes->post('/admin/add-subject',ADMIN.'DashboardController::addSubject',['filter' => 'authGuard']);
-$routes->post('/admin/get-type-list',ADMIN.'DashboardController::getTypeInfo',['filter' => 'authGuard']);
-$routes->get('/admin/subject-list',ADMIN.'DashboardController::loadSubjectListPage',['filter' => 'authGuard']);
-$routes->post('/admin/fetch-subject-list',ADMIN.'DashboardController::fetchSubjectListPage',['filter' => 'authGuard']);
+$routes->get('/admin/add-subject',ADMIN.'DashboardController::loadAddSubjectPage');
+$routes->get('/admin/add-subject/(:any)',ADMIN.'DashboardController::loadAddSubjectPage/$1');
+$routes->post('/admin/add-subject',ADMIN.'DashboardController::addSubject');
+$routes->post('/admin/get-type-list',ADMIN.'DashboardController::getTypeInfo');
+$routes->get('/admin/subject-list',ADMIN.'DashboardController::loadSubjectListPage');
+$routes->post('/admin/fetch-subject-list',ADMIN.'DashboardController::fetchSubjectListPage');
 
 // paper routes
-$routes->get('/admin/add-paper',ADMIN.'DashboardController::loadAddPaperPage',['filter' => 'authGuard']);
-$routes->get('/admin/add-paper/(:any)',ADMIN.'DashboardController::loadAddPaperPage/$1',['filter' => 'authGuard']);
-$routes->post('/admin/add-paper',ADMIN.'DashboardController::addPaper',['filter' => 'authGuard']);
-$routes->post('/admin/get-subject-list',ADMIN.'DashboardController::getSubjectInfo',['filter' => 'authGuard']);
-$routes->post('/admin/update-paper-status',ADMIN.'DashboardController::updatePaperStatus',['filter' => 'authGuard']);
-$routes->post('/admin/delete-paper',ADMIN.'DashboardController::deletePaper',['filter' => 'authGuard']);
-$routes->get('/admin/paper-list',ADMIN.'DashboardController::loadPaperListPage',['filter' => 'authGuard']);
-$routes->post('/admin/fetch-paper',ADMIN.'DashboardController::fetchedPaperList',['filter' => 'authGuard']);
+$routes->get('/admin/add-paper',ADMIN.'DashboardController::loadAddPaperPage');
+$routes->get('/admin/add-paper/(:any)',ADMIN.'DashboardController::loadAddPaperPage/$1');
+$routes->post('/admin/add-paper',ADMIN.'DashboardController::addPaper');
+$routes->post('/admin/get-subject-list',ADMIN.'DashboardController::getSubjectInfo');
+$routes->post('/admin/update-paper-status',ADMIN.'DashboardController::updatePaperStatus');
+$routes->post('/admin/delete-paper',ADMIN.'DashboardController::deletePaper');
+$routes->get('/admin/paper-list',ADMIN.'DashboardController::loadPaperListPage');
+$routes->post('/admin/fetch-paper',ADMIN.'DashboardController::fetchedPaperList');
 
 // promocodes
-$routes->get('/admin/add-promocode',ADMIN.'DashboardController::loadAddPromocodePage',['filter' => 'authGuard']);
-$routes->get('/admin/add-promocode/(:any)',ADMIN.'DashboardController::loadAddPromocodePage/$1',['filter' => 'authGuard']);
-$routes->post('/admin/add-promocode',ADMIN.'DashboardController::addPromoCode',['filter' => 'authGuard']);
-$routes->get('/admin/promocode-list',ADMIN.'DashboardController::loadPromocodeListPage',['filter' => 'authGuard']);
-$routes->post('/admin/delete-promocode',ADMIN.'DashboardController::deletePromocode',['filter' => 'authGuard']);
-$routes->post('/admin/fetch-prmocodes',ADMIN.'DashboardController::fetchPromocodes',['filter' => 'authGuard']);
+$routes->get('/admin/add-promocode',ADMIN.'DashboardController::loadAddPromocodePage');
+$routes->get('/admin/add-promocode/(:any)',ADMIN.'DashboardController::loadAddPromocodePage/$1');
+$routes->post('/admin/add-promocode',ADMIN.'DashboardController::addPromoCode');
+$routes->get('/admin/promocode-list',ADMIN.'DashboardController::loadPromocodeListPage');
+$routes->post('/admin/delete-promocode',ADMIN.'DashboardController::deletePromocode');
+$routes->post('/admin/fetch-prmocodes',ADMIN.'DashboardController::fetchPromocodes');
 
 // notice
 $routes->get('/admin/add-notice',ADMIN.'DashboardController::loadAddNotice');
@@ -114,17 +114,17 @@ $routes->get('/admin/add-notice/(:any)',ADMIN.'DashboardController::loadAddNotic
 $routes->post('/admin/add-notice',ADMIN.'DashboardController::addNotice');
 $routes->get('/admin/notice-list',ADMIN.'DashboardController::loadNoticeListPage');
 $routes->post('/admin/fetch-notice-list',ADMIN.'DashboardController::fetchNoticeList');
-$routes->post('/admin/delete-notice',ADMIN.'DashboardController::deleteNotice',['filter' => 'authGuard']);
+$routes->post('/admin/delete-notice',ADMIN.'DashboardController::deleteNotice');
 
 // student /admin
 $routes->get('/admin/student-list',ADMIN.'DashboardController::loadStudentListPage');
 $routes->post('/admin/fetch-student-list',ADMIN.'DashboardController::fetchStudentList');
 $routes->post('/admin/change-block-status',ADMIN.'DashboardController::changeStudentBlockStatus');
-$routes->get('/admin/student-export',ADMIN.'DashboardController::exportStudentDetails',['filter' => 'authGuard']);
-$routes->post('/admin/subject-list',ADMIN.'DashboardController::getSubjectList',['filter' => 'authGuard']);
-$routes->post('/admin/change-subject-visibility',ADMIN.'DashboardController::changeSubVisibility',['filter' => 'authGuard']);
+$routes->get('/admin/student-export',ADMIN.'DashboardController::exportStudentDetails');
+$routes->post('/admin/subject-list',ADMIN.'DashboardController::getSubjectList');
+$routes->post('/admin/change-subject-visibility',ADMIN.'DashboardController::changeSubVisibility');
 
-$routes->post('/admin/fetch-purchase-history',ADMIN.'DashboardController::fetchPurchaseHistory',['filter' => 'authGuard']);
+$routes->post('/admin/fetch-purchase-history',ADMIN.'DashboardController::fetchPurchaseHistory');
 
 // assignment
 $routes->get('/admin/assignment-level-list',ADMIN.'DashboardController::loadAssignmentLevelListPage',['filter'=>'authGuardBoth']);
@@ -132,16 +132,16 @@ $routes->post('/admin/fetch-assignment-level-list',ADMIN.'DashboardController::f
 
 $routes->get('/admin/assignment-list/(:any)',ADMIN.'DashboardController::loadAssignmentListPage/$1',['filter'=>'authGuardBoth']);
 $routes->post('/admin/fetch-assignment-list',ADMIN.'DashboardController::fetchAssignmentList',['filter'=>'authGuardBoth']);
-$routes->get('/admin/upload-recheck/export',ADMIN.'DashboardController::exportPaperDetails',['filter' => 'authGuard']);
+$routes->get('/admin/upload-recheck/export',ADMIN.'DashboardController::exportPaperDetails');
 $routes->post('/admin/upload-rechek/papers',ADMIN.'DashboardController::updateRecheckAssignment',['filter' => 'authGuardBoth']);
 
 // examinar
-$routes->get('/admin/add-examinar',ADMIN.'DashboardController::loadAddExaminarPage',['filter' => 'authGuard']);
-$routes->get('/admin/add-examinar/(:any)',ADMIN.'DashboardController::loadAddExaminarPage/$1',['filter' => 'authGuard']);
-$routes->post('/admin/add-examinar',ADMIN.'DashboardController::addExaminar',['filter' => 'authGuard']);
-$routes->get('/admin/examinar-list',ADMIN.'DashboardController::loadExaminarListPage',['filter' => 'authGuard']);
-$routes->post('/admin/fetch-examinar-list',ADMIN.'DashboardController::getExaminarList',['filter' => 'authGuard']);
-$routes->post('/admin/examinar-status-change',ADMIN.'DashboardController::changeExaminarBlockedStatus',['filter' => 'authGuard']);
+$routes->get('/admin/add-examinar',ADMIN.'DashboardController::loadAddExaminarPage');
+$routes->get('/admin/add-examinar/(:any)',ADMIN.'DashboardController::loadAddExaminarPage/$1');
+$routes->post('/admin/add-examinar',ADMIN.'DashboardController::addExaminar');
+$routes->get('/admin/examinar-list',ADMIN.'DashboardController::loadExaminarListPage');
+$routes->post('/admin/fetch-examinar-list',ADMIN.'DashboardController::getExaminarList');
+$routes->post('/admin/examinar-status-change',ADMIN.'DashboardController::changeExaminarBlockedStatus');
 
 
 $routes->get('admin/examinar/assign-examinar/(:any)',ADMIN.'DashboardController::loadAssignExaminar/$1');
@@ -173,8 +173,8 @@ $routes->get('/admin/add-notes/(:any)',ADMIN.'DashboardController::loadAddNotesP
 $routes->post('/admin/add-notes',ADMIN.'DashboardController::addNotes');
 $routes->get('/admin/notes-list',ADMIN.'DashboardController::loadNoteListPage');
 $routes->post('/admin/fetch-notes',ADMIN.'DashboardController::fetchNotesDetails');
-$routes->post('/admin/notes/status-update',ADMIN.'DashboardController::statusUpdate',['filter' => 'authGuard']);
-$routes->post('/admin/notes/delete',ADMIN.'DashboardController::deleteNotes',['filter' => 'authGuard']);
+$routes->post('/admin/notes/status-update',ADMIN.'DashboardController::statusUpdate');
+$routes->post('/admin/notes/delete',ADMIN.'DashboardController::deleteNotes');
 
 // amendment
 $routes->get('/admin/add-amendment',ADMIN.'DashboardController::loadAddAmendmentPage');
