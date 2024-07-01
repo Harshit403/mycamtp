@@ -17,13 +17,13 @@ $routes->post('/register-details', STUDENT.'DefaultController::addStudentDetails
 $routes->post('/sign-in', STUDENT.'DefaultController::verifyStudentLogin');
 $routes->get('/dashboard', STUDENT.'DefaultController::loadDashboardPage');
 $routes->post('/add-to-cart', STUDENT.'DefaultController::addToCartItem');
-$routes->get('/fetch-active-cartitems', STUDENT.'DefaultController::getCartItemsArray',['filter'=>'authGuard']);
+$routes->get('/fetch-active-cartitems', STUDENT.'DefaultController::getCartItemsArray');
 $routes->post('/remove-cart-items', STUDENT.'DefaultController::removeCartItems');
 $routes->post('/checkout-cart-items', STUDENT.'DefaultController::checkoutPayments');
 $routes->post('/apply-promocode',STUDENT.'DefaultController::applyPromocode');
 $routes->post('/promo/remove-promocode',STUDENT.'DefaultController::removePromocode');
 
-$routes->get('/purchase-status',STUDENT.'DefaultController::purchaseStatus',['filter'=>'authGuard']);
+$routes->get('/purchase-status',STUDENT.'DefaultController::purchaseStatus');
 $routes->get('/logout',STUDENT.'DefaultController::logOutUser');
 $routes->post('/fetch-level-list',STUDENT.'DefaultController::fetchLevelListInfo');
 $routes->get('/blog',STUDENT.'DefaultController::displayBlogDetails');
@@ -37,17 +37,18 @@ $routes->get('/about-us',STUDENT.'DefaultController::loadAboutUs');
 $routes->get('/disclaimer',STUDENT.'DefaultController::loadDisclaimer');
 
 // my-resources
-$routes->get('/my-resources/subject',STUDENT.'DefaultController::loadMyResourceSubjectPage',['filter'=>'authGuard']);
-$routes->get('/my-resources/paper',STUDENT.'DefaultController::loadPaperListPage',['filter'=>'authGuard']);
-$routes->get('/my-resources/notes/subject-list',STUDENT.'DefaultController::loadNotesSubjectListPage',['filter'=>'authGuard']);
-$routes->get('/my-resources/notes/notes-list',STUDENT.'DefaultController::loadNotesListPage',['filter'=>'authGuard']);
-$routes->get('/my-resources/amendment/subject-list',STUDENT.'DefaultController::loadAmendmentSubjectList',['filter'=>'authGuard']);
-$routes->get('/amendment/amendment-list',STUDENT.'DefaultController::loadAmendmentList',['filter'=>'authGuard']);
+$routes->get('/my-resources/subject',STUDENT.'DefaultController::loadMyResourceSubjectPage');
+$routes->get('/my-resources/paper',STUDENT.'DefaultController::loadPaperListPage');
+$routes->get('/my-resources/notes/subject-list',STUDENT.'DefaultController::loadNotesSubjectListPage');
+$routes->get('/my-resources/notes/notes-list',STUDENT.'DefaultController::loadNotesListPage');
+$routes->get('/my-resources/amendment/subject-list',STUDENT.'DefaultController::loadAmendmentSubjectList');
+$routes->get('/amendment/amendment-list',STUDENT.'DefaultController::loadAmendmentList');
 
-$routes->get('/my-resources/qbank/subject-list',STUDENT.'DefaultController::loadQbankSubjectList',['filter'=>'authGuard']);
-$routes->get('/qbank/qbank-list',STUDENT.'DefaultController::loadQbankList',['filter'=>'authGuard']);
+$routes->get('/my-resources/qbank/subject-list',STUDENT.'DefaultController::loadQbankSubjectList');
+$routes->get('/qbank/qbank-list',STUDENT.'DefaultController::loadQbankList');
 
 $routes->get('/invoice',STUDENT.'DefaultController::loadInvoicePage');
+$routes->get('/download-invoice',STUDENT.'DefaultController::downloadInvoice');
 
 
 
@@ -108,17 +109,17 @@ $routes->post('/admin/delete-promocode',ADMIN.'DashboardController::deletePromoc
 $routes->post('/admin/fetch-prmocodes',ADMIN.'DashboardController::fetchPromocodes',['filter' => 'authGuard']);
 
 // notice
-$routes->get('/admin/add-notice',ADMIN.'DashboardController::loadAddNotice',['filter'=>'authGuard']);
-$routes->get('/admin/add-notice/(:any)',ADMIN.'DashboardController::loadAddNotice/$1',['filter'=>'authGuard']);
-$routes->post('/admin/add-notice',ADMIN.'DashboardController::addNotice',['filter'=>'authGuard']);
-$routes->get('/admin/notice-list',ADMIN.'DashboardController::loadNoticeListPage',['filter'=>'authGuard']);
-$routes->post('/admin/fetch-notice-list',ADMIN.'DashboardController::fetchNoticeList',['filter'=>'authGuard']);
+$routes->get('/admin/add-notice',ADMIN.'DashboardController::loadAddNotice');
+$routes->get('/admin/add-notice/(:any)',ADMIN.'DashboardController::loadAddNotice/$1');
+$routes->post('/admin/add-notice',ADMIN.'DashboardController::addNotice');
+$routes->get('/admin/notice-list',ADMIN.'DashboardController::loadNoticeListPage');
+$routes->post('/admin/fetch-notice-list',ADMIN.'DashboardController::fetchNoticeList');
 $routes->post('/admin/delete-notice',ADMIN.'DashboardController::deleteNotice',['filter' => 'authGuard']);
 
 // student /admin
-$routes->get('/admin/student-list',ADMIN.'DashboardController::loadStudentListPage',['filter'=>'authGuard']);
-$routes->post('/admin/fetch-student-list',ADMIN.'DashboardController::fetchStudentList',['filter'=>'authGuard']);
-$routes->post('/admin/change-block-status',ADMIN.'DashboardController::changeStudentBlockStatus',['filter'=>'authGuard']);
+$routes->get('/admin/student-list',ADMIN.'DashboardController::loadStudentListPage');
+$routes->post('/admin/fetch-student-list',ADMIN.'DashboardController::fetchStudentList');
+$routes->post('/admin/change-block-status',ADMIN.'DashboardController::changeStudentBlockStatus');
 $routes->get('/admin/student-export',ADMIN.'DashboardController::exportStudentDetails',['filter' => 'authGuard']);
 $routes->post('/admin/subject-list',ADMIN.'DashboardController::getSubjectList',['filter' => 'authGuard']);
 $routes->post('/admin/change-subject-visibility',ADMIN.'DashboardController::changeSubVisibility',['filter' => 'authGuard']);
@@ -143,63 +144,63 @@ $routes->post('/admin/fetch-examinar-list',ADMIN.'DashboardController::getExamin
 $routes->post('/admin/examinar-status-change',ADMIN.'DashboardController::changeExaminarBlockedStatus',['filter' => 'authGuard']);
 
 
-$routes->get('admin/examinar/assign-examinar/(:any)',ADMIN.'DashboardController::loadAssignExaminar/$1',['filter'=>'authGuard']);
-$routes->post('admin/examinar/assign-examinar',ADMIN.'DashboardController::assignExaminar',['filter'=>'authGuard']);
+$routes->get('admin/examinar/assign-examinar/(:any)',ADMIN.'DashboardController::loadAssignExaminar/$1');
+$routes->post('admin/examinar/assign-examinar',ADMIN.'DashboardController::assignExaminar');
 
-$routes->get('admin/examinar/assign-subjects/(:any)',ADMIN.'DashboardController::loadAssignSubjects/$1',['filter'=>'authGuard']);
+$routes->get('admin/examinar/assign-subjects/(:any)',ADMIN.'DashboardController::loadAssignSubjects/$1');
 
 $routes->post('admin/fetch-assign-sub-list',ADMIN.'DashboardController::fetchAssignSubList');
 $routes->post('admin/delete-assign-subject',ADMIN.'DashboardController::deleteAssignSubject');
 
 // newsletter
-$routes->get('admin/newsletter-list',ADMIN.'DashboardController::loadNewsletterList',['filter'=>'authGuard']);
+$routes->get('admin/newsletter-list',ADMIN.'DashboardController::loadNewsletterList');
 $routes->post('/admin/fetch-newsletter-list',ADMIN.'DashboardController::fetchNewsLetter');
 $routes->post('/admin/newsletter/active',ADMIN.'DashboardController::changeNewsletterStatus');
 $routes->post('/admin/send-newsletter',ADMIN.'DashboardController::sendnewsLetter');
 
 // blog
-$routes->get('/admin/add-blog',ADMIN.'DashboardController::loadAddBlogPage',['filter'=>'authGuard']);
-$routes->get('/admin/add-blog/(:any)',ADMIN.'DashboardController::loadAddBlogPage/$1',['filter'=>'authGuard']);
-$routes->post('/admin/add-blog',ADMIN.'DashboardController::addBlogDetails',['filter'=>'authGuard']);
-$routes->get('/admin/blog-list',ADMIN.'DashboardController::loadBlogListPage',['filter'=>'authGuard']);
-$routes->post('/admin/fetch-blog-list',ADMIN.'DashboardController::fetchBlogList',['filter'=>'authGuard']);
-$routes->post('/admin/delete-blog',ADMIN.'DashboardController::deleteBlogItem',['filter'=>'authGuard']);
-$routes->post('/admin/blog-status',ADMIN.'DashboardController::changeBlogStatus',['filter'=>'authGuard']);
+$routes->get('/admin/add-blog',ADMIN.'DashboardController::loadAddBlogPage');
+$routes->get('/admin/add-blog/(:any)',ADMIN.'DashboardController::loadAddBlogPage/$1');
+$routes->post('/admin/add-blog',ADMIN.'DashboardController::addBlogDetails');
+$routes->get('/admin/blog-list',ADMIN.'DashboardController::loadBlogListPage');
+$routes->post('/admin/fetch-blog-list',ADMIN.'DashboardController::fetchBlogList');
+$routes->post('/admin/delete-blog',ADMIN.'DashboardController::deleteBlogItem');
+$routes->post('/admin/blog-status',ADMIN.'DashboardController::changeBlogStatus');
 
 // notes
-$routes->get('/admin/add-notes',ADMIN.'DashboardController::loadAddNotesPage',['filter'=>'authGuard']);
-$routes->get('/admin/add-notes/(:any)',ADMIN.'DashboardController::loadAddNotesPage/$1',['filter'=>'authGuard']);
-$routes->post('/admin/add-notes',ADMIN.'DashboardController::addNotes',['filter'=>'authGuard']);
-$routes->get('/admin/notes-list',ADMIN.'DashboardController::loadNoteListPage',['filter'=>'authGuard']);
-$routes->post('/admin/fetch-notes',ADMIN.'DashboardController::fetchNotesDetails',['filter'=>'authGuard']);
+$routes->get('/admin/add-notes',ADMIN.'DashboardController::loadAddNotesPage');
+$routes->get('/admin/add-notes/(:any)',ADMIN.'DashboardController::loadAddNotesPage/$1');
+$routes->post('/admin/add-notes',ADMIN.'DashboardController::addNotes');
+$routes->get('/admin/notes-list',ADMIN.'DashboardController::loadNoteListPage');
+$routes->post('/admin/fetch-notes',ADMIN.'DashboardController::fetchNotesDetails');
 $routes->post('/admin/notes/status-update',ADMIN.'DashboardController::statusUpdate',['filter' => 'authGuard']);
 $routes->post('/admin/notes/delete',ADMIN.'DashboardController::deleteNotes',['filter' => 'authGuard']);
 
 // amendment
-$routes->get('/admin/add-amendment',ADMIN.'DashboardController::loadAddAmendmentPage',['filter'=>'authGuard']);
-$routes->get('/admin/add-amendment/(:any)',ADMIN.'DashboardController::loadAddAmendmentPage/$1',['filter'=>'authGuard']);
-$routes->post('/admin/add-amendment',ADMIN.'DashboardController::addAmendment',['filter'=>'authGuard']);
-$routes->get('/admin/amendment-list',ADMIN.'DashboardController::loadAmendmentListPage',['filter'=>'authGuard']);
-$routes->post('/admin/fetch-amendment',ADMIN.'DashboardController::fetchAmendmentList',['filter'=>'authGuard']);
-$routes->post('/admin/amendment-status',ADMIN.'DashboardController::updateAmendmentStatus',['filter'=>'authGuard']);
-$routes->post('/admin/delete-amendment',ADMIN.'DashboardController::deleteAmendment',['filter'=>'authGuard']);
+$routes->get('/admin/add-amendment',ADMIN.'DashboardController::loadAddAmendmentPage');
+$routes->get('/admin/add-amendment/(:any)',ADMIN.'DashboardController::loadAddAmendmentPage/$1');
+$routes->post('/admin/add-amendment',ADMIN.'DashboardController::addAmendment');
+$routes->get('/admin/amendment-list',ADMIN.'DashboardController::loadAmendmentListPage');
+$routes->post('/admin/fetch-amendment',ADMIN.'DashboardController::fetchAmendmentList');
+$routes->post('/admin/amendment-status',ADMIN.'DashboardController::updateAmendmentStatus');
+$routes->post('/admin/delete-amendment',ADMIN.'DashboardController::deleteAmendment');
 
 // 	questionbank
-$routes->get('/admin/add-qbank',ADMIN.'DashboardController::loadAddQbankPage',['filter'=>'authGuard']);
-$routes->get('/admin/add-qbank/(:any)',ADMIN.'DashboardController::loadAddQbankPage/$1',['filter'=>'authGuard']);
-$routes->post('/admin/add-qbank',ADMIN.'DashboardController::addQbank',['filter'=>'authGuard']);
-$routes->get('/admin/qbank-list',ADMIN.'DashboardController::loadQbankListPage',['filter'=>'authGuard']);
-$routes->post('/admin/fetch-qbank',ADMIN.'DashboardController::fetchQbankList',['filter'=>'authGuard']);
-$routes->post('/admin/qbank-status',ADMIN.'DashboardController::updateQbankStatus',['filter'=>'authGuard']);
-$routes->post('/admin/delete-qbank',ADMIN.'DashboardController::deleteQbank',['filter'=>'authGuard']);
+$routes->get('/admin/add-qbank',ADMIN.'DashboardController::loadAddQbankPage');
+$routes->get('/admin/add-qbank/(:any)',ADMIN.'DashboardController::loadAddQbankPage/$1');
+$routes->post('/admin/add-qbank',ADMIN.'DashboardController::addQbank');
+$routes->get('/admin/qbank-list',ADMIN.'DashboardController::loadQbankListPage');
+$routes->post('/admin/fetch-qbank',ADMIN.'DashboardController::fetchQbankList');
+$routes->post('/admin/qbank-status',ADMIN.'DashboardController::updateQbankStatus');
+$routes->post('/admin/delete-qbank',ADMIN.'DashboardController::deleteQbank');
 
 // examinar routes
  $routes->post('/verify/examinarlogin', 'LoginController::verifyEaxminarLogin');
 
 // sales
-$routes->get('/admin/view-sales',ADMIN.'DashboardController::loadViewSales',['filter'=>'authGuard']);
-$routes->post('/admin/get-sales',ADMIN.'DashboardController::fetchSales',['filter'=>'authGuard']);
+$routes->get('/admin/view-sales',ADMIN.'DashboardController::loadViewSales');
+$routes->post('/admin/get-sales',ADMIN.'DashboardController::fetchSales');
 
 // validity control
 
-$routes->get('/admin/control-validity',ADMIN.'DashboardController::loadControlValidity',['filter'=>'authGuard']);
+$routes->get('/admin/control-validity',ADMIN.'DashboardController::loadControlValidity');

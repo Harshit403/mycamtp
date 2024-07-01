@@ -881,6 +881,20 @@
 	    	}
 	    }
 
+	    public function downloadInvoice(){
+	    	$mpdf = new \Mpdf\Mpdf();
+	    	$getItem = $this->request->getGet();
+	    	if (isset($getItem['order_id'])) {
+	    		$order_id = $getItem['order_id'];
+	    		$data['invoice_info'] = $this->common->getInfo('invoice_table','row',array('order_id'=>$order_id));
+	    		$html = view('student/invoice_info',$data);
+	    		// return view('student/invoice_info',$data);
+				$mpdf->WriteHTML($html);
+				$mpdf->Output();
+	    	}
+	    	
+	    }
+
 		
 	}
 ?>

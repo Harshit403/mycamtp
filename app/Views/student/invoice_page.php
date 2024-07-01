@@ -13,26 +13,16 @@
                             if (!empty($invoiceJson)) {
                                 $jsonDecoded = json_decode($invoiceJson);
                                 ?>
-                                    <h5><?=$jsonDecoded[0]->order_id?></h5>
+                                    <div class="d-flex justify-content-between">
+                                        <?php $order_id = $jsonDecoded[0]->order_id; ?>
+                                        <h5><?=$order_id?></h5>
+                                        <div class="d-flex" style="flex-direction:column;">
+                                            <?=$jsonDecoded[0]->payment_status?>
+                                            <a href="<?=base_url()?>download-invoice?order_id=<?=$order_id?>" class="btn btn-sm btn-success"><i class="bi bi-arrow-down-circle"></i> Download</a>
+                                        </div>
+                                    </div>
+
                                 <?php
-                                if (!empty($jsonDecoded)) {
-                                    foreach ($jsonDecoded as  $value1) {
-                                        ?>
-                                            <div class="col-md-6">
-                                                <div><?=$value1->subject_name?></div>
-                                                <div><?=$value1->type_name?></div>
-                                                <div><?=$value1->level_name?></div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="d-flex" style="flex-direction: column;">
-                                                    <p style="text-align: right;">&#x20B9;<?=$value1->offer_price?></p>
-                                                    <p style="text-align: right;">&#x20B9;<?=$value1->amt_after_discount?></p>
-                                                </div>
-                                            </div>
-                                        <?php
-                                    }
-                                }
-                                
                             }
                         ?>
                     <?php endforeach ?>
