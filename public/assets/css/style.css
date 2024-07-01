@@ -83,7 +83,7 @@
     color: #1a73e8;
 }
 
-.type_container h2 {
+.type_container .card h2 {
     font-size: 24px;
     margin: 15px 0;
     color: #1a73e8;

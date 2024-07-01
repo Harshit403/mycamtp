@@ -1,6 +1,6 @@
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('content')?>
-	<section class="container type_container" style="padding-top: 5rem;">
+	<section class="container type_container mainContainer">
 		<div class="row">
 			<?php if (!empty($type_list)): ?>
 				<?php foreach ($type_list as $key => $typeRow): ?>
@@ -23,9 +23,9 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<h2 class="text-center"><?=$typeRow->type_info_heading?></h2>
+				<h2 class="text-center"><?=$level_info->level_more_details_heading?></h2>
 				<p>
-					<?=$typeRow->type_info?>
+					<?=$level_info->level_more_details?>
 				</p>
 			</div>
 		</div>

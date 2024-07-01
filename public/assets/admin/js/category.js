@@ -19,6 +19,10 @@ $(document).ready(function() {
             }
         })
     });
+    $("#category_more_details").summernote({
+        height: 300,
+        placeholder: 'Enter a category more dettails',
+    })
 
     if (pageType == 'category_list') {
         loadCategoryTable();

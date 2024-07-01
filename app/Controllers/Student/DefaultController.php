@@ -37,6 +37,7 @@
 	    	$getData = $this->request->getGet();
 	    	$category_short_name = $getData['category'];
 	    	if (!empty($category_short_name)) {
+	    		$data['category_info'] = $this->common->getInfo('category_table','row',array('category_short_name'=>$category_short_name));
 	    		$data['level_list'] = $this->defaultModel->fetchLevelListModel($category_short_name);
 	    		return view('student/level_list',$data);
 	    	}
@@ -47,6 +48,7 @@
 	    	$category_short_name = $getData['category'];
 	    	$level_short_name = $getData['level'];
 	    	if (!empty($level_short_name)) {
+	    		$data['level_info'] = $this->common->getInfo('level_table','row',array('level_short_name'=>$level_short_name));
 	    		$data['type_list'] = $this->defaultModel->fetchTypeListModel($level_short_name);
 	    		return view('student/type_list',$data);
 	    	}
@@ -56,6 +58,7 @@
 	    	$getData = $this->request->getGet();
 	    	$type_short_name = $getData['type'];
 	    	if (!empty($type_short_name)) {
+	    		$data['type_info'] = $this->common->getInfo('type_table','row',array('type_short_name'=>$type_short_name));
 	    		$data['subject_list'] = $this->defaultModel->fetchSubjectListModel($type_short_name);
 	    		return view('student/subject_list',$data);
 	    	}

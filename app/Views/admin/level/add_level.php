@@ -47,5 +47,5 @@
     </div>
 <?= $this->endSection() ?>
 <?= $this->section('jsContent') ?>
-<script type="text/javascript" src="<?=base_url()?>/assets/admin/js/level.js?v=1.0.0"></script>
+<script type="text/javascript" src="<?=base_url()?>/assets/admin/js/level.js?v=1.0.1"></script>
 <?= $this->endSection() ?>

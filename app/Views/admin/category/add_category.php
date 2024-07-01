@@ -18,6 +18,16 @@
 								<label class="form-label">Category url Name</label>
 								<input type="text" id="category_short_name" name="category_short_name" class="form-control form-control-sm" placeholder="Category Short Name" value="<?=!empty($categoryDetails) ? $categoryDetails->category_short_name : ''?>" oninput="this.value=this.value.toLowerCase()">
 							</div>
+							<div class="col-md-6">
+	                            <label for="category_more_details_heading" class="form-label">Category More Details Heading</label>
+	                            <input type="text" class="form-control form-control-sm" name="category_more_details_heading" placeholder="Category More Details Heading" aria-describedby="category_more_details_heading" value="<?=!empty($levelDetails) ? $levelDetails->category_more_details_heading : '';?>" >
+	                        </div>
+	                        <div class="col-md-12">
+	                            <label for="category_more_details" class="form-label">Category More Details</label>
+	                            <textarea class="form-control form-control-sm" name="category_more_details" id="category_more_details">
+	                                <?=!empty($levelDetails) ? $levelDetails->category_more_details : '';?>
+	                            </textarea>
+	                        </div>
 						</div>
 					</div>
 					<div class="card-footer d-flex justify-content-end">
@@ -32,5 +42,5 @@
 <script type="text/javascript">
     var pageType = 'add_category';
 </script>
-<script type="text/javascript" src="<?=base_url()?>assets/admin/js/category.js?v=1.0.1"></script>
+<script type="text/javascript" src="<?=base_url()?>assets/admin/js/category.js?v=1.0.2"></script>
 <?= $this->endSection() ?>

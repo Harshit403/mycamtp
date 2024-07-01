@@ -17,9 +17,9 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<h2 class="text-center"><?=$levelRow->level_more_details_heading?></h2>
+				<h2 class="text-center"><?=$category_info->category_more_details_heading?></h2>
 				<p>
-					<?=$levelRow->level_more_details?>
+					<?=$category_info->category_more_details?>
 				</p>
 			</div>
 		</div>

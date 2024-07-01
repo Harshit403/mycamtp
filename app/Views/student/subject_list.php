@@ -4,16 +4,7 @@
 	/*ul { list-style-type: "\2713";}*/
 
 </style>
-	<section class="container subject_container" style="padding-top: 5rem;">
-		<h2 class="text-center">Test Text</h2>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p>
+	<section class="container subject_container mainContainer">
 		<div class="row">
 			<?php if (!empty($subject_list)): ?>
 				<?php foreach ($subject_list as $key => $subjectRow): ?>
@@ -34,6 +25,14 @@
 					</div>
 				<?php endforeach ?>
 			<?php endif ?>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="text-center"><?=$type_info->type_info_heading?></h2>
+				<p>
+					<?=$type_info->type_info?>
+				</p>
+			</div>
 		</div>
 	</section>
 <?= $this->endSection() ?>
