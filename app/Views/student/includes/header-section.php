@@ -25,7 +25,7 @@
               </a>
               <ul class="dropdown-menu dropdown-menu-end" style="left: -118px;">
                 <li><a class="dropdown-item" href="<?=base_url()?>dashboard">Dashboard</a></li>
-                <li><a class="dropdown-item" href="#">Invoice</a></li>
+                <li><a class="dropdown-item" href="<?=base_url()?>invoice">Invoice</a></li>
                 <li><a class="dropdown-item" href="<?=base_url()?>logout">Logout</a></li>
               </ul>
             </div>
@@ -89,7 +89,7 @@
               </a>
               <ul class="dropdown-menu dropdown-menu-end" style="left: -118px;">
                 <li><a class="dropdown-item" href="<?=base_url()?>dashboard">Dashboard</a></li>
-                <li><a class="dropdown-item" href="#">Invoice</a></li>
+                <li><a class="dropdown-item" href="<?=base_url()?>invoice">Invoice</a></li>
                 <li><a class="dropdown-item" href="<?=base_url()?>logout">Logout</a></li>
               </ul>
             </div>

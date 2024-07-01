@@ -15,7 +15,7 @@ $routes->get('/type', STUDENT.'DefaultController::fetchTypeList');
 $routes->get('/subject', STUDENT.'DefaultController::fetchSubjectList');
 $routes->post('/register-details', STUDENT.'DefaultController::addStudentDetails');
 $routes->post('/sign-in', STUDENT.'DefaultController::verifyStudentLogin');
-$routes->get('/dashboard', STUDENT.'DefaultController::loadDashboardPage',['filter'=>'authGuard']);
+$routes->get('/dashboard', STUDENT.'DefaultController::loadDashboardPage');
 $routes->post('/add-to-cart', STUDENT.'DefaultController::addToCartItem');
 $routes->get('/fetch-active-cartitems', STUDENT.'DefaultController::getCartItemsArray',['filter'=>'authGuard']);
 $routes->post('/remove-cart-items', STUDENT.'DefaultController::removeCartItems');
@@ -46,6 +46,8 @@ $routes->get('/amendment/amendment-list',STUDENT.'DefaultController::loadAmendme
 
 $routes->get('/my-resources/qbank/subject-list',STUDENT.'DefaultController::loadQbankSubjectList',['filter'=>'authGuard']);
 $routes->get('/qbank/qbank-list',STUDENT.'DefaultController::loadQbankList',['filter'=>'authGuard']);
+
+$routes->get('/invoice',STUDENT.'DefaultController::loadInvoicePage');
 
 
 

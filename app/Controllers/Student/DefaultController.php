@@ -871,7 +871,14 @@
             		throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
 		        }
 	    	}
-	        
+	    }
+
+	    public function loadInvoicePage(){
+	    	if (session()->get('studentDetails')!==null) {
+	    		$cart_id = $this->getCartId()['data'];
+	    		$data['invoiceDetails'] = $this->common->getInfo('invoice_table','',array('cart_id'=>$cart_id));
+	    		return view('student/invoice_page',$data);
+	    	}
 	    }
 
 		

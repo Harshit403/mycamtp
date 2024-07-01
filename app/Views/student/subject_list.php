@@ -25,7 +25,7 @@
 					        <?php
 					        	$discount = 0;
 					        	if (!empty($subjectRow)) {
-					        		$discount = ($subjectRow->offer_price/$subjectRow->original_price)*100;
+					        		$discount = 100-($subjectRow->offer_price/$subjectRow->original_price)*100;
 					        	}
 					        ?>
 					        <div class="discount">[<?=$discount?>% OFF]</div>
