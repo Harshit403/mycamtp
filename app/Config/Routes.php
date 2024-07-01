@@ -133,7 +133,7 @@ $routes->post('/admin/fetch-assignment-level-list',ADMIN.'DashboardController::f
 $routes->get('/admin/assignment-list/(:any)',ADMIN.'DashboardController::loadAssignmentListPage/$1');
 $routes->post('/admin/fetch-assignment-list',ADMIN.'DashboardController::fetchAssignmentList');
 $routes->get('/admin/upload-recheck/export',ADMIN.'DashboardController::exportPaperDetails');
-$routes->post('/admin/upload-rechek/papers',ADMIN.'DashboardController::updateRecheckAssignment',['filter' => 'authGuardBoth']);
+$routes->post('/admin/upload-rechek/papers',ADMIN.'DashboardController::updateRecheckAssignment');
 
 // examinar
 $routes->get('/admin/add-examinar',ADMIN.'DashboardController::loadAddExaminarPage');

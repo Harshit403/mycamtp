@@ -27,6 +27,16 @@
                             <label for="level_short_name" class="form-label">Level Url Short name</label>
                             <input type="text" class="form-control form-control-sm" id="level_short_name" placeholder="Level Name" aria-describedby="level_short_name" value="<?=!empty($levelDetails) ? $levelDetails->level_short_name : '';?>">
                         </div>
+                        <div class="col-md-6">
+                            <label for="level_more_details_heading" class="form-label">Level More Details Heading</label>
+                            <input type="text" class="form-control form-control-sm" id="level_more_details_heading" placeholder="Level More Details Heading" aria-describedby="level_more_details_heading" value="<?=!empty($levelDetails) ? $levelDetails->level_more_details_heading : '';?>">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="level_short_name" class="form-label">Level More Details</label>
+                            <textarea class="form-control form-control-sm" id="level_more_details">
+                                <?=!empty($levelDetails) ? $levelDetails->level_more_details : '';?>
+                            </textarea>
+                        </div>
                     </div>
                 </div>
                 <div class="card-footer d-flex justify-content-end">

@@ -68,6 +68,16 @@
                                 <input type="file" class="form-control form-control-sm" id="schedule_file">
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <label for="type_info_heading" class="form-label">Type More Details Heading</label>
+                            <input type="text" class="form-control form-control-sm" id="type_more_details_heading" placeholder="Type More Details Heading" aria-describedby="type_info_heading" value="<?=!empty($levelDetails) ? $levelDetails->type_info_heading : '';?>">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="type_info" class="form-label">Type More Details</label>
+                            <textarea class="form-control form-control-sm" id="type_info">
+                                <?=!empty($levelDetails) ? $levelDetails->level_more_details : '';?>
+                            </textarea>
+                        </div>
                     </div>
                    
                 </div>
@@ -79,5 +89,5 @@
     </div>
 <?= $this->endSection() ?>
 <?= $this->section('jsContent') ?>
-<script type="text/javascript" src="<?=base_url()?>//assets/admin/js/type.js?v=1.0.1"></script>
+<script type="text/javascript" src="<?=base_url()?>//assets/admin/js/type.js?v=1.0.2"></script>
 <?= $this->endSection() ?>

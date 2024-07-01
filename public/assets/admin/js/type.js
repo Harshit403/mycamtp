@@ -25,6 +25,8 @@ $(document).ready(function() {
             expiry_date = expiry_date.split('T').join(' ');
         }
         var schedule_file = $("#schedule_file").prop('files')[0];
+        var type_info_heading = $("#type_info_heading").val();
+        var type_info = $("#type_info").val();
         var error = new Array;
         if (level_id == '') {
             error.push('Please select the level');
@@ -37,6 +39,12 @@ $(document).ready(function() {
         }
         if (expiry_date == '') {
             error.push('Please enter the expiry date');
+        }
+        if (type_info_heading == '') {
+            error.push('Please enter the type info heading');
+        }
+        if (type_info == '') {
+            error.push('Please enter the type info');
         }
         if (error.length > 0) {
             bootbox.alert({

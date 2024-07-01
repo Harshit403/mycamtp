@@ -3,13 +3,26 @@ $(document).ready(function() {
         addLevel();
     });
 
+    $("#level_more_details").summernote({
+        height: 300,
+        placeholder: 'level more details',
+    });
+
     function addLevel(level_id = '') {
         var level_name = $.trim($("#level_name").val());
         var category_id = $("#category_id").val();
         var level_short_name = $("#level_short_name").val();
+        var level_more_details_heading = $("#level_more_details_heading").val();
+        var level_more_details = $("#level_more_details").val();
         var error = new Array;
         if (level_name == '') {
             error.push('Please enter a level name');
+        }
+        if (level_more_details_heading == '') {
+            error.push('Please enter a level more details heading');
+        }
+        if (level_more_details == '') {
+            error.push('Please enter a level more details');
         }
         if (error.length > 0) {
             bootbox.alert({
@@ -26,6 +39,8 @@ $(document).ready(function() {
                 level_name: level_name,
                 category_id: category_id,
                 level_short_name: level_short_name,
+                level_more_details_heading: level_more_details_heading,
+                level_more_details: level_more_details,
                 level_id: level_id,
             },
             dataType: 'json',
