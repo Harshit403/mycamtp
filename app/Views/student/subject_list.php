@@ -4,7 +4,7 @@
 	/*ul { list-style-type: "\2713";}*/
 
 </style>
-	<section class="container subject_container mainContainer">
+	<section class="container  mainContainer">
 		<div class="row">
 			<?php if (!empty($subject_list)): ?>
 				<?php foreach ($subject_list as $key => $subjectRow): ?>

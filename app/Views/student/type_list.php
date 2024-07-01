@@ -1,6 +1,6 @@
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('content')?>
-	<section class="container type_container mainContainer">
+	<section class="container mainContainer">
 		<div class="row">
 			<?php if (!empty($type_list)): ?>
 				<?php foreach ($type_list as $key => $typeRow): ?>

@@ -1,6 +1,6 @@
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('content')?>
-	<section class="container level_conatainer mainContainer">
+	<section class="container mainContainer">
 		<div class="row">
 			<?php foreach ($level_list as $levelRow): ?>
 				<div class="col-md-3">
