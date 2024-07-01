@@ -127,11 +127,11 @@ $routes->post('/admin/change-subject-visibility',ADMIN.'DashboardController::cha
 $routes->post('/admin/fetch-purchase-history',ADMIN.'DashboardController::fetchPurchaseHistory');
 
 // assignment
-$routes->get('/admin/assignment-level-list',ADMIN.'DashboardController::loadAssignmentLevelListPage',['filter'=>'authGuardBoth']);
-$routes->post('/admin/fetch-assignment-level-list',ADMIN.'DashboardController::fetchAssignmentLevelList',['filter'=>'authGuardBoth']);
+$routes->get('/admin/assignment-level-list',ADMIN.'DashboardController::loadAssignmentLevelListPage');
+$routes->post('/admin/fetch-assignment-level-list',ADMIN.'DashboardController::fetchAssignmentLevelList');
 
-$routes->get('/admin/assignment-list/(:any)',ADMIN.'DashboardController::loadAssignmentListPage/$1',['filter'=>'authGuardBoth']);
-$routes->post('/admin/fetch-assignment-list',ADMIN.'DashboardController::fetchAssignmentList',['filter'=>'authGuardBoth']);
+$routes->get('/admin/assignment-list/(:any)',ADMIN.'DashboardController::loadAssignmentListPage/$1');
+$routes->post('/admin/fetch-assignment-list',ADMIN.'DashboardController::fetchAssignmentList');
 $routes->get('/admin/upload-recheck/export',ADMIN.'DashboardController::exportPaperDetails');
 $routes->post('/admin/upload-rechek/papers',ADMIN.'DashboardController::updateRecheckAssignment',['filter' => 'authGuardBoth']);
 
