@@ -11,7 +11,7 @@ class AuthGuard implements FilterInterface
         if (!session()->get('userData'))
         {
             return redirect()
-                ->to('/login');
+                ->to('auth?auth=login');
         } else if (session()->get('userData')['user_type']=='examinar') {
             return redirect()
                 ->to('/page/access-denied');
