@@ -485,7 +485,7 @@
 		}
 
 
-		public function cashfreePayment($studentDetails,$total_amt_to_pay=0.00,$order_id){
+		public function cashfreePayment($studentDetails,$total_amt_to_pay=0.00,$order_id=''){
 			$student_id = $studentDetails['id'];
 			$link_id = uniqid($student_id);
 			session()->set('link_id',$link_id);
@@ -896,6 +896,59 @@
 				$mpdf->Output();
 	    	}
 	    	
+	    }
+
+     	public function uploadAssignmentFile(){
+	        $postData = $this->request->getPost();
+	        $paper_id = $postData['paper_id'];
+	        $assignment_file = $this->request->getFile('assignment_file');
+	        if(session()->get('studentDetails')!==null){
+	            $studentDetails = session()->get('studentDetails');
+	            $student_id = $studentDetails['id'];
+	            $student_email = $studentDetails['email'];
+	            $postData['student_id'] = $student_id;
+	            $paper_details = $this->common->getInfo('paper_table','row',array('paper_id'=>$paper_id),'paper_id desc','paper_name');
+	            $checkIfPaperExist = $this->common->getInfo('upload_assignment_table','row',array('student_id' => $student_id,'paper_id'=>$paper_id,'deleted'=>0));
+	            if(!empty($checkIfPaperExist)){
+	                $response = array(
+	                    'success'=>false,
+	                    'message'=>'Assignment already submitted',
+	                );
+	                return json_encode($response);
+	                exit;
+	            }
+	            ini_set('upload_max_filesize', '-1');
+	            if ($assignment_file->isValid() && ! $assignment_file->hasMoved()) {
+	                $newName = $assignment_file->getRandomName();
+	                $assignmentPath = '/assets/assetItems/upload_assignment_paper';
+	                $assignment_file->move(PUBLIC_PATH . $assignmentPath, $newName);
+	                $postData['assignment_file'] = $assignmentPath.'/'.$newName;
+	                $postData['assignment_status'] = '1';
+	            }
+	            $uploadAssignment = $this->common->dbAction('upload_assignment_table',$postData,'insert',array());
+	            if($uploadAssignment){
+	                $response = array(
+	                    'success' =>true,
+	                    'message' =>'Assignment submitted successfully',
+	                );
+	            } else {
+	                $response = array(
+	                    'success' =>false,
+	                    'message' =>'Failed to submit assignment',
+	                );
+	            }
+	            return json_encode($response);
+	        }
+	    }
+
+        public function fetchAssignmentStatus(){
+	        if(session()->get('studentDetails')!==null){
+	            $student_id = session()->get('studentDetails')['id'];
+	            $fetchAssigment = $this->common->getInfo('upload_assignment_table','array',array('deleted'=>0,'student_id'=>$student_id),'assignment_id desc','assignment_status,paper_id,assignment_checked_file');
+	            return json_encode($fetchAssigment);
+	        }else {
+	            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+	        }
 	    }
 
 		

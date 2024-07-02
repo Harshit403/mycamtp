@@ -30,11 +30,11 @@
                                         <tr>
                                             <td><?=$paperRow['paper_name']?></td>
                                             <td>    
-                                                <a href="<?=base_url().$paperRow['question_paper_upload']?>" class="btn btn-success" download="<?=$paper_name?>question_paper.pdf"><i class="fas fa-download"></i> Download</a>
+                                                <a href="<?=base_url().$paperRow['question_paper_upload']?>" class="btn btn-sm btn-success" download="<?=$paper_name?>question_paper.pdf"><i class="bi bi-arrow-down-circle"></i> Download</a>
                                             </td>
                                             <td> 
                                                 <div id="answerBtnContainer<?=$paperRow['paper_id']?>" class="answerBtnContainerClass" style="display:<?=$item_type!='free' ? 'none' : ''?>?;">
-                                                    <a href="<?=base_url().$paperRow['answer_paper_upload']?>" class="btn btn-success" download="<?=$paper_name?>answer_paper.pdf"><i class="fas fa-download"></i> Download</a>
+                                                    <a href="<?=base_url().$paperRow['answer_paper_upload']?>" class="btn btn-sm btn-success" download="<?=$paper_name?>answer_paper.pdf"><i class="bi bi-arrow-down-circle"></i> Download</a>
                                                 </div>   
                                             </td>
                                             <?php if ($item_type!='free'): ?>
@@ -44,7 +44,7 @@
                                                             <input type="file" class="form-control mr-2" id="assignmentFile<?=$paperRow['paper_id']?>" accept="application/pdf,image/*"/>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <a href="javascript:void(0)" class="btn btn-info uploadAssignment" data-paper-id="<?=$paperRow['paper_id']?>"><i class="fas fa-upload"></i></a></a>
+                                                            <a href="javascript:void(0)" class="btn btn-info btn-sm uploadAssignment" data-paper-id="<?=$paperRow['paper_id']?>"><i class="bi bi-file-arrow-up"></i></a></a>
                                                         </div>
                                                     </div>  
                                                 </td>
@@ -71,5 +71,5 @@
     <script>
         var pageType = 'paper-list';
     </script>
-    <script src="<?=base_url()?>assets/js/custom_js/view.js?v=1.0.2"></script>
+    <script src="<?=base_url()?>assets/student/js/view.js?v=1.0.2"></script>
 <?= $this->endSection() ?>

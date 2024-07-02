@@ -49,6 +49,9 @@ $routes->get('/qbank/qbank-list',STUDENT.'DefaultController::loadQbankList');
 
 $routes->get('/invoice',STUDENT.'DefaultController::loadInvoicePage');
 $routes->get('/download-invoice',STUDENT.'DefaultController::downloadInvoice');
+// my resourse paper
+$routes->get('/fetch-assignment-status',STUDENT.'DefaultController::fetchAssignmentStatus');
+$routes->post('/upload/assignment-file',STUDENT.'DefaultController::uploadAssignmentFile');
 
 
 
