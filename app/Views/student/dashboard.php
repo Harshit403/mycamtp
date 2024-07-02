@@ -1,4 +1,7 @@
 <?= $this->extend('student/layout/dashboard_layout') ?>
+<?=$this->section('title')?>
+    Student Dashboard
+<?=$this->endSection()?>
 <?=$this->section('content')?>
 	<style type="text/css">
 	    .flexMobileContainer{

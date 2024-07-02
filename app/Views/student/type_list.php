@@ -1,10 +1,13 @@
 <?= $this->extend('student/layout/layout') ?>
+<?=$this->section('title')?>
+	<?=$level_info->level_name?>
+<?=$this->endSection()?>
 <?=$this->section('content')?>
-	<section class="container mainContainer">
+	<section class="container type_container mainContainer">
 		<div class="row">
 			<?php if (!empty($type_list)): ?>
 				<?php foreach ($type_list as $key => $typeRow): ?>
-					<div class="col-md-3 mb-3 d-flex justify-content-center">
+					<div class="col-md-4 mb-3 d-flex justify-content-center">
 						<div class="card">
 					        <div class="header">
 					            <span class="students">⚡Popular</span>

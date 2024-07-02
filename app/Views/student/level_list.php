@@ -1,4 +1,7 @@
 <?= $this->extend('student/layout/layout') ?>
+<?=$this->section('title')?>
+	<?=$category_info->category_name?>
+<?=$this->endSection()?>
 <?=$this->section('content')?>
 	<section class="container mainContainer">
 		<div class="row">

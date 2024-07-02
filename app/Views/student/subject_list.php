@@ -1,10 +1,13 @@
 <?= $this->extend('student/layout/layout') ?>
+<?=$this->section('title')?>
+	<?=$type_info->type_name?>
+<?=$this->endSection()?>
 <?=$this->section('content')?>
 <style type="text/css">
 	/*ul { list-style-type: "\2713";}*/
 
 </style>
-	<section class="container  mainContainer">
+	<section class="container  subject_container mainContainer">
 		<div class="row">
 			<?php if (!empty($subject_list)): ?>
 				<?php foreach ($subject_list as $key => $subjectRow): ?>
