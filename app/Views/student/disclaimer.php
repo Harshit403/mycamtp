@@ -1,6 +1,9 @@
 <?= $this->extend('student/layout/layout') ?>
+<?=$this->section('title')?>
+	Disclaimer
+<?=$this->endSection()?>
 <?=$this->section('content')?>
-	<section class="container disclaimer_container" style="padding-top: 5rem;">
+	<section class="container disclaimer_container mainContainer">
 		<h2 class="text-center">Disclaimer</h2>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

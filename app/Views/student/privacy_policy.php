@@ -1,4 +1,7 @@
 <?= $this->extend('student/layout/layout') ?>
+<?=$this->section('title')?>
+	Privacy Policy
+<?=$this->endSection()?>
 <?=$this->section('content')?>
 	<section class="container">
     <div class="row py-3">

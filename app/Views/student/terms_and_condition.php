@@ -1,6 +1,9 @@
 <?= $this->extend('student/layout/layout') ?>
+<?=$this->section('title')?>
+	Terms and Conditions
+<?=$this->endSection()?>
 <?=$this->section('content')?>
-<section class="container">
+<section class="container mainContainer">
     <div class="row py-3">
         <div class="col-md-12 h4 text-center">
             <h1>Terms & Conditions</h1>

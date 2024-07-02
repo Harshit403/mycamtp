@@ -1,6 +1,9 @@
 <?= $this->extend('student/layout/layout') ?>
+<?=$this->section('title')?>
+	About us
+<?=$this->endSection()?>
 <?=$this->section('content')?>
-	<section class="container about_us_container" style="padding-top: 5rem;">
+	<section class="container about_us_container mainContainer">
 		<h2 class="text-center">About Us</h2>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

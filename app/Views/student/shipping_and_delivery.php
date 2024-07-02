@@ -1,6 +1,9 @@
 <?= $this->extend('student/layout/layout') ?>
+<?=$this->section('title')?>
+	Shipping and Delivery
+<?=$this->endSection()?>
 <?=$this->section('content')?>
-	<section class="container shifting_container" style="padding-top: 5rem;">
+	<section class="container shifting_container mainContainer">
 		<h2 class="text-center">Shifting and Delivery</h2>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
