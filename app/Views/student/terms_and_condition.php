@@ -3,7 +3,7 @@
 	Terms and Conditions
 <?=$this->endSection()?>
 <?=$this->section('content')?>
-<section class="container mainContainer">
+<section class="container mb-5 mainContainer">
     <div class="row py-3">
         <div class="col-md-12 h4 text-center">
             <h1>Terms & Conditions</h1>

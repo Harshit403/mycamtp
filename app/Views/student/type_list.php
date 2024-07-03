@@ -3,7 +3,7 @@
 	<?=$level_info->level_name?>
 <?=$this->endSection()?>
 <?=$this->section('content')?>
-	<section class="container type_container mainContainer">
+	<section class="container type_container mb-5 mainContainer">
 		<div class="row">
 			<?php if (!empty($type_list)): ?>
 				<?php foreach ($type_list as $key => $typeRow): ?>

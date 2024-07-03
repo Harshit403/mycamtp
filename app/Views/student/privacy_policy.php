@@ -3,7 +3,7 @@
 	Privacy Policy
 <?=$this->endSection()?>
 <?=$this->section('content')?>
-	<section class="container">
+	<section class="container section mainContainer">
     <div class="row py-3">
         <div class="col-md-12 h4 text-center">
      

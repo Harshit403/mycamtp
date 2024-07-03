@@ -3,7 +3,7 @@
     Subject List
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
-    <section class="container nainContainer mb-5 section" style="min-height:400px;">
+    <section class="container mainContainer mb-5 section" style="min-height:400px;">
         <div class="text-center">
             <h2>Subject List</h2>
         </div>

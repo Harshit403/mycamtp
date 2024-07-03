@@ -3,7 +3,7 @@
 	Shipping and Delivery
 <?=$this->endSection()?>
 <?=$this->section('content')?>
-	<section class="container shifting_container mainContainer">
+	<section class="container shifting_container mb-5 mainContainer">
 		<h2 class="text-center">Shifting and Delivery</h2>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
