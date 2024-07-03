@@ -1,5 +1,5 @@
 <?= $this->extend('student/layout/layout') ?>
-<?=$this->section('content')?
+<?=$this->section('content')?>
   <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="margin-top: 79px;">
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="5000">
