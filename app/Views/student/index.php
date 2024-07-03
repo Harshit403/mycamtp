@@ -3,7 +3,7 @@
 
 <style>
   body {
-    background-color: #E4E1F3;
+    background-color: #F5F2EB;
   }
 </style>
   <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="margin-top: 79px;">
