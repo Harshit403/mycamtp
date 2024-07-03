@@ -1,5 +1,11 @@
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('content')?>
+
+<style>
+  body {
+    background-color: #E4E1F3;
+  }
+</style>
   <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="margin-top: 79px;">
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="5000">
