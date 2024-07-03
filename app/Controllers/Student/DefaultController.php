@@ -951,6 +951,32 @@
 	        }
 	    }
 
+	    public function addNewsLetter(){
+			$postData = $this->request->getPost();
+			$updateData = array();
+			if (isset($postData['newsletter_email'])) {
+				$email = $postData['newsletter_email'];
+				$userDetails = $this->common->getInfo('student_table','row',array('email'=>$email));
+
+				$updateData['is_student'] = !empty($userDetails) ? 1 : 0;
+				$updateData['newsletter_email'] = $email;
+				$checkNewsLetterExist = $this->common->getInfo('newsletter','row',array('newsletter_email'=>$email,'deleted'=>0));
+				if ($checkNewsLetterExist) {
+					$response = array('success'=>false,'message'=>'You have already subsribed newsletter');
+				} else {
+					$insertNewsLetter = $this->common->dbAction('newsletter',$updateData,'insert',array());
+					if ($insertNewsLetter) {
+						$response = array('success'=>true,'message'=>'Your subscription request has been taken successfully');
+					} else {
+						$response = array('success'=>false,'message'=>'Failed to add subscription');
+					}
+				}
+			} else {
+				$response = array('success'=>false,'message'=>'Please enter an email Id');
+			}
+			return json_encode($response);
+		}
+
 		
 	}
 ?>

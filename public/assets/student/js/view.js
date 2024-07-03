@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     $(".uploadAssignment").on('click', function() {
         var paper_id = $(this).data('paper-id');
         var assignmentFilePath = $("#assignmentFile" + paper_id + "").val();
@@ -106,4 +107,31 @@ $(document).ready(function() {
             }
         })
     }
+
+    $(".addNewsLetterBtn").on('click', function() {
+        var email = $(".newsLetterForm").val();
+        if (!regex.test(email)) {
+            bootbox.alert('Please enter a valid mail');
+            return false;
+        }
+
+        $.ajax({
+            url: baseUrl + 'newsletter/add-newsletter',
+            type: 'POST',
+            data: {
+                newsletter_email: email,
+            },
+            dataType: 'json',
+            success: function(res) {
+                bootbox.alert({
+                    message: res.message,
+                    closeButton: false,
+                    callback: function() {
+                        if (res.success) {}
+                    }
+                })
+            }
+        })
+
+    })
 })

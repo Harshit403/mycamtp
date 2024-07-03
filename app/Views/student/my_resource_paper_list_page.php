@@ -71,5 +71,5 @@
     <script>
         var pageType = 'paper-list';
     </script>
-    <script src="<?=base_url()?>assets/student/js/view.js?v=1.0.2"></script>
+    <script src="<?=base_url()?>assets/student/js/view.js?v=1.0.3"></script>
 <?= $this->endSection() ?>

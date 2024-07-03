@@ -53,6 +53,7 @@ $routes->get('/download-invoice',STUDENT.'DefaultController::downloadInvoice',['
 $routes->get('/fetch-assignment-status',STUDENT.'DefaultController::fetchAssignmentStatus',['filters'=>'studentAuth']);
 $routes->post('/upload/assignment-file',STUDENT.'DefaultController::uploadAssignmentFile',['filters'=>'studentAuth']);
 
+$routes->post('/newsletter/add-newsletter',STUDENT.'DefaultController::addNewsLetter');
 
 
 // ADMIN

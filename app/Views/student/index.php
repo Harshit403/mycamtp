@@ -217,7 +217,7 @@
           </div>
         </div>
     </section>
-    <section class="py-5 container" id="contact-section">
+    <!-- <section class="py-5 container" id="contact-section">
         <h1 class="text-center text-uppercase">Contact Us</h1>
         <div class="row">
             <div class="col-md-6">
@@ -290,7 +290,82 @@
                
             </div>
         </div>
+    </section> -->
+    <section class="py-5 container" id="newsletter_section">
+      <div class="row">
+        <div class="col-md-6">
+            <div class="row address-container">
+                <div class="col-md-6 mb-4">
+                    <div class="card" style="background: #fafbff;border: none;height:14rem;">
+                        <div class="card-body">
+                            <h2><i class="bi bi-geo-alt"></i></h2>
+                            <h4>Address</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card" style="background: #fafbff;border: none;height:14rem;">
+                        <div class="card-body">
+                            <h2><i class="bi bi-telephone"></i></h2>
+                            <h4>Call Us</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4">
+                    <div class="card" style="background: #fafbff;border: none;height:14rem;">
+                        <div class="card-body">
+                            <h2><i class="bi bi-envelope"></i></h2>
+                            <h4>Email</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 my-4">
+                    <div class="card" style="background: #fafbff;border: none;height:14rem;">
+                        <div class="card-body">
+                            <h2><i class="bi bi-clock"></i></h2>
+                            <h4>Open Hours</h4>
+                            <p>We are available 24*7</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="unique-newsletter-box">
+            <h6 class="unique-text-primary mb-2">NEWSLETTER</h6>
+            <h2 class="mb-4">Join to get exclusive contents for free.</h2>
+            <div class="form-group">
+                <input type="email" class="form-control unique-input newsLetterForm" placeholder="Email address" required>
+            </div>
+            <a href="javascript:void(0)" class="btn unique-btn-primary btn-block addNewsLetterBtn">Join Now</a>
+            <ul class="list-unstyled">
+                <li class="d-flex align-items-center mb-2">
+                    <span class="unique-checkmark"></span>
+                    <span>Get weekly reports</span>
+                </li>
+                <li class="d-flex align-items-center mb-2">
+                    <span class="unique-checkmark"></span>
+                    <span>Unlimited free resources</span>
+                </li>
+                <li class="d-flex align-items-center">
+                    <span class="unique-checkmark"></span>
+                    <span>Premium contents</span>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+       
     </section>
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
+  <script type="text/javascript">
+    var pageType = 'index';
+
+  </script>
+  <script src="<?=base_url()?>assets/student/js/view.js?1.0.3"></script>
 <?= $this->endSection() ?>
