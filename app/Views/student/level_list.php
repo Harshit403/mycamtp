@@ -3,7 +3,7 @@
 	<?=$category_info->category_name?>
 <?=$this->endSection()?>
 <?=$this->section('content')?>
-	<section class="container mb-5 mainContainer">
+	<section class="container mb-5 section mainContainer">
 		<div class="row">
 			<?php foreach ($level_list as $levelRow): ?>
 				<div class="col-md-3">
