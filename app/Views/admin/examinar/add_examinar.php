@@ -19,7 +19,7 @@
                         </div>
                         <div class="col-md-12">
                             <label for="examinar_mobile" class="form-label">Examinar Mobile</label>
-                            <input type="number" class="form-control form-control-sm" id="examinar_mobile" placeholder="Examinar email" aria-describedby="examinar_mobile" value="<?=!empty($examinarDetails) ? $examinarDetails->examinar_mobile_no : '';?>">
+                            <input type="number" class="form-control form-control-sm" id="examinar_mobile" placeholder="Examinar Mobile" aria-describedby="examinar_mobile" value="<?=!empty($examinarDetails) ? $examinarDetails->examinar_mobile_no : '';?>">
                         </div>
                         <div class="form-password-toggle">
                         <label class="form-label" for="examinar_password">Password</label>

@@ -200,7 +200,7 @@
                             <div data-i18n="Without navbar">Add</div>
                         </a>
                     </li>
-                    <li class="menu-item <?=in_array($uri2, ['add-examinar','examinar-list','examinar']) ? 'active' : ''?>">
+                    <li class="menu-item <?=in_array($uri2, ['examinar-list','examinar']) ? 'active' : ''?>">
                         <a href="<?=base_url()?>admin/examinar-list" class="menu-link">
                             <div data-i18n="Without menu">List</div>
                         </a>

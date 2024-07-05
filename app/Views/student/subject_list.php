@@ -9,6 +9,11 @@
 </style>
 	<section class="container  mb-5 subject_container mainContainer">
 		<div class="row">
+			<div class="col-md-12">
+				<h2 class="text-center"><?=$type_info->type_info_heading?></h2>
+			</div>
+		</div>
+		<div class="row">
 			<?php if (!empty($subject_list)): ?>
 				<?php foreach ($subject_list as $key => $subjectRow): ?>
 					<div class="col-md-3">
@@ -31,7 +36,6 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<h2 class="text-center"><?=$type_info->type_info_heading?></h2>
 				<p>
 					<?=$type_info->type_info?>
 				</p>

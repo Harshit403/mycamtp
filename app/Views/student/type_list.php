@@ -5,6 +5,11 @@
 <?=$this->section('content')?>
 	<section class="container type_container mb-5 mainContainer">
 		<div class="row">
+			<div class="col-md-12">
+				<h2 class="text-center"><?=$level_info->level_more_details_heading?></h2>
+			</div>
+		</div>
+		<div class="row">
 			<?php if (!empty($type_list)): ?>
 				<?php foreach ($type_list as $key => $typeRow): ?>
 					<div class="col-md-4 mb-3 d-flex justify-content-center">
@@ -12,7 +17,7 @@
 					        <div class="header">
 					            <span class="students">⚡Popular</span>
 					        </div>
-					        <h2><?=$typeRow->batch_info?></h2>
+					        <h2 class="text-wrap" style="width: 17rem;"><?=$typeRow->batch_info?></h2>
 					        <h3><?= $typeRow->type_name?></h3>
 					        <div style="overflow-y: auto;text-align: left!important;"><?=$typeRow->type_more_details?></div>
 					        <div class="buttons">
@@ -26,7 +31,6 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<h2 class="text-center"><?=$level_info->level_more_details_heading?></h2>
 				<p>
 					<?=$level_info->level_more_details?>
 				</p>

@@ -890,10 +890,11 @@
 	    	if (isset($getItem['order_id'])) {
 	    		$order_id = $getItem['order_id'];
 	    		$data['invoice_info'] = $this->common->getInfo('invoice_table','row',array('order_id'=>$order_id));
+	    		$pdf_name = 'invoice-'.$order_id.'.pdf';
 	    		$html = view('student/invoice_info',$data);
 	    		// return view('student/invoice_info',$data);
 				$mpdf->WriteHTML($html);
-				$mpdf->Output();
+				$mpdf->Output($pdf_name,\Mpdf\Output\Destination::INLINE);
 	    	}
 	    	
 	    }

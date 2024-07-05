@@ -102,6 +102,7 @@
             	<?=$invoice_json[0]->payment_mode?>
             </td>
         </tr>
+    </table>
 </body>
 
 </html>
