@@ -73,13 +73,13 @@ $(document).ready(function() {
             '<div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">' +
             '<button class="nav-link active" id="v-pills-purchase-history-tab" data-bs-toggle="pill" data-bs-target="#v-pills-purchase-history" type="button" role="tab" aria-controls="v-pills-purchase-history" aria-selected="true">Purchase History</button>' +
             '<button class="nav-link" id="v-pills-active-course-tab" data-bs-toggle="pill" data-bs-target="#v-pills-active-course" type="button" role="tab" aria-controls="v-pills-active-course" aria-selected="false">Active Course</button>' +
-            '<button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Block Course</button>' +
+            '<button class="nav-link" id="v-pills-deactive-course-tab" data-bs-toggle="pill" data-bs-target="#v-pills-deactive-course" type="button" role="tab" aria-controls="v-pills-deactive-course" aria-selected="false">Block Course</button>' +
             '<button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Payment Mode</button>' +
             '</div>' +
             '<div class="tab-content w-100" id="v-pills-tabContent">' +
             '<div class="tab-pane fade show active w-100" id="v-pills-purchase-history" role="tabpanel" aria-labelledby="v-pills-purchase-history-tab">purchase_history</div>' +
             '<div class="tab-pane fade" id="v-pills-active-course" role="tabpanel" aria-labelledby="v-pills-active-course-tab">active_course</div>' +
-            '<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">Block Course</div>' +
+            '<div class="tab-pane fade" id="v-pills-deactive-course" role="tabpanel" aria-labelledby="v-pills-deactive-course-tab">Block Course</div>' +
             '<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">Payment Mode</div>' +
             '</div>';
         let dialog = bootbox.dialog({
@@ -102,7 +102,10 @@ $(document).ready(function() {
                 fetchPurchaseHistory(student_id, dialog);
             });
             $("#v-pills-active-course-tab").on('click', function() {
-                fetchPurchaseHistory(student_id, dialog);
+                fetchActiveCourse(student_id, dialog);
+            });
+            $("#v-pills-deactive-course-tab").on('click', function() {
+                fetchDeactiveCourse(student_id, dialog);
             });
         });
 
@@ -149,6 +152,125 @@ $(document).ready(function() {
                 $(dialog).find('#v-pills-purchase-history').html(html);
             }
         });
+    }
+
+    function fetchActiveCourse(student_id, dialog) {
+        $.ajax({
+            url: baseUrl + 'admin/fetch-active-course',
+            type: 'POST',
+            data: {
+                student_id: student_id
+            },
+            dataType: 'json',
+            success: function(res) {
+                var html = '<div style="max-height:400px;overflow: auto;">';
+                if (res.success != '') {
+                    $.each(res.info, function(i, v) {
+                        html += '<div class="row m-2">' +
+                            '<div class="col-md-12">' +
+                            '<div class="card p-3">' +
+                            '<div class="row">' +
+                            '<div class="col-md-6"><b>Subject Name: </b>' + v.subject_name + '</div>' +
+                            '<div class="col-md-6 d-flex justify-content-end"><b>Purchase Date: </b>' + v.date_of_purchase + '</div>' +
+                            '<div class="col-md-12"><b>Type Name: </b>' + v.type_name + '</div>' +
+                            '<div class="col-md-12"><b>Level Name: </b>' + v.level_name + '</div>' +
+                            '<div class="col-md-6"><b>Category Name: </b>' + v.category_name + '</div>' +
+                            '<div class="col-md-6 d-flex justify-content-end">' +
+                            '<div class="form-check form-switch">' +
+                            '<input class="form-check-input deactivePurchaseItem" type="checkbox" role="switch"  data-cart-items-id="' + v.cart_items_id + '">' +
+                            '<label class="form-check-label" for="deactivePurchaseItem">Deactive</label>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    });
+                } else {
+                    html += 'No active course available';
+                }
+                html += '</div>';
+                $(dialog).find('#v-pills-active-course').html(html);
+                $(dialog).find(".deactivePurchaseItem").on('change', function() {
+                    var cart_items_id = $(this).data('cart-items-id');
+                    var is_checked = 0;
+                    updateCartItemsStatus(cart_items_id, 0, student_id, dialog, 'active');
+                })
+            }
+        });
+    }
+
+    function fetchDeactiveCourse(student_id, dialog) {
+        $.ajax({
+            url: baseUrl + 'admin/fetch-de-active-course',
+            type: 'POST',
+            data: {
+                student_id: student_id
+            },
+            dataType: 'json',
+            success: function(res) {
+                var html = '<div style="max-height:400px;overflow: auto;">';
+                if (res.success != '') {
+                    $.each(res.info, function(i, v) {
+                        html += '<div class="row m-2">' +
+                            '<div class="col-md-12">' +
+                            '<div class="card p-3">' +
+                            '<div class="row">' +
+                            '<div class="col-md-6"><b>Subject Name: </b>' + v.subject_name + '</div>' +
+                            '<div class="col-md-6 d-flex justify-content-end"><b>Purchase Date: </b>' + v.date_of_purchase + '</div>' +
+                            '<div class="col-md-12"><b>Type Name: </b>' + v.type_name + '</div>' +
+                            '<div class="col-md-12"><b>Level Name: </b>' + v.level_name + '</div>' +
+                            '<div class="col-md-6"><b>Category Name: </b>' + v.category_name + '</div>' +
+                            '<div class="col-md-6 d-flex justify-content-end">' +
+                            '<div class="form-check form-switch">' +
+                            '<input class="form-check-input deactivePurchaseItem" type="checkbox" role="switch"  data-cart-items-id="' + v.cart_items_id + '">' +
+                            '<label class="form-check-label" for="deactivePurchaseItem">Active</label>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                    });
+                } else {
+                    html += 'No active course available';
+                }
+                html += '</div>';
+                $(dialog).find('#v-pills-deactive-course').html(html);
+                $(dialog).find(".deactivePurchaseItem").on('change', function() {
+                    var cart_items_id = $(this).data('cart-items-id');
+                    var is_checked = 1;
+                    updateCartItemsStatus(cart_items_id, is_checked, student_id, dialog, 'deactive');
+                })
+            }
+        });
+    }
+
+    function updateCartItemsStatus(cart_items_id, is_checked, student_id, dialog, functionType) {
+        $.ajax({
+            url: baseUrl + 'admin/update-cart-items-status',
+            type: 'POST',
+            data: {
+                cart_items_id: cart_items_id,
+                active: is_checked,
+            },
+            dataType: 'json',
+            success: function(res) {
+                if (res.success) {
+                    bootbox.alert({
+                        message: 'Status change successfully',
+                        closeButton: false,
+                        callback: function() {
+                            if (functionType == 'active') {
+                                fetchActiveCourse(student_id, dialog);
+                            } else {
+                                fetchDeactiveCourse(student_id, dialog);
+                            }
+                        }
+                    })
+                }
+            }
+        })
     }
 
     function fetchSubjectStatus(student_id) {

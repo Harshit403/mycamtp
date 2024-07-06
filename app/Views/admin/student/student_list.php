@@ -32,7 +32,7 @@
     </div>
 <?= $this->endSection() ?>
 <?= $this->section('jsContent') ?>
-<script type="text/javascript" src="<?=base_url()?>//assets/admin/js/student.js?v=1.0.1"></script>
+<script type="text/javascript" src="<?=base_url()?>//assets/admin/js/student.js?v=1.0.2"></script>
 <script type="text/javascript">
     var pageType = 'student_list';
 </script>

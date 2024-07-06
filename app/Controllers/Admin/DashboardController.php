@@ -1270,5 +1270,39 @@ class DashboardController extends BaseController
         return json_encode($response);
     }
 
+    public function fetchActiveCourse(){
+        $postData = $this->request->getPost();
+        $getPurchasedSubjectList = $this->dashboardModel->getPurchasedSubjectModel($postData['student_id'],'active');
+        if (!empty($getPurchasedSubjectList)) {
+            $response = array('success'=>true,'info'=>$getPurchasedSubjectList);
+        } else {
+            $response = array('success'=>false,'info'=>'');
+        }
+        return json_encode($response);
+    }
+    public function fetchDeactiveCourse(){
+        $postData = $this->request->getPost();
+        $getPurchasedSubjectList = $this->dashboardModel->getPurchasedSubjectModel($postData['student_id'],'deactive');
+        if (!empty($getPurchasedSubjectList)) {
+            $response = array('success'=>true,'info'=>$getPurchasedSubjectList);
+        } else {
+            $response = array('success'=>false,'info'=>'');
+        }
+        return json_encode($response);
+    }
+
+    public function updateCartItemsStatus(){
+        $postData = $this->request->getPost();
+        $cart_items_id = $postData['cart_items_id'];
+        $active = $postData['active'];
+        $update_cart_items_status = $this->common->dbAction('cart_items_table',array('active'=>$active),'update',array('cart_items_id'=>$cart_items_id));
+        if (!empty($update_cart_items_status)) {
+            $response = array('success'=>true);
+        } else {
+            $response = array('success'=>false);
+        }
+        return json_encode($response);
+    }
+
 }
 ?>

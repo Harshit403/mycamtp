@@ -131,6 +131,9 @@ $routes->post('/admin/subject-list',ADMIN.'DashboardController::getSubjectList',
 $routes->post('/admin/change-subject-visibility',ADMIN.'DashboardController::changeSubVisibility',['filter'=>'authGuard']);
 
 $routes->post('/admin/fetch-purchase-history',ADMIN.'DashboardController::fetchPurchaseHistory',['filter'=>'authGuard']);
+$routes->post('/admin/fetch-active-course',ADMIN.'DashboardController::fetchActiveCourse',['filter'=>'authGuard']);
+$routes->post('/admin/fetch-de-active-course',ADMIN.'DashboardController::fetchDeactiveCourse',['filter'=>'authGuard']);
+$routes->post('/admin/update-cart-items-status',ADMIN.'DashboardController::updateCartItemsStatus',['filter'=>'authGuard']);
 
 // assignment
 $routes->get('/admin/assignment-level-list',ADMIN.'DashboardController::loadAssignmentLevelListPage');

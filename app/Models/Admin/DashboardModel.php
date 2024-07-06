@@ -1752,5 +1752,28 @@ class DashboardModel extends Model
         );
         return $response;
     }
+
+    public function getPurchasedSubjectModel($student_id,$status='active'){
+        $builder = $this->db->table('cart_items_table as cit');
+        $builder->select('cit.*,st.subject_name,tt.type_name,lt.level_name,cat.category_name,pt.create_date as date_of_purchase');
+        $builder->join('cart_table as ct','ct.cart_id=cit.cart_id','left');
+        $builder->join('purchase_table as pt','pt.purcahse_id=cit.purchase_id','left');
+        $builder->join('subject_table as st','st.subject_id=cit.subject_id','left');
+        $builder->join('type_table as tt','tt.type_id=st.type_id','left');
+        $builder->join('level_table as lt','lt.level_id=tt.level_id','left');
+        $builder->join('category_table as cat','cat.category_id=lt.category_id','left');
+        $builder->where('ct.student_id',$student_id);
+        $builder->where('pt.payment_status','PAID');
+        $builder->where('cit.access',1);
+        $builder->where('cit.deleted',1);
+        if ($status=='active') {
+            $builder->where('cit.active',1);
+        } else {
+            $builder->where('cit.active',0);
+        }
+        $builder->orderBy('pt.create_date','desc');
+        $response = $builder->get()->getResult();
+        return $response;
+    }
 }
 ?>
