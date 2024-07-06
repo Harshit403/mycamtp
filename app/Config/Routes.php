@@ -80,7 +80,7 @@ $routes->get('/admin/add-level',ADMIN.'DashboardController::loadAddLevelPage',['
 $routes->get('/admin/add-level/(:any)',ADMIN.'DashboardController::loadAddLevelPage/$1',['filter'=>'authGuard']);
 $routes->post('/admin/add-level',ADMIN.'DashboardController::addLevel',['filter'=>'authGuard']);
 $routes->get('/admin/level-list',ADMIN.'DashboardController::loadLevelListPage',['filter'=>'authGuard']);
-$routes->post('/admin/fetch-level-list',ADMIN.'DashboardController::fetchLevelListPage',['filter'=>'authGuard']);
+$routes->post('/admin/fetch-level-list',ADMIN.'DashboardController::fetchLevelListPage');
 // type routes
 $routes->get('/admin/add-type',ADMIN.'DashboardController::loadAddTypePage',['filter'=>'authGuard']);
 $routes->get('/admin/add-type/(:any)',ADMIN.'DashboardController::loadAddTypePage/$1',['filter'=>'authGuard']);
@@ -89,12 +89,12 @@ $routes->get('/admin/type-list',ADMIN.'DashboardController::loadTypeListPage',['
 $routes->post('/admin/fetch-type-list',ADMIN.'DashboardController::fetchTypeListPage',['filter'=>'authGuard']);
 
 // subject routes
-$routes->get('/admin/add-subject',ADMIN.'DashboardController::loadAddSubjectPage',['filter'=>'authGuard'],['filter'=>'authGuard']);
-$routes->get('/admin/add-subject/(:any)',ADMIN.'DashboardController::loadAddSubjectPage/$1',['filter'=>'authGuard'],['filter'=>'authGuard']);
-$routes->post('/admin/add-subject',ADMIN.'DashboardController::addSubject',['filter'=>'authGuard'],['filter'=>'authGuard']);
-$routes->post('/admin/get-type-list',ADMIN.'DashboardController::getTypeInfo',['filter'=>'authGuard'],['filter'=>'authGuard']);
-$routes->get('/admin/subject-list',ADMIN.'DashboardController::loadSubjectListPage',['filter'=>'authGuard'],['filter'=>'authGuard']);
-$routes->post('/admin/fetch-subject-list',ADMIN.'DashboardController::fetchSubjectListPage',['filter'=>'authGuard'],['filter'=>'authGuard']);
+$routes->get('/admin/add-subject',ADMIN.'DashboardController::loadAddSubjectPage',['filter'=>'authGuard']);
+$routes->get('/admin/add-subject/(:any)',ADMIN.'DashboardController::loadAddSubjectPage/$1',['filter'=>'authGuard']);
+$routes->post('/admin/add-subject',ADMIN.'DashboardController::addSubject',['filter'=>'authGuard']);
+$routes->post('/admin/get-type-list',ADMIN.'DashboardController::getTypeInfo',['filter'=>'authGuard']);
+$routes->get('/admin/subject-list',ADMIN.'DashboardController::loadSubjectListPage',['filter'=>'authGuard']);
+$routes->post('/admin/fetch-subject-list',ADMIN.'DashboardController::fetchSubjectListPage',['filter'=>'authGuard']);
 
 // paper routes
 $routes->get('/admin/add-paper',ADMIN.'DashboardController::loadAddPaperPage',['filter'=>'authGuard']);

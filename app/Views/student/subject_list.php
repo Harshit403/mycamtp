@@ -3,10 +3,6 @@
 	<?=$type_info->type_name?>
 <?=$this->endSection()?>
 <?=$this->section('content')?>
-<style type="text/css">
-	/*ul { list-style-type: "\2713";}*/
-
-</style>
 	<section class="container  mb-5 subject_container mainContainer">
 		<div class="row">
 			<div class="col-md-12">
