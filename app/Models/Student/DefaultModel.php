@@ -92,7 +92,6 @@
 	    }
 
 	    public function fetchPurchaseModel($link_id){
-	    	echo $link_id;
 	    	$builder = $this->db->table('cart_items_table as cit');
 	    	$builder->select('cit.*,sut.student_id,sut.student_name,sut.email,sut.mobile_no,sut.city_name,sut.state_name,pt.payment_request_id,pt.cf_link_id,pt.order_id,pt.payment_mode,pt.total_payment_amount,pt.create_date as payement_date,st.subject_name,tt.type_name,lt.level_name,ct.category_name');
 	    	$builder->join('cart_table','cart_table.cart_id=cit.cart_id','left');

@@ -13,15 +13,17 @@
                             if (!empty($invoiceJson)) {
                                 $jsonDecoded = json_decode($invoiceJson);
                                 ?>
+                                <div class="col-md-12" style="border: 1px solid;border-radius: 5px;">
                                     <div class="d-flex justify-content-between">
                                         <?php $order_id = $jsonDecoded[0]->order_id; ?>
-                                        <h5><?=$order_id?></h5>
+                                        <?php $payement_date = $jsonDecoded[0]->payement_date; ?>
+                                        <h5><?=$order_id?><br/><?=$payement_date?></h5>
                                         <div class="d-flex" style="flex-direction:column;">
                                             <?=$jsonDecoded[0]->payment_status?>
                                             <a href="<?=base_url()?>download-invoice?order_id=<?=$order_id?>" class="btn btn-sm btn-success"><i class="bi bi-arrow-down-circle"></i> Download</a>
                                         </div>
                                     </div>
-
+                                </div>
                                 <?php
                             }
                         ?>
