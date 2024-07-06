@@ -27,7 +27,7 @@ $routes->post('/promo/remove-promocode',STUDENT.'DefaultController::removePromoc
 
 $routes->get('/purchase-status',STUDENT.'DefaultController::purchaseStatus',['filter'=>'studentAuth']);
 $routes->get('/logout',STUDENT.'DefaultController::logOutUser',['filter'=>'studentAuth']);
-$routes->post('/fetch-level-list',STUDENT.'DefaultController::fetchLevelListInfo',['filter'=>'studentAuth']);
+$routes->post('/fetch-level-list',STUDENT.'DefaultController::fetchLevelListInfo');
 $routes->get('/blog',STUDENT.'DefaultController::displayBlogDetails',['filter'=>'studentAuth']);
 $routes->get('/blog-list',STUDENT.'DefaultController::loadBlogListPage',['filter'=>'studentAuth']);
 
