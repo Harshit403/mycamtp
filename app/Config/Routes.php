@@ -18,6 +18,8 @@ $routes->post('/sign-in', STUDENT.'DefaultController::verifyStudentLogin');
 $routes->get('/dashboard', STUDENT.'DefaultController::loadDashboardPage',['filter'=>'studentAuth']);
 $routes->post('/add-to-cart', STUDENT.'DefaultController::addToCartItem');
 $routes->get('/fetch-active-cartitems', STUDENT.'DefaultController::getCartItemsArray',['filter'=>'studentAuth']);
+$routes->get('/payment/free-payable-product',STUDENT.'DefaultController::addFreeProductByItsPromoCode');
+
 $routes->post('/remove-cart-items', STUDENT.'DefaultController::removeCartItems',['filter'=>'studentAuth']);
 $routes->post('/checkout-cart-items', STUDENT.'DefaultController::checkoutPayments',['filter'=>'studentAuth']);
 $routes->post('/apply-promocode',STUDENT.'DefaultController::applyPromocode',['filter'=>'studentAuth']);

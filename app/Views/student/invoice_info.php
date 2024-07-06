@@ -76,7 +76,7 @@
             	$discount = '0 %';
             }
             ?>
-            <td class="tdClass">Discount(<?=$discount?>)</td>
+            <td class="tdClass">Discount(<?=$invoice_json[0]->promo_code_name?>)</td>
             <td class="tdClass">
             	<?=$discount?>
             </td>

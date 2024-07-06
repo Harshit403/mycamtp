@@ -468,7 +468,7 @@
 				$insertData['payment_mode'] = 'cashfree';
 				$insertData['total_payment_amount'] = $linkInfo->link_amount;
 				$insertData['order_id'] = $order_id;
-				$addPurchaseData = $this->common->dbAction('purchase_table',$insertData,array());
+				$addPurchaseData = $this->common->dbAction('purchase_table',$insertData,'insert',array());
 				if (!empty($addPurchaseData)) {
 					$response = array('success'=>true,'url'=>$linkInfo->link_url);
 				} else {
@@ -551,7 +551,7 @@
 			$getData = $this->request->getGet();
 			if (session()->get('link_id')==null) {
 				echo "Invalid action detected";
-				return redirect('dashboard');
+				return redirect()->to('dashboard');
 				exit;
 			}
 			$link_id = session()->get('link_id');
@@ -596,13 +596,13 @@
 			     	$update_cart_items_table = $this->common->dbAction('cart_items_table',array('payment_status'=>$purchaseStatus,'purchase_id'=>$purchase_id,'deleted'=>1),'update',array('cart_id'=>$cart_id));
 			     	// create invoice for that order
 			     	$this->createInvoice($link_id);
-		     		return redirect('dashboard');
+		     		return  redirect()->to('dashboard');
 			     } else {
 			     	$responseInfo = $this->cancelPaymentLink($link_id);
 			     	if ($responseInfo->link_status=='CANCELLED') {
 					  	$updatePurchaseTable = $this->common->dbAction('purchase_table',array(),'delete',array('payment_request_id'=>$link_id));
 					  	if ($updatePurchaseTable) {
-					  		return redirect('dashboard');
+					  		return  redirect()->to('dashboard');
 					  	}
 				  	}
 			     }
@@ -976,6 +976,59 @@
 				$response = array('success'=>false,'message'=>'Please enter an email Id');
 			}
 			return json_encode($response);
+		}
+
+		public function addFreeProductByItsPromoCode(){
+			if (session()->get('studentDetails')!==null) {
+				$studentDetails = session()->get('studentDetails');
+				$student_id = $studentDetails['id'];
+				$link_id = uniqid($student_id);
+				$order_id = 'OD'.uniqid($student_id.'M');
+				session()->set('link_id',$link_id);
+				$cart_id = $this->getCartId()['data'];
+				if (!empty($cart_id)) {
+					$fetchCartItems = $this->common->getInfo('cart_items_table','',array('cart_id'=>$cart_id));
+					if (!empty($fetchCartItems)) {
+						$total_payable_amount = 0;
+						foreach ($fetchCartItems as $value) {
+							$offer_price = $value->offer_price;
+							$discount = $value->discount;
+							if ($value->discount_type=='percent') {
+								$total_payable_amount += $offer_price - ($offer_price*$discount /100);
+							} else {
+								$total_payable_amount += $offer_price - $discount;
+							}
+						}
+						$insertData = array();
+						$insertData['cart_id'] = $cart_id;
+						$insertData['payment_request_id'] = $link_id;
+						$insertData['payment_mode'] = 'PROMOFULLDISCOUNT';
+						$insertData['total_payment_amount'] = $total_payable_amount;
+						$insertData['order_id'] = $order_id;
+						$insertData['payment_status'] = 'PAID';
+						$addPurchaseData = $this->common->dbAction('purchase_table',$insertData,'insert_id',array());
+						if (!empty($addPurchaseData)) {
+							$updateData['payment_status'] = 'PAID';
+							$updateData['purchase_id'] = $addPurchaseData;
+							$updateData['deleted'] = 1;
+							$update_cart_items_table = $this->common->dbAction('cart_items_table',$updateData,'update',array('cart_id'=>$cart_id));
+							if (!empty($update_cart_items_table)) {
+								$response = array('success'=>true,'url'=>base_url('/dashboard'));
+							} else {
+								$response = array('success'=>false,'message'=>'Somtething went wrong');
+								log_message('error','Failed to update cart items table');
+							}
+						} else {
+							$response = array('success'=>false,'message'=>'Somtething went wrong');
+							log_message('error','Failed to add purcahse info');
+						}
+					}
+				}
+			} else {
+				$response = array('success'=>false,'message'=>'Please login first');
+				log_message('error','Access without login');
+			}
+			return $response;
 		}
 
 		
