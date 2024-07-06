@@ -644,7 +644,7 @@
 			}
 		}
 
-		public function createInvoice($link_id){
+		private function createInvoice($link_id){
 			$checkthePurchasedSubject = $this->defaultModel->fetchPurchaseModel($link_id);
 			$insertData = array();
 			if (!empty($checkthePurchasedSubject)) {
@@ -1008,12 +1008,12 @@
 						$insertData['payment_status'] = 'PAID';
 						$addPurchaseData = $this->common->dbAction('purchase_table',$insertData,'insert_id',array());
 						if (!empty($addPurchaseData)) {
-							$this->createInvoice($link_id);
 							$updateData['payment_status'] = 'PAID';
 							$updateData['purchase_id'] = $addPurchaseData;
 							$updateData['deleted'] = 1;
-							$update_cart_items_table = $this->common->dbAction('cart_items_table',$updateData,'update',array('cart_id'=>$cart_id));
+							$update_cart_items_table = $this->common->dbAction('cart_items_table',$updateData,'update',array('cart_id'=>$cart_id,'deleted'=>0));
 							if (!empty($update_cart_items_table)) {
+								$this->createInvoice($link_id);
 								$response = array('success'=>true,'url'=>base_url('/dashboard'));
 							} else {
 								$response = array('success'=>false,'message'=>'Somtething went wrong');
@@ -1029,7 +1029,7 @@
 				$response = array('success'=>false,'message'=>'Please login first');
 				log_message('error','Access without login');
 			}
-			return $response;
+			return json_encode($response);
 		}
 
 		
