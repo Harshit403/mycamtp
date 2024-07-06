@@ -213,8 +213,8 @@ $(document).ready(function() {
             }
 
         })
-    });
 
+    });
     $("#category_id").on('change', function() {
         levelUpdate();
     });

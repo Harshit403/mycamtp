@@ -8,7 +8,7 @@
     <div class="app-brand demo">
         <a href="<?=base_url()?>" class="app-brand-link w-100">
             <span class="app-brand-logo demo w-100">
-                <img src="<?=base_url()?>design_assets/images/mycsmtp_logo.jpg" style="width: 100%; height: 50px;">
+                <img src="<?=base_url()?>assetItems/image/logo.jpg" style="width: 100%; height: 50px;">
             </span>
         </a>
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">

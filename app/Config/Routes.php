@@ -50,12 +50,16 @@ $routes->get('/my-resources/qbank/subject-list',STUDENT.'DefaultController::load
 $routes->get('/qbank/qbank-list',STUDENT.'DefaultController::loadQbankList',['filter'=>'studentAuth']);
 
 $routes->get('/invoice',STUDENT.'DefaultController::loadInvoicePage',['filter'=>'studentAuth']);
+$routes->get('/profile',STUDENT.'DefaultController::loadProfilePage',['filter'=>'studentAuth']);
 $routes->get('/download-invoice',STUDENT.'DefaultController::downloadInvoice',['filter'=>'studentAuth']);
 // my resourse paper
 $routes->get('/fetch-assignment-status',STUDENT.'DefaultController::fetchAssignmentStatus',['filter'=>'studentAuth']);
 $routes->post('/upload/assignment-file',STUDENT.'DefaultController::uploadAssignmentFile',['filter'=>'studentAuth']);
 
 $routes->post('/newsletter/add-newsletter',STUDENT.'DefaultController::addNewsLetter');
+
+// student profile
+$routes->post('/update/user-profile',STUDENT.'DefaultController::updateUserProfile',['filter'=>'studentAuth']);
 
 
 // ADMIN

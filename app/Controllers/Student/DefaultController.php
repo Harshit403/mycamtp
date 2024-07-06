@@ -1032,6 +1032,31 @@
 			return json_encode($response);
 		}
 
+		public function loadProfilePage(){
+			if (session()->get('studentDetails')!==null) {
+				$studentDetails = session()->get('studentDetails');
+				$student_id = $studentDetails['id'];
+				$data['studentDetails'] = $this->common->getInfo('student_table','row',array('student_id'=>$student_id));
+				$data['categoryDetails'] = $this->common->getInfo('category_table','',array('deleted'=>0,'active'=>1));
+				return view('student/student_profile',$data);
+			}
+		}
+
+		public function updateUserProfile(){
+			if (session()->get('studentDetails')!==null) {
+				$studentDetails = session()->get('studentDetails');
+				$student_id = $studentDetails['id'];
+				$postData = $this->request->getPost();
+				$updateProfile = $this->common->dbAction('student_table',$postData,'update',array('student_id'=>$student_id));
+				if (!empty($updateProfile)) {
+					$response = array('success'=>true,'message'=>'User info updated successfully');
+				} else {
+					$response = array('success'=>false,'message'=>'Failed to update user info');
+				}
+				return json_encode($response);
+			}
+		}
+
 		
 	}
 ?>
