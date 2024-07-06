@@ -1008,6 +1008,7 @@
 						$insertData['payment_status'] = 'PAID';
 						$addPurchaseData = $this->common->dbAction('purchase_table',$insertData,'insert_id',array());
 						if (!empty($addPurchaseData)) {
+							$this->createInvoice($link_id);
 							$updateData['payment_status'] = 'PAID';
 							$updateData['purchase_id'] = $addPurchaseData;
 							$updateData['deleted'] = 1;
