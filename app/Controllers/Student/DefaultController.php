@@ -527,10 +527,10 @@
 			  CURLOPT_HTTPHEADER => [
 			    "accept: application/json",
 			    "content-type: application/json",
-			    "x-api-version: 2022-09-01",
-			    "x-client-id: TEST10214468d99f38722859d430198886441201",
-			    "x-client-secret: cfsk_ma_test_65d85b5eefef840a9f8e52b5b8840122_bceb118b",
-			    "x-api-version: 2022-09-01"
+			    "x-api-version: ".API_VERSION."",
+			    "x-client-id: ".CLIENT_ID."",
+			    "x-client-secret: ".SECRET_KEY."",
+			    "x-api-version: ".API_VERSION.""
 			  ],
 			]);
 
@@ -567,10 +567,10 @@
 			  CURLOPT_HTTPHEADER => [
 			    "accept: application/json",
 			    "content-type: application/json",
-			    "x-api-version: 2022-09-01",
-			    "x-client-id: TEST10214468d99f38722859d430198886441201",
-			    "x-client-secret: cfsk_ma_test_65d85b5eefef840a9f8e52b5b8840122_bceb118b",
-			    "x-api-version: 2022-09-01"
+			    "x-api-version: ".API_VERSION."",
+			    "x-client-id: ".CLIENT_ID."",
+			    "x-client-secret: ".SECRET_KEY."",
+			    "x-api-version: ".API_VERSION.""
 			  ],
 			]);
 
@@ -626,10 +626,9 @@
 			  CURLOPT_HTTPHEADER => [
 			    "accept: application/json",
 			    "content-type: application/json",
-			    "x-api-version: 2022-09-01",
-			    "x-client-id: TEST10214468d99f38722859d430198886441201",
-			    "x-client-secret: cfsk_ma_test_65d85b5eefef840a9f8e52b5b8840122_bceb118b",
-			    "x-api-version: 2022-09-01"
+			    "x-client-id: ".CLIENT_ID."",
+			    "x-client-secret: ".SECRET_KEY."",
+			    "x-api-version: ".API_VERSION.""
 			  ],
 			]);
 

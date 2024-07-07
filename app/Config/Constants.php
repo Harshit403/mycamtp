@@ -104,3 +104,9 @@ define('EMAIL_PASSWORD', 'gomupwpatgsoitqk');//enter your password
 define('SMTP_HOST', 'smtp.googlemail.com');
 define('SMTP_PORT', 587);
 define('FROM_NAME', 'mycsmtp.com@gmail.com');//Enter your email from name
+
+
+// Cashfree payment info
+define('CLIENT_ID', 'TEST10214468d99f38722859d430198886441201');
+define('SECRET_KEY', 'cfsk_ma_test_65d85b5eefef840a9f8e52b5b8840122_bceb118b');
+define('API_VERSION', '2022-09-01');
