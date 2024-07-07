@@ -1306,6 +1306,19 @@ class DashboardController extends BaseController
 
     public function closeValidity(){
         $postData = $this->request->getPost();
+        $admin_password = $postData['admin_password'];
+        $userData = array();
+        if (session()->get('userData')!==null) {
+            $userData = session()->get('userData');
+        }
+        if (isset($userData['id'])) {
+            $fetchAdminPassword = $this->common->getInfo('admin_user','row',array('id'=>$userData['id']));
+            if (!empty($fetchAdminPassword) && $fetchAdminPassword->password!=md5(md5($admin_password))) {
+                $response = array('success'=>false,'message'=>'You have entered a wrong password');
+                return json_encode($response);
+                exit();
+            }
+        }
         $getSubjectIdList = $this->common->getInfo('subject_table','',array('type_id'=>$postData['type_id']));
         $subject_id_array = array();
         if (!empty($getSubjectIdList)) {
@@ -1332,6 +1345,10 @@ class DashboardController extends BaseController
         }
         $deletPurchaseItemsEntry = $this->dashboardModel->deletePurchaseEntry($cart_id_array);
         $deletCartItemsEntry = $this->dashboardModel->deleteCartItemsEntry($subject_id_array);
+        if (!empty($deletCartItemsEntry)) {
+            $response = array('success'=>true,'message'=>'All the validation cleared successfully');
+            return json_encode($response);
+        }
     }
 
     private function deleteNotesItemsTable($subject_id_array){
