@@ -597,7 +597,7 @@
 			     	// create invoice for that order
 			     	$this->createInvoice($link_id);
 			     	// add sales Info
-			     	$this->addSalesInfo($purchase_id='',$link_id)
+			     	$this->addSalesInfo($purchase_id='',$link_id);
 		     		return  redirect()->to('dashboard');
 			     } else {
 			     	$responseInfo = $this->cancelPaymentLink($link_id);
