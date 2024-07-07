@@ -28,14 +28,15 @@ $routes->post('/promo/remove-promocode',STUDENT.'DefaultController::removePromoc
 $routes->get('/purchase-status',STUDENT.'DefaultController::purchaseStatus',['filter'=>'studentAuth']);
 $routes->get('/logout',STUDENT.'DefaultController::logOutUser',['filter'=>'studentAuth']);
 $routes->post('/fetch-level-list',STUDENT.'DefaultController::fetchLevelListInfo');
-$routes->get('/blog',STUDENT.'DefaultController::displayBlogDetails',['filter'=>'studentAuth']);
-$routes->get('/blog-list',STUDENT.'DefaultController::loadBlogListPage',['filter'=>'studentAuth']);
+$routes->get('/blog',STUDENT.'DefaultController::displayBlogDetails');
+$routes->get('/blog-list',STUDENT.'DefaultController::loadBlogListPage');
 
 $routes->get('/terms-and-condition',STUDENT.'DefaultController::loadTermsAndConditionPage');
 $routes->get('/cancel-and-refund',STUDENT.'DefaultController::loadCancelAndRefundPage');
 $routes->get('/privacy-policy',STUDENT.'DefaultController::loadPrivacyPolicy');
 $routes->get('/shipping-and-dlivery',STUDENT.'DefaultController::loadShippingDelivery');
 $routes->get('/about-us',STUDENT.'DefaultController::loadAboutUs');
+$routes->get('/why-us',STUDENT.'DefaultController::loadWhyUs');
 $routes->get('/disclaimer',STUDENT.'DefaultController::loadDisclaimer');
 
 // my-resources

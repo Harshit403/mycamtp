@@ -3,14 +3,14 @@
 	Control Validity
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
-    <?php if (!empty($fetchLevelList)): ?>
-        <?php foreach ($fetchLevelList as $level): ?>
+    <?php if (!empty($fetchTypeList)): ?>
+        <?php foreach ($fetchTypeList as $type): ?>
             <div class="row">
                 <div class="col-lg-3 mb-4">
-                    <?=$level->level_name?>
+                    <?=$type->type_name?>
                 </div>
                 <div class="col-lg-3 mb-4">
-                    <input type="date" class="validity_date form-control form-control-sm" data-level-id="<?=$level->level_id?>">
+                    <a href="javascript:void(0)" class="btn btn-sm btn-danger typeValidityBtn" data-type-id="<?=$type->type_id?>"><i class="bx bx-trash text-white"></i></a>
                 </div>
             </div>
         <?php endforeach ?>

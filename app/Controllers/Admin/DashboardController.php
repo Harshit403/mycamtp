@@ -800,7 +800,7 @@ class DashboardController extends BaseController
 
     public function deleteAssignSubject(){
         $postData = $this->request->getPost();
-        $deleteAssignSubject = $this->commo->dbAction('examinar_assign_table',array(),'delete',$postData);
+        $deleteAssignSubject = $this->common->dbAction('examinar_assign_table',array(),'delete',$postData);
         if (!empty($deleteAssignSubject)) {
             $response = array('success'=>true,'message'=>'Subject has been deleted successfully');
         } else {
@@ -1242,7 +1242,7 @@ class DashboardController extends BaseController
     }
 
     public function loadControlValidity(){
-        $data['fetchLevelList'] = $this->common->getInfo('level_table','',array('deleted'=>0));
+        $data['fetchTypeList'] = $this->common->getInfo('type_table','',array('deleted'=>0));
         return view('admin/controlValidation/validity-control',$data);
     }
     public function getSubjectList(){

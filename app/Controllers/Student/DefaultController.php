@@ -1057,6 +1057,10 @@
 			}
 		}
 
+		public function loadWhyUs(){
+			return view('student/why_us');
+		}
+
 		
 	}
 ?>

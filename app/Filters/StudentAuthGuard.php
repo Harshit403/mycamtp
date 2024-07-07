@@ -11,7 +11,7 @@ class StudentAuthGuard implements FilterInterface
         if (!session()->get('studentDetails'))
         {
             return redirect()
-                ->to('/login');
+                ->to('/auth?auth=login');
         }
     }
     

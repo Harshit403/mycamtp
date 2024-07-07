@@ -162,7 +162,7 @@
               <?php foreach ($blog_list as $blogRow): ?>
                 <div class="col-sm-3">
                     <div class="card">
-                        <img src="<?=base_url().$blogRow->blog_temp_image?>" class="card-img-top" alt="blog items image">
+                        <img src="<?=base_url().$blogRow->blog_temp_image?>" class="card-img-top" alt="blog items image" style="height: 200px;">
                       <div class="card-body">
                         <h5 class="card-title"><?=$blogRow->blog_heading?></h5>
                         <?php

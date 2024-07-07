@@ -14,7 +14,7 @@
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/summernote-bs5.js"></script>
-<script type="text/javascript" src="<?=base_url()?>assets/js/custom_js/common.js?v=1.0.1"></script>
+<script type="text/javascript" src="<?=base_url()?>assets/admin/js/common.js?v=1.0.1"></script>
 <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/bootbox.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>

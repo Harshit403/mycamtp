@@ -23,16 +23,7 @@
             <section class="">
               <div class="container text-center text-md-start mt-5">
                 <div class="row mt-3">
-                  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                    <h6 class="text-uppercase fw-bold">Company name</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
-                    <p>
-                      Here you can use rows and columns to organize your footer
-                      content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                      elit.
-                    </p>
-                  </div>
-                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <div class="col-md-4 mb-4" style="text-align: left;">
                     <h6 class="text-uppercase fw-bold">Products</h6>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
                     <p>
@@ -45,7 +36,7 @@
                       <a href="#!" class="text-white">CS Test Series</a>
                     </p>
                   </div>
-                  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <div class="col-md-4 mb-4" style="text-align: left;">
                     <h6 class="text-uppercase fw-bold">Useful Links</h6>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
                     <p>
@@ -60,14 +51,17 @@
                     <p>
                       <a href="<?=base_url()?>shipping-and-dlivery" class="text-white">Shipping and Delivery</a>
                     </p>
-                   <p>
+                    <p>
                       <a href="<?=base_url()?>about-us" class="text-white">About Us</a>
-                   </p>
-                   <p>
-                      <a href="<?=base_url()?>disclaimer" class="text-white">Disclaimer</a>               
-                   </p>
+                    </p>
+                    <p>
+                      <a href="<?=base_url()?>why-us" class="text-white">Why Us</a>
+                    </p>
+                    <p>
+                      <a href="<?=base_url()?>disclaimer" class="text-white">Disclaimer</a>
+                    </p>
                   </div>
-                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                  <div class="col-md-4 mb-4" style="text-align: left;">
                     <h6 class="text-uppercase fw-bold">Contact</h6>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
                     <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>

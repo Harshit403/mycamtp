@@ -34,7 +34,7 @@
 		            				?>
 		            			</div>
 		            			<div style="text-align: right !important;">
-		            				<a href="<?=base_url()?>blog-details/<?=$blogRow->blog_id?>" class="btn bnt-sm btn-class" style="padding: 4px 16px; display: inline-block; justify-content:end;" >Read More</a>
+		            				<a href="<?=base_url()?>blog?item=<?=$blogRow->blog_short_name?>" class="btn bnt-sm btn-custom" style="padding: 4px 16px; display: inline-block; justify-content:end;" >Read More <i class="bi bi-arrow-right"></i></a>
 		            			</div>
 		            		</div>
 		            	</div>
