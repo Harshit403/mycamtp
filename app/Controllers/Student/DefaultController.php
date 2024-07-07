@@ -596,6 +596,8 @@
 			     	$update_cart_items_table = $this->common->dbAction('cart_items_table',array('payment_status'=>$purchaseStatus,'purchase_id'=>$purchase_id,'deleted'=>1),'update',array('cart_id'=>$cart_id));
 			     	// create invoice for that order
 			     	$this->createInvoice($link_id);
+			     	// add sales Info
+			     	$this->addSalesInfo($purchase_id='',$link_id)
 		     		return  redirect()->to('dashboard');
 			     } else {
 			     	$responseInfo = $this->cancelPaymentLink($link_id);
@@ -1012,6 +1014,7 @@
 							$updateData['purchase_id'] = $addPurchaseData;
 							$updateData['deleted'] = 1;
 							$update_cart_items_table = $this->common->dbAction('cart_items_table',$updateData,'update',array('cart_id'=>$cart_id,'deleted'=>0));
+							$this->addSalesInfo($addPurchaseData,$link_id);
 							if (!empty($update_cart_items_table)) {
 								$this->createInvoice($link_id);
 								$response = array('success'=>true,'url'=>base_url('/dashboard'));
@@ -1030,6 +1033,44 @@
 				log_message('error','Access without login');
 			}
 			return json_encode($response);
+		}
+
+		public function addSalesInfo($purchase_id='',$link_id){
+			if (session()->get('studentDetails')!==null) {
+				$studentDetails = session()->get('studentDetails');
+				$student_id = $studentDetails['id'];
+				$getStudentInfo = $this->common->getInfo('student_table','row',array('student_id'=>$student_id));
+				$salesInfoArray = array();
+				if (!empty($getStudentInfo)) {
+					$salesInfoArray['student_id'] = $student_id;
+					$salesInfoArray['student_name'] = $getStudentInfo->student_name;
+					$salesInfoArray['date_of_enrollment'] = $getStudentInfo->date_of_enrollment;
+				}
+				$getSalesInfo = $this->defaultModel->getSalesInfoModel($purchase_id);
+				if (!empty($getSalesInfo)) {
+					$salesInfoArray['category_name'] = $getSalesInfo->category_name;
+					$salesInfoArray['category_short_name'] = $getSalesInfo->category_short_name;
+					$salesInfoArray['level_name'] = $getSalesInfo->level_name;
+					$salesInfoArray['level_short_name'] = $getSalesInfo->level_short_name;
+					$salesInfoArray['type_name'] = $getSalesInfo->type_name;
+					$salesInfoArray['type_short_name'] = $getSalesInfo->type_short_name;
+					$salesInfoArray['subject_name'] = $getSalesInfo->subject_name;
+					$salesInfoArray['subject_short_name'] = $getSalesInfo->subject_short_name;
+					$salesInfoArray['promo_code'] = $getSalesInfo->promo_code_name;
+					$salesInfoArray['discount_type'] = $getSalesInfo->discount_type;
+					$salesInfoArray['discount_amt'] = $getSalesInfo->discount;
+					$salesInfoArray['original_price'] = $getSalesInfo->original_price;
+					$salesInfoArray['offer_price'] = $getSalesInfo->offer_price;
+					$salesInfoArray['payment_mode'] = $getSalesInfo->payment_mode;
+					$salesInfoArray['purchase_date'] = $getSalesInfo->purchase_date;
+					$salesInfoArray['link_id'] = $link_id;
+				}
+
+				$addSalesInfo = $this->common->dbAction('sales_table',$salesInfoArray,'insert',array());
+				if (!empty($addSalesInfo)) {
+					return true;
+				}
+			}
 		}
 
 		public function loadProfilePage(){

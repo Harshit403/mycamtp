@@ -20,12 +20,12 @@
 							</div>
 							<div class="col-md-6">
 	                            <label for="category_more_details_heading" class="form-label">Category More Details Heading</label>
-	                            <input type="text" class="form-control form-control-sm" name="category_more_details_heading" placeholder="Category More Details Heading" aria-describedby="category_more_details_heading" value="<?=!empty($levelDetails) ? $levelDetails->category_more_details_heading : '';?>" >
+	                            <input type="text" class="form-control form-control-sm" name="category_more_details_heading" placeholder="Category More Details Heading" aria-describedby="category_more_details_heading" value="<?=!empty($categoryDetails) ? $categoryDetails->category_more_details_heading : '';?>" >
 	                        </div>
 	                        <div class="col-md-12">
 	                            <label for="category_more_details" class="form-label">Category More Details</label>
 	                            <textarea class="form-control form-control-sm" name="category_more_details" id="category_more_details">
-	                                <?=!empty($levelDetails) ? $levelDetails->category_more_details : '';?>
+	                                <?=!empty($categoryDetails) ? $categoryDetails->category_more_details : '';?>
 	                            </textarea>
 	                        </div>
 						</div>

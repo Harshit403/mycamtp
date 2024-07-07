@@ -7,9 +7,10 @@
         <?php foreach ($fetchTypeList as $type): ?>
             <div class="row">
                 <div class="col-lg-3 mb-4">
-                    <?=$type->type_name?>
+                    <div><?=$type->type_name?></div>
+                    <div><?=$type->batch_info?></div>
                 </div>
-                <div class="col-lg-3 mb-4">
+                <div class="col-lg-3 mb-4 d-flex align-items-center">
                     <a href="javascript:void(0)" class="btn btn-sm btn-danger typeValidityBtn" data-type-id="<?=$type->type_id?>"><i class="bx bx-trash text-white"></i></a>
                 </div>
             </div>
