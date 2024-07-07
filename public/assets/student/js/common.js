@@ -7,4 +7,4 @@ $(document).ready(function() {
             $("#overlay").fadeOut(300);
         }, 500);
     });
-})
+});
