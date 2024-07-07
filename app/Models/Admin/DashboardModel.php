@@ -1845,19 +1845,5 @@ class DashboardModel extends Model
         $response = $builder->delete();
         return $response;
     }
-
-    public function getSalesInfoModel($purchase_id){
-        $builder = $this->db->table('cart_items_table');
-        $builder->select('cart_items_table.*,purchase_table.create_date as purchase_date,subject_table.subject_name,subject_table.subject_short_name,type_table.type_name,type_table.type_short_name,level_table,level_table.level_name,level_table.level_short_name,category_table.category_name,category_table.category_short_name');
-        $builder->join('purchase_table','purchase_table.purcahse_id=cart_items_table.purchase_id','left');
-        $builder->join('subject_table','subject_table.subject_id=cart_items_table.subject_id');
-        $builder->join('type_table','type_table.type_id=subject_table.type_id');
-        $builder->join('level_table','level_table.level_id=subject_table.level_id');
-        $builder->join('category_table','category_table.category_id=level_table.category_id');
-        $builder->where('purchase_table.purcahse_id',$purchase_id);
-        $response = $builder->get()->getResult();
-        return $response;
-    }
-
 }
 ?>

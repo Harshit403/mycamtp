@@ -277,6 +277,18 @@
 	    	$records = $builder->get()->getResult();
 	    	return $records;
 	    }
+	    public function getSalesInfoModel($purchase_id){
+        $builder = $this->db->table('cart_items_table as cit');
+        $builder->select('cit.*,pt.create_date as purchase_date,pt.payment_mode,st.subject_name,st.subject_short_name,tt.type_name,tt.type_short_name,lt.level_name,lt.level_short_name,ct.category_name,ct.category_short_name');
+        $builder->join('purchase_table as pt','pt.purcahse_id=cit.purchase_id','left');
+        $builder->join('subject_table as st','st.subject_id=cit.subject_id');
+        $builder->join('type_table as tt','tt.type_id=st.type_id');
+        $builder->join('level_table as lt','lt.level_id=tt.level_id');
+        $builder->join('category_table as ct','ct.category_id=lt.category_id');
+        $builder->where('pt.purcahse_id',$purchase_id);
+        $response = $builder->get()->getResult();
+        return $response;
+    }
 
 	}
 ?>

@@ -597,7 +597,7 @@
 			     	// create invoice for that order
 			     	$this->createInvoice($link_id);
 			     	// add sales Info
-			     	$this->addSalesInfo($purchase_id='',$link_id);
+			     	$this->addSalesInfo($purchase_id,$link_id);
 		     		return  redirect()->to('dashboard');
 			     } else {
 			     	$responseInfo = $this->cancelPaymentLink($link_id);
@@ -1014,9 +1014,9 @@
 							$updateData['purchase_id'] = $addPurchaseData;
 							$updateData['deleted'] = 1;
 							$update_cart_items_table = $this->common->dbAction('cart_items_table',$updateData,'update',array('cart_id'=>$cart_id,'deleted'=>0));
-							$this->addSalesInfo($addPurchaseData,$link_id);
 							if (!empty($update_cart_items_table)) {
 								$this->createInvoice($link_id);
+								$this->addSalesInfo($addPurchaseData,$link_id);
 								$response = array('success'=>true,'url'=>base_url('/dashboard'));
 							} else {
 								$response = array('success'=>false,'message'=>'Somtething went wrong');
@@ -1044,29 +1044,33 @@
 				if (!empty($getStudentInfo)) {
 					$salesInfoArray['student_id'] = $student_id;
 					$salesInfoArray['student_name'] = $getStudentInfo->student_name;
-					$salesInfoArray['date_of_enrollment'] = $getStudentInfo->date_of_enrollment;
+					$salesInfoArray['date_of_enrollment'] = $getStudentInfo->create_date;
 				}
 				$getSalesInfo = $this->defaultModel->getSalesInfoModel($purchase_id);
 				if (!empty($getSalesInfo)) {
-					$salesInfoArray['category_name'] = $getSalesInfo->category_name;
-					$salesInfoArray['category_short_name'] = $getSalesInfo->category_short_name;
-					$salesInfoArray['level_name'] = $getSalesInfo->level_name;
-					$salesInfoArray['level_short_name'] = $getSalesInfo->level_short_name;
-					$salesInfoArray['type_name'] = $getSalesInfo->type_name;
-					$salesInfoArray['type_short_name'] = $getSalesInfo->type_short_name;
-					$salesInfoArray['subject_name'] = $getSalesInfo->subject_name;
-					$salesInfoArray['subject_short_name'] = $getSalesInfo->subject_short_name;
-					$salesInfoArray['promo_code'] = $getSalesInfo->promo_code_name;
-					$salesInfoArray['discount_type'] = $getSalesInfo->discount_type;
-					$salesInfoArray['discount_amt'] = $getSalesInfo->discount;
-					$salesInfoArray['original_price'] = $getSalesInfo->original_price;
-					$salesInfoArray['offer_price'] = $getSalesInfo->offer_price;
-					$salesInfoArray['payment_mode'] = $getSalesInfo->payment_mode;
-					$salesInfoArray['purchase_date'] = $getSalesInfo->purchase_date;
-					$salesInfoArray['link_id'] = $link_id;
+					$salesBatch = array();
+					foreach ($getSalesInfo as  $value) {
+						$salesInfoArray['category_name'] = $value->category_name;
+						$salesInfoArray['category_short_name'] = $value->category_short_name;
+						$salesInfoArray['level_name'] = $value->level_name;
+						$salesInfoArray['level_short_name'] = $value->level_short_name;
+						$salesInfoArray['type_name'] = $value->type_name;
+						$salesInfoArray['type_short_name'] = $value->type_short_name;
+						$salesInfoArray['subject_name'] = $value->subject_name;
+						$salesInfoArray['subject_short_name'] = $value->subject_short_name;
+						$salesInfoArray['promo_code'] = $value->promo_code_name;
+						$salesInfoArray['discount_type'] = $value->discount_type;
+						$salesInfoArray['discount_amt'] = $value->discount;
+						$salesInfoArray['original_price'] = $value->original_price;
+						$salesInfoArray['offer_price'] = $value->offer_price;
+						$salesInfoArray['payment_mode'] = $value->payment_mode;
+						$salesInfoArray['purchase_date'] = $value->purchase_date;
+						$salesInfoArray['link_id'] = $link_id;
+						$salesBatch[] = $salesInfoArray;
+					}
+					$addSalesInfo = $this->common->dbAction('sales_table',$salesInfoArray,'insert_batch',array());
 				}
 
-				$addSalesInfo = $this->common->dbAction('sales_table',$salesInfoArray,'insert',array());
 				if (!empty($addSalesInfo)) {
 					return true;
 				}
