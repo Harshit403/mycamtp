@@ -20,5 +20,5 @@
 <script type="text/javascript">
     var pageType = 'control-validity';
 </script>
-<script type="text/javascript" src="<?=base_url()?>//assets/admin/js/validity.js?v=1.0.0"></script>
+<script type="text/javascript" src="<?=base_url()?>/assets/admin/js/validity.js?v=1.0.0"></script>
 <?= $this->endSection() ?>

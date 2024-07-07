@@ -59,6 +59,9 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#">Pricing</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="<?=base_url()?>/blog-list">Blog</a>
+                  </li>
                    <li class="nav-item">
                     <a class="nav-link" href="<?=base_url()?>#faq-section">FAQ</a>
                   </li>
