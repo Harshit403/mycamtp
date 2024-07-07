@@ -218,3 +218,4 @@ $routes->post('/admin/get-sales',ADMIN.'DashboardController::fetchSales',['filte
 // validity control
 
 $routes->get('/admin/control-validity',ADMIN.'DashboardController::loadControlValidity',['filter'=>'authGuard']);
+$routes->post('/admin/close-validity',ADMIN.'DashboardController::closeValidity',['filter'=>'authGuard']);

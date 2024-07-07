@@ -1304,5 +1304,72 @@ class DashboardController extends BaseController
         return json_encode($response);
     }
 
+    public function closeValidity(){
+        $postData = $this->request->getPost();
+        $getSubjectIdList = $this->common->getInfo('subject_table','',array('type_id'=>$postData['type_id']));
+        $subject_id_array = array();
+        if (!empty($getSubjectIdList)) {
+            foreach ($getSubjectIdList as $value) {
+                $subject_id_array[] = $value->subject_id;
+            }
+        }
+        $notes__delete_table = $this->deleteNotesItemsTable($subject_id_array);
+        $fetchPaperList =  $this->dashboardModel->fetchPaperListInfo($subject_id_array);
+        $paper_id_array = array();
+        if (!empty($fetchPaperList)) {
+            foreach ($fetchPaperList as $value) {
+                $paper_id_array[] = $value->paper_id;
+            }
+        }
+        $delete_assignment_info = $this->deleteAssignmentInfo($paper_id_array);
+        $deleteExaminarEntry = $this->dashboardModel->deleteExaminarEntry($subject_id_array);
+        $fetch_cart_items_entry = $this->dashboardModel->fetchCartItemsEntry($subject_id_array);
+        $cart_id_array = array();
+        if (!empty($fetch_cart_items_entry)){
+            foreach ($fetch_cart_items_entry as $value) {
+                $cart_id_array[] = $value->cart_id;
+            }
+        }
+        $deletPurchaseItemsEntry = $this->dashboardModel->deletePurchaseEntry($cart_id_array);
+        $deletCartItemsEntry = $this->dashboardModel->deleteCartItemsEntry($subject_id_array);
+    }
+
+    private function deleteNotesItemsTable($subject_id_array){
+        $notes_items_to_delete = $this->dashboardModel->fetchNotesItemsFilterBySubject($subject_id_array);
+        if (!empty($notes_items_to_delete)) {
+            foreach ($notes_items_to_delete as $value) {
+                if (file_exists(PUBLIC_PATH.$value->attachment)) {
+                    unlink(PUBLIC_PATH.$value->attachment);
+                }
+                sleep(2);
+            }
+        }
+        $deleteNoteEntry = $this->dashboardModel->deleteNotesEntry($subject_id_array);
+        if (!empty($deleteNoteEntry)) {
+            return true;
+        }
+    }
+
+    public function deleteAssignmentInfo($paper_id_array)
+    {
+        $fetchAssignmentFile = $this->dashboardModel->fetchAssignmentFileByPaper($paper_id_array);
+        if (!empty($fetchAssignmentFile)) {
+            foreach ($fetchAssignmentFile as $value) {
+                if (file_exists(PUBLIC_PATH.$value->assignment_file)) {
+                    unlink(PUBLIC_PATH.$value->assignment_file);
+                }
+                sleep(2);
+                if (file_exists(PUBLIC_PATH.$value->assignment_checked_file)) {
+                    unlink(PUBLIC_PATH.$value->assignment_checked_file);
+                }
+                sleep(2);
+            }
+        }
+        $deleteAssignmentEntry = $this->dashboardModel->deleteAssignmentEntry($paper_id_array);
+        if (!empty($deleteAssignmentEntry)) {
+            return true;
+        }
+    }
+
 }
 ?>

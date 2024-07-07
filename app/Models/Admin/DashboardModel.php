@@ -1775,5 +1775,76 @@ class DashboardModel extends Model
         $response = $builder->get()->getResult();
         return $response;
     }
+
+    public function fetchNotesItemsFilterBySubject($subject_id_array){
+        $builder = $this->db->table('notes_table');
+        $builder->whereIn('subject_id',$subject_id_array);
+        $response = $builder->get()->getResult();
+        return $response;
+    }
+
+    public function deleteNotesEntry($subject_id_array)
+    {
+        $builder = $this->db->table('notes_table');
+        $builder->whereIn('subject_id',$subject_id_array);
+        $response = $builder->delete();
+        return $response;
+    }
+
+    public function fetchPaperListInfo($subject_id_array)
+    {
+        $builder = $this->db->table('paper_table');
+        $builder->whereIn('subject_id',$subject_id_array);
+        $response = $builder->get()->getResult();
+        return $response;
+    }
+    public function fetchAssignmentFileByPaper($paper_id_array)
+    {
+        $builder = $this->db->table('upload_assignment_table');
+        $builder->whereIn('paper_id',$paper_id_array);
+        $response = $builder->get()->getResult();
+        return $response;
+    }
+
+    public function deleteNotesEntry($paper_id_array)
+    {
+        $builder = $this->db->table('upload_assignment_table');
+        $builder->whereIn('paper_id',$paper_id_array);
+        $response = $builder->delete();
+        return $response;
+    }
+
+    public function deleteExaminarEntry($subject_id_array)
+    {
+        $builder = $this->db->table('examinar_assign_table');
+        $builder->whereIn('subject_id',$subject_id_array);
+        $response = $builder->update(['deleted'=>1]);
+        return $response;
+    }
+
+    public function deleteCartItemsEntry($subject_id_array)
+    {
+        $builder = $this->db->table('cart_items_table');
+        $builder->whereIn('subject_id',$subject_id_array);
+        $response = $builder->delete();
+        return $response;
+    }
+
+    public function fetchCartItemsEntry($subject_id_array)
+    {
+        $builder = $this->db->table('cart_items_table');
+        $builder->select('cart_items_table.cart_id');
+        $builder->whereIn('subject_id',$subject_id_array);
+        $response = $builder->get()->getResult();
+        return $response;
+    }
+
+    public function deletePurchaseEntry($cart_id_array){
+        $builder = $this->db->table('cart_items_table');
+        $builder->whereIn('cart_id',$cart_id_array);
+        $response = $builder->delete();
+        return $response;
+    }
+
 }
 ?>
