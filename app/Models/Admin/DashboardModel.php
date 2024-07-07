@@ -1806,7 +1806,7 @@ class DashboardModel extends Model
         return $response;
     }
 
-    public function deleteNotesEntry($paper_id_array)
+    public function deleteAssignmentEntry($paper_id_array)
     {
         $builder = $this->db->table('upload_assignment_table');
         $builder->whereIn('paper_id',$paper_id_array);
