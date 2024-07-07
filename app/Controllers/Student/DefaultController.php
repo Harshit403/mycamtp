@@ -73,13 +73,13 @@
 				unset($postData['confirm_password']);
 				$addStudentData = $this->common->dbAction('student_table',$postData,'insert',array());
 				if (!empty($addStudentData)) {
-				// 	$emailTemplate = file_get_contents(PUBLIC_PATH.'/emailTemplate/reg_template.php');
-				// 	$login_url = base_url().'/sign_in';
-				// 	$emailTemplate = str_replace('{login}',$login_url, $emailTemplate);
-				// 	$emailTemplate = str_replace('{user_email}',$postData['email'], $emailTemplate);
-				// 	$emailTemplate = str_replace('{user_password}',$password, $emailTemplate);
-				// 	$subject = "Registration Confirmation";
-				// 	$send_email = $this->sendMail($postData['email'], $subject, $emailTemplate,'New Register');
+					$emailTemplate = file_get_contents(PUBLIC_PATH.'/emailTemplate/reg_template.php');
+					$login_url = base_url().'/auth?auth=login';
+					$emailTemplate = str_replace('{login}',$login_url, $emailTemplate);
+					$emailTemplate = str_replace('{user_email}',$postData['email'], $emailTemplate);
+					$emailTemplate = str_replace('{user_password}',$password, $emailTemplate);
+					$subject = "Registration Confirmation";
+					$send_email = $this->sendMail($postData['email'], $subject, $emailTemplate,'New Register');
 					$response = array(
 						'success'=>true,
 						'message'=>'You are registered successfully',
