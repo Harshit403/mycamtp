@@ -25,8 +25,11 @@ $(document).ready(function() {
                                 admin_password: admin_password,
                             },
                             dataType: 'json',
-                            success: function() {
-
+                            success: function(res) {
+                                bootbox.alert({
+                                    messeage: res.message,
+                                    closeButton: false,
+                                })
                             }
                         })
                     }
