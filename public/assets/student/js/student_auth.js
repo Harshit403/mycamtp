@@ -207,7 +207,7 @@ $(document).ready(function() {
                     message: data.message,
                     closeButton: false,
                     callback: function() {
-                        window.location.href = baseUrl + 'sign-in';
+                        window.location.href = baseUrl + '/auth?auth=login';
                     }
                 })
             }

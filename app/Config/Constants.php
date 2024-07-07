@@ -97,3 +97,10 @@ define('ADMIN', 'Admin\\');
 define('STUDENT', 'Student\\');
 defined('PUBLIC_PATH') || define('PUBLIC_PATH', ROOTPATH . 'public');
 define('EXAM_DATE', '2024-06-24');
+
+// email Config
+define('EMAIL_ID', 'mycsmtp.com@gmail.com');//enter your email address
+define('EMAIL_PASSWORD', 'gomupwpatgsoitqk');//enter your password
+define('SMTP_HOST', 'smtp.googlemail.com');
+define('SMTP_PORT', 587);
+define('FROM_NAME', 'mycsmtp.com@gmail.com');//Enter your email from name

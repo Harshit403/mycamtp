@@ -39,6 +39,13 @@ $routes->get('/about-us',STUDENT.'DefaultController::loadAboutUs');
 $routes->get('/why-us',STUDENT.'DefaultController::loadWhyUs');
 $routes->get('/disclaimer',STUDENT.'DefaultController::loadDisclaimer');
 
+// forgot password
+$routes->get('/forgot-password',STUDENT.'DefaultController::loadForgotPassword');
+$routes->post('/forgot-pass-email',STUDENT.'DefaultController::forgotPassEmail');
+$routes->post('/verify-otp',STUDENT.'DefaultController::verifyOTP');
+$routes->post('/set-new-password',STUDENT.'DefaultController::setNewPassword');
+$routes->get('/set-password',STUDENT.'DefaultController::loadSetPasswordPage');
+
 // my-resources
 $routes->get('/my-resources/subject',STUDENT.'DefaultController::loadMyResourceSubjectPage',['filter'=>'studentAuth']);
 $routes->get('/my-resources/paper',STUDENT.'DefaultController::loadPaperListPage',['filter'=>'studentAuth']);

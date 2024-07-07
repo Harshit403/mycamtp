@@ -1102,6 +1102,77 @@
 			return view('student/why_us');
 		}
 
+		// forgot password
+		public function loadForgotPassword(){
+			return view('student/auth/forgot_password');
+		}
+
+		public function forgotPassEmail(){
+			$postData = $this->request->getPost();
+			$checkEmailExist = $this->common->getInfo('student_table','row',$postData);
+			if($checkEmailExist->blocked==1){
+				$response = array('success'=>false,'message'=>'User account is blocked by the admin');
+				return json_encode($response);
+				exit;
+			} else if(empty($checkEmailExist)){
+				$response = array('success'=>false,'message'=>'User does not exists');
+				return json_encode($response);
+				exit;
+			}
+			$otp = random_int(100000, 999999);
+			$sendEmail = $this->sendMail($postData['email'], 'OTP', "This is the OTP message your OTP is $otp ,valid for 15 min",'Forgot Password');
+			if($sendEmail=='1'){
+				$tempdata = ['otp' => $otp, 'email' => $postData['email']];
+				session()->setTempdata($tempdata,null, 300);
+				$response = array('success' =>true,'message' =>'Email has been sent successfully');
+			}
+			return json_encode($response);
+		}
+
+		public function verifyOTP(){
+			$postData = $this->request->getPost();
+			$tempArray = session()->getTempdata();
+			if(!empty($tempArray)){
+				if($tempArray['email']!=$postData['email']){
+					$response = array('success' => false,'message' =>'Please enter your correct mail address');
+				} else {
+					if($tempArray['otp']==$postData['otp']){
+						$response = array('success' => true,'message' =>'OTP verified successfully');
+						session()->setTempdata('email',$tempArray['email'],900);
+					} else {
+						$response = array('success' => false,'message' =>'Wrong OTP entered');
+					}
+				}
+			} else {
+				$response = array('success' => false,'message' =>'OTP expired');
+			}
+			return json_encode($response);
+		}
+
+		public function loadSetPasswordPage(){
+			if (session()->getTempdata()!==null) {
+				return view('student/auth/password_set');
+			} else {
+				return redirect()->to('auth?auth=login');
+			}
+		}
+
+		public function setNewPassword(){
+			$postData = $this->request->getPost();
+			$emailTempData = session()->getTempdata('email');
+			if(empty($emailTempData)){
+				$response = array('success' => false,'message' =>'Session expired, please try again');
+			} else {
+				$password = md5(md5($postData['password']));
+				$updatePassword = $this->common->dbAction('student_table',array('password' => $password),'update',array('email' => $emailTempData));
+				if($updatePassword){
+					$response = array('success' => true,'message' =>'Password updated successfully');
+				} else {
+					$response = array('success' => false,'message' =>'Failed to update password');
+				}
+			}
+			return json_encode($response);
+		}
 		
 	}
 ?>
