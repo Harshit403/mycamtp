@@ -2,6 +2,12 @@
 <?= $this->section('title') ?>
     Subject List
 <?= $this->endSection() ?>
+<?= $this->section('meta_description') ?>
+<!-- enter your meta description -->
+<?=$this->endSection()?>
+<?= $this->section('meta_keywords') ?>
+<!-- enter your meta keywords widthout tag -->
+<?=$this->endSection()?>
 <?= $this->section('content') ?>
     <section class="container mainContainer mb-5 section" style="min-height:400px;">
         <div class="text-center">

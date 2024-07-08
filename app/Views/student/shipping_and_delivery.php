@@ -2,6 +2,12 @@
 <?=$this->section('title')?>
 	Shipping and Delivery
 <?=$this->endSection()?>
+<?= $this->section('meta_description') ?>
+<!-- enter your meta description -->
+<?=$this->endSection()?>
+<?= $this->section('meta_keywords') ?>
+<!-- enter your meta keywords widthout tag -->
+<?=$this->endSection()?>
 <?=$this->section('content')?>
 	<section class="container shifting_container mb-5 mainContainer">
 		<h2 class="text-center">Shifting and Delivery</h2>

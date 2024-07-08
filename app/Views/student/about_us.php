@@ -2,6 +2,12 @@
 <?=$this->section('title')?>
 	About us
 <?=$this->endSection()?>
+<?= $this->section('meta_description') ?>
+<!-- enter your meta description -->
+<?=$this->endSection()?>
+<?= $this->section('meta_keywords') ?>
+<!-- enter your meta keywords widthout tag -->
+<?=$this->endSection()?>
 <?=$this->section('content')?>
 	<section class="container about_us_container mainContainer">
 		<h2 class="text-center">About Us</h2>

@@ -2,6 +2,12 @@
 <?=$this->section('title')?>
 	Disclaimer
 <?=$this->endSection()?>
+<?= $this->section('meta_description') ?>
+<!-- enter your meta description -->
+<?=$this->endSection()?>
+<?= $this->section('meta_keywords') ?>
+<!-- enter your meta keywords widthout tag -->
+<?=$this->endSection()?>
 <?=$this->section('content')?>
 	<section class="container disclaimer_container mainContainer">
 		<h2 class="text-center">Disclaimer</h2>

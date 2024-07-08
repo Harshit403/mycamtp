@@ -2,6 +2,12 @@
 <?=$this->section('title')?>
 	<?=$level_info->level_name?>
 <?=$this->endSection()?>
+<?= $this->section('meta_description') ?>
+<!-- enter your meta description -->
+<?=$this->endSection()?>
+<?= $this->section('meta_keywords') ?>
+<!-- enter your meta keywords widthout tag -->
+<?=$this->endSection()?>
 <?=$this->section('content')?>
 	<section class="container subject_container mainContainer">
 		<h2 class="text-center">Cancel And Refund Policy</h2>

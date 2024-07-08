@@ -2,6 +2,12 @@
 <?=$this->section('title')?>
 	Terms and Conditions
 <?=$this->endSection()?>
+<?= $this->section('meta_description') ?>
+<!-- enter your meta description -->
+<?=$this->endSection()?>
+<?= $this->section('meta_keywords') ?>
+<!-- enter your meta keywords widthout tag -->
+<?=$this->endSection()?>
 <?=$this->section('content')?>
 <section class="container mb-5 mainContainer">
     <div class="row py-3">
