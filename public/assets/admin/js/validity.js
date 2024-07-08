@@ -29,15 +29,15 @@ $(document).ready(function() {
                         }
                         $.ajax({
                             url: baseUrl + 'admin/close-validity',
-                            type: 'POST',
+                            type: 'post',
                             data: {
                                 type_id: type_id,
                                 admin_password: admin_password,
                             },
                             dataType: 'json',
-                            success: function(res) {
+                            success: function(response) {
                                 bootbox.alert({
-                                    messeage: res.message,
+                                    message: response.message,
                                     closeButton: false,
                                 })
                             }

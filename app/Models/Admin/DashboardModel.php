@@ -1778,7 +1778,9 @@ class DashboardModel extends Model
 
     public function fetchNotesItemsFilterBySubject($subject_id_array){
         $builder = $this->db->table('notes_table');
-        $builder->whereIn('subject_id',$subject_id_array);
+        if (!empty($subject_id_array)) {
+            $builder->whereIn('subject_id',$subject_id_array);
+        }
         $response = $builder->get()->getResult();
         return $response;
     }
@@ -1786,22 +1788,30 @@ class DashboardModel extends Model
     public function deleteNotesEntry($subject_id_array)
     {
         $builder = $this->db->table('notes_table');
-        $builder->whereIn('subject_id',$subject_id_array);
-        $response = $builder->delete();
+        if (!empty($subject_id_array)) {
+            $builder->whereIn('subject_id',$subject_id_array);
+            $response = $builder->delete();
+        } else {
+            $response = true;
+        }
         return $response;
     }
 
     public function fetchPaperListInfo($subject_id_array)
     {
         $builder = $this->db->table('paper_table');
-        $builder->whereIn('subject_id',$subject_id_array);
+        if (!empty($subject_id_array)) {
+            $builder->whereIn('subject_id',$subject_id_array);
+        }
         $response = $builder->get()->getResult();
         return $response;
     }
     public function fetchAssignmentFileByPaper($paper_id_array)
     {
         $builder = $this->db->table('upload_assignment_table');
-        $builder->whereIn('paper_id',$paper_id_array);
+        if (!empty($paper_id_array)) {
+            $builder->whereIn('paper_id',$paper_id_array);
+        }
         $response = $builder->get()->getResult();
         return $response;
     }
@@ -1809,24 +1819,36 @@ class DashboardModel extends Model
     public function deleteAssignmentEntry($paper_id_array)
     {
         $builder = $this->db->table('upload_assignment_table');
-        $builder->whereIn('paper_id',$paper_id_array);
-        $response = $builder->delete();
+        if (!empty($paper_id_array)) {
+            $builder->whereIn('paper_id',$paper_id_array);
+            $response = $builder->delete();
+        } else {
+            $response = true;
+        }
         return $response;
     }
 
     public function deleteExaminarEntry($subject_id_array)
     {
         $builder = $this->db->table('examinar_assign_table');
-        $builder->whereIn('subject_id',$subject_id_array);
-        $response = $builder->update(['deleted'=>1]);
+        if (!empty($subject_id_array)) {
+            $builder->whereIn('subject_id',$subject_id_array);
+            $response = $builder->update(['deleted'=>1]);
+        } else {
+            $response = true;
+        }
         return $response;
     }
 
     public function deleteCartItemsEntry($subject_id_array)
     {
         $builder = $this->db->table('cart_items_table');
-        $builder->whereIn('subject_id',$subject_id_array);
-        $response = $builder->delete();
+        if (!empty($subject_id_array)) {
+            $builder->whereIn('subject_id',$subject_id_array);
+            $response = $builder->delete();
+        } else {
+            $response = true;
+        }
         return $response;
     }
 
@@ -1834,15 +1856,29 @@ class DashboardModel extends Model
     {
         $builder = $this->db->table('cart_items_table');
         $builder->select('cart_items_table.cart_id');
-        $builder->whereIn('subject_id',$subject_id_array);
+        if (!empty($subject_id_array)) {
+            $builder->whereIn('subject_id',$subject_id_array);
+        }
         $response = $builder->get()->getResult();
         return $response;
     }
 
     public function deletePurchaseEntry($cart_id_array){
-        $builder = $this->db->table('cart_items_table');
-        $builder->whereIn('cart_id',$cart_id_array);
-        $response = $builder->delete();
+        $builder = $this->db->table('purchase_table');
+        if (!empty($cart_id_array)) {
+            $builder->whereIn('cart_id',$cart_id_array);
+            $response = $builder->delete();
+        } else {
+            $response = true;
+        }
+        return $response;
+    }
+
+    public function fetchTypeListWithBatchValid(){
+        $builder = $this->db->table('type_table');
+        $builder->select('type_table.*');
+        $builder->join('batch_table','batch_table.type_id=type_table.type_id');
+        $response = $builder->get()->getResult();
         return $response;
     }
 }

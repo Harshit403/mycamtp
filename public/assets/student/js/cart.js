@@ -4,7 +4,12 @@ $(document).ready(function() {
         addtoCart(subject_id);
     });
 
-    function addtoCart(subject_id = '') {
+    $(".addBuyNowBtn").on('click', function() {
+        var subject_id = $(this).data('subject-id');
+        addtoCart(subject_id, 'buynow');
+    })
+
+    function addtoCart(subject_id = '', btn_type = 'addtocart') {
         if (subject_id == '') {
             bootbox.alert('Something went wronqg');
             return false;
@@ -17,17 +22,47 @@ $(document).ready(function() {
                 },
                 dataType: 'json',
                 success: function(response) {
-                    bootbox.alert({
-                        message: response.message,
-                        closeButton: false,
-                        callback: function() {
-                            if (response.success) {
-                                $(".cartCount").html(response.totalQty);
-                            } else {
+                    if (response.success) {
+                        if (btn_type == 'addtocart') {
+                            bootbox.alert({
+                                message: response.message,
+                                closeButton: false,
+                                callback: function() {
+                                    if (response.success) {
+                                        $(".cartCount").html(response.totalQty);
+                                    } else {
+                                        window.location.href = baseUrl + 'auth?auth=login';
+                                    }
+                                }
+                            });
+                        } else if (btn_type == 'buynow') {
+                            $.ajax({
+                                url: baseUrl + 'checkout-cart-items',
+                                type: 'POST',
+                                dataType: 'json',
+                                success: function(response) {
+                                    if (response.success) {
+                                        window.open(response.url, '_self');
+                                    } else {
+                                        bootbox.alert({
+                                            message: response.message,
+                                            closeButton: false,
+                                        })
+                                    }
+                                }
+                            });
+                        }
+                    } else {
+                        bootbox.alert({
+                            message: response.message,
+                            closeButton: false,
+                            callback: function() {
                                 window.location.href = baseUrl + 'auth?auth=login';
                             }
-                        }
-                    });
+                        });
+                    }
+
+
                 }
             })
         }

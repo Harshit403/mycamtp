@@ -60,6 +60,8 @@ $(document).ready(function() {
         formdata.append('type_name', type_name);
         formdata.append('type_short_name', type_short_name);
         formdata.append('type_more_details', type_more_details);
+        formdata.append('type_info_heading', type_info_heading);
+        formdata.append('type_info', type_info);
         formdata.append('batch_info', batch_info);
         formdata.append('expiry_date', expiry_date);
         if (schedule_file != undefined) {

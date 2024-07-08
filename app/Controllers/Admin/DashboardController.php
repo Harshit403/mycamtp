@@ -239,9 +239,28 @@ class DashboardController extends BaseController
             }
             if(!empty($type_id)){
                 $addType = $this->common->dbAction('type_table',$postData,'update',array('type_id'=>$type_id));
+                if (isset($postData['batch_info'])) {
+                    $checkIfExist = $this->common->getInfo('batch_table','row',array('type_id'=>$type_id));
+                    $batchArray = array();
+                    $batchArray['batch_name'] = $postData['batch_info'];
+                    $batchArray['type_id'] = $type_id;
+                    if (!empty($checkIfExist)) {
+                        $addBatch = $this->common->dbAction('batch_table',$batchArray,'update',array('type_id'=>$type_id));
+                    } else {
+                        echo 'jello';
+                        $addBatch = $this->common->dbAction('batch_table',$batchArray,'insert',array());
+                    }
+                    
+                }
                 $type="updated";
             } else {
-                $addType = $this->common->dbAction('type_table',$postData,'insert',array());
+                $addType = $this->common->dbAction('type_table',$postData,'insert_id',array());
+                if (isset($postData['batch_info'])) {
+                    $batchArray = array();
+                    $batchArray['batch_name'] = $postData['batch_info'];
+                    $batchArray['type_id'] = $addType;
+                    $addBatch = $this->common->dbAction('batch_table',$batchArray,'insert',array());
+                }
                 $type="added";
             }
             if ($addType){
@@ -252,6 +271,7 @@ class DashboardController extends BaseController
                     $message="Failed to update type";
             }
         } catch(\Exception $e){
+            log_message('error',$e->getMessage());
             $pattern = "/Duplicate entry/i";
             if(preg_match($pattern, $e->getMessage())==true){
                     $success =false;
@@ -1242,7 +1262,8 @@ class DashboardController extends BaseController
     }
 
     public function loadControlValidity(){
-        $data['fetchTypeList'] = $this->common->getInfo('type_table','',array('deleted'=>0));
+        // $data['fetchTypeList'] = $this->common->getInfo('type_table','',array('deleted'=>0));
+        $data['fetchTypeList'] = $this->dashboardModel->fetchTypeListWithBatchValid();
         return view('admin/controlValidation/validity-control',$data);
     }
     public function getSubjectList(){
@@ -1345,10 +1366,9 @@ class DashboardController extends BaseController
         }
         $deletPurchaseItemsEntry = $this->dashboardModel->deletePurchaseEntry($cart_id_array);
         $deletCartItemsEntry = $this->dashboardModel->deleteCartItemsEntry($subject_id_array);
-        if (!empty($deletCartItemsEntry)) {
-            $response = array('success'=>true,'message'=>'All the validation cleared successfully');
-            return json_encode($response);
-        }
+        $removeBatchInfo  = $this->common->dbAction('batch_table','','delete',array('type_id'=>$postData['type_id']));
+        $response = array('success'=>true,'message'=>'All the validation cleared successfully');
+        return json_encode($response);
     }
 
     private function deleteNotesItemsTable($subject_id_array){
@@ -1372,14 +1392,20 @@ class DashboardController extends BaseController
         $fetchAssignmentFile = $this->dashboardModel->fetchAssignmentFileByPaper($paper_id_array);
         if (!empty($fetchAssignmentFile)) {
             foreach ($fetchAssignmentFile as $value) {
-                if (file_exists(PUBLIC_PATH.$value->assignment_file)) {
-                    unlink(PUBLIC_PATH.$value->assignment_file);
+                if (!empty($value->assignment_file)) {
+                    if (file_exists(PUBLIC_PATH.$value->assignment_file)) {
+                        unlink(PUBLIC_PATH.$value->assignment_file);
+                    }
+                    sleep(2);
                 }
-                sleep(2);
-                if (file_exists(PUBLIC_PATH.$value->assignment_checked_file)) {
-                    unlink(PUBLIC_PATH.$value->assignment_checked_file);
+                
+                if (!empty($value->assignment_checked_file)) {
+                    if (file_exists(PUBLIC_PATH.$value->assignment_checked_file)) {
+                        unlink(PUBLIC_PATH.$value->assignment_checked_file);
+                    }
+                    sleep(2);
                 }
-                sleep(2);
+                
             }
         }
         $deleteAssignmentEntry = $this->dashboardModel->deleteAssignmentEntry($paper_id_array);

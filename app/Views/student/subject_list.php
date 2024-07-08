@@ -25,6 +25,7 @@
 					        ?>
 					        <div class="discount">[<?=$discount?>% OFF]</div>
 					        <a href="javascript:void(0)" class="add-to-cart addToCartBtn btn btn-sm btn-custom" data-subject-id="<?=$subjectRow->subject_id?>"><i class="bi bi-cart-plus"></i> Add To Cart</a>
+					        <a href="javascript:void(0)" class="add-to-cart addBuyNowBtn btn btn-sm btn-custom" data-subject-id="<?=$subjectRow->subject_id?>"><i class="bi bi-cart-plus"></i> Buy Now</a>
 					    </div>
 					</div>
 				<?php endforeach ?>
