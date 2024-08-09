@@ -1,17 +1,17 @@
 $(document).ready(function() {
     $(".getSalesBtn").on('click', function() {
-        var level_id = $("#level_id").val();
-        var type_id = $("#type_id").val();
-        var subject_id = $("#subject_id").val();
+        var level_short_name = $("#level_short_name").val();
+        var type_short_name = $("#type_short_name").val();
+        var subject_short_name = $("#subject_short_name").val();
         var from_date = $("#from_date").val();
         var to_date = $("#to_date").val();
         $.ajax({
             url: baseUrl + 'admin/get-sales',
             type: 'POST',
             data: {
-                level_id: level_id,
-                type_id: type_id,
-                subject_id: subject_id,
+                level_short_name: level_short_name,
+                type_short_name: type_short_name,
+                subject_short_name: subject_short_name,
                 from_date: from_date,
                 to_date: to_date,
             },
@@ -19,41 +19,60 @@ $(document).ready(function() {
             success: function(response) {
                 var html = '';
                 if (response !== null) {
-                    var cartItems = {};
-                    var sales_total = 0;
-                    $.each(response.fetchedCartItemsGroup, function(j, k) {
-                        cartItems[k.purchase_id] = k.total_items_count;
-                    });
+                    var total_sales_amt = 0;
                     $.each(response.fetchSalesInfo, function(i, v) {
-                        var sale_discount_amt = 0;
-                        var discountLabel = '%';
-                        if (v.discount_type == 'percent') {
-                            sale_discount_amt = v.offer_price - (v.offer_price * v.discount / 100);
-                            discountLabel = '%';
-                        } else if (v.discount_type == 'amount') {
-                            sale_discount_amt = v.offer_price - (v.discount / cartItems[v.purchase_id]);
-                            discountLabel = '&#8377;';
+                        var salesAmt = 0;
+                        var discount_type = v.discount_type;
+                        var discount_amt = v.discount_amt;
+                        var offer_price = v.offer_price;
+                        if (discount_type == 'percent') {
+                            salesAmt = offer_price - (offer_price * (discount_amt / 100));
+                        } else if (discount_type == 'amount') {
+                            salesAmt = offer_price - discount_amt;
                         }
-                        html += '<tr>';
-                        html += '<td>' + v.enrolment_date + '</td>';
-                        html += '<td>' + v.student_name + '</td>';
-                        html += '<td>' + v.payment_request_id + '</td>';
-                        html += '<td>' + v.subject_name + '</td>';
-                        html += '<td>' + v.level_name + '</td>';
-                        html += '<td>' + v.type_name + '</td>';
-                        html += '<td>' + v.offer_price + '</td>';
-                        html += '<td>' + (v.promo_code_name + ' (' + v.discount + discountLabel) + ')' + '</td>';
-                        html += '<td>' + v.payment_mode + '</td>';
-                        html += '<td>' + sale_discount_amt + '</td>';
-                        html += '<td>' + v.purchase_date + '</td>';
+                        total_sales_amt = Number(salesAmt) + Number(total_sales_amt);
+                        html += '<tr>' +
+                            '<td>' + v.date_of_enrollment + '</td>' +
+                            '<td>' + v.student_name + '</td>' +
+                            '<td>' + v.link_id + '</td>' +
+                            '<td>' + v.subject_name + '</td>' +
+                            '<td>' + v.level_name + '</td>' +
+                            '<td>' + v.type_name + '</td>' +
+                            '<td>' + v.offer_price + '</td>' +
+                            '<td>' + v.promo_code + '</td>' +
+                            '<td>' + v.payment_mode + '</td>' +
+                            '<td>' + salesAmt + '</td>' +
+                            '<td>' + v.purchase_date + '</td>';
                         html += '</tr>';
-                        sales_total = Number(sales_total) + Number(sale_discount_amt);
                     });
-                    $("#total_sales_amt").html('&#8377; ' + sales_total.toFixed(2));
                     $("#sales_body").html(html);
+                    $("#total_sales_amt").html('&#8377; ' + total_sales_amt.toFixed(2));
                 }
             }
         });
     });
+
+    $("#level_short_name").on('change', function() {
+        var level_short_name = $(this).val();
+        var sales_info = JSON.parse($.trim($(".salesInfo").text()));
+        var html = '';
+        $.each(sales_info, function(i, v) {
+            if (v.level_short_name == level_short_name) {
+                html += '<option value="' + v.type_short_name + '">' + v.type_name + '</option>';
+            }
+        });
+        $("#type_short_name").append(html);
+    });
+    $("#type_short_name").on('change', function() {
+        var type_short_name = $(this).val();
+        var sales_info = JSON.parse($.trim($(".salesInfo").text()));
+        var html = '';
+        $.each(sales_info, function(i, v) {
+            if (v.type_short_name == type_short_name) {
+                html += '<option value="' + v.subject_short_name + '">' + v.subject_name + '</option>';
+            }
+        });
+        $("#subject_short_name").append(html);
+    })
 
 });

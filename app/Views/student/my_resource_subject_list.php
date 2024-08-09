@@ -14,6 +14,12 @@
             <h2>Subject List</h2>
         </div>
         <div class="row my-4 subjectContainer">
+            <?php 
+                $urlPart = '';
+                if (!empty($item_type) && $item_type=='free') {
+                    $urlPart = '/free';
+                }
+            ?>
             <?php if (!empty($fetchAvailbleSubject)): ?>
                 <?php foreach ($fetchAvailbleSubject as $key => $subjectRow): ?>
                     <div class="col-md-3">
@@ -28,7 +34,7 @@
                             </div>
                             <div class="card-footer">
                                 <div class="d-flex justify-content-between">
-                                    <a href="<?=base_url()?>/my-resources/paper?subject=<?=$subjectRow['subject_short_name']?>"class="btn btn-warning btn-sm"><i class="bi bi-book"></i> View Paper</a>
+                                    <a href="<?=base_url()?>/my-resources/paper<?=$urlPart?>?subject=<?=$subjectRow['subject_short_name']?>"class="btn btn-warning btn-sm"><i class="bi bi-book"></i> View Paper</a>
                                     <a href="<?=base_url().$subjectRow['schedule_file']?>"class="btn btn-custom btn-sm"><i class="bi bi-arrow-down-circle"></i> Schedule</a>
                                 </div>
                             </div>

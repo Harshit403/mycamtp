@@ -88,43 +88,58 @@
             </div>
         </div>
         <div class="dashboardContainerMobile my-3" >
-            <!-- <div class="row"> -->
-               <!--  <div class="col-12 " style="text-align: right;">
+            <div class="row mb-3">
+                <div class="col-12 " style="text-align: right;">
+                    <?php $urlPart = ''; ?>
                     <?php if (!empty($item_type) && $item_type=='free'): ?>
-                        <a href="<?=base_url()?>dashboard" class="btn btn-success">Paid Content</a> 
+                        <a href="<?=base_url()?>dashboard" class="btn btn-sm btn-success"><i class="bi bi-currency-rupee"></i> Paid Content</a> 
+                        <?php $urlPart = '/free'; ?>
                         <?php else: ?>
-                        <a href="<?=base_url()?>dashboard/free" class="btn btn-success freeBtn">Free Content</a>   
+                        <a href="<?=base_url()?>dashboard/free" class="btn btn-sm btn-success freeBtn">Free Content</a>   
                     <?php endif ?>
-                </div> -->
+                </div>
+            </div>
             <div class="flexMobileContainer">
                 <div class="grid-Elem">
-                    <a href="<?=base_url()?>my-resources/subject" class="btn btnClass btn-sm"><i class="bi bi-newspaper"></i> <p>Test Paper</p></a>
+                    <a href="<?=base_url()?>my-resources/subject<?=$urlPart?>" class="btn btnClass btn-sm"><i class="bi bi-newspaper"></i> <p>Test Paper</p></a>
                 </div>
                 <div class="grid-Elem">
-                     <a href="<?=base_url()?>my-resources/notes/subject-list" class="btn btnClass btn-sm"><i class="bi bi-clipboard-fill"></i><p>Notes</p></a>
+                     <a href="<?=base_url()?>my-resources/notes/subject-list<?=$urlPart?>" class="btn btnClass btn-sm"><i class="bi bi-clipboard-fill"></i><p>Notes</p></a>
                 </div>
                 <div class="grid-Elem">
-                    <a href="<?=base_url()?>my-resources/amendment/subject-list" class="btn btnClass btn-sm"><i class="bi bi-clipboard-fill"></i><p>Amendments</p></a>
+                    <a href="<?=base_url()?>my-resources/amendment/subject-list<?=$urlPart?>" class="btn btnClass btn-sm"><i class="bi bi-clipboard-fill"></i><p>Amendments</p></a>
                 </div>
                 <div class="grid-Elem">
-                    <a href="<?=base_url()?>my-resources/qbank/subject-list" class="btn btnClass btn-sm"><i class="bi bi-book-fill"></i><p>Question Bank</p></a>
+                    <a href="<?=base_url()?>my-resources/qbank/subject-list<?=$urlPart?>" class="btn btnClass btn-sm"><i class="bi bi-book-fill"></i><p>Question Bank</p></a>
                 </div>
-                <div class="grid-Elem">
-                    <a href="<?=base_url()?>#category-section" class="btn btnClass btn-sm"><i class="bi bi-cart-check-fill"></i><p>Buy Now</p></a>
-                </div>
-                <div class="grid-Elem">
-                    <a href="#" class="btn btnClass btn-sm"><i class="bi bi-people-fill"></i><p>Mentoring</p></a>
-                </div>
-                <div class="grid-Elem">
-                    <a href="<?=base_url()?>#contact-section" class="btn btnClass btn-sm"><i class="bi bi-telephone-fill"></i><p>Contact Us</p></a>
-                </div>
-                <div class="grid-Elem" style="flex-basis: 100%;">
-                    <a href="#" style="width: 100% !important;height: 50px; font-size: 20px; font-weight: bold; text-align: left;" class="btn p-3 largeBtn "><p><i class="bi bi-chat-fill" style="color: #1AB79D"></i> Ask Your Query</p></a>
-                </div>
+                <?php if (empty($item_type)): ?>
+                    <div class="grid-Elem">
+                        <a href="<?=base_url()?>#category-section" class="btn btnClass btn-sm"><i class="bi bi-cart-check-fill"></i><p>Buy Now</p></a>
+                    </div>
+                    <div class="grid-Elem">
+                        <a href="#" class="btn btnClass btn-sm"><i class="bi bi-people-fill"></i><p>Mentoring</p></a>
+                    </div>
+                    <div class="grid-Elem">
+                        <a href="<?=base_url()?>#contact-section" class="btn btnClass btn-sm"><i class="bi bi-telephone-fill"></i><p>Contact Us</p></a>
+                    </div>
+                    <div class="grid-Elem" style="flex-basis: 100%;">
+                        <a href="#" style="width: 100% !important;height: 50px; font-size: 20px; font-weight: bold; text-align: left;" class="btn p-3 largeBtn "><p><i class="bi bi-chat-fill" style="color: #1AB79D"></i> Ask Your Query</p></a>
+                    </div>
+                <?php endif ?>
+                
             </div>
         </div>
         <div class="dashboardContainer my-3">
-            <div class="row mt-3">
+            <div class="row">
+                <div class="col-12 " style="text-align: right;">
+                    <?php $urlPart = ''; ?>
+                    <?php if (!empty($item_type) && $item_type=='free'): ?>
+                        <a href="<?=base_url()?>dashboard" class="btn btn-sm btn-success"><i class="bi bi-currency-rupee"></i> Paid Content</a> 
+                        <?php $urlPart = '/free'; ?>
+                        <?php else: ?>
+                        <a href="<?=base_url()?>dashboard/free" class="btn btn-sm btn-success freeBtn">Free Content</a>   
+                    <?php endif ?>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-6 mt-3">
@@ -135,7 +150,7 @@
                                 <h4 class="text-dark">My Test Papers</h4>
                             </div>
                             <div>
-                                <a href="<?=base_url()?>my-resources/subject" class="btn btn-sm btn-custom"><i class="bi bi-list"></i> View More</a>
+                                <a href="<?=base_url()?>my-resources/subject<?=$urlPart?>" class="btn btn-sm btn-custom"><i class="bi bi-list"></i> View More</a>
                             </div>
                         </div>
                         <div class="card-body p-3">
@@ -145,7 +160,7 @@
                                         <li class="list-group-item">
                                             <div class="d-flex justify-content-between">
                                             <div><?=$value['subject_name']?></div>
-                                            <div><a class="btn btn-sm" style="background-color: #C7D2FE" href="<?=base_url()?>my-resources/paper?subject=<?=$value['subject_short_name']?>"><i class="bi bi-arrow-right"></i></a></div>
+                                            <div><a class="btn btn-sm" style="background-color: #C7D2FE" href="<?=base_url()?>my-resources/paper<?=$urlPart?>?subject=<?=$value['subject_short_name']?>"><i class="bi bi-arrow-right"></i></a></div>
                                             </div>
                                         </li>
                                     <?php endforeach ?>
@@ -163,12 +178,12 @@
                             <?php else: ?>
                                 <?php if (!empty($item_type) && $item_type=='free'): ?>
                                     <div class="d-flex justify-content-center">
-                                        <a href="#" class="stretched-link d-flex justify-content-center"><i class="fas fa-box-open" style="font-size: 100px; pointer-events: none;"></i>
+                                        <a href="#" class="stretched-link d-flex justify-content-center"><i class="bi bi-dropbox" style="font-size: 100px; pointer-events: none;color: grey;"></i>
                                         </a>
                                     </div>
                                 <?php else: ?>
                                     <div class="d-flex justify-content-center">
-                                        <a href="#" class="stretched-link d-flex justify-content-center"><i class="bi bi-lock-fill" style="font-size: 100px; pointer-events: none;"></i>
+                                        <a href="#" class="stretched-link d-flex justify-content-center"><i class="bi bi-lock-fill" style="font-size: 100px; pointer-events: none;color: grey;"></i>
                                         </a>
                                     </div>  
                                 <?php endif ?>
@@ -194,7 +209,7 @@
                                         <li class="list-group-item">
                                             <div class="d-flex justify-content-between">
                                             <div><?=$notesRow->subject_name?></div>
-                                            <div><a class="btn btn-sm" style="background-color: #C7D2FE" href="<?=base_url()?>my-resources/notes/notes-list/<?=$notesRow->subject_id?>"><i class="bi bi-arrow-right"></i></a></div>
+                                            <div><a class="btn btn-sm" style="background-color: #C7D2FE" href="<?=base_url()?>my-resources/notes/notes-list<?=$urlPart?>?subject=<?=$notesRow->subject_short_name?>"><i class="bi bi-arrow-right"></i></a></div>
                                             </div>
                                         </li>
                                     <?php endforeach ?>
@@ -212,12 +227,12 @@
                             <?php else: ?>
                                 <?php if (!empty($item_type) && $item_type=='free'): ?>
                                     <div class="d-flex justify-content-center">
-                                        <a href="#" class="stretched-link d-flex justify-content-center"><i class="fas fa-box-open" style="font-size: 100px; pointer-events: none;"></i>
+                                        <a href="#" class="stretched-link d-flex justify-content-center"><i class="bi bi-dropbox" style="font-size: 100px; pointer-events: none;color: grey;"></i>
                                         </a>
                                     </div>
                                 <?php else: ?>
                                     <div class="d-flex justify-content-center">
-                                        <a href="#" class="stretched-link d-flex justify-content-center"><i class="bi bi-lock-fill" style="font-size: 100px; pointer-events: none;"></i>
+                                        <a href="#" class="stretched-link d-flex justify-content-center"><i class="bi bi-lock-fill" style="font-size: 100px; pointer-events: none;color: grey;"></i>
                                         </a>
                                     </div>  
                                 <?php endif ?>
@@ -261,12 +276,12 @@
                             <?php else: ?>
                                 <?php if (!empty($item_type) && $item_type=='free'): ?>
                                     <div class="d-flex justify-content-center">
-                                        <a href="#" class="stretched-link d-flex justify-content-center"><i class="fas fa-box-open" style="font-size: 100px; pointer-events: none;"></i>
+                                        <a href="#" class="stretched-link d-flex justify-content-center"><i class="bi bi-dropbox" style="font-size: 100px; pointer-events: none;color: grey;"></i>
                                         </a>
                                     </div>
                                 <?php else: ?>
                                     <div class="d-flex justify-content-center">
-                                        <a href="#" class="stretched-link d-flex justify-content-center"><i class="bi bi-lock-fill" style="font-size: 100px; pointer-events: none;"></i>
+                                        <a href="#" class="stretched-link d-flex justify-content-center"><i class="bi bi-lock-fill" style="font-size: 100px; pointer-events: none;color: grey;"></i>
                                         </a>
                                     </div>  
                                 <?php endif ?>
@@ -310,7 +325,7 @@
                                     </ul>
                                 <?php else: ?>
                                     <div class="d-flex justify-content-center">
-                                         <a href="#" class="stretched-link d-flex justify-content-center"><i class="bi bi-lock-fill" style="font-size: 100px; pointer-events: none;"></i></a>
+                                         <a href="#" class="stretched-link d-flex justify-content-center"><i class="bi bi-lock-fill" style="font-size: 100px; pointer-events: none;color: grey;"></i></a>
                                     </div>
                                 <?php endif ?>
                             </div>
@@ -325,7 +340,7 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-center">
-                                <a href="<?=base_url()?>#category-section" class="stretched-link"><i class="bi bi-cart-check-fill" style="font-size: 100px; pointer-events: none;"></i></a>
+                                <a href="<?=base_url()?>#category-section" class="stretched-link"><i class="bi bi-cart-check-fill" style="font-size: 100px; pointer-events: none;color: grey;"></i></a>
                             </div>
                         </div>
                     </div>
@@ -338,7 +353,7 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-center">
-                                <a href="#" class="stretched-link"><i class="bi bi-lock-fill" style="font-size: 100px; pointer-events: none;"></i></a>
+                                <a href="#" class="stretched-link"><i class="bi bi-lock-fill" style="font-size: 100px; pointer-events: none;color: grey;"></i></a>
                             </div>
                         </div>
                     </div>
@@ -351,7 +366,7 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-center">
-                                <a href="#" class="stretched-link"><i class="bi bi-lock-fill" style="font-size: 100px; pointer-events: none;"></i></a>
+                                <a href="#" class="stretched-link"><i class="bi bi-lock-fill" style="font-size: 100px; pointer-events: none;color: grey;"></i></a>
                             </div>
                         </div>
                     </div>
@@ -364,7 +379,7 @@
                                 </div>
                             </div>
                             <div class="card-body d-flex justify-content-center">
-                                <a href="<?=base_url()?>#contact-section" class="stretched-link"><i class="bi bi-telephone-fill" style="font-size: 100px; pointer-events: none;"></i></a>
+                                <a href="<?=base_url()?>#contact-section" class="stretched-link"><i class="bi bi-telephone-fill" style="font-size: 100px; pointer-events: none;color: grey;"></i></a>
                             </div>
                         </div>
                     </div>

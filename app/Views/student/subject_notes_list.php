@@ -9,9 +9,15 @@
 <!-- enter your meta keywords widthout tag -->
 <?=$this->endSection()?>
 <?= $this->section('content') ?>
-    <section class="container mb-5 section mainContainer">
+    <section class="container mb-5 mainContainer">
         <div class="notesSubContainer my-3">
             <div class="row">
+                <?php 
+                    $urlPart = '';
+                    if (!empty($item_type)) {
+                        $urlPart = '/free';
+                    }
+                ?>
                 <?php if (!empty($subject_id_details)): ?>
                     <?php $i = 0;?>
                     <?php foreach ($subject_id_details as $value): ?>
@@ -19,7 +25,7 @@
                             <div class="card" style="height: 10rem !important;">
                                 <div class="card-body p-3">
                                     <img src="<?=base_url()?>/assetItems/image/icon.svg">
-                                    <a href="<?=base_url()?>my-resources/notes/notes-list?subject=<?=$value->subject_short_name?>" class="stretched-link text-decoration-none"><h2 class="text-dark"><?=$value->subject_name?></h2></a>
+                                    <a href="<?=base_url()?>my-resources/notes/notes-list<?=$urlPart ?>?subject=<?=$value->subject_short_name?>" class="stretched-link text-decoration-none"><h2 class="text-dark"><?=$value->subject_name?></h2></a>
                                 </div>
                             </div>
                         </div>

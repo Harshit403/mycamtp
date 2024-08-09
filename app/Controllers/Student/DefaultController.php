@@ -669,17 +669,13 @@
 			return redirect()->to('/auth?auth=login');
 		}
 
-		public function loadPaperListPage(){
+		public function loadPaperListPage($item_type=''){
 			$getItem = $this->request->getGet();
 			if (isset($getItem['subject'])) {
 				$subject_short_name = $getItem['subject'];
 				if(session()->get('studentDetails')!==null){
 		            $studentDetails = session()->get('studentDetails');
 		            $data['fetchLevels'] = $this->defaultModel->fetchLevelListModel();
-		            $item_type = '';
-		            if (isset($getItem['item_type'])) {
-		            	$item_type = $getItem['item_type'];
-		            }
 		            $data['item_type'] = $item_type;
 		            if ($item_type!='free') {
 		                $cartIdArray = $this->getCartId();
@@ -762,6 +758,7 @@
 
 		public function loadMyResourceSubjectPage($item_type=''){
 	        $data['fetchAvailbleSubject'] ='';
+            $fetchAvailbleSubject = array();
 	        if(session()->get('studentDetails')!==null){
 	            $studentDetails = session()->get('studentDetails');
 	            $data['item_type'] = $item_type;
@@ -775,23 +772,36 @@
 	                $student_id = session()->get('studentDetails')['id'];
 	                $studentInfo = $this->common->getInfo('student_table','row',array('student_id'=>$student_id));
 	                $level_id = $studentInfo->current_level;
-	                // $fetchAvailbleSubject = $this->defaultModel->fetchFreeSubject('',$level_id);
+	                if (!empty($level_id)) {
+	                	$fetchAvailbleSubject = $this->defaultModel->fetchFreeSubject('',$level_id);
+	                }
 	            }
 	            $i = 0;
-	            foreach ($fetchAvailbleSubject as $key => $value) {
-	                $fetchAvailbleSubject[$i]['subject_id'] = $this->encryptValue($value['subject_id']);
-	                $i++;
+	            if (!empty($fetchAvailbleSubject)) {
+	            	foreach ($fetchAvailbleSubject as $key => $value) {
+		                $fetchAvailbleSubject[$i]['subject_id'] = $this->encryptValue($value['subject_id']);
+		                $i++;
+		            }
 	            }
+	            
 	            $data['fetchAvailbleSubject'] = $fetchAvailbleSubject;
 	        }
 	        return view('student/my_resource_subject_list',$data);
 	    }
 
-	    public function loadNotesSubjectListPage(){
+	    public function loadNotesSubjectListPage($item_type=''){
 	    	if (session()->get('studentDetails')!==null) {
 	    		$cart_id =  $this->getCartId()['data'];
 	    		if (!empty($cart_id)) {
-	    			$data['subject_id_details'] = $this->defaultModel->getNotesSubjectList($cart_id);
+	    			if (!empty($item_type) && $item_type=='free') {
+	    				$student_id = session()->get('studentDetails')['id'];
+		                $studentInfo = $this->common->getInfo('student_table','row',array('student_id'=>$student_id));
+		                $level_id = $studentInfo->current_level;
+	    				$data['subject_id_details'] = $this->defaultModel->getFreeNotesSubjectList('',$level_id);
+	    			} else {
+	    				$data['subject_id_details'] = $this->defaultModel->getNotesSubjectList($cart_id);
+	    			}
+	    			$data['item_type'] = $item_type;
 	    			return view('student/subject_notes_list',$data);
     			} else {
                 	throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
@@ -801,15 +811,19 @@
 	    	}
 	    }
 
-	    public function loadNotesListPage(){
+	    public function loadNotesListPage($item_type=''){
 	    	$getItem = $this->request->getGet();
 	    	if (isset($getItem['subject'])) {
 	    		if (session()->get('studentDetails')!==null) {
-		    		// $cart_id =  $this->getCartId()['data'];
 		    		$subject_short_name = $getItem['subject'];
 		    		if (!empty($subject_short_name)) {
-		    			$data['notes_list'] = $this->defaultModel->getAvailableNotesList($subject_short_name);
-		    			$data['subject_details'] = $this->common->getInfo('subject_table','row',array('subject_short_name'=>$subject_short_name));
+		    			if (!empty($item_type) && $item_type=='free') {
+	    					$data['notes_list'] = $this->defaultModel->getAvailableNotesListFree($subject_short_name);
+		    			} else {
+	    					$data['notes_list'] = $this->defaultModel->getAvailableNotesList($subject_short_name);
+		    			}
+		    			$data['item_type'] = $item_type;
+	    				$data['subject_details'] = $this->common->getInfo('subject_table','row',array('subject_short_name'=>$subject_short_name));
 		    			return view('student/student_notes_list',$data);
 	    			} else {
 	                	throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
@@ -891,7 +905,7 @@
 	    	if (isset($getItem['order_id'])) {
 	    		$order_id = $getItem['order_id'];
 	    		$data['invoice_info'] = $this->common->getInfo('invoice_table','row',array('order_id'=>$order_id));
-	    		$pdf_name = 'invoice-'.$order_id.'.pdf';
+	    		$pdf_name = 'INVOICE-'.$order_id.'.pdf';
 	    		$html = view('student/invoice_info',$data);
 	    		// return view('student/invoice_info',$data);
 				$mpdf->WriteHTML($html);

@@ -125,6 +125,45 @@
 	        return $builder->get()->getResultArray();
 	    }
 
+	    public function fetchFreeSubject($limit,$level_id){
+	    	$currentDateTime = date("Y-m-d H:i:s");
+	        $builder = $this->db->table('paper_table');
+	        $builder->select('paper_table.*,subject_table.subject_name,type_table.type_name,level_table.level_name,type_table.schedule_file,subject_table.subject_short_name,type_table.type_short_name,level_table.level_short_name');
+	        $builder->join('subject_table','subject_table.subject_id=paper_table.subject_id','left');
+	        $builder->join('type_table','type_table.type_id=paper_table.type_id','left');
+	        $builder->join('level_table','level_table.level_id=paper_table.level_id','left');
+	        if (!empty($limit)) {
+	            $builder->limit($limit);
+	        }
+	        $builder->where('paper_table.active',1);
+	        $builder->where('paper_table.deleted',0);
+	        $builder->where('paper_table.type','free');
+	        if (!empty($level_id)) {
+	            $builder->where('paper_table.level_id',$level_id);
+	        }
+	        $builder->where('paper_table.schedule_date <=',$currentDateTime);
+	        $response = $builder->get()->getResultArray();
+	        return $response;
+	    }
+
+	    public function getFreeNotesSubjectList($limit='',$level_id=''){
+	        $builder = $this->db->table('notes_table');
+	        $builder->select('notes_table.*,subject_table.subject_short_name');
+	        $builder->join('subject_table','subject_table.subject_id=notes_table.subject_id','left');
+	        $builder->select('notes_table.*,subject_table.subject_name,subject_table.level_id');
+	        $builder->where('notes_table.active',1);
+	        $builder->where('notes_table.deleted',0);
+	        $builder->where('notes_table.type','free');
+	        $builder->where('subject_table.level_id',$level_id);
+	        if (!empty($limit)) {
+	            $builder->limit($limit);
+	        }
+	        $response = $builder->get()->getResult();
+	        return $response;
+	    }
+
+
+
 	    public function getNotesSubjectList($cart_id='',$limit=''){
 	        $builder = $this->db->table('cart_items_table');
 	        $builder->select('cart_items_table.*,subject_table.subject_name,subject_table.subject_short_name');
@@ -251,6 +290,17 @@
 	    	$builder->join('notes_table','notes_table.subject_id=cart_items_table.subject_id');
 	    	$builder->join('subject_table','subject_table.subject_id=notes_table.subject_id');
 	    	$builder->where('cart_items_table.payment_status','PAID');
+	    	$builder->where('notes_table.type','paid');
+	    	$builder->where('subject_table.subject_short_name',$subject_short_name);
+	    	$records = $builder->get()->getResult();
+	    	return $records;
+	    }
+
+	    public function getAvailableNotesListFree($subject_short_name=''){
+	    	$builder = $this->db->table('notes_table');
+	    	$builder->select('notes_table.*');
+	    	$builder->join('subject_table','subject_table.subject_id=notes_table.subject_id');
+	    	$builder->where('notes_table.type','free');
 	    	$builder->where('subject_table.subject_short_name',$subject_short_name);
 	    	$records = $builder->get()->getResult();
 	    	return $records;
@@ -278,17 +328,31 @@
 	    	return $records;
 	    }
 	    public function getSalesInfoModel($purchase_id){
-        $builder = $this->db->table('cart_items_table as cit');
-        $builder->select('cit.*,pt.create_date as purchase_date,pt.payment_mode,st.subject_name,st.subject_short_name,tt.type_name,tt.type_short_name,lt.level_name,lt.level_short_name,ct.category_name,ct.category_short_name');
-        $builder->join('purchase_table as pt','pt.purcahse_id=cit.purchase_id','left');
-        $builder->join('subject_table as st','st.subject_id=cit.subject_id');
-        $builder->join('type_table as tt','tt.type_id=st.type_id');
-        $builder->join('level_table as lt','lt.level_id=tt.level_id');
-        $builder->join('category_table as ct','ct.category_id=lt.category_id');
-        $builder->where('pt.purcahse_id',$purchase_id);
-        $response = $builder->get()->getResult();
-        return $response;
-    }
+	        $builder = $this->db->table('cart_items_table as cit');
+	        $builder->select('cit.*,pt.create_date as purchase_date,pt.payment_mode,st.subject_name,st.subject_short_name,tt.type_name,tt.type_short_name,lt.level_name,lt.level_short_name,ct.category_name,ct.category_short_name');
+	        $builder->join('purchase_table as pt','pt.purcahse_id=cit.purchase_id','left');
+	        $builder->join('subject_table as st','st.subject_id=cit.subject_id');
+	        $builder->join('type_table as tt','tt.type_id=st.type_id');
+	        $builder->join('level_table as lt','lt.level_id=tt.level_id');
+	        $builder->join('category_table as ct','ct.category_id=lt.category_id');
+	        $builder->where('pt.purcahse_id',$purchase_id);
+	        $response = $builder->get()->getResult();
+	        return $response;
+	    }
 
+	    public function getFreeNotesList($subject_short_name=''){
+	        $builder = $this->db->table('notes_table');
+	        $builder->join('subject_table','subject_table.subject_id=notes_table.subject_id','left');
+	        $builder->select('notes_table.*,subject_table.subject_name,subject_table.level_id');
+	        $builder->where('notes_table.active',1);
+	        $builder->where('notes_table.deleted',0);
+	        $builder->where('notes_table.type','free');
+	        $builder->where('subject_table.subject_short_name',$subject_short_name);
+	        if (!empty($limit)) {
+	            $builder->limit($limit);
+	        }
+	        $response = $builder->get()->getResult();
+	        return $response;
+	    }
 	}
 ?>

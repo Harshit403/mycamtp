@@ -1085,14 +1085,14 @@ class DashboardController extends BaseController
     }
 
     public function loadViewSales(){
-        $data['level_list'] = $this->common->getInfo('level_table','',array('deleted'=>0));
+        $data['sales_info'] = $this->common->getInfo('sales_table','',array());
         return view('admin/sales/view_sales',$data);
     }
 
     public function fetchSales(){
         $postData = $this->request->getPost();
         $data['fetchSalesInfo'] = $this->dashboardModel->fetchSalesInfo($postData);
-        $data['fetchedCartItemsGroup'] = $this->dashboardModel->fetchCartItemsGroupWise();
+        // $data['fetchedCartItemsGroup'] = $this->dashboardModel->fetchCartItemsGroupWise();
         return json_encode($data);
     }
 
@@ -1387,8 +1387,7 @@ class DashboardController extends BaseController
         }
     }
 
-    public function deleteAssignmentInfo($paper_id_array)
-    {
+    public function deleteAssignmentInfo($paper_id_array){
         $fetchAssignmentFile = $this->dashboardModel->fetchAssignmentFileByPaper($paper_id_array);
         if (!empty($fetchAssignmentFile)) {
             foreach ($fetchAssignmentFile as $value) {
@@ -1411,6 +1410,34 @@ class DashboardController extends BaseController
         $deleteAssignmentEntry = $this->dashboardModel->deleteAssignmentEntry($paper_id_array);
         if (!empty($deleteAssignmentEntry)) {
             return true;
+        }
+    }
+
+    public function loadChangePasswordPage(){
+        return view('admin/change_password/change_password');
+    }
+
+    public function changePassword(){
+        $postData = $this->request->getPost();
+        $getAdminUserInfo = session()->get('userData');
+        $admin_id = $getAdminUserInfo['id'];
+        $getAdminInfo = $this->common->getInfo('admin_user','row',array('id'=>$admin_id));
+        if (!empty($getAdminPassword)) {
+            $adminPassword = $getAdminInfo->password;
+            $newPassword = md5(md5($postData['new_pass']));
+            $currentPassword = md5(md5($postData['current_pass']));
+            if ($adminPassword!=$currentPassword) {
+                $response = array('success'=>true,'message'=>'Please enter the correct current password');
+                return json_encode($response);
+            } else {
+                $updatePass = $this->common->dbAction('admin_user',array('password'=>$newPassword),'update',array('id'=>$admin_id));
+                if (!empty($updatePass)) {
+                   $response = array('success'=>true,'message'=>'Password has been changed');
+                } else {
+                   $response = array('success'=>false,'message'=>'Failed to update password');
+                }
+                return json_encode($response);
+            }
         }
     }
 

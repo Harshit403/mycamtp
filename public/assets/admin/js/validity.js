@@ -39,18 +39,17 @@ $(document).ready(function() {
                                 bootbox.alert({
                                     message: response.message,
                                     closeButton: false,
-                                })
+                                });
                             }
-                        })
+                        });
                     }
                 }
             }
-        })
+        });
         dialog.init(function() {
             $(dialog).find("#admin_password").on('keyup', function() {
                 $(dialog).find(".error_message").html('');
-            })
-        })
-
+            });
+        });
     });
 });

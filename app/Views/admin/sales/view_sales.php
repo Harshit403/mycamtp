@@ -11,6 +11,9 @@
     <div class="row">
         <div class="col-lg-12 mb-4">
             <div class="card">
+                <div class="salesInfo" hidden>
+                    <?= json_encode($sales_info)?>
+                </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
@@ -21,24 +24,26 @@
                         </div>
                         <div class="col-md-12">
                             <label>Select Level</label>
-                            <select class="form-select form-select-sm" id="level_id">
+                            <select class="form-select form-select-sm" id="level_short_name">
                                 <option value="">All Levels</option>
-                                <?php if (!empty($level_list)): ?>
-                                    <?php foreach ($level_list as $levelRow): ?>
-                                        <option value="<?=$levelRow->level_id?>"><?=$levelRow->level_name?></option>
+                                <?php if (!empty($sales_info)): ?>
+                                    <?php foreach ($sales_info as $salesRow): ?>
+                                        <option value="<?=$salesRow->level_short_name?>">
+                                            <?=$salesRow->level_name?>
+                                        </option>
                                     <?php endforeach ?>
                                 <?php endif ?>
                             </select>
                         </div>
                         <div class="col-md-12">
                             <label>Select Type</label>
-                            <select class="form-select form-select-sm" id="type_id">
+                            <select class="form-select form-select-sm" id="type_short_name">
                                 <option value="">All Types</option>
                             </select>
                         </div>
                         <div class="col-md-12">
                             <label>Select Subject</label>
-                            <select class="form-select form-select-sm" id="subject_id">
+                            <select class="form-select form-select-sm" id="subject_short_name">
                                 <option value="">All Subjects</option>
                             </select>
                         </div>
@@ -78,7 +83,7 @@
                                     <th>Purchase Date</th>
                                 </thead>
                                 <tbody id="sales_body">
-                                    <td colspan="9" class="text-center">No Info Available</td>
+                                    <td colspan="11" class="text-center">No Info Available</td>
                                 </tbody>
                             </table>
                         </div>
@@ -89,6 +94,5 @@
     </div>
 <?= $this->endSection() ?>
 <?= $this->section('jsContent') ?>
-<script type="text/javascript" src="<?=base_url()?>//assets/admin/js/admin_common.js?v=1.0.0"></script>
 <script type="text/javascript" src="<?=base_url()?>//assets/admin/js/sales.js?v=1.0.0"></script>
 <?= $this->endSection() ?>

@@ -1574,28 +1574,20 @@ class DashboardModel extends Model
     public function fetchSalesInfo($postData){
         $start_date = $postData['from_date'];
         $end_date = $postData['to_date'];
-        $builder = $this->db->table('cart_items_table');
-        $builder->select('cart_items_table.*,student_table.student_name,student_table.create_date as enrolment_date,purchase_table.create_date as purchase_date,level_table.level_name,type_table.type_name,subject_table.subject_name,purchase_table.payment_mode,purchase_table.payment_request_id');
-        $builder->join('purchase_table','purchase_table.purcahse_id=cart_items_table.purchase_id','left');
-        $builder->join('subject_table','subject_table.subject_id=cart_items_table.subject_id');
-        $builder->join('level_table','level_table.level_id=subject_table.level_id');
-        $builder->join('type_table','type_table.type_id=subject_table.type_id');
-        $builder->join('cart_table','cart_table.cart_id=cart_items_table.cart_id','left');
-        $builder->join('student_table','student_table.student_id=cart_table.student_id','left');
-        if (!empty($postData['level_id'])) {
-            $builder->where('level_table.level_id',$postData['level_id']);
+        $builder = $this->db->table('sales_table');
+        if (!empty($postData['level_short_name'])) {
+            $builder->where('level_short_name',$postData['level_short_name']);
         }
-        if (!empty($postData['type_id'])) {
-            $builder->where('type_table.type_id',$postData['type_id']);
+        if (!empty($postData['type_short_name'])) {
+            $builder->where('type_short_name',$postData['type_short_name']);
         }
-        if (!empty($postData['subject_id'])) {
-            $builder->where('cart_items_table.subject_id',$postData['subject_id']);
+        if (!empty($postData['subject_short_name'])) {
+            $builder->where('subject_short_name',$postData['subject_short_name']);
         }
         if (!empty($start_date) && !empty($end_date)) {
-            $builder->where('purchase_table.create_date BETWEEN "'. date('Y-m-d', strtotime($start_date)). '" and "'. date('Y-m-d', strtotime($end_date)).'"');
+            $builder->where('purchase_date BETWEEN "'. date('Y-m-d', strtotime($start_date)). '" and "'. date('Y-m-d', strtotime($end_date)).'"');
         }
-        $builder->where('purchase_table.payment_status','Credit');
-        $builder->orderBy('purchase_table.create_date','desc');
+        $builder->orderBy('purchase_date','desc');
         $response = $builder->get()->getResult();
         return $response;
     }
@@ -1879,6 +1871,18 @@ class DashboardModel extends Model
         $builder->select('type_table.*');
         $builder->join('batch_table','batch_table.type_id=type_table.type_id');
         $response = $builder->get()->getResult();
+        return $response;
+    }
+
+    public function deleteAssignmentEntry($paper_id_array)
+    {
+        $builder = $this->db->table('upload_assignment_table');
+        if (!empty($paper_id_array)) {
+            $builder->whereIn('paper_id',$paper_id_array);
+            $response = $builder->delete();
+        } else {
+            $response = true;
+        }
         return $response;
     }
 }

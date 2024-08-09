@@ -16,6 +16,7 @@ $routes->get('/subject', STUDENT.'DefaultController::fetchSubjectList');
 $routes->post('/register-details', STUDENT.'DefaultController::addStudentDetails');
 $routes->post('/sign-in', STUDENT.'DefaultController::verifyStudentLogin');
 $routes->get('/dashboard', STUDENT.'DefaultController::loadDashboardPage',['filter'=>'studentAuth']);
+$routes->get('/dashboard/(:any)', STUDENT.'DefaultController::loadDashboardPage/$1',['filter'=>'studentAuth']);
 $routes->post('/add-to-cart', STUDENT.'DefaultController::addToCartItem');
 $routes->get('/fetch-active-cartitems', STUDENT.'DefaultController::getCartItemsArray',['filter'=>'studentAuth']);
 $routes->get('/payment/free-payable-product',STUDENT.'DefaultController::addFreeProductByItsPromoCode');
@@ -49,8 +50,18 @@ $routes->get('/set-password',STUDENT.'DefaultController::loadSetPasswordPage');
 // my-resources
 $routes->get('/my-resources/subject',STUDENT.'DefaultController::loadMyResourceSubjectPage',['filter'=>'studentAuth']);
 $routes->get('/my-resources/paper',STUDENT.'DefaultController::loadPaperListPage',['filter'=>'studentAuth']);
+
 $routes->get('/my-resources/notes/subject-list',STUDENT.'DefaultController::loadNotesSubjectListPage',['filter'=>'studentAuth']);
 $routes->get('/my-resources/notes/notes-list',STUDENT.'DefaultController::loadNotesListPage',['filter'=>'studentAuth']);
+
+// free
+$routes->get('/my-resources/paper/(:any)',STUDENT.'DefaultController::loadPaperListPage/$1',['filter'=>'studentAuth']);
+$routes->get('/my-resources/notes/notes-list/(:any)',STUDENT.'DefaultController::loadNotesListPage/$1',['filter'=>'studentAuth']);
+$routes->get('/my-resources/notes/subject-list/(:any)',STUDENT.'DefaultController::loadNotesSubjectListPage/$1',['filter'=>'studentAuth']);
+$routes->get('/my-resources/subject/(:any)',STUDENT.'DefaultController::loadMyResourceSubjectPage/$1',['filter'=>'studentAuth']);
+
+
+
 $routes->get('/my-resources/amendment/subject-list',STUDENT.'DefaultController::loadAmendmentSubjectList',['filter'=>'studentAuth']);
 $routes->get('/amendment/amendment-list',STUDENT.'DefaultController::loadAmendmentList',['filter'=>'studentAuth']);
 
@@ -60,6 +71,7 @@ $routes->get('/qbank/qbank-list',STUDENT.'DefaultController::loadQbankList',['fi
 $routes->get('/invoice',STUDENT.'DefaultController::loadInvoicePage',['filter'=>'studentAuth']);
 $routes->get('/profile',STUDENT.'DefaultController::loadProfilePage',['filter'=>'studentAuth']);
 $routes->get('/download-invoice',STUDENT.'DefaultController::downloadInvoice',['filter'=>'studentAuth']);
+
 // my resourse paper
 $routes->get('/fetch-assignment-status',STUDENT.'DefaultController::fetchAssignmentStatus',['filter'=>'studentAuth']);
 $routes->post('/upload/assignment-file',STUDENT.'DefaultController::uploadAssignmentFile',['filter'=>'studentAuth']);
@@ -223,6 +235,9 @@ $routes->get('/admin/view-sales',ADMIN.'DashboardController::loadViewSales',['fi
 $routes->post('/admin/get-sales',ADMIN.'DashboardController::fetchSales',['filter'=>'authGuard']);
 
 // validity control
-
 $routes->get('/admin/control-validity',ADMIN.'DashboardController::loadControlValidity',['filter'=>'authGuard']);
 $routes->post('/admin/close-validity',ADMIN.'DashboardController::closeValidity',['filter'=>'authGuard']);
+
+// change-password
+$routes->get('/admin/change-password',ADMIN.'DashboardController::loadChangePasswordPage',['filter'=>'authGuard']);
+$routes->post('/admin/change-password',ADMIN.'DashboardController::changePassword',['filter'=>'authGuard']);

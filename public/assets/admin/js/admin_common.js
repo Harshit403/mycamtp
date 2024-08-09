@@ -61,4 +61,49 @@ $(document).ready(function() {
             }
         })
     }
+
+    if (pageType == 'change_pass') {
+        $("#changePassBtn").on('click', function() {
+            var changePassForm = $("#change_password_form").serializeArray();
+            var formdata = new FormData();
+            var errors = new Array();
+            $.each(changePassForm, function(i, v) {
+                formdata.append(v.name, v.value);
+            });
+            if (formdata.get('current_pass') == '') {
+                errors.push('Please enter the current password');
+            }
+            if (formdata.get('new_pass') == '') {
+                errors.push('Please enter the new password');
+            }
+            if (errors.length > 0) {
+                bootbox.alert({
+                    message: errors.join(',</br>'),
+                    closeButton: false
+                });
+                return false;
+            }
+
+            $.ajax({
+                url: baseUrl + 'admin/change-password',
+                type: 'POST',
+                data: formdata,
+                processData: false,
+                contentType: false,
+                dataType: 'json',
+                success: function(res) {
+                    bootbox.alert({
+                        message: res.message,
+                        closeButton: false,
+                        callback: function() {
+                            if (res.success) {
+                                window.location.reload();
+                            }
+                        }
+                    })
+                }
+            })
+
+        })
+    }
 });
