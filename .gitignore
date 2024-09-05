@@ -125,3 +125,7 @@ nb-configuration.xml
 /phpunit*.xml
 /.phpunit.*.cache
 
+public/assetItems/schedule/
+public/assetItems/blog/
+public/assetItems/notes/
+

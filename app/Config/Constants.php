@@ -106,7 +106,17 @@ define('SMTP_PORT', 587);
 define('FROM_NAME', 'mycsmtp.com@gmail.com');//Enter your email from name
 
 
-// Cashfree payment info
+// Cashfree payment info test
+define('SERVER_URL', 'https://sandbox.cashfree.com');
 define('CLIENT_ID', 'TEST10214468d99f38722859d430198886441201');
 define('SECRET_KEY', 'cfsk_ma_test_65d85b5eefef840a9f8e52b5b8840122_bceb118b');
 define('API_VERSION', '2022-09-01');
+
+// Cashfree payment info prod
+// define('SERVER_URL', 'https://api.cashfree.com');
+// define('CLIENT_ID', '7299161820a2a8db2fb34e593e619927');
+// define('SECRET_KEY', 'cfsk_ma_prod_969dc5231ba591f2f6167dc2c15ed4bf_4c81e390');
+// define('API_VERSION', '2023-08-01');
+
+// gateway
+// define('PAYMENTGATEWAY', 'CASHFREE');

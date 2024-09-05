@@ -458,19 +458,23 @@
 			$student_id = $studentDetails['id'];
 			$order_id = 'OD'.uniqid($student_id.'M');
 			$linkInfo = $this->cashfreePayment($studentDetails,$total_amt_to_pay,$order_id);
+			if (!empty($linkInfo)) {
+				$linkInfo = json_decode($linkInfo);
+				session()->set('link_id',$linkInfo->order_id);
+			}
 			// save purchase details
 			if (!empty($linkInfo)) {
 				$insertData = array();
 				$cartIdArray = $this->getCartId();
 				$insertData['cart_id'] = $cartIdArray['data'];
-				$insertData['cf_link_id'] = $linkInfo->cf_link_id;
-				$insertData['payment_request_id'] = $linkInfo->link_id;
+				$insertData['cf_link_id'] = $linkInfo->cf_order_id;
+				$insertData['payment_request_id'] = $linkInfo->order_id;
 				$insertData['payment_mode'] = 'cashfree';
-				$insertData['total_payment_amount'] = $linkInfo->link_amount;
+				$insertData['total_payment_amount'] = $linkInfo->order_amount;
 				$insertData['order_id'] = $order_id;
 				$addPurchaseData = $this->common->dbAction('purchase_table',$insertData,'insert',array());
 				if (!empty($addPurchaseData)) {
-					$response = array('success'=>true,'url'=>$linkInfo->link_url);
+					$response = array('success'=>true,'payment_session_id'=>$linkInfo->payment_session_id);
 				} else {
 					log_message('error','Link info have not updated in purchase table');
 					$response = array('success'=>false,'message'=>'Somthing went wrong');
@@ -488,66 +492,44 @@
 		public function cashfreePayment($studentDetails,$total_amt_to_pay=0.00,$order_id=''){
 			$student_id = $studentDetails['id'];
 			$link_id = uniqid($student_id);
-			session()->set('link_id',$link_id);
-			$curl = curl_init();
-			curl_setopt_array($curl, [
-		  	CURLOPT_URL => "https://sandbox.cashfree.com/pg/links",
-		 	CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_ENCODING => "",
-			CURLOPT_MAXREDIRS => 10,
-			CURLOPT_TIMEOUT => 30,
-			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-			CURLOPT_CUSTOMREQUEST => "POST",
-			CURLOPT_POSTFIELDS => json_encode([
-			    'link_amount' => $total_amt_to_pay,
-			    'link_currency' => 'INR',
-			    'link_id' => $link_id,
-			    'link_partial_payments' => false,
+			$ch = curl_init();
+
+			curl_setopt($ch, CURLOPT_URL, SERVER_URL.'/pg/orders');
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($ch, CURLOPT_POST, 1);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
+			    'order_amount' => $total_amt_to_pay,
+			    'order_currency' => 'INR',
 			    'customer_details' => [
+			    	'customer_id'=>$studentDetails['id'],
 			        'customer_name' => $studentDetails['student_name'],
 			        'customer_phone' => $studentDetails['mobile_no'],
 			        'customer_email' => $studentDetails['email']
 			    ],
-			    'link_purpose' => $order_id,
-			    'link_notify' => [
-			        'send_sms' => false,
-			        'send_email' => false
-			    ],
-			    'link_auto_reminders' => false,
-			    'link_notes' => [
-			        'key_1' => 'value_1',
-			        'key_2' => 'value_2'
-			    ],
-			    'link_meta' => [
-			        'upi_intent' => false,
+			    'order_meta' => [
 			        'return_url' => base_url().'purchase-status',
 			    ],
 			    'thank_you_msg'=>'Thank you for your purchase'
-			  ]),
-			  CURLOPT_HTTPHEADER => [
-			    "accept: application/json",
-			    "content-type: application/json",
-			    "x-api-version: ".API_VERSION."",
-			    "x-client-id: ".CLIENT_ID."",
-			    "x-client-secret: ".SECRET_KEY."",
-			    "x-api-version: ".API_VERSION.""
-			  ],
-			]);
+		  	]),);
 
-			$response = curl_exec($curl);
-			$err = curl_error($curl);
+			$headers = array();
+			$headers[] = 'X-Client-Secret: '.SECRET_KEY.'';
+			$headers[] = 'X-Client-Id: '.CLIENT_ID.'';
+			$headers[] = 'X-Api-Version: '.API_VERSION.'';
+			$headers[] = 'Content-Type: application/json';
+			$headers[] = 'Accept: application/json';
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-			curl_close($curl);
-
-			if ($err) {
-			  echo "cURL Error #:" . $err;
-			} else {
-			  return json_decode($response);
+			$result = curl_exec($ch);
+			if (curl_errno($ch)) {
+			    echo 'Error:' . curl_error($ch);
 			}
+			curl_close($ch);
+			return $result;
 		}
 
 		public function purchaseStatus(){
-			echo 'redirect to..wait';
+			echo 'redirecting to.... wait';
 			$getData = $this->request->getGet();
 			if (session()->get('link_id')==null) {
 				echo "Invalid action detected";
@@ -555,37 +537,35 @@
 				exit;
 			}
 			$link_id = session()->get('link_id');
-			$curl = curl_init();
-			curl_setopt_array($curl, [
-			  CURLOPT_URL => "https://sandbox.cashfree.com/pg/links/".$link_id,
-			  CURLOPT_RETURNTRANSFER => true,
-			  CURLOPT_ENCODING => "",
-			  CURLOPT_MAXREDIRS => 10,
-			  CURLOPT_TIMEOUT => 30,
-			  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-			  CURLOPT_CUSTOMREQUEST => "GET",
-			  CURLOPT_HTTPHEADER => [
-			    "accept: application/json",
-			    "content-type: application/json",
-			    "x-api-version: ".API_VERSION."",
-			    "x-client-id: ".CLIENT_ID."",
-			    "x-client-secret: ".SECRET_KEY."",
-			    "x-api-version: ".API_VERSION.""
-			  ],
-			]);
+			$ch = curl_init();
 
-			$response = curl_exec($curl);
-			$err = curl_error($curl);
+			curl_setopt($ch, CURLOPT_URL, SERVER_URL.'/pg/orders/'.$link_id);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 
-			curl_close($curl);
+
+			$headers = array();
+			$headers[] = 'X-Client-Secret: '.SECRET_KEY.'';
+			$headers[] = 'X-Client-Id: '.CLIENT_ID.'';
+			$headers[] = 'Accept: application/json';
+			$headers[] = "X-Api-Version: ".API_VERSION."";
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			$err = '';
+			if (curl_errno($ch)) {
+			    echo 'Error:' . curl_error($ch);
+			    $err = curl_error($ch);
+			}
+			$result = curl_exec($ch);
+
+			curl_close($ch);
 
 			if ($err) {
 			  echo "cURL Error #:" . $err;
 			} else {
-			   $json_decoded_info = json_decode($response);
+			   $json_decoded_info = json_decode($result);
 			   $purchase_table_fetch_info = $this->common->getInfo('purchase_table','row',array('payment_request_id'=>$link_id));
 			   if (!empty($purchase_table_fetch_info)) {
-			     $purchaseStatus = $json_decoded_info->link_status;
+			     $purchaseStatus = $json_decoded_info->order_status;
 			     
 			     if ($purchaseStatus=='PAID') {
 			   		// update purchase table
@@ -600,48 +580,12 @@
 			     	$this->addSalesInfo($purchase_id,$link_id);
 		     		return  redirect()->to('dashboard');
 			     } else {
-			     	$responseInfo = $this->cancelPaymentLink($link_id);
-			     	if ($responseInfo->link_status=='CANCELLED') {
-					  	$updatePurchaseTable = $this->common->dbAction('purchase_table',array(),'delete',array('payment_request_id'=>$link_id));
-					  	if ($updatePurchaseTable) {
-					  		return  redirect()->to('dashboard');
-					  	}
+				  	$updatePurchaseTable = $this->common->dbAction('purchase_table',array(),'delete',array('payment_request_id'=>$link_id));
+				  	if (!empty($updatePurchaseTable)) {
+				  		return  redirect()->to('dashboard');
 				  	}
 			     }
 			   }
-			}
-		}
-
-		public function cancelPaymentLink($link_id){
-			$curl = curl_init();
-
-			curl_setopt_array($curl, [
-			  CURLOPT_URL => "https://sandbox.cashfree.com/pg/links/".$link_id."/cancel",
-			  CURLOPT_RETURNTRANSFER => true,
-			  CURLOPT_ENCODING => "",
-			  CURLOPT_MAXREDIRS => 10,
-			  CURLOPT_TIMEOUT => 30,
-			  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-			  CURLOPT_CUSTOMREQUEST => "POST",
-			  CURLOPT_HTTPHEADER => [
-			    "accept: application/json",
-			    "content-type: application/json",
-			    "x-client-id: ".CLIENT_ID."",
-			    "x-client-secret: ".SECRET_KEY."",
-			    "x-api-version: ".API_VERSION.""
-			  ],
-			]);
-
-			$response = curl_exec($curl);
-			$err = curl_error($curl);
-
-			curl_close($curl);
-
-			if ($err) {
-			  echo "cURL Error #:" . $err;
-			} else {
-			  return json_decode($response);
-			  
 			}
 		}
 

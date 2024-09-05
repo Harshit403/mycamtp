@@ -42,7 +42,17 @@ $(document).ready(function() {
                                 dataType: 'json',
                                 success: function(response) {
                                     if (response.success) {
-                                        window.open(response.url, '_self');
+                                        var ci_mode = ciEnv == 'production' ? 'production' : 'sandbox';
+                                        const cashfree = Cashfree({
+                                            mode: ci_mode //or sandbox
+                                            // mode: "production" //or production
+                                        });
+                                        let checkoutOptions = {
+                                            paymentSessionId: response.payment_session_id,
+                                            redirectTarget: "_self" //optional (_self or _blank)
+                                        }
+
+                                        cashfree.checkout(checkoutOptions);
                                     } else {
                                         bootbox.alert({
                                             message: response.message,
@@ -114,7 +124,17 @@ $(document).ready(function() {
                                 dataType: 'json',
                                 success: function(response) {
                                     if (response.success) {
-                                        window.open(response.url, '_self');
+                                        var ci_mode = ciEnv == 'production' ? 'production' : 'sandbox';
+                                        const cashfree = Cashfree({
+                                            mode: ci_mode //or sandbox
+                                            // mode: "production" //or production
+                                        });
+                                        let checkoutOptions = {
+                                            paymentSessionId: response.payment_session_id,
+                                            redirectTarget: "_self" //optional (_self or _blank)
+                                        }
+
+                                        cashfree.checkout(checkoutOptions);
                                     } else {
                                         bootbox.alert({
                                             message: response.message,

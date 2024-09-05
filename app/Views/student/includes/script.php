@@ -5,8 +5,10 @@
 <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/bootbox.min.js"></script>
 <script type="text/javascript">
           var baseUrl = "<?=base_url()?>";
+          var ciEnv = "<?=getenv('CI_ENVIRONMENT')?>"
 </script>
-<script src="<?=base_url()?>/assets/student/js/cart.js?v=1.0.3"></script>
+<script src="https://sdk.cashfree.com/js/v3/cashfree.js?v=1.0.0"></script>
+<script src="<?=base_url()?>/assets/student/js/cart.js?v=1.0.4"></script>
 <script src="<?=base_url()?>/assets/student/js/common.js?v=1.0.0"></script>
 <script type="text/javascript">
 </script>       
