@@ -25,6 +25,7 @@
         -webkit-user-select: none;
         touch-action: manipulation;
         text-align: center;
+        width: 95%;
     }
 
     .button-85:before {
@@ -77,6 +78,10 @@
         top: 0;
         border-radius: 10px;
     }
+
+      .button-auto {
+        margin: 0 auto; /* Center the button within its container */
+                   }
   </style>
 
  <!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="margin-top: 79px;">
