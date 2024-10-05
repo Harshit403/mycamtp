@@ -25,12 +25,11 @@
         -webkit-user-select: none;
         touch-action: manipulation;
         text-align: center;
+        width: 95%; /* Button width reduced by 5% */
     }
 
-    /* Set button to 90% width and center it */
-    .button-responsive {
-        width: 150%; /* Button takes up 90% of the container */
-        margin: 0 auto; /* Centers the button */
+    .button-auto {
+        margin: 0 auto; /* Center the button within its container */
     }
 
     .button-85:before {
@@ -84,7 +83,7 @@
         border-radius: 10px;
     }
 
-    /* Flexbox classes for centering the container */
+    /* Flexbox centering for button container */
     .d-flex {
         display: flex;
     }
@@ -93,44 +92,15 @@
         justify-content: center;
     }
 
-    /* Responsive behavior: ensure it looks good on smaller screens */
+    /* Ensure full-width on smaller screens */
     @media (max-width: 768px) {
-        .button-responsive {
+        .button-85 {
             width: 100%; /* Full width on smaller screens */
         }
     }
-	</style>
+</style>
 
-    
 
-<!--	<section class="container mb-5 section mainContainer">
-		<div class="row">
-			<div class="col-md-12">
-				<h2 class="text-center"><?=$category_info->category_more_details_heading?></h2>
-			</div>
-		</div>
-		<div class="row">
-			<?php foreach ($level_list as $levelRow): ?>
-				<div class="col-md-3">
-					<a href="<?=base_url()?>type?category=<?=$levelRow->category_short_name?>&&level=<?=$levelRow->level_short_name?>" style="text-decoration: none;">
-						<div class="card card-success text-center">
-							<div class="card-body">
-								<?=$levelRow->level_name?>
-							</div>
-						</div>
-					</a>
-				</div>
-			<?php endforeach ?>
-			
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<p>
-					<?=$category_info->category_more_details?>
-				</p>
-			</div>
-		</div>
-	</section> -->
 
 <section class="container mb-5 section mainContainer">
     <div class="row">
@@ -140,9 +110,9 @@
     </div>
     <div class="row">
         <?php foreach ($level_list as $levelRow): ?>
-            <div class="col-md-3 d-flex justify-content-center"> <!-- Centering button -->
+            <div class="col-md-3 d-flex justify-content-center"> <!-- Centering button container -->
                 <a href="<?=base_url()?>type?category=<?=$levelRow->category_short_name?>&&level=<?=$levelRow->level_short_name?>" style="text-decoration: none; width: 100%;">
-                    <button class="button-85 button-wide" role="button"><?=$levelRow->level_name?></button>
+                    <button class="button-85 button-auto" role="button"><?=$levelRow->level_name?></button>
                 </a>
             </div>
         <?php endforeach ?>
