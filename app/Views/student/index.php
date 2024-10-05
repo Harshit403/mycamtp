@@ -10,6 +10,64 @@
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 
+
+
+ <!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="margin-top: 79px;">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+          <img src="<?=base_url()?>carousel/assets/img.jpg" class="d-block w-100 imgClass" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+          <img src="<?=base_url()?>carousel/assets/img.jpg" class="d-block w-100 imgClass" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="<?=base_url()?>carousel/assets/img.jpg" class="d-block w-100 imgClass" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+  </div> -->
+    <section class="header-text container py-5 m-2" id="intro-section">
+        <h1 class="text-uppercase text-center">The Key of <font class="text-success">success</font></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+   <!-- <section class="py-5 category container" id="category-section">
+        <h1 class="text-uppercase text-center">Category</h1>
+        <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
+          <?php if (!empty($categoryDetails)): ?>
+              <?php foreach ($categoryDetails as $categoryRow): ?>
+                  <a class="strached-link" href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" style="text-decoration: none;"><div class="card">
+                      <h2><?=$categoryRow->category_name?></h2>
+                  </div></a>
+              <?php endforeach ?>
+          <?php endif ?>
+        </div>
+    </section> -->
+
+<section class="py-5 category container" id="category-section">
+    <h1 class="text-uppercase text-center">Category</h1>
+    <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
+      <?php if (!empty($categoryDetails)): ?>
+          <?php foreach ($categoryDetails as $categoryRow): ?>
+              <a class="stretched-link" href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" style="text-decoration: none;">
+                  <button class="button-85" role="button"><?=$categoryRow->category_name?></button>
+              </a>
+          <?php endforeach ?>
+      <?php endif ?>
+    </div>
+</section>
+
 <style>
     .button-85 {
         padding: 0.6em 2em;
@@ -25,7 +83,8 @@
         -webkit-user-select: none;
         touch-action: manipulation;
         text-align: center;
-        width: 95%;
+        max-width: 95vw;
+        display: inline-block;
     }
 
     .button-85:before {
@@ -78,63 +137,14 @@
         top: 0;
         border-radius: 10px;
     }
-  </style>
 
- <!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="margin-top: 79px;">
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="5000">
-          <img src="<?=base_url()?>carousel/assets/img.jpg" class="d-block w-100 imgClass" alt="...">
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img src="<?=base_url()?>carousel/assets/img.jpg" class="d-block w-100 imgClass" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="<?=base_url()?>carousel/assets/img.jpg" class="d-block w-100 imgClass" alt="...">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-  </div> -->
-    <section class="header-text container py-5 m-2" id="intro-section">
-        <h1 class="text-uppercase text-center">The Key of <font class="text-success">success</font></h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </section>
-   <!-- <section class="py-5 category container" id="category-section">
-        <h1 class="text-uppercase text-center">Category</h1>
-        <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
-          <?php if (!empty($categoryDetails)): ?>
-              <?php foreach ($categoryDetails as $categoryRow): ?>
-                  <a class="strached-link" href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" style="text-decoration: none;"><div class="card">
-                      <h2><?=$categoryRow->category_name?></h2>
-                  </div></a>
-              <?php endforeach ?>
-          <?php endif ?>
-        </div>
-    </section> -->
+    .d-flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
 
-<section class="py-5 category container" id="category-section">
-    <h1 class="text-uppercase text-center">Category</h1>
-    <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
-      <?php if (!empty($categoryDetails)): ?>
-          <?php foreach ($categoryDetails as $categoryRow): ?>
-              <a class="strached-link" href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" style="text-decoration: none;">
-                  <button class="button-85" role="button"><?=$categoryRow->category_name?></button>
-              </a>
-          <?php endforeach ?>
-      <?php endif ?>
-    </div>
-</section>
 
 
     <section class="py-5 container" id="content-section">
