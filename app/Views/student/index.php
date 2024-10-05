@@ -43,8 +43,8 @@
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </section> -->
 
-<section class="header-text container py-5 m-2" id="intro-section" style="margin-top: 50px;">
-    <h1 class="text-uppercase text-center" style="font-size: 2.5rem; color: green;">The Key of <span class="text-success">success</span></h1>
+<section class="header-text container py-5 m-2" id="intro-section" style="margin-top: 100px;">
+    <h1 class="text-uppercase text-center" style="font-size: 1.8rem; color: black;">The Key of <span class="text-success">success</span></h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
