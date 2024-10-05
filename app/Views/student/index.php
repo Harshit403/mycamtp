@@ -83,7 +83,8 @@
         -webkit-user-select: none;
         touch-action: manipulation;
         text-align: center;
-        max-width: 95vw;
+        width: 100vw; /* Sets the button width to 100% of the viewport width */
+        max-width: 100%; 
         display: inline-block;
     }
 
