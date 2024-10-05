@@ -30,7 +30,7 @@
         <span class="visually-hidden">Next</span>
       </button>
   </div> -->
-    <section class="header-text container py-5" id="intro-section">
+    <section class="header-text container py-5 m-2" id="intro-section">
         <h1 class="text-uppercase text-center">The Key of <font class="text-success">success</font></h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
