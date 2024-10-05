@@ -29,7 +29,7 @@
 
     /* Set button to 90% width and center it */
     .button-responsive {
-        width: 90%; /* Button takes up 90% of the container */
+        width: 150%; /* Button takes up 90% of the container */
         margin: 0 auto; /* Centers the button */
     }
 
