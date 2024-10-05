@@ -25,6 +25,11 @@
         -webkit-user-select: none;
         touch-action: manipulation;
         text-align: center;
+        width: 100%; /* Ensure button fills container */
+    }
+
+    .button-wide {
+        width: 250%; /* Increase width by 250% */
     }
 
     .button-85:before {
@@ -77,6 +82,14 @@
         top: 0;
         border-radius: 10px;
     }
+
+    .d-flex {
+        display: flex;
+    }
+
+    .justify-content-center {
+        justify-content: center;
+    }
 </style>
 
 <!--	<section class="container mb-5 section mainContainer">
@@ -108,7 +121,6 @@
 		</div>
 	</section> -->
 
-
 <section class="container mb-5 section mainContainer">
     <div class="row">
         <div class="col-md-12">
@@ -117,9 +129,9 @@
     </div>
     <div class="row">
         <?php foreach ($level_list as $levelRow): ?>
-            <div class="col-md-3">
-                <a href="<?=base_url()?>type?category=<?=$levelRow->category_short_name?>&&level=<?=$levelRow->level_short_name?>" style="text-decoration: none;">
-                    <button class="button-85" role="button"><?=$levelRow->level_name?></button>
+            <div class="col-md-3 d-flex justify-content-center"> <!-- Centering button -->
+                <a href="<?=base_url()?>type?category=<?=$levelRow->category_short_name?>&&level=<?=$levelRow->level_short_name?>" style="text-decoration: none; width: 100%;">
+                    <button class="button-85 button-wide" role="button"><?=$levelRow->level_name?></button>
                 </a>
             </div>
         <?php endforeach ?>
@@ -132,6 +144,7 @@
         </div>
     </div>
 </section>
+
 
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
