@@ -29,7 +29,7 @@
     }
 
     .button-wide {
-        width: 250%; /* Increase width by 250% */
+        width: 70%; /* Increase width by 70% */
     }
 
     .button-85:before {
