@@ -33,7 +33,7 @@
         <span class="visually-hidden">Next</span>
       </button>
   </div> -->
-    <section class="header-text container py-5 m-2" id="intro-section">
+   <!-- <section class="header-text container py-5 m-2" id="intro-section">
         <h1 class="text-uppercase text-center">The Key of <font class="text-success">success</font></h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -41,7 +41,18 @@
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </section>
+    </section> -->
+
+<section class="header-text container py-5 m-2" id="intro-section" style="margin-top: 50px;">
+    <h1 class="text-uppercase text-center" style="font-size: 2.5rem; color: green;">The Key of <span class="text-success">success</span></h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</section>
+
    <!-- <section class="py-5 category container" id="category-section">
         <h1 class="text-uppercase text-center">Category</h1>
         <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
@@ -54,7 +65,6 @@
           <?php endif ?>
         </div>
     </section> -->
-
 <section class="py-5 category container" id="category-section">
     <h1 class="text-uppercase text-center">Category</h1>
     <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
