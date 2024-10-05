@@ -25,11 +25,12 @@
         -webkit-user-select: none;
         touch-action: manipulation;
         text-align: center;
-        width: 100%; /* Ensure button fills container */
     }
 
-    .button-wide {
-        width: 70%; /* Increase width by 70% */
+    /* Set button to 90% width and center it */
+    .button-responsive {
+        width: 90%; /* Button takes up 90% of the container */
+        margin: 0 auto; /* Centers the button */
     }
 
     .button-85:before {
@@ -83,6 +84,7 @@
         border-radius: 10px;
     }
 
+    /* Flexbox classes for centering the container */
     .d-flex {
         display: flex;
     }
@@ -90,7 +92,16 @@
     .justify-content-center {
         justify-content: center;
     }
-</style>
+
+    /* Responsive behavior: ensure it looks good on smaller screens */
+    @media (max-width: 768px) {
+        .button-responsive {
+            width: 100%; /* Full width on smaller screens */
+        }
+    }
+	</style>
+
+    
 
 <!--	<section class="container mb-5 section mainContainer">
 		<div class="row">
