@@ -29,7 +29,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-  </div>
+  </div> -->
     <section class="header-text container py-5" id="intro-section">
         <h1 class="text-uppercase text-center">The Key of <font class="text-success">success</font></h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -38,24 +38,7 @@
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </section> -->
-
-
-<section class="hero-section py-5" style="background-color: #f8f9fa;">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h1 class="display-4 text-primary">Prepare for Your Future</h1>
-        <p class="lead">Join our comprehensive test series to excel in your exams. Practice anytime, anywhere!</p>
-        <a href="#test-series-section" class="btn btn-custom-primary btn-lg">Explore Test Series <i class="bi bi-arrow-right"></i></a>
-      </div>
-      <div class="col-md-6">
-        <img src="<?=base_url()?>assets/images/hero-image.png" alt="Hero Image" class="img-fluid">
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
     <section class="py-5 category container" id="category-section">
         <h1 class="text-uppercase text-center">Category</h1>
         <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
