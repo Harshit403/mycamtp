@@ -61,7 +61,7 @@
     <header class="banner">
         <div class="contact">
             <i class="fas fa-phone-alt"></i>
-            <span>9903058695</span>
+            <span>9999999999</span>
         </div>
         <div class="social-icons">
             <a href="#" class="icon whatsapp"><i class="fab fa-whatsapp"></i></a>
