@@ -50,7 +50,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .test-series {
-            background-color: #f9f9f9; /* Light background for contrast */
+            background-color: #F1E7FF; /* Light background for contrast */
             padding: 40px 20px; /* Spacing around the section */
             border-radius: 8px; /* Rounded corners */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -104,7 +104,7 @@
 
 <section class="test-series">
     <div class="container">
-        <h1 class="text-danger mb-4 fw-bolder" style="color: #FF1744; font-size: 1.8rem;">Mission CS <span class="text-danger"> Test Series</span></h1>
+        <h1 class="text-danger mb-4 fw-bolder" style="color: #FF1744; font-size: 1.7rem;">Mission CS <span class="text-danger"> Test Series</span></h1>
         <p class="intro-text">We offer the most affordable and quality CS Test series for CS Executive and CS Professional exams, along with live mentorship from Rankers and Qualified Company Secretaries.</p>
         <p class="description"><i>Each of our Test series is designed by AIRs considering the needs of CS Executive and Professional exams.</i></p>
         
