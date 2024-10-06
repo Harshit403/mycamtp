@@ -42,12 +42,76 @@
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </section> -->
-<div>
+<!-- <div>
   <section class="container text-center my-5 py-5 bg-white">
     <h1 class="text-danger mb-4 fw-bolder" style="color: #FF1744; font-size: 2.5rem;">MISSION CS <span class="text-danger"> Test Series</span></h1>
     <p class="lead text-dark font-weight-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </section>
-</div>
+</div> -->
+
+<section class="section hero pt-5" id="home" aria-label="home">
+    <div class="container1 text-center">
+        <h1 class="h1 section-title">
+            <span class="span">MY CS MTP TEST SERIES:</span> Unlock Your Success.
+        </h1>
+        <p class="hero-tex" style="color: black;">
+            We're the leading Test Series platform offering unique sets of questions aligned with the ICSI pattern, including the latest amendments in our CS Test Series to meet real exam scenarios. Our <b>CSEET Test Series, CS Executive Test Series, and CS Professional Test Series</b> are carefully designed to prepare CS students with confidence for their CS Exams.
+        </p> 
+
+        <p style="color: red; font-weight: bold;">
+            Our Question Paper is a blend of Unique, Unseen, and Amended Questions to familiarize students with the Real Exam environment.
+        </p>
+
+        <ul class="fa-ul custom-checklist" style="list-style: none; padding-left: 0;">
+            <li><i class="bi bi-caret-right-fill" style="color: red;"></i> <strong>Complete Exam strategy by Rankers</strong></li>
+            <li><i class="bi bi-caret-right-fill" style="color: red;"></i> <strong>Mentorship by Rankers</strong></li>
+            <li><i class="bi bi-caret-right-fill" style="color: red;"></i> <strong>Real exam-like question papers</strong></li>
+            <li><i class="bi bi-caret-right-fill" style="color: red;"></i> <strong>Till exams Guidance</strong></li>
+            <li><i class="bi bi-caret-right-fill" style="color: red;"></i> <strong>Proven Rank Boosting Strategies</strong></li>
+            <li><i class="bi bi-caret-right-fill" style="color: red;"></i> <strong>Question Papers set by Rankers</strong></li>
+        </ul>
+    </div>
+</section>
+
+<!-- Font Awesome Script -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Custom CSS -->
+<style>
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .hero-tex {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        font-weight: 300;
+        color: #343a40;
+    }
+
+    .custom-checklist li {
+        font-size: 1.2rem;
+        color: #495057;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .custom-checklist li strong {
+        color: #343a40;
+        font-weight: 500;
+    
+    }
+</style>
+
+
+
+
+
+
    <!-- <section class="py-5 category container" id="category-section">
         <h1 class="text-uppercase text-center">Category</h1>
         <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
