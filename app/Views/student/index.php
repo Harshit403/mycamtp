@@ -100,11 +100,16 @@
             font-size: 20px; /* Size for the checkmark */
             color: #2FBCCD; /* Custom color for checkmarks */
         }
+        @media (max-width: 600px) {
+           .section-title {
+           font-size: 24px; /* Adjust size for smaller screens */
+        }
+}
     </style>
 
 <section class="test-series">
     <div class="container">
-        <h1 class="text-danger mb-4 fw-bolder" style="color: #FF1744; font-size: 1.7rem;">Mission CS <span class="text-danger"> Test Series</span></h1>
+        <h1 class="section-title text-danger mb-4 fw-bolder" style="color: #FF1744; font-size: 1.7rem; white-space: nowrap;">Mission CS <span class="text-danger"> Test Series</span></h1>
         <p class="intro-text">We offer the most affordable and quality CS Test series for CS Executive and CS Professional exams, along with live mentorship from Rankers and Qualified Company Secretaries.</p>
         <p class="description"><i>Each of our Test series is designed by AIRs considering the needs of CS Executive and Professional exams.</i></p>
         
