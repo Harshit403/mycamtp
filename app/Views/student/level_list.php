@@ -29,6 +29,7 @@
     }
 
     .button-auto {
+	justify-content: center;
         margin: 12px; /* Center the button within its container */
     }
 
