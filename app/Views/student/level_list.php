@@ -104,7 +104,7 @@
 
 
 
-<section class="container mb-5 section mainContainer mt-n3">
+<section class="container mb-5 section mainContainer mt-n5">
     <div class="row">
         <div class="col-md-12">
             <h2 class="text-center"><?=$category_info->category_more_details_heading?></h2>
