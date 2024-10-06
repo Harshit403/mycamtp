@@ -11,6 +11,20 @@
 <?=$this->section('content')?>
 
 <style>
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+	}
+
+     body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* Aligns content to the top */
+     }
+	
     .button-85 {
         padding: 0.6em 2em;
         border: none;
