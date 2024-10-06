@@ -67,8 +67,8 @@
             top: 50px; /* Adjust this based on the banner height */
         }
         .navbar {
-            margin-bottom: 50px; /* Adds a margin of 50px below the navbar */
-        }
+            margin-top: 50px; /* This will push the navbar below the 50px high banner */
+    }
     </style>
 </head>
 <body>
