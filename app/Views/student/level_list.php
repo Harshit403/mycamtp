@@ -11,19 +11,6 @@
 <?=$this->section('content')?>
 
 <style>
-   * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-	}
-
-     body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start; /* Aligns content to the top */
-     }
 	
     .button-85 {
         padding: 0.6em 2em;
@@ -117,7 +104,7 @@
 
 
 
-<section class="container mb-5 section mainContainer">
+<section class="container mb-5 section mainContainer mt-n3">
     <div class="row">
         <div class="col-md-12">
             <h2 class="text-center"><?=$category_info->category_more_details_heading?></h2>
