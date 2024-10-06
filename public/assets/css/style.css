@@ -292,16 +292,16 @@
 
 #newsletter_section h2 {
     font-weight: bold;
-    color: #2D3748;
+    color: #2FBCCD;
 }
 
 #newsletter_section .unique-text-primary {
-    color: #2D3748 !important;
+    color: #2FBCCD !important;
 }
 
 #newsletter_section .unique-btn-primary {
-    background-color: #2D3748;
-    border-color: #2D3748;
+    background-color: #2FBCCD;
+    border-color: #2FBCCD;
     color: white;
     font-weight: bold;
     border-radius: 50px;
@@ -333,7 +333,7 @@
     width: 20px;
     height: 20px;
     margin-right: 10px;
-    background-color: #2D3748;
+    background-color: #2FBCCD;
     border-radius: 50%;
     position: relative;
 }
