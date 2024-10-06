@@ -104,7 +104,7 @@
 
 <section class="test-series">
     <div class="container">
-        <h1 class="text-danger mb-4 fw-bolder" style="color: #FF1744; font-size: 2.0rem;">MISSION CS <span class="text-danger"> Test Series</span></h1>
+        <h1 class="text-danger mb-4 fw-bolder" style="color: #FF1744; font-size: 1.8rem;">Mission CS <span class="text-danger"> Test Series</span></h1>
         <p class="intro-text">We offer the most affordable and quality CS Test series for CS Executive and CS Professional exams, along with live mentorship from Rankers and Qualified Company Secretaries.</p>
         <p class="description"><i>Each of our Test series is designed by AIRs considering the needs of CS Executive and Professional exams.</i></p>
         
