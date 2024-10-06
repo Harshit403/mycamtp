@@ -67,7 +67,8 @@
     </style>
 </head>
 <body>
-
+<div style="height: 110px;" class="spacing">
+</div>
     <!-- Banner -->
     <header class="banner">
         <div class="contact">
