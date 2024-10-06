@@ -271,30 +271,31 @@
          <!--   <div class="col-md-4">
                 <img src="<?=base_url()?>/assetItems/image/image2.jpg" class="img-thumbnail" style="width: 400px;">
             </div> -->
-          
-<div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
+
+<div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="<?=base_url()?>/assetItems/image/cr1.jpg" alt="First slide">
+      <img src="<?=base_url()?>/assetItems/image/cr1.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="<?=base_url()?>/assetItems/image/cr2.jpg" alt="Second slide">
+      <img src="<?=base_url()?>/assetItems/image/cr2.jpg" class="d-block w-100" alt="...">
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
+    <span class="visually-hidden">Next</span>
+  </button>
+      </div>
 
 
         </div>
     </section>
+
+      
     <section class="py-5 container" id="faq-section">
         <h1 class="text-uppercase text-center">FAQ</h1>
         <div class="row">
