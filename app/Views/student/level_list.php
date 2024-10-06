@@ -26,11 +26,10 @@
         touch-action: manipulation;
         text-align: center;
         width: 95%; /* Button width reduced by 5% */
-	margin-bottom: 8px;
     }
 
     .button-auto {
-        margin: 20px; /* Center the button within its container */
+        margin: 12px; /* Center the button within its container */
     }
 
     .button-85:before {
