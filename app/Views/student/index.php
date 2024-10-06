@@ -91,7 +91,7 @@
 
         .benefits-list li {
             font-size: 16px; /* Consistent font size for list items */
-            color: #2FBCCD; /* Solid black for the list text */
+            color: #000; /* Solid black for the list text */
             margin-bottom: 10px; /* Spacing between list items */
         }
 
@@ -104,6 +104,7 @@
 
 <section class="test-series">
     <div class="container">
+        <h1 class="text-danger mb-4 fw-bolder" style="color: #FF1744; font-size: 2.5rem;">MISSION CS <span class="text-danger"> Test Series</span></h1>
         <h2 class="section-title">Affordable & Quality CS Test Series</h2>
         <p class="intro-text">We offer the most affordable and quality CS Test series for CS Executive and CS Professional exams, along with live mentorship from Rankers and Qualified Company Secretaries.</p>
         <p class="description"><i>Each of our Test series is designed by AIRs considering the needs of CS Executive and Professional exams.</i></p>
