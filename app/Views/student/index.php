@@ -271,7 +271,7 @@
          <!--   <div class="col-md-4">
                 <img src="<?=base_url()?>/assetItems/image/image2.jpg" class="img-thumbnail" style="width: 400px;">
             </div> -->
-<div class="col-md-4">
+          
 <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -290,12 +290,7 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-    </div>
-<style>
-.carousel-item {
-  transition: opacity 0.5s ease-in-out; /* Adjust duration and easing as needed */
-} 
-</style>
+
 
 
         </div>
