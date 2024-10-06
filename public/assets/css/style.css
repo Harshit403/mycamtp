@@ -12,11 +12,11 @@
 }
 
 .nav-item>.nav-link:hover {
-    color: #050C9C !important;
+    color: #2FBCCD !important;
 }
 
 .nav-item>.nav-link.active {
-    color: #050C9C !important;
+    color: #2FBCCD !important;
 }
 
 .nav-tabs .nav-link {
@@ -26,17 +26,17 @@
 
 .nav-tabs .nav-link.active {
     border: none;
-    color: #050C9C !important;
-    border-bottom: 2px solid #050C9C !important;
+    color: #2FBCCD !important;
+    border-bottom: 2px solid #2FBCCD !important;
 }
 
 .nav-tabs .nav-link:hover {
     border: none;
-    border-bottom: 2px solid #050C9C !important;
+    border-bottom: 2px solid #2FBCCD !important;
 }
 
 .btn-custom {
-    background-color: #050C9C !important;
+    background-color: #2FBCCD !important;
     color: #fff !important;
 }
 
@@ -76,17 +76,17 @@
 }
 
 .type_container .students {
-    background-color: #e6f2ff;
+    background-color: #2FBCCD;
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 14px;
-    color: #1a73e8;
+    color: #2FBCCD;
 }
 
 .type_container .card h2 {
     font-size: 24px;
     margin: 15px 0;
-    color: #1a73e8;
+    color: #2FBCCD;
 }
 
 .type_container h3 {
