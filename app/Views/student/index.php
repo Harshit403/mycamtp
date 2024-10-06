@@ -43,15 +43,56 @@
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </section> -->
 
-<section class="header-text container py-5 m-2" id="intro-section" style="margin-top: 250px; position: relative; z-index: 2;">
-    <h1 class="text-uppercase text-center" style="font-size: 2rem; color: green;">The Key of <span class="text-success">success</span></h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</section>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light background color */
+        }
+
+        /* Header section */
+        #intro-section {
+            background-color: #ffffff;
+            padding: 100px 20px; /* Padding to ensure title is visible */
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow */
+            border-radius: 10px; /* Rounded corners */
+            max-width: 900px;
+            margin: 50px auto;
+        }
+
+        #intro-section h1 {
+            font-size: 2.5rem;
+            color: #28a745; /* Success green color */
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        #intro-section p {
+            font-size: 1.2rem;
+            color: #333;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            #intro-section h1 {
+                font-size: 2rem;
+            }
+
+            #intro-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <section id="intro-section">
+        <h1>The Key of <span style="color: #28a745;">Success</span></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
 
    <!-- <section class="py-5 category container" id="category-section">
         <h1 class="text-uppercase text-center">Category</h1>
