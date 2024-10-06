@@ -13,7 +13,8 @@
             <a class="nav-link showCartBtn" href="javascript:void(0)" class="btn">
               <div style="position: relative;">
                 <i class="bi bi-bag" style="font-size: 18px;"></i>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary cartCount">0</span>
+               <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary cartCount">0</span> -->
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background-color: #2FBCCD;">0</span>
               </div>
             </a>
           </li>
