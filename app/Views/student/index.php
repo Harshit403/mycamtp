@@ -49,7 +49,6 @@
   </section>
 </div> -->
 
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .test-series {
@@ -62,7 +61,6 @@
         .container {
             max-width: 800px; /* Max width for better readability */
             margin: 0 auto; /* Center the content */
-            text-align: center; /* Center align text */
         }
 
         .section-title {
@@ -70,31 +68,33 @@
             color: #2c3e50; /* Darker color for emphasis */
             margin-bottom: 20px; /* Spacing below title */
             font-weight: bold; /* Bold font for emphasis */
+            text-align: center; /* Center align title */
         }
 
         .intro-text {
             font-size: 18px; /* Medium font size */
             color: #34495e; /* Slightly lighter color */
             margin-bottom: 20px; /* Spacing below intro text */
+            text-align: center; /* Center align intro */
         }
 
         .description {
             font-size: 16px; /* Slightly smaller font size */
             color: #7f8c8d; /* Muted color for description */
             margin-bottom: 30px; /* Spacing below description */
+            text-align: center; /* Center align description */
         }
 
         .benefits-list {
             list-style: none; /* Remove default list styling */
             padding: 0; /* Remove padding */
+            text-align: left; /* Align text to the left */
         }
 
         .benefits-list li {
             font-size: 16px; /* Consistent font size for list items */
             color: #27ae60; /* Green color for checkmarks */
             margin-bottom: 10px; /* Spacing between list items */
-            display: flex; /* Flexbox for alignment */
-            align-items: center; /* Center items vertically */
         }
 
         .benefits-list li i {
@@ -120,6 +120,7 @@
         </ul>
     </div>
 </section>
+
 
    <!-- <section class="py-5 category container" id="category-section">
         <h1 class="text-uppercase text-center">Category</h1>
