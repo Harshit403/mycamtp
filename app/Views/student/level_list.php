@@ -30,7 +30,7 @@
     }
 
     .button-auto {
-        margin: 0 auto; /* Center the button within its container */
+        margin: 20px; /* Center the button within its container */
     }
 
     .button-85:before {
