@@ -11,7 +11,9 @@
 <?=$this->section('content')?>
 
 <style>
-	
+    .nm {
+        margin-top: -100px;
+    }
     .button-85 {
         padding: 0.6em 2em;
         border: none;
@@ -104,7 +106,7 @@
 
 
 
-<section class="container mb-5 section mainContainer mt-n5">
+<section class="container mb-5 section mainContainer nm">
     <div class="row">
         <div class="col-md-12">
             <h2 class="text-center"><?=$category_info->category_more_details_heading?></h2>
