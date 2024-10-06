@@ -51,6 +51,8 @@
             top: 60px; /* Adjust position below the banner */
             width: 100%;
             z-index: 999; /* Ensure it is below the banner */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
         }
 
         /* Add margin to body content to avoid being covered by the fixed navbar */
