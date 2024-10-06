@@ -49,68 +49,77 @@
   </section>
 </div> -->
 
-<section class="section hero pt-5" id="home" aria-label="home">
-    <div class="container1 text-center">
-        <h1 class="h1 section-title">
-            <span class="span">MY CS MTP TEST SERIES:</span> Unlock Your Success.
-        </h1>
-        <p class="hero-tex" style="color: black;">
-            We're the leading Test Series platform offering unique sets of questions aligned with the ICSI pattern, including the latest amendments in our CS Test Series to meet real exam scenarios. Our <b>CSEET Test Series, CS Executive Test Series, and CS Professional Test Series</b> are carefully designed to prepare CS students with confidence for their CS Exams.
-        </p> 
 
-        <p style="color: red; font-weight: bold;">
-            Our Question Paper is a blend of Unique, Unseen, and Amended Questions to familiarize students with the Real Exam environment.
-        </p>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .test-series {
+            background-color: #f9f9f9; /* Light background for contrast */
+            padding: 40px 20px; /* Spacing around the section */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
 
-        <ul class="fa-ul custom-checklist" style="list-style: none; padding-left: 0;">
-            <li><i class="bi bi-caret-right-fill" style="color: red;"></i> <strong>Complete Exam strategy by Rankers</strong></li>
-            <li><i class="bi bi-caret-right-fill" style="color: red;"></i> <strong>Mentorship by Rankers</strong></li>
-            <li><i class="bi bi-caret-right-fill" style="color: red;"></i> <strong>Real exam-like question papers</strong></li>
-            <li><i class="bi bi-caret-right-fill" style="color: red;"></i> <strong>Till exams Guidance</strong></li>
-            <li><i class="bi bi-caret-right-fill" style="color: red;"></i> <strong>Proven Rank Boosting Strategies</strong></li>
-            <li><i class="bi bi-caret-right-fill" style="color: red;"></i> <strong>Question Papers set by Rankers</strong></li>
+        .container {
+            max-width: 800px; /* Max width for better readability */
+            margin: 0 auto; /* Center the content */
+            text-align: center; /* Center align text */
+        }
+
+        .section-title {
+            font-size: 28px; /* Larger font size for the title */
+            color: #2c3e50; /* Darker color for emphasis */
+            margin-bottom: 20px; /* Spacing below title */
+            font-weight: bold; /* Bold font for emphasis */
+        }
+
+        .intro-text {
+            font-size: 18px; /* Medium font size */
+            color: #34495e; /* Slightly lighter color */
+            margin-bottom: 20px; /* Spacing below intro text */
+        }
+
+        .description {
+            font-size: 16px; /* Slightly smaller font size */
+            color: #7f8c8d; /* Muted color for description */
+            margin-bottom: 30px; /* Spacing below description */
+        }
+
+        .benefits-list {
+            list-style: none; /* Remove default list styling */
+            padding: 0; /* Remove padding */
+        }
+
+        .benefits-list li {
+            font-size: 16px; /* Consistent font size for list items */
+            color: #27ae60; /* Green color for checkmarks */
+            margin-bottom: 10px; /* Spacing between list items */
+            display: flex; /* Flexbox for alignment */
+            align-items: center; /* Center items vertically */
+        }
+
+        .benefits-list li i {
+            margin-right: 10px; /* Spacing between icon and text */
+            font-size: 20px; /* Size for the checkmark */
+            color: #27ae60; /* Same color as text for consistency */
+        }
+    </style>
+
+<section class="test-series">
+    <div class="container">
+        <h2 class="section-title">Affordable & Quality CS Test Series</h2>
+        <p class="intro-text">We offer the most affordable and quality CS Test series for CS Executive and CS Professional exams, along with live mentorship from Rankers and Qualified Company Secretaries.</p>
+        <p class="description">Each of our test series is designed by AIRs considering the needs of CS Executive and Professional exams.</p>
+        
+        <ul class="benefits-list">
+            <li><i class="fas fa-check"></i> Complete Exam Strategy by Rankers</li>
+            <li><i class="fas fa-check"></i> Mentorship by Rankers</li>
+            <li><i class="fas fa-check"></i> Real Exam-like Question Papers</li>
+            <li><i class="fas fa-check"></i> Guidance Until Exams</li>
+            <li><i class="fas fa-check"></i> Proven Rank Boosting Strategies</li>
+            <li><i class="fas fa-check"></i> Question Papers Set by Rankers</li>
         </ul>
     </div>
 </section>
-
-<!-- Font Awesome Script -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-<!-- Custom CSS -->
-<style>
-    .section-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 20px;
-    }
-
-    .hero-tex {
-        font-size: 1.1rem;
-        margin-bottom: 20px;
-        font-weight: 300;
-        color: #343a40;
-    }
-
-    .custom-checklist li {
-        font-size: 1.2rem;
-        color: #495057;
-        margin-bottom: 10px;
-        padding-left: 10px;
-        display: flex;
-        align-items: center;
-    }
-
-    .custom-checklist li strong {
-        color: #343a40;
-        font-weight: 500;
-    
-    }
-</style>
-
-
-
-
-
 
    <!-- <section class="py-5 category container" id="category-section">
         <h1 class="text-uppercase text-center">Category</h1>
