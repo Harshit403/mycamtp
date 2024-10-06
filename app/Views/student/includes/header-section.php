@@ -59,7 +59,6 @@
 
         /* Offcanvas (Drawer) styling */
         .offcanvas {
-            z-index: 2000; /* Highest z-index, appears above everything */
             width: 100% !important; /* Ensure it covers full width */
         }
 
@@ -71,30 +70,16 @@
             z-index: 2001;
         }
 
-        /* Full-screen Cart Section */
-        .cart-section {
-            position: fixed;
+        /* Cart Badge */
+        .cart-badge {
+            position: absolute;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
-            display: none; /* Initially hidden */
-            z-index: 2000; /* Highest z-index, appears above everything */
+            left: 12px;
+            background-color: #2FBCCD;
+            font-size: 8px;
             color: white;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .cart-section.active {
-            display: flex; /* Show cart when active */
-        }
-
-        .cart-content {
-            background-color: white;
-            color: black;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 2px;
+            border-radius: 50%;
         }
     </style>
     <!-- FontAwesome for icons -->
@@ -123,10 +108,10 @@
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item forMobileSection">
-                    <a class="nav-link showCartBtn" href="javascript:void(0)" class="btn">
+                    <a class="nav-link showCartBtn" href="javascript:void(0)">
                         <div style="position: relative;">
                             <i class="bi bi-bag" style="font-size: 18px;"></i>
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill" style="background-color: #2FBCCD;">0</span>
+                            <span class="cart-badge badge rounded-pill">0</span>
                         </div>
                     </a>
                 </li>
@@ -179,10 +164,10 @@
                             <a class="nav-link" href="<?=base_url()?>#faq-section">FAQ</a>
                         </li>
                         <li class="nav-item forDesktopSection">
-                            <a class="nav-link showCartBtn" href="javascript:void(0)" class="btn">
+                            <a class="nav-link showCartBtn" href="javascript:void(0)">
                                 <div style="position: relative;">
                                     <i class="bi bi-bag" style="font-size: 18px;"></i>
-                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary cartCount">0</span>
+                                    <span class="cart-badge badge rounded-pill">0</span>
                                 </div>
                             </a>
                         </li>
@@ -213,25 +198,31 @@
         </div>
     </nav>
 
-    <!-- Full-screen Cart Section -->
-    <div class="cart-section" id="cartSection">
-        <div class="cart-content">
-            <h1>Shopping Cart</h1>
-            <p>Your cart is empty.</p>
-            <button onclick="toggleCart()">Close</button>
-        </div>
-    </div>
-
     <script>
-        // Function to toggle the cart visibility
-        function toggleCart() {
-            const cartSection = document.getElementById('cartSection');
-            cartSection.classList.toggle('active');
+        // Toggle z-index for the offcanvas drawer and cart badge
+        function setHighestZIndex(elementId) {
+            const element = document.getElementById(elementId);
+            const otherOffcanvas = document.querySelector('.offcanvas');
+            const otherCart = document.querySelector('.cart-badge');
+
+            // Reset z-index for others
+            otherOffcanvas.style.zIndex = '';
+            otherCart.style.zIndex = '';
+
+            // Set highest z-index
+            element.style.zIndex = '2000';
         }
 
-        // Add event listener to cart buttons
+        // Event listener for cart button
         document.querySelectorAll('.showCartBtn').forEach(btn => {
-            btn.addEventListener('click', toggleCart);
+            btn.addEventListener('click', function () {
+                setHighestZIndex('cartSection'); // Assuming 'cartSection' is the cart container ID
+            });
+        });
+
+        // Event listener for drawer button
+        document.querySelector('.navbar-toggler').addEventListener('click', function () {
+            setHighestZIndex('offcanvasNavbar');
         });
     </script>
 </body>
