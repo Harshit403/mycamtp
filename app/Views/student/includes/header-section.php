@@ -2,17 +2,17 @@
     <style>
         /* CSS for Header Banner */
         .banner {
-            margin-bottom: 0; /* Removed large bottom margin */
+            margin-bottom: 0;
             background-color: #2FBCCD;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
             color: white;
-            position: fixed; /* Keeps the banner at the top */
+            position: fixed;
             top: 0;
             width: 100%;
-            z-index: 1100; /* Ensure it stays above the navbar */
+            z-index: 1100; /* Keeps it above the navbar */
         }
 
         .contact {
@@ -21,7 +21,7 @@
         }
 
         .contact i {
-            margin-right: 15px; /* Space between phone icon and number */
+            margin-right: 15px;
             font-size: 1.2em;
         }
 
@@ -43,27 +43,58 @@
         /* Navbar styles */
         .navbar {
             background-color: white;
-            position: fixed; /* Keep the navbar fixed */
-            top: 60px; /* Adjust position below the banner */
+            position: fixed;
+            top: 60px;
             width: 100%;
-            z-index: 1050; /* Ensure it's below the banner */
-            margin: 0; /* Remove default margin */
-            padding: 0; /* Remove default padding */
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+            z-index: 1050; /* Below banner, above content */
+            margin: 0;
+            padding: 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         /* Add margin to body content to avoid being covered by the fixed navbar */
         body {
-            margin-top: 130px; /* Adjust this based on the combined height of the banner and navbar */
+            margin-top: 130px;
         }
 
         /* Offcanvas (Drawer) styling */
         .offcanvas {
-            z-index: 1201; /* Increase z-index to ensure drawer stays above header and navbar */
+            z-index: 2000; /* Highest z-index, appears above everything */
+            width: 100% !important; /* Ensure it covers full width */
+        }
+
+        .offcanvas-body {
+            height: 100%; /* Make it take full height */
         }
 
         .offcanvas-header .btn-close {
-            z-index: 1300; /* Ensure close button is clickable and above all */
+            z-index: 2001;
+        }
+
+        /* Full-screen Cart Section */
+        .cart-section {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+            display: none; /* Initially hidden */
+            z-index: 2000; /* Highest z-index, appears above everything */
+            color: white;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cart-section.active {
+            display: flex; /* Show cart when active */
+        }
+
+        .cart-content {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
         }
     </style>
     <!-- FontAwesome for icons -->
@@ -181,4 +212,26 @@
             <?php endif ?>
         </div>
     </nav>
+
+    <!-- Full-screen Cart Section -->
+    <div class="cart-section" id="cartSection">
+        <div class="cart-content">
+            <h1>Shopping Cart</h1>
+            <p>Your cart is empty.</p>
+            <button onclick="toggleCart()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle the cart visibility
+        function toggleCart() {
+            const cartSection = document.getElementById('cartSection');
+            cartSection.classList.toggle('active');
+        }
+
+        // Add event listener to cart buttons
+        document.querySelectorAll('.showCartBtn').forEach(btn => {
+            btn.addEventListener('click', toggleCart);
+        });
+    </script>
 </body>
