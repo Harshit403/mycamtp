@@ -196,7 +196,7 @@
 }
 
 .subject_container .add-to-cart {
-    background-color: #007BFF;
+    background-color: #2FBCCD;
     color: white;
     border: none;
     border-radius: 5px;
@@ -206,7 +206,7 @@
 }
 
 .subject_container .add-to-cart:hover {
-    background-color: #0056b3;
+    background-color: #2FBCCD;
     transform: scale(1.05);
 }
 
