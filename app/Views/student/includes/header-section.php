@@ -61,11 +61,6 @@
         .icon:hover {
             color: #ddd;
         }
-
-        /* Navbar spacing to account for banner */
-        .navbar {
-            top: 50px; /* Adjust this based on the banner height */
-        }
         .navbar {
             margin-top: 50px; /* This will push the navbar below the 50px high banner */
     }
