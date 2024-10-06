@@ -55,7 +55,7 @@
     </style>
 </head>
 <body>
-<div style="height: 120px;" class="spacing">
+<div style="height: 80px;" class="spacing">
 </div>
     <!-- Banner -->
     <header class="banner">
