@@ -1,12 +1,8 @@
 <head>
     <style>
         /* CSS for Header Banner */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
         .banner {
+            margin-bottom: 200px; 
             background-color: #2FBCCD;
             display: flex;
             justify-content: space-between;
@@ -56,7 +52,7 @@
         }
 
         /* Add margin to body content to avoid being covered by the fixed navbar */
-        .content {
+        .navmar {
             margin-top: 120px; /* Adjust this based on the combined height of the banner and navbar */
         }
     </style>
@@ -78,7 +74,7 @@
     </header>
 
     <!-- Original navbar -->
-    <nav class="navbar navbar-expand-lg shadow-sm p-3 bg-body rounded">
+    <nav class="navbar navmar navbar-expand-lg shadow-sm p-3 bg-body rounded">
         <div class="container-fluid">
             <a class="navbar-brand fs-4" href="<?=base_url()?>">
                 <img src="<?=base_url()?>/assetItems/image/logo.jpg" style="height:3rem;">
