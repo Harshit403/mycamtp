@@ -1,6 +1,6 @@
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('title')?>
-  MYCAMTP
+  Mission CS Test Series 
 <?= $this->endSection() ?>
 <?= $this->section('meta_description') ?>
 <!-- enter your meta description -->
@@ -60,29 +60,29 @@
 
         .container {
             max-width: 800px; /* Max width for better readability */
-            margin: 0 auto; /* Center the content */
+            margin: 0 auto; /* Center the content horizontally */
         }
 
         .section-title {
             font-size: 28px; /* Larger font size for the title */
-            color: #2c3e50; /* Darker color for emphasis */
+            color: #000; /* Black for the title */
             margin-bottom: 20px; /* Spacing below title */
             font-weight: bold; /* Bold font for emphasis */
-            text-align: center; /* Center align title */
+            text-align: left; /* Left align title */
         }
 
         .intro-text {
             font-size: 18px; /* Medium font size */
-            color: #34495e; /* Slightly lighter color */
+            color: #333; /* Dark grey for a softer black */
             margin-bottom: 20px; /* Spacing below intro text */
-            text-align: center; /* Center align intro */
+            text-align: left; /* Left align intro */
         }
 
         .description {
             font-size: 16px; /* Slightly smaller font size */
-            color: #7f8c8d; /* Muted color for description */
+            color: #555; /* A lighter black for description */
             margin-bottom: 30px; /* Spacing below description */
-            text-align: center; /* Center align description */
+            text-align: left; /* Left align description */
         }
 
         .benefits-list {
@@ -93,14 +93,14 @@
 
         .benefits-list li {
             font-size: 16px; /* Consistent font size for list items */
-            color: #27ae60; /* Green color for checkmarks */
+            color: #000; /* Solid black for the list text */
             margin-bottom: 10px; /* Spacing between list items */
         }
 
         .benefits-list li i {
             margin-right: 10px; /* Spacing between icon and text */
             font-size: 20px; /* Size for the checkmark */
-            color: #27ae60; /* Same color as text for consistency */
+            color: #2FBCCD; /* Custom color for checkmarks */
         }
     </style>
 
@@ -120,6 +120,8 @@
         </ul>
     </div>
 </section>
+
+
 
 
    <!-- <section class="py-5 category container" id="category-section">
