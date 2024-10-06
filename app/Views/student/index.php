@@ -50,7 +50,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .test-series {
-            background-color: #F1E7FF; /* Light background for contrast */
+            background-color: #E3FCFF; /* Light background for contrast */
             padding: 40px 20px; /* Spacing around the section */
             border-radius: 8px; /* Rounded corners */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
