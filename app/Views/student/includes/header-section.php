@@ -59,7 +59,7 @@
 
         /* Offcanvas (Drawer) styling */
         .offcanvas {
-            z-index: 1200; /* Ensure drawer stays above banner and navbar */
+            z-index: 1201; /* Increase z-index to ensure drawer stays above header and navbar */
         }
 
         .offcanvas-header .btn-close {
