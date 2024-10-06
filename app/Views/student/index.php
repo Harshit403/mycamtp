@@ -151,7 +151,11 @@
     }
 </style>
 
-
+<section class="py-5 container" id="image-section">
+<div class="container-fluid">
+        <img src="<?=base_url()?>/assetItems/image/owner.jpg" class="img-fluid" alt="Responsive image">
+    </div>
+</section>
 
     <section class="py-5 container" id="content-section">
         <h1 class="text-center text-uppercase">Our Goals</h1>
