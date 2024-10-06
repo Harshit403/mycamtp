@@ -10,8 +10,6 @@
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 
-
-
  <!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="margin-top: 79px;">
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="5000">
@@ -93,7 +91,7 @@
 
         .benefits-list li {
             font-size: 16px; /* Consistent font size for list items */
-            color: #000; /* Solid black for the list text */
+            color: #2FBCCD; /* Solid black for the list text */
             margin-bottom: 10px; /* Spacing between list items */
         }
 
@@ -108,7 +106,7 @@
     <div class="container">
         <h2 class="section-title">Affordable & Quality CS Test Series</h2>
         <p class="intro-text">We offer the most affordable and quality CS Test series for CS Executive and CS Professional exams, along with live mentorship from Rankers and Qualified Company Secretaries.</p>
-        <p class="description">Each of our test series is designed by AIRs considering the needs of CS Executive and Professional exams.</p>
+        <p class="description"><i>Each of our Test series is designed by AIRs considering the needs of CS Executive and Professional exams.</i></p>
         
         <ul class="benefits-list">
             <li><i class="fas fa-check"></i> Complete Exam Strategy by Rankers</li>
