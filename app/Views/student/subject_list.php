@@ -20,7 +20,7 @@
 				<?php foreach ($subject_list as $key => $subjectRow): ?>
 					<div class="col-md-3">
 						<div class="card">
-					        <div class="badge"><?=$subjectRow->level_name?></div>
+					        <!-- <div class="badge"><?=$subjectRow->level_name?></div> -->
 					        <div class="title"><?=$subjectRow->subject_name?></div>
 					        <div class="price">₹<?=$subjectRow->offer_price?> <span class="original-price">₹<?=$subjectRow->original_price?></span></div>
 					        <?php
