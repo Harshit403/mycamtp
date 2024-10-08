@@ -47,83 +47,186 @@
   </section>
 </div> -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .test-series {
-            margin-top: 25px;
-            background-color: #E3FCFF; /* Light background for contrast */
-            padding: 40px 20px; /* Spacing around the section */
-            border-radius: 8px; /* Rounded corners */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    /* Light, clean background suitable for top section */
+    .test-series {
+        margin-top: 0;
+        background-color: #E3FCFF; /* Soft blueish background */
+        padding: 120px 20px; /* Spacious top section padding */
+        border-radius: 0 0 50px 50px; /* Soft rounding at the bottom */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Gentle shadow */
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
 
-        .container {
-            max-width: 800px; /* Max width for better readability */
-            margin: 0 auto; /* Center the content horizontally */
-        }
+    /* Decorative element to make top portion pop */
+    .test-series::before, .test-series::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgba(0, 128, 128, 0.1);
+        z-index: 0;
+    }
 
+    /* First decorative element: large soft teal circle */
+    .test-series::before {
+        top: -150px;
+        left: -150px;
+        width: 400px;
+        height: 400px;
+    }
+
+    /* Second decorative element: smaller circle for added depth */
+    .test-series::after {
+        bottom: -120px;
+        right: -100px;
+        width: 250px;
+        height: 250px;
+        background-color: rgba(0, 128, 128, 0.15);
+    }
+
+    /* Added gradient wave effect to the background */
+    .wave-effect {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 120px;
+        background: url('https://www.svgrepo.com/show/344416/wave.svg') no-repeat bottom;
+        background-size: cover;
+        z-index: 1;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        z-index: 2;
+        position: relative;
+        padding: 0 20px;
+    }
+
+    /* Elegant and engaging heading */
+    .section-title {
+        font-size: 60px; /* Larger, bolder title */
+        font-weight: 800;
+        color: #007B7B; /* Dark teal for a professional touch */
+        margin-bottom: 25px;
+        letter-spacing: 1.5px;
+        line-height: 1.2;
+    }
+
+    /* Subtle description to support heading */
+    .intro-text {
+        font-size: 24px;
+        color: #4D4D4D; /* Soft grey for text */
+        margin-bottom: 20px;
+        line-height: 1.8;
+    }
+
+    .description {
+        font-size: 20px;
+        font-style: italic;
+        color: #333;
+        margin-bottom: 40px;
+    }
+
+    /* Clean and visually appealing list of benefits */
+    .benefits-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px; /* Space between list items */
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        position: relative;
+    }
+
+    .benefits-list li {
+        background-color: #FFFFFF;
+        padding: 30px;
+        width: 30%; /* Three per row on larger screens */
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: left;
+        position: relative;
+    }
+
+    /* Lift effect and shadow change on hover */
+    .benefits-list li:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Icon design and color */
+    .benefits-list li i {
+        font-size: 32px; /* Larger icon for emphasis */
+        color: #007B7B; /* Match with the title color */
+        margin-right: 15px;
+    }
+
+    .benefits-list li span {
+        font-size: 18px; /* Slightly larger text for readability */
+        color: #333;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 992px) {
         .section-title {
-            font-size: 28px; /* Larger font size for the title */
-            color: #000; /* Black for the title */
-            margin-bottom: 20px; /* Spacing below title */
-            font-weight: bold; /* Bold font for emphasis */
-            text-align: left; /* Left align title */
+            font-size: 50px;
         }
-
-        .intro-text {
-            font-size: 18px; /* Medium font size */
-            color: #333; /* Dark grey for a softer black */
-            margin-bottom: 20px; /* Spacing below intro text */
-            text-align: left; /* Left align intro */
-        }
-
-        .description {
-            font-size: 16px; /* Slightly smaller font size */
-            color: #555; /* A lighter black for description */
-            margin-bottom: 30px; /* Spacing below description */
-            text-align: left; /* Left align description */
-        }
-
-        .benefits-list {
-            list-style: none; /* Remove default list styling */
-            padding: 0; /* Remove padding */
-            text-align: left; /* Align text to the left */
-        }
-
         .benefits-list li {
-            font-size: 16px; /* Consistent font size for list items */
-            color: #000; /* Solid black for the list text */
-            margin-bottom: 10px; /* Spacing between list items */
+            width: 45%; /* Two per row on tablets */
         }
+    }
 
-        .benefits-list li i {
-            margin-right: 10px; /* Spacing between icon and text */
-            font-size: 20px; /* Size for the checkmark */
-            color: #2FBCCD; /* Custom color for checkmarks */
+    @media (max-width: 768px) {
+        .section-title {
+            font-size: 38px;
         }
-        @media (max-width: 600px) {
-           .section-title {
-           font-size: 24px; /* Adjust size for smaller screens */
+        .benefits-list li {
+            width: 100%; /* One per row on mobile devices */
         }
-}
-    </style>
+        .intro-text {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .section-title {
+            font-size: 32px;
+        }
+        .intro-text {
+            font-size: 18px;
+        }
+        .description {
+            font-size: 16px;
+        }
+    }
+</style>
 
 <section class="test-series">
     <div class="container">
-        <h1 class="section-title text-danger mb-4 fw-bolder" style="color: #FF1744; font-size: 1.7rem; white-space: nowrap;">Mission CS <span class="text-danger"> Test Series</span></h1>
-        <p class="intro-text">We offer the most affordable and quality CS Test series for CS Executive and CS Professional exams, along with live mentorship from Rankers and Qualified Company Secretaries.</p>
-        <p class="description"><i>Each of our Test series is designed by AIRs considering the needs of CS Executive and Professional exams.</i></p>
+        <h1 class="section-title">Mission CS Test Series</h1>
+        <p class="intro-text">Affordable, high-quality CS Test series for CS Executive and Professional exams. Get live mentorship from Rankers and Qualified Company Secretaries.</p>
+        <p class="description">Each series is curated by top rankers, designed to ensure success in your exams.</p>
         
         <ul class="benefits-list">
-            <li><i class="fas fa-check"></i> Complete Exam Strategy by Rankers</li>
-            <li><i class="fas fa-check"></i> Mentorship by Rankers</li>
-            <li><i class="fas fa-check"></i> Real Exam-like Question Papers</li>
-            <li><i class="fas fa-check"></i> Guidance Until Exams</li>
-            <li><i class="fas fa-check"></i> Proven Rank Boosting Strategies</li>
-            <li><i class="fas fa-check"></i> Question Papers Set by Rankers</li>
+            <li><i class="fas fa-check-circle"></i> <span>Complete Exam Strategy by Rankers</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Mentorship by Rankers</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Real Exam-like Question Papers</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Guidance Until Exams</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Proven Rank Boosting Strategies</span></li>
+            <li><i class="fas fa-check-circle"></i> <span>Question Papers Set by Rankers</span></li>
         </ul>
     </div>
+    <div class="wave-effect"></div> <!-- Added wave effect -->
 </section>
+
 
 
 
