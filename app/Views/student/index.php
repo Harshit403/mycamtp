@@ -139,7 +139,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px; /* Space between list items */
+    gap: 10px; /* Space between list items */
     padding: 0;
     margin: 0;
     list-style: none;
