@@ -48,173 +48,187 @@
 </div> -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <style>
-    /* Light, clean background suitable for top section */
-    .test-series {
-        margin-top: 0;
-        background-color: #E3FCFF; /* Soft blueish background */
-        padding: 120px 20px; /* Spacious top section padding */
-        border-radius: 0 0 50px 50px; /* Soft rounding at the bottom */
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Gentle shadow */
-        position: relative;
-        z-index: 1;
-        overflow: hidden;
-    }
+/* Light, clean background suitable for top section */
+.test-series {
+    margin-top: 0;
+    background-color: #E3FCFF; /* Soft blueish background */
+    padding: 120px 20px; /* Spacious top section padding */
+    border-radius: 0 0 50px 50px; /* Soft rounding at the bottom */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Gentle shadow */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
 
-    /* Decorative element to make top portion pop */
-    .test-series::before, .test-series::after {
-        content: "";
-        position: absolute;
-        border-radius: 50%;
-        background-color: rgba(0, 128, 128, 0.1);
-        z-index: 0;
-    }
+/* Decorative element to make top portion pop */
+.test-series::before, .test-series::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(0, 128, 128, 0.1);
+    z-index: 0;
+}
 
-    /* First decorative element: large soft teal circle */
-    .test-series::before {
-        top: -150px;
-        left: -150px;
-        width: 400px;
-        height: 400px;
-    }
+/* First decorative element: large soft teal circle */
+.test-series::before {
+    top: -150px;
+    left: -150px;
+    width: 400px;
+    height: 400px;
+}
 
-    /* Second decorative element: smaller circle for added depth */
-    .test-series::after {
-        bottom: -120px;
-        right: -100px;
-        width: 250px;
-        height: 250px;
-        background-color: rgba(0, 128, 128, 0.15);
-    }
+/* Second decorative element: smaller circle for added depth */
+.test-series::after {
+    bottom: -120px;
+    right: -100px;
+    width: 250px;
+    height: 250px;
+    background-color: rgba(0, 128, 128, 0.15);
+}
 
-    /* Added gradient wave effect to the background */
-    .wave-effect {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 120px;
-        background: url('https://www.svgrepo.com/show/344416/wave.svg') no-repeat bottom;
-        background-size: cover;
-        z-index: 1;
-    }
+/* Added gradient wave effect to the background */
+.wave-effect {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: url('https://www.svgrepo.com/show/344416/wave.svg') no-repeat bottom;
+    background-size: cover;
+    z-index: 1;
+}
 
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        text-align: center;
-        z-index: 2;
-        position: relative;
-        padding: 0 20px;
-    }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    padding: 0 20px;
+}
 
-    /* Elegant and engaging heading */
-    .section-title {
-        font-size: 60px; /* Larger, bolder title */
-        font-weight: 800;
-        color: #007B7B; /* Dark teal for a professional touch */
-        margin-bottom: 25px;
-        letter-spacing: 1.5px;
-        line-height: 1.2;
-    }
+/* Elegant and engaging heading */
+.section-title {
+    font-size: 60px; /* Larger, bolder title */
+    font-weight: 800;
+    color: #007B7B; /* Dark teal for a professional touch */
+    margin-bottom: 25px;
+    letter-spacing: 1.5px;
+    line-height: 1.2;
+}
 
-    /* Subtle description to support heading */
-    .intro-text {
-        font-size: 24px;
-        color: #4D4D4D; /* Soft grey for text */
-        margin-bottom: 20px;
-        line-height: 1.8;
-    }
+/* Subtle description to support heading */
+.intro-text {
+    font-size: 24px;
+    color: #4D4D4D; /* Soft grey for text */
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
 
-    .description {
-        font-size: 20px;
-        font-style: italic;
-        color: #333;
-        margin-bottom: 40px;
-    }
+.description {
+    font-size: 20px;
+    font-style: italic;
+    color: #333;
+    margin-bottom: 40px;
+}
 
-    /* Clean and visually appealing list of benefits */
-    .benefits-list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px; /* Space between list items */
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        position: relative;
-    }
+/* Clean and visually appealing list of benefits */
+.benefits-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Space between list items */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+}
 
-    /* Clean and visually appealing list of benefits */
-   .benefits-list li {
-      background-color: #FFFFFF;
-      padding: 30px;
-    width: 80%; /* Reduced width to 80% */
-    max-width: 300px; /* Optional: Max width for consistency */
+/* Reduced card size and text adjustments */
+.benefits-list li {
+    background-color: #FFFFFF;
+    padding: 20px; /* Reduced padding */
+    width: 70%; /* Reduced width for smaller cards */
+    max-width: 260px; /* Optional: Max width for consistency */
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
     position: relative;
-    white-space: nowrap; /* Prevent text from wrapping */
-    overflow: hidden; /* Hide overflow text */
-    text-overflow: ellipsis; /* Add ellipsis for overflow text */
 }
 
+/* Lift effect and shadow change on hover */
+.benefits-list li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
 
-    /* Lift effect and shadow change on hover */
-    .benefits-list li:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+/* Icon design and color */
+.benefits-list li i {
+    font-size: 24px; /* Reduced icon size */
+    color: #007B7B; /* Match with the title color */
+    margin-right: 10px; /* Adjust margin for compact layout */
+}
+
+.benefits-list li span {
+    font-size: 16px; /* Reduced text size */
+    color: #333;
+    white-space: normal; /* Allow text wrapping */
+    line-height: 1.4; /* Adjust line-height for readability */
+}
+
+/* Responsive styling */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 50px;
     }
 
-    /* Icon design and color */
+    .benefits-list li {
+        width: 45%; /* Two per row on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 38px;
+    }
+
+    .benefits-list li {
+        width: 100%; /* One per row on mobile devices */
+    }
+    .intro-text {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 32px;
+    }
+
+    .benefits-list li {
+        width: 100%;
+        padding: 15px; /* Reduced padding for smaller screens */
+    }
+
     .benefits-list li i {
-        font-size: 32px; /* Larger icon for emphasis */
-        color: #007B7B; /* Match with the title color */
-        margin-right: 15px;
+        font-size: 20px; /* Further reduce icon size */
     }
 
     .benefits-list li span {
-        font-size: 18px; /* Slightly larger text for readability */
-        color: #333;
+        font-size: 14px; /* Further reduce text size */
     }
 
-    /* Responsive styling */
-    @media (max-width: 992px) {
-        .section-title {
-            font-size: 50px;
-        }
-        .benefits-list li {
-            width: 45%; /* Two per row on tablets */
-        }
+    .intro-text {
+        font-size: 18px;
     }
-
-    @media (max-width: 768px) {
-        .section-title {
-            font-size: 38px;
-        }
-        .benefits-list li {
-            width: 100%; /* One per row on mobile devices */
-        }
-        .intro-text {
-            font-size: 20px;
-        }
+    .description {
+        font-size: 16px;
     }
-
-    @media (max-width: 576px) {
-        .section-title {
-            font-size: 32px;
-        }
-        .intro-text {
-            font-size: 18px;
-        }
-        .description {
-            font-size: 16px;
-        }
-    }
+}
 </style>
-
 <section class="test-series">
     <div class="container">
         <h1 class="section-title">Mission CS Test Series</h1>
