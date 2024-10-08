@@ -4,7 +4,30 @@
             margin: 0;
             font-family: Arial, sans-serif;
         }
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+        }
 
+        .auth-button {
+            background-color: white;
+            color: #25c2c6;
+            border: 1px solid transparent;
+            padding: 8px 20px;
+            margin-right: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .auth-button:hover {
+            background-color: #1a9ea1;
+            color: white;
+            border-color: white;
+            }
         .banner {
             background-color: #2FBCCD;
             display: flex;
@@ -59,10 +82,13 @@
 </div>
     <!-- Banner -->
     <header class="banner">
-        <div class="contact">
-            <i class="fas fa-phone-alt"></i>
-            <span>9999999999</span>
-        </div>
+<div class="contact-bar">
+    <!-- Authentication Buttons -->
+    <div class="auth-buttons">
+        <button class="auth-button">Login</button>
+        <button class="auth-button">Signup</button>
+    </div>
+
         <div class="social-icons">
             <a href="#" class="icon whatsapp"><i class="fab fa-whatsapp"></i></a>
             <a href="#" class="icon youtube"><i class="fab fa-youtube"></i></a>
