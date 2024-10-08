@@ -64,8 +64,7 @@
 <div style="height: 80px;" class="spacing">
 </div>
     <!-- Banner -->
-    <header class="banner">
-   <div class="contact-bar">
+    <header class="banner"
     <!-- Authentication Buttons -->
     <div class="auth-buttons">
         <button class="auth-button">Login</button>
