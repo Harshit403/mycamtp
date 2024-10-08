@@ -362,11 +362,11 @@
 
 
 <section>
-    <!-- Card Section -->
+   <!-- Card Section -->
     <div class="container mt-5">
-        <div class="card shadow-sm border-0" style="border-radius: 15px;">
+        <div class="card shadow-sm border-0 mb-3" style="border-radius: 15px;">
             <div class="card-body">
-                <h5 class="card-title text-center p-2" style="background-color: #00C1B5; color: white; border-radius: 10px;">My Mission CS Test Series</h5>
+                <h5 class="card-title text-center text-white py-2" style="background-color: #2FBCCD; border-radius: 10px;">Why Mission CS Test Series?</h5>
                 <p class="card-text mt-3">Mission CS Test Series is designed by Rankers who have years of experience. We have carefully crafted each test to cover the entire syllabus and provide you with the best practice and revision. You will get access to multiple tests, each with detailed solutions and explanations. You will also get feedback and analysis of your performance, along with tips and tricks to improve your score.</p>
                 <p class="card-text">Mission CS Test Series is the most trusted and reliable test series for the CS exams. Thousands of students have used our test series and achieved their dream of becoming a professional. You can be one of them too. Join Mission CS Test Series today and get ready to conquer the CS Exams.</p>
             </div>
