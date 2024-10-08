@@ -377,6 +377,7 @@
     border-radius: 10px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
+    margin: 0;
 }
 
 .cs-test-card-header-xyz {
@@ -411,7 +412,7 @@
     }
 
     .cs-test-card-body-xyz {
-        padding: 15px;
+        padding: 10px;
     }
 }
 
@@ -421,7 +422,7 @@
     }
 
     .cs-test-card-body-xyz {
-        padding: 10px;
+        padding: 5px;
         font-size: 14px;
     }
 }
