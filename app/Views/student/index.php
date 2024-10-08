@@ -372,7 +372,7 @@
 <style>
   /* Section without background color, just padding */
   #image-section {
-    padding: 40px 0;
+    padding: 20px 0;
     display: flex;
     justify-content: center;  /* Horizontally centers the content */
     align-items: center;      /* Vertically centers the content */
@@ -383,11 +383,11 @@
 
   /* Image wrapper with visually appealing border */
   .image-wrapper {
-    padding: 10px;
+    padding: 5px;
     border: 5px solid transparent;
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    max-width: 95%; /* Now fills 95% of the screen width */
+    max-width: 98%; /* Now fills 95% of the screen width */
     overflow: hidden;
     display: inline-block;
     position: relative; /* For pseudo-element positioning */
@@ -524,7 +524,7 @@
 
         .cs-card-header {
             background: linear-gradient(135deg, #2FBCCD, #138f7f); /* Gradient applied */
-            padding: 10px; /* Reduced padding */
+            padding: 5px; /* Reduced padding */
             color: #fff;
             text-align: center;
         }
@@ -535,7 +535,7 @@
         }
 
         .cs-card-content {
-            padding: 15px; /* Reduced padding */
+            padding: 8px; /* Reduced padding */
             color: #333;
             font-size: 0.9rem; /* Reduced font size */
             line-height: 1.4;
@@ -543,7 +543,7 @@
         }
 
         .cs-card-content p {
-            margin-bottom: 10px; /* Reduced margin */
+            margin-bottom: 5px; /* Reduced margin */
         }
 
     </style>
