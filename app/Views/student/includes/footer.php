@@ -3,20 +3,14 @@
           <footer class="text-center text-lg-start text-white" style="background-color: #1c2331">
             <section class="d-flex justify-content-between p-4" style="background-color: #2FBCCD">
               <div class="me-5">
-                <span>Get connected with us on social networks:</span>
+                <span>Get connected with us:</span>
               </div>
               <div>
                 <a href="" class="text-white me-4">
                   <i class="bi bi-facebook"></i>
                 </a>
-                <a href="" class="text-white me-4">
-                  <i class="bi bi-twitter-x"></i>
-                </a>
-                <a href="" class="text-white me-4">
+                <a href="https://Instagram.com/mission.cs" class="text-white me-4">
                   <i class="bi bi-instagram"></i>
-                </a>
-                <a href="" class="text-white me-4">
-                  <i class="bi bi-linkedin"></i>
                 </a>
               </div>
             </section>
@@ -24,16 +18,16 @@
               <div class="container text-center text-md-start mt-5">
                 <div class="row mt-3">
                   <div class="col-md-4 mb-4" style="text-align: left;">
-                    <h6 class="text-uppercase fw-bold">Products</h6>
+                    <h6 class="text-uppercase fw-bold">Services</h6>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
                     <p>
-                      <a href="#!" class="text-white">CA Test Series</a>
+                      <a href="#!" class="text-white">CSEET</a>
                     </p>
                     <p>
-                      <a href="#!" class="text-white">CMA Test Series</a>
+                      <a href="#!" class="text-white">CS Executive</a>
                     </p>
                     <p>
-                      <a href="#!" class="text-white">CS Test Series</a>
+                      <a href="#!" class="text-white">CS Professional</a>
                     </p>
                   </div>
                   <div class="col-md-4 mb-4" style="text-align: left;">
@@ -64,17 +58,16 @@
                   <div class="col-md-4 mb-4" style="text-align: left;">
                     <h6 class="text-uppercase fw-bold">Contact</h6>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
-                    <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                    <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
-                    <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                    <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                    <p><i class="fas fa-home mr-3"></i> Ghaziabad, Delhi NCR</p>
+                    <p><i class="fas fa-envelope mr-3"></i> exam@missioncstestseries.com </p>
+                    <p><i class="fas fa-phone mr-3"></i> +91 9873045724</p>
                   </div>
                 </div>
               </div>
             </section>
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)" >
-              © 2020 Copyright:
-              <a class="text-white" href="<?=base_url()?>" style="text-decoration: none;">MYCAMTP</a>
+              © 2024 Copyright:
+              <a class="text-white" href="<?=base_url()?>" style="text-decoration: none;">Mission CS Test Series</a>
             </div>
           </footer>
         </div>
