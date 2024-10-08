@@ -360,6 +360,7 @@
     </div>
 </section> -->
 
+
 <section class="py-5 container" id="image-section">
   <div class="container-fluid">
     <div class="image-wrapper">
@@ -386,7 +387,7 @@
     border: 5px solid transparent;
     border-radius: 15px; /* Rounded corners */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    max-width: 90%; /* Prevents the wrapper from exceeding the width */
+    max-width: 95%; /* Now fills 95% of the screen width */
     overflow: hidden;
     display: inline-block;
     position: relative; /* For pseudo-element positioning */
@@ -408,7 +409,7 @@
 
   /* Making the image fit and responsive */
   .ranker-image {
-    width: 100%;
+    width: 100%; /* Full width of the wrapper */
     height: auto;
     object-fit: cover; /* Ensures proper scaling while maintaining aspect ratio */
     border-radius: 10px; /* Rounded corners for the image */
@@ -426,6 +427,7 @@
     .image-wrapper {
       padding: 8px;
       border-radius: 12px;
+      max-width: 95%; /* Keep it 95% width for tablets */
     }
 
     .ranker-image {
@@ -442,6 +444,7 @@
     .image-wrapper {
       padding: 5px;
       border-radius: 8px;
+      max-width: 95%; /* Ensure image still fits 95% of mobile screen */
     }
 
     .ranker-image {
