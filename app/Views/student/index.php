@@ -145,16 +145,22 @@
         position: relative;
     }
 
-    .benefits-list li {
-        background-color: #FFFFFF;
-        padding: 30px;
-        width: 30%; /* Three per row on larger screens */
-        border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        text-align: left;
-        position: relative;
-    }
+    /* Clean and visually appealing list of benefits */
+   .benefits-list li {
+      background-color: #FFFFFF;
+      padding: 30px;
+    width: 80%; /* Reduced width to 80% */
+    max-width: 300px; /* Optional: Max width for consistency */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    position: relative;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
 
     /* Lift effect and shadow change on hover */
     .benefits-list li:hover {
