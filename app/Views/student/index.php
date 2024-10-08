@@ -173,7 +173,7 @@
 }
 
 .benefits-list li span {
-    font-size: 12px; /* Reduced text size */
+    font-size: 17px; /* Reduced text size */
     color: #333;
     white-space: normal; /* Allow text wrapping */
     line-height: 1.1; /* Adjust line-height for readability */
@@ -218,7 +218,7 @@
     }
 
     .benefits-list li span {
-        font-size: 10px; /* Further reduce text size */
+        font-size: 20px; /* Further reduce text size */
     }
 
     .intro-text {
