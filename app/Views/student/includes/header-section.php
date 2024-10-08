@@ -67,8 +67,10 @@
     <header class="banner"
     <!-- Authentication Buttons -->
     <div class="auth-buttons">
-        <button class="auth-button">Login</button>
-        <button class="auth-button">Signup</button>
+        <a href="<?=base_url()?>auth?auth=login" class="auth-button">Login</a>
+         <a href="<?=base_url()?>auth?auth=register" class="auth-button">Register</a>
+       <!-- <button class="auth-button">Login</button>
+        <button class="auth-button">Signup</button> -->
     </div>
 
         <div class="social-icons">
