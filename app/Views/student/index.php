@@ -530,7 +530,7 @@
     .cs-card-content {
         padding: 15px; /* Adjust padding for content readability */
         color: #333;
-        font-size: 0.9rem; /* Adjust font size for readability */
+        font-size: 1.6rem; /* Adjust font size for readability */
         line-height: 1.4;
         text-align: justify;
     }
