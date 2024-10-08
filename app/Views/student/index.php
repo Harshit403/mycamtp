@@ -214,11 +214,11 @@
     }
 
     .benefits-list li i {
-        font-size: 20px; /* Further reduce icon size */
+        font-size: 14px; /* Further reduce icon size */
     }
 
     .benefits-list li span {
-        font-size: 20px; /* Further reduce text size */
+        font-size: 14px; /* Further reduce text size */
     }
 
     .intro-text {
