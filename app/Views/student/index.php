@@ -493,8 +493,19 @@
 
 
     <style>
+
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: #f3f4f6;
+        }
+
         .cardo {
-            margin-top: 20px; /* Added margin for space on top */
+            margin-top: 7px; /* Added margin for space on top */
+            margin-bottom: 7px;
             width: 85%;
             max-width: 400px;
             background-color: #ffffff;
