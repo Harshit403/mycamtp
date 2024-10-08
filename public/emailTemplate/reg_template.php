@@ -20,8 +20,8 @@
                                 </tr>
                                 <tr>
                                     <td style="text-align:center;">
-                                        <a href="https://www.mycsmtp.com/" title="logo" target="_blank">
-                                            <img style="width: 140px;" src="https://mycsmtp.com/design_assets/images/mycsmtp_logo.jpg" title="logo" alt="logo">
+                                        <a href="https://www.missioncstestseries.com/" title="logo" target="_blank">
+                                            <img style="width: 140px;" src="https://i.ibb.co/rQ9H9P9/IMG-20241008-204627.jpg" title="logo" alt="logo">
                                         </a>
                                     </td>
                                 </tr>
@@ -30,10 +30,10 @@
                                 </tr>
                                 <tr>
                                     <td style="padding:0 35px;">
-                                        <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">Welcome to MY CS MTP
+                                        <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">Welcome to Mission CS Test Series
                                         </h1>
                                         <p style="font-size:15px; color:#455056; margin:8px 0 0; line-height:24px;">
-                                            Thank you for Signing up on MY CS MTP. You're one step closer to accessing our test series and improving your skills.
+                                            Thank you for Signing up on Mission CS Test Series. You're one step closer to accessing our test series and improving your skills.
                                         </p>
                                         <p style="font-size:15px; color:#455056; margin:8px 0 0; line-height:24px;">
                                             Your Account Details, <br></p>
@@ -51,7 +51,7 @@
                                             Best regards 
                                         </p>
                                         <p style="font-size:16px; color:#455056;line-height:24px;text-align: left!important;font-weight: 600!important;margin-top: 0 !important;">
-                                            MY CS MTP 
+                                            Mission CS Test Series
                                         </p>
                                     </td>
                                 </tr>
@@ -66,7 +66,7 @@
                     </tr>
                     <tr>
                         <td style="text-align:center;">
-                            <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; <strong>www.mycsmtp.com</strong> </p>
+                            <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; <strong>https://missioncstestseries.com</strong> </p>
                         </td>
                     </tr>
                     <tr>
