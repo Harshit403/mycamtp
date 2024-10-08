@@ -13,9 +13,9 @@
             background-color: white;
             color: #25c2c6;
             border: 1px solid transparent;
-            padding: 8px 20px;
+            padding: 6.8px 17px;
             margin-right: 10px;
-            font-size: 14px;
+            font-size: 11px;
             font-weight: bold;
             text-transform: uppercase;
             border-radius: 20px;
