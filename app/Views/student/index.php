@@ -360,6 +360,88 @@
     </div>
 </section> 
 
+<style>
+
+.cs-test-container-xyz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+.cs-test-card-xyz {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+.cs-test-card-header-xyz {
+    background-color: #00b5ad;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.cs-test-card-header-xyz h2 {
+    font-size: 24px;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.cs-test-card-body-xyz {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.cs-test-card-body-xyz p {
+    margin-bottom: 15px;
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 768px) {
+    .cs-test-card-header-xyz h2 {
+        font-size: 20px;
+    }
+
+    .cs-test-card-body-xyz {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cs-test-card-header-xyz h2 {
+        font-size: 18px;
+    }
+
+    .cs-test-card-body-xyz {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+</style>
+
+<div class="cs-test-container-xyz">
+    <div class="cs-test-card-xyz">
+        <div class="cs-test-card-header-xyz">
+            <h2>My Mission CS Test Series</h2>
+        </div>
+        <div class="cs-test-card-body-xyz">
+            <p>Mission CS Test Series is designed by Rankers who have years of experience. We have carefully crafted each test to cover the entire syllabus and provide you with the best practice and revision. You will get access to multiple tests, each with detailed solutions and explanations. You will also get feedback and analysis of your performance, along with tips and tricks to improve your score.</p>
+            <p>Mission CS Test Series is the most trusted and reliable test series for the CS exams. Thousands of students have used our test series and achieved their dream of becoming a professional. You can be one of them too. Join Mission CS Test Series today and get ready to conquer the CS Exams.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 
   <!--  <section class="py-5 container" id="content-section">
@@ -397,89 +479,6 @@
            <div class="col-md-4">
                 <img src="<?=base_url()?>/assetItems/image/image2.jpg" class="img-thumbnail" style="width: 400px;">
             </div> -->
-
-<style>
-  .cs-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 5px 0; 
-        
-    }
-
-    .cs-card {
-        width: 100%;
-        max-width: 400px;
-        background-color: #ffffff;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .cs-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    }
-
-    .cs-card-header {
-        background: linear-gradient(135deg, #2FBCCD, #138f7f); /* Gradient applied */
-        padding: 10px; /* Add some padding */
-        color: #fff;
-        text-align: center;
-    }
-
-    .cs-card-header h1 {
-        font-size: 1.3rem; /* Adjusted font size */
-        margin: 0;
-    }
-
-    .cs-card-content {
-        padding: 15px; /* Adjust padding for content readability */
-        color: #333;
-        font-size: 4.0rem; /* Adjust font size for readability */
-        line-height: 1.7;
-        text-align: justify;
-    }
-
-    .cs-card-content p {
-        margin-bottom: 10px; /* Adjusted margin for paragraph separation */
-    }
-
-    /* Responsive styles */
-    @media (max-width: 768px) {
-        .cs-card {
-            max-width: 90%; /* Adjust max-width for tablets */
-        }
-    }
-
-    @media (max-width: 480px) {
-        .cs-card {
-            max-width: 100%; /* Full width for smaller screens */
-        }
-
-        .cs-card-header h1 {
-            font-size: 1.1rem; /* Adjust font size for smaller screens */
-        }
-
-        .cs-card-content {
-            font-size: 0.8rem; /* Adjust font size for better readability on mobile */
-        }
-    }
-</style>
-
-<div class="cs-container">
-    <div class="cs-card">
-        <div class="cs-card-header">
-            <h1>My Mission CS Test Series</h1>
-        </div>
-        <div class="cs-card-content">
-            <p>Mission CS Test Series is designed by Rankers who have years of experience. We have carefully crafted each test to cover the entire syllabus and provide you with the best practice and revision. You will get access to multiple tests, each with detailed solutions and explanations. You will also get feedback and analysis of your performance, along with tips and tricks to improve your score.</p>
-            <p>Mission CS Test Series is the most trusted and reliable test series for the CS exams. Thousands of students have used our test series and achieved their dream of becoming a professional. You can be one of them too. Join Mission CS Test Series today and get ready to conquer the CS Exams.</p>
-        </div>
-    </div>
-</div>
-
 
 <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
   <div class="carousel-inner">
