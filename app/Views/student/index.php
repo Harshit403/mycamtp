@@ -455,7 +455,7 @@
 </style>
 
 
-    <section class="py-5 container" id="content-section">
+  <!--  <section class="py-5 container" id="content-section">
         <h1 class="text-center text-uppercase">Our Goals</h1>
         <div class="row">
             <div class="col-md-8">
@@ -487,9 +487,66 @@
                   proident, sunt in culpa qui officia deserunt mollit anim id est laborum.3</div>
                 </div>
             </div>
-         <!--   <div class="col-md-4">
+           <div class="col-md-4">
                 <img src="<?=base_url()?>/assetItems/image/image2.jpg" class="img-thumbnail" style="width: 400px;">
             </div> -->
+
+
+    <style>
+        .cardo {
+            margin-top: 20px; /* Added margin for space on top */
+            width: 85%;
+            max-width: 400px;
+            background-color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cardo:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .cardo-header {
+            background: linear-gradient(135deg, #2FBCCD, #138f7f); /* Gradient applied */
+            padding: 10px; /* Reduced padding */
+            color: #fff;
+            text-align: center;
+        }
+
+        .cardo-header h1 {
+            font-size: 1.3rem; /* Reduced font size */
+            margin-bottom: 0;
+        }
+
+        .cardo-content {
+            padding: 15px; /* Reduced padding */
+            color: #333;
+            font-size: 0.9rem; /* Reduced font size */
+            line-height: 1.4;
+            text-align: justify;
+        }
+
+        .cardo-content p {
+            margin-bottom: 10px; /* Reduced margin */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="cardo">
+        <div class="cardo-header">
+            <h1>My Mission CS Test Series</h1>
+        </div>
+        <div class="cardo-content">
+            <p>Mission CS Test Series is designed by Rankers who have years of experience. We have carefully crafted each test to cover the entire syllabus and provide you with the best practice and revision. You will get access to multiple tests, each with detailed solutions and explanations. You will also get feedback and analysis of your performance, along with tips and tricks to improve your score.</p>
+            <p>Mission CS Test Series is the most trusted and reliable test series for the CS exams. Thousands of students have used our test series and achieved their dream of becoming a professional. You can be one of them too. Join Mission CS Test Series today and get ready to conquer the CS Exams.</p>
+        </div>
+    </div>
+
+
 
 <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
   <div class="carousel-inner">
