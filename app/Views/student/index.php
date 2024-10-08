@@ -354,14 +354,14 @@
     }
 </style>
 
-<!-- <section class="py-5 container" id="image-section">
+<section class="py-5 container" id="image-section">
 <div class="container-fluid">
         <img src="<?=base_url()?>/assetItems/image/owner.jpg" class="img-fluid" alt="Responsive image">
     </div>
-</section> -->
+</section> 
 
 
-<section class="py-5 container" id="image-section">
+<!-- <section class="py-5 container" id="image-section">
   <div class="container-fluid">
     <div class="image-wrapper">
       <img src="<?=base_url()?>/assetItems/image/owner.jpg" class="ranker-image" alt="Ranker Image">
@@ -369,7 +369,7 @@
   </div>
 </section>
 
-<style>
+ <style>
   /* Section without background color, just padding */
   #image-section {
     padding: 20px 0;
@@ -452,7 +452,7 @@
       width: 100%;
     }
   }
-</style>
+</style> -->
 
 
   <!--  <section class="py-5 container" id="content-section">
@@ -496,7 +496,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 3px 0; 
+        margin: 5px 0; 
         
     }
 
