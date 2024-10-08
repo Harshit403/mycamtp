@@ -232,8 +232,8 @@
 <section class="test-series">
     <div class="container">
         <h1 class="section-title">Mission CS Test Series</h1>
-        <p class="intro-text">Affordable, high-quality CS Test series for CS Executive and Professional exams. Get live mentorship from Rankers and Qualified Company Secretaries.</p>
-        <p class="description">Each series is curated by top rankers, designed to ensure success in your exams.</p>
+        <p class="intro-text">We offer the most affordable and Quality CS Test series for CS Executive and CS Professional exams, along with live Mentorship from Rankers and Qualified Company Secretaries.</p>
+        <p class="description">Each of our test series is designed by AIRs considering the needs of CS Executive and Professional exams.</p>
         
         <ul class="benefits-list">
             <li><i class="fas fa-check-circle"></i> <span>Complete Exam Strategy by Rankers</span></li>
