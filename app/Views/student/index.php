@@ -150,7 +150,7 @@
 .benefits-list li {
     background-color: #FFFFFF;
     padding: 20px; /* Reduced padding */
-    width: 70%; /* Reduced width for smaller cards */
+    width: 90%; /* Reduced width for smaller cards */
     max-width: 260px; /* Optional: Max width for consistency */
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -173,10 +173,10 @@
 }
 
 .benefits-list li span {
-    font-size: 16px; /* Reduced text size */
+    font-size: 12px; /* Reduced text size */
     color: #333;
     white-space: normal; /* Allow text wrapping */
-    line-height: 1.4; /* Adjust line-height for readability */
+    line-height: 1.1; /* Adjust line-height for readability */
 }
 
 /* Responsive styling */
@@ -218,7 +218,7 @@
     }
 
     .benefits-list li span {
-        font-size: 14px; /* Further reduce text size */
+        font-size: 10px; /* Further reduce text size */
     }
 
     .intro-text {
