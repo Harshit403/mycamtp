@@ -83,13 +83,26 @@
     <!-- Banner -->
     <header class="banner"
     <!-- Authentication Buttons -->
-    <div class="auth-buttons">
+ <!--   <div class="auth-buttons">
         <a href="<?=base_url()?>auth?auth=login" class="auth-button">Login</a>
          <a href="<?=base_url()?>auth?auth=register" class="auth-button">Register</a>
        <!-- <button class="auth-button">Login</button>
         <button class="auth-button">Signup</button> -->
-    </div>
+    </div> -->
 
+<?php if (session()->get('studentDetails') !== null): ?>
+   <div class="auth-buttons">
+        <a href="<?= base_url() ?>auth?auth=login" class="auth-button">Login</a>
+        <a href="<?= base_url() ?>auth?auth=register" class="auth-button">Register</a>
+    </div>
+<?php else: ?>
+    <div class="contact">
+        <i class="fas fa-phone-alt"></i>
+        <span>+91-9873045724</span>
+    </div>
+<?php endif; ?>
+
+    
         <div class="social-icons">
             <a href="https://wa.me/919873045724/" class="icon whatsapp"><i class="fab fa-whatsapp"></i></a>
             <a href="#" class="icon youtube"><i class="fab fa-youtube"></i></a>
