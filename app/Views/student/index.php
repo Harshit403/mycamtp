@@ -672,7 +672,7 @@
                         <div class="card-body">
                             <h2><i class="bi bi-geo-alt"></i></h2>
                             <h4>Address</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                            <p>Ghaziabad, Delhi NCR</p>
                         </div>
                     </div>
                 </div>
@@ -681,7 +681,7 @@
                         <div class="card-body">
                             <h2><i class="bi bi-telephone"></i></h2>
                             <h4>Call Us</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                            <p>+91 9873045724</p>
                         </div>
                     </div>
                 </div>
@@ -690,7 +690,7 @@
                         <div class="card-body">
                             <h2><i class="bi bi-envelope"></i></h2>
                             <h4>Email</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                            <p>exam@missioncstestseries.com</p>
                         </div>
                     </div>
                 </div>
@@ -699,7 +699,8 @@
                         <div class="card-body">
                             <h2><i class="bi bi-clock"></i></h2>
                             <h4>Open Hours</h4>
-                            <p>We are available 24*7</p>
+                            <p>Sales: 24×7<br></p>
+                            <p>Others: Monday - Friday(10:00 AM to 8:00 PM)</p>
                         </div>
                     </div>
                 </div>
