@@ -4,6 +4,23 @@
             margin: 0;
             font-family: Arial, sans-serif;
         }
+        .contact {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact i {
+            margin-right: 15px; /* Add space between phone icon and number */
+            font-size: 1.2em;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .contact span {
+            font-size: 1.2em;
+            vertical-align: middle;
+        }
+        
        .auth-buttons {
             display: flex;
             align-items: center;
