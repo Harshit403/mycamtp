@@ -8,7 +8,7 @@
 <?=$this->endSection()?>
 <?= $this->section('meta_keywords') ?>
 <!-- enter your meta keywords widthout tag -->
- <meta name="title" content="Best CS Test Series for CSEET, Executive, & Professional Exams | Mission CS Test Series">
+<meta name="title" content="Best CS Test Series for CSEET, Executive, & Professional Exams | Mission CS Test Series">
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 
