@@ -84,15 +84,22 @@ $(document).ready(function() {
             processData: false,
             contentType: false,
             success: function(response) {
-                if (response.success) {
-                    window.location.href = baseUrl + "auth?auth=login";
-                } else {
-                    bootbox.alert({
-                        closeButton: false,
-                        message: response.message,
-                    })
-                }
+    if (response.success) {
+        // Show success dialog
+        bootbox.alert({
+            message: 'Registration successful! You can now log in.',
+            closeButton: false,
+            callback: function() {
+                window.location.href = baseUrl + "auth?auth=login"; // Redirect to login page
             }
+        });
+    } else {
+        bootbox.alert({
+            closeButton: false,
+            message: response.message,
+        });
+    }
+}
         });
     }
 
