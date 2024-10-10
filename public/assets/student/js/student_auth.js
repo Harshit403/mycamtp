@@ -85,19 +85,12 @@ $(document).ready(function() {
             contentType: false,
             success: function(response) {
                 if (response.success) {
-                    // Show success dialog
-                    bootbox.alert({
-                        message: 'Registration successful! You can now log in.',
-                        closeButton: false,
-                        callback: function() {
-                            window.location.href = baseUrl + "auth?auth=login"; // Redirect to login page
-                        }
-                    });
+                    window.location.href = baseUrl + "auth?auth=login";
                 } else {
                     bootbox.alert({
                         closeButton: false,
                         message: response.message,
-                    });
+                    })
                 }
             }
         });
@@ -202,7 +195,7 @@ $(document).ready(function() {
         var confirm_password = $("#con_password").val();
         if (password != confirm_password) {
             bootbox.alert({
-                message: 'Password and confirm password does not matched',
+                message: 'Password and confirm password does not match',
                 closeButton: false,
             });
             return false;
