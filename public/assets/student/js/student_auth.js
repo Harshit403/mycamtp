@@ -26,75 +26,85 @@ $(document).ready(function() {
         validateSignInData();
     });
 
+
     function addSignUpData() {
-        var formData = $("#sign_up_form").serializeArray();
-        var data = new FormData();
-        var errors = new Array;
-        $.each(formData, function(i, v) {
-            data.append(v.name, $.trim(v.value));
-        });
-        var password = data.get('password');
-        if (data.get('student_name') == '') {
-            errors.push('Please enter your name');
-        }
-        if (data.get('email') == '') {
-            errors.push('Please enter a email');
-        }
-        if (data.get('email') != '' && !emailPattern.test(data.get('email'))) {
-            errors.push('Email does not a valid email');
-        }
-        if (data.get('mobile_no') == '') {
-            errors.push('Please enter a mobile no');
-        }
-        if (password == '') {
-            errors.push('Please enter a password');
-        }
-        if (data.get('password') != '') {
-            if (password.length < 7) {
-                errors.push("Your password must be at least 7 characters");
-            }
-            if (password.search(/[a-z]/i) < 0) {
-                errors.push("Your password must contain at least one letter.");
-            }
-            if (password.search(/[0-9]/) < 0) {
-                errors.push("Your password must contain at least one digit.");
-            }
-        }
-        //if (data.get('password') != data.get('confirm_password')) {
-        //   errors.push('Password does not matched');
-        // }
-        if (data.get('city_name') == '') {
-            errors.push('Please enter a city');
-        }
-        if (data.get('state_name') == '') {
-            errors.push('Please enter a state');
-        }
-        if (errors.length > 0) {
-            bootbox.alert({
-                closeButton: false,
-                message: errors.join("</br>"),
-            });
-            return false;
-        }
-        $.ajax({
-            url: baseUrl + 'register-details',
-            type: 'POST',
-            data: data,
-            dataType: 'JSON',
-            processData: false,
-            contentType: false,
-            success: function(response) {
-                if (response.success) {
-                    window.location.href = baseUrl + "auth?auth=login";
-                } else {
-                    bootbox.alert({
-                        closeButton: false,
-                        message: response.message,
-                    })
-                }
-            }
-        });
+    var formData = $("#sign_up_form").serializeArray();
+    var data = new FormData();
+    var errors = new Array;
+    $.each(formData, function(i, v) {
+        data.append(v.name, $.trim(v.value));
+    });
+    var password = data.get('password');
+    if (data.get('student_name') == '') {
+        errors.push('Please enter your name');
     }
+    if (data.get('email') == '') {
+        errors.push('Please enter a email');
+    }
+    if (data.get('email') != '' && !emailPattern.test(data.get('email'))) {
+        errors.push('Email does not a valid email');
+    }
+    if (data.get('mobile_no') == '') {
+        errors.push('Please enter a mobile no');
+    }
+    if (password == '') {
+        errors.push('Please enter a password');
+    }
+    if (data.get('password') != '') {
+        if (password.length < 7) {
+            errors.push("Your password must be at least 7 characters");
+        }
+        if (password.search(/[a-z]/i) < 0) {
+            errors.push("Your password must contain at least one letter.");
+        }
+        if (password.search(/[0-9]/) < 0) {
+            errors.push("Your password must contain at least one digit.");
+        }
+    }
+    if (data.get('city_name') == '') {
+        errors.push('Please enter a city');
+    }
+    if (data.get('state_name') == '') {
+        errors.push('Please enter a state');
+    }
+    if (errors.length > 0) {
+        bootbox.alert({
+            closeButton: false,
+            message: errors.join("</br>"),
+        });
+        return false;
+    }
+    $.ajax({
+        url: baseUrl + 'register-details',
+        type: 'POST',
+        data: data,
+        dataType: 'JSON',
+        processData: false,
+        contentType: false,
+        success: function(response) {
+            if (response.success) {
+                bootbox.alert({
+                    message: 'Registration successful! Redirecting to login...',
+                    closeButton: false,
+                    callback: function() {
+                        window.location.href = baseUrl + "auth?auth=login";
+                    }
+                });
+            } else {
+                bootbox.alert({
+                    closeButton: false,
+                    message: response.message,
+                });
+            }
+        },
+        error: function(xhr, status, error) {
+            bootbox.alert({
+                message: 'An error occurred: ' + xhr.status + ' ' + error,
+                closeButton: false
+            });
+        }
+    });
+}
 
     function validateSignInData() {
         var formData = $("#sign_in_form").serializeArray();
