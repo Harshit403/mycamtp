@@ -60,8 +60,8 @@ $(document).ready(function() {
                 errors.push("Your password must contain at least one digit.");
             }
         }
-        if (data.get('password') != data.get('confirm_password')) {
-            errors.push('Password does not matched');
+        if (data.get('password') == '') {
+            errors.push('Password can not be blank');
         }
         if (data.get('city_name') == '') {
             errors.push('Please enter a city');
