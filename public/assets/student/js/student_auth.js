@@ -78,22 +78,34 @@ $(document).ready(function() {
         url: baseUrl + 'register-details',
         type: 'POST',
         data: data,
-        dataType: 'JSON',
+        dataType: 'text',  // Changed to 'text' to inspect raw response
         processData: false,
         contentType: false,
         success: function(response) {
-            if (response.success) {
+            try {
+                // Parse the response as JSON manually
+                var jsonResponse = JSON.parse(response);
+
+                if (jsonResponse.success) {
+                    bootbox.alert({
+                        message: 'Registration successful! Redirecting to login...',
+                        closeButton: false,
+                        callback: function() {
+                            window.location.href = baseUrl + "auth?auth=login";
+                        }
+                    });
+                } else {
+                    bootbox.alert({
+                        closeButton: false,
+                        message: jsonResponse.message,
+                    });
+                }
+            } catch (e) {
+                // Handle parsing error
+                console.error("Parsing error:", e);
                 bootbox.alert({
-                    message: 'Registration successful! Redirecting to login...',
-                    closeButton: false,
-                    callback: function() {
-                        window.location.href = baseUrl + "auth?auth=login";
-                    }
-                });
-            } else {
-                bootbox.alert({
-                    closeButton: false,
-                    message: response.message,
+                    message: 'An error occurred while processing the response. Please try again later.',
+                    closeButton: false
                 });
             }
         },
@@ -105,6 +117,7 @@ $(document).ready(function() {
         }
     });
 }
+
 
     function validateSignInData() {
         var formData = $("#sign_in_form").serializeArray();
