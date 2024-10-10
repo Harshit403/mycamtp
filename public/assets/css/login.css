@@ -1,183 +1,188 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-    background: linear-gradient(135deg, #E3FCFF 0%, #A1DFFB 50%, #86BBD8 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-.container {
-    background: rgba(255, 255, 255, 0.95);
-    max-width: 450px;
-    padding: 40px 35px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    position: relative;
-    overflow: hidden;
-    z-index: 2;
+.registration-form {
+    background-color: #fff;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px 70px;
+    margin: 20px auto;
+    border-radius: 30px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
 }
 
-.container::before {
-    content: '';
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 200px;
-    height: 200px;
-    background: rgba(86, 145, 255, 0.15);
-    border-radius: 50%;
-    z-index: -1;
-}
-
-.container::after {
-    content: '';
-    position: absolute;
-    bottom: -50px;
-    left: -50px;
-    width: 200px;
-    height: 200px;
-    background: rgba(255, 196, 0, 0.2);
-    border-radius: 50%;
-    z-index: -1;
-}
-
-h2 {
+.registration-form .form-icon {
     text-align: center;
-    color: #333;
-    font-size: 26px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 2;
-}
-
-.form-icon {
-    background-color: #5691ff;
+    background-color: #5891ff;
     border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 30px;
+    font-size: 40px;
     color: white;
-    font-size: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    margin-bottom: 50px;
+    line-height: 100px;
 }
 
-input {
-    width: 100%;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 12px;
-    border: 1px solid #ced4da;
-    background-color: #f8f9fa;
-    font-size: 16px;
-    color: #333;
-    transition: border-color 0.3s ease;
-}
 
-input:focus {
-    border-color: #5691ff;
-    outline: none;
-}
-
-input::placeholder {
-    color: #aaa;
-}
 
 .btn-class {
-    width: 100%;
-    padding: 15px;
-    background-color: #ff7e5f;
-    border: none;
-    border-radius: 12px;
-    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
     font-size: 18px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
+    font-weight: bold;
+    background-color: hsl(170, 75%, 41%) !important;
+    border: none;
+    color: white !important;
     margin-top: 20px;
-    transition: all 0.4s ease;
+    width: 100%;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-inline: 0 !important;
+    overflow: hidden;
+}
+
+.has-before,
+.has-after {
+    position: relative;
+    z-index: 1;
+}
+
+.has-before::before,
+.has-after::after {
+    position: absolute;
+    content: "";
+}
+
+
+.registration-form .authButton ion-icon[name="arrow-forward-outline"] {
+    animation: slide1 1s ease-in-out infinite;
+}
+
+.btn-class::before {
+    inset: 0;
+    background-image: linear-gradient(-90deg, hsl(151, 58%, 46%) 0%, hsl(170, 75%, 41%) 100%);
+    z-index: -1;
+    border-radius: inherit;
+    transform: translateX(-100%);
+    transition: 0.5s ease;
+}
+
+.btn-class:is(:hover, :focus)::before {
+    transform: translateX(0);
 }
 
 .btn-class:hover {
-    background-color: #ff6a4d;
-    box-shadow: 0 5px 15px rgba(255, 126, 95, 0.5);
-    transform: translateY(-3px);
+    color: #fff;
 }
 
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin: 30px 0;
+
+
+@keyframes slide1 {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(10px, 0);
+    }
 }
 
-.social-icons a {
-    background-color: white;
+
+.registration-form .social-icons {
+    margin-top: 30px;
+    margin-bottom: 16px;
+}
+
+.registration-form .social-icons a {
+    font-size: 23px;
+    margin: 0 3px;
     color: #5691ff;
-    font-size: 20px;
-    padding: 12px;
+    border: 1px solid;
     border-radius: 50%;
-    border: 1px solid #5691ff;
-    transition: all 0.3s ease;
+    width: 45px;
+    display: inline-block;
+    height: 45px;
+    text-align: center;
+    background-color: #fff;
+    line-height: 45px;
 }
 
-.social-icons a:hover {
-    background-color: #5691ff;
-    color: white;
-    box-shadow: 0 5px 10px rgba(86, 145, 255, 0.3);
+.registration-form .social-icons a:hover {
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+.registration-form .item {
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    width: 100%;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+}
+
+.registration-form .inputBox {
+    position: relative;
+}
+
+.registration-form .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    color: #ced4da;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.registration-form .item:valid~span,
+.registration-form .item:focus~span {
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.75em;
+    background: #fff;
+    color: #5691ff;
+    padding: 0px;
+    font-weight: bold;
+
+}
+
+@media (max-width: 576px) {
+    .registration-form form {
+        padding: 0px 20px;
+    }
+
+    .registration-form {
+        margin-top: 14em !important;
+        margin-bottom: 14em !important;
+    }
+
+    .registration-form .form-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+        line-height: 70px;
+    }
 }
 
 .signup_link {
     text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #333;
-}
-
-.signup_link a {
-    color: #5691ff;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.signup_link a:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 576px) {
-    .container {
-        padding: 20px 15px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    .form-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 30px;
-    }
-
-    .btn-class {
-        font-size: 16px;
-        padding: 12px;
-    }
-
-    .signup_link {
-        font-size: 12px;
-    }
+    padding: 20px 0px;
 }
