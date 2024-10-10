@@ -12,9 +12,9 @@ $(document).ready(function() {
 
 
     // Automatically fill confirm password field when typing in password
-    $("#password").on('input', function() {
-    $("#con_password").val($(this).val());
-    });
+    //$("#password").on('input', function() {
+    //$("#con_password").val($(this).val());
+    //});
 
     var emailPattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
     var passwordPattern = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{7,}$/;
