@@ -26,7 +26,6 @@ $(document).ready(function() {
         validateSignInData();
     });
 
-
     function addSignUpData() {
     var formData = $("#sign_up_form").serializeArray();
     var data = new FormData();
@@ -39,10 +38,10 @@ $(document).ready(function() {
         errors.push('Please enter your name');
     }
     if (data.get('email') == '') {
-        errors.push('Please enter a email');
+        errors.push('Please enter an email');
     }
     if (data.get('email') != '' && !emailPattern.test(data.get('email'))) {
-        errors.push('Email does not a valid email');
+        errors.push('Email is not a valid email');
     }
     if (data.get('mobile_no') == '') {
         errors.push('Please enter a mobile no');
@@ -78,7 +77,7 @@ $(document).ready(function() {
         url: baseUrl + 'register-details',
         type: 'POST',
         data: data,
-        dataType: 'text',  // Changed to 'text' to inspect raw response
+        dataType: 'text',  // Expecting text to inspect raw response
         processData: false,
         contentType: false,
         success: function(response) {
@@ -101,24 +100,25 @@ $(document).ready(function() {
                     });
                 }
             } catch (e) {
-                // Handle parsing error
-                console.error("Parsing error:", e);
+                // Display the error in the UI if parsing fails
                 bootbox.alert({
-                    message: 'An error occurred while processing the response. Please try again later.',
+                    message: 'Error parsing response from server: ' + e.message + '<br>Raw response: ' + response,
                     closeButton: false
                 });
             }
         },
         error: function(xhr, status, error) {
+            // Display AJAX errors in the UI
             bootbox.alert({
-                message: 'An error occurred: ' + xhr.status + ' ' + error,
+                message: 'An error occurred: ' + xhr.status + ' ' + error + '<br>Response: ' + xhr.responseText,
                 closeButton: false
             });
         }
     });
 }
 
-
+    
+     
     function validateSignInData() {
         var formData = $("#sign_in_form").serializeArray();
         var data = new FormData();
