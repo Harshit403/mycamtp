@@ -21,7 +21,6 @@ body {
 
 .registration-form {
     position: fixed;
-    transform: translate(-50%, -50%); 
     background-color: #fff;
     max-width: 600px;
     margin: auto;
