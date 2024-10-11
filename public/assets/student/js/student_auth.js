@@ -26,75 +26,97 @@ $(document).ready(function() {
         validateSignInData();
     });
 
-        function addSignUpData() {
-        var formData = $("#sign_up_form").serializeArray();
-        var data = new FormData();
-        var errors = new Array;
-        $.each(formData, function(i, v) {
-            data.append(v.name, $.trim(v.value));
+function addSignUpData() {
+    var formData = $("#sign_up_form").serializeArray();
+    var data = new FormData();
+    var errors = new Array;
+    $.each(formData, function(i, v) {
+        data.append(v.name, $.trim(v.value));
+    });
+    var password = data.get('password');
+    if (data.get('student_name') == '') {
+        errors.push('Please enter your name');
+    }
+    if (data.get('email') == '') {
+        errors.push('Please enter an email');
+    }
+    if (data.get('email') != '' && !emailPattern.test(data.get('email'))) {
+        errors.push('Email is not a valid email');
+    }
+    if (data.get('mobile_no') == '') {
+        errors.push('Please enter a mobile no');
+    }
+    if (password == '') {
+        errors.push('Please enter a password');
+    }
+    if (data.get('password') != '') {
+        if (password.length < 7) {
+            errors.push("Your password must be at least 7 characters");
+        }
+        if (password.search(/[a-z]/i) < 0) {
+            errors.push("Your password must contain at least one letter.");
+        }
+        if (password.search(/[0-9]/) < 0) {
+            errors.push("Your password must contain at least one digit.");
+        }
+    }
+    if (data.get('city_name') == '') {
+        errors.push('Please enter a city');
+    }
+    if (data.get('state_name') == '') {
+        errors.push('Please enter a state');
+    }
+    if (errors.length > 0) {
+        bootbox.alert({
+            closeButton: false,
+            message: errors.join("</br>"),
         });
-        var password = data.get('password');
-        if (data.get('student_name') == '') {
-            errors.push('Please enter your name');
-        }
-        if (data.get('email') == '') {
-            errors.push('Please enter a email');
-        }
-        if (data.get('email') != '' && !emailPattern.test(data.get('email'))) {
-            errors.push('Email does not a valid email');
-        }
-        if (data.get('mobile_no') == '') {
-            errors.push('Please enter a mobile no');
-        }
-        if (password == '') {
-            errors.push('Please enter a password');
-        }
-        if (data.get('password') != '') {
-            if (password.length < 7) {
-                errors.push("Your password must be at least 7 characters");
-            }
-            if (password.search(/[a-z]/i) < 0) {
-                errors.push("Your password must contain at least one letter.");
-            }
-            if (password.search(/[0-9]/) < 0) {
-                errors.push("Your password must contain at least one digit.");
-            }
-        }
-        if (data.get('password') == '') {
-            errors.push('Password can not be blank');
-        }
-        if (data.get('city_name') == '') {
-            errors.push('Please enter a city');
-        }
-        if (data.get('state_name') == '') {
-            errors.push('Please enter a state');
-        }
-        if (errors.length > 0) {
-            bootbox.alert({
-                closeButton: false,
-                message: errors.join("</br>"),
-            });
-            return false;
-        }
-        $.ajax({
-            url: baseUrl + 'register-details',
-            type: 'POST',
-            data: data,
-            dataType: 'JSON',
-            processData: false,
-            contentType: false,
-            success: function(response) {
-                if (response.success) {
-                    window.location.href = baseUrl + "auth?auth=login";
+        return false;
+    }
+    $.ajax({
+        url: baseUrl + 'register-details',
+        type: 'POST',
+        data: data,
+        dataType: 'text',  // Expecting text to inspect raw response
+        processData: false,
+        contentType: false,
+        success: function(response) {
+            try {
+                // Parse the response as JSON manually
+                var jsonResponse = JSON.parse(response);
+
+                if (jsonResponse.success) {
+                    bootbox.alert({
+                        message: 'Registration successful! Redirecting to login...',
+                        closeButton: false,
+                        callback: function() {
+                            window.location.href = baseUrl + "auth?auth=login";
+                        }
+                    });
                 } else {
                     bootbox.alert({
                         closeButton: false,
-                        message: response.message,
-                    })
+                        message: jsonResponse.message,
+                    });
                 }
+            } catch (e) {
+                // Display the error in the UI if parsing fails
+                bootbox.alert({
+                    message: 'Error parsing response from server: ' + e.message + '<br>Raw response: ' + response,
+                    closeButton: false
+                });
             }
-        });
-    }
+        },
+        error: function(xhr, status, error) {
+            // Display AJAX errors in the UI
+            bootbox.alert({
+                message: 'An error occurred: ' + xhr.status + ' ' + error + '<br>Response: ' + xhr.responseText,
+                closeButton: false
+            });
+        }
+    });
+}
+
     
      
     function validateSignInData() {
