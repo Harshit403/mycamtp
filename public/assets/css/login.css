@@ -10,6 +10,7 @@
 body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
     background-image: url('https://mycsmtp.com/design_assets/images/hero-bg.svg');
     background-repeat: no-repeat;
     /*background-size: 100vh 100px;*/
@@ -19,6 +20,8 @@ body {
 }
 
 .registration-form {
+    position: fixed;
+    transform: translate(-50%, -50%); 
     background-color: #fff;
     max-width: 600px;
     margin: auto;
