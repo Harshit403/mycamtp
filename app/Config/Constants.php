@@ -99,11 +99,11 @@ defined('PUBLIC_PATH') || define('PUBLIC_PATH', ROOTPATH . 'public');
 define('EXAM_DATE', '2024-06-24');
 
 // email Config
-define('EMAIL_ID', 'smtp@mailtrap.io');//enter your email address
+define('EMAIL_ID', 'noreply@missioncstestseries.com');//enter your email address
 define('EMAIL_PASSWORD', '189151b292d9d22068fa58791ce208a2');//enter your password
 define('SMTP_HOST', 'live.smtp.mailtrap.io');
 define('SMTP_PORT', 587);
-define('FROM_NAME', 'no-reply@missioncstestseries.com');//Enter your email from name
+define('FROM_NAME', 'smtp@mailtrap.io');//Enter your email from name
 
 
 // Cashfree payment info test
