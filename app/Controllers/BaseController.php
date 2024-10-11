@@ -118,7 +118,7 @@ abstract class BaseController extends Controller
             $mail->SMTPSecure = 'tls';                             
             $mail->Port       = SMTP_PORT; 
         
-            $mail->setFrom(EMAIL_ID, $from_name);          
+            $mail->setFrom('no-reply@missioncstestseries.com', $from_name);          
             $mail->addAddress($to);
             $mail->isHTML(true);                                 
             $mail->Subject = $subject;
