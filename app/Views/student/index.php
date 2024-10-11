@@ -230,6 +230,39 @@
         font-size: 16px;
     }
 }
+
+        .container-title {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1-not {
+            font-size: 1.6rem; /* Reduced to be closer to h2 size */
+            font-weight: 700;
+            background: linear-gradient(90deg, #2fbccd, #11999e, #0e7490);
+            background-size: 200%;
+            background-position: left;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: gradient-move 5s ease-in-out infinite;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            position: relative;
+        }
+
+        /* Light shadow effect for depth */
+        h1-not::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 110%;
+            height: 110%;
+            background: radial-gradient(circle, rgba(47,188,205,0.2) 0%, rgba(255,255,255,0) 70%);
+            z-index: -1;
+        }
 </style>
 <section class="test-series">
     <div class="container">
@@ -436,8 +469,12 @@
     </section>
 
 <section class="py-5 container" id="faq-section">
-    <h1 class="text-uppercase text-center">FAQ</h1>
-    <div class="row">
+    <!-- <h1 class="text-uppercase text-center">FAQ</h1> -->
+    <div class="container-title">
+        <h1-not>FAQ</h1-not>
+    </div>
+  
+   <div class="row">
         <div class="col-md-6">
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
