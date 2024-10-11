@@ -1,4 +1,76 @@
 <!-- navbar -->
+<style>
+    <style>
+        .contact {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact i {
+            margin-right: 15px; /* Add space between phone icon and number */
+            font-size: 1.2em;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .contact span {
+            font-size: 1.2em;
+            vertical-align: middle;
+        }
+        
+       .auth-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .auth-button {
+            background-color: white;
+            color: #25c2c6;
+            border: 1px solid transparent;
+            padding: 6.8px 17px;
+            margin-right: 10px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .auth-button:hover {
+            background-color: #1a9ea1;
+            color: white;
+            border-color: white;
+}
+        .banner {
+            background-color: #2FBCCD;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .icon {
+            color: white;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+
+        .icon:hover {
+            color: #ddd;
+        }
+    </style>
+</style>
 <header>
     <div style="display: none;">
         <div class="cartPopUpContainer"></div>
