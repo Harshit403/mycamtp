@@ -1,6 +1,5 @@
 <!-- navbar -->
 <style>
-    <style>
         .contact {
             display: flex;
             align-items: center;
@@ -69,12 +68,27 @@
         .icon:hover {
             color: #ddd;
         }
-    </style>
 </style>
 <header>
     <div style="display: none;">
         <div class="cartPopUpContainer"></div>
     </div>
+    
+<section>
+<header class="banner">
+<?php if (session()->get('studentDetails') !== null): ?>
+    <div class="contact">
+        <i class="fas fa-phone-alt"></i>
+        <span>+91-9873045724</span>
+    </div>
+<?php else: ?>
+   <div class="auth-buttons">
+        <a href="<?= base_url() ?>auth?auth=login" class="auth-button">Login</a>
+        <a href="<?= base_url() ?>auth?auth=register" class="auth-button">Register</a>
+    </div>
+<?php endif; ?>
+</section>
+
    <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm p-3 bg-body rounded">
       <div class="container-fluid">
         <a class="navbar-brand fs-4" href="<?=base_url()?>">
