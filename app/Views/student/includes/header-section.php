@@ -1,16 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
         }
+
+        /* Contact Section */
         .contact {
             display: flex;
             align-items: center;
         }
 
         .contact i {
-            margin-right: 15px; /* Add space between phone icon and number */
+            margin-right: 15px;
             font-size: 1.2em;
             display: inline-block;
             vertical-align: middle;
@@ -20,8 +24,9 @@
             font-size: 1.2em;
             vertical-align: middle;
         }
-        
-       .auth-buttons {
+
+        /* Auth Button Styles */
+        .auth-buttons {
             display: flex;
             align-items: center;
         }
@@ -30,7 +35,7 @@
             background-color: white;
             color: #25c2c6;
             border: 1px solid transparent;
-            padding: 6.8px 17px;
+            padding: 7px 17px;
             margin-right: 10px;
             font-size: 11px;
             font-weight: bold;
@@ -44,7 +49,9 @@
             background-color: #1a9ea1;
             color: white;
             border-color: white;
-}
+        }
+
+        /* Banner Styles */
         .banner {
             background-color: #2FBCCD;
             display: flex;
@@ -72,27 +79,33 @@
         .icon:hover {
             color: #ddd;
         }
+
+        /* Navbar Styles */
         .navbar {
-            margin-top: 50px; /* This will push the navbar below the 50px high banner */
-    }
+            margin-top: 60px;
+        }
     </style>
 </head>
+
 <body>
-<div style="height: 80px;" class="spacing">
-</div>
-    
+
+    <!-- Spacing for Fixed Banner -->
+    <div style="height: 80px;" class="spacing"></div>
+
+    <!-- Banner Section -->
     <header class="banner">
-<?php if (session()->get('studentDetails') !== null): ?>
-    <div class="contact">
-        <i class="fas fa-phone-alt"></i>
-        <span>+91-9873045724</span>
-    </div>
-<?php else: ?>
-   <div class="auth-buttons">
-        <a href="<?= base_url() ?>auth?auth=login" class="auth-button">Login</a>
-        <a href="<?= base_url() ?>auth?auth=register" class="auth-button">Register</a>
-    </div>
-<?php endif; ?>
+        <?php if (session()->get('studentDetails') !== null): ?>
+            <div class="contact">
+                <i class="fas fa-phone-alt"></i>
+                <span>+91-9873045724</span>
+            </div>
+        <?php else: ?>
+            <div class="auth-buttons">
+                <a href="<?= base_url() ?>auth?auth=login" class="auth-button">Login</a>
+                <a href="<?= base_url() ?>auth?auth=register" class="auth-button">Register</a>
+            </div>
+        <?php endif; ?>
+
         <div class="social-icons">
             <a href="https://wa.me/919873045724/" class="icon whatsapp"><i class="fab fa-whatsapp"></i></a>
             <a href="#" class="icon youtube"><i class="fab fa-youtube"></i></a>
@@ -101,16 +114,16 @@
         </div>
     </header>
 
-    <!-- Navbar -->
+    <!-- Navbar Section -->
     <header>
-        <div style="display: none;">
-            <div class="cartPopUpContainer"></div>
-        </div>
         <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm p-3 bg-body rounded">
             <div class="container-fluid">
+                <!-- Brand Logo -->
                 <a class="navbar-brand fs-4" href="<?=base_url()?>">
-                    <img src="<?=base_url()?>/assetItems/image/logo.jpg" style="height:3rem;">
+                    <img src="<?=base_url()?>/assetItems/image/logo.jpg" style="height:3rem;" alt="Logo">
                 </a>
+
+                <!-- Mobile Cart Icon -->
                 <ul class="navbar-nav">
                     <li class="nav-item forMobileSection">
                         <a class="nav-link showCartBtn" href="javascript:void(0)">
@@ -121,10 +134,12 @@
                         </a>
                     </li>
                 </ul>
-                <?php if (session()->get('studentDetails')!==null): ?>
+
+                <!-- User Dropdown for Logged In Users -->
+                <?php if (session()->get('studentDetails') !== null): ?>
                     <div class="dropdown signinDropdown forMobileSection">
                         <a class="dropdown-main" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                            <img src="<?=base_url()?>assetItems/image/image1.jpg" class="img-circle" style="height: 40px; width:40px;">
+                            <img src="<?=base_url()?>assetItems/image/image1.jpg" class="img-circle" style="height: 40px; width:40px;" alt="User Image">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" style="left: -118px;">
                             <li><a class="dropdown-item" href="<?=base_url()?>dashboard">Dashboard</a></li>
@@ -133,64 +148,47 @@
                             <li><a class="dropdown-item" href="<?=base_url()?>logout">Logout</a></li>
                         </ul>
                     </div>
-                <?php endif ?>
+                <?php endif; ?>
+
+                <!-- Navbar Toggler -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style="margin-left: -4rem!important;border: none;margin-right: -1rem;">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <!-- Offcanvas Navbar -->
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
                         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
                             <a href="<?=base_url()?>">
-                                <img src="<?=base_url()?>/assetItems/image/logo.jpg" style="height:3rem;">
+                                <img src="<?=base_url()?>/assetItems/image/logo.jpg" style="height:3rem;" alt="Logo">
                             </a>
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
+
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="<?=base_url();?>">Home</a>
                             </li>
-                            <?php if (session()->get('studentDetails')===null): ?>
+                            <?php if (session()->get('studentDetails') === null): ?>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?=base_url()?>/auth?auth=register">Register/Login</a>
                                 </li>
-                            <?php endif ?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Plans</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?=base_url()?>/blog-list">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?=base_url()?>#faq-section">FAQ</a>
-                            </li>
-                            <li class="nav-item forDesktopSection">
-                                <a class="nav-link showCartBtn" href="javascript:void(0)">
-                                    <div style="position: relative;">
-                                        <i class="bi bi-bag" style="font-size: 18px;"></i>
-                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary cartCount">0</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="nav-item" style="margin-left:1rem !important;">
-                                <?php if (session()->get('studentDetails')==null): ?>
-                                    <div class="d-flex justify-content-center align-items-center" style="gap:10px;">
-                                        <a href="<?=base_url()?>auth?auth=login" class="btn text-white btn-sm btn-custom">Login <i class="bi bi-arrow-right"></i></a>
-                                        <a href="<?=base_url()?>auth?auth=register" class="btn text-white btn-sm btn-custom">Sign Up <i class="bi bi-arrow-right"></i></a>
-                                    </div>
-                                <?php endif ?>
-                            </li>
+                            <?php endif; ?>
+                            <li class="nav-item"><a class="nav-link" href="#">Plans</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<?=base_url()?>/blog-list">Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href="<?=base_url()?>#faq-section">FAQ</a></li>
                         </ul>
                     </div>
                 </div>
-                <?php if (session()->get('studentDetails')!==null): ?>
+
+                <!-- Desktop User Dropdown -->
+                <?php if (session()->get('studentDetails') !== null): ?>
                     <div class="dropdown signinDropdown forDesktopSection">
                         <a class="dropdown-main" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                            <img src="<?=base_url()?>assetItems/image/image1.jpg" class="img-circle" style="height: 40px; width:40px;">
+                            <img src="<?=base_url()?>assetItems/image/image1.jpg" class="img-circle" style="height: 40px; width:40px;" alt="User Image">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end" style="left: -118px;">
                             <li><a class="dropdown-item" href="<?=base_url()?>dashboard">Dashboard</a></li>
@@ -199,12 +197,13 @@
                             <li><a class="dropdown-item" href="<?=base_url()?>logout">Logout</a></li>
                         </ul>
                     </div>
-                <?php endif ?>
+                <?php endif; ?>
             </div>
         </nav>
     </header>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
