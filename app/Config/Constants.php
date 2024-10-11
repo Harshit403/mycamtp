@@ -103,7 +103,7 @@ define('EMAIL_ID', 'no-reply@missioncstestseries.com');//enter your email addres
 define('EMAIL_PASSWORD', '189151b292d9d22068fa58791ce208a2');//enter your password
 define('SMTP_HOST', 'live.smtp.mailtrap.io');
 define('SMTP_PORT', 587);
-define('FROM_NAME', 'no-reply@missioncstestseries.com');//Enter your email from name
+define('FROM_NAME', 'api');//Enter your email from name
 
 
 // Cashfree payment info test
