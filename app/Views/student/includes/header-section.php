@@ -51,7 +51,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 1050;
+            z-index: 1030;
         }
 
         .social-icons {
@@ -69,9 +69,7 @@
             color: #ddd;
         }
 
-        .navbar {
-    top: 60px; /* Adjust to prevent overlapping with the banner */
-        }
+
 </style>
 <div style="height: 80px;" class="spacing"></div>
 
