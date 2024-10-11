@@ -299,7 +299,10 @@
         </div>
     </section> -->
 <section class="py-5 category container" id="category-section">
-    <h1 class="text-uppercase text-center">Category</h1>
+    <!-- <h1 class="text-uppercase text-center">Category</h1> -->
+    <div class="container-title">
+        <h1-not>Category</h1-not>
+    </div>
     <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
       <?php if (!empty($categoryDetails)): ?>
           <?php foreach ($categoryDetails as $categoryRow): ?>
@@ -401,7 +404,10 @@
     <div class="container mt-5">
         <div class="card shadow-sm border-0 mb-3" style="border-radius: 15px;">
             <div class="card-body">
-                <h5 class="card-title text-center text-white py-2" style="background-color: #2FBCCD; border-radius: 10px;">Why Mission CS Test Series?</h5>
+                <!--<h5 class="card-title text-center text-white py-2" style="background-color: #2FBCCD; border-radius: 10px;">Why Mission CS Test Series?</h5>-->
+                <div class="container-title">
+                  <h1-not>Why Mission CS Test Series?</h1-not>
+                </div>
                 <p class="card-text mt-3">Mission CS Test Series is designed by Rankers who have years of experience. We have carefully crafted each test to cover the entire syllabus and provide you with the best practice and revision. You will get access to multiple tests, each with detailed solutions and explanations. You will also get feedback and analysis of your performance, along with tips and tricks to improve your score.</p>
                 <p class="card-text">Mission CS Test Series is the most trusted and reliable test series for the CS exams. Thousands of students have used our test series and achieved their dream of becoming a professional. You can be one of them too. Join Mission CS Test Series today and get ready to conquer the CS Exams.</p>
             </div>
@@ -473,7 +479,6 @@
     <div class="container-title">
         <h1-not>FAQ</h1-not>
     </div>
-  
    <div class="row">
         <div class="col-md-6">
             <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -561,7 +566,10 @@
 
 
     <section class="py-5 container" id="blog-section">
-        <h1 class="text-uppercase text-center">Blogs</h1>
+       <!-- <h1 class="text-uppercase text-center">Blogs</h1> -->
+    <div class="container-title">
+        <h1-not>Blogs</h1-not>
+    </div>
         <div class="row">
             <?php if (!empty($blog_list)): ?>
               <?php foreach ($blog_list as $blogRow): ?>
@@ -595,7 +603,7 @@
         <?php endif ?>
     </section>
     <section class="py-5 container" id="testimonial-screen">
-        <h1 class="text-uppercase text-center">TESTIMONIALS</h1>
+        <!-- <h1 class="text-uppercase text-center">TESTIMONIALS</h1> -->
         <div>
           <div id="carouselExampleDark" class="carousel carousel-dark slide">
             <div class="carousel-indicators">
