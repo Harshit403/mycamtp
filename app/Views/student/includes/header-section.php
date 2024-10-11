@@ -1,7 +1,7 @@
 <!-- navbar -->
 <style>
         .navbar {
-    top: 60px; /* Adjust to prevent overlapping with the banner */
+    top: 50px; /* Adjust to prevent overlapping with the banner */
                 }
         .contact {
             display: flex;
