@@ -90,7 +90,13 @@
         <a href="<?= base_url() ?>auth?auth=register" class="auth-button">Register</a>
     </div>
 <?php endif; ?>
-
+<div class="social-icons">
+            <a href="https://wa.me/919873045724/" class="icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="icon youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/mission.cs" class="icon instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://telegram.me/cs.mission" class="icon telegram"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+</header>
 
    <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm p-3 bg-body rounded">
       <div class="container-fluid">
