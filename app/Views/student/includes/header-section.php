@@ -73,7 +73,8 @@
     top: 60px; /* Adjust to prevent overlapping with the banner */
         }
 </style>
-<header>
+<div style="height: 80px;" class="spacing"></div>
+
     <div style="display: none;">
         <div class="cartPopUpContainer"></div>
     </div>
