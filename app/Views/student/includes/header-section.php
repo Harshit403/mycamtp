@@ -51,7 +51,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 1030;
+            z-index: 1050;
         }
 
         .social-icons {
@@ -68,13 +68,16 @@
         .icon:hover {
             color: #ddd;
         }
+
+        .navbar {
+    top: 60px; /* Adjust to prevent overlapping with the banner */
+        }
 </style>
 <header>
     <div style="display: none;">
         <div class="cartPopUpContainer"></div>
     </div>
     
-<section>
 <header class="banner">
 <?php if (session()->get('studentDetails') !== null): ?>
     <div class="contact">
@@ -87,7 +90,7 @@
         <a href="<?= base_url() ?>auth?auth=register" class="auth-button">Register</a>
     </div>
 <?php endif; ?>
-</section>
+
 
    <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm p-3 bg-body rounded">
       <div class="container-fluid">
