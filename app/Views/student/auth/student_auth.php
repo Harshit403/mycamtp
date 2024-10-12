@@ -11,9 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Existing CSS -->
-    <!-- <link rel="stylesheet" href="<?= base_url() ?>/assets/css/login.css">
-    <link rel="stylesheet" href="<?= base_url() ?>/assets/css/style.css"> -->
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>/assets/css/style.css">
+    
     <!-- Font Awesome & Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -279,6 +280,17 @@
         var baseUrl = "<?= base_url() ?>";
     </script>
     <script type="text/javascript" src="<?= base_url() ?>assets/student/js/student_auth.js?v=1.0.1"></script>
+
+    <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/jquery.min.js"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/bootbox.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script type="text/javascript">
+    var pageType = "student_auth_page";
+    var baseUrl = "<?=base_url()?>";
+    </script>
+    <script type="text/javascript" src="<?=base_url()?>assets/student/js/student_auth.js?v=1.0.1"></script>
+    
 </body>
 
 </html>
