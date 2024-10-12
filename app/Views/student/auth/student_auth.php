@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User <?= ($addClass == 'sign_up') ? 'Signup' : 'Login'; ?></title>
-    
-    <!-- Google Font -->
+    <title>Signup & Login Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Existing CSS -->
-    <!--<link rel="stylesheet" href="<?= base_url() ?>/assets/css/login.css"> -->
-   <!--  <link rel="stylesheet" href="<?= base_url() ?>/assets/css/style.css"> -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
-
     <style>
         * {
             margin: 0;
@@ -80,8 +71,7 @@
             color: #2FBCCD;
         }
 
-        .input-box input:focus,
-        .input-box select:focus {
+        .input-box input:focus, .input-box select:focus {
             border-bottom-color: #2FBCCD;
         }
 
@@ -95,6 +85,7 @@
             font-size: 1.1em;
             cursor: pointer;
             transition: background 0.3s;
+            margin-top: 20px;
         }
 
         .btn:hover {
@@ -109,10 +100,18 @@
         p a {
             color: #2FBCCD;
             text-decoration: none;
+            cursor: pointer;
         }
 
         p a:hover {
             text-decoration: underline;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 400px;
         }
 
         @media (max-width: 768px) {
@@ -129,33 +128,17 @@
             h2 {
                 font-size: 1.5em;
             }
+
+            .btn {
+                padding: 14px;
+            }
         }
     </style>
 </head>
-
 <body>
     <div class="form-container">
-        <!-- SignIn Container -->
-        <div class="container" style="display: <?= ($addClass == 'register') ? 'none' : ''; ?>">
-            <h2>Sign In</h2>
-            <form id="sign_in_form">
-                <div class="input-box">
-                    <input type="text" name="email" required>
-                    <label>Email</label>
-                </div>
-                <div class="input-box">
-                    <input type="password" name="password" required>
-                    <label>Password</label>
-                    <ion-icon name="eye-off-outline" class="viewPassWord" style="position: absolute; top: 1rem; right: 1rem;"></ion-icon>
-                </div>
-                <div class="pass"><a href="<?= base_url() ?>forgot-password">Forgot Password?</a></div>
-                <a class="btn loginBtn authButton">Sign In</a>
-                <p>Not a member? <a href="<?= base_url() ?>auth?auth=register">Sign Up</a></p>
-            </form>
-        </div>
-
-        <!-- SignUp Container -->
-        <div class="container" style="display: <?= ($addClass == 'login') ? 'none' : ''; ?>">
+        <!-- Signup Form -->
+        <div class="container" id="signup-container">
             <h2>Sign Up</h2>
             <form id="sign_up_form">
                 <div class="input-box">
@@ -167,34 +150,72 @@
                     <label>Email</label>
                 </div>
                 <div class="input-box">
-                    <input type="text" name="mobile_no" required>
-                    <label>Mobile No</label>
-                </div>
-                <div class="input-box">
-                    <select name="category_id" id="category_id">
+                    <select name="category_id" id="category_id" required>
                         <option value="" disabled selected>Select Category</option>
-                        <!-- Dynamically populated options -->
                     </select>
+                    <label>Category</label>
+                </div>
+                <button type="submit" class="btn" id="signup-btn">Sign Up</button>
+            </form>
+            <p>Already a member? <a href="#" id="signin-link">Sign In</a></p>
+        </div>
+
+        <!-- Signin Form -->
+        <div class="container" id="signin-container" style="display:none;">
+            <h2>Sign In</h2>
+            <form id="sign_in_form">
+                <div class="input-box">
+                    <input type="text" name="email" required>
+                    <label>Email</label>
                 </div>
                 <div class="input-box">
                     <input type="password" name="password" required>
                     <label>Password</label>
-                    <ion-icon name="eye-off-outline" class="viewPassWord" style="position: absolute; top: 1rem; right: 1rem;"></ion-icon>
                 </div>
-                <a class="btn signUpBtn authButton">Sign Up</a>
-                <p>Already a member? <a href="<?= base_url() ?>auth?auth=login">Sign In</a></p>
-                <p><a href="<?= base_url() ?>"><i class="fas fa-undo-alt"></i> Return to Home</a></p>
+                <button type="submit" class="btn" id="signin-btn">Sign In</button>
             </form>
+            <p>Not a member? <a href="#" id="signup-link">Sign Up</a></p>
         </div>
     </div>
 
     <script>
-        document.querySelectorAll('.viewPassWord').forEach(icon => {
-            icon.addEventListener('click', function () {
-                const input = this.previousElementSibling;
-                input.type = input.type === 'password' ? 'text' : 'password';
-                this.name = this.name === 'eye-off-outline' ? 'eye-outline' : 'eye-off-outline';
+        // Toggle between Sign Up and Sign In forms
+        document.getElementById('signup-link').addEventListener('click', function () {
+            document.getElementById('signup-container').style.display = 'block';
+            document.getElementById('signin-container').style.display = 'none';
+        });
+
+        document.getElementById('signin-link').addEventListener('click', function () {
+            document.getElementById('signup-container').style.display = 'none';
+            document.getElementById('signin-container').style.display = 'block';
+        });
+
+        // Fetch and populate category options (mock AJAX example)
+        document.addEventListener('DOMContentLoaded', function () {
+            const categorySelect = document.getElementById('category_id');
+            const categories = [
+                { id: 1, name: 'Science' },
+                { id: 2, name: 'Arts' },
+                { id: 3, name: 'Commerce' }
+            ];
+
+            categories.forEach(category => {
+                const option = document.createElement('option');
+                option.value = category.id;
+                option.textContent = category.name;
+                categorySelect.appendChild(option);
             });
+        });
+
+        // Handle form submissions (mock)
+        document.getElementById('sign_up_form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Sign Up form submitted');
+        });
+
+        document.getElementById('sign_in_form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Sign In form submitted');
         });
     </script>
 </body>
