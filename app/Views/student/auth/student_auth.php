@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Existing CSS -->
-    <link rel="stylesheet" href="<?= base_url() ?>/assets/css/login.css">
+    <!--<link rel="stylesheet" href="<?= base_url() ?>/assets/css/login.css"> -->
     <link rel="stylesheet" href="<?= base_url() ?>/assets/css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
 
