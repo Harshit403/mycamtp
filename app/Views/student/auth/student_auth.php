@@ -90,8 +90,8 @@
                         ?>
                     </select>
                 </div>
-                <div class="inputBox">
-                    <select class="form-control mb-4" name="current_level" id="current_level">
+                <div class="inputBox" style="display: none;">
+                    <select class="form-control mb-4" name="current_level" value="N/A" id="current_level">
                     </select>
                 </div>
                 <div class="inputBox">
