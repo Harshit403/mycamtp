@@ -76,7 +76,7 @@
 <meta property="og:title" content="Mission CS Test Series: Company Secretary, CSEET, CS Executive & CS Professional Exams" />
 <meta property="og:type" content="Website" />
 <meta property="og:url" content="https:/missioncstestseries.com/" />
-<meta property="og:image" content="https://missioncstestseries.com/logo.png" />
+<meta property="og:image" content="https://missioncstestseries.com//assetItems/image/logo.jpg" />
 <meta property="og:description"
 content="Boost Your CS Exam Success with Our Comprehensive Test Series. Prepare for Company Secretary (CS) exams with specialized modules for CS Executive and CS Professional." />
 <link rel="canonical" href="https://missioncstestseries.com" />
