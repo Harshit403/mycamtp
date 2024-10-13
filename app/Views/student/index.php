@@ -6,6 +6,15 @@
 <!-- enter your meta description -->
 <meta name="description" content="Prepare for CS exams with Mission CS test series for CSEET, Executive, and Professional levels. Get access to detailed mock tests, personalized feedback, and study resources designed to help you succeed in your Company Secretary journey!">
 <?=$this->endSection()?>
+<script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "Mission CS Test Series",
+      "alternateName" : "CS Test Series",
+      "url" : "https://missioncstestseries.com/"
+    }
+</script>
 <?= $this->section('meta_keywords') ?>
 <!-- enter your meta keywords widthout tag -->
 <meta name="title" content="Best CS Test Series for CSEET, Executive, & Professional Exams | Mission CS Test Series">
