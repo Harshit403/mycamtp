@@ -6,6 +6,12 @@
 <!-- enter your meta description -->
 <meta name="description" content="Prepare for CS exams with Mission CS test series for CSEET, Executive, and Professional levels. Get access to detailed mock tests, personalized feedback, and study resources designed to help you succeed in your Company Secretary journey!">
 <?=$this->endSection()?>
+<?= $this->section('meta_keywords') ?>
+<!-- enter your meta keywords widthout tag -->
+<meta name="title" content="Best CS Test Series for CSEET, Executive, & Professional Exams | Mission CS Test Series">
+<?=$this->endSection()?>
+<?=$this->section('content')?>
+
 <script type="application/ld+json">
     {
       "@context" : "https://schema.org",
@@ -15,18 +21,12 @@
       "url" : "https://missioncstestseries.com/"
     }
 </script>
-<?= $this->section('meta_keywords') ?>
-<!-- enter your meta keywords widthout tag -->
-<meta name="title" content="Best CS Test Series for CSEET, Executive, & Professional Exams | Mission CS Test Series">
-<?=$this->endSection()?>
-<?=$this->section('content')?>
 
 <div itemscope itemtype="https://schema.org/WebSite">
   <link itemprop="url" href="https://missioncstestseries.com" />
     <meta itemprop="name" content="Mission CS Test Series"/>
     <meta itemprop="alternateName" content="CS Test Series"/>
 </div>
-
 
  <!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="margin-top: 79px;">
       <div class="carousel-inner">
