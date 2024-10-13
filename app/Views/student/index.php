@@ -4,11 +4,11 @@
 <?= $this->endSection() ?>
 <?= $this->section('meta_description') ?>
 <!-- enter your meta description -->
-<meta name="description" content="Prepare for CS exams with Mission CS test series for CSEET, Executive, and Professional levels. Get access to detailed mock tests, personalized feedback, and study resources designed to help you succeed in your Company Secretary journey!">
+Boost Your CS Exam Success with Our Comprehensive Test Series. Prepare for Company Secretary (CS) exams with specialized modules for CS Executive and CS Professional.
 <?=$this->endSection()?>
 <?= $this->section('meta_keywords') ?>
 <!-- enter your meta keywords widthout tag -->
-<meta name="title" content="Best CS Test Series for CSEET, Executive, & Professional Exams | Mission CS Test Series">
+CS Test Series, cstestseries, CS Executive Test Series, CS Professional Test Series, ICSI Test series, cs executive New syllabus Test Series, CS Professional New Syllabus Test Series, cs test series,  cs exam test series, cs online test series, cs executive test series, cs mock test series, cs professional test series, best cs test series, online cs test series, cseet test series
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 
