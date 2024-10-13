@@ -71,9 +71,17 @@
         .icon:hover {
             color: #ddd;
         }
-
-
 </style>
+
+<meta property="og:title" content="Mission CS Test Series: Company Secretary, CSEET, CS Executive & CS Professional Exams" />
+<meta property="og:type" content="Website" />
+<meta property="og:url" content="https:/missioncstestseries.com/" />
+<meta property="og:image" content="https://missioncstestseries.com/logo.png" />
+<meta property="og:description"
+content="Boost Your CS Exam Success with Our Comprehensive Test Series. Prepare for Company Secretary (CS) exams with specialized modules for CS Executive and CS Professional." />
+<link rel="canonical" href="https://missioncstestseries.com" />
+<link rel="icon" sizes="16x16" href="https://missioncstestseries.com/favicon.ico">
+
 <div style="height: 80px;" class="spacing"></div>
 
     <div style="display: none;">
