@@ -3,12 +3,10 @@
   Mission CS Test Series 
 <?= $this->endSection() ?>
 <?= $this->section('meta_description') ?>
-<!-- enter your meta description -->
-Boost Your CS Exam Success with Our Comprehensive Test Series. Prepare for Company Secretary (CS) exams with specialized modules for CS Executive and CS Professional.
+Most Trusted CS Test Series for CSEET CS Executive and CS Professional | Mission CS Test Series
 <?=$this->endSection()?>
 <?= $this->section('meta_keywords') ?>
-<!-- enter your meta keywords widthout tag -->
-CS Test Series, cstestseries, CS Executive Test Series, CS Professional Test Series, ICSI Test series, cs executive New syllabus Test Series, CS Professional New Syllabus Test Series, cs test series,  cs exam test series, cs online test series, cs executive test series, cs mock test series, cs professional test series, best cs test series, online cs test series, cseet test series
+cs test series, cstestseries , cs executive test series, cs professional test series, icsi test series, cs executive test series, cs online test Series, cs exam, cs exams test series, cs exams, best test series for cs exams
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 
