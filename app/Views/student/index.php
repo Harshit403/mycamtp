@@ -670,6 +670,27 @@ At Mission CS Test Series, we have designed each question papers considering the
           </div>
         </div>
     </section>
+
+<section>
+   <!-- Card Section -->
+    <div class="container mt-5">
+        <div class="card shadow-sm border-0 mb-3" style="border-radius: 15px;">
+            <div class="card-body">
+                <!--<h5 class="card-title text-center text-white py-2" style="background-color: #2FBCCD; border-radius: 10px;">Why Mission CS Test Series?</h5>-->
+                <div class="container-title-not">
+                  <h1-not>Years of Impact</h1-not>
+                </div>
+                <p class="card-text mt-3">
+To help CS students, we Created Instagram page. Later on , many qualified CS and CA  joined our team with the same motive.
+<br>
+Since 2019, we have helped thousands of CSEET, CS Executive, and CS Professional students on their journey. We have Hosted many free live mentorship sessions for CS Students and  also offered free Test Series for CS Students with evaluation. We also hosted  many free Live Guidance Sessions for qualified CS to guide them in their professional Journey.
+<br>
+Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offers the most affordable and quality CS Test Series for CS exams, followed by live mentorship from Rankers.</p>
+                  </div>
+        </div>
+    </div>
+</section>
+
     <!-- <section class="py-5 container" id="contact-section">
         <h1 class="text-center text-uppercase">Contact Us</h1>
         <div class="row">
