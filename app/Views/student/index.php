@@ -332,11 +332,11 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             <div class="card-body">
                 <!--<h5 class="card-title text-center text-white py-2" style="background-color: #2FBCCD; border-radius: 10px;">Why Mission CS Test Series?</h5>-->
                 <div class="container-title-not">
-                  <h1-not>Why Mission CS Test Series?</h1-not>
+                  <h1-not>One Minute Read</h1-not>
                 </div>
                  <p class="card-text mt-3">Passing CS exams isn't easy. Just studying randomly or writing CS exams without a proper plan won't help in  CS Exams. Many students study for  14 to 16hours a day, reading, learning, practicing , memorizing, and revising, but still fail.<br>
 
-In ICSI Exams, the environment is different. You feel the pressure.</p>br>
+In ICSI Exams, the environment is different. You feel the pressure.</p><br>
 You might see new questions that make you stressed. Without practice, it can take time to figure out how to answer new questions. There are case-based questions, and you might struggle with those. Time management IN CS  Exams is also a problem. When you solve past Attempt papers at home there may not be any restrict time limit, it's different from the ICSI exams, where time is limited. You might also make mistakes in how you present your answers.
 <br>
 If you don't prepare for CS exams while thinking about these issues, it may take you several attempts to resolve these problems.
