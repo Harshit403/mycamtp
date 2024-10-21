@@ -333,18 +333,21 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     }
 
     /* Container */
-    .slider-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 90%;
-      max-width: 1200px;
-      background-color: #ffffff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      animation: fadeIn 1.5s ease-in-out;
-    }
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center vertically */
+  width: 90%;
+  max-width: 1200px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  margin: 30px auto; /* Center horizontally */
+  animation: fadeIn 1.5s ease-in-out;
+}
+
 
     /* Text Section */
     .slider-text-section {
