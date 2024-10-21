@@ -192,7 +192,45 @@
 
 
 </style>
+<style>
+        /* Make drawer font thinner */
+.offcanvas-body .nav-link {
+  font-weight: 300; /* Thinner font weight */
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif; /* Update to a professional font */
+  color: #333; /* A clean, professional color */
+}
 
+.offcanvas-body .nav-link:hover {
+  color: #2fbccd; /* Match hover color with the theme */
+}
+
+/* Fix overlapping issue between cart and profile image */
+.nav-item.forMobileSection {
+  margin-right: 1rem; /* Add space between cart and profile image */
+}
+
+/* Profile image specific styles */
+.signinDropdown a.dropdown-main {
+  margin-left: 1rem; /* Add space to the left of profile image */
+}
+
+/* Ensure the cart and profile image remain distinct in layout */
+.navbar-nav .showCartBtn {
+  margin-right: 1.5rem; /* Increased margin for clarity */
+}
+
+.signinDropdown img {
+  border-radius: 50%; /* Ensures profile image remains circular */
+}
+
+/* Mobile adjustments */
+@media (max-width: 992px) {
+  .signinDropdown.forMobileSection {
+    margin-right: 1.5rem; /* Ensure spacing on smaller screens */
+  }
+}
+</style>
 
 <meta property="og:title" content="Mission CS Test Series: Company Secretary, CSEET, CS Executive & CS Professional Exams" />
 <meta property="og:type" content="Website" />
