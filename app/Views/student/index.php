@@ -680,7 +680,7 @@ At Mission CS Test Series, we have designed each question papers considering the
     <div class="slider-text-section">
       <h1>Trusted by Thousands of CS Students</h1>
       <p>Mission CS Test Series are the best for CS exams because they have ICSI level questions in their papers. Mission CS Test Series also had substantial Positive results in the last CS exams, showing how good they are. Their answer sheet evaluation is the best in the industry, and they give detailed analysis and feedback. The CS Test Series is made by ICSI rankers and qualified CS which make the most trusted and reliable Test Series in the industry.</p>
-      <a href="<?=base_url()?>/level?category=ca-test-series"> <button class="slider-cta-btn">Enroll Now</button></a>
+      <a href="<?=base_url()?>/level?category=cs-test-series"> <button class="slider-cta-btn">Enroll Now</button></a>
     </div>
     <div class="image-slider">
       <div class="slider-wrapper">
@@ -903,7 +903,7 @@ At Mission CS Test Series, we have designed each question papers considering the
           </div>
         <?php endif ?>
     </section>
-    <section class="py-5 container" id="testimonial-screen">
+ <!-- <section class="py-5 container" id="testimonial-screen">
         <!-- <h1 class="text-uppercase text-center">TESTIMONIALS</h1> -->
       <h1-not>Testimonials</h1-not>
         <div>
@@ -934,7 +934,7 @@ At Mission CS Test Series, we have designed each question papers considering the
             </button>
           </div>
         </div>
-    </section>
+    </section> -->
 
 <section>
    <!-- Card Section -->
