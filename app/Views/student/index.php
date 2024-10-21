@@ -325,6 +325,270 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </section>
 
 
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Container */
+    .slider-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+      max-width: 1200px;
+      background-color: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* Text Section */
+    .slider-text-section {
+      padding: 60px 30px;
+      background-color: #2FBCCD; /* Primary color */
+      color: white;
+      text-align: center;
+    }
+
+    .slider-text-section h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      letter-spacing: 1.5px;
+      font-weight: bold;
+      color: white;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .slider-text-section p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      line-height: 1.8;
+      color: #dcdde1;
+      animation: fadeInRight 1.5s ease-out;
+    }
+
+    .slider-cta-btn {
+      padding: 14px 50px;
+      background-color: #ffffff;
+      color: #2FBCCD;
+      border: 2px solid #2FBCCD;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+      animation: fadeInUp 2s ease;
+    }
+
+    .slider-cta-btn:hover {
+      background-color: #2FBCCD;
+      color: white;
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(255, 136, 0, 0.5);
+    }
+
+    /* Image Slider */
+    .image-slider {
+      width: 100%;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slider-wrapper img {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      border: 4px solid #2FBCCD;
+      border-radius: 20px;
+      margin-right: 20px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+      transition: transform 0.4s ease-in-out, box-shadow 0.4s ease;
+    }
+
+    .slider-wrapper img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Pagination Dots */
+    .slider-pagination {
+      position: absolute;
+      bottom: -20px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .slider-pagination span {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 6px;
+      background-color: #dcdde1;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .slider-pagination span.active {
+      background-color: #2FBCCD;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Media Queries for Tablet and Desktop */
+    @media(min-width: 768px) {
+      .slider-container {
+        flex-direction: row;
+      }
+
+      .slider-text-section {
+        flex: 1;
+        text-align: left;
+        padding: 80px;
+      }
+
+      .image-slider {
+        flex: 1;
+        padding: 50px;
+        justify-content: center;
+      }
+
+      .slider-wrapper {
+        flex-direction: row;
+      }
+
+      .slider-wrapper img {
+        width: 80%;
+        max-width: 300px;
+        height: auto;
+      }
+    }
+
+    /* Mobile View */
+    @media(max-width: 767px) {
+      .slider-text-section h1 {
+        font-size: 2.2rem;
+      }
+
+      .slider-text-section p {
+        font-size: 1rem;
+      }
+
+      .slider-wrapper {
+        flex-direction: row;
+      }
+
+      .slider-wrapper img {
+        width: 100%;
+        height: auto;
+        max-width: none;
+        margin-right: 10px;
+      }
+    }
+  </style>
+
+  <div class="slider-container">
+    <div class="slider-text-section">
+      <h1>Modern Slider Experience</h1>
+      <p>
+        Explore this unique, visually appealing slider with smooth transitions and
+        a captivating design. Responsive for all devices, it delivers an engaging user experience.
+      </p>
+      <button class="slider-cta-btn">Get Started</button>
+    </div>
+    <div class="image-slider">
+      <div class="slider-wrapper">
+        <img src="https://via.placeholder.com/260x500?text=Slide+1" alt="Slide 1">
+        <img src="https://via.placeholder.com/260x500?text=Slide+2" alt="Slide 2">
+        <img src="https://via.placeholder.com/260x500?text=Slide+3" alt="Slide 3">
+      </div>
+      <div class="slider-pagination">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const sliderWrapper = document.querySelector('.slider-wrapper');
+    const paginationDots = document.querySelectorAll('.slider-pagination span');
+    let currentIndex = 0;
+    let autoSlide;
+
+    function slideImages(index) {
+      const slideWidth = sliderWrapper.querySelector('img').clientWidth;
+      sliderWrapper.style.transform = `translateX(-${index * slideWidth}px)`;
+
+      paginationDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+
+      currentIndex = index;
+    }
+
+    function startAutoSlide() {
+      autoSlide = setInterval(() => {
+        currentIndex = (currentIndex + 1) % paginationDots.length;
+        slideImages(currentIndex);
+      }, 3000);  // Slide every 3 seconds
+    }
+
+    function stopAutoSlide() {
+      clearInterval(autoSlide); // Stop the interval
+    }
+
+    sliderWrapper.addEventListener('touchstart', stopAutoSlide);
+    sliderWrapper.addEventListener('touchend', startAutoSlide);
+    sliderWrapper.addEventListener('mousedown', stopAutoSlide);
+    sliderWrapper.addEventListener('mouseup', startAutoSlide);
+
+    paginationDots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        slideImages(index);
+        stopAutoSlide();
+        startAutoSlide();
+      });
+    });
+
+    startAutoSlide(); // Start auto sliding on page load
+  </script>
+
+
+
 <section>
    <!-- Card Section -->
     <div class="container mt-5">
