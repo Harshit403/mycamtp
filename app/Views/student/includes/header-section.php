@@ -355,7 +355,7 @@ content="Boost Your CS Exam Success with Our Comprehensive Test Series. Prepare 
     </button>
 
     <!-- Adjusted Offcanvas Section -->
-    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="height: 50vh;"> <!-- Set height to 50% of viewport -->
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="height: 60vh;"> <!-- Set height to 50% of viewport -->
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
           <a href="<?=base_url()?>">
