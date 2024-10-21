@@ -75,16 +75,17 @@
 
 
 <style>
+        
 /* Navbar customization */
 .navbar {
-    font-family: 'Poppins', sans-serif; /* Modern, clean font */
+    font-family: 'Poppins', sans-serif; /* Clean and modern font */
     background-color: #ffffff;
 }
 
 .navbar a {
     color: #2fbccd; /* Primary color */
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 400; /* Normal weight for professional look */
     transition: color 0.3s ease;
 }
 
@@ -93,7 +94,7 @@
 }
 
 .navbar-brand img {
-    filter: drop-shadow(2px 2px 10px rgba(47,188,205,0.4)); /* Logo with shadow effect */
+    /* No effect on logo image */
 }
 
 .btn-custom {
@@ -125,7 +126,7 @@
 .offcanvas-title a {
     font-size: 1.5rem;
     color: #fff;
-    font-weight: bold;
+    font-weight: 400; /* No bold text */
     text-decoration: none;
 }
 
@@ -138,11 +139,13 @@
 .offcanvas-body {
     padding: 2rem 1.5rem;
     color: #333;
+    font-family: 'Poppins', sans-serif;
 }
 
 .offcanvas-body a {
     color: #2fbccd;
-    font-size: 1.2rem;
+    font-size: 1rem; /* Reduced font size for a cleaner look */
+    font-weight: 400; /* No bold */
     transition: color 0.3s ease;
 }
 
@@ -159,6 +162,7 @@
 .dropdown-item {
     color: #2fbccd;
     font-size: 1rem;
+    font-weight: 400; /* No bold */
     transition: background-color 0.3s ease;
 }
 
@@ -176,13 +180,16 @@
     margin-top: 1rem;
 }
 
-.navbar-toggler-icon {
-    background-color: #2fbccd;
+/* Remove background color from the menu button */
+.navbar-toggler {
+    border: none;
+    background-color: transparent; /* Transparent background */
 }
 
-.navbar-toggler-icon:hover {
-    background-color: #004d40;
-}
+.navbar-toggler-icon {
+    background-color: transparent; /* Remove background */
+        }
+
 
 </style>
 
@@ -321,7 +328,6 @@ content="Boost Your CS Exam Success with Our Comprehensive Test Series. Prepare 
       </div>
 </nav> -->
 
-
 <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm p-3 bg-body rounded">
   <div class="container-fluid">
     <a class="navbar-brand fs-4" href="<?=base_url()?>">
@@ -337,6 +343,8 @@ content="Boost Your CS Exam Success with Our Comprehensive Test Series. Prepare 
         </a>
       </li>
     </ul>
+
+    <!-- Only show if user is logged in -->
     <?php if (session()->get('studentDetails')!==null): ?>
         <div class="dropdown signinDropdown forMobileSection">
           <a class="dropdown-main" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
@@ -350,12 +358,13 @@ content="Boost Your CS Exam Success with Our Comprehensive Test Series. Prepare 
           </ul>
         </div>
     <?php endif ?>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style="margin-left: -4rem!important;border: none;margin-right: -1rem;">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style="border: none;">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <!-- Adjusted Offcanvas Section -->
-    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="height: 60vh;"> <!-- Set height to 50% of viewport -->
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="height: 50vh;">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
           <a href="<?=base_url()?>">
@@ -367,7 +376,7 @@ content="Boost Your CS Exam Success with Our Comprehensive Test Series. Prepare 
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="<?=base_url();?>">Home</a>
+            <a class="nav-link" aria-current="page" href="<?=base_url();?>">Home</a>
           </li>
           <?php if (session()->get('studentDetails')===null): ?>
             <li class="nav-item">
@@ -383,7 +392,7 @@ content="Boost Your CS Exam Success with Our Comprehensive Test Series. Prepare 
           <li class="nav-item">
             <a class="nav-link" href="<?=base_url()?>/blog-list">Blog</a>
           </li>
-           <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="<?=base_url()?>#faq-section">FAQ</a>
           </li>
           <li class="nav-item forDesktopSection">
