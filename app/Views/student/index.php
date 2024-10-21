@@ -523,30 +523,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     }
   </style>
 
-  <div class="slider-container">
-    <div class="slider-text-section">
-      <h1>Modern Slider Experience</h1>
-      <p>
-        Explore this unique, visually appealing slider with smooth transitions and
-        a captivating design. Responsive for all devices, it delivers an engaging user experience.
-      </p>
-      <button class="slider-cta-btn">Get Started</button>
-    </div>
-    <div class="image-slider">
-      <div class="slider-wrapper">
-        <img src="<?=base_url()?>/assetItems/image/img-sld-1.jpg" alt="Slide 1">
-        <img src="<?=base_url()?>/assetItems/image/img-sld-2.jpg" alt="Slide 2">
-        <img src="<?=base_url()?>/assetItems/image/img-sld-3.jpg" alt="Slide 3">
-        <img src="<?=base_url()?>/assetItems/image/img-sld-4.jpg" alt="Slide 4">
-      </div>
-      <div class="slider-pagination">
-        <span class="active"></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-
   <script>
     const sliderWrapper = document.querySelector('.slider-wrapper');
     const paginationDots = document.querySelectorAll('.slider-pagination span');
@@ -700,7 +676,28 @@ At Mission CS Test Series, we have designed each question papers considering the
     </div>
 </section> 
 
+  <div class="slider-container">
+    <div class="slider-text-section">
+      <h1>Trusted by Thousands of CS Students</h1>
+      <p>Mission CS Test Series are the best for CS exams because they have ICSI level questions in their papers. Mission CS Test Series also had substantial Positive results in the last CS exams, showing how good they are. Their answer sheet evaluation is the best in the industry, and they give detailed analysis and feedback. The CS Test Series is made by ICSI rankers and qualified CS which make the most trusted and reliable Test Series in the industry.</p>
+      <a href="<?=base_url()?>/level?category=ca-test-series"> <button class="slider-cta-btn">Enroll Now</button></a>
+    </div>
+    <div class="image-slider">
+      <div class="slider-wrapper">
+        <img src="<?=base_url()?>/assetItems/image/img-sld-1.jpg" alt="Slide 1">
+        <img src="<?=base_url()?>/assetItems/image/img-sld-2.jpg" alt="Slide 2">
+        <img src="<?=base_url()?>/assetItems/image/img-sld-3.jpg" alt="Slide 3">
+        <img src="<?=base_url()?>/assetItems/image/img-sld-4.jpg" alt="Slide 4">
+      </div>
+      <div class="slider-pagination">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
 
+  
 <section>
    <!-- Card Section -->
     <div class="container mt-5">
