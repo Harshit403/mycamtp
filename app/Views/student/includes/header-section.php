@@ -139,7 +139,7 @@ content="Boost Your CS Exam Success with Our Comprehensive Test Series. Prepare 
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style="margin-left: -4rem!important;border: none;margin-right: -1rem;">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
               <a href="<?=base_url()?>">
