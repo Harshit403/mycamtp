@@ -534,9 +534,10 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </div>
     <div class="image-slider">
       <div class="slider-wrapper">
-        <img src="https://via.placeholder.com/260x500?text=Slide+1" alt="Slide 1">
-        <img src="https://via.placeholder.com/260x500?text=Slide+2" alt="Slide 2">
-        <img src="https://via.placeholder.com/260x500?text=Slide+3" alt="Slide 3">
+        <img src="<?=base_url()?>/assetItems/image/img-sld-1.jpg" alt="Slide 1">
+        <img src="<?=base_url()?>/assetItems/image/img-sld-2.jpg" alt="Slide 2">
+        <img src="<?=base_url()?>/assetItems/image/img-sld-3.jpg" alt="Slide 3">
+        <img src="<?=base_url()?>/assetItems/image/img-sld-4.jpg" alt="Slide 4">
       </div>
       <div class="slider-pagination">
         <span class="active"></span>
