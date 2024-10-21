@@ -195,8 +195,8 @@
 <style>
         /* Make drawer font thinner */
 .offcanvas-body .nav-link {
-  font-weight: 300; /* Thinner font weight */
-  font-size: 16px;
+  font-weight: 200; /* Thinner font weight */
+  font-size: 12px;
   font-family: 'Roboto', sans-serif; /* Update to a professional font */
   color: #333; /* A clean, professional color */
 }
