@@ -195,7 +195,7 @@
 <style>
         /* Make drawer font thinner */
 .offcanvas-body .nav-link {
-  font-weight: 40; /* Thinner font weight */
+  font-weight: 100; /* Thinner font weight */
   font-size: 16px;
   font-family: 'Roboto', sans-serif; /* Update to a professional font */
   color: #333; /* A clean, professional color */
@@ -402,7 +402,7 @@ content="Boost Your CS Exam Success with Our Comprehensive Test Series. Prepare 
     </button>
 
     <!-- Adjusted Offcanvas Section -->
-    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="height: 60vh;">
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="height: 55vh;">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
           <a href="<?=base_url()?>">
