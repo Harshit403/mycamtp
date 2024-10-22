@@ -241,7 +241,7 @@ content="Boost Your CS Exam Success with Our Comprehensive Test Series. Prepare 
 <link rel="canonical" href="https://missioncstestseries.com" />
 <link rel="icon" sizes="16x16" href="https://missioncstestseries.com/favicon.ico">
 
-<div style="height: 80px;" class="spacing"></div>
+<div style="height: 60px;" class="spacing"></div>
 
     <div style="display: none;">
         <div class="cartPopUpContainer"></div>
