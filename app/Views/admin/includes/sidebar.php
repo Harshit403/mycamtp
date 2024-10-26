@@ -317,7 +317,7 @@
             </li>
         <?php endif ?>
 
-        <li class="menu-header small text-uppercase">
+   <!--     <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Apps &amp; Pages</span>
         </li>
         <!-- Apps -->
@@ -627,6 +627,6 @@
                 <i class="menu-icon tf-icons bx bx-file"></i>
                 <div data-i18n="Documentation">Documentation</div>
             </a>
-        </li>
+        </li> -->
     </ul>
 </aside>
