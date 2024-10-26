@@ -26,43 +26,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     <meta itemprop="alternateName" content="CS Test Series"/>
 </div>
 
- <!-- <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" style="margin-top: 79px;">
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="5000">
-          <img src="<?=base_url()?>carousel/assets/img.jpg" class="d-block w-100 imgClass" alt="...">
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img src="<?=base_url()?>carousel/assets/img.jpg" class="d-block w-100 imgClass" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="<?=base_url()?>carousel/assets/img.jpg" class="d-block w-100 imgClass" alt="...">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-  </div> -->
-   <!-- <section class="header-text container py-5 m-2" id="intro-section">
-        <h1 class="text-uppercase text-center">The Key of <font class="text-success">success</font></h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </section> -->
-<!-- <div>
-  <section class="container text-center mt-5 py-5 bg-white">
-    <h1 class="text-danger mb-4 fw-bolder" style="color: #FF1744; font-size: 2.5rem;">MISSION CS <span class="text-danger"> Test Series</span></h1>
-    <p class="lead text-dark font-weight-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </section>
-</div> -->
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
@@ -296,18 +259,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     <div class="wave-effect"></div> <!-- Added wave effect -->
 </section>
 
-   <!-- <section class="py-5 category container" id="category-section">
-        <h1 class="text-uppercase text-center">Category</h1>
-        <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
-          <?php if (!empty($categoryDetails)): ?>
-              <?php foreach ($categoryDetails as $categoryRow): ?>
-                  <a class="strached-link" href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" style="text-decoration: none;"><div class="card">
-                      <h2><?=$categoryRow->category_name?></h2>
-                  </div></a>
-              <?php endforeach ?>
-          <?php endif ?>
-        </div>
-    </section> -->
+  
 <section class="py-5 category container" id="category-section">
     <!-- <h1 class="text-uppercase text-center">Category</h1> -->
     <div class="container-title">
@@ -570,11 +522,11 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 
 
 <section>
-   <!-- Card Section -->
+   
     <div class="container mt-5">
         <div class="card shadow-sm border-0 mb-3" style="border-radius: 15px;">
             <div class="card-body">
-                <!--<h5 class="card-title text-center text-white py-2" style="background-color: #2FBCCD; border-radius: 10px;">Why Mission CS Test Series?</h5>-->
+                
                 <div class="container-title-not">
                   <h1-not>One Minute Read</h1-not>
                 </div>
@@ -718,41 +670,7 @@ At Mission CS Test Series, we have designed each question papers considering the
 
 
 
-  <!--  <section class="py-5 container" id="content-section">
-        <h1 class="text-center text-uppercase">Our Goals</h1>
-        <div class="row">
-            <div class="col-md-8">
-                <nav>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>
-                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</button>
-                        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
-                    </div>
-                </nav>
-                <div class="tab-content" id="nav-tabContent">
-                  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.1</div>
-                  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.2</div>
-                  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.3</div>
-                </div>
-            </div>
-           <div class="col-md-4">
-                <img src="<?=base_url()?>/assetItems/image/image2.jpg" class="img-thumbnail" style="width: 400px;">
-            </div> -->
+  
 
 <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
   <div class="carousel-inner">
@@ -905,7 +823,6 @@ At Mission CS Test Series, we have designed each question papers considering the
     </section>
 
 <section>
-   <!-- Card Section -->
     <div class="container mt-5">
         <div class="card shadow-sm border-0 mb-3" style="border-radius: 15px;">
             <div class="card-body">
@@ -924,81 +841,6 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
     </div>
 </section>
 
-    <!-- <section class="py-5 container" id="contact-section">
-        <h1 class="text-center text-uppercase">Contact Us</h1>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="row address-container">
-                    <div class="col-md-6 mb-4">
-                        <div class="card" style="background: #fafbff;border: none;height:14rem;">
-                            <div class="card-body">
-                                <h2><i class="bi bi-geo-alt"></i></h2>
-                                <h4>Address</h4>
-                                <p>Ghaziabad, Delhi NCR</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card" style="background: #fafbff;border: none;height:14rem;">
-                            <div class="card-body">
-                                <h2><i class="bi bi-telephone"></i></h2>
-                                <h4>Call Us</h4>
-                                <p>+91 9873045724</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mt-4">
-                        <div class="card" style="background: #fafbff;border: none;height:14rem;">
-                            <div class="card-body">
-                                <h2><i class="bi bi-envelope"></i></h2>
-                                <h4>Email</h4>
-                                <p>exam@missioncstestseries.com</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 my-4">
-                        <div class="card" style="background: #fafbff;border: none;height:14rem;">
-                            <div class="card-body">
-                                <h2><i class="bi bi-clock"></i></h2>
-                                <h4>Open Hours</h4>
-                                <p>Sales: 24×7<br></p>
-                                <p>Others: Monday - Friday(10:00 AM to 8:00 PM)</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="col-md-6 mb-4" style="background:#fafbff">
-                <div class="d-flex align-items-center justify-content-center">
-                    <div class="row pt-3">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" id="name" placeholder="Your Name" class="form-control form-control-sm">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="email" id="email" placeholder="Your Email" class="form-control form-control-sm">
-                            </div>
-                        </div>
-                        <div class="col-md-12 mt-2">
-                            <div class="form-group">
-                                <input type="text" id="email" placeholder="Subject" class="form-control form-control-sm">
-                            </div>
-                        </div>
-                        <div class="col-md-12 mt-2">
-                            <textarea class="form-control" name="message" id="message" rows="6" placeholder="Message" required=""></textarea>
-                        </div>
-                        <div class="col-md-12 text-center mt-2">
-                            <a href="javascript:void(0)" class="btn btn-custom btn-sm">Send Message</a>
-                        </div>
-                    </div>
-                </div>
-               
-            </div>
-        </div>
-    </section> -->
     <section class="py-5 container" id="newsletter_section">
       <div class="row">
         <div class="col-md-6">
