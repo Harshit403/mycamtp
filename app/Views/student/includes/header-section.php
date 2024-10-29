@@ -299,7 +299,7 @@ content="Boost Your CS Exam Success with Our Comprehensive Test Series. Prepare 
     </button>
 
     <!-- Drawer / Offcanvas section -->
-    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="height: 55vh;>
       <div class="offcanvas-header">
         <!-- No effect on logo image in drawer header -->
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
