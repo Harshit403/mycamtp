@@ -1,7 +1,7 @@
 <!-- navbar -->
 <style>
         .navbar {
-    top: 50px; /* Adjust to prevent overlapping with the banner */
+            top: 50px; /* Adjust to prevent overlapping with the banner */
                 }
         .contact {
             display: flex;
@@ -71,10 +71,6 @@
         .icon:hover {
             color: #ddd;
         }
-</style>
-
-
-<style>
         
 /* Navbar customization */
 .navbar {
@@ -190,9 +186,6 @@
     background-color: transparent; /* Remove background */
         }
 
-
-</style>
-<style>
         /* Make drawer font thinner */
 .offcanvas-body .nav-link {
   font-weight: 100; /* Thinner font weight */
