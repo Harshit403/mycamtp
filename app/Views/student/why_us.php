@@ -16,13 +16,7 @@
 
   <style>
     /* Styles for the Mission CS Test Series Page */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #e3fcff;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
+    
 
     .msc-container {
       max-width: 800px;
