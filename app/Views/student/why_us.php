@@ -24,7 +24,6 @@
             </div>
         </div> -->
 
-
   <style>
     /* Styles for the Mission CS Test Series Page */
     body {
@@ -35,7 +34,7 @@
       color: #333;
     }
 
-    .container {
+    .msc-container {
       max-width: 800px;
       margin: 20px auto;
       padding: 20px;
@@ -44,7 +43,7 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    header {
+    .msc-header {
       text-align: center;
       background-color: #2fbccd;
       color: #fff;
@@ -52,35 +51,35 @@
       border-radius: 8px 8px 0 0;
     }
 
-    header h1 {
+    .msc-header h1 {
       margin: 0;
       font-size: 24px;
     }
 
-    header p {
+    .msc-header p {
       margin: 5px 0 0;
       font-size: 16px;
     }
 
-    section {
+    .msc-section {
       margin: 20px 0;
     }
 
-    h2 {
+    .msc-h2 {
       color: #2fbccd;
       margin-bottom: 10px;
     }
 
-    ul {
+    .msc-ul {
       list-style-type: disc;
       padding-left: 20px;
     }
 
-    ul li {
+    .msc-ul li {
       margin-bottom: 8px;
     }
 
-    .test-button {
+    .msc-test-button {
       background-color: #2fbccd;
       color: #fff;
       border: none;
@@ -92,17 +91,17 @@
       transition: background-color 0.3s;
     }
 
-    .test-button:hover {
+    .msc-test-button:hover {
       background-color: #239a9c;
     }
 
-    .enroll {
+    .msc-enroll {
       text-align: center;
       margin-top: 20px;
     }
 
     /* Enroll Now Button with blinking animation */
-    .enroll-button {
+    .msc-enroll-button {
       background-color: #ff6347; /* Initial color */
       color: #fff;
       border: none;
@@ -111,15 +110,15 @@
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s;
-      animation: blink 1.5s infinite; /* Blink effect */
+      animation: blinkEffect 1.5s infinite; /* Blink effect */
     }
 
-    .enroll-button:hover {
+    .msc-enroll-button:hover {
       background-color: #ff4500; /* Hover color */
     }
 
     /* Blinking animation */
-    @keyframes blink {
+    @keyframes blinkEffect {
       0% {
         opacity: 1;
         background-color: #ff6347;
@@ -136,68 +135,67 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      .container {
+      .msc-container {
         max-width: 100%;
         margin: 10px;
         padding: 15px;
       }
 
-      header h1 {
+      .msc-header h1 {
         font-size: 20px;
       }
 
-      header p {
+      .msc-header p {
         font-size: 14px;
       }
 
-      h2 {
+      .msc-h2 {
         font-size: 18px;
       }
 
-      .test-button, .enroll-button {
+      .msc-test-button, .msc-enroll-button {
         font-size: 14px;
         padding: 10px 20px;
       }
 
-      .test-button {
+      .msc-test-button {
         width: 100%;
         margin: 10px 0;
       }
 
-      .enroll-button {
+      .msc-enroll-button {
         width: 100%;
       }
     }
 
     @media (max-width: 480px) {
-      header h1 {
+      .msc-header h1 {
         font-size: 18px;
       }
 
-      header p {
+      .msc-header p {
         font-size: 12px;
       }
 
-      h2 {
+      .msc-h2 {
         font-size: 16px;
       }
 
-      .test-button, .enroll-button {
+      .msc-test-button, .msc-enroll-button {
         font-size: 12px;
         padding: 8px 15px;
       }
     }
   </style>
 
-
-  <div class="container">
-    <header>
+  <div class="msc-container">
+    <header class="msc-header">
       <h1>Mission CS Test Series</h1>
       <p>Helping CS Students Achieve Their Dream of Becoming a Company Secretary</p>
     </header>
     
-    <section class="content">
-      <h2>Why Choose Us?</h2>
+    <section class="msc-section">
+      <h2 class="msc-h2">Why Choose Us?</h2>
       <p>
         Mission CS Test Series is considered to be the best CS test series.  
         It has already helped CS students complete their journey of becoming Company Secretaries.
@@ -207,25 +205,19 @@
         We strictly follow the ICSI trend to evaluate answer sheets. Our test series is based on the latest ICSI pattern and includes unseen questions to familiarize students with the exam environment.
       </p>
     </section>
-    <div class="buttons">
-      <button class="test-button">CSEET Test Series</button>
-      <button class="test-button">CS Executive Test Series</button>
-      <button class="test-button">CS Professional Test Series</button>
-    </div>
 
-
-    <section class="test-types">
-      <h2>Types of Test Series We Offer:</h2>
-      <ul>
+    <section class="msc-section">
+      <h2 class="msc-h2">Types of Test Series We Offer:</h2>
+      <ul class="msc-ul">
         <li>Chapterwise Test Series</li>
         <li>Unit-wise Test Series</li>
         <li>Full Syllabus Test Series</li>
       </ul>
     </section>
 
-    <section class="features">
-      <h2>Key Features of Mission CS Test Series:</h2>
-      <ul>
+    <section class="msc-section">
+      <h2 class="msc-h2">Key Features of Mission CS Test Series:</h2>
+      <ul class="msc-ul">
         <li>Small batches for more focus</li>
         <li>Detailed performance feedback</li>
         <li>Proven strategies for securing top ranks</li>
@@ -233,14 +225,16 @@
       </ul>
     </section>
 
-    <div class="enroll">
-      <button class="enroll-button">Enroll Now</button>
+    <div class="msc-buttons">
+      <button class="msc-test-button">CSEET Test Series</button>
+      <button class="msc-test-button">CS Executive Test Series</button>
+      <button class="msc-test-button">CS Professional Test Series</button>
+    </div>
+
+    <div class="msc-enroll">
+      <button class="msc-enroll-button">Enroll Now</button>
     </div>
   </div>
-                                                 
-
-
-
 
     </section>
 <?= $this->endSection() ?>
