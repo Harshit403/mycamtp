@@ -10,7 +10,7 @@
 <?=$this->endSection()?>
 <?= $this->section('content') ?>
     <section class="container mb-5 section mainContainer">
-        <div class="text-center">
+      <!--  <div class="text-center">
             <h2>Why Us</h2>
         </div>
         <div class="whyUsContainer py-3">
@@ -22,7 +22,226 @@
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
             </div>
-        </div>
+        </div> -->
+
+
+  <style>
+    /* Styles for the Mission CS Test Series Page */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e3fcff;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      text-align: center;
+      background-color: #2fbccd;
+      color: #fff;
+      padding: 20px;
+      border-radius: 8px 8px 0 0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 16px;
+    }
+
+    section {
+      margin: 20px 0;
+    }
+
+    h2 {
+      color: #2fbccd;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    .test-button {
+      background-color: #2fbccd;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      margin: 10px 5px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    .test-button:hover {
+      background-color: #239a9c;
+    }
+
+    .enroll {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    /* Enroll Now Button with blinking animation */
+    .enroll-button {
+      background-color: #ff6347; /* Initial color */
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      animation: blink 1.5s infinite; /* Blink effect */
+    }
+
+    .enroll-button:hover {
+      background-color: #ff4500; /* Hover color */
+    }
+
+    /* Blinking animation */
+    @keyframes blink {
+      0% {
+        opacity: 1;
+        background-color: #ff6347;
+      }
+      50% {
+        opacity: 0.5;
+        background-color: #ff4500;
+      }
+      100% {
+        opacity: 1;
+        background-color: #ff6347;
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        max-width: 100%;
+        margin: 10px;
+        padding: 15px;
+      }
+
+      header h1 {
+        font-size: 20px;
+      }
+
+      header p {
+        font-size: 14px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      .test-button, .enroll-button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+
+      .test-button {
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .enroll-button {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 18px;
+      }
+
+      header p {
+        font-size: 12px;
+      }
+
+      h2 {
+        font-size: 16px;
+      }
+
+      .test-button, .enroll-button {
+        font-size: 12px;
+        padding: 8px 15px;
+      }
+    }
+  </style>
+
+
+  <div class="container">
+    <header>
+      <h1>Mission CS Test Series</h1>
+      <p>Helping CS Students Achieve Their Dream of Becoming a Company Secretary</p>
+    </header>
+    
+    <section class="content">
+      <h2>Why Choose Us?</h2>
+      <p>
+        Mission CS Test Series is considered to be the best CS test series.  
+        It has already helped CS students complete their journey of becoming Company Secretaries.
+      </p>
+      <p>
+        Each of our CS Test Series papers is prepared and evaluated by rankers and Company Secretaries.  
+        We strictly follow the ICSI trend to evaluate answer sheets. Our test series is based on the latest ICSI pattern and includes unseen questions to familiarize students with the exam environment.
+      </p>
+    </section>
+    <div class="buttons">
+      <button class="test-button">CSEET Test Series</button>
+      <button class="test-button">CS Executive Test Series</button>
+      <button class="test-button">CS Professional Test Series</button>
+    </div>
+
+
+    <section class="test-types">
+      <h2>Types of Test Series We Offer:</h2>
+      <ul>
+        <li>Chapterwise Test Series</li>
+        <li>Unit-wise Test Series</li>
+        <li>Full Syllabus Test Series</li>
+      </ul>
+    </section>
+
+    <section class="features">
+      <h2>Key Features of Mission CS Test Series:</h2>
+      <ul>
+        <li>Small batches for more focus</li>
+        <li>Detailed performance feedback</li>
+        <li>Proven strategies for securing top ranks</li>
+        <li>Special attention to each student</li>
+      </ul>
+    </section>
+
+    <div class="enroll">
+      <button class="enroll-button">Enroll Now</button>
+    </div>
+  </div>
+                                                 
+
+
+
+
     </section>
 <?= $this->endSection() ?>
 <?= $this->section('jsContent') ?>
