@@ -9,8 +9,8 @@
 <!-- enter your meta keywords widthout tag -->
 <?=$this->endSection()?>
 <?= $this->section('content') ?>
-    <section class="container mb-5 section mainContainer">
-        
+
+  <section>     
   <div class="container my-4">
     <header class="text-center bg-info text-white p-4 rounded-top">
       <h1 class="h3">Mission CS Test Series</h1>
@@ -75,7 +75,7 @@
       animation: blinkEffect 1.5s infinite;
     }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> -->
     </section>
 <?= $this->endSection() ?>
 <?= $this->section('jsContent') ?>
