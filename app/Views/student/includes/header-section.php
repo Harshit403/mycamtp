@@ -300,7 +300,7 @@ content="Boost Your CS Exam Success with Our Comprehensive Test Series. Prepare 
     </button>
 
     <!-- Offcanvas Drawer -->
-    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="height: 60vh;">
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="height: 53vh;">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
           <a href="<?=base_url()?>">
