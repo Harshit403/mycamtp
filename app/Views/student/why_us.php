@@ -10,7 +10,7 @@
 <?=$this->endSection()?>
 <?= $this->section('content') ?>
 
-  <section class="mt-3">     
+<section class="mb-5">
   <div class="container my-4">
     <header class="text-center bg-info text-white p-4 rounded-top">
       <h1 class="h3">Mission CS Test Series</h1>
