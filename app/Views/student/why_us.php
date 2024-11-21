@@ -10,7 +10,7 @@
 <?=$this->endSection()?>
 <?= $this->section('content') ?>
 
-<section class="mb-5">
+
   <div class="container my-4">
     <header class="text-center bg-info text-white p-4 rounded-top">
       <h1 class="h3">Mission CS Test Series</h1>
@@ -29,14 +29,7 @@
           We strictly follow the ICSI trend to evaluate answer sheets. Our test series is based on the latest ICSI pattern and includes unseen questions to familiarize students with the exam environment.
         </p>
       </section>
-        
-      <!-- Buttons Section -->
-      <div class="d-grid gap-3">
-        <button class="btn btn-info text-white w-100">CSEET Test Series</button>
-        <button class="btn btn-info text-white w-100">CS Executive Test Series</button>
-        <button class="btn btn-info text-white w-100">CS Professional Test Series</button>
-      </div>
-        
+
       <section class="mb-4">
         <h2 class="h5 text-info">Types of Test Series We Offer:</h2>
         <ul class="list-unstyled ps-3">
@@ -56,9 +49,16 @@
         </ul>
       </section>
 
-      <!-- Enroll Button -->
+      <!-- Buttons Section with Wider Width -->
+      <div class="d-grid gap-3">
+        <button class="btn btn-info text-white w-75 mx-auto">CSEET Test Series</button>
+        <button class="btn btn-info text-white w-75 mx-auto">CS Executive Test Series</button>
+        <button class="btn btn-info text-white w-75 mx-auto">CS Professional Test Series</button>
+      </div>
+
+      <!-- Enroll Button with Wider Width -->
       <div class="text-center mt-4">
-        <button class="btn btn-danger btn-lg w-100 animate-blink">Enroll Now</button>
+        <button class="btn btn-danger btn-lg w-75 mx-auto animate-blink">Enroll Now</button>
       </div>
     </div>
   </div>
@@ -75,8 +75,9 @@
       animation: blinkEffect 1.5s infinite;
     }
   </style>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> -->
-    </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 <?= $this->endSection() ?>
 <?= $this->section('jsContent') ?>
 <?= $this->endSection() ?>
