@@ -36,13 +36,13 @@
         <button class="btn btn-info text-white w-100">CS Executive Test Series</button>
         <button class="btn btn-info text-white w-100">CS Professional Test Series</button>
       </div>
-        
+        &nbsp
       <section class="mb-4">
         <h2 class="h5 text-info">Types of Test Series We Offer:</h2>
         <ul class="list-unstyled ps-3">
-          <li>Chapterwise Test Series</li>
-          <li>Unit-wise Test Series</li>
-          <li>Full Syllabus Test Series</li>
+          <li><b></b>Chapterwise Test Series</b></li>
+          <li><b></b>Unit-wise Test Series</b></li>
+          <li><b></b>Full Syllabus Test Series</b></li>
         </ul>
       </section>
 
