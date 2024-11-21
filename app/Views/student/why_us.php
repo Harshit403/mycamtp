@@ -1,6 +1,6 @@
 <?= $this->extend('student/layout/layout') ?>
 <?= $this->section('title') ?>
-    Why Us
+    Why Us - Mission CS Test Series 
 <?= $this->endSection() ?>
 <?= $this->section('meta_description') ?>
 <!-- enter your meta description -->
@@ -29,6 +29,12 @@
           We strictly follow the ICSI trend to evaluate answer sheets. Our test series is based on the latest ICSI pattern and includes unseen questions to familiarize students with the exam environment.
         </p>
       </section>
+      <!-- Buttons Section with Wider Width -->
+      <div class="d-grid gap-3">
+        <button class="btn btn-info text-white w-75 mx-auto">CSEET Test Series</button>
+        <button class="btn btn-info text-white w-75 mx-auto">CS Executive Test Series</button>
+        <button class="btn btn-info text-white w-75 mx-auto">CS Professional Test Series</button>
+      </div>
 
       <section class="mb-4">
         <h2 class="h5 text-info">Types of Test Series We Offer:</h2>
@@ -49,12 +55,6 @@
         </ul>
       </section>
 
-      <!-- Buttons Section with Wider Width -->
-      <div class="d-grid gap-3">
-        <button class="btn btn-info text-white w-75 mx-auto">CSEET Test Series</button>
-        <button class="btn btn-info text-white w-75 mx-auto">CS Executive Test Series</button>
-        <button class="btn btn-info text-white w-75 mx-auto">CS Professional Test Series</button>
-      </div>
 
       <!-- Enroll Button with Wider Width -->
       <div class="text-center mt-4">
