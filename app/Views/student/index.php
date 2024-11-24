@@ -10,22 +10,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 
-<script type="application/ld+json">
-    {
-      "@context" : "https://schema.org",
-      "@type" : "WebSite",
-      "name" : "Mission CS Test Series",
-      "alternateName" : "CS Test Series",
-      "url" : "https://missioncstestseries.com/"
-    }
-</script>
-
-<div itemscope itemtype="https://schema.org/WebSite">
-  <link itemprop="url" href="https://missioncstestseries.com" />
-    <meta itemprop="name" content="Mission CS Test Series"/>
-    <meta itemprop="alternateName" content="CS Test Series"/>
-</div>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
