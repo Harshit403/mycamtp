@@ -1,6 +1,6 @@
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('title')?>
-  Mission CS Test Series 
+  CS Test Series: For CSEET, CS Executive and CS Professional 
 <?= $this->endSection() ?>
 <?= $this->section('meta_description') ?>
 Most Trusted CS Test Series for CSEET CS Executive and CS Professional | Mission CS Test Series
