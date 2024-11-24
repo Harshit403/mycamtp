@@ -229,11 +229,14 @@
 <meta property="og:type" content="Website" />
 <meta property="og:url" content="https:/missioncstestseries.com/" />
 <meta property="og:image" content="https://missioncstestseries.com//assetItems/image/logo.jpg" />
-<meta property="og:description"
-content="Boost Your CS Exam Success with Our Comprehensive Test Series. Prepare for Company Secretary (CS) exams with specialized modules for CS Executive and CS Professional." />
+<meta property="og:description" content="Best online CS Test Series Plateform, Experience the best quality question, personlised feedback" />
 <link rel="canonical" href="https://missioncstestseries.com" />
 <link rel="icon" sizes="16x16" href="https://missioncstestseries.com/favicon.ico">
-
+<title>
+           Mission CS Test Series |ICSI DEC 2024 Exams 
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
 <div style="height: 60px;" class="spacing"></div>
 
     <div style="display: none;">
