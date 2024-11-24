@@ -261,7 +261,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 
   
 <section class="py-5 category container" id="category-section">
-    <!-- <h1 class="text-uppercase text-center">Category</h1> -->
+    
     <div class="container-title">
         <h1-not>Category</h1-not>
     </div>
@@ -694,7 +694,7 @@ At Mission CS Test Series, we have designed each question papers considering the
     </section>
 
 <section class="py-5 container" id="faq-section">
-    <!-- <h1 class="text-uppercase text-center">FAQ</h1> -->
+  
     <div class="container-title">
         <h1-not>FAQ</h1-not>
     </div>
@@ -785,7 +785,6 @@ At Mission CS Test Series, we have designed each question papers considering the
 
 
     <section class="py-5 container" id="blog-section">
-       <!-- <h1 class="text-uppercase text-center">Blogs</h1> -->
     <div class="container-title">
         <h1-not>Blogs</h1-not>
     </div>
