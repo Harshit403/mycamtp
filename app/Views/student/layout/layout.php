@@ -12,5 +12,16 @@
     <?=view('student/includes/script')?>
     <?=view('student/includes/footer')?>
     <?= $this->renderSection('jsContent') ?>
+
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then(() => console.log("Service Worker Registered"))
+      .catch((error) => console.error("Service Worker Registration Failed:", error));
+  }
+</script>
+	
 </body>
 </html>
