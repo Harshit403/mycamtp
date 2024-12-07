@@ -902,4 +902,142 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
 
   </script>
   <script src="<?=base_url()?>assets/student/js/view.js?1.0.3"></script>
+
+
+  <style>
+    /* Mini Info Bar at the bottom */
+    #custom-install-bar {
+      position: fixed;
+      bottom: -50px; /* Initially hidden */
+      left: 0;
+      width: 100%;
+      background: #4caf50;
+      color: white;
+      box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      font-family: 'Arial', sans-serif;
+      padding: 10px;
+      text-align: center;
+      border-radius: 25px 25px 0 0;
+      transition: bottom 0.3s ease-in-out;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #install-bar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+      flex: 1;
+    }
+
+    #install-bar-content p {
+      margin: 0;
+      font-size: 14px;
+      flex: 1;
+    }
+
+    #install-app-button {
+      padding: 8px 15px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #4caf50;
+      background: white;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #install-app-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Close Button Style */
+    #close-install-bar {
+      background: none;
+      border: none;
+      font-size: 20px;
+      color: white;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    /* Close Button Hover Effect */
+    #close-install-bar:hover {
+      color: #f44336;
+    }
+
+  </style>
+
+  <!-- Mini Install Bar -->
+  <div id="custom-install-bar" style="display: none;">
+    <div id="install-bar-content">
+      <p>🚀 Install <strong>Mission CS Test Series</strong> for a faster, smoother experience!</p>
+      <button id="install-app-button">Install Now</button>
+      <button id="close-install-bar">&times;</button> <!-- Close button -->
+    </div>
+  </div>
+
+  <script>
+    let deferredPrompt;
+
+    // Listen for the beforeinstallprompt event
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent the default mini-infobar
+      e.preventDefault();
+      // Save the event for triggering later
+      deferredPrompt = e;
+
+      // Show the custom install bar with animation
+      const installBar = document.getElementById('custom-install-bar');
+      installBar.style.display = 'block';
+      installBar.style.bottom = '0'; // Slide in the mini bar
+    });
+
+    // Handle the install button click
+    document.getElementById('install-app-button').addEventListener('click', () => {
+      if (deferredPrompt) {
+        // Show the default install prompt
+        deferredPrompt.prompt();
+
+        // Handle the user's choice
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === 'accepted') {
+            console.log('User accepted the install prompt');
+          } else {
+            console.log('User dismissed the install prompt');
+          }
+          deferredPrompt = null;
+        });
+      }
+
+      // Hide the custom install bar with slide-out animation
+      const installBar = document.getElementById('custom-install-bar');
+      installBar.style.bottom = '-50px'; // Slide out the mini bar
+      setTimeout(() => {
+        installBar.style.display = 'none';
+      }, 300); // Hide after animation
+    });
+
+    // Hide the bar once the app is installed
+    window.addEventListener('appinstalled', () => {
+      console.log('PWA was installed');
+      const installBar = document.getElementById('custom-install-bar');
+      installBar.style.display = 'none';
+    });
+
+    // Close the install bar when the close button is clicked
+    document.getElementById('close-install-bar').addEventListener('click', () => {
+      const installBar = document.getElementById('custom-install-bar');
+      installBar.style.bottom = '-50px'; // Slide out the mini bar
+      setTimeout(() => {
+        installBar.style.display = 'none';
+      }, 300); // Hide after animation
+    });
+  </script>
+
 <?= $this->endSection() ?>
