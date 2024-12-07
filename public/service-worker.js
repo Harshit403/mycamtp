@@ -1,9 +1,7 @@
 const CACHE_NAME = "missioncs-cache-v1";
 const urlsToCache = [
   "/",
-  "/app/Views/student/index.php", // Update this if the URL differs when accessed
   "<?=base_url()?>/assets/css/style.css?v=1.0.1",
-  "/public/assets/index.js",
   "https://missioncstestseries.com//assetItems/image/logo.jpg",
   "https://missioncstestseries.com//assetItems/image/logo.jpg"
 ];
