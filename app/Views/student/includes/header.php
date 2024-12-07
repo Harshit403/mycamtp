@@ -23,7 +23,9 @@
     
    <link rel="manifest" href="<?=base_url()?>/manifest.json">
    <meta name="theme-color" content="#1a73e8">
-
+  
+    <link rel="manifest" href="/manifest.json">
+   <meta name="theme-color" content="#1a73e8">
     
     <script type="application/ld+json">
   {
