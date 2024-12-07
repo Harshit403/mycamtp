@@ -19,7 +19,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome for icons -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" crossorigin="anonymous"></script>
-   
+
+    
+   <link rel="manifest" href="<?=base_url()?>/manifest.json">
+   <meta name="theme-color" content="#1a73e8">
+
+    
     <script type="application/ld+json">
   {
     "@context": "https://schema.org",
