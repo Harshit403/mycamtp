@@ -1,7 +1,7 @@
 {
   "name": "Mission CS Test Series",
-  "short_name": "CSTestSeries",
-  "start_url": "/",
+  "short_name": "Mission CS",
+  "start_url": "/dashboard",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#1a73e8",
