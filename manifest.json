@@ -1,0 +1,20 @@
+{
+  "name": "Mission CS Test Series",
+  "short_name": "CSTestSeries",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a73e8",
+  "icons": [
+    {
+      "src": "/assetItems/image/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assetItems/image/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
