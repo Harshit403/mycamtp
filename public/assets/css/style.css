@@ -960,3 +960,228 @@ body {
     #close-install-bar:hover {
       color: #f44336;
     }
+
+
+        .navbar {
+            top: 50px; /* Adjust to prevent overlapping with the banner */
+                }
+        .contact {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact i {
+            margin-right: 15px; /* Add space between phone icon and number */
+            font-size: 1.2em;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .contact span {
+            font-size: 1.2em;
+            vertical-align: middle;
+        }
+        
+       .auth-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .auth-button {
+            background-color: white;
+            color: #25c2c6;
+            border: 1px solid transparent;
+            padding: 6.8px 17px;
+            margin-right: 10px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .auth-button:hover {
+            background-color: #1a9ea1;
+            color: white;
+            border-color: white;
+}
+        .banner {
+            background-color: #2FBCCD;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .icon {
+            color: white;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+
+        .icon:hover {
+            color: #ddd;
+        }
+        
+/* Navbar customization */
+.navbar {
+    font-family: 'Poppins', sans-serif; /* Clean and modern font */
+    background-color: #ffffff;
+}
+
+.navbar a {
+    color: #2fbccd; /* Primary color */
+    font-size: 1rem;
+    font-weight: 400; /* Normal weight for professional look */
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #004d40; /* Darker teal for hover */
+}
+
+.navbar-brand img {
+    /* No effect on logo image */
+}
+
+.btn-custom {
+    background-color: #2fbccd;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #004d40; /* Darker teal on hover */
+}
+
+/* Offcanvas customization */
+.offcanvas {
+    background-color: #f8f9fa;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.offcanvas-header {
+    background-color: #2fbccd;
+    color: #fff;
+    padding: 1rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.offcanvas-title a {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 400; /* No bold text */
+    text-decoration: none;
+}
+
+.btn-close {
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.offcanvas-body {
+    padding: 2rem 1.5rem;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+.offcanvas-body a {
+    color: #2fbccd;
+    font-size: 1rem; /* Reduced font size for a cleaner look */
+    font-weight: 400; /* No bold */
+    transition: color 0.3s ease;
+}
+
+.offcanvas-body a:hover {
+    color: #004d40;
+}
+
+.dropdown-menu {
+    background-color: #f0f4f5;
+    border-radius: 8px;
+    border: none;
+}
+
+.dropdown-item {
+    color: #2fbccd;
+    font-size: 1rem;
+    font-weight: 400; /* No bold */
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #e3f2f2;
+}
+
+.badge {
+    background-color: #004d40;
+    font-size: 0.8rem;
+}
+
+/* Additional styling */
+.forMobileSection, .forDesktopSection {
+    margin-top: 1rem;
+}
+
+/* Remove background color from the menu button */
+.navbar-toggler {
+    border: none;
+    background-color: transparent; /* Transparent background */
+}
+
+.navbar-toggler-icon {
+    background-color: transparent; /* Remove background */
+        }
+
+        /* Make drawer font thinner */
+.offcanvas-body .nav-link {
+  font-weight: 200; /* Thinner font weight */
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif; /* Update to a professional font */
+  color: #333; /* A clean, professional color */
+}
+
+.offcanvas-body .nav-link:hover {
+  color: #2fbccd; /* Match hover color with the theme */
+}
+
+/* Fix overlapping issue between cart and profile image */
+.nav-item.forMobileSection {
+  margin-right: 1rem; /* Add space between cart and profile image */
+}
+
+/* Profile image specific styles */
+.signinDropdown a.dropdown-main {
+  margin-left: 1rem; /* Add space to the left of profile image */
+}
+
+/* Ensure the cart and profile image remain distinct in layout */
+.navbar-nav .showCartBtn {
+  margin-right: 1.5rem; /* Increased margin for clarity */
+}
+
+.signinDropdown img {
+  border-radius: 50%; /* Ensures profile image remains circular */
+}
+
+/* Mobile adjustments */
+@media (max-width: 992px) {
+  .signinDropdown.forMobileSection {
+    margin-right: 1.5rem; /* Ensure spacing on smaller screens */
+  }
+}
