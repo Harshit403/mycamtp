@@ -88,7 +88,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                             <div class="card unique-card-solutions">
                                 <div class="unique-card-body">
                                     <i class="fa-solid fa-layer-group unique-icon"></i>
-                                    <h5 class="unique-card-title"CSEET Test Series</h5>
+                                    <h5 class="unique-card-title">CSEET Test Series</h5>
                                 </div>
                             </div>
                         </a>
