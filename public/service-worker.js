@@ -16,12 +16,14 @@ self.addEventListener("install", (event) => {
 });
 
 // Fetch event
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
-  );
+self.addEventListener('fetch', (event) => {
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      caches.match('/dashboard').then((response) => {
+        return response || fetch(event.request);
+      })
+    );
+  }
 });
 
 // Activate event
