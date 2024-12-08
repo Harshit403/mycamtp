@@ -961,4 +961,108 @@ body {
       color: #f44336;
     }
 
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+/* Unique Container Styling */
+.cs-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.cs-text-section {
+  flex: 1;
+}
+
+.cs-text-section h1 {
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.cs-highlight {
+  color: #e63e58;
+}
+
+.cs-description {
+  font-size: 1rem;
+  margin: 1rem 0;
+  color: #555;
+}
+
+.cs-btn-demo {
+  background-color: #e63e58;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.cs-btn-demo:hover {
+  background-color: #bf3246;
+}
+
+.cs-image-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cs-desktop-img {
+  width: 45%;
+  max-width: 450px;
+}
+
+.cs-mobile-img {
+  width: 35%;
+  max-width: 250px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .cs-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cs-text-section h1 {
+    font-size: 2rem;
+  }
+
+  .cs-description {
+    font-size: 0.9rem;
+  }
+
+  .cs-image-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cs-desktop-img {
+    width: 70%;
+  }
+
+  .cs-mobile-img {
+    width: 50%;
+  }
+}
+
 
