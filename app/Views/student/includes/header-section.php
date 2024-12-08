@@ -91,7 +91,7 @@ Mission CS Test Series |ICSI DEC 2024 Exams
 }
 
 .navbar a {
-    color: #2fbccd; /* Primary color */
+    color: #000000; /* Primary color */
     font-size: 1rem;
     font-weight: 400; /* Normal weight for professional look */
     transition: color 0.3s ease;
@@ -106,7 +106,7 @@ Mission CS Test Series |ICSI DEC 2024 Exams
 }
 
 .btn-custom {
-    background-color: #2fbccd;
+    background-color: #000000;
     border: none;
     transition: background-color 0.3s ease;
 }
@@ -124,7 +124,7 @@ Mission CS Test Series |ICSI DEC 2024 Exams
 }
 
 .offcanvas-header {
-    background-color: #2fbccd;
+    background-color: #000000;
     color: #fff;
     padding: 1rem;
     border-top-left-radius: 20px;
@@ -151,7 +151,7 @@ Mission CS Test Series |ICSI DEC 2024 Exams
 }
 
 .offcanvas-body a {
-    color: #2fbccd;
+    color: #000000;
     font-size: 1rem; /* Reduced font size for a cleaner look */
     font-weight: 400; /* No bold */
     transition: color 0.3s ease;
@@ -168,7 +168,7 @@ Mission CS Test Series |ICSI DEC 2024 Exams
 }
 
 .dropdown-item {
-    color: #2fbccd;
+    color: #000000;
     font-size: 1rem;
     font-weight: 400; /* No bold */
     transition: background-color 0.3s ease;
@@ -207,7 +207,7 @@ Mission CS Test Series |ICSI DEC 2024 Exams
 }
 
 .offcanvas-body .nav-link:hover {
-  color: #2fbccd; /* Match hover color with the theme */
+  color: #000000; /* Match hover color with the theme */
 }
 
 /* Fix overlapping issue between cart and profile image */
