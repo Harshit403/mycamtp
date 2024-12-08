@@ -20,7 +20,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </section>
 
   
-<section class="py-5 category container" id="category-section">
+<section class="py-3 category container" id="category-section">
     <div class="container-title">
         <h1-not>Category</h1-not>
     </div>
