@@ -409,7 +409,7 @@ body {
 /* Light, clean background suitable for top section */
 .test-series {
     margin-top: 0;
-    background-color: #E3FCFF; /* Soft blueish background */
+    background-color: #ffffff; /* Soft blueish background */
     padding: 120px 20px; /* Spacious top section padding */
     border-radius: 0 0 50px 50px; /* Soft rounding at the bottom */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Gentle shadow */
