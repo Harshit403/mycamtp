@@ -236,6 +236,17 @@ Mission CS Test Series |ICSI DEC 2024 Exams
   }
 }
 
+    .offcanvas.offcanvas-start {
+      width: 60%; /* Set the width of the offcanvas to 60% */
+    }
+
+    @media (max-width: 768px) {
+      .offcanvas.offcanvas-start {
+        width: 80%; /* Increase width for smaller screens */
+      }
+    }
+        
+        
 </style>
 
 <div style="height: 60px;" class="spacing"></div>
