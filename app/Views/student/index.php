@@ -41,6 +41,61 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </div>
 </section>
 
+</style>
+        /* Custom Background for the Section */
+
+
+        .unique-solutions-section {
+            text-align: center;
+        }
+
+        .unique-icon-heart {
+            font-size: 50px;
+            color: #ff5e5e;
+        }
+
+        .unique-title-solutions {
+            font-weight: bold;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .unique-subtitle-solutions {
+            color: #555;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .unique-card-solutions {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .unique-card-solutions:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .unique-card-img {
+            width: 80px;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .unique-card-title {
+            font-weight: bold;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .unique-card-body {
+            text-align: center;
+            padding: 20px;
+        }
+</style>
 
 
   <div class="custom-bg-container">
@@ -86,43 +141,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </div>
 
 
-    <!-- Custom Background Wrapper -->
-    <div class="custom-bg-container">
-        <div class="unique-solutions-section">
-            <h2 class="unique-title-solutions">One Minute Read</h2>
-            <p class="unique-subtitle-solutions">Passing CS exams isn't easy. Just studying randomly or writing CS exams without a proper plan won't help in CS Exams. Many students study for 14 to 16hours a day, reading, learning, practicing , memorizing, and revising, but still fail.
-In ICSI Exams, the environment is different. You feel the pressure.</p>
-
-            <div class="container">
-                <div class="row gy-4">
-                    <div class="col-12 col-md-4">
-                        <div class="card unique-card-solutions">
-                            <div class="unique-card-body">
-                               <i class="fa-solid fa-layer-group unique-icon"></i>
-                                <h5 class="unique-card-title">Test Series</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="card unique-card-solutions">
-                            <div class="unique-card-body">
-                               <i class="fa-solid fa-layer-group unique-icon"></i>
-                                <h5 class="unique-card-title">1-1 Mentorship</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="card unique-card-solutions">
-                            <div class="unique-card-body">
-                              <i class="fa-solid fa-layer-group unique-icon"></i>
-                                <h5 class="unique-card-title">Rankers Support</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
   <div class="slider-container">
     <div class="slider-text-section">
