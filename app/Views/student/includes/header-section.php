@@ -192,7 +192,6 @@ Mission CS Test Series |ICSI DEC 2024 Exams
 .navbar-toggler {
     border: none;
     background-color: transparent; /* Transparent background */
-    margin-left: auto;
 }
 
 .navbar-toggler-icon {
@@ -312,7 +311,7 @@ Mission CS Test Series |ICSI DEC 2024 Exams
     <?php endif ?>
 
     <!-- Menu Button for Drawer -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style="margin-left: auto;">
       <span class="navbar-toggler-icon"></span>
     </button>
 
