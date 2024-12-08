@@ -39,7 +39,7 @@ Mission CS Test Series |ICSI DEC 2024 Exams
 
         .auth-button {
             background-color: white;
-            color: #25c2c6;
+            color: #000000;
             border: 1px solid transparent;
             padding: 6.8px 17px;
             margin-right: 10px;
@@ -52,7 +52,7 @@ Mission CS Test Series |ICSI DEC 2024 Exams
         }
 
         .auth-button:hover {
-            background-color: #1a9ea1;
+            background-color: #e63e58;
             color: white;
             border-color: white;
 }
