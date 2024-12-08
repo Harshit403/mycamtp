@@ -23,9 +23,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
    <link rel="manifest" href="<?=base_url()?>/manifest.json">
-   <meta name="theme-color" content="#1a73e8">
+   <meta name="theme-color" content="#ffffff">
   
    <link rel="manifest" href="/manifest.json">
-   <meta name="theme-color" content="#1a73e8">
+   <meta name="theme-color" content="#ffffff">
     
 </head>
