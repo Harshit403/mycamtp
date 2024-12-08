@@ -593,7 +593,7 @@ body {
         h1-not {
             font-size: 1.6rem; /* Reduced to be closer to h2 size */
             font-weight: 700;
-            background: linear-gradient(90deg, #204f56, #0d4f53, #0a3a42);
+            background: linear-gradient(90deg, #000000, #0d0d0d, #1a1a1a);
             background-size: 200%;
             background-position: left;
             -webkit-background-clip: text;
