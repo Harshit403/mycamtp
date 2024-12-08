@@ -468,8 +468,8 @@ body {
 /* Elegant and engaging heading */
 .section-title {
     font-size: 60px; /* Larger, bolder title */
-    font-weight: 800;
-    color: #007B7B; /* Dark teal for a professional touch */
+    font-weight: 500;
+    color: #000000; /* Dark teal for a professional touch */
     margin-bottom: 25px;
     letter-spacing: 1.5px;
     line-height: 1.2;
