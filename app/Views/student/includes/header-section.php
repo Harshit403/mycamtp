@@ -192,7 +192,6 @@ Mission CS Test Series |ICSI DEC 2024 Exams
 .navbar-toggler {
     border: none;
     background-color: transparent; /* Transparent background */
-    margin-left: 1rem;
 }
 
 .navbar-toggler-icon {
@@ -246,26 +245,8 @@ Mission CS Test Series |ICSI DEC 2024 Exams
         width: 80%; /* Increase width for smaller screens */
       }
     }
-
- @media (max-width: 992px) {
-    .cart-toggler-group {
-      margin-left: auto;
-    }
-  }
-
-
-  /* Align cart and toggler to the right */
-  .cart-toggler-group {
-    display: flex;
-    align-items: center;
-    margin-left: auto; /* Push the group to the right */
-  }
-
-  /* Style the cart icon */
-  .showCartBtn .bi-bag {
-    font-size: 18px;
-    color: red; /* Set cart color to red */
-  }
+        
+        
 </style>
 
 <div style="height: 60px;" class="spacing"></div>
@@ -307,7 +288,7 @@ Mission CS Test Series |ICSI DEC 2024 Exams
       <li class="nav-item forMobileSection">
         <a class="nav-link showCartBtn" href="javascript:void(0)" style="margin-right: 1rem;"> 
           <div style="position: relative;">
-           <i class="bi bi-bag" style="font-size: 18px; color: #b63b58;"></i>
+            <i class="bi bi-bag" style="font-size: 18px;"></i>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary cartCount">0</span>
           </div>
         </a>
@@ -330,7 +311,7 @@ Mission CS Test Series |ICSI DEC 2024 Exams
     <?php endif ?>
 
     <!-- Menu Button for Drawer -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style="margin-left: auto;">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
 
