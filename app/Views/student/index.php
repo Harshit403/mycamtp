@@ -57,14 +57,6 @@ At Mission CS Test Series, we have designed each question papers considering the
     </div>
 </section>
 
-
-
-<section class="py-5 container" id="image-section">
-<div class="container-fluid">
-        <img src="<?=base_url()?>/assetItems/image/owner.jpg" class="img-fluid" alt="Responsive image">
-    </div>
-</section> 
-
   <div class="slider-container">
     <div class="slider-text-section">
       <h1>Trusted by Thousands of CS Students</h1>
@@ -104,27 +96,6 @@ At Mission CS Test Series, we have designed each question papers considering the
     </div>
 </section>
 
-<section>
-<div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="<?=base_url()?>/assetItems/image/cr1.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="<?=base_url()?>/assetItems/image/cr2.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-      </div>
-        </div>
-  </section>
 
 <section class="py-5 container" id="faq-section">
     <div class="container-title">
@@ -340,6 +311,12 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
         </div>
       </div>
     </section>
+
+<section class="py-5 container" id="image-section">
+<div class="container-fluid">
+        <img src="<?=base_url()?>/assetItems/image/owner.jpg" class="img-fluid" alt="Responsive image">
+    </div>
+</section> 
 
 <section>
   <!-- Mini Install Bar -->
