@@ -42,41 +42,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </section>
 
 
-    <style>
-
-        .unique-solutions-section {
-            text-align: center;
-        }
-
-        .unique-icon {
-            font-size: 50px;
-            color: #e63e58;
-            margin-top: 20px;
-        }
-
-        .unique-card-solutions {
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .unique-card-solutions:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .unique-card-title {
-            font-weight: bold;
-            color: #333;
-            margin-top: 10px;
-        }
-
-        .unique-card-body {
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
 
   <div class="custom-bg-container">
         <div class="unique-solutions-section">
@@ -121,28 +86,43 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </div>
 
 
+    <!-- Custom Background Wrapper -->
+    <div class="custom-bg-container">
+        <div class="unique-solutions-section">
+            <h2 class="unique-title-solutions">One Minute Read</h2>
+            <p class="unique-subtitle-solutions">Passing CS exams isn't easy. Just studying randomly or writing CS exams without a proper plan won't help in CS Exams. Many students study for 14 to 16hours a day, reading, learning, practicing , memorizing, and revising, but still fail.
+In ICSI Exams, the environment is different. You feel the pressure.</p>
 
-
-<section>
-    <div class="container mt-5">
-        <div class="card shadow-sm border-0 mb-3" style="border-radius: 15px;">
-            <div class="card-body">
-                
-                <div class="container-title-not">
-                  <h1-not>One Minute Read</h1-not>
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-12 col-md-4">
+                        <div class="card unique-card-solutions">
+                            <div class="unique-card-body">
+                               <i class="fa-solid fa-layer-group unique-icon"></i>
+                                <h5 class="unique-card-title">Test Series</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card unique-card-solutions">
+                            <div class="unique-card-body">
+                               <i class="fa-solid fa-layer-group unique-icon"></i>
+                                <h5 class="unique-card-title">1-1 Mentorship</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card unique-card-solutions">
+                            <div class="unique-card-body">
+                              <i class="fa-solid fa-layer-group unique-icon"></i>
+                                <h5 class="unique-card-title">Rankers Support</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                 <p class="card-text mt-3">Passing CS exams isn't easy. Just studying randomly or writing CS exams without a proper plan won't help in  CS Exams. Many students study for  14 to 16hours a day, reading, learning, practicing , memorizing, and revising, but still fail.<br>
-
-In ICSI Exams, the environment is different. You feel the pressure.</p><br>
-You might see new questions that make you stressed. Without practice, it can take time to figure out how to answer new questions. There are case-based questions, and you might struggle with those. Time management IN CS  Exams is also a problem. When you solve past Attempt papers at home there may not be any restrict time limit, it's different from the ICSI exams, where time is limited. You might also make mistakes in how you present your answers.
-<br>
-If you don't prepare for CS exams while thinking about these issues, it may take you several attempts to resolve these problems.
-<br>
-At Mission CS Test Series, we have designed each question papers considering the above challenges so CS students can be ready for the problems they'll face in ICSI exams.</p>
-                   </div>
+            </div>
         </div>
     </div>
-</section>
 
   <div class="slider-container">
     <div class="slider-text-section">
