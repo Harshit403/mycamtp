@@ -200,10 +200,10 @@ Mission CS Test Series |ICSI DEC 2024 Exams
 
         /* Make drawer font thinner */
 .offcanvas-body .nav-link {
-  font-weight: 200; /* Thinner font weight */
+  font-weight: 400; /* Thinner font weight */
   font-size: 16px;
   font-family: 'Roboto', sans-serif; /* Update to a professional font */
-  color: #333; /* A clean, professional color */
+  color: #000000; /* A clean, professional color */
 }
 
 .offcanvas-body .nav-link:hover {
