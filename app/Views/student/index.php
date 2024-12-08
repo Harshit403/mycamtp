@@ -42,13 +42,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </section>
 
 
-
     <style>
-        /* Custom Background for the Section */
-        .custom-bg-container {
-            background: linear-gradient(90deg, #f9e6f3, #e6f9f9);
-            padding: 60px 20px;
-        }
 
         .unique-solutions-section {
             text-align: center;
@@ -89,18 +83,30 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         <div class="unique-solutions-section">
             <div class="container">
                 <div class="row gy-4">
-                    <?php foreach ($level_list as $levelRow): ?>
-                        <div class="col-12 col-md-4">
-                            <div class="card unique-card-solutions">
-                                <a href="<?=base_url()?>type?category=<?=$levelRow->category_short_name?>&&level=<?=$levelRow->level_short_name?>" style="text-decoration: none;">
-                                    <div class="unique-card-body">
-                                        <i class="fa-solid fa-layer-group unique-icon"></i>
-                                        <h5 class="unique-card-title"><?=$levelRow->level_name?></h5>
-                                    </div>
-                                </a>
+                    <div class="col-12 col-md-4">
+                        <div class="card unique-card-solutions">
+                            <div class="unique-card-body">
+                                <i class="fa-solid fa-layer-group unique-icon"></i>
+                                <h5 class="unique-card-title">Websites</h5>
                             </div>
                         </div>
-                    <?php endforeach; ?>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card unique-card-solutions">
+                            <div class="unique-card-body">
+                                <i class="fa-solid fa-layer-group unique-icon"></i>
+                                <h5 class="unique-card-title">Mobile Apps</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card unique-card-solutions">
+                            <div class="unique-card-body">
+                                <i class="fa-solid fa-layer-group unique-icon"></i>
+                                <h5 class="unique-card-title">Desktop App</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
