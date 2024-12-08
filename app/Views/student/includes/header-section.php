@@ -288,7 +288,7 @@ Mission CS Test Series |ICSI DEC 2024 Exams
       <li class="nav-item forMobileSection">
         <a class="nav-link showCartBtn" href="javascript:void(0)" style="margin-right: 1rem;"> 
           <div style="position: relative;">
-            <i class="bi bi-bag" style="font-size: 18px;"></i>
+           <i class="bi bi-bag" style="font-size: 18px; color: #b63b58;"></i>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary cartCount">0</span>
           </div>
         </a>
