@@ -410,7 +410,7 @@ body {
 .test-series {
     margin-top: 0;
     background-color: #ffffff; /* Soft blueish background */
-    padding: 120px 20px; /* Spacious top section padding */
+    padding: 120px 20px 60px 20px; /* Spacious top section padding */
     border-radius: 0 0 50px 50px; /* Soft rounding at the bottom */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Gentle shadow */
     position: relative;
@@ -462,7 +462,7 @@ body {
     text-align: center;
     z-index: 2;
     position: relative;
-    padding: 0 10px;
+    padding: 0 20px;
 }
 
 /* Elegant and engaging heading */
