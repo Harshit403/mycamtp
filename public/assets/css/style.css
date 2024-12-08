@@ -477,8 +477,8 @@ body {
 
 /* Subtle description to support heading */
 .intro-text {
-    font-size: 24px;
-    color: #4D4D4D; /* Soft grey for text */
+    font-size: 20px;
+    color: #000000; /* Soft grey for text */
     margin-bottom: 20px;
     line-height: 1.8;
 }
@@ -486,7 +486,7 @@ body {
 .description {
     font-size: 20px;
     font-style: italic;
-    color: #333;
+    color: #000000;
     margin-bottom: 40px;
 }
 
