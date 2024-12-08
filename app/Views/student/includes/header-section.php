@@ -38,7 +38,7 @@ Mission CS Test Series |ICSI DEC 2024 Exams
 </header>
 
 <!-- Navbar and Drawer -->
-<nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm p-3 bg-body rounded">
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm p-3" style="background-color: white;">
   <div class="container-fluid">
     <a class="navbar-brand fs-4" href="<?=base_url()?>">
       <img src="<?=base_url()?>/assetItems/image/logo.jpg" style="height:3rem;">
