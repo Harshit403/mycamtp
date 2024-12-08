@@ -30,7 +30,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 
   
 <section class="py-5 category container" id="category-section">
-    
     <div class="container-title">
         <h1-not>Category</h1-not>
     </div>
@@ -47,7 +46,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 
 
 <section>
-   
     <div class="container mt-5">
         <div class="card shadow-sm border-0 mb-3" style="border-radius: 15px;">
             <div class="card-body">
@@ -97,7 +95,6 @@ At Mission CS Test Series, we have designed each question papers considering the
     </div>
   </div>
 
-  
 <section>
    <!-- Card Section -->
     <div class="container mt-5">
@@ -116,7 +113,7 @@ At Mission CS Test Series, we have designed each question papers considering the
     </div>
 </section>
 
-
+<section>
 <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -136,10 +133,9 @@ At Mission CS Test Series, we have designed each question papers considering the
   </button>
       </div>
         </div>
-    </section>
+  </section>
 
 <section class="py-5 container" id="faq-section">
-  
     <div class="container-title">
         <h1-not>FAQ</h1-not>
     </div>
@@ -227,9 +223,7 @@ At Mission CS Test Series, we have designed each question papers considering the
     </div>
 </section>
 
-
-
-    <section class="py-5 container" id="blog-section">
+<section class="py-5 container" id="blog-section">
     <div class="container-title">
         <h1-not>Blogs</h1-not>
     </div>
@@ -285,7 +279,7 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
     </div>
 </section>
 
-    <section class="py-5 container" id="newsletter_section">
+<section class="py-5 container" id="newsletter_section">
       <div class="row">
         <div class="col-md-6">
             <div class="row address-container">
@@ -354,17 +348,9 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
           </div>
         </div>
       </div>
-       
     </section>
-<?= $this->endSection() ?>
-<?=$this->section('jsContent')?>
-  <script type="text/javascript">
-    var pageType = 'index';
 
-  </script>
-  <script src="<?=base_url()?>assets/student/js/view.js?1.0.3"></script>
-
-
+<section>
   <!-- Mini Install Bar -->
   <div id="custom-install-bar" style="display: none;">
     <div id="install-bar-content">
@@ -373,5 +359,12 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
       <button id="close-install-bar">&times;</button> <!-- Close button -->
     </div>
   </div>
+</section>
 
+<?= $this->endSection() ?>
+<?=$this->section('jsContent')?>
+  <script type="text/javascript">
+    var pageType = 'index';
+  </script>
+  <script src="<?=base_url()?>assets/student/js/view.js?1.0.3"></script>
 <?= $this->endSection() ?>
