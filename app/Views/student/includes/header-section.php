@@ -17,7 +17,9 @@ Mission CS Test Series |ICSI DEC 2024 Exams
         <div class="cartPopUpContainer"></div>
     </div>
     
-<header class="banner">
+<header>
+    
+<section class="banner">
 <?php if (session()->get('studentDetails') !== null): ?>
     <div class="contact">
         <i class="fas fa-phone-alt"></i>
@@ -35,8 +37,8 @@ Mission CS Test Series |ICSI DEC 2024 Exams
             <a href="https://instagram.com/mission.cs" class="icon instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://telegram.me/csmission" class="icon telegram"><i class="fab fa-telegram-plane"></i></a>
         </div>
-</header>
-
+</section>
+    
 <!-- Navbar and Drawer -->
 <nav class="navbar navbar-expand-lg fixed-top shadow-sm p-3" style="background-color: white;">
   <div class="container-fluid">
