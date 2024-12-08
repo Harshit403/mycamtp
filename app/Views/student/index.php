@@ -83,30 +83,30 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         <div class="unique-solutions-section">
             <div class="container">
                 <div class="row gy-4">
-                    <div class="col-12 col-md-4">
+                   <a href="https://missioncstestseries.com/type?category=cs-test-series&&level=cseet-test-series">   <div class="col-12 col-md-4">
                         <div class="card unique-card-solutions">
                             <div class="unique-card-body">
                                 <i class="fa-solid fa-layer-group unique-icon"></i>
                                 <h5 class="unique-card-title">CSEET Test Series</h5>
-                            </div>
+                            </div></a>
                         </div>
-                    </div>
-                    <div class="col-12 col-md-4">
+                    </div></a>
+                 <a href="https://missioncstestseries.com/type?category=cs-test-series&&level=cs-executive-test-series">   <div class="col-12 col-md-4">
                         <div class="card unique-card-solutions">
                             <div class="unique-card-body">
                                 <i class="fa-solid fa-layer-group unique-icon"></i>
                                 <h5 class="unique-card-title">CS Executive Test SEries</h5>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-md-4">
+                    </div></a>
+                 <a href="https://missioncstestseries.com/type?category=cs-test-series&&level=cs-professional-test-series">   <div class="col-12 col-md-4">
                         <div class="card unique-card-solutions">
                             <div class="unique-card-body">
                                 <i class="fa-solid fa-layer-group unique-icon"></i>
                                 <h5 class="unique-card-title">CS Professional Test SEries</h5>
-                            </div>
+                            </div> 
                         </div>
-                    </div>
+                    </div></a>
                 </div>
             </div>
         </div>
