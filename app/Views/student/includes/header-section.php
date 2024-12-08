@@ -192,6 +192,7 @@ Mission CS Test Series |ICSI DEC 2024 Exams
 .navbar-toggler {
     border: none;
     background-color: transparent; /* Transparent background */
+    margin-left: auto;
 }
 
 .navbar-toggler-icon {
