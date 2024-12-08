@@ -57,7 +57,7 @@ Mission CS Test Series |ICSI DEC 2024 Exams
             border-color: white;
 }
         .banner {
-            background-color: #2fbccd;
+            background-color: #000000;
             display: flex;
             justify-content: space-between;
             align-items: center;
