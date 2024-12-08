@@ -10,14 +10,20 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 
-<section class="test-series">
-    <div class="container">
-        <h1 class="section-title">Mission CS Test Series</h1>
-        <p class="intro-text">We offer the most affordable and Quality CS Test series for CS Executive and CS Professional exams, along with live Mentorship from Rankers and Qualified Company Secretaries.</p>
-        <p class="description">Each of our test series is designed by AIRs considering the needs of CS Executive and Professional exams.</p>
+  <div class="cs-container">
+    <!-- Left Section -->
+    <div class="cs-text-section">
+      <h1>Mission <span class="cs-highlight">CS Test Series</span></h1>
+      <p class="cs-description">We offer the most affordable and Quality CS Test series for CS Executive and CS Professional exams, along with live Mentorship from Rankers and Qualified Company Secretaries.</p>
+      <p class="cs-description">Each of our test series is designed by AIRs considering the needs of CS Executive and Professional exams.</p>
+      <button class="cs-btn-demo">Book A Demo</button>
     </div>
-    <div class="wave-effect"></div> <!-- Added wave effect -->
-</section>
+
+    <!-- Right Section -->
+    <div class="cs-image-section">
+      <img class="cs-desktop-img" src="https://executivetestseries.click/wp-content/uploads/2024/12/pie8.png" alt="Pie Chart">
+    </div>
+  </div>
 
   
 <section class="py-3 category container" id="category-section">
