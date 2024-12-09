@@ -41,40 +41,40 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </div>
 </section>
 
-<section class="mt-3">
+<section class="mt-5">
     <div class="custom-bg-container">
         <div class="unique-solutions-section">
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-12 col-md-4">
                         <!-- Card with Link -->
-                        <a href="" style="text-decoration: none;">
+                        <a href="your-link-for-websites" style="text-decoration: none;">
                             <div class="card unique-card-solutions">
                                 <div class="unique-card-body">
                                     <i class="fa-solid fa-layer-group unique-icon"></i>
-                                    <h5 class="unique-card-title">CSEET Test Series</h5>
+                                    <h5 class="unique-card-title">Websites</h5>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="col-12 col-md-4">
                         <!-- Card with Link -->
-                        <a href="" style="text-decoration: none;">
+                        <a href="your-link-for-mobile-apps" style="text-decoration: none;">
                             <div class="card unique-card-solutions">
                                 <div class="unique-card-body">
                                     <i class="fa-solid fa-layer-group unique-icon"></i>
-                                    <h5 class="unique-card-title">CS Executive Test Series</h5>
+                                    <h5 class="unique-card-title">Mobile Apps</h5>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="col-12 col-md-4">
                         <!-- Card with Link -->
-                        <a href="" style="text-decoration: none;">
+                        <a href="your-link-for-desktop-app" style="text-decoration: none;">
                             <div class="card unique-card-solutions">
                                 <div class="unique-card-body">
                                     <i class="fa-solid fa-layer-group unique-icon"></i>
-                                    <h5 class="unique-card-title">CS Professional Test Series</h5>
+                                    <h5 class="unique-card-title">Desktop App</h5>
                                 </div>
                             </div>
                         </a>
