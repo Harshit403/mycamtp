@@ -41,7 +41,8 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </div>
 </section>
 
-<style>        .unique-solutions-section {
+<style>        
+        .unique-solutions-section {
             text-align: center;
         }
 
@@ -76,7 +77,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </style>
 
 
-<section class="mt-3">
+<section class="my-3">
     <div class="custom-bg-container">
         <div class="unique-solutions-section">
             <div class="container">
