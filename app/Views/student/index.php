@@ -123,6 +123,61 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 
 
     <style>
+        .super-custom-bg-wrapper {
+            background: linear-gradient(90deg, #f9e6f3, #e6f9f9);
+            padding: 60px 20px;
+        }
+
+        .section-unique-solutions {
+            text-align: center;
+        }
+
+        .icon-heart-custom {
+            font-size: 50px;
+            color: #ff5e5e;
+        }
+
+        .title-solutions-custom {
+            font-weight: bold;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .subtitle-solutions-custom {
+            color: #555;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .card-solutions-custom {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-solutions-custom:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img-custom {
+            width: 80px;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .card-title-custom {
+            font-weight: bold;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .card-body-custom {
+            text-align: center;
+            padding: 20px;
+        }
 
     </style>
 
