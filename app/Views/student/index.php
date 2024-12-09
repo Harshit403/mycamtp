@@ -252,8 +252,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             overflow: hidden;
         }
     </style>
-
-    <!-- Custom Background Wrapper -->
+<section class="my-3">
     <div class="custom-bg-container">
         <div class="unique-solutions-section">
             <h2 class="unique-title-solutions">Trusted By Thousands of CS Students</h2>
@@ -263,25 +262,25 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             <div id="uniqueSolutionCarousel" class="carousel slide unique-carousel-container" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/200/external-web-development-programming-flatart-icons-outline-flatarticons.png" class="d-block w-100" alt="Websites">
+                        <img src="<?=base_url()?>/assetItems/image/img-sld-1.jpg" class="d-block w-100" alt="Websites">
                         <div class="carousel-caption">
                             <h5>Websites</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/200/external-app-development-programming-flatart-icons-outline-flatarticons.png" class="d-block w-100" alt="Mobile Apps">
+                        <img src="<?=base_url()?>/assetItems/image/img-sld-2.jpg" class="d-block w-100" alt="Mobile Apps">
                         <div class="carousel-caption">
                             <h5>Mobile Apps</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/200/external-desktop-development-programming-flatart-icons-outline-flatarticons.png" class="d-block w-100" alt="Desktop App">
+                        <img src="<?=base_url()?>/assetItems/image/img-sld-3.jpg" class="d-block w-100" alt="Desktop App">
                         <div class="carousel-caption">
                             <h5>Desktop App</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/200/external-cloud-development-programming-flatart-icons-outline-flatarticons.png" class="d-block w-100" alt="Cloud Solutions">
+                        <img src="<?=base_url()?>/assetItems/image/img-sld-4.jpgicons.png" class="d-block w-100" alt="Cloud Solutions">
                         <div class="carousel-caption">
                             <h5>Cloud Solutions</h5>
                         </div>
@@ -300,7 +299,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             </div>
         </div>
     </div>
-
+</section>
 
 
 
