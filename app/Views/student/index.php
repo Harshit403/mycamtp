@@ -41,75 +41,40 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </div>
 </section>
 
-    <style>
-        .unique-solutions-section {
-            text-align: center;
-        }
-
-        .unique-icon {
-            font-size: 50px;
-            color: #e63e58;
-            margin-top: 20px;
-        }
-
-        .unique-card-solutions {
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .unique-card-solutions:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .unique-card-title {
-            font-weight: bold;
-            color: #333;
-            margin-top: 10px;
-        }
-
-        .unique-card-body {
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
-
-<section class="mt-5">
+<section class="mt-3">
     <div class="custom-bg-container">
         <div class="unique-solutions-section">
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-12 col-md-4">
                         <!-- Card with Link -->
-                        <a href="your-link-for-websites" style="text-decoration: none;">
+                        <a href="https://missioncstestseries.com/type?category=cs-test-series&&level=cseet-test-series" style="text-decoration: none;">
                             <div class="card unique-card-solutions">
                                 <div class="unique-card-body">
                                     <i class="fa-solid fa-layer-group unique-icon"></i>
-                                    <h5 class="unique-card-title">Websites</h5>
+                                    <h5 class="unique-card-title">CSEET Test Series</h5>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="col-12 col-md-4">
                         <!-- Card with Link -->
-                        <a href="your-link-for-mobile-apps" style="text-decoration: none;">
+                        <a href="https://missioncstestseries.com/type?category=cs-test-series&&level=cs-executive-test-series" style="text-decoration: none;">
                             <div class="card unique-card-solutions">
                                 <div class="unique-card-body">
                                     <i class="fa-solid fa-layer-group unique-icon"></i>
-                                    <h5 class="unique-card-title">Mobile Apps</h5>
+                                    <h5 class="unique-card-title">CS Executive Test Series</h5>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="col-12 col-md-4">
                         <!-- Card with Link -->
-                        <a href="your-link-for-desktop-app" style="text-decoration: none;">
+                        <a href="https://missioncstestseries.com/type?category=cs-test-series&&level=cs-professional-test-series" style="text-decoration: none;">
                             <div class="card unique-card-solutions">
                                 <div class="unique-card-body">
                                     <i class="fa-solid fa-layer-group unique-icon"></i>
-                                    <h5 class="unique-card-title">Desktop App</h5>
+                                    <h5 class="unique-card-title">CS Professional Test Series</h5>
                                 </div>
                             </div>
                         </a>
@@ -250,11 +215,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         }
     }
 </script>
-
-
-
-
-
 
 <section class="py-5 container" id="blog-section">
     <div class="container-title">
