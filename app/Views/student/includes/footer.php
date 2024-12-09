@@ -7,7 +7,7 @@
         <section id="footer-section">
         <div class=" mt-5">
           <footer class="text-center text-lg-start text-white" style="background-color: #000000">
-            <section class="d-flex justify-content-between p-4" style="background-color: #2FBCCD">
+            <section class="d-flex justify-content-between p-4" style="background-color: #E58E63">
               <div class="me-5">
                 <span>Get connected with us:</span>
               </div>
