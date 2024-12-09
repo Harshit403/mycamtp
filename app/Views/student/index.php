@@ -220,26 +220,90 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </section>
 
 
-  <div class="slider-container">
-    <div class="slider-text-section">
-      <h1>Trusted by Thousands of CS Students</h1>
-      <p>Mission CS Test Series are the best for CS exams because they have ICSI level questions in their papers. Mission CS Test Series also had substantial Positive results in the last CS exams, showing how good they are. Their answer sheet evaluation is the best in the industry, and they give detailed analysis and feedback. The CS Test Series is made by ICSI rankers and qualified CS which make the most trusted and reliable Test Series in the industry.</p>
-      <a href="<?=base_url()?>/level?category=cs-test-series"> <button class="slider-cta-btn">Enroll Now</button></a>
+    <style>
+
+        .unique-solutions-section {
+            text-align: center;
+        }
+
+        .unique-title-solutions {
+            font-weight: bold;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .unique-subtitle-solutions {
+            color: #555;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .carousel-item img {
+            max-height: 200px;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+
+        .unique-carousel-container {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+    </style>
+
+    <!-- Custom Background Wrapper -->
+    <div class="custom-bg-container">
+        <div class="unique-solutions-section">
+            <h2 class="unique-title-solutions">Trusted By Thousands of CS Students</h2>
+            <p class="unique-subtitle-solutions">Allow us to manage everything while you focus solely on educating the students.</p>
+
+            <!-- Carousel Section -->
+            <div id="uniqueSolutionCarousel" class="carousel slide unique-carousel-container" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/200/external-web-development-programming-flatart-icons-outline-flatarticons.png" class="d-block w-100" alt="Websites">
+                        <div class="carousel-caption">
+                            <h5>Websites</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/200/external-app-development-programming-flatart-icons-outline-flatarticons.png" class="d-block w-100" alt="Mobile Apps">
+                        <div class="carousel-caption">
+                            <h5>Mobile Apps</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/200/external-desktop-development-programming-flatart-icons-outline-flatarticons.png" class="d-block w-100" alt="Desktop App">
+                        <div class="carousel-caption">
+                            <h5>Desktop App</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/200/external-cloud-development-programming-flatart-icons-outline-flatarticons.png" class="d-block w-100" alt="Cloud Solutions">
+                        <div class="carousel-caption">
+                            <h5>Cloud Solutions</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#uniqueSolutionCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#uniqueSolutionCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
     </div>
-    <div class="image-slider">
-      <div class="slider-wrapper">
-        <img src="<?=base_url()?>/assetItems/image/img-sld-1.jpg" alt="Slide 1">
-        <img src="<?=base_url()?>/assetItems/image/img-sld-2.jpg" alt="Slide 2">
-        <img src="<?=base_url()?>/assetItems/image/img-sld-3.jpg" alt="Slide 3">
-        <img src="<?=base_url()?>/assetItems/image/img-sld-4.jpg" alt="Slide 4">
-      </div>
-      <div class="slider-pagination">
-        <span class="active"></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
+
+
+
+
 
 <section>
    <!-- Card Section -->
