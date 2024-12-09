@@ -232,7 +232,7 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
         <div class="col-md-6">
             <div class="row address-container">
                 <div class="col-md-6 mb-4">
-                    <div class="card" style="background: #fafbff;border: none;height:14rem;">
+                    <div class="card" style="background: #fafbff;border: none;height:10rem;">
                         <div class="card-body">
                             <h2><i class="bi bi-geo-alt"></i></h2>
                             <h4>Address</h4>
@@ -241,7 +241,7 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card" style="background: #fafbff;border: none;height:14rem;">
+                    <div class="card" style="background: #fafbff;border: none;height:10rem;">
                         <div class="card-body">
                             <h2><i class="bi bi-telephone"></i></h2>
                             <h4>Call Us</h4>
@@ -250,7 +250,7 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
                     </div>
                 </div>
                 <div class="col-md-6 mt-4">
-                    <div class="card" style="background: #fafbff;border: none;height:14rem;">
+                    <div class="card" style="background: #fafbff;border: none;height:10rem;">
                         <div class="card-body">
                             <h2><i class="bi bi-envelope"></i></h2>
                             <h4>Email</h4>
@@ -259,7 +259,7 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
                     </div>
                 </div>
                 <div class="col-md-6 my-4">
-                    <div class="card" style="background: #fafbff;border: none;height:14rem;">
+                    <div class="card" style="background: #fafbff;border: none;height:10rem;">
                         <div class="card-body">
                             <h2><i class="bi bi-clock"></i></h2>
                             <h4>Open Hours</h4>
