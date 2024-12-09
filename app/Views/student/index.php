@@ -134,7 +134,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 
         .icon-heart-custom {
             font-size: 50px;
-            color: #ff5e5e;
+            color: #E63E58;
         }
 
         .title-solutions-custom {
@@ -264,25 +264,21 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                     <div class="carousel-item active">
                         <img src="<?=base_url()?>/assetItems/image/img-sld-1.jpg" class="d-block w-100" alt="Websites">
                         <div class="carousel-caption">
-                            <h5>Websites</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="<?=base_url()?>/assetItems/image/img-sld-2.jpg" class="d-block w-100" alt="Mobile Apps">
                         <div class="carousel-caption">
-                            <h5>Mobile Apps</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="<?=base_url()?>/assetItems/image/img-sld-3.jpg" class="d-block w-100" alt="Desktop App">
                         <div class="carousel-caption">
-                            <h5>Desktop App</h5>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <img src="<?=base_url()?>/assetItems/image/img-sld-4.jpgicons.png" class="d-block w-100" alt="Cloud Solutions">
                         <div class="carousel-caption">
-                            <h5>Cloud Solutions</h5>
                         </div>
                     </div>
                 </div>
