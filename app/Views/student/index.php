@@ -277,7 +277,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="<?=base_url()?>/assetItems/image/img-sld-4.jpgicons.png" class="d-block w-100" alt="Cloud Solutions">
+                        <img src="<?=base_url()?>/assetItems/image/img-sld-4.jpg" class="d-block w-100" alt="Cloud Solutions">
                         <div class="carousel-caption">
                         </div>
                     </div>
