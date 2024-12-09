@@ -1046,6 +1046,7 @@ body {
   }
     
         .faq-section {
+            text-align: center;
             background: #fff;
             color: #000;
             border-radius: 8px;
