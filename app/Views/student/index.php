@@ -297,9 +297,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </div>
 </section>
 
-
-
-
 <section>
    <!-- Card Section -->
     <div class="container mt-5">
@@ -319,7 +316,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </section>
 
 <section class="faq-section">
-    <h2 class="title-solutions-custom">FAQs</h2>
+    <h1-not>FAQs</h1-not>
     <div class="accordion">
         <div class="accordion-item">
             <div class="accordion-header" onclick="toggleAccordion(this)">
