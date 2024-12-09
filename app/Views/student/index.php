@@ -83,93 +83,225 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </section>
 
 
-<section class="py-5 container" id="faq-section">
-    <div class="container-title">
-        <h1-not>FAQ</h1-not>
-    </div>
-   <div class="row">
-        <div class="col-md-6">
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            What is the Mission CS Test Series?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            Mission CS Test Series offers comprehensive test series tailored for Company Secretary (CS) students, covering CSEET, CS Executive, and CS Professional levels. The test series are designed to align with the latest examination trends and provide a real-exam experience.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            How can I enroll in the test series?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            To enroll, visit the Mission CS Test Series website, select your desired course level (CSEET, Executive, or Professional), and choose a test series package. After completing the payment, you will get immediate access to the test materials.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                            What are the unique features of the Mission CS Test Series?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            The test series is designed with a blend of unseen and unique questions based on the ICSI pattern. Other features include personalized feedback, progress tracking, and a flexible study schedule.
-                        </div>
-                    </div>
-                </div>
+
+
+<style>
+        .faq-section {
+            background: #fff;
+            color: #000;
+            border-radius: 8px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 1rem auto;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #000;
+            text-transform: uppercase;
+            border-bottom: 3px solid #000;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .accordion {
+            border: none;
+            margin-bottom: 1rem;
+        }
+
+        .accordion-item {
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            cursor: pointer;
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f7f7f7;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background-color: #e5e5e5;
+        }
+
+        .accordion-header:after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #888;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active:after {
+            content: '-';
+            color: #000;
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: #fff;
+            padding: 0 1rem;
+        }
+
+        .accordion-body p {
+            margin: 1rem 0;
+            color: #444;
+        }
+
+        .accordion-body.active {
+            max-height: 500px;
+            padding: 1rem;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .faq-title {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .accordion-header {
+                font-size: 1rem;
+                padding: 0.8rem;
+            }
+
+            .accordion-body p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .faq-title {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+
+            .faq-section {
+                padding: 1rem;
+            }
+
+            .accordion-header {
+                font-size: 0.9rem;
+                padding: 0.7rem;
+            }
+
+            .accordion-body p {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+
+<section class="faq-section">
+    <h1 class="faq-title">FAQ</h1>
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                What is the Mission CS Test Series?
+            </div>
+            <div class="accordion-body">
+                <p>
+                    Mission CS Test Series offers comprehensive test series tailored for Company Secretary (CS) students, covering CSEET, CS Executive, and CS Professional levels. The test series are designed to align with the latest examination trends and provide a real-exam experience.
+                </p>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="accordion accordion-flush" id="accordionFlushExample1">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne1">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne1" aria-expanded="false" aria-controls="flush-collapseOne1">
-                            Can I attempt the test series at my own pace?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseOne1" class="accordion-collapse collapse" aria-labelledby="flush-headingOne1" data-bs-parent="#accordionFlushExample1">
-                        <div class="accordion-body">
-                            Yes, with Mission CS Test Series, you can study and take the tests at your own pace, anytime and from anywhere.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingTwo1">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo1" aria-expanded="false" aria-controls="flush-collapseTwo1">
-                            Do you provide feedback after tests?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseTwo1" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo1" data-bs-parent="#accordionFlushExample1">
-                        <div class="accordion-body">
-                            Yes, after each test, you receive detailed feedback on your performance, including tips for improvement and suggestions for enhancing your presentation skills.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingThree1">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree1" aria-expanded="false" aria-controls="flush-collapseThree1">
-                            What is the refund policy for the test series?
-                        </button>
-                    </h2>
-                    <div id="flush-collapseThree1" class="accordion-collapse collapse" aria-labelledby="flush-headingThree1" data-bs-parent="#accordionFlushExample1">
-                        <div class="accordion-body">
-                            The refund policy of Mission CS Test Series ensures that if you cancel your subscription within the stipulated time, you may be eligible for a refund based on the policy terms.
-                        </div>
-                    </div>
-                </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                How can I enroll in the test series?
+            </div>
+            <div class="accordion-body">
+                <p>
+                    To enroll, visit the Mission CS Test Series website, select your desired course level (CSEET, Executive, or Professional), and choose a test series package. After completing the payment, you will get immediate access to the test materials.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                What are the unique features of the Mission CS Test Series?
+            </div>
+            <div class="accordion-body">
+                <p>
+                    The test series is designed with a blend of unseen and unique questions based on the ICSI pattern. Other features include personalized feedback, progress tracking, and a flexible study schedule.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                Can I attempt the test series at my own pace?
+            </div>
+            <div class="accordion-body">
+                <p>
+                    Yes, with Mission CS Test Series, you can study and take the tests at your own pace, anytime and from anywhere.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                Do you provide feedback after tests?
+            </div>
+            <div class="accordion-body">
+                <p>
+                    Yes, after each test, you receive detailed feedback on your performance, including tips for improvement and suggestions for enhancing your presentation skills.
+                </p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                What is the refund policy for the test series?
+            </div>
+            <div class="accordion-body">
+                <p>
+                    The refund policy of Mission CS Test Series ensures that if you cancel your subscription within the stipulated time, you may be eligible for a refund based on the policy terms.
+                </p>
             </div>
         </div>
     </div>
 </section>
+
+<script>
+    function toggleAccordion(header) {
+        const body = header.nextElementSibling;
+        const isActive = header.classList.contains('active');
+
+        // Close all open accordions
+        document.querySelectorAll('.accordion-header').forEach((el) => el.classList.remove('active'));
+        document.querySelectorAll('.accordion-body').forEach((el) => {
+            el.classList.remove('active');
+            el.style.maxHeight = '0';
+        });
+
+        // Toggle current accordion
+        if (!isActive) {
+            header.classList.add('active');
+            body.classList.add('active');
+            body.style.maxHeight = body.scrollHeight + 'px';
+        }
+    }
+</script>
+
+
+
+
+
 
 <section class="py-5 container" id="blog-section">
     <div class="container-title">
