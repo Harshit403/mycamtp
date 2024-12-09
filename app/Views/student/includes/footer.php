@@ -7,19 +7,6 @@
         <section id="footer-section">
         <div class=" mt-5">
           <footer class="text-center text-lg-start text-white" style="background-color: #000000">
-            <section class="d-flex justify-content-between p-4" style="background-color: #E63e58">
-              <div class="me-5">
-                <span>Get connected with us:</span>
-              </div>
-              <div>
-                <a href="" class="text-white me-4">
-                  <i class="bi bi-facebook"></i>
-                </a>
-                <a href="https://Instagram.com/mission.cs" class="text-white me-4">
-                  <i class="bi bi-instagram"></i>
-                </a>
-              </div>
-            </section>
             <section class="">
               <div class="container text-center text-md-start mt-5">
                 <div class="row mt-3">
