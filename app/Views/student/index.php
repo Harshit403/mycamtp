@@ -319,7 +319,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </section>
 
 <section class="faq-section">
-    <h1 class="faq-title">FAQ</h1>
+    <h2 class="title-solutions-custom">FAQs</h2>
     <div class="accordion">
         <div class="accordion-item">
             <div class="accordion-header" onclick="toggleAccordion(this)">
