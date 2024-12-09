@@ -137,7 +137,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                     <div class="col-12 col-md-4">
                         <div class="card card-solutions-custom">
                             <div class="card-body-custom">
-                               <i class="fa-solid fa-layer-group icon-heart-custom"></i>
+                               <i class="fa-solid fa-book-open-reader"></i>
                                 <h5 class="card-title-custom">Test Series</h5>
                             </div>
                         </div>
@@ -145,7 +145,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                     <div class="col-12 col-md-4">
                         <div class="card card-solutions-custom">
                             <div class="card-body-custom">
-                               <i class="fa-solid fa-layer-group icon-heart-custom"></i>
+                               <i class="fa-solid fa-person-chalkboard"></i>
                                 <h5 class="card-title-custom">1-1 Mentorship</h5>
                             </div>
                         </div>
@@ -153,7 +153,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                     <div class="col-12 col-md-4">
                         <div class="card card-solutions-custom">
                             <div class="card-body-custom">
-                              <i class="fa-solid fa-layer-group icon-heart-custom"></i>
+                              <i class="fa-solid fa-bullseye"></i>
                                 <h5 class="card-title-custom">Rankers Support</h5>
                             </div>
                         </div>
