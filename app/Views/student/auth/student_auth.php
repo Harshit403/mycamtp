@@ -257,6 +257,23 @@
             <p>Don't have an account? <a href="<?=base_url()?>auth?auth=register">Sign Up</a></p>
         </form>
     </div>
+<script>
+// Automatically copy password value to confirm password
+document.getElementById('password').addEventListener('input', function () {
+    document.getElementById('confirm_password').value = this.value;
+});
+</script>
+
+    <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/jquery.min.js"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/bootbox.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script type="text/javascript">
+    var pageType = "student_auth_page";
+    var baseUrl = "<?=base_url()?>";
+    </script>
+    <script type="text/javascript" src="<?=base_url()?>assets/student/js/student_auth.js?v=1.0.1"></script>
+    
 </body>
 
 </html>
