@@ -436,7 +436,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         </div>
 
         <div class="accordion-a-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
+            <div class="accordion-a-header" onclick="toggleAccordion(this)">
                 How can I enroll in the test series?
             </div>
             <div class="accordion-a-body">
