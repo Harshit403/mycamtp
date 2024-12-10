@@ -14,43 +14,7 @@
             display: none !important;
         }
 
-        /* General styling */
-        .inputBox {
-            margin-bottom: 20px;
-            position: relative;
-        }
-
-        .inputBox input,
-        .inputBox select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            background-color: #007bff;
-            border: none;
-            color: white;
-            cursor: pointer;
-            border-radius: 5px;
-            width: 100%;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-        }
-
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
+        /* Common styles for both pages */
         * {
             margin: 0;
             padding: 0;
@@ -180,8 +144,9 @@
             .btn {
                 padding: 14px;
             }
-}
+        }
     </style>
+
 </head>
 
 <body>
@@ -234,7 +199,7 @@
                     <option value="N/A" selected>N/A</option>
                 </select>
             </div>
-            <button type="submit" class="btn signUpBtn authButton">Sign Up</button>
+            <button class="btn signUpBtn">Sign Up</button>
             <p>Already have an account? <a href="<?=base_url()?>auth?auth=login">Sign In</a></p>
         </form>
     </div>
@@ -253,11 +218,11 @@
                 <span>Password</span>
             </div>
             <div class="pass"><a href="<?=base_url()?>forgot-password">Forgot Password?</a></div>
-            <button type="submit" class="btn loginBtn authButton">Sign In</button>
+            <button class="btn loginBtn">Sign In</button>
             <p>Don't have an account? <a href="<?=base_url()?>auth?auth=register">Sign Up</a></p>
         </form>
     </div>
-<script>
+    <script>
 // Automatically copy password value to confirm password
 document.getElementById('password').addEventListener('input', function () {
     document.getElementById('confirm_password').value = this.value;
@@ -273,7 +238,6 @@ document.getElementById('password').addEventListener('input', function () {
     var baseUrl = "<?=base_url()?>";
     </script>
     <script type="text/javascript" src="<?=base_url()?>assets/student/js/student_auth.js?v=1.0.1"></script>
-    
 </body>
 
 </html>
