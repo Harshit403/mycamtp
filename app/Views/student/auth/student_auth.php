@@ -14,13 +14,14 @@
             display: none !important;
         }
 
-        /* General styling for inputs */
-        .input-box {
+        /* General styling */
+        .inputBox {
             margin-bottom: 20px;
+            position: relative;
         }
 
-        .input-box input,
-        .input-box select {
+        .inputBox input,
+        .inputBox select {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
@@ -34,6 +35,7 @@
             color: white;
             cursor: pointer;
             border-radius: 5px;
+            width: 100%;
         }
 
         .btn:hover {
@@ -48,7 +50,6 @@
             border-radius: 5px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
 
         * {
             margin: 0;
@@ -179,10 +180,7 @@
             .btn {
                 padding: 14px;
             }
-        }
-
-
-
+}
     </style>
 </head>
 
@@ -190,25 +188,25 @@
     <!-- Signup Container -->
     <div class="container" id="signup-container" style="display: <?= ($addClass == 'login') ? 'none' : 'block'; ?>">
         <h2>Sign Up</h2>
-        <form id="sign_up_form" method="POST" action="<?= base_url('auth/signup') ?>">
-            <div class="input-box">
-                <input type="text" name="student_name" required>
-                <label>Student Name</label>
+        <form id="sign_up_form" method="POST" action="<?=base_url()?>auth?auth=register">
+            <div class="inputBox">
+                <input type="text" class="item" name="student_name" required>
+                <span>Student Name</span>
             </div>
-            <div class="input-box">
-                <input type="text" name="email" required>
-                <label>Email</label>
+            <div class="inputBox">
+                <input type="text" class="item" name="email" required>
+                <span>Email</span>
             </div>
-            <div class="input-box">
-                <input type="text" name="mobile_no" required>
-                <label>Mobile No</label>
+            <div class="inputBox">
+                <input type="text" class="item" name="mobile_no" required>
+                <span>Mobile No</span>
             </div>
-            <div class="input-box">
-                <input type="text" name="state_name" required>
-                <label>State</label>
+            <div class="inputBox">
+                <input type="text" class="item" name="state_name" required>
+                <span>State</span>
             </div>
-            <div class="input-box">
-                <select name="category_id" required>
+            <div class="inputBox">
+                <select class="form-control mb-4" name="category_id" id="category_id" required>
                     <option value="" disabled selected>Choose Category</option>
                     <?php if (!empty($category_list)) {
                         foreach ($category_list as $categorysRow) { ?>
@@ -217,38 +215,46 @@
                     } ?>
                 </select>
             </div>
-            <div class="input-box">
-                <input type="password" name="password" required>
-                <label>Password</label>
+            <div class="inputBox">
+                <input type="password" class="item" name="password" required>
+                <ion-icon name="eye-off-outline" class="viewPassWord" style="position: absolute;top: 1rem;right: 1rem;"></ion-icon>
+                <span>Password</span>
             </div>
             <!-- Hidden Fields -->
-            <div class="hidden">
-                <input type="text" name="city_name" value="N/A">
-                <input type="password" id="confirm_password" name="confirm_password" value="N/A">
-                <select name="current_level">
+            <div class="inputBox hidden">
+                <input type="text" class="item" name="city_name" value="N/A">
+                <span>City</span>
+            </div>
+            <div class="inputBox hidden">
+                <input type="password" id="confirm_password" class="item" name="confirm_password" value="N/A">
+                <span>Confirm Password</span>
+            </div>
+            <div class="inputBox hidden">
+                <select class="form-control mb-4" name="current_level" id="current_level">
                     <option value="N/A" selected>N/A</option>
                 </select>
             </div>
-            <button type="submit" class="btn">Sign Up</button>
-            <p>Already have an account? <a href="<?= base_url('auth/login') ?>">Sign In</a></p>
+            <button type="submit" class="btn signUpBtn authButton">Sign Up</button>
+            <p>Already have an account? <a href="<?=base_url()?>auth?auth=login">Sign In</a></p>
         </form>
     </div>
 
     <!-- Login Container -->
     <div class="container" id="login-container" style="display: <?= ($addClass == 'register') ? 'none' : 'block'; ?>">
         <h2>Login</h2>
-        <form id="sign_in_form" method="POST" action="<?= base_url('auth/login') ?>">
-            <div class="input-box">
-                <input type="text" name="email" required>
-                <label>Email</label>
+        <form id="sign_in_form" method="POST" action="<?=base_url()?>auth?auth=login">
+            <div class="inputBox">
+                <input type="text" class="item" name="email" required>
+                <span>Email</span>
             </div>
-            <div class="input-box">
-                <input type="password" name="password" required>
-                <label>Password</label>
+            <div class="inputBox">
+                <input type="password" class="item" name="password" required>
+                <ion-icon name="eye-off-outline" class="viewPassWord" style="position: absolute;top: 1rem;right: 1rem;"></ion-icon>
+                <span>Password</span>
             </div>
-            <div class="pass"><a href="<?= base_url('forgot-password') ?>">Forgot Password?</a></div>
-            <button type="submit" class="btn">Sign In</button>
-            <p>Don't have an account? <a href="<?= base_url('auth/signup') ?>">Sign Up</a></p>
+            <div class="pass"><a href="<?=base_url()?>forgot-password">Forgot Password?</a></div>
+            <button type="submit" class="btn loginBtn authButton">Sign In</button>
+            <p>Don't have an account? <a href="<?=base_url()?>auth?auth=register">Sign Up</a></p>
         </form>
     </div>
 </body>
