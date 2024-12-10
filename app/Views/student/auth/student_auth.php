@@ -188,7 +188,7 @@
     <!-- Signup Container -->
     <div class="container" id="signup-container" style="display: <?= ($addClass == 'login') ? 'none' : 'block'; ?>">
         <h2>Sign Up</h2>
-        <form id="sign_up_form" method="POST" action="<?=base_url()?>auth?auth=register">
+        <form id="sign_up_form">
             <div class="inputBox">
                 <input type="text" class="item" name="student_name" required>
                 <span>Student Name</span>
@@ -242,7 +242,7 @@
     <!-- Login Container -->
     <div class="container" id="login-container" style="display: <?= ($addClass == 'register') ? 'none' : 'block'; ?>">
         <h2>Login</h2>
-        <form id="sign_in_form" method="POST" action="<?=base_url()?>auth?auth=login">
+        <form id="sign_in_form">
             <div class="inputBox">
                 <input type="text" class="item" name="email" required>
                 <span>Email</span>
