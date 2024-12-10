@@ -425,7 +425,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     <h1-not>FAQs</h1-not>
     <div class="accordion-a">
         <div class="accordion-a-item">
-            <div class="accordion-a-header" onclick="toggleAccordion(this)">
+            <div class="accordion-a-header" onclick="toggleAccordiona(this)">
                 What is the Mission CS Test Series?
             </div>
             <div class="accordion-a-body">
@@ -436,7 +436,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         </div>
 
         <div class="accordion-a-item">
-            <div class="accordion-a-header" onclick="toggleAccordion(this)">
+            <div class="accordion-a-header" onclick="toggleAccordiona(this)">
                 How can I enroll in the test series?
             </div>
             <div class="accordion-a-body">
@@ -447,7 +447,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         </div>
 
         <div class="accordion-a-item">
-            <div class="accordion-a-header" onclick="toggleAccordion(this)">
+            <div class="accordion-a-header" onclick="toggleAccordiona(this)">
                 What are the unique features of the Mission CS Test Series?
             </div>
             <div class="accordion-a-body">
@@ -458,7 +458,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         </div>
 
         <div class="accordion-a-item">
-            <div class="accordion-a-header" onclick="toggleAccordion(this)">
+            <div class="accordion-a-header" onclick="toggleAccordiona(this)">
                 Can I attempt the test series at my own pace?
             </div>
             <div class="accordion-a-body">
@@ -469,7 +469,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         </div>
 
         <div class="accordion-a-item">
-            <div class="accordion-a-header" onclick="toggleAccordion(this)">
+            <div class="accordion-a-header" onclick="toggleAccordiona(this)">
                 Do you provide feedback after tests?
             </div>
             <div class="accordion-a-body">
@@ -480,7 +480,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         </div>
 
         <div class="accordion-a-item">
-            <div class="accordion-a-header" onclick="toggleAccordion(this)">
+            <div class="accordion-a-header" onclick="toggleAccordiona(this)">
                 What is the refund policy for the test series?
             </div>
             <div class="accordion-a-body">
@@ -493,13 +493,13 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </section>
 
 <script>
-    function toggleAccordion(header) {
+    function toggleAccordiona(header) {
         const body = header.nextElementSibling;
         const isActive = header.classList.contains('active');
 
         // Close all open accordions
-        document.querySelectorAll('.accordion-header').forEach((el) => el.classList.remove('active'));
-        document.querySelectorAll('.accordion-body').forEach((el) => {
+        document.querySelectorAll('.accordion-a-header').forEach((el) => el.classList.remove('active'));
+        document.querySelectorAll('.accordion-a-body').forEach((el) => {
             el.classList.remove('active');
             el.style.maxHeight = '0';
         });
