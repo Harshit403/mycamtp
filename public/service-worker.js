@@ -1,9 +1,9 @@
 const CACHE_NAME = "missioncs-cache-v1";
 const urlsToCache = [
   "/dashboard",
+  "https://missioncstestseries.com/dashboard",
   "<?=base_url()?>/assets/css/style.css?v=1.0.1",
   "https://missioncstestseries.com//assetItems/image/logo.jpg",
-  "https://missioncstestseries.com//assetItems/image/logo.jpg"
 ];
 
 // Install event
