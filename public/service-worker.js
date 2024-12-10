@@ -1,9 +1,9 @@
-const CACHE_NAME = "missioncs-cache-v1";
+const CACHE_NAME = "missioncs-cache-v2"; // Increment the cache version
 const urlsToCache = [
-  "/dashboard",
   "https://missioncstestseries.com/dashboard",
-  "<?=base_url()?>/assets/css/style.css?v=1.0.1",
+  "<?=base_url()?>/assets/css/style.css",
   "https://missioncstestseries.com//assetItems/image/logo.jpg",
+  "/offline.html",
 ];
 
 // Install event
@@ -16,10 +16,16 @@ self.addEventListener("install", (event) => {
 });
 
 // Fetch event
-self.addEventListener('fetch', (event) => {
-  if (event.request.mode === 'navigate') {
+self.addEventListener("fetch", (event) => {
+  if (event.request.mode === "navigate") {
     event.respondWith(
-      caches.match('/dashboard').then((response) => {
+      fetch(event.request).catch(() => {
+        return caches.match("/offline.html");
+      })
+    );
+  } else {
+    event.respondWith(
+      caches.match(event.request).then((response) => {
         return response || fetch(event.request);
       })
     );
