@@ -61,10 +61,16 @@
                     <input type="text" class="item" name="mobile_no" required="required">
                     <span>Mobile No</span>
                 </div>
-                <div class="inputBox">
+              <!--  <div class="inputBox">
                     <input type="text" class="item" name="city_name" required="required">
                     <span>City</span>
-                </div>
+                </div> -->
+             
+
+                <div class="inputBox" style="display: none;">
+                    <input type="text" class="item" name="city_name" value="N/A" required="required">
+                 </div>
+
                 <div class="inputBox">
                     <input type="text" class="item" name="state_name" required="required">
                     <span>State</span>
@@ -84,8 +90,8 @@
                         ?>
                     </select>
                 </div>
-                <div class="inputBox">
-                    <select class="form-control mb-4" name="current_level" id="current_level">
+                <div class="inputBox" style="display: none;">
+                    <select class="form-control mb-4" name="current_level" value="N/A" id="current_level">
                     </select>
                 </div>
                 <div class="inputBox">
@@ -93,11 +99,16 @@
                     <ion-icon name="eye-off-outline" class="viewPassWord" style="position: absolute;top: 1rem;right: 1rem;"></ion-icon>
                     <span>Password</span>
                 </div>
-                <div class="inputBox">
+               <!-- <div class="inputBox">
                     <input type="password" class="item" name="confirm_password" required="required">
                     <ion-icon name="eye-off-outline" class="viewPassWord" style="position: absolute;top: 1rem;right: 1rem;"></ion-icon>
                     <span>Confirm Password</span>
-                </div>
+                </div> -->
+
+              <div class="inputBox" style="display: none;">
+                 <input type="password" id="confirm_password" class="item" name="confirm_password" required="required">
+                <span>Confirm Password</span>
+              </div>
             </form>
             <a class="btn btn-sm btn-custom signUpBtn authButton  w-100">
                 <span class="span"><i class="bi bi-key-fill"></i> Sign Up</span>
@@ -108,6 +119,13 @@
             </div>
         </div>
     </div>
+<script>
+// Automatically copy password value to confirm password
+document.getElementById('password').addEventListener('input', function () {
+    document.getElementById('confirm_password').value = this.value;
+});
+</script>
+
     <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/jquery.min.js"></script>
     <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/bootbox.min.js"></script>
