@@ -9,15 +9,14 @@
 
 html, body {
     height: 100%; /* Full height for centering */
-    overflow: hidden; /* Prevent scrolling */
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     background-color: #f8f9fa; /* Light background */
+    overflow: hidden; /* Prevent scrolling */
 }
 
 body {
-    background-color: #f8f9fa;
     color: #333;
 }
 
@@ -50,8 +49,7 @@ body {
     color: white;
     width: 70px;
     height: 70px;
-    margin: auto;
-    margin-bottom: 15px;
+    margin: 0 auto 15px auto; /* Ensures centering */
     line-height: 70px;
     animation: bounce 1.2s infinite;
 }
@@ -79,8 +77,8 @@ body {
 }
 
 .registration-form .item {
-    padding: 6px 12px; /* Smaller input size */
-    font-size: 13px; /* Smaller font size */
+    padding: 6px 12px;
+    font-size: 13px;
     width: 100%;
     border-radius: 6px;
     border: 1px solid #ced4da;
@@ -130,7 +128,7 @@ body {
 
 .btn-class:hover {
     background-color: #c32d47;
-    transform: scale(1.02); /* Slight enlargement on hover */
+    transform: scale(1.02);
 }
 
 .signup_link {
@@ -153,7 +151,7 @@ body {
 /* Responsive Design */
 @media (max-width: 576px) {
     .registration-form {
-        max-width: 90%; /* Adaptable for smaller screens */
+        max-width: 90%; /* Ensure it adjusts well for smaller screens */
         padding: 20px;
     }
 
