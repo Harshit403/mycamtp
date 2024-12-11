@@ -9,131 +9,38 @@ Most Trusted CS Test Series for CSEET CS Executive and CS Professional | Mission
 cs test series, cstestseries , cs executive test series, cs professional test series, icsi test series, cs executive test series, cs online test Series, cs exam, cs exams test series, cs exams, best test series for cs exams
 <?=$this->endSection()?>
 <?=$this->section('content')?>
-	<style>
-    .header {
-      background-color: #5b4efc;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    .header h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-    .menu {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 10px;
-      padding: 15px;
-    }
-    .menu-item {
-      text-align: center;
-      padding: 15px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    .menu-item i {
-      font-size: 24px;
-      margin-bottom: 10px;
-      color: #5b4efc;
-    }
-    .menu-item p {
-      margin: 0;
-      font-size: 14px;
-      color: #333;
-    }
-    .countdown-card, .social-media-card {
-      margin: 15px auto;
-      max-width: 90%;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      padding: 15px;
-    }
-    .countdown-card button {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      background: #5b4efc;
-      color: white;
-      border-radius: 25px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .social-media {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-    }
-    .social-media a {
-      text-decoration: none;
-      color: #5b4efc;
-      font-size: 24px;
-    }
-    .courses-section {
-      padding: 15px;
-    }
-    .courses-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    .courses-header h2 {
-      margin: 0;
-      font-size: 18px;
-    }
-    .courses {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 10px;
-    }
-    .course-card {
-      background: white;
-      padding: 10px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-    .course-card img {
-      max-width: 40px;
-      margin-bottom: 10px;
-    }
-    .course-card h3 {
-      margin: 0;
-      font-size: 14px;
-    }
-    .course-card p {
-      margin: 0;
-      font-size: 12px;
-      color: #666;
-    }
-    .footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: white;
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 0;
-      border-top: 1px solid #ccc;
-    }
-    .footer-item {
-      text-align: center;
-    }
-    .footer-item i {
-      font-size: 20px;
-      color: #666;
-    }
-    .footer-item p {
-      margin: 0;
-      font-size: 12px;
-      color: #666;
-    }
-    .footer-item.active i, .footer-item.active p {
-      color: #5b4efc;
-		}
+	<style type="text/css">
+	    .flexMobileContainer{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            grid-gap: 10px;
+        }
+        .flexMobileContainer > .grid-Elem {
+            background-color: #fafbff !important;
+            flex: 1 1 25%;
+        }
+        .grid-Elem .btnClass {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+	    .btnClass > i{
+	        font-size: 40px;
+	        color: #1AB79D !important;
+	    }
+	    .btnClass > p, .largeBtn > p{
+	        font-weight: bold;
+	        font-size: 14px;
+	    }
+	    a:hover{
+	        color: grey;
+	    }
+	    .largeBtn{
+	        background-color: #fafbff !important;
+	    }
 	</style>
 	<section style="margin-top: 6rem;" class="container">
 		<?php
