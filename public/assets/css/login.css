@@ -10,114 +10,116 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #fff; /* Solid white background */
+    color: #333; /* Neutral text color */
 }
 
 .registration-form {
     background-color: #fff;
-    max-width: 500px;
+    max-width: 500px; /* Reduced width for modern compact look */
     margin: auto;
-    padding: 20px 40px;
-    margin: 20px auto;
-    border-radius: 15px;
+    padding: 30px 40px;
+    border-radius: 20px; /* Rounded corners for a soft look */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .registration-form .form-icon {
     text-align: center;
-    background-color: #007bff;
+    background-color: #e63e58;
     border-radius: 50%;
     font-size: 36px;
     color: white;
     width: 80px;
     height: 80px;
     margin: auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     line-height: 80px;
 }
 
-.inputBox {
+.registration-form .inputBox {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Adjust spacing for modern layout */
 }
 
-.inputBox input,
-.inputBox select {
-    padding: 10px 15px;
+.registration-form .item {
+    padding: 8px 15px;
+    font-size: 14px; /* Smaller font size */
     width: 100%;
-    outline: none;
-    border-radius: 5px;
+    border-radius: 8px;
     border: 1px solid #ced4da;
-    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.inputBox span {
+.registration-form .item:focus {
+    border-color: #e63e58;
+    box-shadow: 0px 0px 5px rgba(230, 62, 88, 0.5);
+}
+
+.registration-form .inputBox span {
     position: absolute;
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 14px;
-    color: #6c757d;
-    transition: 0.3s;
+    color: #999;
+    font-size: 12px;
     pointer-events: none;
+    transition: 0.3s ease;
 }
 
-.inputBox input:focus~span,
-.inputBox input:valid~span,
-.inputBox select:focus~span {
+.registration-form .item:valid~span,
+.registration-form .item:focus~span {
     top: -10px;
     left: 10px;
-    background: white;
-    font-size: 12px;
-    color: #007bff;
+    background-color: #fff;
+    font-size: 10px;
+    color: #e63e58;
     padding: 0 5px;
+    font-weight: bold;
 }
 
-.inputBox input:focus,
-.inputBox select:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
-}
-
-.btn-custom {
-    background-color: #007bff;
-    color: white;
+.btn-class {
+    background-color: #e63e58;
+    color: #fff;
     font-weight: bold;
     border: none;
-    padding: 12px;
-    border-radius: 5px;
+    border-radius: 8px;
+    padding: 10px;
     cursor: pointer;
+    text-align: center;
     transition: background-color 0.3s ease;
 }
 
-.btn-custom:hover {
-    background-color: #0056b3;
+.btn-class:hover {
+    background-color: #c32d47;
 }
 
 .signup_link {
     text-align: center;
-    margin-top: 20px;
     font-size: 14px;
+    margin-top: 20px;
 }
 
 .signup_link a {
-    color: #007bff;
+    color: #e63e58;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .signup_link a:hover {
     text-decoration: underline;
 }
 
+/* Responsive Adjustments */
 @media (max-width: 576px) {
     .registration-form {
         padding: 20px;
     }
 
-    .form-icon {
+    .registration-form .form-icon {
         width: 60px;
         height: 60px;
-        font-size: 28px;
+        font-size: 24px;
         line-height: 60px;
     }
 }
