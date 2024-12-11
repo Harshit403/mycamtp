@@ -12,14 +12,15 @@ body {
     padding: 0;
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Centers vertically */
+    justify-content: center; /* Centers horizontally */
     background: linear-gradient(135deg, #e63e58, #ff919d);
     color: #333;
 }
 
 .registration-form {
     background-color: #fff;
+    width: 100%;
     max-width: 400px;
     padding: 30px 40px;
     border-radius: 10px; /* Slightly rounded edges */
