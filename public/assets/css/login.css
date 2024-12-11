@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 * {
     margin: 0;
@@ -10,175 +10,114 @@
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #f9f9f9;
 }
 
 .registration-form {
-    background-color: rgba(255, 255, 255, 0.9);
-    max-width: 600px;
-    width: 90%;
+    background-color: #fff;
+    max-width: 500px;
     margin: auto;
     padding: 20px 40px;
-    border-radius: 20px;
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
-    color: #333;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .registration-form .form-icon {
     text-align: center;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    background-color: #007bff;
     border-radius: 50%;
-    font-size: 40px;
+    font-size: 36px;
     color: white;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     margin: auto;
     margin-bottom: 30px;
-    line-height: 100px;
+    line-height: 80px;
 }
 
-.registration-form h1 {
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: #2575fc;
-}
-
-.registration-form .item {
-    margin-bottom: 20px;
-    padding: 12px 15px;
-    width: 100%;
-    outline: none;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    font-size: 16px;
-    background-color: #f9f9f9;
-    transition: 0.3s ease;
-}
-
-.registration-form .item:focus {
-    border-color: #2575fc;
-    box-shadow: 0px 0px 5px rgba(37, 117, 252, 0.5);
-}
-
-.registration-form .inputBox {
+.inputBox {
     position: relative;
     margin-bottom: 20px;
 }
 
-.registration-form .inputBox span {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    color: #aaa;
-    pointer-events: none;
-    transition: 0.3s ease;
+.inputBox input,
+.inputBox select {
+    padding: 10px 15px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    font-size: 14px;
 }
 
-.registration-form .item:valid~span,
-.registration-form .item:focus~span {
-    transform: translateY(-150%);
+.inputBox span {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #6c757d;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+.inputBox input:focus~span,
+.inputBox input:valid~span,
+.inputBox select:focus~span {
+    top: -10px;
+    left: 10px;
+    background: white;
     font-size: 12px;
-    color: #2575fc;
-    background: #fff;
+    color: #007bff;
     padding: 0 5px;
 }
 
-.registration-form select {
-    padding: 10px;
-    width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    color: #333;
+.inputBox input:focus,
+.inputBox select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
 }
 
-.registration-form .btn-class {
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
-    border: none;
+.btn-custom {
+    background-color: #007bff;
     color: white;
-    width: 100%;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-.registration-form .btn-class:hover {
-    background: linear-gradient(to right, #2575fc, #6a11cb);
-    box-shadow: 0px 5px 15px rgba(37, 117, 252, 0.5);
+.btn-custom:hover {
+    background-color: #0056b3;
 }
 
-.registration-form .signup_link {
+.signup_link {
     text-align: center;
-    padding: 20px 0px;
-    color: #2575fc;
+    margin-top: 20px;
+    font-size: 14px;
 }
 
-.registration-form .signup_link a {
-    color: #6a11cb;
-    font-weight: 500;
+.signup_link a {
+    color: #007bff;
     text-decoration: none;
 }
 
-.registration-form .signup_link a:hover {
+.signup_link a:hover {
     text-decoration: underline;
-}
-
-.registration-form .social-icons {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.registration-form .social-icons a {
-    font-size: 20px;
-    margin: 0 10px;
-    color: #6a11cb;
-    border: 1px solid #6a11cb;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    line-height: 40px;
-    transition: 0.3s ease;
-}
-
-.registration-form .social-icons a:hover {
-    background: #6a11cb;
-    color: #fff;
 }
 
 @media (max-width: 576px) {
     .registration-form {
-        padding: 15px 20px;
-        border-radius: 15px;
+        padding: 20px;
     }
 
-    .registration-form .form-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 30px;
-        line-height: 70px;
-        margin-bottom: 20px;
-    }
-
-    .registration-form h1 {
-        font-size: 20px;
-    }
-
-    .registration-form .item {
-        padding: 10px;
-        font-size: 14px;
+    .form-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+        line-height: 60px;
     }
 }
