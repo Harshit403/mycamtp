@@ -36,7 +36,7 @@
                 </div>
                 <div class="inputBox">
                     <input type="text" class="item" name="mobile_no" required="required" pattern="[6-9]\d{9}" title="Enter a valid 10-digit Indian mobile number starting with 6-9.">
-                    <span>Mobile No</span>
+                    <span>10 digit Mobile No.</span>
                 </div>
                 <div class="inputBox" style="display: none;">
                     <input type="text" class="item" name="city_name" value="N/A" required="required">
