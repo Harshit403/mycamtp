@@ -7,23 +7,26 @@
     font-family: "Poppins", sans-serif;
 }
 
+html, body {
+    height: 100%; /* Ensures the body takes full height */
+    overflow: hidden; /* Prevents scrolling */
+}
+
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full height to center vertically */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
     background-color: #f8f9fa; /* Light background for a clean look */
     color: #333;
-    margin: 0;
-    padding: 0;
 }
 
 .registration-form {
     background-color: #fff;
-    max-width: 400px; /* Smaller width for a compact design */
+    max-width: 400px; /* Compact width */
+    width: 100%;
     padding: 25px 30px;
-    border-radius: 15px; /* Slightly rounded corners */
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1); /* Modern shadow effect */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow */
     text-align: center;
     animation: fadeIn 0.5s ease-in-out;
 }
@@ -71,11 +74,11 @@ body {
 
 .registration-form .inputBox {
     position: relative;
-    margin-bottom: 15px; /* Compact spacing */
+    margin-bottom: 15px;
 }
 
 .registration-form .item {
-    padding: 6px 12px; /* Smaller padding for a sleek look */
+    padding: 6px 12px; /* Smaller padding */
     font-size: 13px; /* Smaller font size */
     width: 100%;
     border-radius: 6px;
