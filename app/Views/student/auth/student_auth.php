@@ -20,6 +20,30 @@
 </head>
 
 <body>
+    <div class="signin_container" style="display: <?= ($addClass == 'register') ? 'none' : ''; ?>">
+        <div class="registration-form">
+            <h1 class="text-center pb-3">SignIn</h1>
+            <form id="sign_in_form">
+                <div class="inputBox">
+                    <input type="email" class="item" name="email" required="required" title="Enter a valid email address.">
+                    <span>Email</span>
+                </div>
+                <div class="inputBox">
+                    <input type="password" class="item" name="password" required="required">
+                    <ion-icon name="eye-off-outline" class="viewPassWord" style="position: absolute;top: 1rem;right: 1rem;"></ion-icon>
+                    <span>Password</span>
+                </div>
+                <div class="pass"><a href="<?= base_url() ?>forgot-password">Forgot Password?</a></div>
+            </form>
+            <a class="btn btn-sm btn-custom has-before loginBtn authButton w-100">
+                <span class="span"><i class="bi bi-key-fill"></i> Sign In</span>
+            </a>
+            <div class="signup_link">
+                Not a member? <a href="<?= base_url() ?>auth?auth=register">Signup</a>
+            </div>
+        </div>
+    </div>
+
     <div class="signup_container" style="display: <?= ($addClass == 'login') ? 'none' : ''; ?>">
         <div class="registration-form">
             <form id="sign_up_form">
@@ -36,7 +60,7 @@
                 </div>
                 <div class="inputBox">
                     <input type="text" class="item" name="mobile_no" required="required" pattern="[6-9]\d{9}" title="Enter a valid 10-digit Indian mobile number starting with 6-9.">
-                    <span>10 digit Mobile No.</span>
+                    <span>Mobile No</span>
                 </div>
                 <div class="inputBox" style="display: none;">
                     <input type="text" class="item" name="city_name" value="N/A" required="required">
@@ -64,18 +88,10 @@
                     <input type="password" id="confirm_password" class="item" name="confirm_password" required="required">
                     <span>Confirm Password</span>
                 </div>
-
-                <div class="form-check mb-4">
-                    <input class="form-check-input" type="checkbox" id="terms" name="terms" checked required>
-                    <label class="form-check-label" for="terms">
-                        I have read and agree to the <b>Terms and Conditions</b> and all the <b>Privacy Policy</b>.
-                    </label>
-                </div>
-
-                <a class="btn btn-sm btn-custom signUpBtn authButton w-100" onclick="submitForm(event)">
-                    <span class="span"><i class="bi bi-key-fill"></i> Sign Up</span>
-                </a>
             </form>
+            <a class="btn btn-sm btn-custom signUpBtn authButton  w-100">
+                <span class="span"><i class="bi bi-key-fill"></i> Sign Up</span>
+            </a>
             <div class="signup_link">
                 Already a member? <a href="<?= base_url() ?>auth?auth=login">Signin</a>
                 <div><a href="<?= base_url() ?>"><i class="fas fa-undo-alt"></i> Return to Home</a></div>
@@ -89,15 +105,16 @@
             document.getElementById('confirm_password').value = this.value;
         });
 
-        function submitForm(event) {
-            const termsCheckbox = document.getElementById('terms');
-            if (!termsCheckbox.checked) {
-                event.preventDefault();
-                alert('Please accept the Terms and Conditions and Privacy Policy before signing up.');
-            } else {
-                document.getElementById('sign_up_form').submit();
-            }
-        }
+        // Client-side validation feedback
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', () => {
+                if (!input.checkValidity()) {
+                    input.setCustomValidity(input.title);
+                } else {
+                    input.setCustomValidity('');
+                }
+            });
+        });
     </script>
 
     <script type="text/javascript" src="<?= base_url() ?>assets/cdn/js/jquery.min.js"></script>
