@@ -21,11 +21,11 @@ body {
 
 .registration-form {
     background-color: #fff;
-    width: 90%; /* Expand horizontally */
-    max-width: 1200px; /* Limit max width */
-    padding: 40px 20px;
-    border-radius: 10px;
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Limit max width for smaller forms */
+    padding: 30px 20px;
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -34,8 +34,8 @@ body {
     border-radius: 50%;
     font-size: 36px;
     color: white;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     margin: 0 auto 20px;
     display: flex;
     align-items: center;
@@ -44,30 +44,28 @@ body {
 
 .registration-form .inputBox {
     position: relative;
-    margin-bottom: 20px;
-    width: 50%; /* Smaller input boxes */
-    margin-left: auto;
-    margin-right: auto; /* Center inputs horizontally */
+    margin-bottom: 15px;
+    width: 100%; /* Input width spans the form */
 }
 
 .registration-form .item {
-    padding: 8px 10px; /* Smaller input height */
+    padding: 10px 12px;
     font-size: 14px;
     width: 100%;
-    border-radius: 4px; /* Less rounded edges */
-    border: 2px solid #333; /* Darker borders */
+    border-radius: 5px; /* Less rounded edges */
+    border: 1px solid #ccc; /* Lighter border color */
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .registration-form .item:focus {
     border-color: #e63e58;
-    box-shadow: 0px 0px 5px rgba(230, 62, 88, 0.5);
+    box-shadow: 0px 0px 5px rgba(230, 62, 88, 0.3);
 }
 
 .registration-form .inputBox span {
     position: absolute;
-    left: 10px;
+    left: 12px;
     top: 50%;
     transform: translateY(-50%);
     color: #999;
@@ -92,15 +90,12 @@ body {
     color: #fff;
     font-weight: bold;
     border: none;
-    border-radius: 8px;
-    padding: 12px;
+    border-radius: 5px; /* Less rounded edges */
+    padding: 10px;
     cursor: pointer;
-    width: 50%; /* Button width matches input size */
+    width: 100%; /* Button width spans the form */
     transition: background-color 0.3s ease;
     margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block; /* Center the button */
 }
 
 .btn-class:hover {
@@ -127,14 +122,6 @@ body {
 @media (max-width: 576px) {
     .registration-form {
         padding: 20px;
-        width: 100%; /* Expand form fully on small screens */
-    }
-
-    .registration-form .inputBox {
-        width: 100%; /* Input boxes expand fully on small screens */
-    }
-
-    .btn-class {
-        width: 100%; /* Buttons expand fully on small screens */
+        width: 95%; /* Expand form fully on small screens */
     }
 }
