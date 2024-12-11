@@ -7,80 +7,45 @@
     font-family: "Poppins", sans-serif;
 }
 
-html, body {
-    height: 100%; /* Full height for centering */
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    background-color: #f8f9fa; /* Light background */
-    overflow: hidden; /* Prevent scrolling */
-}
-
 body {
-    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Solid white background */
+    color: #333; /* Neutral text color */
 }
 
 .registration-form {
     background-color: #fff;
-    width: 100%;
-    max-width: 400px; /* Compact form width */
-    padding: 25px 30px;
-    border-radius: 15px;
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-align: center;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    max-width: 500px; /* Reduced width for modern compact look */
+    margin: auto;
+    padding: 30px 40px;
+    border-radius: 20px; /* Rounded corners for a soft look */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .registration-form .form-icon {
+    text-align: center;
     background-color: #e63e58;
     border-radius: 50%;
-    font-size: 32px;
+    font-size: 36px;
     color: white;
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 15px auto; /* Ensures centering */
-    line-height: 70px;
-    animation: bounce 1.2s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-8px);
-    }
-}
-
-.registration-form h2 {
-    color: #e63e58;
-    font-size: 22px;
+    width: 80px;
+    height: 80px;
+    margin: auto;
     margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+    line-height: 80px;
 }
 
 .registration-form .inputBox {
     position: relative;
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* Adjust spacing for modern layout */
 }
 
 .registration-form .item {
-    padding: 6px 12px;
-    font-size: 13px;
+    padding: 8px 15px;
+    font-size: 14px; /* Smaller font size */
     width: 100%;
-    border-radius: 6px;
+    border-radius: 8px;
     border: 1px solid #ced4da;
     outline: none;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -88,16 +53,16 @@ body {
 
 .registration-form .item:focus {
     border-color: #e63e58;
-    box-shadow: 0px 0px 4px rgba(230, 62, 88, 0.4);
+    box-shadow: 0px 0px 5px rgba(230, 62, 88, 0.5);
 }
 
 .registration-form .inputBox span {
     position: absolute;
-    left: 12px;
+    left: 15px;
     top: 50%;
     transform: translateY(-50%);
     color: #999;
-    font-size: 11px;
+    font-size: 12px;
     pointer-events: none;
     transition: 0.3s ease;
 }
@@ -105,11 +70,11 @@ body {
 .registration-form .item:valid~span,
 .registration-form .item:focus~span {
     top: -10px;
-    left: 8px;
+    left: 10px;
     background-color: #fff;
     font-size: 10px;
     color: #e63e58;
-    padding: 0 4px;
+    padding: 0 5px;
     font-weight: bold;
 }
 
@@ -119,23 +84,20 @@ body {
     font-weight: bold;
     border: none;
     border-radius: 8px;
-    padding: 8px 0;
-    font-size: 14px;
+    padding: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 .btn-class:hover {
     background-color: #c32d47;
-    transform: scale(1.02);
 }
 
 .signup_link {
     text-align: center;
-    font-size: 13px;
-    margin-top: 15px;
-    color: #555;
+    font-size: 14px;
+    margin-top: 20px;
 }
 
 .signup_link a {
@@ -148,10 +110,9 @@ body {
     text-decoration: underline;
 }
 
-/* Responsive Design */
+/* Responsive Adjustments */
 @media (max-width: 576px) {
     .registration-form {
-        max-width: 90%; /* Ensure it adjusts well for smaller screens */
         padding: 20px;
     }
 
