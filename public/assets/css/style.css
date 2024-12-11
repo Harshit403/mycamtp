@@ -219,68 +219,6 @@ body {
     box-shadow: 2px
 }
 
-.dashboardContainerMobile {
-    display: none;
-}
-
-.dashboardContainer {
-    display: block;
-}
-
-.imageDisplay {
-    display: block;
-}
-
-.forMobileSection {
-    display: none;
-}
-
-.forDesktopSection {
-    display: block;
-}
-
-.imgClass {
-    height: 450px;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none !important;
-}
-
-.signinDropdown {
-    margin-left: -1rem;
-}
-
-@media only screen and (max-width: 600px) {
-    .dashboardContainerMobile {
-        display: block;
-    }
-
-    .dashboardContainer {
-        display: none;
-    }
-
-    .imageDisplay {
-        display: none;
-    }
-
-    .forMobileSection {
-        display: block;
-    }
-
-    .forDesktopSection {
-        display: none;
-    }
-
-    .signinDropdown {
-        margin-left: -3rem;
-    }
-
-    .imgClass {
-        height: 100%;
-    }
-}
-
 
 #newsletter_section .unique-newsletter-box {
     max-width: 500px;
