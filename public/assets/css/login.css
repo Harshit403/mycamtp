@@ -21,9 +21,9 @@ body {
 
 .registration-form {
     background-color: #fff;
-    width: 90%; /* Responsive width */
-    max-width: 400px; /* Limit max width for smaller forms */
-    padding: 30px 20px;
+    width: 100%; /* Expand form horizontally to fit the screen */
+    max-width: none; /* Remove max-width restriction */
+    padding: 20px 40px;
     border-radius: 8px; /* Slightly rounded corners */
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -32,10 +32,10 @@ body {
 .registration-form .form-icon {
     background-color: #e63e58;
     border-radius: 50%;
-    font-size: 36px;
+    font-size: 22px; /* 60% smaller icon */
     color: white;
-    width: 70px;
-    height: 70px;
+    width: 30px; /* 60% smaller width */
+    height: 30px; /* 60% smaller height */
     margin: 0 auto 20px;
     display: flex;
     align-items: center;
@@ -49,8 +49,8 @@ body {
 }
 
 .registration-form .item {
-    padding: 10px 12px;
-    font-size: 14px;
+    padding: 5px 8px; /* Smaller padding for input box */
+    font-size: 12px; /* Smaller font size */
     width: 100%;
     border-radius: 5px; /* Less rounded edges */
     border: 1px solid #ccc; /* Lighter border color */
@@ -69,7 +69,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     color: #999;
-    font-size: 12px;
+    font-size: 10px; /* Smaller label font size */
     pointer-events: none;
     transition: 0.3s ease;
 }
@@ -79,7 +79,7 @@ body {
     top: -10px;
     left: 10px;
     background-color: #fff;
-    font-size: 10px;
+    font-size: 9px; /* Smaller floating label */
     color: #e63e58;
     padding: 0 5px;
     font-weight: bold;
@@ -91,7 +91,7 @@ body {
     font-weight: bold;
     border: none;
     border-radius: 5px; /* Less rounded edges */
-    padding: 10px;
+    padding: 8px;
     cursor: pointer;
     width: 100%; /* Button width spans the form */
     transition: background-color 0.3s ease;
@@ -104,7 +104,7 @@ body {
 
 .signup_link {
     text-align: center;
-    font-size: 14px;
+    font-size: 12px; /* Smaller text size */
     margin-top: 20px;
 }
 
@@ -121,7 +121,13 @@ body {
 /* Responsive Adjustments */
 @media (max-width: 576px) {
     .registration-form {
-        padding: 20px;
-        width: 95%; /* Expand form fully on small screens */
+        padding: 15px 20px;
+        width: 100%; /* Fully expand on small screens */
+    }
+
+    .registration-form .form-icon {
+        width: 25px; /* Smaller for very small screens */
+        height: 25px;
+        font-size: 18px;
     }
 }
