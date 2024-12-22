@@ -198,7 +198,7 @@ body {
 }
 
 .subject_container .add-to-cart {
-    background-color: #000000;
+    background-color: #007BFF;
     color: white;
     border: none;
     border-radius: 5px;
@@ -208,7 +208,7 @@ body {
 }
 
 .subject_container .add-to-cart:hover {
-    background-color: #000000;
+    background-color: #0056b3;
     transform: scale(1.05);
 }
 
