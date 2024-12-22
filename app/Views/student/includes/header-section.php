@@ -1,6 +1,78 @@
 <!-- navbar -->
 <header>
    <style>
+        .navbar {
+            top: 50px; /* Adjust to prevent overlapping with the banner */
+                }
+        .contact {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact i {
+            margin-right: 15px; /* Add space between phone icon and number */
+            font-size: 1.2em;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .contact span {
+            font-size: 1.2em;
+            vertical-align: middle;
+        }
+        
+       .auth-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .auth-button {
+            background-color: white;
+            color: #000000;
+            border: 1px solid transparent;
+            padding: 6.8px 17px;
+            margin-right: 10px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .auth-button:hover {
+            background-color: #e63e58;
+            color: white;
+            border-color: white;
+}
+        .banner {
+            background-color: #000000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .icon {
+            color: white;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+
+        .icon:hover {
+            color: #ddd;
+        }
+        
 
     @media (max-width: 768px) {
       .offcanvas.offcanvas-start {
@@ -11,6 +83,25 @@
     <div style="display: none;">
         <div class="cartPopUpContainer"></div>
     </div>
+   <section class="banner">
+<?php if (session()->get('studentDetails') !== null): ?>
+    <div class="contact">
+        <i class="fas fa-phone-alt"></i>
+        <span>+91-9873045724</span>
+    </div>
+<?php else: ?>
+   <div class="auth-buttons">
+        <a href="<?= base_url() ?>auth?auth=login" class="auth-button">Login</a>
+        <a href="<?= base_url() ?>auth?auth=register" class="auth-button">Register</a>
+    </div>
+<?php endif; ?>
+<div class="social-icons">
+            <a href="https://wa.me/919873045724/" class="icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="icon youtube"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/mission.cs" class="icon instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://telegram.me/csmission" class="icon telegram"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+      </section>
    <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm p-3 bg-body rounded">
       <div class="container-fluid">
         <a class="navbar-brand fs-4" href="<?=base_url()?>">
