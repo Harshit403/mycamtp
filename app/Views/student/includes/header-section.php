@@ -20,7 +20,7 @@
           <li class="nav-item forMobileSection">
             <a class="nav-link showCartBtn" href="javascript:void(0)" class="btn">
               <div style="position: relative;">
-                <i class="bi bi-bag" style="font-size: 18px;"></i>
+                <i class="fa-solid fa-cart-shopping" style="font-size: 18px;"></i>
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary cartCount">0</span>
               </div>
             </a>
