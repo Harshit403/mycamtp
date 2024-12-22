@@ -3,10 +3,10 @@
     Student Dashboard
 <?=$this->endSection()?>
 <?= $this->section('meta_description') ?>
-Most Trusted CS Test Series for CSEET CS Executive and CS Professional | Mission CS Test Series
+<!-- enter your meta description -->
 <?=$this->endSection()?>
 <?= $this->section('meta_keywords') ?>
-cs test series, cstestseries , cs executive test series, cs professional test series, icsi test series, cs executive test series, cs online test Series, cs exam, cs exams test series, cs exams, best test series for cs exams
+<!-- enter your meta keywords widthout tag -->
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 	<style type="text/css">
