@@ -270,23 +270,23 @@
       </div>
     </div>
   </div>
- <div class="unique-footer">
-    <div class="unique-footer-item active">
+ <div class="unique-footer mt-5">
+    <a href="<?=base_url()?>dashboard">Dashboard</a>" class="unique-footer-item active">
       <i class="fas fa-home unique-footer-item-icon"></i>
       <p class="unique-footer-item-text">Home</p>
-    </div>
-    <div class="unique-footer-item">
+    </a>
+    <a href="<?=base_url()?>profile">Profile" class="unique-footer-item">
       <i class="fas fa-list unique-footer-item-icon"></i>
-      <p class="unique-footer-item-text">Courses</p>
-    </div>
-    <div class="unique-footer-item">
+      <p class="unique-footer-item-text">Profile</p>
+    </a>
+    <a href="<?=base_url()?>invoice">Invoice</a>" class="unique-footer-item">
       <i class="fas fa-heart unique-footer-item-icon"></i>
-      <p class="unique-footer-item-text">Wishlist</p>
-    </div>
-    <div class="unique-footer-item">
+      <p class="unique-footer-item-text">Invoice</p>
+    </a>
+    <a href="<?=base_url()?>logout">Logout</a>" class="unique-footer-item">
       <i class="fas fa-user unique-footer-item-icon"></i>
-      <p class="unique-footer-item-text">Account</p>
-    </div>
+      <p class="unique-footer-item-text">Logout</p>
+    </a>
  </div>
 
 </body>
