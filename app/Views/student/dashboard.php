@@ -220,22 +220,22 @@
       <p>Test Paper</p>
     </div>
     </a>
-    <a href="<?=base_url()?>my-resources/subject-list" style="text-decoration: none;">
+    <a href="<?=base_url()?>my-resources/notes/subject-list" style="text-decoration: none;">
     <div class="pd-menu-item">
       <i class="fas fa-play-circle" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Notes</p>
     </div>
     </a>
-    <a href="<?=base_url()?>my-resources/subject-list" style="text-decoration: none;">
+    <a href="<?=base_url()?>my-resources/amendment/subject-list" style="text-decoration: none;">
     <div class="pd-menu-item">
       <i class="fas fa-book" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Amendments</p>
     </div>
     </a>
-    <a href="<?=base_url()?>my-resources/subject-list" style="text-decoration: none;">
+    <a href="<?=base_url()?>my-resources/qbank/subject-list" style="text-decoration: none;">
     <div class="pd-menu-item">
       <i class="fas fa-store" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
-      <p>Question Bank</p>
+      <p>Que. Bank</p>
     </div>
     </a>
     <a href="<?=base_url()?>#category-section" style="text-decoration: none;">
