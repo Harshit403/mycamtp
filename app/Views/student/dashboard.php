@@ -258,15 +258,15 @@
       <p class="unique-footer-item-text">Home</p>
     </a>
     <a href="<?=base_url()?>profile" class="unique-footer-item" style="text-decoration: none;">
-      <i class="fas fa-list unique-footer-item-icon"></i>
+      <i class="fas fa-user unique-footer-item-icon"></i>
       <p class="unique-footer-item-text">Profile</p>
     </a>
     <a href="<?=base_url()?>invoice" class="unique-footer-item" style="text-decoration: none;">
-      <i class="fas fa-heart unique-footer-item-icon"></i>
+      <i class="fas fa-file-invoice unique-footer-item-icon"></i>
       <p class="unique-footer-item-text">Invoice</p>
     </a>
     <a href="<?=base_url()?>logout" class="unique-footer-item" style="text-decoration: none;">
-      <i class="fas fa-user unique-footer-item-icon"></i>
+      <i class="fas fa-sign-out unique-footer-item-icon"></i>
       <p class="unique-footer-item-text">Logout</p>
     </a>
  </div>
