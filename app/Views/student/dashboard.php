@@ -169,7 +169,13 @@
   </div>
 
   <div class="pd-countdown-card">
-    <button>Countdown: 10:00</button>
+   <?php
+        $date1=date_create(EXAM_DATE);
+        $date2=date_create(date('Y-m-d'));
+        $diff=date_diff($date1,$date2);
+        $daysLeft = $diff->days;
+    ?>
+    <button><?=$daysLeft?> days remaining for Exam</button>
     <button class="pd-switch-content-button" onclick="switchToFreeContent()">Switch to Free Content</button>
   </div>
 
