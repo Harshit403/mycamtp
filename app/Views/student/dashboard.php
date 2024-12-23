@@ -262,6 +262,80 @@
   .modal-confirm:hover {
     background: #d6374f;
   }
+
+
+  @media screen and (min-width: 768px) {
+    /* Desktop adjustments */
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    .pd-header {
+      text-align: left;
+      padding: 20px 40px;
+    }
+
+    .pd-header h1 {
+      font-size: 28px;
+    }
+
+    .pd-menu {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* 4 items per row for desktops */
+      gap: 20px;
+      padding: 20px 40px;
+    }
+
+    .pd-menu-item {
+      padding: 20px;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .pd-countdown-card,
+    .pd-social-media-card {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .pd-courses-section {
+      padding: 20px 40px;
+    }
+
+    .pd-courses {
+      grid-template-columns: repeat(3, 1fr); /* 3 items per row for desktops */
+      gap: 20px;
+    }
+
+    .pd-course-card {
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .pd-footer {
+      position: static;
+      padding: 20px 40px;
+      border-top: none;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+
+    .pd-footer-item {
+      text-align: left;
+      font-size: 14px;
+    }
+
+    /* Modal scaling adjustment for larger screens */
+    #logoutModal .modal-content {
+      max-width: 400px;
+    }
+  }
   </style>
 </head>
 <body style="margin-top: 6rem;">
