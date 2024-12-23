@@ -10,6 +10,25 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 
+<div class="cs-container" style="margin-top: 8rem;">
+  <!-- Left Section -->
+  <div class="cs-text-section">
+    <h1>Mission <span class="cs-highlight">CS Test Series</span></h1>
+    <p class="cs-description">We offer the most affordable and Quality CS Test series for CS Executive and CS Professional exams, along with live Mentorship from Rankers and Qualified Company Secretaries.</p>
+    <p class="cs-description">Each of our test series is designed by AIRs considering the needs of CS Executive and Professional exams.</p>
+
+    <?php if (session()->get('studentDetails') !== null): ?>
+      <a href="<?=base_url()?>dashboard"> 
+        <button class="cs-btn-demo">Go to Dashboard</button>
+      </a>
+    <?php else: ?>
+      <a href="<?=base_url()?>auth?auth=register"> 
+        <button class="cs-btn-demo">Register Now</button>
+      </a>
+    <?php endif; ?>
+  </div>
+</div>
+
   <div class="cs-container" style="margin-top: 8rem;">
     <!-- Left Section -->
     <div class="cs-text-section">
