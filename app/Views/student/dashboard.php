@@ -39,9 +39,9 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
     .pd-menu .pd-menu-item i {
-      font-size: 24px;
-      margin-bottom: 10px;
-      color: #5b4efc;
+      font-size: 24px !important;
+      margin-bottom: 10px !important;
+      color: #5b4efc !important;
     }
     .pd-menu-item p {
       margin: 0;
