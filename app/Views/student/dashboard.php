@@ -38,7 +38,7 @@
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-    .pd-menu-item i {
+    .pd-menu .pd-menu-item i {
       font-size: 24px;
       margin-bottom: 10px;
       color: #5b4efc;
