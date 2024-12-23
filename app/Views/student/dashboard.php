@@ -184,7 +184,7 @@
 
   <div class="pd-menu">
     <div class="pd-menu-item">
-      <i class="fas fa-th-large"></i>
+      <i class="fas fa-th-large" style="color: #5b4efc"></i>
       <p>Test Paper</p>
     </div>
     <div class="pd-menu-item">
