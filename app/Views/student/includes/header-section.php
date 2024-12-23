@@ -1,6 +1,9 @@
 <!-- navbar -->
 <header>
    <style>
+         .navbar {
+            top: 50px; /* Adjust to prevent overlapping with the banner */
+      }
         .contact {
             display: flex;
             align-items: center;
@@ -94,9 +97,7 @@
     </div>
 </section>
 <?php endif; ?>
-   <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm p-3 bg-body rounded" <?php if (session()->get('studentDetails') !== null): ?> 
-        style="top: 50px;" 
-    <?php endif; ?>>
+   <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm p-3 bg-body rounded">
       <div class="container-fluid">
         <a class="navbar-brand fs-4" href="<?=base_url()?>">
           <img src="<?=base_url()?>/assetItems/image/logo.jpg" style="height:3rem;">
