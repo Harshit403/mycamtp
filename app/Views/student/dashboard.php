@@ -38,11 +38,6 @@
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-    .pd-menu .pd-menu-item i {
-      font-size: 24px !important;
-      margin-bottom: 10px !important;
-      color: #5b4efc !important;
-    }
     .pd-menu-item p {
       margin: 0;
       font-size: 14px;
@@ -184,27 +179,27 @@
 
   <div class="pd-menu">
     <div class="pd-menu-item">
-      <i class="fas fa-th-large" style="color: #5b4efc"></i>
+      <i class="fas fa-th-large" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Test Paper</p>
     </div>
     <div class="pd-menu-item">
-      <i class="fas fa-play-circle"></i>
+      <i class="fas fa-play-circle" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Notes</p>
     </div>
     <div class="pd-menu-item">
-      <i class="fas fa-book"></i>
+      <i class="fas fa-book" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Amendments</p>
     </div>
     <div class="pd-menu-item">
-      <i class="fas fa-store"></i>
+      <i class="fas fa-store" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Question Bank</p>
     </div>
     <div class="pd-menu-item">
-      <i class="fas fa-video"></i>
+      <i class="fas fa-video" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Buy Now</p>
     </div>
     <div class="pd-menu-item">
-      <i class="fas fa-trophy"></i>
+      <i class="fas fa-trophy" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Mentorship</p>
     </div>
   </div>
