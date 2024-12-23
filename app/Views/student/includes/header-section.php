@@ -9,6 +9,13 @@
 <?php endif; ?>
 
    <style>
+       .navbar .nav-item .nav-link {
+          color: #000000; /* Change this to your desired color */
+          transition: color 0.3s ease; /* Optional: Adds a smooth transition effect */
+       }
+       .navbar .nav-item .nav-link:hover {
+          color: #000000; /* Change this to the hover color */
+       }
        .cartCount {
           background-color: red !important;
           color: white; /* Optional: To make the text more visible */
