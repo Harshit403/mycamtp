@@ -1,9 +1,13 @@
 <!-- navbar -->
 <header>
+<?php if (session()->get('studentDetails') !== null): ?>
+<style>
+    .navbar {
+        top: 50px; 
+    }
+</style>
+<?php endif; ?>
    <style>
-         .navbar {
-            top: 50px; /* Adjust to prevent overlapping with the banner */
-      }
         .contact {
             display: flex;
             align-items: center;
