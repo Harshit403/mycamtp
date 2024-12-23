@@ -176,7 +176,6 @@
         $daysLeft = $diff->days;
     ?>
     <button><?=$daysLeft?> days remaining for Exam</button>
-    <button class="pd-switch-content-button" onclick="switchToFreeContent()">Switch to Free Content</button>
   </div>
 
   <div class="pd-social-media-card">
@@ -189,25 +188,25 @@
   </div>
 
   <div class="pd-menu">
-    <a href="<?=base_url()?>my-resources/subject" style="text-decoration: none;>
+    <a href="<?=base_url()?>my-resources/subject" style="text-decoration: none;">
     <div class="pd-menu-item">
       <i class="fas fa-th-large" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Test Paper</p>
     </div>
     </a>
-    <a href="<?=base_url()?>my-resources/subject-list" style="text-decoration: none;>
+    <a href="<?=base_url()?>my-resources/subject-list" style="text-decoration: none;">
     <div class="pd-menu-item">
       <i class="fas fa-play-circle" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Notes</p>
     </div>
     </a>
-    <a href="<?=base_url()?>my-resources/subject-list" style="text-decoration: none;>
+    <a href="<?=base_url()?>my-resources/subject-list" style="text-decoration: none;">
     <div class="pd-menu-item">
       <i class="fas fa-book" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Amendments</p>
     </div>
     </a>
-    <a href="<?=base_url()?>my-resources/subject-list" style="text-decoration: none;>
+    <a href="<?=base_url()?>my-resources/subject-list" style="text-decoration: none;">
     <div class="pd-menu-item">
       <i class="fas fa-store" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Question Bank</p>
@@ -219,7 +218,7 @@
       <p>Buy Now</p>
     </div>
     </a>
-    <a href="#" style="text-decoration: none;>
+    <a href="#" style="text-decoration: none;">
     <div class="pd-menu-item">
       <i class="fas fa-trophy" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Mentorship</p>
@@ -245,13 +244,6 @@
       </div>
     </div>
   </div>
-
-  <script>
-    function switchToFreeContent() {
-      alert("Switched to Free Content!");
-      // Logic for switching to free content can be implemented here.
-    }
-  </script>
 </body>
 <?=$this->endSection()?>
 <?=$this->section('jsContent')?>
