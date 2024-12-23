@@ -216,13 +216,13 @@
   <div class="pd-menu">
     <a href="<?=base_url()?>my-resources/subject" style="text-decoration: none;">
     <div class="pd-menu-item">
-      <i class="fas fa-th-large" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
+      <i class="fa-solid fa-square-question" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Test Paper</p>
     </div>
     </a>
     <a href="<?=base_url()?>my-resources/notes/subject-list" style="text-decoration: none;">
     <div class="pd-menu-item">
-      <i class="fas fa-play-circle" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
+      <i class="fa-solid fa-book-open" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Notes</p>
     </div>
     </a>
@@ -234,19 +234,19 @@
     </a>
     <a href="<?=base_url()?>my-resources/qbank/subject-list" style="text-decoration: none;">
     <div class="pd-menu-item">
-      <i class="fas fa-store" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
+      <i class="fa-solid fa-book-open" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Que. Bank</p>
     </div>
     </a>
     <a href="<?=base_url()?>#category-section" style="text-decoration: none;">
     <div class="pd-menu-item">
-      <i class="fas fa-video" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
+      <i class="fa-solid fa-cart-shopping" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Buy Now</p>
     </div>
     </a>
     <a href="#" style="text-decoration: none;">
     <div class="pd-menu-item">
-      <i class="fas fa-trophy" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
+      <i class="fas fa-user-tie" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Mentorship</p>
     </div>
     </a>
