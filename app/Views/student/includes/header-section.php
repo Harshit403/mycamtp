@@ -1,6 +1,6 @@
 <!-- navbar -->
 <header>
-<?php if (session()->get('studentDetails') !== null): ?>
+<?php if (session()->get('studentDetails') === null): ?>
 <style>
     .navbar {
         top: 50px; 
