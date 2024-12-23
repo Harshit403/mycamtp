@@ -366,7 +366,7 @@
       <i class="fas fa-file-invoice unique-footer-item-icon"></i>
       <p class="unique-footer-item-text">Invoice</p>
     </a>
-    <a href="#" id="logoutButton" class="unique-footer-item">
+    <a href="#" id="logoutButton" class="unique-footer-item" style="text-decoration: none;">
       <i class="fas fa-sign-out unique-footer-item-icon"></i>
       <p class="unique-footer-item-text">Logout</p>
     </a>
