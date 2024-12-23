@@ -81,7 +81,7 @@
         <div class="cartPopUpContainer"></div>
     </div>
 <?php if (session()->get('studentDetails') === null): ?>
-<section class="banner" style="bottom: 50px;">
+<section class="banner">
     <div class="auth-buttons">
         <a href="<?= base_url() ?>auth?auth=login" class="auth-button">Login</a>
         <a href="<?= base_url() ?>auth?auth=register" class="auth-button">Register</a>
@@ -94,7 +94,7 @@
     </div>
 </section>
 <?php endif; ?>
-   <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm p-3 bg-body rounded">
+   <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm p-3 bg-body rounded" style="top: 50px;">
       <div class="container-fluid">
         <a class="navbar-brand fs-4" href="<?=base_url()?>">
           <img src="<?=base_url()?>/assetItems/image/logo.jpg" style="height:3rem;">
