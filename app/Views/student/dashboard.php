@@ -160,7 +160,12 @@
 </head>
 <body style="margin-top: 8rem;">
   <div class="pd-header">
-    <h1>Hi, Student</h1>
+	<?php
+	    $studentData = (session()->get('studentDetails')!==null) ? session()->get('studentDetails') : '';
+	    $timestamp = time();
+	    $am_pm = date('a', $timestamp);
+	?>
+    <h1>Good <?=($am_pm=='am') ? 'morning' : 'afternoon'?>, <?=$studentData['student_name']?></h1>
   </div>
 
   <div class="pd-countdown-card">
@@ -178,25 +183,25 @@
   </div>
 
   <div class="pd-menu">
-    <a href="<?=base_url()?>my-resources/subject"
+    <a href="<?=base_url()?>my-resources/subject">
     <div class="pd-menu-item">
       <i class="fas fa-th-large" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Test Paper</p>
     </div>
     </a>
-    <a href="<?=base_url()?>my-resources/subject-list"
+    <a href="<?=base_url()?>my-resources/subject-list">
     <div class="pd-menu-item">
       <i class="fas fa-play-circle" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Notes</p>
     </div>
     </a>
-    <a href="<?=base_url()?>my-resources/subject-list"
+    <a href="<?=base_url()?>my-resources/subject-list">
     <div class="pd-menu-item">
       <i class="fas fa-book" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Amendments</p>
     </div>
     </a>
-    <a href="<?=base_url()?>my-resources/subject-list"
+    <a href="<?=base_url()?>my-resources/subject-list">
     <div class="pd-menu-item">
       <i class="fas fa-store" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Question Bank</p>
@@ -208,7 +213,7 @@
       <p>Buy Now</p>
     </div>
     </a>
-    <a href="#"
+    <a href="#">
     <div class="pd-menu-item">
       <i class="fas fa-trophy" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Mentorship</p>
