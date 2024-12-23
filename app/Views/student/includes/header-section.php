@@ -7,6 +7,28 @@
     }
 </style>
 <?php endif; ?>
+
+<style>
+  .navbar {
+    padding: 0.4rem 0.8rem; /* Reduce padding to 80% of the original */
+    min-height: 40px; /* Set a reduced minimum height */
+    transform: scaleY(0.8); /* Scale the height */
+    transform-origin: top; /* Keep the navbar aligned to the top */
+  }
+
+  .navbar-brand img {
+    height: 80%; /* Scale the logo to 80% of its original height */
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 0.9rem; /* Scale font size down to 80% */
+  }
+
+  .navbar-toggler {
+    padding: 0.2rem 0.4rem; /* Reduce toggle button padding */
+  }
+</style>
+
    <style>
         .contact {
             display: flex;
