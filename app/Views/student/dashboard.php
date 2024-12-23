@@ -18,12 +18,12 @@
     .pd-header {
       background-color: #5b4efc;
       color: white;
-      padding: 20px;
+      padding: 15px;
       text-align: center;
     }
     .pd-header h1 {
       margin: 0;
-      font-size: 24px;
+      font-size: 20px;
     }
     .pd-menu {
       display: grid;
@@ -184,7 +184,7 @@
     }
   </style>
 </head>
-<body style="margin-top: 8rem;">
+<body style="margin-top: 5rem;">
   <div class="pd-header">
 	<?php
 	    $studentData = (session()->get('studentDetails')!==null) ? session()->get('studentDetails') : '';
@@ -252,25 +252,7 @@
     </a>
   </div>
 
-  <div class="pd-courses-section">
-    <div class="pd-courses-header">
-      <h2>Courses</h2>
-      <a href="#" style="color: #5b4efc; text-decoration: none;">See All</a>
-    </div>
-    <div class="pd-courses">
-      <div class="pd-course-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png" alt="Flutter">
-        <h3>Flutter</h3>
-        <p>55 Videos</p>
-      </div>
-      <div class="pd-course-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Native">
-        <h3>React Native</h3>
-        <p>55 Videos</p>
-      </div>
-    </div>
-  </div>
- <div class="unique-footer mt-5">
+ <div class="unique-footer" style="margin-top: 5rem;">
     <a href="<?=base_url()?>dashboard" class="unique-footer-item active" style="text-decoration: none;">
       <i class="fas fa-home unique-footer-item-icon"></i>
       <p class="unique-footer-item-text">Home</p>
