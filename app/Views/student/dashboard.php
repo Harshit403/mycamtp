@@ -271,19 +271,19 @@
     </div>
   </div>
  <div class="unique-footer mt-5">
-    <a href="<?=base_url()?>dashboard">Dashboard</a>" class="unique-footer-item active">
+    <a href="<?=base_url()?>dashboard" class="unique-footer-item active" style="text-decoration: none;">
       <i class="fas fa-home unique-footer-item-icon"></i>
       <p class="unique-footer-item-text">Home</p>
     </a>
-    <a href="<?=base_url()?>profile">Profile" class="unique-footer-item">
+    <a href="<?=base_url()?>profile" class="unique-footer-item" style="text-decoration: none;">
       <i class="fas fa-list unique-footer-item-icon"></i>
       <p class="unique-footer-item-text">Profile</p>
     </a>
-    <a href="<?=base_url()?>invoice">Invoice</a>" class="unique-footer-item">
+    <a href="<?=base_url()?>invoice" class="unique-footer-item" style="text-decoration: none;">
       <i class="fas fa-heart unique-footer-item-icon"></i>
       <p class="unique-footer-item-text">Invoice</p>
     </a>
-    <a href="<?=base_url()?>logout">Logout</a>" class="unique-footer-item">
+    <a href="<?=base_url()?>logout" class="unique-footer-item" style="text-decoration: none;">
       <i class="fas fa-user unique-footer-item-icon"></i>
       <p class="unique-footer-item-text">Logout</p>
     </a>
