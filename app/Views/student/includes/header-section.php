@@ -81,7 +81,7 @@
         <div class="cartPopUpContainer"></div>
     </div>
 <?php if (session()->get('studentDetails') === null): ?>
-<section class="banner" style="position: fixed; bottom: 50;">
+<section class="banner" style="position: fixed; bottom: 50px;">
     <div class="auth-buttons">
         <a href="<?= base_url() ?>auth?auth=login" class="auth-button">Login</a>
         <a href="<?= base_url() ?>auth?auth=register" class="auth-button">Register</a>
