@@ -104,7 +104,7 @@
    <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm p-3 bg-body rounded">
       <div class="container-fluid">
         <a class="navbar-brand fs-4" href="<?=base_url()?>">
-          <img src="<?=base_url()?>/assetItems/image/logo.jpg" style="height:3rem;">
+          <img src="<?=base_url()?>/assetItems/image/logo.png" style="height:3rem;">
         </a>
         <ul class="navbar-nav">
           <li class="nav-item forMobileSection">
@@ -123,7 +123,7 @@
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
               <a href="<?=base_url()?>">
-                <img src="<?=base_url()?>/assetItems/image/logo.jpg" style="height:3rem;">
+                <img src="<?=base_url()?>/assetItems/image/logo.png" style="height:3rem;">
               </a>
             </h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
