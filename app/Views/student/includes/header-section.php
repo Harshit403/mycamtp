@@ -184,19 +184,6 @@
                 </ul>
           </div>
         </div>
-        <?php if (session()->get('studentDetails')!==null): ?>
-            <div class="dropdown signinDropdown forDesktopSection">
-              <a class="dropdown-main" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                <img src="<?=base_url()?>assetItems/image/image1.jpg" class="img-circle" style="height: 40px; width:40px;">
-              </a>
-              <ul class="dropdown-menu dropdown-menu-end" style="left: -118px;">
-                <li><a class="dropdown-item" href="<?=base_url()?>dashboard">Dashboard</a></li>
-                <li><a class="dropdown-item" href="<?=base_url()?>profile">Profile</a></li>
-                <li><a class="dropdown-item" href="<?=base_url()?>invoice">Invoice</a></li>
-                <li><a class="dropdown-item" href="<?=base_url()?>logout">Logout</a></li>
-              </ul>
-            </div>
-        <?php endif ?>
       </div>
     </nav>
 </header>
