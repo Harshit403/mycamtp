@@ -206,17 +206,17 @@
 
   <div class="pd-social-media-card">
     <div class="pd-social-media">
-      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://telegram.org" target="_blank"><i class="fab fa-telegram"></i></a>
-      <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://telegram.me/csmission" target="_blank"><i class="fab fa-telegram"></i></a>
+      <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
     </div>
   </div>
 
   <div class="pd-menu">
     <a href="<?=base_url()?>my-resources/subject" style="text-decoration: none;">
     <div class="pd-menu-item">
-      <i class="fa-solid fa-square-question" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
+      <i class="fa-solid fa-pencil" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Test Paper</p>
     </div>
     </a>
