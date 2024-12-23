@@ -184,7 +184,7 @@
     }
   </style>
 </head>
-<body style="margin-top: 5rem;">
+<body style="margin-top: 6rem;">
   <div class="pd-header">
 	<?php
 	    $studentData = (session()->get('studentDetails')!==null) ? session()->get('studentDetails') : '';
