@@ -225,37 +225,37 @@
   <div class="pd-menu">
     <a href="<?=base_url()?>my-resources/subject" style="text-decoration: none;">
     <div class="pd-menu-item">
-      <i class="fa-solid fa-pencil" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
+      <i class="fa-solid fa-pencil" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Test Paper</p>
     </div>
     </a>
     <a href="<?=base_url()?>my-resources/notes/subject-list" style="text-decoration: none;">
     <div class="pd-menu-item">
-      <i class="fa-solid fa-book-open" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
+      <i class="fa-solid fa-book-open" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Notes</p>
     </div>
     </a>
     <a href="<?=base_url()?>my-resources/amendment/subject-list" style="text-decoration: none;">
     <div class="pd-menu-item">
-      <i class="fas fa-book" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
+      <i class="fas fa-book" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Amendments</p>
     </div>
     </a>
     <a href="<?=base_url()?>my-resources/qbank/subject-list" style="text-decoration: none;">
     <div class="pd-menu-item">
-      <i class="fa-solid fa-book-open" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
+      <i class="fa-solid fa-book-open" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Que. Bank</p>
     </div>
     </a>
     <a href="<?=base_url()?>#category-section" style="text-decoration: none;">
     <div class="pd-menu-item">
-      <i class="fa-solid fa-cart-shopping" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
+      <i class="fa-solid fa-cart-shopping" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Buy Now</p>
     </div>
     </a>
     <a href="#" style="text-decoration: none;">
     <div class="pd-menu-item">
-      <i class="fas fa-user-tie" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
+      <i class="fas fa-user-tie" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Mentorship</p>
     </div>
     </a>
