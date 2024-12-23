@@ -16,7 +16,7 @@
       background-color: #f4f4f4;
     }
     .pd-header {
-      background-color: #5b4efc;
+      background-color: #e63e58;
       color: white;
       padding: 15px;
       text-align: center;
@@ -56,7 +56,7 @@
       width: 100%;
       padding: 10px;
       border: none;
-      background: #5b4efc;
+      background: #e63e58;
       color: white;
       border-radius: 25px;
       font-size: 16px;
@@ -66,8 +66,8 @@
       margin-top: 10px;
       padding: 10px 20px;
       background: #fff;
-      color: #5b4efc;
-      border: 2px solid #5b4efc;
+      color: #e63e58;
+      border: 2px solid #e63e58;
       border-radius: 25px;
       cursor: pointer;
       font-size: 14px;
@@ -90,7 +90,7 @@
     }
     .pd-social-media a {
       text-decoration: none;
-      color: #5b4efc;
+      color: #e63e58;
       font-size: 24px;
     }
     .pd-courses-section {
@@ -154,7 +154,7 @@
       color: #666;
     }
     .pd-footer-item.active i, .pd-footer-item.active p {
-      color: #5b4efc;
+      color: #e63e58;
     }
     .unique-footer {
       position: fixed;
@@ -180,7 +180,7 @@
     }
     .unique-footer-item.active .unique-footer-item-icon, 
     .unique-footer-item.active .unique-footer-item-text {
-      color: #5b4efc;
+      color: #e63e58;
     }
   </style>
 </head>
