@@ -156,6 +156,32 @@
     .pd-footer-item.active i, .pd-footer-item.active p {
       color: #5b4efc;
     }
+    .unique-footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 1px solid #ccc;
+    }
+    .unique-footer-item {
+      text-align: center;
+    }
+    .unique-footer-item-icon {
+      font-size: 20px;
+      color: #666;
+    }
+    .unique-footer-item-text {
+      margin: 0;
+      font-size: 12px;
+      color: #666;
+    }
+    .unique-footer-item.active .unique-footer-item-icon, 
+    .unique-footer-item.active .unique-footer-item-text {
+      color: #5b4efc;
+    }
   </style>
 </head>
 <body style="margin-top: 8rem;">
@@ -244,6 +270,25 @@
       </div>
     </div>
   </div>
+ <div class="unique-footer">
+    <div class="unique-footer-item active">
+      <i class="fas fa-home unique-footer-item-icon"></i>
+      <p class="unique-footer-item-text">Home</p>
+    </div>
+    <div class="unique-footer-item">
+      <i class="fas fa-list unique-footer-item-icon"></i>
+      <p class="unique-footer-item-text">Courses</p>
+    </div>
+    <div class="unique-footer-item">
+      <i class="fas fa-heart unique-footer-item-icon"></i>
+      <p class="unique-footer-item-text">Wishlist</p>
+    </div>
+    <div class="unique-footer-item">
+      <i class="fas fa-user unique-footer-item-icon"></i>
+      <p class="unique-footer-item-text">Account</p>
+    </div>
+ </div>
+
 </body>
 <?=$this->endSection()?>
 <?=$this->section('jsContent')?>
