@@ -1,9 +1,6 @@
 <!-- navbar -->
 <header>
    <style>
-        .navbar {
-            top: 50px; /* Adjust to prevent overlapping with the banner */
-                }
         .contact {
             display: flex;
             align-items: center;
@@ -84,7 +81,7 @@
         <div class="cartPopUpContainer"></div>
     </div>
 <?php if (session()->get('studentDetails') === null): ?>
-<section class="banner">
+<section class="banner" style="position: fixed; bottom: 50;">
     <div class="auth-buttons">
         <a href="<?= base_url() ?>auth?auth=login" class="auth-button">Login</a>
         <a href="<?= base_url() ?>auth?auth=register" class="auth-button">Register</a>
