@@ -9,57 +9,70 @@
 <!-- enter your meta keywords without tag -->
 <?=$this->endSection()?>
 <?=$this->section('content')?>
-<section class="container profile_container mainContainer py-5">
+<section class="container py-5">
     <h2 class="text-center profile-heading">Student Profile</h2>
-    <form id="studentProfileForm" class="profile-form mt-4">
-        <div class="row gy-4">
-            <div class="col-md-6">
-                <label class="form-label">Student Name</label>
-                <input type="text" class="form-control form-control-custom" name="student_name" 
-                       value="<?= !empty($studentDetails) ? $studentDetails->student_name : '' ?>">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card profile-card shadow">
+                <div class="card-body">
+                    <form id="studentProfileForm">
+                        <div class="row gy-4">
+                            <!-- Student Name -->
+                            <div class="col-md-6">
+                                <label class="form-label">Student Name</label>
+                                <input type="text" class="form-control form-control-custom" name="student_name" 
+                                       value="<?= !empty($studentDetails) ? $studentDetails->student_name : '' ?>">
+                            </div>
+                            <!-- Student Email -->
+                            <div class="col-md-6">
+                                <label class="form-label">Student Email</label>
+                                <input type="text" class="form-control form-control-custom" name="email" 
+                                       value="<?= !empty($studentDetails) ? $studentDetails->email : '' ?>" readonly>
+                            </div>
+                            <!-- Mobile Number -->
+                            <div class="col-md-6">
+                                <label class="form-label">Student Mobile No.</label>
+                                <input type="text" class="form-control form-control-custom" name="mobile_no" 
+                                       value="<?= !empty($studentDetails) ? $studentDetails->mobile_no : '' ?>">
+                            </div>
+                            <!-- City -->
+                            <div class="col-md-6">
+                                <label class="form-label">City Name</label>
+                                <input type="text" class="form-control form-control-custom" name="city_name" 
+                                       value="<?= !empty($studentDetails) ? $studentDetails->city_name : '' ?>">
+                            </div>
+                            <!-- State -->
+                            <div class="col-md-6">
+                                <label class="form-label">State Name</label>
+                                <input type="text" class="form-control form-control-custom" name="state_name" 
+                                       value="<?= !empty($studentDetails) ? $studentDetails->state_name : '' ?>">
+                            </div>
+                            <!-- Category -->
+                            <div class="col-md-6">
+                                <label class="form-label">Category Name</label>
+                                <select name="category_id" class="form-control form-select form-control-custom" id="category_id">
+                                    <?php if (!empty($categoryDetails)): ?>
+                                        <?php foreach ($categoryDetails as $categoryItem): ?>
+                                            <option value="<?= $categoryItem->category_id ?>"><?= $categoryItem->category_name ?></option>
+                                        <?php endforeach ?>
+                                    <?php endif ?>
+                                </select>
+                            </div>
+                            <!-- Level -->
+                            <div class="col-md-6">
+                                <label class="form-label">Level Name</label>
+                                <select name="current_level" class="form-control form-select form-control-custom" id="current_level">
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="text-end mt-4">
+                        <button class="btn btn-update updateStudentProfile">
+                            <i class="bi bi-arrow-up-circle"></i> Update Profile
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-                <label class="form-label">Student Email</label>
-                <input type="text" class="form-control form-control-custom" name="email" 
-                       value="<?= !empty($studentDetails) ? $studentDetails->email : '' ?>" readonly>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label">Student Mobile No.</label>
-                <input type="text" class="form-control form-control-custom" name="mobile_no" 
-                       value="<?= !empty($studentDetails) ? $studentDetails->mobile_no : '' ?>">
-            </div>
-            <div class="col-md-6">
-                <label class="form-label">City Name</label>
-                <input type="text" class="form-control form-control-custom" name="city_name" 
-                       value="<?= !empty($studentDetails) ? $studentDetails->city_name : '' ?>">
-            </div>
-            <div class="col-md-6">
-                <label class="form-label">State Name</label>
-                <input type="text" class="form-control form-control-custom" name="state_name" 
-                       value="<?= !empty($studentDetails) ? $studentDetails->state_name : '' ?>">
-            </div>
-            <div class="col-md-6">
-                <label class="form-label">Category Name</label>
-                <select name="category_id" class="form-control form-select form-control-custom" id="category_id">
-                    <?php if (!empty($categoryDetails)): ?>
-                        <?php foreach ($categoryDetails as $categoryItem): ?>
-                            <option value="<?= $categoryItem->category_id ?>"><?= $categoryItem->category_name ?></option>
-                        <?php endforeach ?>
-                    <?php endif ?>
-                </select>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label">Level Name</label>
-                <select name="current_level" class="form-control form-select form-control-custom" id="current_level">
-                </select>
-            </div>
-        </div>
-    </form>
-    <div class="row mt-5">
-        <div class="col-md-12 d-flex justify-content-end">
-            <button class="btn btn-update updateStudentProfile">
-                <i class="bi bi-arrow-up-circle"></i> Update Profile
-            </button>
         </div>
     </div>
 </section>
@@ -69,23 +82,32 @@
 <?= $this->endSection() ?>
 
 <style>
-/* Global Container Styling */
-.profile_container {
-    background: #f9f9f9;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+/* Global Styling */
+body {
+    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
 }
 
+/* Profile Heading */
 .profile-heading {
     color: #e63e58;
+    font-size: 2.5rem;
     font-weight: bold;
-    font-size: 2rem;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
 
-.profile-form .form-label {
+/* Card Styling */
+.profile-card {
+    background: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 20px 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card .form-label {
+    font-size: 14px;
     font-weight: bold;
     color: #555;
 }
@@ -100,37 +122,34 @@
 
 .form-control-custom:focus {
     border-color: #e63e58;
-    box-shadow: 0 0 8px rgba(230, 62, 88, 0.2);
+    box-shadow: 0 0 5px rgba(230, 62, 88, 0.5);
 }
 
+/* Update Button */
 .btn-update {
     background-color: #e63e58;
     color: #fff;
-    font-weight: bold;
     padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
     transition: all 0.3s ease-in-out;
 }
 
 .btn-update:hover {
     background-color: #d32d4f;
-    box-shadow: 0 5px 15px rgba(230, 62, 88, 0.3);
-}
-
-.row {
-    gap: 20px;
+    box-shadow: 0 4px 12px rgba(230, 62, 88, 0.4);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .profile-heading {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
-    .profile-form .form-label {
-        font-size: 14px;
+    .profile-card {
+        padding: 15px 20px;
     }
 
     .form-control-custom {
@@ -145,8 +164,8 @@
 }
 
 @media (max-width: 576px) {
-    .profile-container {
-        padding: 15px;
+    .profile-heading {
+        font-size: 1.5rem;
     }
 
     .btn-update {
