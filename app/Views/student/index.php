@@ -10,7 +10,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 
-<div class="cs-container" style="margin-top: 8rem;">
+<div class="cs-container" style="margin-top: 6rem;">
   <!-- Left Section -->
   <div class="cs-text-section">
     <h1>Mission <span class="cs-highlight">CS Test Series</span></h1>
