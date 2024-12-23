@@ -185,14 +185,23 @@
   </style>
 </head>
 <body style="margin-top: 6rem;">
-  <div class="pd-header">
+<div class="pd-header">
 	<?php
-	    $studentData = (session()->get('studentDetails')!==null) ? session()->get('studentDetails') : '';
-	    $timestamp = time();
-	    $am_pm = date('a', $timestamp);
+	    $studentData = (session()->get('studentDetails') !== null) ? session()->get('studentDetails') : '';
+	    $hour = date('H'); // Get the current hour in 24-hour format
+
+	    if ($hour < 12) {
+	        $greeting = 'morning';
+	    } elseif ($hour < 18) {
+	        $greeting = 'afternoon';
+	    } else {
+	        $greeting = 'evening';
+	    }
 	?>
-    <h1>Good <?=($am_pm=='am') ? 'morning' : 'afternoon'?>, <?=$studentData['student_name']?></h1>
-  </div>
+    <h1>Good <?= $greeting ?>, <?= $studentData['student_name'] ?? 'Guest' ?></h1>
+</div>	
+
+
 
   <div class="pd-countdown-card">
    <?php
