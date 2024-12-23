@@ -189,39 +189,39 @@
   </div>
 
   <div class="pd-menu">
-    <a href="<?=base_url()?>my-resources/subject">
+    <a href="<?=base_url()?>my-resources/subject" style="text-decoration: none;>
     <div class="pd-menu-item">
-      <i class="fas fa-th-large" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px; text-decoration: none;"></i>
+      <i class="fas fa-th-large" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Test Paper</p>
     </div>
     </a>
-    <a href="<?=base_url()?>my-resources/subject-list">
+    <a href="<?=base_url()?>my-resources/subject-list" style="text-decoration: none;>
     <div class="pd-menu-item">
-      <i class="fas fa-play-circle" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px; text-decoration: none;"></i>
+      <i class="fas fa-play-circle" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Notes</p>
     </div>
     </a>
-    <a href="<?=base_url()?>my-resources/subject-list">
+    <a href="<?=base_url()?>my-resources/subject-list" style="text-decoration: none;>
     <div class="pd-menu-item">
-      <i class="fas fa-book" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px; text-decoration: none;"></i>
+      <i class="fas fa-book" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Amendments</p>
     </div>
     </a>
-    <a href="<?=base_url()?>my-resources/subject-list">
+    <a href="<?=base_url()?>my-resources/subject-list" style="text-decoration: none;>
     <div class="pd-menu-item">
-      <i class="fas fa-store" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px; text-decoration: none;"></i>
+      <i class="fas fa-store" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Question Bank</p>
     </div>
     </a>
     <a href="<?=base_url()?>#category-section" style="text-decoration: none;">
     <div class="pd-menu-item">
-      <i class="fas fa-video" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px; text-decoration: none;"></i>
+      <i class="fas fa-video" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Buy Now</p>
     </div>
     </a>
-    <a href="#">
+    <a href="#" style="text-decoration: none;>
     <div class="pd-menu-item">
-      <i class="fas fa-trophy" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px; text-decoration: none;"></i>
+      <i class="fas fa-trophy" style="color: #5b4efc; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Mentorship</p>
     </div>
     </a>
