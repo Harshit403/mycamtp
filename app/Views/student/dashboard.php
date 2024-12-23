@@ -186,22 +186,22 @@
 </head>
 <body style="margin-top: 6rem;">
 <div class="pd-header">
-	<?php
-	    $studentData = (session()->get('studentDetails') !== null) ? session()->get('studentDetails') : '';
-	    $hour = date('H'); // Get the current hour in 24-hour format
+    <?php
+        date_default_timezone_set('Asia/Kolkata'); // Set your timezone here
 
-	    if ($hour < 12) {
-	        $greeting = 'morning';
-	    } elseif ($hour < 18) {
-	        $greeting = 'afternoon';
-	    } else {
-	        $greeting = 'evening';
-	    }
-	?>
+        $studentData = (session()->get('studentDetails') !== null) ? session()->get('studentDetails') : '';
+        $hour = date('H'); // Get the current hour in 24-hour format
+
+        if ($hour < 12) {
+            $greeting = 'morning';
+        } elseif ($hour < 18) {
+            $greeting = 'afternoon';
+        } else {
+            $greeting = 'evening';
+        }
+    ?>
     <h1>Good <?= $greeting ?>, <?= $studentData['student_name'] ?? 'Guest' ?></h1>
-</div>	
-
-
+</div>
 
   <div class="pd-countdown-card">
    <?php
