@@ -515,19 +515,19 @@
 <!-- Mentorship Modal -->
 <div id="mentorshipModal" class="mentorship-modal">
   <div class="mentorship-modal-content">
-    <?php if (empty($subject_id_details)): ?>
-      <div class="mentorship-lock-content">
-        <i class="fas fa-lock mentorship-lock-icon"></i>
-        <h2>Subject Locked</h2>
-        <p>Buy a subject to unlock mentorship!</p>
-        <a href="<?=base_url()?>#category-section" class="mentorship-modal-button">Buy a Subject</a>
-      </div>
-    <?php else: ?>
+     <?php if (!empty($subject_id_details)): ?>
       <div class="mentorship-whatsapp-content">
         <i class="fab fa-whatsapp mentorship-whatsapp-icon"></i>
         <h2>Contact Mentor</h2>
         <p>Reach out to your mentor for assistance.</p>
         <a href="#" class="mentorship-modal-button">Contact Mentor</a>
+      </div>
+    <?php else: ?>
+      <div class="mentorship-lock-content">
+        <i class="fas fa-lock mentorship-lock-icon"></i>
+        <h2>Subject Locked</h2>
+        <p>Buy a subject to unlock mentorship!</p>
+        <a href="<?=base_url()?>#category-section" class="mentorship-modal-button">Buy a Subject</a>
       </div>
     <?php endif; ?>
     <button id="closeMentorshipModal" class="mentorship-close-button">&times;</button>
