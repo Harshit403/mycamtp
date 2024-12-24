@@ -601,19 +601,34 @@
   const qbankMenu = document.getElementById('qbankMenu');
   const mentorshipMenu = document.getElementById('mentorshipMenu');
 
+  // Restore the toggle state from localStorage
+  const toggleState = localStorage.getItem('contentToggleState');
+  if (toggleState === 'true') {
+    contentToggle.checked = true;
+    toggleContent(true);
+  } else {
+    contentToggle.checked = false;
+    toggleContent(false);
+  }
+
+  // Add event listener for the toggle
   contentToggle.addEventListener('change', function () {
-    if (this.checked) {
-      // Hide items when toggle is on
+    const isChecked = this.checked;
+    localStorage.setItem('contentToggleState', isChecked); // Save the state in localStorage
+    toggleContent(isChecked);
+  });
+
+  function toggleContent(isChecked) {
+    if (isChecked) {
       amendmentMenu.style.display = 'none';
       qbankMenu.style.display = 'none';
       mentorshipMenu.style.display = 'none';
     } else {
-      // Show items when toggle is off
       amendmentMenu.style.display = '';
       qbankMenu.style.display = '';
       mentorshipMenu.style.display = '';
     }
-  });
+  }
 });
 </script>
 <?=$this->endSection()?>
