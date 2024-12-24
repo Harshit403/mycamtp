@@ -500,6 +500,286 @@
 </head>
 <body style="margin-top: 6rem;">
 
+
+
+
+  <style>
+      
+    .button-buy-now-hyper-unique {
+      background-color: #e63e58;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 20px auto;
+      display: block;
+      text-align: center;
+      width: 200px;
+      text-transform: uppercase;
+    }
+    .button-buy-now-hyper-unique:hover {
+      background-color: #d0344c;
+    }
+    .overlay-modal-ultra-unique {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      justify-content: center;
+      align-items: flex-start;
+      z-index: 1000;
+      overflow-y: auto;
+      padding-top: 10px;
+    }
+    .modal-box-super-unique {
+      background: #fff;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+    .modal-title-mega-unique {
+      font-size: 20px;
+      font-weight: bold;
+      color: #e63e58;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .dropdown-select-absolutely-unique {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .submit-button-extremely-unique {
+      background-color: #e63e58;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      text-align: center;
+    }
+    .submit-button-extremely-unique:hover {
+      background-color: #d0344c;
+    }
+    .container-plans-super-unique {
+      margin-top: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+    .container-plans-super-unique.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .card-plan-ultra-unique {
+      background: linear-gradient(135deg, #fff, #f8f9fa);
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-plan-ultra-unique:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+    .title-plan-extra-unique {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .price-tag-ultra-unique {
+      font-size: 16px;
+      color: #e63e58;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+    .button-add-to-cart-unique {
+      background: #e63e58;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .button-add-to-cart-unique:hover {
+      background: #d0344c;
+    }
+    .button-close-modal-extremely-unique {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 18px;
+      cursor: pointer;
+      color: #fff;
+    }
+    .button-back-to-plans-unmatched {
+      background: #e63e58;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      display: block;
+      text-align: center;
+      margin: 10px auto;
+      max-width: 150px;
+    }
+    .button-back-to-plans-unmatched:hover {
+      background: #d0344c;
+    }
+    .button-dummy-hidden-special {
+      background: green;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      z-index: 2000;
+    }
+    .button-dummy-hidden-special:hover {
+      background: #d0344c;
+    }
+    @media (max-width: 768px) {
+      .modal-box-super-unique {
+        width: 95%;
+      }
+    }
+  </style>
+
+
+<!-- Buy Now Button -->
+<button class="button-buy-now-hyper-unique" onclick="openModal()">Buy Now</button>
+
+<!-- Modal -->
+<div class="overlay-modal-ultra-unique" id="overlay-modal-ultra-unique">
+  <div class="modal-box-super-unique">
+    <span class="button-close-modal-extremely-unique" onclick="closeModal()">&times;</span>
+    <div class="modal-title-mega-unique">Select Your Options</div>
+    <div>
+      <select class="dropdown-select-absolutely-unique" id="select1">
+        <?php 
+          $select1Options = ['CA', 'CS', 'CMA'];
+          foreach ($select1Options as $option) {
+            echo "<option value='{$option}'>{$option}</option>";
+          }
+        ?>
+      </select>
+      <select class="dropdown-select-absolutely-unique" id="select2">
+        <?php 
+          $select2Options = ['CS Executive', 'Professional', 'CSSEET'];
+          foreach ($select2Options as $option) {
+            echo "<option value='{$option}'>{$option}</option>";
+          }
+        ?>
+      </select>
+      <button class="submit-button-extremely-unique" onclick="showPlans()">Submit</button>
+    </div>
+    <div id="contentArea"></div>
+  </div>
+</div>
+
+<!-- Dummy Button -->
+<button class="button-dummy-hidden-special" id="dummyBtn">Dummy Button</button>
+
+<script>
+  const planArray = ['Chapter Wise Plan', 'Detailed Plan', 'Unit Plan'];
+  const productArray = [
+    { name: 'Taxation', price: '$50' },
+    { name: 'Accounting', price: '$60' },
+    { name: 'Law', price: '$40' },
+    { name: 'Costing', price: '$45' }
+  ];
+
+  const contentArea = document.getElementById('contentArea');
+  const dummyBtn = document.getElementById('dummyBtn');
+
+  // Show plans on submit
+  function showPlans() {
+    const planContainer = document.createElement('div');
+    planContainer.classList.add('container-plans-super-unique');
+    planArray.forEach(plan => {
+      const card = document.createElement('div');
+      card.classList.add('card-plan-ultra-unique');
+      card.innerHTML = `
+        <div class="title-plan-extra-unique">${plan}</div>
+        <button class="button-add-to-cart-unique" onclick="showProducts()">View Products</button>
+        <button class="button-add-to-cart-unique"><i class="fas fa-download"></i> Download Schedule</button>
+      `;
+      planContainer.appendChild(card);
+    });
+    contentArea.innerHTML = '';
+    contentArea.appendChild(planContainer);
+    setTimeout(() => planContainer.classList.add('active'), 10);
+  }
+
+  // Show products on plan click
+  function showProducts() {
+    const productContainer = document.createElement('div');
+    productContainer.classList.add('container-plans-super-unique');
+    productArray.forEach(product => {
+      const card = document.createElement('div');
+      card.classList.add('card-plan-ultra-unique');
+      card.innerHTML = `
+        <div class="title-plan-extra-unique">${product.name}</div>
+        <div class="price-tag-ultra-unique">Price: ${product.price}</div>
+        <button class="button-add-to-cart-unique"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+      `;
+      productContainer.appendChild(card);
+    });
+    const backButton = document.createElement('button');
+    backButton.classList.add('button-back-to-plans-unmatched');
+    backButton.textContent = 'Go Back';
+    backButton.onclick = showPlans;
+
+    productContainer.insertBefore(backButton, productContainer.firstChild);
+    contentArea.innerHTML = '';
+    contentArea.appendChild(productContainer);
+    dummyBtn.style.display = 'block'; // Show the dummy button
+    setTimeout(() => productContainer.classList.add('active'), 10);
+  }
+
+  // Open the modal
+  function openModal() {
+    document.getElementById('overlay-modal-ultra-unique').style.display = 'flex';
+  }
+
+  // Close the modal
+  function closeModal() {
+    document.getElementById('overlay-modal-ultra-unique').style.display = 'none';
+  }
+</script>
+
+
+
+
+
+
+
+
 <div id="logoutModal">
   <div class="modal-content">
     <h2>Confirm Logout</h2>
