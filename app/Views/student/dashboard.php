@@ -70,6 +70,7 @@
     .pd-countdown-card button:hover {
       background: #d6374f;
     }
+      
     .pd-switch-container {
       display: flex;
       align-items: center;
@@ -79,9 +80,9 @@
     .toggle-switch {
       position: relative;
       display: inline-block;
-      width: 60px;
-      height: 34px;
-      margin-right: 10px;
+      width: 30px;
+      height: 17px;
+      margin-right: 5px;
     }
 
     .toggle-switch input {
@@ -99,7 +100,7 @@
       bottom: 0;
       background-color: #ccc;
       transition: 0.4s;
-      border-radius: 34px;
+      border-radius: 17px;
     }
 
     .slider:before {
@@ -119,11 +120,11 @@
     }
 
     input:checked + .slider:before {
-      transform: translateX(26px);
+      transform: translateX(13px);
     }
 
     .toggle-label {
-      font-size: 16px;
+      font-size: 8px;
       color: #333;
       font-weight: bold;
     }
