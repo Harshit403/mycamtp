@@ -75,6 +75,25 @@
             </div>
         </div>
     </div>
+ <div class="unique-footer" style="margin-top: 5rem;">
+    <a href="<?=base_url()?>dashboard" class="unique-footer-item" style="text-decoration: none;">
+      <i class="fas fa-home unique-footer-item-icon"></i>
+      <p class="unique-footer-item-text">Home</p>
+    </a>
+    <a href="<?=base_url()?>profile" class="unique-footer-item active" style="text-decoration: none;">
+      <i class="fas fa-user unique-footer-item-icon"></i>
+      <p class="unique-footer-item-text">Profile</p>
+    </a>
+    <a href="<?=base_url()?>invoice" class="unique-footer-item" style="text-decoration: none;">
+      <i class="fas fa-file-invoice unique-footer-item-icon"></i>
+      <p class="unique-footer-item-text">Invoice</p>
+    </a>
+    <a href="#" id="logoutButton" class="unique-footer-item" style="text-decoration: none;">
+      <i class="fas fa-sign-out unique-footer-item-icon"></i>
+      <p class="unique-footer-item-text">Logout</p>
+    </a>
+ </div>
+
 </section>
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
@@ -172,4 +191,31 @@ body {
         width: 100%;
     }
 }
+
+    .unique-footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 1px solid #ccc;
+    }
+    .unique-footer-item {
+      text-align: center;
+    }
+    .unique-footer-item-icon {
+      font-size: 20px;
+      color: #666;
+    }
+    .unique-footer-item-text {
+      margin: 0;
+      font-size: 12px;
+      color: #666;
+    }
+    .unique-footer-item.active .unique-footer-item-icon, 
+    .unique-footer-item.active .unique-footer-item-text {
+      color: #e63e58;
+        }
 </style>
