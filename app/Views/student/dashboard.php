@@ -681,10 +681,9 @@
     <div class="modal-title-mega-unique">Select Your Options</div>
     <div>
       <select class="dropdown-select-absolutely-unique" id="select1">
-        <?php 
-          $select1Options = ['CA', 'CS', 'CMA'];
-          foreach ($select1Options as $option) {
-            echo "<option value='{$option}'>{$option}</option>";
+       <?php 
+          foreach ($CategoryDetails as $categoryRow) {
+            echo "<option value='{$categoryRow}'>{$categoryRow}</option>";
           }
         ?>
       </select>
@@ -703,7 +702,7 @@
 </div>
 
 <!-- Dummy Button -->
-<button class="button-dummy-hidden-special" id="dummyBtn">Dummy Button</button>
+<button class="button-dummy-hidden-special" id="dummyBtn">Checkout</button>
 
 <script>
   const planArray = ['Chapter Wise Plan', 'Detailed Plan', 'Unit Plan'];
