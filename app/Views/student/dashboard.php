@@ -679,7 +679,7 @@
 
        <?php 
           foreach ($CategoryDetails as $categoryRow) {
-          echo "<option value='{$categoryRow->category_short_name}'>{$categoryRow->category_name}</option>";
+          echo "<option value='{$categoryRow}'>{$categoryRow}</option>";
          }
          ?>
 
@@ -687,7 +687,7 @@
       <select class="dropdown-select-absolutely-unique" id="select2">
           <?php 
             foreach ($level_list as $levelRow) {
-              echo "<option value='{$levelRow->level_short_name}'>{$levelRow->level_name}</option>";
+              echo "<option value='{$levelRow}'>{$levelRow}</option>";
             }
           ?>
       </select>
