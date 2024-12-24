@@ -75,32 +75,104 @@
             </div>
         </div>
     </div>
- <div class="unique-footer" style="margin-top: 5rem;">
+</section>
+
+<div class="unique-footer">
     <a href="<?=base_url()?>dashboard" class="unique-footer-item" style="text-decoration: none;">
-      <i class="fas fa-home unique-footer-item-icon"></i>
-      <p class="unique-footer-item-text">Home</p>
+        <i class="fas fa-home unique-footer-item-icon"></i>
+        <p class="unique-footer-item-text">Home</p>
     </a>
     <a href="<?=base_url()?>profile" class="unique-footer-item active" style="text-decoration: none;">
-      <i class="fas fa-user unique-footer-item-icon"></i>
-      <p class="unique-footer-item-text">Profile</p>
+        <i class="fas fa-user unique-footer-item-icon"></i>
+        <p class="unique-footer-item-text">Profile</p>
     </a>
     <a href="<?=base_url()?>invoice" class="unique-footer-item" style="text-decoration: none;">
-      <i class="fas fa-file-invoice unique-footer-item-icon"></i>
-      <p class="unique-footer-item-text">Invoice</p>
+        <i class="fas fa-file-invoice unique-footer-item-icon"></i>
+        <p class="unique-footer-item-text">Invoice</p>
     </a>
     <a href="#" id="logoutButton" class="unique-footer-item" style="text-decoration: none;">
-      <i class="fas fa-sign-out unique-footer-item-icon"></i>
-      <p class="unique-footer-item-text">Logout</p>
+        <i class="fas fa-sign-out unique-footer-item-icon"></i>
+        <p class="unique-footer-item-text">Logout</p>
     </a>
- </div>
-
-</section>
+</div>
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
 <script src="<?= base_url() ?>assets/student/js/profile.js?v=1.0.0"></script>
 <?= $this->endSection() ?>
 
 <style>
+
+/* Ensure the entire page uses 100% height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content area should take all available space above the footer */
+.container {
+    flex: 1;
+    padding-bottom: 80px; /* Reserve space for the footer */
+}
+
+/* Footer Styling */
+.unique-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+    z-index: 1000;
+}
+
+.unique-footer-item {
+    text-align: center;
+    flex: 1;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.unique-footer-item-icon {
+    font-size: 20px;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.unique-footer-item-text {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.unique-footer-item.active .unique-footer-item-icon,
+.unique-footer-item.active .unique-footer-item-text {
+    color: #e63e58;
+}
+
+.unique-footer-item:hover .unique-footer-item-icon,
+.unique-footer-item:hover .unique-footer-item-text {
+    color: #e63e58;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .unique-footer-item-icon {
+        font-size: 18px;
+    }
+
+    .unique-footer-item-text {
+        font-size: 10px;
+    }
+    }
+
+    
 /* Global Styling */
 body {
     background-color: #f9f9f9;
@@ -191,31 +263,4 @@ body {
         width: 100%;
     }
 }
-
-    .unique-footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: white;
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 0;
-      border-top: 1px solid #ccc;
-    }
-    .unique-footer-item {
-      text-align: center;
-    }
-    .unique-footer-item-icon {
-      font-size: 20px;
-      color: #666;
-    }
-    .unique-footer-item-text {
-      margin: 0;
-      font-size: 12px;
-      color: #666;
-    }
-    .unique-footer-item.active .unique-footer-item-icon, 
-    .unique-footer-item.active .unique-footer-item-text {
-      color: #e63e58;
-        }
 </style>
