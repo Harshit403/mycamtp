@@ -403,6 +403,99 @@
         max-width: 400px;
       }
     }
+
+/* Unique CSS */
+.mentorship-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.mentorship-modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.mentorship-modal-content {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.mentorship-modal.show .mentorship-modal-content {
+  transform: scale(1);
+}
+
+.mentorship-lock-content, .mentorship-whatsapp-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mentorship-lock-icon, .mentorship-whatsapp-icon {
+  font-size: 50px;
+  margin-bottom: 10px;
+  color: #e63e58;
+}
+
+.mentorship-modal-content h2 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.mentorship-modal-content p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.mentorship-modal-button {
+  padding: 10px 20px;
+  background: #e63e58;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.mentorship-modal-button:hover {
+  background: #d6374f;
+}
+
+.mentorship-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #555;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.mentorship-close-button:hover {
+  color: #e63e58;
+      }
+
+
   </style>
 </head>
 <body style="margin-top: 6rem;">
@@ -417,6 +510,30 @@
     </div>
   </div>
 </div>
+
+
+<!-- Mentorship Modal -->
+<div id="mentorshipModal" class="mentorship-modal">
+  <div class="mentorship-modal-content">
+    <?php if (empty($subject_id_details)): ?>
+      <div class="mentorship-lock-content">
+        <i class="fas fa-lock mentorship-lock-icon"></i>
+        <h2>Subject Locked</h2>
+        <p>Buy a subject to unlock mentorship!</p>
+        <a href="#" class="mentorship-modal-button">Buy a Subject</a>
+      </div>
+    <?php else: ?>
+      <div class="mentorship-whatsapp-content">
+        <i class="fab fa-whatsapp mentorship-whatsapp-icon"></i>
+        <h2>Contact Mentor</h2>
+        <p>Reach out to your mentor for assistance.</p>
+        <a href="#" class="mentorship-modal-button">Contact Mentor</a>
+      </div>
+    <?php endif; ?>
+    <button id="closeMentorshipModal" class="mentorship-close-button">&times;</button>
+  </div>
+</div>
+
 
 <div class="pd-header">
     <?php
