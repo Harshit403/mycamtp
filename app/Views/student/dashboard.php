@@ -73,14 +73,15 @@
     .pd-switch-container {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end; 
       margin: 20px 0;
+      font-size: 12px; 
     }
     .toggle-switch {
       position: relative;
       display: inline-block;
-      width: 60px;
-      height: 34px;
+      width: 40px;
+      height: 20px;
       margin-right: 10px;
     }
 
@@ -105,8 +106,8 @@
     .slider:before {
       position: absolute;
       content: "";
-      height: 26px;
-      width: 26px;
+      height: 16px;
+      width: 16px;
       left: 4px;
       bottom: 4px;
       background-color: white;
@@ -123,9 +124,10 @@
     }
 
     .toggle-label {
-      font-size: 16px;
+      font-size: 12px;
       color: #333;
       font-weight: bold;
+      margin-left: 8px;
     }
 
     .pd-social-media-card {
