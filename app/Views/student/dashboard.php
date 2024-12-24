@@ -108,8 +108,8 @@
       content: "";
       height: 13px;
       width: 13px;
-      left: 4px;
-      bottom: 4px;
+      left: 3px;
+      bottom: 3px;
       background-color: white;
       transition: 0.4s;
       border-radius: 50%;
