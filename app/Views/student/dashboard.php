@@ -477,13 +477,13 @@
       <p>Notes</p>
     </div>
   </a>
-  <a href="<?=base_url()?>my-resources/amendment/subject-list" class="menu-link" style="text-decoration: none;">
+  <a href="<?=base_url()?>my-resources/amendment/subject-list" id="amendmentMenu"class="menu-link" style="text-decoration: none;">
     <div class="pd-menu-item">
       <i class="fas fa-book" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Amendments</p>
     </div>
   </a>
-  <a href="<?=base_url()?>my-resources/qbank/subject-list" class="menu-link" style="text-decoration: none;">
+  <a href="<?=base_url()?>my-resources/qbank/subject-list" id="qbankMenu" class="menu-link" style="text-decoration: none;">
     <div class="pd-menu-item">
       <i class="fa-solid fa-book-open" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Que. Bank</p>
@@ -495,7 +495,7 @@
       <p>Buy Now</p>
     </div>
   </a>
-  <a href="#" class="menu-link" style="text-decoration: none;">
+  <a href="#" id="mentorshipMenu" class="menu-link" style="text-decoration: none;">
     <div class="pd-menu-item">
       <i class="fas fa-user-tie" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Mentorship</p>
@@ -593,5 +593,27 @@
       updateMenuLinks(isFree);
     })();
   });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+  const contentToggle = document.getElementById('contentToggle');
+  const amendmentMenu = document.getElementById('amendmentMenu');
+  const qbankMenu = document.getElementById('qbankMenu');
+  const mentorshipMenu = document.getElementById('mentorshipMenu');
+
+  contentToggle.addEventListener('change', function () {
+    if (this.checked) {
+      // Hide items when toggle is on
+      amendmentMenu.style.display = 'none';
+      qbankMenu.style.display = 'none';
+      mentorshipMenu.style.display = 'none';
+    } else {
+      // Show items when toggle is off
+      amendmentMenu.style.display = '';
+      qbankMenu.style.display = '';
+      mentorshipMenu.style.display = '';
+    }
+  });
+});
 </script>
 <?=$this->endSection()?>
