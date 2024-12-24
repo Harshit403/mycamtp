@@ -595,14 +595,18 @@
   });
 </script>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function () {
   const contentToggle = document.getElementById('contentToggle');
   const amendmentMenu = document.getElementById('amendmentMenu');
   const qbankMenu = document.getElementById('qbankMenu');
   const mentorshipMenu = document.getElementById('mentorshipMenu');
+  const menuItems = document.querySelectorAll('.pd-menu-item p');
+  const icons = document.querySelectorAll('.pd-menu-item i');
 
-  // Restore the toggle state from localStorage
+  // Restore the toggle state and color from localStorage
   const toggleState = localStorage.getItem('contentToggleState');
+  const iconColor = localStorage.getItem('iconColor');
+
   if (toggleState === 'true') {
     contentToggle.checked = true;
     toggleContent(true);
@@ -623,10 +627,32 @@
       amendmentMenu.style.display = 'none';
       qbankMenu.style.display = 'none';
       mentorshipMenu.style.display = 'none';
+
+      // Change menu item text and icon color to black
+      menuItems.forEach(item => {
+        item.style.color = 'black';
+      });
+      icons.forEach(icon => {
+        icon.style.color = 'black';
+      });
+
+      // Save the black icon color to localStorage
+      localStorage.setItem('iconColor', 'black');
     } else {
       amendmentMenu.style.display = '';
       qbankMenu.style.display = '';
       mentorshipMenu.style.display = '';
+
+      // Reset menu item text and icon color
+      menuItems.forEach(item => {
+        item.style.color = '';
+      });
+      icons.forEach(icon => {
+        icon.style.color = '#e63e58';
+      });
+
+      // Save the default icon color to localStorage
+      localStorage.setItem('iconColor', '#e63e58');
     }
   }
 });
