@@ -671,9 +671,6 @@
   </style>
 
 
-<!-- Buy Now Button -->
-<button class="button-buy-now-hyper-unique" onclick="openModal()">Buy Now</button>
-
 <!-- Modal -->
 <div class="overlay-modal-ultra-unique" id="overlay-modal-ultra-unique">
   <div class="modal-box-super-unique">
@@ -689,9 +686,8 @@
       </select>
       <select class="dropdown-select-absolutely-unique" id="select2">
         <?php 
-          $select2Options = ['CS Executive', 'Professional', 'CSSEET'];
-          foreach ($select2Options as $option) {
-            echo "<option value='{$option}'>{$option}</option>";
+          foreach ($level_list as $levelRow) {
+            echo "<option value='{$levelRow}'>{$levelRow}</option>";
           }
         ?>
       </select>
@@ -891,7 +887,7 @@
       <p>Buy Now</p>
     </div>
   </a>
-  <a href="#" id="mentorshipMenu" class="menu-link" style="text-decoration: none;">
+  <a href="#" id="mentorshipMenu" class="menu-link" onclick="openModal()" style="text-decoration: none;">
     <div class="pd-menu-item">
       <i class="fas fa-user-tie" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Mentorship</p>
