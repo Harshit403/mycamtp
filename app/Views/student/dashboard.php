@@ -494,8 +494,6 @@
 .mentorship-close-button:hover {
   color: #e63e58;
       }
-
-
   </style>
 </head>
 <body style="margin-top: 6rem;">
@@ -678,6 +676,7 @@
     <div class="modal-title-mega-unique">Select Your Options</div>
     <div>
       <select class="dropdown-select-absolutely-unique" id="select1">
+
        <?php 
           foreach ($CategoryDetails as $categoryRow) {
             echo "<option value='{$categoryRow}'>{$categoryRow}</option>";
@@ -685,11 +684,11 @@
         ?>
       </select>
       <select class="dropdown-select-absolutely-unique" id="select2">
-        <?php 
-          foreach ($level_list as $levelRow) {
-            echo "<option value='{$levelRow}'>{$levelRow}</option>";
-          }
-        ?>
+          <?php 
+            foreach ($level_list as $levelRow) {
+              echo "<option value='{$levelRow->level_short_name}'>{$levelRow->level_name}</option>";
+            }
+          ?>
       </select>
       <button class="submit-button-extremely-unique" onclick="showPlans()">Submit</button>
     </div>
@@ -881,13 +880,13 @@
       <p>Que. Bank</p>
     </div>
   </a>
-  <a href="<?=base_url()?>#category-section" class="menu-link" style="text-decoration: none;">
+  <a href="#" class="menu-link" onclick="openModal()" style="text-decoration: none;">
     <div class="pd-menu-item">
       <i class="fa-solid fa-cart-shopping" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Buy Now</p>
     </div>
   </a>
-  <a href="#" id="mentorshipMenu" class="menu-link" onclick="openModal()" style="text-decoration: none;">
+  <a href="#" id="mentorshipMenu" class="menu-link" style="text-decoration: none;">
     <div class="pd-menu-item">
       <i class="fas fa-user-tie" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Mentorship</p>
