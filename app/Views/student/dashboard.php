@@ -515,7 +515,7 @@
 <!-- Mentorship Modal -->
 <div id="mentorshipModal" class="mentorship-modal">
   <div class="mentorship-modal-content">
-     <?php if (!empty($subject_id_details)): ?>
+     <?php if (!isset($subject_id_details) || empty($subject_id_details)): ?>
       <div class="mentorship-whatsapp-content">
         <i class="fab fa-whatsapp mentorship-whatsapp-icon"></i>
         <h2>Contact Mentor</h2>
@@ -525,9 +525,9 @@
     <?php else: ?>
       <div class="mentorship-lock-content">
         <i class="fas fa-lock mentorship-lock-icon"></i>
-        <h2>Subject Locked</h2>
-        <p>Buy a subject to unlock mentorship!</p>
-        <a href="<?=base_url()?>#category-section" class="mentorship-modal-button">Buy a Subject</a>
+        <h2>Mentorship Locked</h2>
+        <p>Enroll now to unlock mentorship!</p>
+        <a href="<?=base_url()?>#category-section" class="mentorship-modal-button">Enroll Now</a>
       </div>
     <?php endif; ?>
     <button id="closeMentorshipModal" class="mentorship-close-button">&times;</button>
