@@ -520,7 +520,7 @@
         <i class="fas fa-lock mentorship-lock-icon"></i>
         <h2>Subject Locked</h2>
         <p>Buy a subject to unlock mentorship!</p>
-        <a href="#" class="mentorship-modal-button">Buy a Subject</a>
+        <a href="<?=base_url()?>#category-section" class="mentorship-modal-button">Buy a Subject</a>
       </div>
     <?php else: ?>
       <div class="mentorship-whatsapp-content">
