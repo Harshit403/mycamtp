@@ -10,7 +10,21 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 
-<div class="cs-container" style="margin-top: 6rem;">
+<?php if (session()->get('studentDetails') !== null): ?>
+<style>
+    .cs-container {
+      margin-top: 6rem;
+  }
+</style>
+<?php else: ?>
+<style>
+    .cs-container {
+      margin-top: 8rem;
+  }
+</style>
+<?php endif; ?>
+
+<div class="cs-container">
   <!-- Left Section -->
   <div class="cs-text-section">
     <h1>Mission <span class="cs-highlight">CS Test Series</span></h1>
