@@ -502,7 +502,9 @@
 
 
   <style>
-      
+    .buyNowModal {
+        z-index: 9999; 
+    }
     .button-buy-now-hyper-unique {
       background-color: #e63e58;
       color: white;
@@ -670,6 +672,7 @@
 
 
 <!-- Modal -->
+    <section class="buyNowModal">
 <div class="overlay-modal-ultra-unique" id="overlay-modal-ultra-unique">
   <div class="modal-box-super-unique">
     <span class="button-close-modal-extremely-unique" onclick="closeModal()">&times;</span>
@@ -686,7 +689,8 @@
 
 <!-- Dummy Button -->
 <button class="button-dummy-hidden-special" id="dummyBtn">Checkout</button>
-
+    </section>
+    
 <script>
   const planArray = ['Chapter Wise Plan', 'Detailed Plan', 'Unit Plan'];
   const productArray = [
