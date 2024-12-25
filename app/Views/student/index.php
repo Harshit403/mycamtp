@@ -105,6 +105,31 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         <div class="unique-solutions-section">
             <div class="container">
                 <div class="row gy-4">
+                    <?php foreach ($level_list as $levelRow): ?>
+                        <div class="col-12 col-md-4">
+                            <!-- Card with Link -->
+                            <a href="<?= base_url() ?>type?category=<?= $levelRow->category_short_name ?>&&level=<?= $levelRow->level_short_name ?>" style="text-decoration: none;">
+                                <div class="card unique-card-solutions">
+                                    <div class="unique-card-body">
+                                        <i class="fa-solid fa-layer-group unique-icon"></i>
+                                        <h5 class="unique-card-title"><?= $levelRow->level_name ?></h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="my-3">
+    <div class="custom-bg-container">
+        <div class="unique-solutions-section">
+            <div class="container">
+                <div class="row gy-4">
                     <div class="col-12 col-md-4">
                         <!-- Card with Link -->
                         <a href="https://missioncstestseries.com/type?category=cs-test-series&&level=cseet-test-series" style="text-decoration: none;">
