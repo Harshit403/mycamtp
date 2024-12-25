@@ -675,22 +675,9 @@
     <span class="button-close-modal-extremely-unique" onclick="closeModal()">&times;</span>
     <div class="modal-title-mega-unique">Select Your Options</div>
     <div>
-   <!--  <select class="dropdown-select-absolutely-unique" id="select1">
 
-       <?php 
-          foreach ($CategoryDetails as $categoryRow) {
-          echo "<option value='{$categoryRow}'>{$categoryRow}</option>";
-         }
-         ?>
 
-      </select>
-      <select class="dropdown-select-absolutely-unique" id="select2">
-          <?php 
-            foreach ($level_list as $levelRow) {
-              echo "<option value='{$levelRow}'>{$levelRow}</option>";
-            }
-          ?>
-     </select> -->
+        
       <button class="submit-button-extremely-unique" onclick="showPlans()">Submit</button>
     </div>
     <div id="contentArea"></div>
