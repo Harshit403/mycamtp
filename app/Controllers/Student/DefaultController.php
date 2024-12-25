@@ -227,6 +227,7 @@
 		    
 			return view('student/dashboard',$data);
 		}
+	    }
 
 	    public function addToCartItem(){
 			$postData = $this->request->getPost();
