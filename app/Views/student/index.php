@@ -99,7 +99,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         }
 </style>
 
-
 <section class="my-3">
     <div class="custom-bg-container">
         <div class="unique-solutions-section">
@@ -135,52 +134,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         </div>
     </div>
 </section>
-
-
-<section class="my-3">
-    <div class="custom-bg-container">
-        <div class="unique-solutions-section">
-            <div class="container">
-                <div class="row gy-4">
-                    <div class="col-12 col-md-4">
-                        <!-- Card with Link -->
-                        <a href="https://missioncstestseries.com/type?category=cs-test-series&&level=cseet-test-series" style="text-decoration: none;">
-                            <div class="card unique-card-solutions">
-                                <div class="unique-card-body">
-                                    <i class="fa-solid fa-layer-group unique-icon"></i>
-                                    <h5 class="unique-card-title">CSEET Test Series</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <!-- Card with Link -->
-                        <a href="https://missioncstestseries.com/type?category=cs-test-series&&level=cs-executive-test-series" style="text-decoration: none;">
-                            <div class="card unique-card-solutions">
-                                <div class="unique-card-body">
-                                    <i class="fa-solid fa-layer-group unique-icon"></i>
-                                    <h5 class="unique-card-title">CS Executive Test Series</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <!-- Card with Link -->
-                        <a href="https://missioncstestseries.com/type?category=cs-test-series&&level=cs-professional-test-series" style="text-decoration: none;">
-                            <div class="card unique-card-solutions">
-                                <div class="unique-card-body">
-                                    <i class="fa-solid fa-layer-group unique-icon"></i>
-                                    <h5 class="unique-card-title">CS Professional Test Series</h5>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 
     <style>
         .super-custom-bg-wrapper {
