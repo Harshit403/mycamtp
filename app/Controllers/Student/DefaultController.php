@@ -217,7 +217,8 @@
 	            $data['notes_sub'] = $subject_id_details;
 		        $data['item_type'] = $item_type;
 	        }
-	        
+
+		    $data['subject_id_details'] = $subject_id_details;
 			return view('student/dashboard',$data);
 		}
 
