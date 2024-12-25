@@ -74,13 +74,5 @@
         </div>
     </div>
 
-<div class="custom-card-container">
-    <div class="custom-card">
-      <p>Total Students :- <?=$getStudentCount?></p>
-    </div>
-    <div class="custom-card">
-      <p>Students enrolled in 24 hours:- <?=$studentLastDayEnrolled?></p>
-    </div>
-  </div>
 
 <?= $this->endSection() ?>
