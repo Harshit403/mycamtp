@@ -532,7 +532,7 @@
       display: none;
       justify-content: center;
       align-items: flex-start;
-      z-index: 1000;
+      z-index: 9999;
       overflow-y: auto;
       padding-top: 10px;
     }
@@ -544,6 +544,7 @@
       padding: 20px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       position: relative;
+      z-index: 10000; /* Set a very high z-index */
     }
     .modal-title-mega-unique {
       font-size: 20px;
