@@ -217,8 +217,14 @@
 	            $data['notes_sub'] = $subject_id_details;
 		        $data['item_type'] = $item_type;
 	        }
+		    
+                        $cart_id =  $this->getCartId()['data'];
+		        if ($cart_id) {
+	                  $subject_id_detail = $this->defaultModel->getAmendmentSubjectList($cart_id);
+	                  $data['subject_id_detail'] = $subject_id_detail;
 
-		    $data['subject_id_details'] = $subject_id_details;
+
+		    
 			return view('student/dashboard',$data);
 		}
 
