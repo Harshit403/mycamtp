@@ -1,8 +1,52 @@
-<?= $this->extend('admin/layouts/layout') ?>
+<?= $this->extend('layout/layout') ?>
 <?= $this->section('title') ?>
 	Dashboard
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
+
+<style>
+  .custom-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 500px;
+    padding: 0 10px;
+  }
+  .custom-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+    flex: 1;
+  }
+  .custom-card:hover {
+    transform: translateY(-5px);
+  }
+  .custom-card:nth-child(1) {
+    background-color: #ff6b6b;
+    color: #ffffff;
+  }
+  .custom-card:nth-child(2) {
+    background-color: #4dabf7;
+    color: #ffffff;
+  }
+  .custom-card p {
+    font-size: 1.2em;
+    margin: 0;
+  }
+  @media (min-width: 600px) {
+    .custom-card-container {
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+</style>
+
+
+
 <?php 
     $userData = session()->get('userData');
 ?>
@@ -29,4 +73,14 @@
             </div>
         </div>
     </div>
+
+<div class="custom-card-container">
+    <div class="custom-card">
+      <p>Total Students :- <?=$getStudentCount?></p>
+    </div>
+    <div class="custom-card">
+      <p>Students enrolled in 24 hours:- <?=$studentLastDayEnrolled?></p>
+    </div>
+  </div>
+
 <?= $this->endSection() ?>
