@@ -680,7 +680,12 @@
     <div class="modal-title-mega-unique">Select Your Options</div>
     <div>
 
-
+     <select class="dropdown-select-absolutely-unique" id="type_short_name">
+        <option value="">All Types</option>
+      </select>
+        <select class="dropdown-select-absolutely-unique" id="type_short_name">
+          <option value="">Choose Level</option>
+        </select>
         
       <button class="submit-button-extremely-unique" onclick="showPlans()">Submit</button>
     </div>
