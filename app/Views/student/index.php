@@ -105,19 +105,31 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         <div class="unique-solutions-section">
             <div class="container">
                 <div class="row gy-4">
-                    <?php foreach ($level_list as $levelRow): ?>
-                        <div class="col-12 col-md-4">
-                            <!-- Card with Link -->
-                            <a href="<?= base_url() ?>type?category=<?= $levelRow->category_short_name ?>&&level=<?= $levelRow->level_short_name ?>" style="text-decoration: none;">
-                                <div class="card unique-card-solutions">
-                                    <div class="unique-card-body">
-                                        <i class="fa-solid fa-layer-group unique-icon"></i>
-                                        <h5 class="unique-card-title"><?= $levelRow->level_name ?></h5>
+                    <?php 
+                    try {
+                        // Ensure $level_list is an array or iterable
+                        if (!is_array($level_list) && !$level_list instanceof Traversable) {
+                            throw new Exception("Invalid data: Level list is not iterable.");
+                        }
+                        
+                        foreach ($level_list as $levelRow): ?>
+                            <div class="col-12 col-md-4">
+                                <!-- Card with Link -->
+                                <a href="<?= base_url() ?>type?category=<?= htmlspecialchars($levelRow->category_short_name) ?>&&level=<?= htmlspecialchars($levelRow->level_short_name) ?>" style="text-decoration: none;">
+                                    <div class="card unique-card-solutions">
+                                        <div class="unique-card-body">
+                                            <i class="fa-solid fa-layer-group unique-icon"></i>
+                                            <h5 class="unique-card-title"><?= htmlspecialchars($levelRow->level_name) ?></h5>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
+                        <?php endforeach; 
+                    } catch (Exception $e) { ?>
+                        <div class="alert alert-danger" role="alert">
+                            Error: <?= htmlspecialchars($e->getMessage()) ?>
                         </div>
-                    <?php endforeach; ?>
+                    <?php } ?>
                 </div>
             </div>
         </div>
