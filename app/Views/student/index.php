@@ -744,52 +744,6 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
 
 <section class="py-5 container" id="newsletter_section" style="background-color: #f7f7f9;">
   <div class="row align-items-center">
-    <!-- Address Section -->
-    <div class="col-md-6">
-      <div class="row address-container">
-        <!-- Address Card -->
-        <div class="col-md-6 mb-4">
-          <div class="card shadow-sm" style="background: #ffffff; border-radius: 10px; height: 14rem; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-            <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
-              <h2 style="color: #e63e58;"><i class="bi bi-geo-alt"></i></h2>
-              <h4 style="font-size: 16px; font-weight: bold; color: #333;">Address</h4>
-              <p style="font-size: 14px; color: #666; text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Call Us Card -->
-        <div class="col-md-6 mb-4">
-          <div class="card shadow-sm" style="background: #ffffff; border-radius: 10px; height: 14rem; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-            <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
-              <h2 style="color: #e63e58;"><i class="bi bi-telephone"></i></h2>
-              <h4 style="font-size: 16px; font-weight: bold; color: #333;">Call Us</h4>
-              <p style="font-size: 14px; color: #666; text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Email Card -->
-        <div class="col-md-6 mb-4">
-          <div class="card shadow-sm" style="background: #ffffff; border-radius: 10px; height: 14rem; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-            <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
-              <h2 style="color: #e63e58;"><i class="bi bi-envelope"></i></h2>
-              <h4 style="font-size: 16px; font-weight: bold; color: #333;">Email</h4>
-              <p style="font-size: 14px; color: #666; text-align: center;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Open Hours Card -->
-        <div class="col-md-6">
-          <div class="card shadow-sm" style="background: #ffffff; border-radius: 10px; height: 14rem; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-            <div class="card-body text-center d-flex flex-column justify-content-center align-items-center">
-              <h2 style="color: #e63e58;"><i class="bi bi-clock"></i></h2>
-              <h4 style="font-size: 16px; font-weight: bold; color: #333;">Open Hours</h4>
-              <p style="font-size: 14px; color: #666; text-align: center;">We are available 24*7</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Newsletter Section -->
     <div class="col-md-6">
       <div class="unique-newsletter-box p-4" style="background: #ffffff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
@@ -816,7 +770,7 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
       </div>
     </div>
   </div>
-		      </section>
+  </section>
 
 
 
