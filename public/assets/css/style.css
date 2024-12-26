@@ -890,57 +890,14 @@
     }
 
 
-/* Container Styling */
-.cs-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
-  gap: 2rem;
-}
-
-.cs-text-section {
-  flex: 1;
-}
-
-.cs-text-section h1 {
-  font-size: 2.5rem;
-  color: #000;
-  margin-bottom: 1rem;
-}
-
-.cs-highlight {
-  color: #e63e58;
-}
-
-.cs-description {
-  font-size: 1rem;
-  margin: 1rem 0;
-  color: #000;
-}
-
-.cs-btn-demo {
-  background-color: #e63e58;
-  color: #fff;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.cs-btn-demo:hover {
-  background-color: #bf3246;
-}
-
 /* Image Section Styling */
 .cs-image-section {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start; /* Default alignment */
   align-items: center;
   gap: 3rem;
+  margin-right: 0; /* Reset margin for default behavior */
 }
 
 .cs-desktop-img {
@@ -948,9 +905,11 @@
   max-width: 650px;
 }
 
-.cs-mobile-img {
-  width: 35%;
-  max-width: 250px;
+/* Add right alignment for desktop view */
+@media screen and (min-width: 769px) {
+  .cs-image-section {
+    margin-right: 2rem; /* Push the image slightly to the right */
+  }
 }
 
 /* Responsive Design */
@@ -972,10 +931,10 @@
   .cs-image-section {
     flex-direction: column;
     align-items: center;
+    margin-right: 0; /* Reset for mobile */
   }
 
   .cs-desktop-img {
     width: 80%; /* Adjust for smaller screens */
   }
 }
-
