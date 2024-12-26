@@ -8,14 +8,17 @@
 
 <section class="container mx-auto py-10">
     <h1 class="text-4xl font-bold text-center text-[#e63e58] mb-8">Blog List</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4">
         <?php if (!empty($blog_items)): ?>
             <?php foreach ($blog_items as $blogRow): ?>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105">
-                    <img src="<?= base_url() . $blogRow->blog_temp_image ?>" alt="Blog Image" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-semibold text-[#e63e58] truncate"><?= $blogRow->blog_heading ?></h2>
-                        <p class="text-gray-600 mt-4 text-sm line-clamp-3">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 opacity-0 animate-fade-in-on-scroll">
+                    <img src="<?= base_url() . $blogRow->blog_temp_image ?>" 
+                         alt="Blog Image" 
+                         class="w-full h-40 object-cover lazy" 
+                         loading="lazy">
+                    <div class="p-4">
+                        <h2 class="text-xl font-semibold text-[#e63e58] truncate"><?= $blogRow->blog_heading ?></h2>
+                        <p class="text-gray-600 mt-2 text-sm line-clamp-2">
                             <?php 
                                 $blog_text = trim($blogRow->blog_text);
                                 if (!empty($blog_text)) {
@@ -43,5 +46,43 @@
         <?php endif ?>
     </div>
 </section>
+
+<style>
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-on-scroll {
+    animation: fade-in 0.8s ease-out forwards;
+    will-change: opacity, transform;
+    visibility: hidden;
+}
+
+.reveal-on-scroll {
+    visibility: visible;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const elements = document.querySelectorAll('.animate-fade-in-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-on-scroll');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    elements.forEach((el) => observer.observe(el));
+});
+</script>
 
 <?= $this->endSection() ?>
