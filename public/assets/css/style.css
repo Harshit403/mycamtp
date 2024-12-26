@@ -890,7 +890,7 @@
     }
 
 
-/* Unique Container Styling */
+/* Container Styling */
 .cs-container {
   display: flex;
   justify-content: space-between;
@@ -916,7 +916,7 @@
 .cs-description {
   font-size: 1rem;
   margin: 1rem 0;
-  color: #000000;
+  color: #000;
 }
 
 .cs-btn-demo {
@@ -934,6 +934,7 @@
   background-color: #bf3246;
 }
 
+/* Image Section Styling */
 .cs-image-section {
   display: flex;
   flex-direction: row;
@@ -972,4 +973,9 @@
     flex-direction: column;
     align-items: center;
   }
-    
+
+  .cs-desktop-img {
+    width: 80%; /* Adjust for smaller screens */
+  }
+}
+
