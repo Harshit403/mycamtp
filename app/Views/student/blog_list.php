@@ -10,7 +10,7 @@
 <?=$this->endSection()?>
 <?= $this->section('content') ?>
 <section class="container mb-5 section mainContainer">
-    <div class="row ">
+    <div class="row py-3">
         <div class="col-md-12 h4 text-center">
             Blog List
         </div>
@@ -22,7 +22,7 @@
 		            <div class="card mb-2" style="border-radius: 10px;">
 		            	<div class="row p-3">
 		            		<div class="col-md-2 d-flex align-items-center justify-content-center">
-		        				<img src="<?=base_url().$blogRow->blog_temp_image?>" style="height: 200px;width: 200px;" class="img-thumbnail">
+		        				<img src="<?=base_url().$blogRow->blog_temp_image?>" style="height: 200px;" class="img-thumbnail">
 		            		</div>
 		            		<div class="col-md-10">
 		            			<div class="h3" style="text-align: justify;">
