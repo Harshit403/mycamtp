@@ -544,42 +544,7 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
     </div>
 </section> 
 
-<section class="py-5 container" id="blog-section">
-    <div class="container-title">
-        <h1-not>Blogs</h1-not>
-    </div>
-        <div class="row">
-            <?php if (!empty($blog_list)): ?>
-              <?php foreach ($blog_list as $blogRow): ?>
-                <div class="col-sm-3">
-                    <div class="card">
-                      <img src="<?=base_url().$blogRow->blog_temp_image?>" class="card-img-top" alt="blog items image" style="height: 200px;">
-                      <div class="card-body">
-                        <h5 class="card-title"><?=$blogRow->blog_heading?></h5>
-                        <?php
-                          $blogText = '';
-                          if (!empty($blogRow->blog_text)) {
-                            $blogText = strip_tags($blogRow->blog_text);
-                          }
-                          $blogText = strlen($blogText) > 20  ? substr($blogText, 0,20).'...' : $blogText;
-                        ?>
-                        <p class="card-text"><?=$blogText?></p>
-                        <a href="<?=base_url()?>blog?item=<?=$blogRow->blog_short_name?>" class="btn btn-custom">Read More <i class="bi bi-arrow-right"></i></a>
-                      </div>
-                    </div>
-                </div>
-              <?php endforeach ?>
-            <?php endif ?>
-            
-        </div>
-        <?php if (!empty($blog_list) && count($blog_list) > 4): ?>
-          <div class="row mt-2">
-              <div class="col-md-12 d-flex justify-content-end">
-                  <a href="<?=base_url()?>blog-list" class="btn btn-sm btn-custom">View More <i class="bi bi-arrow-right"></i></a>
-              </div>
-          </div>
-        <?php endif ?>
-    </section>
+
 
 <style>
 .mcst-blog-section {
@@ -740,6 +705,11 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
         </div>
     </div>
 </section>
+
+<a href="<?=base_url()?>blog-list"> 
+        <button class="cs-btn-demo">Read More</button>
+</a>
+
 
 <script>
 	document.addEventListener("DOMContentLoaded", function () {
