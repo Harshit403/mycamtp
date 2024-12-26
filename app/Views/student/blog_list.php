@@ -10,7 +10,7 @@
 <?=$this->endSection() ?>
 <?= $this->section('content') ?>
 <style>
-	body {
+body {
     font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa;
     margin: 0;
@@ -59,6 +59,7 @@
 
 .mcst-blog-image {
     height: 200px;
+    padding: 5px;
     overflow: hidden;
     position: relative;
 }
