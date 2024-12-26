@@ -4,50 +4,63 @@
 <?= $this->endSection() ?>
 <?= $this->section('meta_description') ?>
 <!-- enter your meta description -->
-<?=$this->endSection()?>
+<?= $this->endSection() ?>
 <?= $this->section('meta_keywords') ?>
-<!-- enter your meta keywords widthout tag -->
-<?=$this->endSection()?>
+<!-- enter your meta keywords without tag -->
+<?= $this->endSection() ?>
 <?= $this->section('content') ?>
-<section class="container mb-5 section mainContainer">
-    <div class="row py-3">
-        <div class="col-md-12 h4 text-center">
-            Blog List
-        </div>
+<section class="container mx-auto py-10">
+    <h1 class="text-4xl font-bold text-center text-[#e63e58] mb-8">Blog List</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <?php if (!empty($blog_items)): ?>
+            <?php foreach ($blog_items as $blogRow): ?>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 opacity-0 animate-fade-in">
+                    <img src="<?= base_url() . $blogRow->blog_temp_image ?>" alt="Blog Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-2xl font-semibold text-[#e63e58] truncate"><?= $blogRow->blog_heading ?></h2>
+                        <p class="text-gray-600 mt-4 text-sm line-clamp-3">
+                            <?php 
+                                $blog_text = trim($blogRow->blog_text);
+                                if (!empty($blog_text)) {
+                                    if (strlen($blog_text) > 100) {
+                                        $blog_text = substr(strip_tags($blog_text), 0, 100) . '...';
+                                    }
+                                }
+                                echo $blog_text;
+                            ?>
+                        </p>
+                        <div class="mt-4 flex justify-end">
+                            <a href="<?= base_url() ?>blog?item=<?= $blogRow->blog_short_name ?>" 
+                               class="text-[#e63e58] font-semibold hover:underline inline-flex items-center">
+                                Read More 
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-1">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach ?>
+        <?php else: ?>
+            <p class="text-gray-500 text-center col-span-full">No blogs available at the moment.</p>
+        <?php endif ?>
     </div>
-    <div class="row pb-3" style="min-height:50vh !important">
-        <div class="col-md-12 text-center">
-        	<?php if (!empty($blog_items)): ?>
-        		<?php foreach ($blog_items as $blogRow): ?>
-		            <div class="card mb-2" style="border-radius: 10px;">
-		            	<div class="row p-3">
-		            		<div class="col-md-2 d-flex align-items-center justify-content-center">
-		        				<img src="<?=base_url().$blogRow->blog_temp_image?>" style="height: 200px;" class="img-thumbnail">
-		            		</div>
-		            		<div class="col-md-10">
-		            			<div class="h3" style="text-align: justify;">
-		            				<?=$blogRow->blog_heading?>
-		            			</div>
-		            			<div style="text-align:justify;height: 100px;">
-		            				<?php 
-		            					$blog_text = trim($blogRow->blog_text);
-		            					if (!empty($blog_text)) {
-		            						if (strlen($blog_text) > 100) {
-		            							$blog_text = substr((strip_tags($blog_text)),0,100).'....';
-		            						}
-		            					}
-		            					echo $blog_text;
-		            				?>
-		            			</div>
-		            			<div style="text-align: right !important;">
-		            				<a href="<?=base_url()?>blog?item=<?=$blogRow->blog_short_name?>" class="btn bnt-sm btn-custom" style="padding: 4px 16px; display: inline-block; justify-content:end;" >Read More <i class="bi bi-arrow-right"></i></a>
-		            			</div>
-		            		</div>
-		            	</div>
-		            </div>
-        		<?php endforeach ?>
-        	<?php endif ?>
-        </div>
-    <div>
 </section>
+
+<style>
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+}
+</style>
 <?= $this->endSection() ?>
