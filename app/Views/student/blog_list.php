@@ -135,11 +135,10 @@ body {
     }
 	}
 </style>
-<section class="mcst-blog-section">
+<section class="mcst-blog-section" style="margin-top: 6rem;">
     <div class="mcst-container">
         <div class="mcst-header">
             <h1 class="mcst-title">Our Blogs</h1>
-            <p class="mcst-subtitle">Discover insights, stories, and tips curated just for you.</p>
         </div>
         <div class="mcst-blog-grid">
             <?php if (!empty($blog_items)): ?>
