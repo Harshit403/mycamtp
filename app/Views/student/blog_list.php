@@ -40,6 +40,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
+    justify-content: center;
+    padding: 0 10px;
 }
 
 .mcst-blog-card {
