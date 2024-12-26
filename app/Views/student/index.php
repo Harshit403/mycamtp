@@ -742,7 +742,7 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
 
 
 
-<section class="py-5 container" id="newsletter_section" style="background-color: #f7f7f9;">
+<section class="py-5 container align-items-center justify-content-center" id="newsletter_section" style="background-color: #f7f7f9;">
   <div class="row align-items-center">
     <!-- Newsletter Section -->
     <div class="col-md-6">
