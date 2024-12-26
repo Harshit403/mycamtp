@@ -666,7 +666,7 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
 	}
 </style>
 
-<section class="mcst-blog-section" style="margin-top: 6rem;">
+<section class="mcst-blog-section">
     <div class="mcst-container">
         <div class="mcst-header">
             <h1 class="mcst-title">Our Blogs</h1>
@@ -706,9 +706,11 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
     </div>
 </section>
 
-<a href="<?=base_url()?>blog-list"> 
+<div style="text-align: center;">
+    <a href="<?=base_url()?>blog-list"> 
         <button class="cs-btn-demo">Read More</button>
-</a>
+    </a>
+	</div>
 
 
 <script>
