@@ -553,7 +553,7 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
               <?php foreach ($blog_list as $blogRow): ?>
                 <div class="col-sm-3">
                     <div class="card">
-                        <img src="<?=base_url().$blogRow->blog_temp_image?>" class="card-img-top" alt="blog items image" style="height: 200px;">
+                      <img src="<?=base_url().$blogRow->blog_temp_image?>" class="card-img-top" alt="blog items image" style="height: 200px;">
                       <div class="card-body">
                         <h5 class="card-title"><?=$blogRow->blog_heading?></h5>
                         <?php
@@ -580,6 +580,197 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
           </div>
         <?php endif ?>
     </section>
+
+<style>
+.mcst-blog-section {
+    padding: 60px 20px;
+}
+
+.mcst-title {
+    font-size: 2.8rem;
+    color: #e63e58;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.mcst-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 1rem;
+}
+
+.mcst-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.mcst-blog-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mcst-blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.mcst-blog-image {
+    height: 200px;
+    padding: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.mcst-blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.mcst-blog-card:hover .mcst-blog-image img {
+    transform: scale(1.1);
+}
+
+.mcst-blog-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.mcst-blog-heading {
+    font-size: 1.25rem;
+    color: #333;
+    margin: 0 0 10px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.mcst-blog-text {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.mcst-read-more {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #e63e58;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.mcst-read-more:hover {
+    color: #d22c45;
+}
+
+.mcst-no-blogs {
+    text-align: center;
+    color: #888;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+.mcst-lazy-image {
+    filter: blur(5px);
+    transition: filter 0.3s ease-in-out;
+}
+
+.mcst-lazy-image[src] {
+    filter: blur(0);
+}
+@media (max-width: 768px) {
+    .mcst-title {
+        font-size: 2.2rem;
+    }
+
+    .mcst-subtitle {
+        font-size: 0.9rem;
+    }
+	}
+</style>
+
+<section class="mcst-blog-section" style="margin-top: 6rem;">
+    <div class="mcst-container">
+        <div class="mcst-header">
+            <h1 class="mcst-title">Our Blogs</h1>
+        </div>
+        <div class="mcst-blog-grid">
+            <?php if (!empty($blog_list)): ?>
+                <?php foreach ($blog_list as $blogRow): ?>
+                    <div class="mcst-blog-card">
+                        <div class="mcst-blog-image">
+                            <img 
+                                data-src="<?=base_url().$blogRow->blog_temp_image?>" 
+                                alt="Blog Image" 
+                                class="mcst-lazy-image"
+                            >
+                        </div>
+                        <div class="mcst-blog-content">
+                            <h3 class="mcst-blog-heading"><?=$blogRow->blog_heading?></h3>
+                            <p class="mcst-blog-text">
+                                <?php
+                          $blogText = '';
+                          if (!empty($blogRow->blog_text)) {
+                            $blogText = strip_tags($blogRow->blog_text);
+                          }
+                          $blogText = strlen($blogText) > 20  ? substr($blogText, 0,20).'...' : $blogText;
+                        ?>
+                            </p>
+                            <a href="<?=base_url()?>blog?item=<?=$blogRow->blog_short_name?>" class="mcst-read-more">
+                                Read More <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p class="mcst-no-blogs">No blogs available at the moment.</p>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+    const lazyImages = document.querySelectorAll(".mcst-lazy-image");
+
+    const lazyLoad = (image) => {
+        const src = image.getAttribute("data-src");
+        if (!src) return;
+        image.src = src;
+        image.removeAttribute("data-src");
+    };
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    lazyLoad(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.1 }
+    );
+
+    lazyImages.forEach((image) => observer.observe(image));
+});
+</script>
+
+
+
+
 
 
 
