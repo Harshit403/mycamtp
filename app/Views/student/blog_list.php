@@ -2,19 +2,16 @@
 <?= $this->section('title') ?>
     Blog List
 <?= $this->endSection() ?>
-<?= $this->section('meta_description') ?>
-<!-- enter your meta description -->
-<?= $this->endSection() ?>
-<?= $this->section('meta_keywords') ?>
-<!-- enter your meta keywords without tag -->
-<?= $this->endSection() ?>
 <?= $this->section('content') ?>
+<!-- Tailwind CSS -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
 <section class="container mx-auto py-10">
     <h1 class="text-4xl font-bold text-center text-[#e63e58] mb-8">Blog List</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <?php if (!empty($blog_items)): ?>
             <?php foreach ($blog_items as $blogRow): ?>
-                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 opacity-0 animate-fade-in">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105">
                     <img src="<?= base_url() . $blogRow->blog_temp_image ?>" alt="Blog Image" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h2 class="text-2xl font-semibold text-[#e63e58] truncate"><?= $blogRow->blog_heading ?></h2>
@@ -47,20 +44,4 @@
     </div>
 </section>
 
-<style>
-@keyframes fade-in {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-fade-in {
-    animation: fade-in 0.8s ease-out forwards;
-}
-</style>
 <?= $this->endSection() ?>
