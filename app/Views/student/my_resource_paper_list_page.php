@@ -20,49 +20,51 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                     <thead>
                         <tr>
                             <th>Paper Name</th>
-                            <th>Download Question paper</th>
-                            <th>Download Answer paper</th>
-                            <?php if ($item_type!='free'): ?>
+                            <th>Download Question Paper</th>
+                            <th>Download Suggested Answer</th>
+                            <?php if ($item_type != 'free'): ?>
                                 <th>Upload Assignment</th>
                             <?php endif ?>
                         <tr>
                     </thead>
                     <tbody>
                         <?php
-                            if(!empty($getPaperDetails)){
-                                foreach($getPaperDetails as $paperRow){
-                                    $paper_name = str_replace('','_',trim($paperRow['paper_name']));
+                            if (!empty($getPaperDetails)) {
+                                foreach ($getPaperDetails as $paperRow) {
+                                    $paper_name = str_replace(' ', '_', trim($paperRow['paper_name']));
                                     ?>
-                                        <tr>
-                                            <td><?=$paperRow['paper_name']?></td>
-                                            <td>    
-                                                <a href="<?=base_url().$paperRow['question_paper_upload']?>" class="btn btn-sm btn-success" download="<?=$paper_name?>question_paper.pdf"><i class="bi bi-arrow-down-circle"></i> Download</a>
+                                    <tr class="test-paper">
+                                        <td class="test-paper-title"><?=$paperRow['paper_name']?></td>
+                                        <td>
+                                            <a href="<?=base_url() . $paperRow['question_paper_upload']?>" class="btn btn-sm btn-gradient" download="<?=$paper_name?>_question_paper.pdf">
+                                                <i class="fas fa-download"></i> Question Paper
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <div id="answerBtnContainer<?=$paperRow['paper_id']?>" class="answerBtnContainerClass" style="display:<?=$item_type != 'free' ? 'none' : ''?>;">
+                                                <a href="<?=base_url() . $paperRow['answer_paper_upload']?>" class="btn btn-sm btn-gradient" download="<?=$paper_name?>_answer_paper.pdf">
+                                                    <i class="fas fa-lightbulb"></i> Suggested Answer
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <?php if ($item_type != 'free'): ?>
+                                            <td>
+                                                <div class="upload-container">
+                                                    <input type="file" class="form-control" id="assignmentFile<?=$paperRow['paper_id']?>" accept="application/pdf,image/*" style="font-size: 11px; padding: 4px;">
+                                                    <button class="btn btn-gradient uploadAssignment" data-paper-id="<?=$paperRow['paper_id']?>">
+                                                        <i class="fas fa-upload"></i> Upload
+                                                    </button>
+                                                </div>
                                             </td>
-                                            <td> 
-                                                <div id="answerBtnContainer<?=$paperRow['paper_id']?>" class="answerBtnContainerClass" style="display:<?=$item_type!='free' ? 'none' : ''?>?;">
-                                                    <a href="<?=base_url().$paperRow['answer_paper_upload']?>" class="btn btn-sm btn-success" download="<?=$paper_name?>answer_paper.pdf"><i class="bi bi-arrow-down-circle"></i> Download</a>
-                                                </div>   
-                                            </td>
-                                            <?php if ($item_type!='free'): ?>
-                                                <td>  
-                                                    <div class="row" id="assignmentConatianer<?=$paperRow['paper_id']?>">
-                                                        <div class="col-md-8">
-                                                            <input type="file" class="form-control mr-2" id="assignmentFile<?=$paperRow['paper_id']?>" accept="application/pdf,image/*"/>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <a href="javascript:void(0)" class="btn btn-info btn-sm uploadAssignment" data-paper-id="<?=$paperRow['paper_id']?>"><i class="bi bi-file-arrow-up"></i></a></a>
-                                                        </div>
-                                                    </div>  
-                                                </td>
-                                            <?php endif ?>
-                                        </tr>
+                                        <?php endif ?>
+                                    </tr>
                                     <?php
                                 }
                             } else {
                                 ?>
-                                    <tr>
-                                        <td colspan="4">No Paper Available</td>
-                                    </tr>
+                                <tr>
+                                    <td colspan="4">No Paper Available</td>
+                                </tr>
                                 <?php
                             }
                         ?>
@@ -73,7 +75,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         </div>
     </section>
 <?= $this->endSection() ?>
-<?= $this->section('jsContent')?>
+<?= $this->section('jsContent') ?>
     <script>
         var pageType = 'paper-list';
     </script>
