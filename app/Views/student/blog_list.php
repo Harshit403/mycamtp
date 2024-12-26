@@ -10,7 +10,7 @@
 <?=$this->endSection()?>
 <?= $this->section('content') ?>
 <section class="container mb-5 section mainContainer">
-    <div class="row py-3">
+    <div class="row ">
         <div class="col-md-12 h4 text-center">
             Blog List
         </div>
