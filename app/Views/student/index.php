@@ -688,8 +688,11 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
             <h1 class="mcst-title">Our Blogs</h1>
         </div>
         <div class="mcst-blog-grid">
-            <?php if (!empty($blog_list)): ?>
-                <?php foreach ($blog_list as $blogRow): ?>
+            <?php 
+            if (!empty($blog_list)): 
+                $limited_blogs = array_slice($blog_list, 0, 3); // Get only the first 3 blogs
+                foreach ($limited_blogs as $blogRow): 
+            ?>
                     <div class="mcst-blog-card">
                         <div class="mcst-blog-image">
                             <img 
@@ -702,20 +705,30 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
                             <h3 class="mcst-blog-heading"><?=$blogRow->blog_heading?></h3>
                             <p class="mcst-blog-text">
                                 <?php
-                          $blogText = '';
-                          if (!empty($blogRow->blog_text)) {
-                            $blogText = strip_tags($blogRow->blog_text);
-                          }
-                          $blogText = strlen($blogText) > 20  ? substr($blogText, 0,20).'...' : $blogText;
-                        ?>
+                                $blogText = '';
+                                if (!empty($blogRow->blog_text)) {
+                                    $blogText = strip_tags($blogRow->blog_text);
+                                }
+                                $blogText = strlen($blogText) > 20  ? substr($blogText, 0,20).'...' : $blogText;
+                                echo $blogText;
+                                ?>
                             </p>
                             <a href="<?=base_url()?>blog?item=<?=$blogRow->blog_short_name?>" class="mcst-read-more">
                                 Read More <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
                     </div>
-                <?php endforeach; ?>
-            <?php else: ?>
+            <?php 
+                endforeach; 
+            ?>
+                <?php if (count($blog_list) > 3): ?>
+                    <div class="mcst-read-more-blogs">
+                        <a href="#" class="<?=base_url()?>blog-list">Read More Blogs</a>
+                    </div>
+                <?php endif; ?>
+            <?php 
+            else: 
+            ?>
                 <p class="mcst-no-blogs">No blogs available at the moment.</p>
             <?php endif; ?>
         </div>
