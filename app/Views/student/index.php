@@ -41,13 +41,12 @@ cs test series, cstestseries , cs executive test series, cs professional test se
       </a>
     <?php endif; ?>
   </div>
-
-  <!-- Right Section -->
-  <div class="cs-image-section">
-    <img class="cs-desktop-img" src="https://executivetestseries.click/wp-content/uploads/2024/12/pie8.png" alt="Pie Chart">
-  </div>
 </div>
-
+    <!-- Right Section -->
+    <div class="cs-image-section">
+      <img class="cs-desktop-img" src="https://executivetestseries.click/wp-content/uploads/2024/12/pie8.png" alt="Pie Chart">
+    </div>
+  </div>
 
   
 <section class="py-3 category container" id="category-section">
@@ -709,7 +708,7 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
 
 <div style="text-align: center;">
     <a href="<?=base_url()?>blog-list"> 
-        <button class="cs-btn-demo">Read More</button>
+        <button class="cs-btn-demo">Read More blogs</button>
     </a>
 	</div>
 
