@@ -25,21 +25,9 @@ cs test series, cstestseries , cs executive test series, cs professional test se
   background-color: #bf3246;
 }
 </style>
-<?php if (session()->get('studentDetails') !== null): ?>
-<style>
-    .cs-container {
-      margin-top: 6rem;
-  }
-</style>
-<?php else: ?>
-<style>
-    .cs-container {
-      margin-top: 8rem;
-  }
-</style>
-<?php endif; ?>
 
-<div class="cs-container">
+
+<div class="cs-container" style="margin-top: 6rem;">
   <!-- Left Section -->
   <div class="cs-text-section">
     <h1>Mission <span class="cs-highlight">CS Test Series</span></h1>
