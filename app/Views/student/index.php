@@ -29,13 +29,13 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <?php if (session()->get('studentDetails') !== null): ?>
 <style>
     .cs-container {
-      margin-top: 12rem;
+      margin-top: 6rem;
   }
 </style>
 <?php else: ?>
 <style>
     .cs-container {
-      margin-top: 6rem;
+      margin-top: 8rem;
   }
 </style>
 <?php endif; ?>
