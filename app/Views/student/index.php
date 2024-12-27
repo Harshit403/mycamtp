@@ -564,7 +564,7 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
 
 <style>
 .mcst-blog-section {
-    padding: 60px 20px;
+    padding: 40px 20px;
 }
 
 .mcst-title {
@@ -722,8 +722,8 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
                 endforeach; 
             ?>
                 <?php if (count($blog_list) > 3): ?>
-                    <div class="mcst-read-more-blogs">
-                        <a href="#" class="<?=base_url()?>blog-list">Read More Blogs</a>
+                    <div class="cs-btn-demo">
+                        <a href="<?=base_url()?>blog-list" class="<?=base_url()?>blog-list">Read More Blogs</a>
                     </div>
                 <?php endif; ?>
             <?php 
@@ -734,12 +734,6 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
         </div>
     </div>
 </section>
-
-<div style="text-align: center;">
-    <a href="<?=base_url()?>blog-list"> 
-        <button class="cs-btn-demo">Read More blogs</button>
-    </a>
-	</div>
 
 
 <script>
