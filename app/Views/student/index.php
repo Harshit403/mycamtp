@@ -9,7 +9,22 @@ Most Trusted CS Test Series for CSEET CS Executive and CS Professional | Mission
 cs test series, cstestseries , cs executive test series, cs professional test series, icsi test series, cs executive test series, cs online test Series, cs exam, cs exams test series, cs exams, best test series for cs exams
 <?=$this->endSection()?>
 <?=$this->section('content')?>
+<style>
+.cs-btn-demo {
+  background-color: #e63e58;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
 
+.cs-btn-demo:hover {
+  background-color: #bf3246;
+}
+</style>
 <?php if (session()->get('studentDetails') !== null): ?>
 <style>
     .cs-container {
