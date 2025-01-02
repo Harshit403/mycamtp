@@ -42,10 +42,10 @@ $routes->get('/disclaimer',STUDENT.'DefaultController::loadDisclaimer');
 $routes->get('/plans',STUDENT.'DefaultController::loadPlans');
 $routes->get('/pricing',STUDENT.'DefaultController::loadPricing');
 $routes->get('/gplan',STUDENT.'DefaultController::loadGPlan');
-$routes->get('/cs_executive',STUDENT.'DefaultController::loadCSExecutive');
-$routes->get('/cs_professional',STUDENT.'DefaultController::loadCSProfessional');
+$routes->get('/cs-executive',STUDENT.'DefaultController::loadCSExecutive');
+$routes->get('/cs-professional',STUDENT.'DefaultController::loadCSProfessional');
 $routes->get('/cseet',STUDENT.'DefaultController::loadCSEET');
-$routes->get('/contact_us',STUDENT.'DefaultController::loadContactUs');
+$routes->get('/contact-us',STUDENT.'DefaultController::loadContactUs');
 // forgot password
 $routes->get('/forgot-password',STUDENT.'DefaultController::loadForgotPassword');
 $routes->post('/forgot-pass-email',STUDENT.'DefaultController::forgotPassEmail');
