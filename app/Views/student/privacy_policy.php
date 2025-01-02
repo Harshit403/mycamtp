@@ -64,7 +64,7 @@ We treat data as an asset that must be protected against loss and unauthorized a
 <h4>DISCLAIMER</h4>
 We cannot ensure that all of your private communications and other personal information (including sensitive information like credit card information and bank account number) will never be disclosed in ways not otherwise described in this Privacy Policy. Therefore, although we are committed to protecting your privacy, we do not promise, and you should not expect, that your personal information will always remain private. As a user of the Site, you understand and agree that you assume all responsibility and risk for your use of the Site, the internet generally, and the documents you post or access and for your conduct on and off the Site.
 <h4>QUESTIONS AND SUGGESTIONS</h4>
-If you have any questions or concerns regarding this privacy policy, you should contact us by sending an e-mail to mycsmtp@gmail.com
+If you have any questions or concerns regarding this privacy policy, you should contact us by sending an e-mail to Missioncstestsries.com@gmail.com
 <hr>
 <h2>Refund and Cancellation Policy</h2>
 
@@ -78,7 +78,7 @@ No refunds will be provided for any services purchased through our website under
 <h4>For Custom Orders:</h4>
 Custom and personalized orders cannot be canceled or refunded after order confirmation due to the unique nature of the products. Please review and confirm all details of your custom order carefully prior to final confirmation and payment.
 
-Contact us at support@mycsmtp.com with any other questions about our no refund policy. By making any purchase through our website, you accept this policy. We appreciate your understanding that due to the nature of our products and services, no refunds are provided whatsoever. All sales are final.
+Contact us at support@Missioncstestsries.com with any other questions about our no refund policy. By making any purchase through our website, you accept this policy. We appreciate your understanding that due to the nature of our products and services, no refunds are provided whatsoever. All sales are final.
 
 <hr>
         </div>
