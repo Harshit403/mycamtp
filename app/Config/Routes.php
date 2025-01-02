@@ -39,6 +39,8 @@ $routes->get('/shipping-and-dlivery',STUDENT.'DefaultController::loadShippingDel
 $routes->get('/about-us',STUDENT.'DefaultController::loadAboutUs');
 $routes->get('/why-us',STUDENT.'DefaultController::loadWhyUs');
 $routes->get('/disclaimer',STUDENT.'DefaultController::loadDisclaimer');
+$routes->get('/plans',STUDENT.'DefaultController::loadPlans');
+$routes->get('/pricing',STUDENT.'DefaultController::loadPricing');
 
 // forgot password
 $routes->get('/forgot-password',STUDENT.'DefaultController::loadForgotPassword');
@@ -80,6 +82,8 @@ $routes->post('/newsletter/add-newsletter',STUDENT.'DefaultController::addNewsLe
 
 // student profile
 $routes->post('/update/user-profile',STUDENT.'DefaultController::updateUserProfile',['filter'=>'studentAuth']);
+$routes->post("/update/change-password",STUDENT.'DefaultController::updatePassword',['filter'=>'studentAuth']);
+
 
 
 // ADMIN
