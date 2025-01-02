@@ -157,13 +157,13 @@
                     </li>
                   <?php endif ?>
                   <li class="nav-item">
-                    <a class="nav-link <?=($segment1=='' ? 'active' : '')?>" href="<?=base_url()?>/plans">Plans</a>
+                    <a class="nav-link <?=($segment1=='plans' ? 'active' : '')?>" href="<?=base_url()?>/plans">Plans</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link <?=($segment1=='' ? 'active' : '')?>" href="<?=base_url()?>">Pricing</a>
+                    <a class="nav-link <?=($segment1=='pricing' ? 'active' : '')?>" href="<?=base_url()?>">Pricing</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link <?=($segment1=='' ? 'active' : '')?>" href="<?=base_url()?>/blog-list">Blog</a>
+                    <a class="nav-link <?=($segment1=='blog-list' ? 'active' : '')?>" href="<?=base_url()?>/blog-list">Blog</a>
                   </li>
                    <li class="nav-item">
                     <a class="nav-link" href="<?=base_url()?>#faq-section">FAQ</a>
