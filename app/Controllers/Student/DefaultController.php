@@ -217,9 +217,9 @@
 	            $data['notes_sub'] = $subject_id_details;
 		        $data['item_type'] = $item_type;
 	        }
+	        
 			return view('student/dashboard',$data);
 		}
-
 
 	    public function addToCartItem(){
 			$postData = $this->request->getPost();
@@ -844,6 +844,13 @@
 	    	}
 	    }
 
+	    public function loadPlans(){
+	    	return view('student/plans_list');
+	    }
+	    public function loadPricing(){
+	    	return view('student/pricing');
+	    }
+
 	    public function downloadInvoice(){
 	    	$mpdf = new \Mpdf\Mpdf();
 	    	$getItem = $this->request->getGet();
@@ -854,7 +861,8 @@
 	    		$html = view('student/invoice_info',$data);
 	    		// return view('student/invoice_info',$data);
 				$mpdf->WriteHTML($html);
-				$mpdf->Output($pdf_name,\Mpdf\Output\Destination::INLINE);
+				// $mpdf->Output($pdf_name,\Mpdf\Output\Destination::INLINE);
+				$mpdf->Output($pdf_name,'D');
 	    	}
 	    	
 	    }
@@ -1132,6 +1140,29 @@
 				} else {
 					$response = array('success' => false,'message' =>'Failed to update password');
 				}
+			}
+			return json_encode($response);
+		}
+
+		public function updatePassword(){
+			$postData = $this->request->getPost();
+			if(session()->get('studentDetails')!==null){
+				$studentDetails = session()->get('studentDetails');
+				$student_id = $studentDetails['id'];
+				$password = base64_decode($postData['password']);
+				$setPassword = md5(md5($password));
+				if(!empty($setPassword)){
+					$updatePassword = $this->common->dbAction('student_table',array('password'=>$password),'update',array('student_id'=>$student_id));
+					if(!empty($updatePassword)){
+						$response = array('success'=>true,'message'=>'Password updated successfully');
+					} else {
+						$response = array('success'=>true,'message'=>'Password updated successfully');
+					}
+				} else {
+					$response = array('success'=>false,'message'=>'No password available');
+				}
+			} else {
+				$response = array('success'=>false,'message'=>'Please login first');
 			}
 			return json_encode($response);
 		}
