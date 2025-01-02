@@ -1,5 +1,11 @@
 <!-- navbar -->
 <header>
+    
+<?php 
+  $uri = service('uri'); 
+  $segment1 = $uri->getSegment(1);
+  ?>
+
 <?php if (session()->get('studentDetails') === null): ?>
 <style>
     .navbar {
@@ -143,7 +149,7 @@
           <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="<?=base_url();?>">Home</a>
+                    <a class="nav-link <?=($segment1=='' ? 'active' : '')?>" aria-current="page" href="<?=base_url();?>">Home</a>
                   </li>
                   <?php if (session()->get('studentDetails')===null): ?>
                     <li class="nav-item">
@@ -151,13 +157,13 @@
                     </li>
                   <?php endif ?>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Plans</a>
+                    <a class="nav-link <?=($segment1=='' ? 'active' : '')?>" href="<?=base_url()?>/plans">Plans</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link <?=($segment1=='' ? 'active' : '')?>" href="<?=base_url()?>">Pricing</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="<?=base_url()?>/blog-list">Blog</a>
+                    <a class="nav-link <?=($segment1=='' ? 'active' : '')?>" href="<?=base_url()?>/blog-list">Blog</a>
                   </li>
                    <li class="nav-item">
                     <a class="nav-link" href="<?=base_url()?>#faq-section">FAQ</a>
