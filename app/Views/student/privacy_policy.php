@@ -9,7 +9,7 @@
 <!-- enter your meta keywords widthout tag -->
 <?=$this->endSection()?>
 <?=$this->section('content')?>
-	<section class="container section mainContainer">
+	<section class="container section mainContainer" style="margin-top: 6rem;>
     <div class="row py-3">
         <div class="col-md-12 h4 text-center">
      
