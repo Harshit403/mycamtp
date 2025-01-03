@@ -1,6 +1,6 @@
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('title')?>
-	<?=$level_info->level_name?>
+	Cancellation and Refund Policy
 <?=$this->endSection()?>
 <?= $this->section('meta_description') ?>
 <!-- enter your meta description -->
