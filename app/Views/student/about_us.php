@@ -9,7 +9,7 @@ Most Trusted CS Test Series for CSEET CS Executive and CS Professional | Mission
 cs test series, cstestseries , cs executive test series, cs professional test series, icsi test series, cs executive test series, cs online test Series, cs exam, cs exams test series, cs exams, best test series for cs exams
 <?=$this->endSection()?>
 <?=$this->section('content')?>
-	<section class="container about_us_container mainContainer">
+	<section class="container about_us_container mainContainer" style="margin-top: 6rem;>
 		<h2 class="text-center">About Us</h2>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
