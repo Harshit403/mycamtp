@@ -39,7 +39,7 @@
                       <a href="<?=base_url()?>shipping-and-dlivery" class="text-white">Shipping and Delivery</a>
                     </p>
                      <p>
-                      <a href="<?=base_url()?>contact-us" class="text-white">Shipping and Delivery</a>
+                      <a href="<?=base_url()?>contact-us" class="text-white">Contact US</a>
                      </p>
                     <p>
                       <a href="<?=base_url()?>about-us" class="text-white">About Us</a>
@@ -51,7 +51,7 @@
                       <a href="<?=base_url()?>disclaimer" class="text-white">Disclaimer</a>
                     </p>
                          <p>
-                      <a href="<?=base_url()?>gplan" class="text-white">About Us</a>
+                      <a href="<?=base_url()?>gplan" class="text-white">"Pass Guaranteed"-Plan T&C</a>
                          </p>
                   </div>
                   <div class="col-md-4 mb-4" style="text-align: left;">
