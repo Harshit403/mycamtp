@@ -9,7 +9,7 @@
 <!-- enter your meta keywords widthout tag -->
 <?=$this->endSection()?>
 <?=$this->section('content')?>
-<section class="container mb-5 mainContainer" style="margin-top: 6rem;">
+<section class="container mb-5 mainContainer" style="margin-top: 7rem;">
     <div class="row py-3">
         <div class="col-md-12 h4 text-center">
             <h1>Terms & Conditions</h1>
