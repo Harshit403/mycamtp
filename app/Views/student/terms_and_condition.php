@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="row pb-3" style="min-height:50vh !important">
-        <div class="col-md-12 text-center">
+        <div class="col-md-12">
          
 www.missioncstestseries.com is an online portal, owned by MISSION CS TEST SERIES, an organisation registered &incorporated in India, for imparting education in relation to preparation of Company Secratory Examination by providing the facility of Taking Tests, Preparation Modules, Study Material, MCQ application, Question Banks& many more…….
 <h5>GENRAL</h4>
