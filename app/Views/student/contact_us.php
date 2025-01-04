@@ -190,7 +190,7 @@
                 </div>
                 <div class="unique-info-item">
                     <span>Address:</span>
-                    MISSION CS TEST SERIES, Dasna, Ghaziabad, Uttar Pradesh, 201302
+                    MISSION CS TEST SERIES, Ghaziabad, India, 201302
                 </div>
             </div>
 
