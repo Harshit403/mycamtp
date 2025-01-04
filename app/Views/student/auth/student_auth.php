@@ -80,6 +80,10 @@
                     </select>
                 </div>
                 <div class="inputBox">
+                    <select class="form-control mb-4" name="current_level" id="current_level">
+                    </select>
+                </div>
+                <div class="inputBox">
                     <input type="password" class="item" name="password" id="password" required="required">
                     <ion-icon name="eye-off-outline" class="viewPassWord" style="position: absolute;top: 1rem;right: 1rem;"></ion-icon>
                     <span>Password</span>
