@@ -787,7 +787,7 @@
 <!-- Mentorship Modal -->
 <div id="mentorshipModal" class="mentorship-modal">
   <div class="mentorship-modal-content">
-     <?php if (empty($notes_sub)): ?>
+     <?php if (!empty($notes_sub)): ?>
       <div class="mentorship-whatsapp-content">
         <i class="fab fa-whatsapp mentorship-whatsapp-icon"></i>
         <h2>Contact Mentor</h2>
@@ -844,7 +844,7 @@
                 $daysLeft = "Exam has passed!";
       }
   ?>
-  <button><?= ($daysLeft == "⌛ Exam has passed!") ? $daysLeft : "⏳ $daysLeft Left For Exam" ?></button>
+  <button><?= ($daysLeft === "Exam has passed!") ? $daysLeft : "⏳ $daysLeft Days Left For Exam" ?></button>
 </div>
 
 <div class="pd-social-media-card">
