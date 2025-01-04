@@ -64,21 +64,22 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </div>
   </div>
 
-  
-<section class="py-3 category container" id="category-section">
-    <div class="container-title">
-        <h1-not>Category</h1-not>
-    </div>
-    <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
-      <?php if (!empty($categoryDetails)): ?>
-          <?php foreach ($categoryDetails as $categoryRow): ?>
-              <a class="stretched-link" href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" style="text-decoration: none;">
-                  <button class="button-85" role="button"><?=$categoryRow->category_name?></button>
-              </a>
-          <?php endforeach ?>
-      <?php endif ?>
-    </div>
-</section>
+
+
+    <section class="py-5 category container" id="category-section">
+        <h1 class="text-uppercase text-center">Category</h1>
+        <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
+          <?php if (!empty($categoryDetails)): ?>
+              <?php foreach ($categoryDetails as $categoryRow): ?>
+                  <a class="strached-link" href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" style="text-decoration: none;"><div class="card">
+                      <h2><?=$categoryRow->category_name?></h2>
+                  </div></a>
+              <?php endforeach ?>
+          <?php endif ?>
+        </div>
+    </section>
+
+
 
 <style>        
         .unique-solutions-section {
