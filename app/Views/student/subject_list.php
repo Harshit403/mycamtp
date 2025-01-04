@@ -35,6 +35,22 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 					    </div>
 					</div>
 				<?php endforeach ?>
+
+			
+	                <?php else: ?>
+                    <ul>
+                        <li style="display: flex; justify-content: center;">
+                            <div>
+                                <div style="text-align: center;">
+                                    <i class="fas fa-lock" style="font-size: 100px;"></i>
+                                </div>
+                                <a class="h2 btn" href="<?=base_url()?>level/level-list">Buy any plan</a>
+                            </div>
+                        </li>
+		</ul>
+
+
+			
 			<?php endif ?>
 		</div>
 		<div class="row">
