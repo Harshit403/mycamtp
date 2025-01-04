@@ -787,7 +787,7 @@
 <!-- Mentorship Modal -->
 <div id="mentorshipModal" class="mentorship-modal">
   <div class="mentorship-modal-content">
-     <?php if (!isset($subject_id_detail) || empty($subject_id_detail)): ?>
+     <?php if (empty($notes_sub)): ?>
       <div class="mentorship-whatsapp-content">
         <i class="fab fa-whatsapp mentorship-whatsapp-icon"></i>
         <h2>Contact Mentor</h2>
