@@ -69,7 +69,7 @@
                     <input type="text" class="item" name="state_name" required="required" pattern="[A-Za-z\s]+" title="State can only contain alphabets and spaces.">
                     <span>State</span>
                 </div>
-                <div class="inputBox">
+              <!--  <div class="inputBox">
                     <select class="form-control mb-4" name="category_id" id="category_id">
                         <?php if (!empty($category_list)) {
                             foreach ($category_list as $categorysRow) { ?>
@@ -78,7 +78,7 @@
                                 </option>
                         <?php } } ?>
                     </select>
-                </div>
+                </div> -->
                 <div class="inputBox">
                     <select class="form-control mb-4" name="current_level" id="current_level">
                     </select>
