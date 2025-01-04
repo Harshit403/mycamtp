@@ -840,8 +840,11 @@
       $date2=date_create(date('Y-m-d'));
       $diff=date_diff($date1,$date2);
       $daysLeft = $diff->days;
+      if ($date2 > $date1) {
+                $daysLeft = "Exam has passed";
+      }
   ?>
-  <button><?=$daysLeft?> days remaining for Exam</button>
+  <button><?= ($daysLeft == "Exam has passed") ? $daysLeft : "⏳$daysLeft Days" ?>Left For Exam</button>
 </div>
 
 <div class="pd-social-media-card">
