@@ -76,7 +76,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
           <?php if (!empty($categoryDetails)): ?>
               <?php foreach ($categoryDetails as $categoryRow): ?>
-                  <a href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" class="btn" style="display: block; background-color: #e63e58; width: 82%; color: #fff; font-size: 14px; font-weight: bold; padding: 10px 20px; text-align: center; border-radius: 10px;"><?=$categoryRow->category_name?>  <i class="fas fa-arrow-right" style="margin-left: 10px; animation: slideRight 1s infinite;"></i></a>
+                  <a href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" class="btn" style="display: block; background-color: #e63e58; width: 88%; color: #fff; font-size: 14px; font-weight: bold; padding: 10px 20px; text-align: center; border-radius: 10px;"><?=$categoryRow->category_name?>  <i class="fas fa-arrow-right" style="margin-left: 10px; animation: slideRight 1s infinite;"></i></a>
               <?php endforeach ?>
           <?php endif ?>
         </div>
