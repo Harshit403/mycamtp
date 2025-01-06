@@ -18,7 +18,7 @@
     50% { transform: translateX(5px); }
 }
 </style>
-		<div class="row" style="margin: 2rem;">
+		<div class="row" style="margin: 8rem;">
 			<div class="col-md-12">
 				<h2 class="text-center"><?=$category_info->category_more_details_heading?></h2>
 			</div>
