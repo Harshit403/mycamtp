@@ -9,28 +9,7 @@
 <!-- enter your meta keywords widthout tag -->
 <?=$this->endSection()?>
 <?=$this->section('content')?>
-	<section class="container shifting_container mb-5 mainContainer">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        ul {
-            margin-left: 20px;
-        }
-    </style>
+<section class="container shifting_container mb-5 mainContainer">
     <h1>Shipping and Delivery Terms</h1>
     <p>Welcome to <strong>MissionCS Test Series</strong>. Our goal is to provide a seamless and immediate digital experience for our users. Please read the following shipping and delivery terms carefully:</p>
     
@@ -52,12 +31,8 @@
     <p>By purchasing from MissionCS Test Series, you agree to these shipping and delivery terms. For any questions or assistance, please reach out to our support team.</p>
     
     <p>Thank you for choosing MissionCS Test Series!</p>
-
-
-
-
 		
-	</section>
+</section>
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
 <?= $this->endSection() ?>
