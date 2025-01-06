@@ -182,7 +182,7 @@
                 <h2>Contact Information</h2>
                 <div class="unique-info-item">
                     <span>Phone:</span>
-                    +91 9540097210
+                    +91 9873045724
                 </div>
                 <div class="unique-info-item">
                     <span>Email:</span>
@@ -192,6 +192,7 @@
                     <span>Address:</span>
                     MISSION CS TEST SERIES, Ghaziabad, India, 201302
                 </div>
+		<p style= "2px;">(Legal name - My CS MTP)</p>
             </div>
 
             <!-- Contact Form -->
