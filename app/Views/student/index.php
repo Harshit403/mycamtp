@@ -65,84 +65,10 @@ cs test series, cstestseries , cs executive test series, cs professional test se
   </div>
 
 
+
+
 <style>
-.bn54 {
-  position: relative;
-  outline: none;
-  text-decoration: none;
-  border-radius: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  text-transform: uppercase;
-  height: 45px;
-  width: 130px;
-  opacity: 1;
-  background-color: #000000;
-  border: 1px solid rgba(0, 0, 0, 0.6);
-  color: #ffffff;
-  margin: 4px;
-}
-
-.bn54 .bn54span {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.7px;
-}
-
-.bn54:hover {
-  animation: bn54rotate 0.7s ease-in-out both;
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.bn54:hover .bn54span {
-  animation: bn54storm 0.7s ease-in-out both;
-  animation-delay: 0.06s;
-}
-
-@keyframes bn54rotate {
-  0% {
-    transform: rotate(0deg) translate3d(0, 0, 0);
-  }
-  25% {
-    transform: rotate(3deg) translate3d(0, 0, 0);
-  }
-  50% {
-    transform: rotate(-3deg) translate3d(0, 0, 0);
-  }
-  75% {
-    transform: rotate(1deg) translate3d(0, 0, 0);
-  }
-  100% {
-    transform: rotate(0deg) translate3d(0, 0, 0);
-  }
-}
-
-@keyframes bn54storm {
-  0% {
-    transform: translate3d(0, 0, 0) translateZ(0);
-  }
-  25% {
-    transform: translate3d(4px, 0, 0) translateZ(0);
-  }
-  50% {
-    transform: translate3d(-3px, 0, 0) translateZ(0);
-  }
-  75% {
-    transform: translate3d(2px, 0, 0) translateZ(0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0) translateZ(0);
-  }
-}
-
 .btn-un {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 4px;
 }
@@ -161,11 +87,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <section class="btn-un">
 <?php if (!empty($categoryDetails)): ?>
 <?php foreach ($categoryDetails as $categoryRow): ?>
-<a href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>">
-  <button class="bn54">
-    <span class="bn54span"><?=$categoryRow->category_name?></span>
-  </button>
-</a>
+<a href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" class="btn" style="display: block; background-color: #e63e58; color: #fff; font-size: 14px; font-weight: bold; padding: 10px 20px; text-align: center; border-radius: 6px;"><?=$categoryRow->category_name?></a>
 <?php endforeach ?>
 <?php endif ?>
 </section>
