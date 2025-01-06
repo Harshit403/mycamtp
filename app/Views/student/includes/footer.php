@@ -3,10 +3,15 @@
              $_2e2eee = "._1a1a1a{width:100%}._1a1a1a ._2b2b2b{display:flex;justify-content:center;align-items:center;text-align:center;width:100%}._1a1a1a ._3c3c3c{background-color:#2FBCCD;color:white;width:100%;display:inline-block;padding:10px 0}._1a1a1a ._3c3c3c a{color:white;display:inline;font-weight:bold}";
              echo base64_decode(base64_encode($_2e2eee));
              ?>
+
+            .no-ul a {
+                text-decoration: none;
+              }
         </style>
+
         <section id="footer-section">
         <div class=" mt-5">
-          <footer class="text-center text-lg-start text-white" style="background-color: #000000">
+          <footer class="text-center text-lg-start text-white no-ul" style="background-color: #000000">
             <section class="">
               <div class="container text-center text-md-start mt-5">
                 <div class="row mt-3">
