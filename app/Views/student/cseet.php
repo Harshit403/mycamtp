@@ -85,7 +85,72 @@
       <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button>
     </div>
   </div>
+
+
+    <main>
+        <section>
+            <p>
+                Our CS test series is designed to help students easily prepare and pass their CS exams like <strong>CS Executive</strong>, 
+                <strong>CS Professional</strong>, and <strong>CSEET</strong>. We strictly follow the new <strong>ICSI syllabus</strong> and exam pattern, 
+                ensuring students practice the right type of questions. The new ICSI syllabus includes tougher questions, and our <strong>CS mock tests</strong> match the same difficulty level. 
+                With over 8 years of experience, our team focuses on helping students identify and fix their mistakes to achieve better <strong>CS results</strong>.
+            </p>
+        </section>
+        <section>
+            <p>
+                Since 2015, we have been one of the first platforms to provide <strong>online CS mock tests</strong>. Our team, which includes rank holders 
+                and experienced professionals, ensures high-quality <strong>CS test papers</strong> and provides proper feedback to students. Evaluated <strong>CS mock test</strong> 
+                sheets are returned within 1-2 days, along with valuable tips to improve. This quick feedback process allows students to improve before their next <strong>CS mock test</strong>.
+            </p>
+        </section>
+        <section>
+            <h2>What Our CS Test Series Covers</h2>
+            <p>
+                For the <strong>June 2025 CS exams</strong>, we have prepared a comprehensive test series for all levels—<strong>CSEET</strong>, <strong>CS Executive</strong>, and <strong>CS Professional</strong>. 
+                Our <strong>CS mock tests</strong> are based on the latest <strong>ICSI syllabus</strong> and exam trends, helping students understand the type of questions to expect. 
+                Amendments are also included, ensuring students stay updated with the latest syllabus changes.
+            </p>
+        </section>
+        <section>
+            <h2>Common Challenges Faced by Students</h2>
+            <p>
+                Many students fail their <strong>CS Executive</strong> or <strong>CS Professional</strong> exams even after thorough revision. 
+                This often happens because they don’t know their weak areas or how to improve their approach. Our <strong>CS test series</strong> 
+                addresses this issue by helping students find and fix mistakes like poor presentation, lack of conceptual clarity, or slow writing speed. 
+                Our expert team provides step-by-step guidance to improve performance in the actual exams, resulting in better <strong>CS results</strong>.
+            </p>
+        </section>
+        <section>
+            <h2>How Our CS Test Series Helps</h2>
+            <ul>
+                <li><strong>Solid Concepts:</strong> We help students build a strong foundation of concepts, essential for scoring well in <strong>CS Executive</strong> and <strong>CS Professional</strong> exams.</li>
+                <li><strong>Proper Revision:</strong> Our <strong>CS mock tests</strong> are structured to ensure students revise the entire <strong>ICSI syllabus</strong> effectively.</li>
+                <li><strong>Mistake Analysis:</strong> Detailed feedback highlights over 130 common mistakes students make, helping them avoid losing marks in exams.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Proven Success and Affordable Pricing</h2>
+            <p>
+                Our <strong>CS test series</strong> has a proven success rate, with many students clearing their exams on the first attempt. 
+                Some have even achieved top ranks in <strong>CS results</strong>. We ensure our <strong>CS mock tests</strong> are affordable 
+                and provide excellent value for the time and effort students invest in their preparation.
+            </p>
+        </section>
+        <section>
+            <h2>Why Choose Our CS Test Series?</h2>
+            <p>
+                If you are preparing for the <strong>June 2025 CS exams</strong>, our <strong>CS test series</strong> is the perfect choice. 
+                From <strong>CS Executive</strong> to <strong>CS Professional</strong>, our team will guide you to improve your concepts, writing skills, and speed. 
+                With regular practice and feedback, you can confidently pass your <strong>CS exams</strong> and achieve excellent <strong>CS results</strong>.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 CS Test Series. All rights reserved.</p>
+    </footer>
+
 	
+
 </body>
 
 		
