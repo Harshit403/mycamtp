@@ -10,7 +10,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 	<section class="container about_us_container mainContainer" style="margin-top: 6rem;">
-		
+		<style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -62,8 +62,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             background: #333;
         }
     </style>
-</head>
-<body>
 
 <div class="container">
     <h1>About Us</h1>
