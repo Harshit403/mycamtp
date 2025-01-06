@@ -71,7 +71,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 }
 </style>
 
-<!-- <section class="py-5 category container" id="category-section">
+ <section class="py-5 category container" id="category-section">
         <h1 class="text-uppercase text-center">Category</h1>
         <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
           <?php if (!empty($categoryDetails)): ?>
@@ -80,7 +80,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
               <?php endforeach ?>
           <?php endif ?>
         </div>
-    </section> -->
+    </section> 
 
 
 <style>        
