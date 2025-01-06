@@ -9,14 +9,14 @@
 <!-- enter your meta keywords widthout tag -->
 <?=$this->endSection()?>
 <?=$this->section('content')?>
-<section class="container mb-5 mainContainer" style="margin-top: 9rem;">
-    <div class="row py-3">
+<section class="container mb-5 mainContainer">
+    <div class="row py-3" style="margin-top: 9rem;">
         <div class="col-md-12 h4">
             <h1>Terms & Conditions</h1>
         </div>
     </div>
     <div class="row pb-3" style="min-height:50vh !important">
-        <div class="col-md-12" style="margin-top: 4rem;">
+        <div class="col-md-12">
          
 www.missioncstestseries.com is an online portal, owned by MY CS MTP, an organisation registered &incorporated in Ghaziabad, UP,India, for imparting education in relation to preparation of Company Secratory Examination by providing the facility of Taking Tests, Preparation Modules, Study Material, MCQ application, Question Banks& many more…….
 <h5>GENRAL</h4>
