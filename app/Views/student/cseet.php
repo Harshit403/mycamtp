@@ -11,8 +11,7 @@
 <?=$this->section('content')?>
 	<section class="container contact_us_container mainContainer">
 
-
-<body style="font-family: 'Arial', sans-serif; background-color: #f9f9f9; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; margin-top: 10px;">
+<body class="" style="margin-top: 10px;">
 <h1>CSEET Test Series</h1>
   <div class="card" style="width: 90%; max-width: 400px; background: #ffffff; border: 1px solid #e6e6e6; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
     <div class="header">
