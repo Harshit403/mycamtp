@@ -65,9 +65,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
   </div>
 
 
-
-
-
 <style>
 .bn54 {
   position: relative;
@@ -82,13 +79,15 @@ cs test series, cstestseries , cs executive test series, cs professional test se
   height: 45px;
   width: 130px;
   opacity: 1;
-  background-color: #ffffff;
+  background-color: #000000;
   border: 1px solid rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  margin: 4px;
 }
 
 .bn54 .bn54span {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #000000;
+  color: #ffffff;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.7px;
@@ -96,6 +95,8 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 
 .bn54:hover {
   animation: bn54rotate 0.7s ease-in-out both;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .bn54:hover .bn54span {
@@ -138,6 +139,18 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     transform: translate3d(0, 0, 0) translateZ(0);
   }
 }
+
+.btn-un {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+}
+
+.btn-un a {
+  text-decoration: none;
+}
+	
 @media (max-width: 768px) {
   .bn54 {
     width: 80%;
@@ -145,7 +158,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 }
 </style>
 
-<section>
+<section class="btn-un">
 <?php if (!empty($categoryDetails)): ?>
 <?php foreach ($categoryDetails as $categoryRow): ?>
 <a href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>">
