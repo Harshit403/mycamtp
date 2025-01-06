@@ -10,58 +10,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 	<section class="container about_us_container mainContainer" style="margin-top: 6rem;">
-		<style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-            color: #000;
-        }
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            color: #000;
-            text-align: center;
-        }
-        h2 {
-            border-bottom: 2px solid #000;
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-        p {
-            line-height: 1.6;
-            text-align: justify;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        ul li {
-            margin-bottom: 10px;
-        }
-        .cta {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .cta a {
-            background: #000;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .cta a:hover {
-            background: #333;
-        }
-    </style>
 
 <div class="container">
     <h1>About Us</h1>
@@ -95,7 +43,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 
     <div class="cta">
         <p>🚀 Join us today and take a step closer to your CS dream!</p>
-        <a href="#">Join Now</a>
+        <a href="https://missioncstestseries.com/">Join Now</a>
     </div>
 </div>
 
