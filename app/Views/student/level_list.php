@@ -12,7 +12,12 @@
 	<section class="container mb-5 section mainContainer">
 
 
-
+<style>
+@keyframes slideRight {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+}
+</style>
 
 		<div class="row">
 			<div class="col-md-12">
@@ -22,7 +27,7 @@
 		<div class="row d-flex align-items-center justify-content-center flex-wrap">
 			<?php foreach ($level_list as $levelRow): ?>
 				<div class="col-md-3">
-                                <a href="<?=base_url()?>type?category=<?=$levelRow->category_short_name?>&&level=<?=$levelRow->level_short_name?>" class="btn" style="display: block; margin: 2rem; background-color: #e63e58; width: 88%; color: #fff; font-size: 14px; font-weight: bold; padding: 10px 20px; text-align: center; border-radius: 10px;"><?=$levelRow->level_name?><i class="fas fa-arrow-right" style="margin-left: 10px; animation: slideRight 1s infinite;"></i></a>
+                                <a href="<?=base_url()?>type?category=<?=$levelRow->category_short_name?>&&level=<?=$levelRow->level_short_name?>" class="btn" style="display: block; margin: 0.2rem; background-color: #e63e58; width: 88%; color: #fff; font-size: 14px; font-weight: bold; padding: 10px 20px; text-align: center; border-radius: 10px;"><?=$levelRow->level_name?><i class="fas fa-arrow-right" style="margin-left: 10px; animation: slideRight 1s infinite;"></i></a>
 				</div>
 			<?php endforeach ?>
 			
