@@ -11,7 +11,7 @@
 <?=$this->section('content')?>
 <section class="container mb-5 mainContainer" style="margin-top: 9rem;">
     <div class="row py-3">
-        <div class="col-md-12 h4 text-center">
+        <div class="col-md-12 h4">
             <h1>Terms & Conditions</h1>
         </div>
     </div>
@@ -97,6 +97,9 @@ From time to time this website may also include links to other websites. These l
 You agree to indemnify, defend and hold harmless this website/Proprietorship including but not limited to its affiliate vendors, agents and employees from and against any and all losses, liabilities, claims, damages, demands, costs and expenses (including legal fees and disbursements in connection therewith and interest chargeable thereon) asserted against or incurred by us that arise out of, result from, or may be payable by virtue of, any breach or non-performance of any representation, warranty, covenant or agreement made or obligation to be performed by you pursuant to these terms of service. Further, you agree to hold us harmless against any claims made by any third party due to, or arising out of, or in connection with, your use of the website, any claim that your material caused damage to a third party, your violation of the terms of service, or your violation of any rights of another, including any intellectual property rights.
 In no event shall MISSION CS TEST SERIES, its officers, directors, employees, partners or suppliers be liable to you, the vendor or any third party for any special, incidental, indirect, consequential or punitive damages whatsoever, including those resulting from loss of use, data or profits, whether or not foreseeable or whether or not we have been advised of the possibility of such damages, or based on any theory of liability, including breach of contract or warranty, negligence or other tortious action, or any other claim arising out of or in connection with your use of or access to the website, services or materials.
 The limitations and exclusions in this section apply to the maximum extent permitted by applicable law.
+	<h4></h4>Governing Law and Disputes</h4>
+
+These Terms shall be governed by and construed in accordance with the laws of the India and the MY CS MTP  without giving effect to any principles of conflicts of law. Any dispute arising out of or related to these Terms shall be subject to the exclusive jurisdiction of the state and courts located in Ghaziabad UP,  and you hereby consent to the personal jurisdiction of such courts.
 <h4>TERMINATION</h4>
 This User Agreement is effective unless and until terminated by either you or MISSION CS TEST SERIES. You may terminate this User Agreement at any time, provided that you discontinue any further use of the Website. The Proprietorship may terminate this User Agreement at any time and may do so immediately without notice, and accordingly deny you access to the Site.
 Such termination will be without any liability to the Proprietorship. The Proprietorship’s right to any Comments and to be indemnified pursuant to the terms hereof, shall survive any termination of this User Agreement. Any such termination of the User Agreement shall not cancel your obligation to pay for product(s) already ordered from the Site or affect any liability that may have arisen under the User Agreement prior to the date of termination.
