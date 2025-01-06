@@ -66,40 +66,12 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 
 
 
-
-<style>
-.btn-un {
-  justify-content: center;
-  gap: 4px;
-}
-
-.btn-un a {
-  text-decoration: none;
-}
-	
-@media (max-width: 768px) {
-  .bn54 {
-    width: 80%;
-  }
-}
-</style>
-
-<section class="btn-un">
-<?php if (!empty($categoryDetails)): ?>
-<?php foreach ($categoryDetails as $categoryRow): ?>
-<a href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" class="btn" style="display: block; background-color: #e63e58; color: #fff; font-size: 14px; font-weight: bold; padding: 10px 20px; text-align: center; border-radius: 6px;"><?=$categoryRow->category_name?></a>
-<?php endforeach ?>
-<?php endif ?>
-</section>
-
 <section class="py-5 category container" id="category-section">
         <h1 class="text-uppercase text-center">Category</h1>
         <div class="d-flex align-items-center justify-content-center flex-wrap" style="gap:10px 20px;">
           <?php if (!empty($categoryDetails)): ?>
               <?php foreach ($categoryDetails as $categoryRow): ?>
-                  <a class="strached-link" href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" style="text-decoration: none;"><div class="card">
-                      <h2><?=$categoryRow->category_name?></h2>
-                  </div></a>
+                  <a href="<?=base_url()?>level?category=<?=$categoryRow->category_short_name?>" class="btn" style="display: block; background-color: #e63e58; color: #fff; font-size: 14px; font-weight: bold; padding: 10px 20px; text-align: center; border-radius: 10px;"><?=$categoryRow->category_name?></a>
               <?php endforeach ?>
           <?php endif ?>
         </div>
