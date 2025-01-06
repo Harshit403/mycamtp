@@ -11,15 +11,8 @@
 <?=$this->section('content')?>
 	<section class="container disclaimer_container mainContainer">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            text-align: left;
-        }
-    </style>
-    <h1>MISSION CS Test Series Disclaimer</h1>
+
+    <h1 style="margin-top: 9rem;">MISSION CS Test Series Disclaimer</h1>
     <p>
         This test series is designed for practice purposes only. The inclusion of any specific questions in our practice papers does not imply or guarantee that identical questions will appear in the main exams. Our aim is to provide a comprehensive set of questions to enhance your preparation.
     </p>
