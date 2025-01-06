@@ -390,7 +390,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     <div class="custom-bg-container">
         <div class="unique-solutions-section">
             <h2 class="unique-title-solutions">Trusted By Thousands of CS Students</h2>
-            <p class="unique-subtitle-solutions">Allow us to manage everything while you focus solely on educating the students.</p>
 
             <!-- Carousel Section -->
             <div id="uniqueSolutionCarousel" class="carousel slide unique-carousel-container" data-bs-ride="carousel">
