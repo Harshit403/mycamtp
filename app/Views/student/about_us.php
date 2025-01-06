@@ -10,25 +10,97 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 	<section class="container about_us_container mainContainer" style="margin-top: 6rem;">
-		<h2 class="text-center">About Us</h2>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p>
-		<div class="row">
-			<div class="col-md-12">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			</div>
-		</div>
+		
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #000;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #000;
+            text-align: center;
+        }
+        h2 {
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        p {
+            line-height: 1.6;
+            text-align: justify;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .cta a {
+            background: #000;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .cta a:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>About Us</h1>
+    <p><strong>Welcome to MISSION CS TEST SERIES</strong>, a platform created to help CS (Company Secretary) students succeed in their exams with the right guidance, test series, and mentorship.</p>
+
+    <h2>How It All Started</h2>
+    <p>Our journey began with a simple Instagram page, where we started helping CS students by sharing useful tips, study resources, and guidance. Over time, many qualified CS and CA professionals joined us to support and guide aspiring CS students.</p>
+    <p>Since 2018, we have helped thousands of students preparing for CSEET, CS Executive, and CS Professional exams.</p>
+
+    <h2>Our Contribution to the CS Community</h2>
+    <ul>
+        <li>Hosted free live mentorship and guidance sessions with expert CS professionals and rank holders.</li>
+        <li>Launched a <strong>free CS Mock Test Series</strong> with evaluation to help students assess their knowledge.</li>
+        <li>Organized live sessions for qualified CS professionals to help them with career growth.</li>
+    </ul>
+
+    <h2>Why We Launched MISSION CS TEST SERIES</h2>
+    <p>After years of guiding students for free, we realized the need for a structured platform offering high-quality test series and expert mentorship at an affordable price.</p>
+
+    <h2>What Makes Us Different?</h2>
+    <ul>
+        <li><strong>Expert-Created Test Papers:</strong> Designed based on the CS syllabus, exam trends, and ICSI patterns.</li>
+        <li><strong>Affordable & High-Quality:</strong> Providing the best test series at the lowest price.</li>
+        <li><strong>Live Mentorship:</strong> Rank holders and professionals guide students with exam strategies and answer writing techniques.</li>
+        <li><strong>Evaluation & Personalized Feedback:</strong> Experts review answers and provide improvement suggestions.</li>
+        <li><strong>Complete Support:</strong> Dedicated test series and mentorship for CSEET, CS Executive, and CS Professional exams.</li>
+    </ul>
+
+    <h2>Our Goal</h2>
+    <p>Our mission is to make CS exam preparation structured, simple, and stress-free. We aim to be the go-to platform for CS aspirants looking for the right practice, mentorship, and motivation.</p>
+
+    <div class="cta">
+        <p>🚀 Join us today and take a step closer to your CS dream!</p>
+        <a href="#">Join Now</a>
+    </div>
+</div>
+
 	</section>
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
