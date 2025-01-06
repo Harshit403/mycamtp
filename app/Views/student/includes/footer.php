@@ -70,7 +70,7 @@
               </div>
             </section>
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)" >
-              © 2024 Copyright:
+              © <?php echo date("Y"); ?> Copyright:
               <a class="text-white" href="<?=base_url()?>" style="text-decoration: none;">Mission CS Test Series</a>
             </div>
                <div class="_1a1a1a">
