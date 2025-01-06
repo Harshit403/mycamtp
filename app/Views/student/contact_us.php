@@ -192,7 +192,7 @@
                     <span>Address:</span>
                     MISSION CS TEST SERIES, Ghaziabad, India, 201302
                 </div>
-		<p style= "2px;">(Legal name - My CS MTP)</p>
+		<p style="font-size: 8px; margin: 2px;">(Legal name - My CS MTP)</p>
             </div>
 
             <!-- Contact Form -->
