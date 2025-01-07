@@ -219,23 +219,23 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             <div class="subtitle-solutions-custom text-start">
 
          <ul class="list-unstyled text-start">
-        <li class="d-flex align-items-center mb-2">
-            <i class="fas fa-lightbulb me-2" style="color: #e63e58;"></i> Hidden Strategy by AIRs
+        <li class="d-flex align-items-center mb-2 text-start">
+            <i class="fas fa-lightbulb me-2 text-start" style="color: #e63e58;"></i> Hidden Strategy by AIRs
         </li>
-        <li class="d-flex align-items-center mb-2">
-            <i class="fas fa-book-open me-2" style="color: #e63e58;"></i> Case-based Questions
+        <li class="d-flex align-items-center mb-2 text-start">
+            <i class="fas fa-book-open me-2 text-start" style="color: #e63e58;"></i> Case-based Questions
         </li>
-        <li class="d-flex align-items-center mb-2">
-            <i class="fas fa-user-cog me-2" style="color: #e63e58;"></i> Personalised Study Plan
+        <li class="d-flex align-items-center text-start mb-2">
+            <i class="fas fa-user-cog me-2 text-start" style="color: #e63e58;"></i> Personalised Study Plan
         </li>
-        <li class="d-flex align-items-center mb-2">
-            <i class="fas fa-file-alt me-2" style="color: #e63e58;"></i> Test Series like Real Exam's Paper
+        <li class="d-flex align-items-center mb-2 text-start">
+            <i class="fas fa-file-alt me-2 text-start" style="color: #e63e58;"></i> Test Series like Real Exam's Paper
         </li>
-        <li class="d-flex align-items-center mb-2">
-            <i class="fas fa-brain me-2" style="color: #e63e58;"></i> Understand What Examiner Expects from You
+        <li class="d-flex align-items-center mb-2 text-start">
+            <i class="fas fa-brain me-2 text-start" style="color: #e63e58;"></i> Understand What Examiner Expects from You
         </li>
-        <li class="d-flex align-items-center mb-2">
-            <i class="fas fa-check-circle me-2" style="color: #e63e58;"></i> ICSI Level Checking
+        <li class="d-flex align-items-center mb-2 text-start">
+            <i class="fas fa-check-circle me-2 text-start" style="color: #e63e58;"></i> ICSI Level Checking
         </li>
     </ul>
 			    
@@ -567,8 +567,8 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </script>
 
 <section>
-    <div class="super-custom-bg-wrapper text-start">
-        <div class="section-unique-solutions text-start">
+    <div class="super-custom-bg-wrapper">
+        <div class="section-unique-solutions">
             <h2 class="title-solutions-custom">Years of Impact</h2>
             <p class="subtitle-solutions-custom text-start">To help CS students, we Created Instagram page. Later on , many qualified CS and CA joined our team with the same motive.
 Since 2019, we have helped thousands of CSEET, CS Executive, and CS Professional students on their journey. We have Hosted many free live mentorship sessions for CS Students and also offered free Test Series for CS Students with evaluation. We also hosted many free Live Guidance Sessions for qualified CS to guide them in their professional Journey.
