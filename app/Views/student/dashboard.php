@@ -449,11 +449,36 @@
         height: 25%;
         cursor: pointer;
       }
-      .content {
+
+    .pd-social-media-card {
+      margin: 15px auto;
+      max-width: 100%;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      }
+    .pd-countdown-card {
+      margin: 15px auto;
+      max-width: 100%;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      text-align: center;
+        }
+    .pd-header {
+      max-width: 100%;
+      background-color: #e63e58;
+      color: white;
+      padding: 15px;
+      text-align: center;
+        }
+    .content {
         margin-left: 100px;
         padding: 20px;
     }
-       #logoutModal .modal-content {
+    #logoutModal .modal-content {
         max-width: 400px;
       }
 }
