@@ -767,10 +767,8 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
 });
 </script>
 
-
-
-<section class="d-flex justify-content-center align-items-center" id="newsletter_section" style="background-color: #f7f7f9; min-height: 100vh;">
-  <div class="row align-items-center justify-content-center">
+<section class="d-flex justify-content-center align-items-center" id="newsletter_section" style="background-color: #f7f7f9; padding: 40px 0;">
+  <div class="row align-items-center justify-content-center" style="margin: 0; padding: 0;">
     <!-- Newsletter Section -->
     <div class="col-md-6">
       <div class="unique-newsletter-box p-4" style="background: #ffffff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
@@ -798,9 +796,6 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
     </div>
   </div>
 </section>
-
-
-
 
   <style>
     /* Mini Info Bar at the bottom */
