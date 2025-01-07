@@ -163,6 +163,9 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 	.container-xy {
             text-align: center;
         }
+	.container-xy {
+            text-align: center;
+	}
         .icon-heart-custom {
             font-size: 50px;
             color: #E63E58;
@@ -221,7 +224,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <section>
     <div class="super-custom-bg-wrapper">
         <div class="section-unique-solutions">
-            <h2 class="title-solutions-custom">One Minute Read</h2>
+            <h2 class="title-solutions-custom text-center">One Minute Read</h2>
             <div class="subtitle-solutions-custom text-start">
          <div class="list-zx">
          <ul class="list-unstyled text-start list-xy">
@@ -314,7 +317,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <section class="my-3">
     <div class="custom-bg-container">
         <div class="unique-solutions-section">
-            <h2 class="unique-title-solutions">Trusted By Thousands of CS Students</h2>
+            <h2 class="unique-title-solutions text-center">Trusted By Thousands of CS Students</h2>
 
             <!-- Carousel Section -->
             <div id="uniqueSolutionCarousel" class="carousel slide unique-carousel-container" data-bs-ride="carousel">
