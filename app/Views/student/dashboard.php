@@ -425,6 +425,8 @@
       .wrapper {
         margin-left: 100px;
         padding: 20px;
+        transform: scale(.85);
+        transform-origin: top left;
     }
       .unique-footer {
         display: flex;
@@ -450,11 +452,7 @@
       .content {
         margin-left: 100px;
         padding: 20px;
-      }
-       body {
-        transform: scale(.85);
-        transform-origin: top left;
-      }
+    }
        #logoutModal .modal-content {
         max-width: 400px;
       }
