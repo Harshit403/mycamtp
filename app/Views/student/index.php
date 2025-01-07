@@ -161,7 +161,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         }
 
         .section-unique-solutions {
-            text-align: center;
+            text-align: left;
         }
 
         .icon-heart-custom {
@@ -207,7 +207,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         }
 
         .card-body-custom {
-            text-align: center;
+            text-align: left;
             padding: 20px;
         }
 
