@@ -160,10 +160,9 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             padding: 60px 20px;
         }
 
-        .section-unique-solutions {
-            text-align: left;
+	.container-xy {
+            text-align: center;
         }
-
         .icon-heart-custom {
             font-size: 50px;
             color: #E63E58;
@@ -207,7 +206,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         }
 
         .card-body-custom {
-            text-align: left;
+            text-align:  center;
             padding: 20px;
         }
 
@@ -240,7 +239,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </ul>
 			    
 	</div>			    
-            <div class="container">
+            <div class="container-xy">
                 <div class="row gy-4">
                     <div class="col-12 col-md-4">
                         <div class="card card-solutions-custom">
