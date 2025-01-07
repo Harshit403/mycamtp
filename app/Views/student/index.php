@@ -357,8 +357,8 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                 <div class="container-title-not">
                   <h1-not>Why Mission CS Test Series?</h1-not>
                 </div>
-                <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-                 <p style="color: #e63e58;">Passing CS Exams Isn't Easy</p>
+                <div class="text-start" style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+                 <p>Passing CS Exams Isn't Easy</p>
                  <p>Just studying randomly or writing CS exams without a proper plan won't help in CS exams. Many students study for 14 to 16 hours a day—reading, learning, practicing, memorizing, and revising—but still fail.</p>
                  <p>They don't fail because they don't study but because they don't follow the right strategy.</p>
                  <p>Don't take multiple attempts to improve your mistakes one by one. Just write our mock test series and improve before appearing for ICSI exams.</p>
