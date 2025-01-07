@@ -903,6 +903,34 @@
     }
   }
 });
-</script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const mentorshipMenu = document.getElementById("mentorshipMenu");
+  const mentorshipModal = document.getElementById("mentorshipModal");
+  const closeModal = document.getElementById("closeMentorshipModal");
 
+  // Ensure mentorshipMenu exists
+  if (!mentorshipMenu) {
+    console.error('Mentorship menu not found!');
+    return;
+  }
+
+  // Event to show the modal
+  mentorshipMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    mentorshipModal.classList.add("show");
+  });
+
+  // Event to close the modal
+  closeModal.addEventListener("click", function () {
+    mentorshipModal.classList.remove("show");
+  });
+
+  // Close modal on outside click
+  window.addEventListener("click", function (e) {
+    if (e.target === mentorshipModal) {
+      mentorshipModal.classList.remove("show");
+    }
+  });
+});
+</script>
 <?=$this->endSection()?>
