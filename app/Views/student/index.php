@@ -210,14 +210,18 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             padding: 20px;
         }
 
+	.list-xy {
+            text-align: left !important;
+	}
     </style>
+
 <section>
     <div class="super-custom-bg-wrapper">
         <div class="section-unique-solutions">
             <h2 class="title-solutions-custom">One Minute Read</h2>
             <div class="subtitle-solutions-custom text-start">
 
-         <ul class="list-unstyled text-start">
+         <ul class="list-unstyled text-start list-xy">
         <li class="d-flex align-items-center mb-2 text-start">
             <i class="fas fa-lightbulb me-2 text-start" style="color: #e63e58;"></i> Hidden Strategy by AIRs
         </li>
@@ -270,69 +274,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         </div>
     </div>
 </section>
-
-
-
-<section>
-    <div class="super-custom-bg-wrapper">
-        <div class="section-unique-solutions">
-            <h2 class="title-solutions-custom">One Minute Read</h2>
-            <div class="subtitle-solutions-custom">
-
-                <ul class="list-unstyled">
-                    <li class="d-flex align-items-center mb-2">
-                        <i class="fas fa-lightbulb me-2" style="color: #e63e58;"></i> Hidden Strategy by AIRs
-                    </li>
-                    <li class="d-flex align-items-center mb-2">
-                        <i class="fas fa-book-open me-2" style="color: #e63e58;"></i> Case-based Questions
-                    </li>
-                    <li class="d-flex align-items-center mb-2">
-                        <i class="fas fa-user-cog me-2" style="color: #e63e58;"></i> Personalised Study Plan
-                    </li>
-                    <li class="d-flex align-items-center mb-2">
-                        <i class="fas fa-file-alt me-2" style="color: #e63e58;"></i> Test Series like Real Exam's Paper
-                    </li>
-                    <li class="d-flex align-items-center mb-2">
-                        <i class="fas fa-brain me-2" style="color: #e63e58;"></i> Understand What Examiner Expects from You
-                    </li>
-                    <li class="d-flex align-items-center mb-2">
-                        <i class="fas fa-check-circle me-2" style="color: #e63e58;"></i> ICSI Level Checking
-                    </li>
-                </ul>
-            </div>			    
-            <div class="container">
-                <div class="row gy-4">
-                    <div class="col-12 col-md-4">
-                        <div class="card card-solutions-custom">
-                            <div class="card-body-custom">
-                               <i class="fa-solid fa-book-open-reader icon-heart-custom"></i>
-                                <h5 class="card-title-custom">Test Series</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="card card-solutions-custom">
-                            <div class="card-body-custom">
-                               <i class="fa-solid fa-video icon-heart-custom"></i>
-                                <h5 class="card-title-custom">1-1 Mentorship</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="card card-solutions-custom">
-                            <div class="card-body-custom">
-                              <i class="fa-solid fa-bullseye icon-heart-custom"></i>
-                                <h5 class="card-title-custom">Rankers Support</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-	</section>
-
-
 
 			    
     <style>
