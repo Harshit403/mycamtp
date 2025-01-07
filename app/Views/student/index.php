@@ -213,6 +213,9 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 	.list-xy {
             text-align: left !important;
 	}
+	list-zx {
+             text-align: left !important;
+	}
     </style>
 
 <section>
@@ -220,7 +223,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         <div class="section-unique-solutions">
             <h2 class="title-solutions-custom">One Minute Read</h2>
             <div class="subtitle-solutions-custom text-start">
-
+         <div class="list-zx">
          <ul class="list-unstyled text-start list-xy">
         <li class="d-flex align-items-center mb-2 text-start">
             <i class="fas fa-lightbulb me-2 text-start" style="color: #e63e58;"></i> Hidden Strategy by AIRs
@@ -241,7 +244,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             <i class="fas fa-check-circle me-2 text-start" style="color: #e63e58;"></i> ICSI Level Checking
         </li>
     </ul>
-			    
+	 </div>	    
 	</div>			    
             <div class="container-xy">
                 <div class="row gy-4">
