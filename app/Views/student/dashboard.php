@@ -331,79 +331,6 @@
       background: #d6374f;
     }
 
-    @media screen and (min-width: 768px) {
-      /* Desktop adjustments */
-
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-      }
-
-      .pd-header {
-        text-align: left;
-        padding: 20px 40px;
-      }
-
-      .pd-header h1 {
-        font-size: 28px;
-      }
-
-      .pd-menu {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); /* 4 items per row for desktops */
-        gap: 20px;
-        padding: 20px 40px;
-      }
-
-      .pd-menu-item {
-        padding: 20px;
-        font-size: 16px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      }
-
-      .pd-countdown-card,
-      .pd-social-media-card {
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      }
-
-      .pd-courses-section {
-        padding: 20px 40px;
-      }
-
-      .pd-courses {
-        grid-template-columns: repeat(3, 1fr); /* 3 items per row for desktops */
-        gap: 20px;
-      }
-
-      .pd-course-card {
-        font-size: 16px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      }
-
-      .pd-footer {
-        position: static;
-        padding: 20px 40px;
-        border-top: none;
-        justify-content: flex-start;
-        gap: 20px;
-      }
-
-      .pd-footer-item {
-        text-align: left;
-        font-size: 14px;
-      }
-
-      /* Modal scaling adjustment for larger screens */
-      #logoutModal .modal-content {
-        max-width: 400px;
-      }
-    }
-
-/* Unique CSS */
 .mentorship-modal {
   position: fixed;
   top: 0;
@@ -493,15 +420,11 @@
 .mentorship-close-button:hover {
   color: #e63e58;
       }
-  </style>
 
-<style>
-
-   /* Desktop responsiveness */
-    @media (min-width: 768px) {
+@media (min-width: 768px) {
       .wrapper {
-      margin-left: 100px;
-      padding: 20px;
+        margin-left: 100px;
+        padding: 20px;
     }
       .unique-footer {
         display: flex;
@@ -532,17 +455,11 @@
         transform: scale(.85);
         transform-origin: top left;
       }
-    }
-</style>
-
-
-</head>
-<body style="margin-top: 6rem;">
-
-
-
-
-  <style>
+       #logoutModal .modal-content {
+        max-width: 400px;
+      }
+}
+      
     .buyNowModal {
         z-index: 9999; 
     }
@@ -711,142 +628,9 @@
       }
     }
   </style>
+</head>
 
-
-<!-- Modal -->
-    <section class="buyNowModal">
-<div class="overlay-modal-ultra-unique" id="overlay-modal-ultra-unique">
-  <div class="modal-box-super-unique">
-    <span class="button-close-modal-extremely-unique" onclick="closeModal()">&times;</span>
-    <div class="modal-title-mega-unique">Select Your Options</div>
-    <div>
-
-     <select class="dropdown-select-absolutely-unique" id="type_short_name">
-        <option value="">All Types</option>
-      </select>
-        <select class="dropdown-select-absolutely-unique" id="type_short_name">
-          <option value="">Choose Level</option>
-        </select>
-        
-      <button class="submit-button-extremely-unique" onclick="showPlans()">Submit</button>
-    </div>
-    <div id="contentArea"></div>
-  </div>
-</div>
-
-<!-- Dummy Button -->
-<button class="button-dummy-hidden-special" id="dummyBtn">Checkout</button>
-    </section>
-    
-<script>
-  const planArray = ['Chapter Wise Plan', 'Detailed Plan', 'Unit Plan'];
-  const productArray = [
-    { name: 'Taxation', price: '$50' },
-    { name: 'Accounting', price: '$60' },
-    { name: 'Law', price: '$40' },
-    { name: 'Costing', price: '$45' }
-  ];
-
-  const contentArea = document.getElementById('contentArea');
-  const dummyBtn = document.getElementById('dummyBtn');
-
-  // Show plans on submit
-  function showPlans() {
-    const planContainer = document.createElement('div');
-    planContainer.classList.add('container-plans-super-unique');
-    planArray.forEach(plan => {
-      const card = document.createElement('div');
-      card.classList.add('card-plan-ultra-unique');
-      card.innerHTML = `
-        <div class="title-plan-extra-unique">${plan}</div>
-        <button class="button-add-to-cart-unique" onclick="showProducts()">View Products</button>
-        <button class="button-add-to-cart-unique"><i class="fas fa-download"></i> Download Schedule</button>
-      `;
-      planContainer.appendChild(card);
-    });
-    contentArea.innerHTML = '';
-    contentArea.appendChild(planContainer);
-    setTimeout(() => planContainer.classList.add('active'), 10);
-  }
-
-  // Show products on plan click
-  function showProducts() {
-    const productContainer = document.createElement('div');
-    productContainer.classList.add('container-plans-super-unique');
-    productArray.forEach(product => {
-      const card = document.createElement('div');
-      card.classList.add('card-plan-ultra-unique');
-      card.innerHTML = `
-        <div class="title-plan-extra-unique">${product.name}</div>
-        <div class="price-tag-ultra-unique">Price: ${product.price}</div>
-        <button class="button-add-to-cart-unique"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-      `;
-      productContainer.appendChild(card);
-    });
-    const backButton = document.createElement('button');
-    backButton.classList.add('button-back-to-plans-unmatched');
-    backButton.textContent = 'Go Back';
-    backButton.onclick = showPlans;
-
-    productContainer.insertBefore(backButton, productContainer.firstChild);
-    contentArea.innerHTML = '';
-    contentArea.appendChild(productContainer);
-    dummyBtn.style.display = 'block'; // Show the dummy button
-    setTimeout(() => productContainer.classList.add('active'), 10);
-  }
-
-  // Open the modal
-  function openModal() {
-    document.getElementById('overlay-modal-ultra-unique').style.display = 'flex';
-  }
-
-  // Close the modal
-  function closeModal() {
-    document.getElementById('overlay-modal-ultra-unique').style.display = 'none';
-  }
-</script>
-
-
-
-
-
-
-
-
-<div id="logoutModal">
-  <div class="modal-content">
-    <h2>Confirm Logout</h2>
-    <p>Are you sure you want to logout?</p>
-    <div class="modal-buttons">
-      <button id="cancelLogout" class="modal-cancel">Cancel</button>
-      <button id="confirmLogout" class="modal-confirm">Logout</button>
-    </div>
-  </div>
-</div>
-
-
-<!-- Mentorship Modal -->
-<div id="mentorshipModal" class="mentorship-modal">
-  <div class="mentorship-modal-content">
-     <?php if (!empty($notes_sub)): ?>
-      <div class="mentorship-whatsapp-content">
-        <i class="fab fa-whatsapp mentorship-whatsapp-icon"></i>
-        <h2>Contact Mentor</h2>
-        <p>Reach out to your mentor for assistance.</p>
-        <a href="#" class="mentorship-modal-button">Contact Mentor</a>
-      </div>
-    <?php else: ?>
-      <div class="mentorship-lock-content">
-        <i class="fas fa-lock mentorship-lock-icon"></i>
-        <h2>Mentorship Locked</h2>
-        <p>Enroll now to unlock mentorship!</p>
-        <a href="<?=base_url()?>#category-section" class="mentorship-modal-button">Enroll Now</a>
-      </div>
-    <?php endif; ?>
-    <button id="closeMentorshipModal" class="mentorship-close-button">&times;</button>
-  </div>
-</div>
-
+<body style="margin-top: 6rem;">
 <div class="wrapper">
 <div class="pd-header">
     <?php
@@ -955,6 +739,39 @@
     </a>
 </div>
 
+<div id="logoutModal">
+  <div class="modal-content">
+    <h2>Confirm Logout</h2>
+    <p>Are you sure you want to logout?</p>
+    <div class="modal-buttons">
+      <button id="cancelLogout" class="modal-cancel">Cancel</button>
+      <button id="confirmLogout" class="modal-confirm">Logout</button>
+    </div>
+  </div>
+</div>
+
+<!-- Mentorship Modal -->
+<div id="mentorshipModal" class="mentorship-modal">
+  <div class="mentorship-modal-content">
+     <?php if (!empty($notes_sub)): ?>
+      <div class="mentorship-whatsapp-content">
+        <i class="fab fa-whatsapp mentorship-whatsapp-icon"></i>
+        <h2>Contact Mentor</h2>
+        <p>Reach out to your mentor for assistance.</p>
+        <a href="#" class="mentorship-modal-button">Contact Mentor</a>
+      </div>
+    <?php else: ?>
+      <div class="mentorship-lock-content">
+        <i class="fas fa-lock mentorship-lock-icon"></i>
+        <h2>Mentorship Locked</h2>
+        <p>Enroll now to unlock mentorship!</p>
+        <a href="<?=base_url()?>#category-section" class="mentorship-modal-button">Enroll Now</a>
+      </div>
+    <?php endif; ?>
+    <button id="closeMentorshipModal" class="mentorship-close-button">&times;</button>
+  </div>
+</div>
+
 </body>
 <?=$this->endSection()?>
 <?=$this->section('jsContent')?>
@@ -1026,8 +843,7 @@
       updateMenuLinks(isFree);
     })();
   });
-</script>
-<script>
+
   document.addEventListener('DOMContentLoaded', function () {
   const contentToggle = document.getElementById('contentToggle');
   const amendmentMenu = document.getElementById('amendmentMenu');
@@ -1090,35 +906,5 @@
   }
 });
 </script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-  const mentorshipMenu = document.getElementById("mentorshipMenu");
-  const mentorshipModal = document.getElementById("mentorshipModal");
-  const closeModal = document.getElementById("closeMentorshipModal");
 
-  // Ensure mentorshipMenu exists
-  if (!mentorshipMenu) {
-    console.error('Mentorship menu not found!');
-    return;
-  }
-
-  // Event to show the modal
-  mentorshipMenu.addEventListener("click", function (e) {
-    e.preventDefault();
-    mentorshipModal.classList.add("show");
-  });
-
-  // Event to close the modal
-  closeModal.addEventListener("click", function () {
-    mentorshipModal.classList.remove("show");
-  });
-
-  // Close modal on outside click
-  window.addEventListener("click", function (e) {
-    if (e.target === mentorshipModal) {
-      mentorshipModal.classList.remove("show");
-    }
-  });
-});
-</script>
 <?=$this->endSection()?>
