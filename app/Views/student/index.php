@@ -774,10 +774,10 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
       <div class="unique-newsletter-box p-4" style="background: #ffffff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
         <h6 style="color: #e63e58; font-size: 14px; font-weight: bold; text-transform: uppercase;">Newsletter</h6>
         <h2 style="font-size: 20px; color: #333; font-weight: bold; margin-bottom: 20px;">Join to get exclusive updates and contents for free.</h2>
-        <div class="form-group mb-3">
-          <input type="email" class="form-control" style="border: 1px solid #ddd; border-radius: 6px; font-size: 14px; padding: 10px;" placeholder="Email address" required>
-        </div>
-        <a href="javascript:void(0)" class="btn" style="display: block; background-color: #e63e58; color: #fff; font-size: 14px; font-weight: bold; padding: 10px 20px; text-align: center; border-radius: 6px;">Join Now</a>
+        <div class="form-group mb-3"> 
+          <input type="email" class="form-control newsLetterForm" style="border: 1px solid #ddd; border-radius: 6px; font-size: 14px; padding: 10px;" placeholder="Email address" required>
+	</div>
+        <a href="javascript:void(0)" class="btn addNewsLetterBtn" style="display: block; background-color: #e63e58; color: #fff; font-size: 14px; font-weight: bold; padding: 10px 20px; text-align: center; border-radius: 6px;">Join Now</a>
         <ul class="list-unstyled mt-4">
           <li class="d-flex align-items-center mb-2">
             <span style="width: 12px; height: 12px; background-color: #e63e58; border-radius: 50%; margin-right: 10px;"></span>
