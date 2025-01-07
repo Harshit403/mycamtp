@@ -494,6 +494,48 @@
   color: #e63e58;
       }
   </style>
+
+<style>
+
+   /* Desktop responsiveness */
+    @media (min-width: 768px) {
+      .wrapper {
+      margin-left: 100px;
+      padding: 20px;
+    }
+      .unique-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 100vh;
+        padding: 20px 0;
+        background: white;
+        border-right: 1px solid #ccc
+      }
+      .unique-footer .unique-footer-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 25%;
+        cursor: pointer;
+      }
+      .content {
+        margin-left: 100px;
+        padding: 20px;
+      }
+       body {
+        transform: scale(.85);
+        transform-origin: top left;
+      }
+    }
+</style>
+
+
 </head>
 <body style="margin-top: 6rem;">
 
@@ -805,7 +847,7 @@
   </div>
 </div>
 
-
+<div class="wrapper">
 <div class="pd-header">
     <?php
         date_default_timezone_set('Asia/Kolkata'); // Set your timezone here
@@ -893,7 +935,7 @@
     </div>
   </a>
 </div>
-
+</div>
 <div class="unique-footer" style="margin-top: 5rem;">
     <a href="<?=base_url()?>dashboard" class="unique-footer-item active" style="text-decoration: none;">
       <i class="fas fa-home unique-footer-item-icon"></i>
