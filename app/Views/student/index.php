@@ -226,7 +226,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         <div class="section-unique-solutions">
             <h2 class="title-solutions-custom text-center">One Minute Read</h2>
             <div class="subtitle-solutions-custom text-start">
-         <div class="list-zx">
+         <div class="list-zx text-start">
          <ul class="list-unstyled text-start list-xy">
         <li class="d-flex align-items-center mb-2 text-start">
             <i class="fas fa-lightbulb me-2 text-start" style="color: #e63e58;"></i> Hidden Strategy by AIRs
@@ -578,7 +578,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <section>
     <div class="super-custom-bg-wrapper">
         <div class="section-unique-solutions">
-            <h2 class="title-solutions-custom">Years of Impact</h2>
+            <h2 class="title-solutions-custom text-center">Years of Impact</h2>
             <p class="subtitle-solutions-custom text-start">To help CS students, we Created Instagram page. Later on , many qualified CS and CA joined our team with the same motive.
 Since 2019, we have helped thousands of CSEET, CS Executive, and CS Professional students on their journey. We have Hosted many free live mentorship sessions for CS Students and also offered free Test Series for CS Students with evaluation. We also hosted many free Live Guidance Sessions for qualified CS to guide them in their professional Journey.
 Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offers the most affordable and quality CS Test Series for CS exams, followed by live mentorship from Rankers.
