@@ -425,7 +425,7 @@
       .wrapper {
         margin-left: 100px;
         padding: 20px;
-        transform: scale(.85);
+        transform: scale(.75);
         transform-origin: top left;
     }
       .unique-footer {
