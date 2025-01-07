@@ -44,8 +44,8 @@ cs test series, cstestseries , cs executive test series, cs professional test se
   <!-- Left Section -->
   <div class="cs-text-section">
     <h1>Mission <span class="cs-highlight">CS Test Series</span></h1>
-    <p class="cs-description">We offer the most affordable and Quality CS Test series for CS Executive and CS Professional exams, along with live Mentorship from Rankers and Qualified Company Secretaries.</p>
-    <p class="cs-description">Each of our test series is designed by AIRs considering the needs of CS Executive and Professional exams.</p>
+    <p class="cs-description text-start">We offer the most affordable and Quality CS Test series for CS Executive and CS Professional exams, along with live Mentorship from Rankers and Qualified Company Secretaries.</p>
+    <p class="cs-description text-start">Each of our test series is designed by AIRs considering the needs of CS Executive and Professional exams.</p>
 
     <?php if (session()->get('studentDetails') !== null): ?>
       <a href="<?=base_url()?>dashboard"> 
@@ -218,7 +218,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             <h2 class="title-solutions-custom">One Minute Read</h2>
             <div class="subtitle-solutions-custom text-start">
 
-         <ul class="list-unstyled">
+         <ul class="list-unstyled text-start">
         <li class="d-flex align-items-center mb-2">
             <i class="fas fa-lightbulb me-2" style="color: #e63e58;"></i> Hidden Strategy by AIRs
         </li>
@@ -358,9 +358,9 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                   <h1-not>Why Mission CS Test Series?</h1-not>
                 </div>
                 <div class="text-start" style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-                 <p>Passing CS Exams Isn't Easy</p>
-                 <p>Just studying randomly or writing CS exams without a proper plan won't help in CS exams. Many students study for 14 to 16 hours a day—reading, learning, practicing, memorizing, and revising—but still fail.</p>
-                 <p>They don't fail because they don't study but because they don't follow the right strategy.</p>
+                 <p>Passing CS Exams Isn't Easy.
+                 Just studying randomly or writing CS exams without a proper plan won't help in CS exams. Many students study for 14 to 16 hours a day—reading, learning, practicing, memorizing, and revising—but still fail.
+                 <p>They don't fail because they don't study but because they don't follow the right strategy.
                  <p>Don't take multiple attempts to improve your mistakes one by one. Just write our mock test series and improve before appearing for ICSI exams.</p>
 		</div>
 	    </div>
@@ -566,11 +566,11 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     }
 </script>
 
-
-    <div class="super-custom-bg-wrapper">
-        <div class="section-unique-solutions">
+<section>
+    <div class="super-custom-bg-wrapper text-start">
+        <div class="section-unique-solutions text-start">
             <h2 class="title-solutions-custom">Years of Impact</h2>
-            <p class="subtitle-solutions-custom">To help CS students, we Created Instagram page. Later on , many qualified CS and CA joined our team with the same motive.
+            <p class="subtitle-solutions-custom text-start">To help CS students, we Created Instagram page. Later on , many qualified CS and CA joined our team with the same motive.
 Since 2019, we have helped thousands of CSEET, CS Executive, and CS Professional students on their journey. We have Hosted many free live mentorship sessions for CS Students and also offered free Test Series for CS Students with evaluation. We also hosted many free Live Guidance Sessions for qualified CS to guide them in their professional Journey.
 Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offers the most affordable and quality CS Test Series for CS exams, followed by live mentorship from Rankers.
             </p>
