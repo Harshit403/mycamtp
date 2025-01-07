@@ -216,9 +216,28 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     <div class="super-custom-bg-wrapper">
         <div class="section-unique-solutions">
             <h2 class="title-solutions-custom">One Minute Read</h2>
-            <p class="subtitle-solutions-custom">Passing CS exams isn't easy. Just studying randomly or writing CS exams without a proper plan won't help in CS Exams. Many students study for 14 to 16 hours a day, reading, learning, practicing, memorizing, and revising, but still fail.
-                In ICSI Exams, the environment is different. You feel the pressure.
-            </p>
+            <div class="subtitle-solutions-custom">
+	<ul style="list-style: none; padding: 0;">
+        <li style="margin: 10px 0; display: flex; align-items: center;">
+            <i class="fas fa-lightbulb" style="margin-right: 10px; color: #e63e58;"></i> Hidden Strategy by AIRs
+        </li>
+        <li style="margin: 10px 0; display: flex; align-items: center;">
+            <i class="fas fa-book-open" style="margin-right: 10px; color: #e63e58;"></i> Case-based Questions
+        </li>
+        <li style="margin: 10px 0; display: flex; align-items: center;">
+            <i class="fas fa-user-cog" style="margin-right: 10px; color: #e63e58;"></i> Personalised Study Plan
+        </li>
+        <li style="margin: 10px 0; display: flex; align-items: center;">
+            <i class="fas fa-file-alt" style="margin-right: 10px; color: #e63e58;"></i> Test Series like Real Exam's Paper
+        </li>
+        <li style="margin: 10px 0; display: flex; align-items: center;">
+            <i class="fas fa-brain" style="margin-right: 10px; color: #e63e58;"></i> Understand What Examiner Expects from You
+        </li>
+        <li style="margin: 10px 0; display: flex; align-items: center;">
+            <i class="fas fa-check-circle" style="margin-right: 10px; color: #e63e58;"></i> ICSI Level Checking
+        </li>
+    </ul>
+	</div>			    
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-12 col-md-4">
