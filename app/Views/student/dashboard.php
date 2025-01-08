@@ -269,7 +269,7 @@
       visibility: visible;
     }
 
-    .modal-content {
+    .logout-modal-content {
       background: white;
       border-radius: 10px;
       padding: 20px;
@@ -281,29 +281,29 @@
       max-width: 400px;
     }
 
-    #logoutModal.show .modal-content {
+    #logoutModal.show .logout-modal-content {
       transform: scale(1);
     }
 
-    .modal-content h2 {
+    .logout-modal-content h2 {
       margin: 0 0 10px;
       font-size: 20px;
       color: #333;
     }
 
-    .modal-content p {
+    .logout-modal-content p {
       margin: 0 0 20px;
       color: #555;
     }
 
-    .modal-buttons {
+    .logout-modal-buttons {
       display: flex;
       justify-content: center;
       gap: 10px;
     }
 
-    .modal-cancel,
-    .modal-confirm {
+    .logout-modal-cancel,
+    .logout-modal-confirm {
       padding: 10px 20px;
       border: none;
       border-radius: 5px;
@@ -313,21 +313,21 @@
       transition: background 0.3s ease;
     }
 
-    .modal-cancel {
+    .logout-modal-cancel {
       background: #ccc;
       color: #333;
     }
 
-    .modal-confirm {
+    .logout-modal-confirm {
       background: #e63e58;
       color: white;
     }
 
-    .modal-cancel:hover {
+    .logout-modal-cancel:hover {
       background: #bbb;
     }
 
-    .modal-confirm:hover {
+    .logout-modal-confirm:hover {
       background: #d6374f;
     }
 
@@ -729,7 +729,7 @@
       <p>Que. Bank</p>
     </div>
   </a>
-  <a href="#" class="menu-link" onclick="openModal()" style="text-decoration: none;">
+  <a href="javascript:void(0)" class="menu-link" onclick="openModal()" style="text-decoration: none;">
     <div class="pd-menu-item">
       <i class="fa-solid fa-cart-shopping" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
       <p>Buy Now</p>
@@ -762,13 +762,26 @@
     </a>
 </div>
 
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <button class="close-modal" onclick="closeModal()">×</button>
+        <div class="modal-header">Select Your Options</div>
+        <div>
+            <select id="select1"></select>
+            <select id="select2"></select>
+            <button class="btn btn-submit" id="submit">Submit</button>
+        </div>
+        <div id="contentArea"></div>
+    </div>
+</div>
+
 <div id="logoutModal">
-  <div class="modal-content">
+  <div class="logout-modal-content">
     <h2>Confirm Logout</h2>
     <p>Are you sure you want to logout?</p>
-    <div class="modal-buttons">
-      <button id="cancelLogout" class="modal-cancel">Cancel</button>
-      <button id="confirmLogout" class="modal-confirm">Logout</button>
+    <div class="logout-modal-buttons">
+      <button id="cancelLogout" class="logout-modal-cancel">Cancel</button>
+      <button id="confirmLogout" class="logout-modal-confirm">Logout</button>
     </div>
   </div>
 </div>
@@ -798,6 +811,7 @@
 </body>
 <?=$this->endSection()?>
 <?=$this->section('jsContent')?>
+<script type="text/javascript" src="<?= base_url() ?>assets/student/js/buy-now-modal.js?v=1"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const logoutButton = document.getElementById('logoutButton');
