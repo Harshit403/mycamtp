@@ -46,6 +46,10 @@ $routes->get('/cs-executive',STUDENT.'DefaultController::loadCSExecutive');
 $routes->get('/cs-professional',STUDENT.'DefaultController::loadCSProfessional');
 $routes->get('/cseet',STUDENT.'DefaultController::loadCSEET');
 $routes->get('/contact-us',STUDENT.'DefaultController::loadContactUs');
+$routes->get('/fetchCategoryLists',STUDENT.'DefaultController::fetchCategoryLists');
+$routes->get('/fetchLevelLists/(:any)', STUDENT.'DefaultController::fetchLevelLists/$1');
+$routes->get('/fetchTypeLists/(:any)', STUDENT.'DefaultController::fetchTypeLists/$1');
+$routes->get('/fetchSubjectLists/(:any)', STUDENT.'DefaultController::fetchSubjectLists/$1');
 // forgot password
 $routes->get('/forgot-password',STUDENT.'DefaultController::loadForgotPassword');
 $routes->post('/forgot-pass-email',STUDENT.'DefaultController::forgotPassEmail');
