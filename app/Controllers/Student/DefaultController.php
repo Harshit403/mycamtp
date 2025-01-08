@@ -19,6 +19,7 @@ class DefaultController extends BaseController
 	public function index(): string
 	{
 		$data['categoryDetails'] = $this->common->getInfo('category_table', '', array('deleted' => 0, 'active' => 1));
+		$data['level_list'] = $this->defaultModel->fetchLevelListModel();
 		$data['blog_list'] = $this->defaultModel->fetchBlogList(4);
 		return view('student/index', $data);
 	}
