@@ -727,6 +727,29 @@ class DefaultController extends BaseController
 		return view('student/disclaimer');
 	}
 
+		public function loadContactUs(){
+			return view('student/contact_us');
+				}
+		public function loadCSEET(){
+			return view('student/cseet');
+		}
+		public function loadCSExecutive(){
+			return view('student/cs_executive');
+		}
+		public function loadCSProfessional(){
+			return view('student/cs_professional');
+		}
+		public function loadGPlan(){
+			return view('student/gplan');
+		}
+
+	        public function loadPlans(){
+	    	       return view('student/plans_list');
+	    }
+	        public function loadPricing(){
+	    	       return view('student/pricing');
+	    }
+
 	public function loadMyResourceSubjectPage($item_type = '')
 	{
 		$data['fetchAvailbleSubject'] = '';
@@ -1238,4 +1261,30 @@ class DefaultController extends BaseController
 
 		return $this->response->setJSON($subject);
 	}
+
+
+
+			public function updatePassword(){
+			$postData = $this->request->getPost();
+			if(session()->get('studentDetails')!==null){
+				$studentDetails = session()->get('studentDetails');
+				$student_id = $studentDetails['id'];
+				$password = base64_decode($postData['password']);
+				$setPassword = md5(md5($password));
+				if(!empty($setPassword)){
+					$updatePassword = $this->common->dbAction('student_table',array('password'=>$password),'update',array('student_id'=>$student_id));
+					if(!empty($updatePassword)){
+						$response = array('success'=>true,'message'=>'Password updated successfully');
+					} else {
+						$response = array('success'=>true,'message'=>'Password updated successfully');
+					}
+				} else {
+					$response = array('success'=>false,'message'=>'No password available');
+				}
+			} else {
+				$response = array('success'=>false,'message'=>'Please login first');
+			}
+			return json_encode($response);
+			}
+	
 }
