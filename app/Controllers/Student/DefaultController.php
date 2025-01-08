@@ -1114,31 +1114,6 @@ class DefaultController extends BaseController
 		return view('student/why_us');
 	}
 
-	
-		public function loadContactUs(){
-			return view('student/contact_us');
-				}
-		public function loadCSEET(){
-			return view('student/cseet');
-		}
-		public function loadCSExecutive(){
-			return view('student/cs_executive');
-		}
-		public function loadCSProfessional(){
-			return view('student/cs_professional');
-		}
-		public function loadGPlan(){
-			return view('student/gplan');
-		}
-
-	        public function loadPlans(){
-	    	        return view('student/plans_list');
-	        }
-	        public function loadPricing(){
-	    	        return view('student/pricing');
-	        }
-	
-
 	// forgot password
 	public function loadForgotPassword()
 	{
