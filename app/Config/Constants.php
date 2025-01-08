@@ -119,4 +119,4 @@ define('FROM_NAME', 'no-reply@missioncstestseries.com');//Enter your email from 
  define('API_VERSION', '2023-08-01');
 
 // gateway
-// define('PAYMENTGATEWAY', 'CASHFREE');
+define('PAYMENTGATEWAY', 'CASHFREE');
