@@ -8,7 +8,7 @@
           var ciEnv = "<?=getenv('CI_ENVIRONMENT')?>"
 </script>
 <script src="https://sdk.cashfree.com/js/v3/cashfree.js?v=1.0.0"></script>
-<script src="<?=base_url()?>/assets/student/js/cart.js?v=1.0.4"></script>
+<script src="<?=base_url()?>/assets/student/js/cart.js?v=1.0.5"></script>
 <script src="<?=base_url()?>/assets/student/js/common.js?v=1.0.1"></script>
 <script type="text/javascript">
 </script>       
