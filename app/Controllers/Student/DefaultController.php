@@ -900,15 +900,6 @@ class DefaultController extends BaseController
 		}
 	}
 
-	public function loadPlans()
-	{
-		return view('student/plans_list');
-	}
-	public function loadPricing()
-	{
-		return view('student/pricing');
-	}
-
 	public function downloadInvoice()
 	{
 		$mpdf = new \Mpdf\Mpdf();
