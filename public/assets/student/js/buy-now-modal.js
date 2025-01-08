@@ -57,9 +57,9 @@ function fetchCategories() {
                             card.classList.add('card');
                             card.innerHTML = `
                             <div class="card-title">${plan.type_name}</div>
-                            <button class="card-btn view-product" data-type-id="${plan.type_id}" data-level-id="${plan.level_id}">View Products</button>
+                            <button class="card-btn view-product" data-type-id="${plan.type_id}" data-level-id="${plan.level_id}" >View Products</button>
                             <button class="card-btn download-schedule" data-schedule="${plan.schedule_file}">
-                                <i class="fas fa-download"></i> Download Schedule
+                                <i class="bi bi-download"></i> Download Schedule
                             </button>
                         `;
                             planContainer.appendChild(card);
@@ -103,11 +103,9 @@ function fetchCategories() {
             </span>
         </div>
         <button class="card-btn add-to-cart-btn" data-subject-id="${subject.subject_id}">
-            Add to Cart
+           <i class="bi bi-cart"></i> Add to Cart
         </button>
-         <button class="card-btn addBuyNowBtn" data-subject-id="${subject.subject_id}">
-            Checkout
-        </button>
+       
     `;
                             productContainer.appendChild(card);
                         });
@@ -156,38 +154,29 @@ function fetchCategories() {
                                 callback: function() {
                                     if (response.success) {
                                         $(".cartCount").html(response.totalQty);
+    
+                                        // Add or display the "Checkout" button between "Go Back" and cards
+                                        if ($('#checkoutButton').length === 0) {
+                                            const checkoutButton = `
+                                                <button id="checkoutButton" class="card-btn checkout-btn">
+                                                    <i class="bi bi-credit-card"></i> Checkout
+                                                </button>
+                                            `;
+                                            // Insert checkout button after the "Go Back" button
+                                            $('.back-btn').after(checkoutButton);
+                                        }
+    
+                                        // Scroll and focus on the "Checkout" button
+                                        $('html, body').animate({
+                                            scrollTop: $('#checkoutButton').offset().top - 20
+                                        }, 500);
+                                        $('#checkoutButton').focus();
                                     } else {
                                         window.location.href = baseUrl + 'auth?auth=login';
                                     }
                                 }
                             });
-                        } else if (btn_type == 'buynow') {
-                            $.ajax({
-                                url: baseUrl + 'checkout-cart-items',
-                                type: 'POST',
-                                dataType: 'json',
-                                success: function(response) {
-                                    if (response.success) {
-
-                                        var ci_mode = 'sandbox';
-                                        const cashfree = Cashfree({
-                                            mode: ci_mode
-                                        });
-                                        let checkoutOptions = {
-                                            paymentSessionId: response.payment_session_id,
-                                            redirectTarget: "_self"
-                                        }
-
-                                        cashfree.checkout(checkoutOptions);
-                                    } else {
-                                        bootbox.alert({
-                                            message: response.message,
-                                            closeButton: false,
-                                        })
-                                    }
-                                }
-                            });
-                        }
+                        } 
                     } else {
                         bootbox.alert({
                             message: response.message,
@@ -201,17 +190,39 @@ function fetchCategories() {
             });
         }
     }
-
-
     $(document).on('click', '.add-to-cart-btn', function() {
         var subjectId = $(this).data('subject-id');
         addtoCart(subjectId, 'addtocart');
     });
-    $(document).on('click', '.addBuyNowBtn', function() {
-        var subject_id = $(this).data('subject-id');
-        addtoCart(subject_id, 'buynow');
-    });
     
+   
+    $(document).on('click', '#checkoutButton', function() {
+        $.ajax({
+            url: baseUrl + 'checkout-cart-items',
+            type: 'POST',
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+                    var ci_mode = 'sandbox';
+                    const cashfree = Cashfree({
+                        mode: ci_mode
+                    });
+                    let checkoutOptions = {
+                        paymentSessionId: response.payment_session_id,
+                        redirectTarget: "_self"
+                    }
+    
+                    cashfree.checkout(checkoutOptions);
+                } else {
+                    bootbox.alert({
+                        message: response.message,
+                        closeButton: false,
+                    })
+                }
+            }
+        });
+    });
+     
     function scrollToBottom() {
         document.getElementById('modal').scrollTo({
             top: document.getElementById('modal').scrollHeight,
@@ -223,6 +234,7 @@ function fetchCategories() {
     function openModal() {
         document.getElementById('modal').style.display = 'flex';
         fetchCategories();
+        $('#select2').html('<option value="">Select Level</option>');
     }
 
 
