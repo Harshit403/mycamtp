@@ -598,7 +598,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 25%;
+        height: 15%;
         cursor: pointer;
       }
 
