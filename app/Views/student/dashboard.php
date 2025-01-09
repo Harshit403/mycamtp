@@ -862,6 +862,16 @@
   <button><?= ($daysLeft === "Exam has passed!") ? $daysLeft : "⏳ $daysLeft Days Left For Exam" ?></button>
 </div>
 
+            <div class="col-6 pt-3">
+                <div class="card" style="background-color: #FFF; padding-left: 10px;">
+                    <p style="font-size: 14px;font-weight: bold;padding-left: 5px;">Referral Credits: <strong>₹<?= number_format($balance, 2) ?></strong></p>
+                    <input type="text" id="upiId" name="upiId" required placeholder="abc@upi" style="width: 70%; margin-bottom: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
+                    <input type="number" id="amount" name="amount" required max="<?= $balance ?>" placeholder="Enter amount to payout" style="width: 70%; margin-bottom: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
+                    <button id="requestPayout" class="btn btn-success refer-credit" style="padding: 5px 20px; border-radius: 5px;max-width:115px;"><i class="bi bi-cash"></i> Payout</button>
+                </div>
+            </div>
+
+
 <div class="pd-social-media-card">
   <div class="pd-social-media">
     <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -910,6 +920,17 @@
   </a>
 </div>
 </div>
+
+                    <!-- Referral Link -->
+                    <div class="col-md-6 mt-3">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between">
+                                <a id="referralLink" href="<?= base_url() ?>auth?auth=register&ref=<?= $studentData['id'] ?>" target="_blank">Please click link for Sign Up</a>
+                                <a onclick="copyReferralLink()"><i class="bi bi-clipboard"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
 <div class="unique-footer" style="margin-top: 5rem;">
     <a href="<?=base_url()?>dashboard" class="unique-footer-item active" style="text-decoration: none;">
       <i class="fas fa-home unique-footer-item-icon"></i>
