@@ -75,7 +75,7 @@
         content: "\f019";
     }
 
-    .card {
+    .modal-card {
         background: linear-gradient(135deg, #fff, #f8f9fa);
         border: 1px solid #ddd;
         border-radius: 10px;
@@ -801,6 +801,21 @@
       .modal-box-super-unique {
         width: 95%;
       }
+    }
+
+    .checkout-btn {
+        display: block;
+        margin: 10px auto;
+        padding: 10px;
+        text-align: center;
+        background-color: #198754;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .checkout-btn:hover {
+        background-color: #e63939;
     }
   </style>
 </head>
