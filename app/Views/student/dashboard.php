@@ -75,7 +75,7 @@
         content: "\f019";
     }
 
-    .modal-card {
+    .card-modal {
         background: linear-gradient(135deg, #fff, #f8f9fa);
         border: 1px solid #ddd;
         border-radius: 10px;
@@ -979,6 +979,14 @@
 <?=$this->endSection()?>
 <?=$this->section('jsContent')?>
 <script type="text/javascript" src="<?= base_url() ?>assets/student/js/buy-now-modal.js?v=1"></script>
+            <div class="col-6 pt-3">
+                <div class="card" style="background-color: #FFF; padding-left: 10px;">
+                    <p style="font-size: 14px;font-weight: bold;padding-left: 5px;">Referral Credits: <strong>₹<?= number_format($balance, 2) ?></strong></p>
+                    <input type="text" id="upiId" name="upiId" required placeholder="abc@upi" style="width: 70%; margin-bottom: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
+                    <input type="number" id="amount" name="amount" required max="<?= $balance ?>" placeholder="Enter amount to payout" style="width: 70%; margin-bottom: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
+                    <button id="requestPayout" class="btn btn-success refer-credit" style="padding: 5px 20px; border-radius: 5px;max-width:115px;"><i class="bi bi-cash"></i> Payout</button>
+                </div>
+        </div>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const logoutButton = document.getElementById('logoutButton');
