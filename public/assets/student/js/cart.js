@@ -82,7 +82,9 @@ $(document).ready(function() {
     $(".showCartBtn").on('click', function() {
         showCartItems();
     });
-
+    $(document).on('click', '#checkoutButton', function () {
+        showCartItems();
+    });
     function showCartItems(displayButton = 'disabled') {
         fetchCartItems();
         var html = $('.cartPopUpContainer').clone();
@@ -320,4 +322,5 @@ $(document).ready(function() {
             }
         });
     }
+    
 })
