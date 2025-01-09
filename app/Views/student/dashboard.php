@@ -979,14 +979,59 @@
 <?=$this->endSection()?>
 <?=$this->section('jsContent')?>
 <script type="text/javascript" src="<?= base_url() ?>assets/student/js/buy-now-modal.js?v=1"></script>
-            <div class="col-6 pt-3">
-                <div class="card" style="background-color: #FFF; padding-left: 10px;">
-                    <p style="font-size: 14px;font-weight: bold;padding-left: 5px;">Referral Credits: <strong>₹<?= number_format($balance, 2) ?></strong></p>
-                    <input type="text" id="upiId" name="upiId" required placeholder="abc@upi" style="width: 70%; margin-bottom: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
-                    <input type="number" id="amount" name="amount" required max="<?= $balance ?>" placeholder="Enter amount to payout" style="width: 70%; margin-bottom: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px;">
-                    <button id="requestPayout" class="btn btn-success refer-credit" style="padding: 5px 20px; border-radius: 5px;max-width:115px;"><i class="bi bi-cash"></i> Payout</button>
-                </div>
-        </div>
+<script>
+    function copyReferralLink() {
+        const link = document.querySelector("#referralLink").href;
+        navigator.clipboard.writeText(link).then(() => {
+            alert("Referral link copied!");
+        }).catch((err) => {
+            console.error("Failed to copy the link: ", err);
+        });
+    }
+    $('#requestPayout').on('click', function() {
+        let upiId = $('#upiId').val().trim();
+        let amount = $('#amount').val().trim();
+        if (upiId === '') {
+            alert('Please enter a valid UPI ID.');
+            return;
+        }
+        let upiRegex = /^[a-zA-Z0-9.\-_]{2,}@[a-zA-Z]{2,}$/;
+        if (!upiRegex.test(upiId)) {
+            alert('Please enter a valid UPI ID (e.g., abc@upi).');
+            return;
+        }
+        if (amount === '' || isNaN(amount) || amount <= 0) {
+            alert('Please enter a valid amount.');
+            return;
+        }
+        let maxBalance = <?= json_encode(number_format($balance, 2)) ?>;
+        if (amount > maxBalance) {
+            alert('Entered amount exceeds your available balance.');
+            return;
+        }
+        let studentData = {
+            amount: amount,
+            upi_id: upiId
+        };
+        $.ajax({
+            url: baseUrl + 'requestPayout',
+            type: 'POST',
+            data: JSON.stringify(studentData),
+            contentType: 'application/json',
+            success: function(response) {
+                if (response.success) {
+                    alert(response.message);
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function(error) {
+                console.error('Error:', error);
+                alert('Something went wrong.');
+            }
+        });
+    });
+</script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const logoutButton = document.getElementById('logoutButton');
