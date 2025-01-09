@@ -1090,6 +1090,17 @@
 <?=$this->section('jsContent')?>
 <script type="text/javascript" src="<?= base_url() ?>assets/student/js/buy-now-modal.js?v=1"></script>
 <script>
+    function openWithdrawPopup() {
+      document.getElementById("popupOverlay").style.display = "block";
+      document.getElementById("withdrawPopup").style.display = "block";
+    }
+
+    function closeWithdrawPopup() {
+      document.getElementById("popupOverlay").style.display = "none";
+      document.getElementById("withdrawPopup").style.display = "none";
+    }
+</script>
+<script>
     function copyReferralLink() {
         const link = document.querySelector("#referralLink").href;
         navigator.clipboard.writeText(link).then(() => {
