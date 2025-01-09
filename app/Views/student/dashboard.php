@@ -817,6 +817,88 @@
     .checkout-btn:hover {
         background-color: #e63939;
     }
+
+    .referral-section {
+      margin: 15px auto;
+      max-width: 90%;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+    }
+    .referral-section button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      background: #e63e58;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+    #withdrawPopup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 400px;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      padding: 20px;
+      z-index: 1000;
+    }
+    #withdrawPopup h3 {
+      margin-top: 0;
+      font-size: 18px;
+      color: #e63e58;
+    }
+    #withdrawPopup input {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #withdrawPopup button {
+      padding: 10px;
+      margin: 5px 0;
+      width: calc(50% - 5px);
+      background: #e63e58;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #withdrawPopup button.cancel {
+      background: #ccc;
+      color: #333;
+    }
+    #popupOverlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+    @media (max-width: 768px) {
+      .referral-section {
+        padding: 10px;
+      }
+    }
+    @media (max-width: 480px) {
+      .referral-section {
+        padding: 10px;
+      }
+      #withdrawPopup {
+        width: 95%;
+      }
+    }
   </style>
 </head>
 
@@ -912,93 +994,8 @@
     </div>
   </a>
 </div>
-</div>
 
-    
-<style>
-    .referral-section {
-      margin: 15px auto;
-      max-width: 90%;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      padding: 15px;
-    }
-    .referral-section button {
-      margin-top: 10px;
-      padding: 10px;
-      width: 100%;
-      background: #e63e58;
-      color: white;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-    }
-    #withdrawPopup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      max-width: 400px;
-      background: white;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      border-radius: 10px;
-      padding: 20px;
-      z-index: 1000;
-    }
-    #withdrawPopup h3 {
-      margin-top: 0;
-      font-size: 18px;
-      color: #e63e58;
-    }
-    #withdrawPopup input {
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    #withdrawPopup button {
-      padding: 10px;
-      margin: 5px 0;
-      width: calc(50% - 5px);
-      background: #e63e58;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    #withdrawPopup button.cancel {
-      background: #ccc;
-      color: #333;
-    }
-    #popupOverlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 999;
-    }
-    @media (max-width: 768px) {
-      .referral-section {
-        padding: 10px;
-      }
-    }
-    @media (max-width: 480px) {
-      .referral-section {
-        padding: 10px;
-      }
-      #withdrawPopup {
-        width: 95%;
-      }
-    }
-  </style>
-<div class="referral-section">
+<div class="referral-section" style="margin-bottom: 15px;">
     <h3>Your Referral Link</h3>
     <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
       <input type="text" id="referralLink" value="<?= base_url() ?>auth?auth=register&ref=<?= $studentData['id'] ?>" readonly style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
@@ -1007,9 +1004,7 @@
     <h4>Referral Balance: ₹<span id="referralBalance"><?= number_format($balance, 2) ?></span></h4>
     <button onclick="openWithdrawPopup()">Withdraw</button>
   </div>
-
   <div id="popupOverlay" onclick="closeWithdrawPopup()"></div>
-
   <div id="withdrawPopup">
     <h3>Withdraw Balance</h3>
     <input type="number" name="amount" id="amount" placeholder="Enter Amount" required>
@@ -1018,6 +1013,7 @@
       <button id="requestPayout">Submit</button>
       <button class="cancel" onclick="closeWithdrawPopup()">Cancel</button>
     </div>
+</div>
 </div>
 
 <div class="unique-footer" style="margin-top: 5rem;">
