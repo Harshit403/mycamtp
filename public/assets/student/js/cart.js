@@ -42,8 +42,8 @@ $(document).ready(function() {
                                 dataType: 'json',
                                 success: function(response) {
                                     if (response.success) {
-                                        // var ci_mode = ciEnv == 'production' ? 'production' : 'sandbox';
-                                        var ci_mode = 'production';
+                                        var ci_mode = ciEnv == 'production' ? 'production' : 'sandbox';
+                                        //var ci_mode = 'sandbox';
                                         const cashfree = Cashfree({
                                             mode: ci_mode //or sandbox
                                             // mode: "production" //or production
