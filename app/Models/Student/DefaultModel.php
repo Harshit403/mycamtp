@@ -410,14 +410,50 @@ class DefaultModel extends Model
 		return $query->getResultArray();
 	}
 
-	public function fetchSubjectsByTypeAndLevel($type_id, $level_id) {
+	public function fetchSubjectsByTypeAndLevel($type_id, $level_id)
+	{
 		$query = $this->db->table('subject_table')
-						  ->where('type_id', $type_id)
-						  ->where('level_id', $level_id)
-						  ->where('deleted', 0) 
-						  ->get();
-	
-		return $query->getResult(); 
+			->where('type_id', $type_id)
+			->where('level_id', $level_id)
+			->where('deleted', 0)
+			->get();
+
+		return $query->getResult();
 	}
-	
+	public function getReferralCredits($student_id)
+	{
+		$db = \Config\Database::connect();
+
+		$builder = $db->table('purchase_table p');
+		$builder->select("
+        SUM(p.total_payment_amount * 0.1) AS referral_credits
+    ");
+		$builder->join('student_table s', 'p.student_id = s.student_id');
+		$builder->where('p.payment_status', 'PAID');
+		$builder->where('p.deleted', '0');
+		$builder->where('s.referral_by_student_id', $student_id);
+		$query = $builder->get();
+
+		$referralCredits = 0;
+		if ($query->getNumRows() > 0) {
+			$result = $query->getRow();
+			$referralCredits = $result->referral_credits ? $result->referral_credits : 0;
+		}
+
+		return $referralCredits;
+	}
+	public function updateReferralBalance($student_id)
+	{
+		$referralCredits = $this->getReferralCredits($student_id);
+
+		if ($referralCredits > 0) {
+			$builder = $this->db->table('student_table');
+			$builder->where('student_id', $student_id);
+			$builder->update(['balance' => $referralCredits]);
+
+			return true;
+		}
+
+		return false;
+	}
 }
