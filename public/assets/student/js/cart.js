@@ -43,7 +43,7 @@ $(document).ready(function() {
                                 success: function(response) {
                                     if (response.success) {
                                         // var ci_mode = ciEnv == 'production' ? 'production' : 'sandbox';
-                                        var ci_mode = 'sandbox';
+                                        var ci_mode = 'production';
                                         const cashfree = Cashfree({
                                             mode: ci_mode //or sandbox
                                             // mode: "production" //or production
