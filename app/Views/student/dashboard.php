@@ -1015,7 +1015,8 @@
     </div>
 </div>
 </div>
-
+</div>
+<div style="margin:10px ;"></div>
 <div class="unique-footer" style="margin-top: 5rem;">
     <a href="<?=base_url()?>dashboard" class="unique-footer-item active" style="text-decoration: none;">
       <i class="fas fa-home unique-footer-item-icon"></i>
@@ -1098,7 +1099,7 @@
 </script>
 <script>
     function copyReferralLink() {
-        const link = document.querySelector("#referralLink").href;
+        const link = document.querySelector("#referralLink").value;
         navigator.clipboard.writeText(link).then(() => {
             alert("Referral link copied!");
         }).catch((err) => {
