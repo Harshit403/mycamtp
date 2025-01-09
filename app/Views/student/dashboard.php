@@ -578,7 +578,7 @@
         margin-left: 100px;
         padding: 20px;
         transform: scale(.75);
-        transform-origin: center;
+        transform-origin: top center;
     }
       .unique-footer {
         display: flex;
