@@ -1,66 +1,74 @@
-$(document).ready(function() {
+$(document).ready(function () {
     levelUpdate();
-
-    $(".viewPassWord").on('click', function() {
+    $(".viewPassWord").on('click', function () {
         var type = $(this).closest(".inputBox").find('input').attr('type');
         $(this).closest(".inputBox").find('ion-icon').toggleAttrVal('name', "eye-outline", "eye-off-outline");
-        if (type === 'password') {
+        if (type == 'password') {
             $(this).closest(".inputBox").find('input').attr('type', 'text');
         } else {
             $(this).closest(".inputBox").find('input').attr('type', 'password');
         }
     });
 
-    var emailPattern = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    var mobilePattern = /^[6-9]\d{9}$/;
-    var namePattern = /^[a-zA-Z\s]+$/; // Only alphabets and spaces
-    var statePattern = /^[a-zA-Z\s]+$/; // Only alphabets and spaces
-
-    $(".signUpBtn").on('click', function() {
+    var emailPattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+    var passwordPattern = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{7,}$/;
+    $(".signUpBtn").on('click', function () {
         addSignUpData();
     });
 
-    $(".loginBtn").on('click', function() {
+    $(".loginBtn").on('click', function () {
         validateSignInData();
     });
 
     function addSignUpData() {
         var formData = $("#sign_up_form").serializeArray();
         var data = new FormData();
-        var errors = [];
-
-        $.each(formData, function(i, v) {
+        var errors = new Array;
+        $.each(formData, function (i, v) {
             data.append(v.name, $.trim(v.value));
         });
+        const urlParams = new URLSearchParams(window.location.search);
+        const referralId = urlParams.get('ref');
 
-        var name = data.get('student_name');
-        var email = data.get('email');
-        var mobile = data.get('mobile_no');
+        if (referralId) {
+            data.append('referral_by_student_id', referralId);
+        }
         var password = data.get('password');
-        var state = data.get('state_name');
-
-        if (!name || !namePattern.test(name)) {
-            errors.push('Please enter a valid name (alphabets only).');
+        if (data.get('student_name') == '') {
+            errors.push('Please enter your name');
         }
-        if (!email || !emailPattern.test(email)) {
-            errors.push('Please enter a valid email address.');
+        if (data.get('email') == '') {
+            errors.push('Please enter a email');
         }
-        if (!mobile || !mobilePattern.test(mobile)) {
-            errors.push('Please enter a valid 10-digit Indian mobile number.');
+        if (data.get('email') != '' && !emailPattern.test(data.get('email'))) {
+            errors.push('Email does not a valid email');
         }
-        if (!password) {
-            errors.push('Please enter a password.');
-        } else if (password.length < 7) {
-            errors.push('Your password must be at least 7 characters long.');
-        } else if (!/[a-z]/i.test(password)) {
-            errors.push('Your password must contain at least one letter.');
-        } else if (!/[0-9]/.test(password)) {
-            errors.push('Your password must contain at least one digit.');
+        if (data.get('mobile_no') == '') {
+            errors.push('Please enter a mobile no');
         }
-        if (!state || !statePattern.test(state)) {
-            errors.push('Please enter a valid state (alphabets only).');
+        if (password == '') {
+            errors.push('Please enter a password');
         }
-
+        if (data.get('password') != '') {
+            if (password.length < 7) {
+                errors.push("Your password must be at least 7 characters");
+            }
+            if (password.search(/[a-z]/i) < 0) {
+                errors.push("Your password must contain at least one letter.");
+            }
+            if (password.search(/[0-9]/) < 0) {
+                errors.push("Your password must contain at least one digit.");
+            }
+        }
+        if (data.get('password') != data.get('confirm_password')) {
+            errors.push('Password does not matched');
+        }
+        if (data.get('city_name') == '') {
+            errors.push('Please enter a city');
+        }
+        if (data.get('state_name') == '') {
+            errors.push('Please enter a state');
+        }
         if (errors.length > 0) {
             bootbox.alert({
                 closeButton: false,
@@ -68,43 +76,22 @@ $(document).ready(function() {
             });
             return false;
         }
-
         $.ajax({
             url: baseUrl + 'register-details',
             type: 'POST',
             data: data,
-            dataType: 'text',
+            dataType: 'JSON',
             processData: false,
             contentType: false,
-            success: function(response) {
-                try {
-                    var jsonResponse = JSON.parse(response);
-                    if (jsonResponse.success) {
-                        bootbox.alert({
-                            message: 'Registration successful! Redirecting to login...',
-                            closeButton: false,
-                            callback: function() {
-                                window.location.href = baseUrl + "auth?auth=login";
-                            }
-                        });
-                    } else {
-                        bootbox.alert({
-                            closeButton: false,
-                            message: jsonResponse.message,
-                        });
-                    }
-                } catch (e) {
+            success: function (response) {
+                if (response.success) {
+                    window.location.href = baseUrl + "auth?auth=login";
+                } else {
                     bootbox.alert({
-                        message: 'Error parsing response: ' + e.message + '<br>Raw response: ' + response,
-                        closeButton: false
-                    });
+                        closeButton: false,
+                        message: response.message,
+                    })
                 }
-            },
-            error: function(xhr, status, error) {
-                bootbox.alert({
-                    message: 'An error occurred: ' + xhr.status + ' ' + error + '<br>Response: ' + xhr.responseText,
-                    closeButton: false
-                });
             }
         });
     }
@@ -112,12 +99,10 @@ $(document).ready(function() {
     function validateSignInData() {
         var formData = $("#sign_in_form").serializeArray();
         var data = new FormData();
-        var errors = [];
-
-        $.each(formData, function(i, v) {
+        var errors = new Array;
+        $.each(formData, function (i, v) {
             data.append(v.name, $.trim(v.value));
         });
-
         $.ajax({
             url: baseUrl + '/sign-in',
             type: "POST",
@@ -125,44 +110,79 @@ $(document).ready(function() {
             data: data,
             processData: false,
             contentType: false,
-            success: function(response) {
+            success: function (response) {
                 if (response.success) {
                     window.location.href = baseUrl + 'dashboard';
                 } else {
                     bootbox.alert({
                         closeButton: false,
                         message: response.message,
-                    });
+                    })
                 }
             }
-        });
+        })
     }
 
-    $(".forgotPassBtn").on('click', function() {
+    $(".forgotPassBtn").on('click', function () {
         var email = $("#email").val();
-        if (!email || !emailPattern.test(email)) {
+        if (email == '') {
             bootbox.alert({
-                message: 'Please enter a valid email address.',
+                message: 'Please enter a email',
                 closeButton: false,
             });
+            // $(this).find('span').html('');
+            return false;
+        } else if (email != '' && !emailPattern.test(email)) {
+            bootbox.alert({
+                message: 'Please enter a valid email',
+                closeButton: false,
+            });
+            // $(this).find('span').html('');
             return false;
         }
-
         $(this).find('span').html('<i class="fas fa-spinner fa-spin"></i> Sending ');
         $.ajax({
             url: baseUrl + '/forgot-pass-email',
             type: 'POST',
-            data: { email: email },
+            data: {
+                email: email,
+            },
             dataType: 'json',
-            success: function(data) {
+            success: function (data) {
                 bootbox.alert({
                     message: data.message,
                     closeButton: false,
-                    callback: function() {
+                    callback: function () {
                         if (data.success) {
                             $(".otp_section").show();
                             $(".forgotPassBtn").hide();
                             $(".verifyOTP").show();
+                            // $(this).find('span').html('');
+                        }
+                    }
+                });
+            }
+        })
+    });
+
+    $(".verifyOTP").on('click', function () {
+        var email = $("#email").val();
+        var otp = $("#otp").val();
+        $.ajax({
+            url: baseUrl + '/verify-otp',
+            type: 'POST',
+            data: {
+                email: email,
+                otp: otp,
+            },
+            dataType: 'json',
+            success: function (data) {
+                bootbox.alert({
+                    message: data.message,
+                    closeButton: false,
+                    callback: function () {
+                        if (data.success) {
+                            window.location.href = baseUrl + 'set-password';
                         }
                     }
                 });
@@ -170,9 +190,38 @@ $(document).ready(function() {
         });
     });
 
-    // Other functions remain unchanged...
+    $(".setPassword").on('click', function () {
+        var password = $("#password").val();
+        var confirm_password = $("#con_password").val();
+        if (password != confirm_password) {
+            bootbox.alert({
+                message: 'Password and confirm password does not matched',
+                closeButton: false,
+            });
+            return false;
+        }
 
-    $("#category_id").on('change', function() {
+        $.ajax({
+            url: baseUrl + 'set-new-password',
+            type: 'POST',
+            data: {
+                password: password,
+            },
+            dataType: 'json',
+            success: function (data) {
+                bootbox.alert({
+                    message: data.message,
+                    closeButton: false,
+                    callback: function () {
+                        window.location.href = baseUrl + '/auth?auth=login';
+                    }
+                })
+            }
+
+        })
+
+    });
+    $("#category_id").on('change', function () {
         levelUpdate();
     });
 
@@ -181,12 +230,14 @@ $(document).ready(function() {
         $.ajax({
             url: baseUrl + '/fetch-level-list',
             type: 'POST',
-            data: { category_id: category_id },
+            data: {
+                category_id: category_id,
+            },
             dataType: 'json',
-            success: function(res) {
+            success: function (res) {
                 var html = '';
                 if (res.data != '') {
-                    $.each(res.data, function(i, v) {
+                    $.each(res.data, function (i, v) {
                         html += '<option value="' + v.level_id + '">' + v.level_name + '</option>';
                     });
                 }
@@ -195,3 +246,17 @@ $(document).ready(function() {
         });
     }
 });
+$.fn.toggleAttrVal = function (attr, val1, val2) {
+    var test = $(this).attr(attr);
+    if (test === val1) {
+        $(this).attr(attr, val2);
+        return this;
+    }
+    if (test === val2) {
+        $(this).attr(attr, val1);
+        return this;
+    }
+    // default to val1 if neither
+    $(this).attr(attr, val1);
+    return this;
+};
