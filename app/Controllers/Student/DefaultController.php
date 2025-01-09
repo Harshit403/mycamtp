@@ -19,7 +19,6 @@ class DefaultController extends BaseController
 	public function index(): string
 	{
 		$data['categoryDetails'] = $this->common->getInfo('category_table', '', array('deleted' => 0, 'active' => 1));
-		$data['level_list'] = $this->defaultModel->fetchLevelListModel();
 		$data['blog_list'] = $this->defaultModel->fetchBlogList(4);
 		return view('student/index', $data);
 	}
@@ -74,11 +73,18 @@ class DefaultController extends BaseController
 	public function addStudentDetails()
 	{
 		$postData = $this->request->getPost();
+		$referral_by = isset($postData['referral_by_student_id']) ? $postData['referral_by_student_id'] : null;
+
 		$checkUeserExist = $this->defaultModel->checkExistStudent($postData['email'], $postData['mobile_no']);
 		if (empty($checkUeserExist)) {
 			$password = $postData['password'];
 			$postData['password'] = md5(md5($postData['password']));
 			unset($postData['confirm_password']);
+
+			if (!empty($referral_by)) {
+				$postData['referral_by_student_id'] = $referral_by;
+			}
+
 			$addStudentData = $this->common->dbAction('student_table', $postData, 'insert', array());
 			if (!empty($addStudentData)) {
 				$emailTemplate = file_get_contents(PUBLIC_PATH . '/emailTemplate/reg_template.php');
@@ -88,6 +94,7 @@ class DefaultController extends BaseController
 				$emailTemplate = str_replace('{user_password}', $password, $emailTemplate);
 				$subject = "Registration Confirmation";
 				$send_email = $this->sendMail($postData['email'], $subject, $emailTemplate, 'New Register');
+
 				$response = array(
 					'success' => true,
 					'message' => 'You are registered successfully',
@@ -101,7 +108,7 @@ class DefaultController extends BaseController
 		} else {
 			$response = array(
 				'success' => false,
-				'message' => 'User account is already exists',
+				'message' => 'User account already exists',
 			);
 		}
 		return json_encode($response);
@@ -183,9 +190,14 @@ class DefaultController extends BaseController
 		$fetch_sub = '';
 		$data['schedule_list'] = '';
 		$subject_id_details = '';
+		$data['balance'] = 0;
 		if (session()->get('studentDetails') !== null) {
 			$studentDetails = session()->get('studentDetails');
-			$student_id = $studentDetails['id'];
+			$student_id = $studentDetails['id']; // Current logged-in student's ID
+			$studentInfo = $this->common->getInfo('student_table', 'row', array('student_id' => $student_id));
+			if ($studentInfo && isset($studentInfo->balance)) {
+				$data['balance'] = $studentInfo->balance;
+			}
 			if ($item_type != 'free') {
 				$cart_table = $this->common->getInfo('cart_table', 'row', array('student_id' => $student_id, 'deleted' => 0));
 				if (!empty($cart_table)) {
@@ -204,6 +216,7 @@ class DefaultController extends BaseController
 				$fetch_sub = $this->defaultModel->fetchFreeSubject(3, $level_id);
 				$subject_id_details = $this->defaultModel->getFreeNotesSubjectList(3, $level_id);
 			}
+
 			$i = 0;
 			if (!empty($fetch_sub)) {
 				foreach ($fetch_sub as $key => $value) {
@@ -219,7 +232,8 @@ class DefaultController extends BaseController
 					$i++;
 				}
 			}
-
+			$referralCredits = $this->defaultModel->getReferralCredits($student_id);
+			$data['referral_credits'] = $referralCredits;
 			$data['fetch_sub'] = $fetch_sub;
 			$data['notes_sub'] = $subject_id_details;
 			$data['item_type'] = $item_type;
@@ -227,6 +241,7 @@ class DefaultController extends BaseController
 
 		return view('student/dashboard', $data);
 	}
+
 
 	public function addToCartItem()
 	{
@@ -464,7 +479,6 @@ class DefaultController extends BaseController
 
 	public function checkoutPayments()
 	{
-		// fetch student cart items
 		$getCartDetails = json_decode($this->getCartDetails());
 		$payableAmtArray = array_map(function ($v) {
 			return $v->amt_after_discount;
@@ -478,7 +492,6 @@ class DefaultController extends BaseController
 			$linkInfo = json_decode($linkInfo);
 			session()->set('link_id', $linkInfo->order_id);
 		}
-		// save purchase details
 		if (!empty($linkInfo)) {
 			$insertData = array();
 			$cartIdArray = $this->getCartId();
@@ -488,7 +501,9 @@ class DefaultController extends BaseController
 			$insertData['payment_mode'] = 'cashfree';
 			$insertData['total_payment_amount'] = $linkInfo->order_amount;
 			$insertData['order_id'] = $order_id;
+			$insertData['student_id'] = $student_id;
 			$addPurchaseData = $this->common->dbAction('purchase_table', $insertData, 'insert', array());
+
 			if (!empty($addPurchaseData)) {
 				$response = array('success' => true, 'payment_session_id' => $linkInfo->payment_session_id);
 			} else {
@@ -587,6 +602,13 @@ class DefaultController extends BaseController
 				if ($purchaseStatus == 'PAID') {
 					// update purchase table
 					$updatePurchaseTable = $this->common->dbAction('purchase_table', array('payment_status' => $purchaseStatus), 'update', array('payment_request_id' => $link_id));
+					$studentDetails = session()->get('studentDetails');
+					$student_id = $studentDetails['id'];
+					$referredByStudentId = $this->common->getInfo('student_table', 'row', array('student_id' => $student_id))->referral_by_student_id;
+
+					if (!empty($referredByStudentId)) {
+						$this->defaultModel->updateReferralBalance($referredByStudentId);
+					}
 					// update cart items table
 					$cart_id = $purchase_table_fetch_info->cart_id;
 					$purchase_id = $purchase_table_fetch_info->purcahse_id;
@@ -727,29 +749,6 @@ class DefaultController extends BaseController
 	{
 		return view('student/disclaimer');
 	}
-
-		public function loadContactUs(){
-			return view('student/contact_us');
-				}
-		public function loadCSEET(){
-			return view('student/cseet');
-		}
-		public function loadCSExecutive(){
-			return view('student/cs_executive');
-		}
-		public function loadCSProfessional(){
-			return view('student/cs_professional');
-		}
-		public function loadGPlan(){
-			return view('student/gplan');
-		}
-
-	        public function loadPlans(){
-	    	       return view('student/plans_list');
-	    }
-	        public function loadPricing(){
-	    	       return view('student/pricing');
-	    }
 
 	public function loadMyResourceSubjectPage($item_type = '')
 	{
@@ -898,6 +897,15 @@ class DefaultController extends BaseController
 			$data['invoiceDetails'] = $this->common->getInfo('invoice_table', '', array('cart_id' => $cart_id));
 			return view('student/invoice_page', $data);
 		}
+	}
+
+	public function loadPlans()
+	{
+		return view('student/plans_list');
+	}
+	public function loadPricing()
+	{
+		return view('student/pricing');
 	}
 
 	public function downloadInvoice()
@@ -1134,7 +1142,6 @@ class DefaultController extends BaseController
 	{
 		return view('student/auth/forgot_password');
 	}
-
 	public function forgotPassEmail()
 	{
 		$postData = $this->request->getPost();
@@ -1206,7 +1213,29 @@ class DefaultController extends BaseController
 		return json_encode($response);
 	}
 
-
+	public function updatePassword()
+	{
+		$postData = $this->request->getPost();
+		if (session()->get('studentDetails') !== null) {
+			$studentDetails = session()->get('studentDetails');
+			$student_id = $studentDetails['id'];
+			$password = base64_decode($postData['password']);
+			$setPassword = md5(md5($password));
+			if (!empty($setPassword)) {
+				$updatePassword = $this->common->dbAction('student_table', array('password' => $password), 'update', array('student_id' => $student_id));
+				if (!empty($updatePassword)) {
+					$response = array('success' => true, 'message' => 'Password updated successfully');
+				} else {
+					$response = array('success' => true, 'message' => 'Password updated successfully');
+				}
+			} else {
+				$response = array('success' => false, 'message' => 'No password available');
+			}
+		} else {
+			$response = array('success' => false, 'message' => 'Please login first');
+		}
+		return json_encode($response);
+	}
 	public function fetchCategoryLists()
 	{
 		$categories = $this->defaultModel->fetchCategory();
@@ -1231,31 +1260,62 @@ class DefaultController extends BaseController
 
 		return $this->response->setJSON($subject);
 	}
+	public function getReferralCredits()
+	{
+		$db = \Config\Database::connect();
 
+		$builder = $db->table('purchase_table p');
+		$builder->select("
+            s.student_id AS referral_by_student_id, 
+            s.student_name AS referral_by_student_name,
+            c.student_id AS purchased_by_student_id,
+            p.total_payment_amount,
+            (p.total_payment_amount * 0.1) AS referral_credit
+        ");
+		$builder->join('cart_table c', 'p.cart_id = c.cart_id');
+		$builder->join('student_table s', 'c.student_id = s.student_id');
+		$builder->where('p.payment_status', 'success');
+		$builder->where('s.referral_by_student_id IS NOT NULL');
 
+		$query = $builder->get();
 
-	public function updatePassword(){
-			$postData = $this->request->getPost();
-			if(session()->get('studentDetails')!==null){
-				$studentDetails = session()->get('studentDetails');
-				$student_id = $studentDetails['id'];
-				$password = base64_decode($postData['password']);
-				$setPassword = md5(md5($password));
-				if(!empty($setPassword)){
-					$updatePassword = $this->common->dbAction('student_table',array('password'=>$password),'update',array('student_id'=>$student_id));
-					if(!empty($updatePassword)){
-						$response = array('success'=>true,'message'=>'Password updated successfully');
-					} else {
-						$response = array('success'=>true,'message'=>'Password updated successfully');
-					}
-				} else {
-					$response = array('success'=>false,'message'=>'No password available');
-				}
+		if ($query->getNumRows() > 0) {
+			$data['referral_credits'] = $query->getResult();
+		} else {
+			$data['referral_credits'] = [];
+		}
+
+		return view('dash', $data);
+	}
+
+	public function requestPayout()
+	{
+		$db = \Config\Database::connect();
+		$input = $this->request->getJSON(); // Get JSON input from AJAX request
+
+		if (session()->get('studentDetails') !== null) {
+			$studentDetails = session()->get('studentDetails');
+			$student_id = $studentDetails['id'];
+			$amount = $input->amount;
+			$upi_id = $input->upi_id;
+			$status = 'pending';
+			$requested_at = date('Y-m-d H:i:s'); // Current timestamp
+
+			// Save payout request to database
+			$builder = $db->table('payout_table');
+			$data = [
+				'student_id' => $student_id,
+				'amount' => $amount,
+				'upi_id' => $upi_id,
+				'status' => $status,
+				'requested_at' => $requested_at,
+			];
+
+			if ($builder->insert($data)) {
+				return $this->response->setJSON(['success' => true, 'message' => 'Payout requested successfully.']);
 			} else {
-				$response = array('success'=>false,'message'=>'Please login first');
+				return $this->response->setJSON(['success' => false, 'message' => 'Failed to request payout.']);
 			}
-			return json_encode($response);
-			}
-	
+		}
+	}
 }
-?>
