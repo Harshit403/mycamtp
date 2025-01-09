@@ -101,7 +101,7 @@ $routes->get('/admin/logout',ADMIN.'LoginController::logoutAdmin');
 $routes->get('/page/access-denied',ADMIN.'LoginController::loadAccessDenied');
 $routes->get('/admin_panel',ADMIN.'DashboardController::loadAdminPanel',['filter'=>'authGuard']);
 
-$routes->post('/admin/change-password',ADMIN.'DashboardController::changePassword',['filter'=>'authGuard']);
+// $routes->post('/admin/change-password',ADMIN.'DashboardController::changePassword',['filter'=>'authGuard']);
 $routes->get('admin/notification',ADMIN.'DashboardController::loadNotification',['filter'=>'authGuard']);
 $routes->post('/admin/resetPayout',ADMIN.'DashboardController::resetPayout',['filter'=>'authGuard']);
 // Category 
