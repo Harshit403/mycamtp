@@ -980,7 +980,7 @@
   </a>
 </div>
 
-<div class="referral-section" style="margin-bottom: 15px;">
+<div class="referral-section" style="padding: 15px; padding-bottom: 60px;">
     <h3>Your Referral Link</h3>
     <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
       <input type="text" id="referralLink" value="<?= base_url() ?>auth?auth=register&ref=<?= $studentData['id'] ?>" readonly style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
@@ -1001,7 +1001,6 @@
 </div>
 </div>
 </div>
-<div style="margin:10px ;"></div>
 <div class="unique-footer" style="margin-top: 5rem;">
     <a href="<?=base_url()?>dashboard" class="unique-footer-item active" style="text-decoration: none;">
       <i class="fas fa-home unique-footer-item-icon"></i>
