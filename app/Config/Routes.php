@@ -92,7 +92,7 @@ $routes->post('/newsletter/add-newsletter',STUDENT.'DefaultController::addNewsLe
 $routes->post('/update/user-profile',STUDENT.'DefaultController::updateUserProfile',['filter'=>'studentAuth']);
 $routes->post("/update/change-password",STUDENT.'DefaultController::updatePassword',['filter'=>'studentAuth']);
 
-
+$routes->post('/requestPayout', STUDENT.'DefaultController::requestPayout',['filter'=>'studentAuth']);
 
 // ADMIN
 $routes->get('/login', ADMIN.'LoginController::loadLoginPage');
@@ -100,6 +100,10 @@ $routes->post('/verify/adminlogin', ADMIN.'LoginController::verifyAdminLogin');
 $routes->get('/admin/logout',ADMIN.'LoginController::logoutAdmin');
 $routes->get('/page/access-denied',ADMIN.'LoginController::loadAccessDenied');
 $routes->get('/admin_panel',ADMIN.'DashboardController::loadAdminPanel',['filter'=>'authGuard']);
+
+$routes->post('/admin/change-password',ADMIN.'DashboardController::changePassword',['filter'=>'authGuard']);
+$routes->get('admin/notification',ADMIN.'DashboardController::loadNotification',['filter'=>'authGuard']);
+$routes->post('/admin/resetPayout',ADMIN.'DashboardController::resetPayout',['filter'=>'authGuard']);
 // Category 
 $routes->get('/admin/add-category',ADMIN.'DashboardController::loadAddCategoryPage',['filter'=>'authGuard']);
 $routes->get('/admin/add-category/(:any)',ADMIN.'DashboardController::loadAddCategoryPage/$1',['filter'=>'authGuard']);
