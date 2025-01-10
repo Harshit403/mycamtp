@@ -963,13 +963,6 @@
   </a>
 </div>
 <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f9f9f9;
-    }
-
     .referral-section {
       max-width: 500px;
       margin: 0 auto;
