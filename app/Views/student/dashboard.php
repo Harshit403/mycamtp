@@ -912,9 +912,6 @@
   <button><?= ($daysLeft === "Exam has passed!") ? $daysLeft : "⏳ $daysLeft Days Left For Exam" ?></button>
 </div>
 
-            
-
-
 <div class="pd-social-media-card">
   <div class="pd-social-media">
     <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -1089,6 +1086,7 @@
 </div>
 </div>
 </div>
+
 <div class="unique-footer" style="margin-top: 5rem;">
     <a href="<?=base_url()?>dashboard" class="unique-footer-item active" style="text-decoration: none;">
       <i class="fas fa-home unique-footer-item-icon"></i>
@@ -1154,10 +1152,70 @@
   </div>
 </div>
 
+<!-- Share Popup -->
+<div id="sharePopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); z-index: 1000;">
+  <h3 style="margin-bottom: 10px;">Share Referral Link</h3>
+  <div style="display: flex; gap: 15px;">
+    <!-- WhatsApp -->
+    <a id="shareWhatsApp" target="_blank" title="Share on WhatsApp">
+      <i class="fab fa-whatsapp" style="font-size: 24px; color: #25D366;"></i>
+    </a>
+    <!-- Facebook -->
+    <a id="shareFacebook" target="_blank" title="Share on Facebook">
+      <i class="fab fa-facebook" style="font-size: 24px; color: #4267B2;"></i>
+    </a>
+    <!-- Twitter -->
+    <a id="shareTwitter" target="_blank" title="Share on Twitter">
+      <i class="fab fa-twitter" style="font-size: 24px; color: #1DA1F2;"></i>
+    </a>
+    <!-- Email -->
+    <a id="shareEmail" target="_blank" title="Share via Email">
+      <i class="fas fa-envelope" style="font-size: 24px; color: #DD4B39;"></i>
+    </a>
+  </div>
+  <button id="closePopup" style="margin-top: 15px; padding: 5px 10px; border: none; background: #e63e58; color: #fff; border-radius: 4px; cursor: pointer;">Close</button>
+</div>
+
+
 </body>
 <?=$this->endSection()?>
 <?=$this->section('jsContent')?>
 <script type="text/javascript" src="<?= base_url() ?>assets/student/js/buy-now-modal.js?v=1"></script>
+<script>
+  const referralLink = document.getElementById('referralLink').value;
+
+  // Update share links dynamically
+  document.getElementById('shareWhatsApp').href = `https://wa.me/?text=Check%20out%20this%20website%20%3A%20${encodeURIComponent(referralLink)}`;
+  document.getElementById('shareFacebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(referralLink)}`;
+  document.getElementById('shareTwitter').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(referralLink)}&text=Join%20now%20via%20my%20referral%20link!`;
+  document.getElementById('shareEmail').href = `mailto:?subject=Join this amazing website&body=Use my referral link to join: ${encodeURIComponent(referralLink)}`;
+
+  const shareButton = document.getElementById('shareButton');
+  const sharePopup = document.getElementById('sharePopup');
+  const closePopup = document.getElementById('closePopup');
+
+  shareButton.addEventListener('click', async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Join via Referral Link',
+          text: 'Check out this CS Test Series website!',
+          url: referralLink
+        });
+        console.log('Content shared successfully');
+      } catch (error) {
+        console.error('Error sharing:', error);
+      }
+    } else {
+      // Show fallback popup if Web Share API is not supported
+      sharePopup.style.display = 'block';
+    }
+  });
+
+  closePopup.addEventListener('click', () => {
+    sharePopup.style.display = 'none';
+  });
+</script>
 <script>
     function openWithdrawPopup() {
       document.getElementById("popupOverlay").style.display = "block";
