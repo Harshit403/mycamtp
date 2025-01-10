@@ -1006,7 +1006,7 @@
 
     .action-button {
       padding: 8px 12px;
-      background: #5b4efc;
+      background: #e63e58;
       color: white;
       border: none;
       border-radius: 5px;
@@ -1024,7 +1024,7 @@
     }
 
     .action-button.share {
-      background: #ff5722;
+      background: #e63e58;
     }
 
     .action-button.withdraw {
@@ -1059,7 +1059,7 @@
       }
     }
   </style>
-<div class="referral-section">
+<div class="referral-section" style="padding: 15px; padding-bottom: 60px;">
   <h3>Your Referral Link</h3>
   <div class="referral-actions">
     <input type="text" id="referralLink" value="<?= base_url() ?>auth?auth=register&ref=<?= $studentData['id'] ?>" readonly>
