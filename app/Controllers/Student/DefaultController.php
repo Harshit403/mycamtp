@@ -480,6 +480,9 @@ class DefaultController extends BaseController
 
 	public function checkoutPayments()
 	{
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 		$getCartDetails = json_decode($this->getCartDetails());
 		$payableAmtArray = array_map(function ($v) {
 			return $v->amt_after_discount;
