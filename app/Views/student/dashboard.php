@@ -1069,7 +1069,7 @@
 <div class="referral-section">
   <h3>Your Referral Link</h3>
   <div class="referral-actions">
-    <input type="text" id="referralLink" value="https://example.com/referral/12345" readonly>
+    <input type="text" id="referralLink" value="<?= base_url() ?>auth?auth=register&ref=<?= $studentData['id'] ?>" readonly>
     <div class="action-buttons">
       <button onclick="copyReferralLink()" class="action-button">
         <i class="fas fa-copy"></i> Copy
@@ -1079,25 +1079,12 @@
       </button>
     </div>
   </div>
-  <h4>Referral Balance: ₹<span id="referralBalance">1000</span></h4>
+  <h4>Referral Balance: ₹<span id="referralBalance"><?= number_format($balance, 2) ?></span></h4>
   <button onclick="openWithdrawPopup()" class="action-button withdraw">
     Withdraw
   </button>
 </div>
-
-
-
-
-<div class="referral-section" style="padding: 15px; padding-bottom: 60px;">
-    <h3>Your Referral Link</h3>
-    <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-      <input type="text" id="referralLink" value="<?= base_url() ?>auth?auth=register&ref=<?= $studentData['id'] ?>" readonly style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 5px;">
-      <button onclick="copyReferralLink()" style="padding: 8px 15px; background: #e63e58; color: white; border: none; border-radius: 5px; cursor: pointer;">Copy</button>
-    </div>
-    <h4>Referral Balance: ₹<span id="referralBalance"><?= number_format($balance, 2) ?></span></h4>
-    <button onclick="openWithdrawPopup()">Withdraw</button>
-  </div>
-  <div id="popupOverlay" onclick="closeWithdrawPopup()"></div>
+<div id="popupOverlay" onclick="closeWithdrawPopup()"></div>
   <div id="withdrawPopup">
     <h3>Withdraw Balance</h3>
     <input type="number" name="amount" id="amount" placeholder="Enter Amount" required>
