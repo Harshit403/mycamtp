@@ -1059,7 +1059,7 @@
       }
     }
   </style>
-<div class="referral-section" style="padding: 15px; padding-bottom: 60px;">
+<div class="referral-section" style="padding: 20px; padding-bottom: 70px;">
   <h3>Your Referral Link</h3>
   <div class="referral-actions">
     <input type="text" id="referralLink" value="<?= base_url() ?>auth?auth=register&ref=<?= $studentData['id'] ?>" readonly>
