@@ -426,7 +426,7 @@ class DefaultModel extends Model
 
 		$builder = $db->table('purchase_table p');
 		$builder->select("
-        SUM(p.total_payment_amount * 0.1) AS referral_credits
+        SUM(p.total_payment_amount * 0.078) AS referral_credits
     ");
 		$builder->join('student_table s', 'p.student_id = s.student_id');
 		$builder->where('p.payment_status', 'PAID');
