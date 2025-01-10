@@ -30,11 +30,10 @@
             </div>
         </div>
         <div style="width: 50%;float: right;">
-            <div class="font-weight-bold text-danger">MY CA MTP</div>
-            <div>A Unit of TAXSTER INDIA</div>
+            <div class="font-weight-bold text-danger">Mission CS Test Series</div>
             <div>Ghaziabad, Uttar Pradesh, India</div>
-            <div>+91 9540097210</div>
-            <div>support@mycsmtp.com</div>
+          <!--  <div>mobileno.</div> -->
+            <div>support@missioncstestseries.com</div>
         </div>
     </div>
     </div>
