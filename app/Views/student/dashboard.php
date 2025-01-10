@@ -1064,7 +1064,7 @@
       <button onclick="copyReferralLink()" class="action-button">
         <i class="fas fa-copy"></i> Copy
       </button>
-      <button onclick="shareReferralLink()" class="action-button share">
+      <button id="shareButton" class="action-button share">
         <i class="fas fa-share-alt"></i> Share
       </button>
     </div>
