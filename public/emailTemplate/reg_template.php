@@ -21,7 +21,7 @@
                                 <tr>
                                     <td style="text-align:center;">
                                         <a href="https://www.missioncstestseries.com/" title="logo" target="_blank">
-                                            <img style="width: 140px;" src="https://i.ibb.co/rQ9H9P9/IMG-20241008-204627.jpg" title="logo" alt="logo">
+                                            <img style="width: 140px;" src="https://missioncstestseries.com//assetItems/image/logo.png" title="logo" alt="logo">
                                         </a>
                                     </td>
                                 </tr>
