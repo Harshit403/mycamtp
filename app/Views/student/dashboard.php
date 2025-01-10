@@ -811,24 +811,6 @@
       }
     }
 
-    .referral-section {
-      margin: 15px auto;
-      max-width: 90%;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      padding: 15px;
-    }
-    .referral-section button {
-      margin-top: 10px;
-      padding: 10px;
-      width: 100%;
-      background: #e63e58;
-      color: white;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-    }
     #withdrawPopup {
       display: none;
       position: fixed;
@@ -879,15 +861,8 @@
       background: rgba(0, 0, 0, 0.5);
       z-index: 999;
     }
-    @media (max-width: 768px) {
-      .referral-section {
-        padding: 10px;
-      }
-    }
+
     @media (max-width: 480px) {
-      .referral-section {
-        padding: 10px;
-      }
       #withdrawPopup {
         width: 95%;
       }
@@ -987,6 +962,131 @@
     </div>
   </a>
 </div>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .referral-section {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .referral-section h3, 
+    .referral-section h4 {
+      margin: 0 0 15px;
+      color: #333;
+    }
+
+    .referral-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Center the content horizontally */
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .referral-actions input {
+      flex: 2 1 auto;
+      max-width: 300px;
+      min-width: 200px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      text-align: center; /* Align the text in the input box */
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .action-button {
+      padding: 8px 12px;
+      background: #5b4efc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    .action-button i {
+      font-size: 14px;
+    }
+
+    .action-button.share {
+      background: #ff5722;
+    }
+
+    .action-button.withdraw {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 480px) {
+      .referral-actions {
+        flex-direction: column;
+        align-items: center; /* Align center on small screens */
+      }
+
+      .referral-actions input {
+        width: 100%;
+      }
+
+      .action-buttons {
+        justify-content: center;
+      }
+
+      .action-buttons .action-button {
+        flex: 1;
+      }
+
+      .action-button.withdraw {
+        width: 100%; /* Stretch Withdraw button to fill the available width */
+      }
+    }
+  </style>
+<div class="referral-section">
+  <h3>Your Referral Link</h3>
+  <div class="referral-actions">
+    <input type="text" id="referralLink" value="https://example.com/referral/12345" readonly>
+    <div class="action-buttons">
+      <button onclick="copyReferralLink()" class="action-button">
+        <i class="fas fa-copy"></i> Copy
+      </button>
+      <button onclick="shareReferralLink()" class="action-button share">
+        <i class="fas fa-share-alt"></i> Share
+      </button>
+    </div>
+  </div>
+  <h4>Referral Balance: ₹<span id="referralBalance">1000</span></h4>
+  <button onclick="openWithdrawPopup()" class="action-button withdraw">
+    Withdraw
+  </button>
+</div>
+
+
+
 
 <div class="referral-section" style="padding: 15px; padding-bottom: 60px;">
     <h3>Your Referral Link</h3>
