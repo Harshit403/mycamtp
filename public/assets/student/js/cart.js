@@ -43,9 +43,9 @@ $(document).ready(function() {
                                 success: function(response) {
                                     if (response.success) {
                                         // var ci_mode = ciEnv == 'production' ? 'production' : 'sandbox';
-                                        //var ci_mode = 'sandbox';
+                                        var ci_mode = 'production';
                                         const cashfree = Cashfree({
-                                            mode: "production" //or sandbox
+                                            mode: ci_mode //or sandbox
                                             // mode: "production" //or production
                                         });
                                         let checkoutOptions = {
