@@ -480,9 +480,6 @@ class DefaultController extends BaseController
 
 	public function checkoutPayments()
 	{
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
 		$getCartDetails = json_decode($this->getCartDetails());
 		$payableAmtArray = array_map(function ($v) {
 			return $v->amt_after_discount;
@@ -494,7 +491,7 @@ error_reporting(E_ALL);
 		$linkInfo = $this->cashfreePayment($studentDetails, $total_amt_to_pay, $order_id);
 		if (!empty($linkInfo)) {
 			$linkInfo = json_decode($linkInfo);
-			session()->set('link_id', $linkInfo->order_id);
+			session()->set('link_id', isset($linkInfo->order_id) ? $linkInfo->order_id : '');
 		}
 		if (!empty($linkInfo)) {
 			$insertData = array();
