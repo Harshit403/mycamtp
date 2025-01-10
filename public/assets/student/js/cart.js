@@ -35,34 +35,63 @@ $(document).ready(function() {
                                     }
                                 }
                             });
-                        } else if (btn_type == 'buynow') {
-                            $.ajax({
-                                url: baseUrl + 'checkout-cart-items',
-                                type: 'POST',
-                                dataType: 'json',
-                                success: function(response) {
-                                    if (response.success) {
-                                        // var ci_mode = ciEnv == 'production' ? 'production' : 'sandbox';
-                                        var ci_mode = 'production';
-                                        const cashfree = Cashfree({
-                                            // mode: ci_mode //or sandbox
-                                            mode: "production" //or production
-                                        });
-                                        let checkoutOptions = {
-                                            paymentSessionId: response.payment_session_id,
-                                            redirectTarget: "_self" //optional (_self or _blank)
-                                        }
 
-                                        cashfree.checkout(checkoutOptions);
-                                    } else {
-                                        bootbox.alert({
-                                            message: response.message,
-                                            closeButton: false,
-                                        })
-                                    }
-                                }
-                            });
-                        }
+
+
+
+
+} else if (btn_type == 'buynow') {
+    $.ajax({
+        url: baseUrl + 'checkout-cart-items',
+        type: 'POST',
+        dataType: 'json',
+        success: function(response) {
+            if (response.success && response.payment_session_id) {
+                const ci_mode = 'production';
+                try {
+                    const cashfree = Cashfree({ mode: ci_mode });
+
+                    if (!cashfree) {
+                        bootbox.alert({
+                            message: "Failed to initialize Cashfree. Please try again later.",
+                            closeButton: false,
+                        });
+                        return;
+                    }
+
+                    let checkoutOptions = {
+                        paymentSessionId: response.payment_session_id,
+                        redirectTarget: "_self"
+                    };
+
+                    cashfree.checkout(checkoutOptions);
+                } catch (error) {
+                    bootbox.alert({
+                        message: `An error occurred during payment redirection: ${error.message}`,
+                        closeButton: false,
+                    });
+                }
+            } else {
+                bootbox.alert({
+                    message: response.message || "Payment session ID is missing or invalid.",
+                    closeButton: false,
+                });
+            }
+        },
+        error: function(xhr, status, error) {
+            bootbox.alert({
+                message: `An error occurred while processing your request: ${error}`,
+                closeButton: false,
+            });
+        }
+    });
+}
+
+
+
+
+                            
+
                     } else {
                         bootbox.alert({
                             message: response.message,
