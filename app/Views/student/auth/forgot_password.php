@@ -191,8 +191,8 @@
                 <input type="email" required id="email" class="item" name="email">
                 <label>Email</label>
             </div>
-            <div class="input-box inputBox">
-                <input type="text" name="otp" id="otp" class="item" inputmode="numeric" required pattern="\d{6}" maxlength="6" style="display: none;" oninput="this.value = this.value.replace(/\D/g, '')">
+            <div class="input-box inputBox" style="display: none;">
+                <input type="text" name="otp" id="otp" class="item" inputmode="numeric" required pattern="\d{6}" maxlength="6" oninput="this.value = this.value.replace(/\D/g, '')">
                 <label>OTP</label>
             </div>
             <button type="submit" name="otp" id="otp" class="btn item authButton forgotPassBtn">Reset Password</button>
