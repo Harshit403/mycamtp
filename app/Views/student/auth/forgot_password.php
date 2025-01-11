@@ -196,7 +196,7 @@
                 <label>OTP</label>
             </div>
             <button type="submit" name="otp" id="otp" class="btn item authButton forgotPassBtn">Reset Password</button>
-            <button type="submit" class="item authButton verifyOTP">Verify</button>
+            <button type="submit" class="btn item authButton verifyOTP" style="display:none;">Verify</button>
         </form>
         <div class="back-to-login">
             <p><a href="login.html">Back to Login</a></p>
