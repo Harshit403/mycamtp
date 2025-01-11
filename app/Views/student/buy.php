@@ -209,10 +209,13 @@ function openModal() {
     document.getElementById('modal').style.display = 'flex';
 }
 
-// Function to close the modal and go back to the previous page
+// Function to close the modal and go back or redirect to homepage
 function closeModal() {
-    document.getElementById('modal').style.display = 'none';
-    history.back(); // Navigates back to the previous page
+    if (history.length > 1) {
+        history.back(); // Go back if there's a previous page
+    } else {
+        window.location.href = 'https://missioncstestseries.com'; // Redirect to homepage
+    }
 }
 
 // Automatically open the modal when the page loads
