@@ -98,7 +98,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                 <i class="fas fa-lock animated-icon"></i>
             </div>
             <h3 class="buy-plan-title">No Subjects Available</h3>
-            <a class="btn btn-modern" href="<?=base_url()?>level/level-list">Buy any plan</a>
+            <a class="btn btn-modern" href="<?=base_url()?>buy">Buy any plan</a>
         </div>
     </li>
 </ul>
