@@ -191,7 +191,7 @@
                 <input type="email" required id="email" class="item" name="email">
                 <label>Email</label>
             </div>
-            <div class="input-box inputBox" style="display: none;">
+            <div class="input-box inputBox otp_section" style="display: none;">
                 <input type="text" name="otp" id="otp" class="item" inputmode="numeric" required pattern="\d{6}" maxlength="6" oninput="this.value = this.value.replace(/\D/g, '')">
                 <label>OTP</label>
             </div>
