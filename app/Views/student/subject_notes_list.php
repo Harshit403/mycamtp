@@ -290,20 +290,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <?php endif ?>
             </div>
         </div>
-
-<div class="modal" id="modal">
-    <div class="modal-content">
-        <button class="close-modal" onclick="closeModal()">×</button>
-        <div class="modal-header">Select Your Options</div>
-        <div>
-            <select id="select1"></select>
-            <select id="select2"></select>
-            <button class="btn btn-submit" id="submit">Submit</button>
-        </div>
-        <div id="contentArea"></div>
-    </div>
-</div>
-        
+      
     </section>
 <?= $this->endSection() ?>
 <?= $this->section('jsContent') ?>
@@ -311,5 +298,4 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         var pageType="student_sub_list";
     </script>
     <script src="<?=base_url()?>assets/js/custom_js/student_dashboard.js?v=1.0.2"></script>
-<script type="text/javascript" src="<?= base_url() ?>assets/student/js/buy-now-modal.js?v=1"></script>
 <?= $this->endSection() ?>
