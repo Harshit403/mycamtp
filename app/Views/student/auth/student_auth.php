@@ -219,7 +219,7 @@
                     <input type="checkbox" id="terms" required>
                     <label for="terms">I agree to the <a href="#">Terms & Conditions</a></label>
                 </div>
-                <button type="submit" class="btn signUpBtn authButton">Sign Up</button>
+                <button class="btn signUpBtn authButton" onclick="event.preventDefault();">Sign Up</button>
                 <p>Already have an account? <a href="<?= base_url() ?>auth?auth=login">Sign In</a></p>
             </form>
         </div>
@@ -238,22 +238,12 @@
                     <i class="fas fa-eye password-toggle" onclick="togglePassword('login-password', this)"></i>
                 </div>
                 <p><a href="<?= base_url() ?>forgot-password">Forgot Password?</a></p>
-                <button type="submit" class="btn loginBtn authButton">Sign In</button>
+                <button onclick="event.preventDefault();" class="btn loginBtn authButton">Sign In</button>
                 <p>Don't have an account?<a href="<?= base_url() ?>auth?auth=register">Sign Up</a></p>
             </form>
         </div>
     </div>
     <script>
-        function showLogin() {
-            document.getElementById('signup-container').style.display = 'none';
-            document.getElementById('login-container').style.display = 'block';
-        }
-
-        function showSignup() {
-            document.getElementById('login-container').style.display = 'none';
-            document.getElementById('signup-container').style.display = 'block';
-        }
-
         function togglePassword(inputId, icon) {
             const passwordField = document.getElementById(inputId);
             if (passwordField.type === 'password') {
