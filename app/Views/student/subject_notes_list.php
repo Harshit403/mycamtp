@@ -72,7 +72,21 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     background-color: #d12b47;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
-
+   .modal-card {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: none;
+        justify-content: center;
+        align-items: flex-start;
+        z-index: 100000;
+        overflow-y: auto;
+        padding-top: 10px;
+       }
+    
    .modal {
         position: fixed;
         top: 0;
@@ -83,7 +97,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         display: none;
         justify-content: center;
         align-items: flex-start;
-        z-index: 9999;
+        z-index: 100000;
         overflow-y: auto;
         padding-top: 10px;
     }
