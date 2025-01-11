@@ -11,7 +11,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <?=$this->section('content')?>
 	<section class="container  mb-5 subject_container mainContainer">
 	<style>
-		   .modal {
+.modal {
         position: fixed;
         top: 0;
         left: 0;
