@@ -1,6 +1,6 @@
 <?= $this->extend('student/layout/layout') ?>
 <?= $this->section('title') ?>
-    Why Us - Mission CS Test Series 
+    BUY TEST SERIES - Mission CS Test Series 
 <?= $this->endSection() ?>
 <?= $this->section('meta_description') ?>
 <!-- enter your meta description -->
@@ -10,6 +10,18 @@
 <?=$this->endSection()?>
 <?= $this->section('content') ?>
 <style>
+    .fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F8F8F8; /* Change to your desired color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    }
      .modal {
         position: fixed;
         top: 0;
@@ -176,6 +188,7 @@
         }
   }
 </style>
+<div class="fullscreen"></div>
 <div class="modal" id="modal">
     <div class="modal-content">
         <button class="close-modal" onclick="closeModal()">×</button>
