@@ -195,8 +195,8 @@
                 <input type="text" name="otp" id="otp" class="item" inputmode="numeric" required pattern="\d{6}" maxlength="6" oninput="this.value = this.value.replace(/\D/g, '')">
                 <label>OTP</label>
             </div>
-            <button type="submit" name="otp" id="otp" class="btn item authButton forgotPassBtn">Reset Password</button>
-            <button class="btn item authButton verifyOTP btn-custom btn-sm " style="display:none;">Verify</button>
+            <button type="submit" name="otp" id="otp" onclick="event.preventDefault();" class="btn item authButton forgotPassBtn">Reset Password</button>
+            <button class="btn item authButton verifyOTP btn-custom btn-sm " onclick="event.preventDefault();" style="display:none;">Verify</button>
         </form>
         <div class="back-to-login">
             <p><a href="login.html">Back to Login</a></p>
