@@ -750,7 +750,10 @@ class DefaultController extends BaseController
 	{
 		return view('student/disclaimer');
 	}
-
+        public function loadBuy()
+	{
+		return view('student/buy');
+	}
 	public function loadMyResourceSubjectPage($item_type = '')
 	{
 		$data['fetchAvailbleSubject'] = '';
