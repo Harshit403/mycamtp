@@ -1145,7 +1145,7 @@
         <i class="fas fa-lock mentorship-lock-icon"></i>
         <h2>Mentorship Locked</h2>
         <p>Enroll now to unlock mentorship!</p>
-        <a href="<?=base_url()?>#category-section" class="mentorship-modal-button">Enroll Now</a>
+        <a href="javascript:void(0)" onclick="openModal()" class="mentorship-modal-button">Enroll Now</a>
       </div>
     <?php endif; ?>
     <button id="closeMentorshipModal" class="mentorship-close-button">&times;</button>
