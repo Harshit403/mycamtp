@@ -1,7 +1,7 @@
 
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('title')?>
-	Contact US
+	Pricing
 <?=$this->endSection()?>
 <?= $this->section('meta_description') ?>
 <!-- enter your meta description -->
