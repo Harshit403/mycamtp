@@ -1,94 +1,3 @@
-
-
-<body>
-    <div class="signin_container" style="display: <?= ($addClass == 'register') ? 'none' : ''; ?>">
-        <div class="registration-form">
-            <h1 class="text-center pb-3">SignIn</h1>
-            <form id="sign_in_form">
-                <div class="inputBox">
-                    <input type="email" class="item" name="email" required="required" title="Enter a valid email address.">
-                    <span>Email</span>
-                </div>
-                <div class="inputBox">
-                    <input type="password" class="item" name="password" required="required">
-                    <ion-icon name="eye-off-outline" class="viewPassWord" style="position: absolute;top: 1rem;right: 1rem;"></ion-icon>
-                    <span>Password</span>
-                </div>
-                <div class="pass"><a href="<?= base_url() ?>forgot-password">Forgot Password?</a></div>
-            </form>
-            <a class="btn btn-sm btn-custom has-before loginBtn authButton w-100">
-                <span class="span"><i class="bi bi-key-fill"></i> Sign In</span>
-            </a>
-            <div class="signup_link">
-                Not a member? <a href="<?= base_url() ?>auth?auth=register">Signup</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="signup_container" style="display: <?= ($addClass == 'login') ? 'none' : ''; ?>">
-        <div class="registration-form">
-            <form id="sign_up_form">
-                <div class="form-icon">
-                    <span><i class="icon icon-user"></i></span>
-                </div>
-                <div class="inputBox">
-                    <input type="text" class="item" name="student_name" required="required" pattern="[A-Za-z\s]+" title="Name can only contain alphabets and spaces.">
-                    <span>Student Name</span>
-                </div>
-                <div class="inputBox">
-                    <input type="email" class="item" name="email" required="required" title="Enter a valid email address.">
-                    <span>Email</span>
-                </div>
-                <div class="inputBox">
-                    <input type="text" class="item" name="mobile_no" required="required" pattern="[6-9]\d{9}" title="Enter a valid 10-digit Indian mobile number starting with 6-9.">
-                    <span>10 Digit Mobile No.</span>
-                </div>
-                <div class="inputBox" style="display: none;">
-                    <input type="text" class="item" name="city_name" value="N/A" required="required">
-                </div>
-                <div class="inputBox">
-                    <input type="text" class="item" name="state_name" required="required" pattern="[A-Za-z\s]+" title="State can only contain alphabets and spaces.">
-                    <span>State</span>
-                </div>
-              <!--  <div class="inputBox">
-                    <select class="form-control mb-4" name="category_id" id="category_id">
-                        <?php if (!empty($category_list)) {
-                            foreach ($category_list as $categorysRow) { ?>
-                                <option value="<?= $categorysRow->category_id ?>">
-                                    <?= $categorysRow->category_name ?>
-                                </option>
-                        <?php } } ?>
-                    </select>
-                </div> -->
-                <div class="inputBox">
-                    <select class="form-control mb-4" name="current_level" id="current_level">
-                    </select>
-                </div>
-                <div class="inputBox">
-                    <input type="password" class="item" name="password" id="password" required="required">
-                    <ion-icon name="eye-off-outline" class="viewPassWord" style="position: absolute;top: 1rem;right: 1rem;"></ion-icon>
-                    <span>Password</span>
-                </div>
-                <div class="inputBox" style="display: none;">
-                    <input type="password" id="confirm_password" class="item" name="confirm_password" required="required">
-                    <span>Confirm Password</span>
-                </div>
-            </form>
-            <a class="btn btn-sm btn-custom signUpBtn authButton  w-100">
-                <span class="span"><i class="bi bi-key-fill"></i> Sign Up</span>
-            </a>
-            <div class="signup_link">
-                Already a member? <a href="<?= base_url() ?>auth?auth=login">Signin</a>
-                <div><a href="<?= base_url() ?>"><i class="fas fa-undo-alt"></i> Return to Home</a></div>
-            </div>
-        </div>
-    </div>
-
-    
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -269,38 +178,37 @@
         }
     </style>
 </head>
+
 <body>
     <div class="form-container">
         <!-- Signup Form -->
-        <div class="container" id="signup-container">
+        <div class="container" id="signup-container" style="display: <?= ($addClass == 'login') ? 'none' : ''; ?>">
             <h2>Sign Up</h2>
             <form>
                 <div class="input-box">
-                    <input type="text" required>
+                    <input type="text" required class="item" name="student_name" pattern="[A-Za-z\s]+" title="Name can only contain alphabets and spaces.">
                     <label>Student Name</label>
                 </div>
                 <div class="input-box">
                     <div class="mobile-wrapper" id="mobile-wrapper">
                         <span>+91</span>
-                        <input type="tel" id="mobile" required pattern="[0-9]{10}" maxlength="10" placeholder="Mobile">
+                        <input type="tel" id="mobile" class="item" name="mobile_no" required pattern="[0-9]{10}" maxlength="10" placeholder="Mobile">
                     </div>
                     <label>Mobile</label>
                 </div>
                 <div class="input-box">
-                    <input type="email" required>
+                    <input type="email" required class="item" name="email">
                     <label>Email</label>
                 </div>
                 <div class="input-box">
-                    <input type="text" required>
+                    <input type="text" required class="item" name="state_name" pattern="[A-Za-z\s]+" title="State can only contain alphabets and spaces.">
                     <label>State</label>
                 </div>
                 <div class="input-box">
-                    <select required>
-                        <option value="" disabled selected>CSEET</option>
-                    </select>
+                    <select required name="current_level" id="current_level"> </select>
                 </div>
                 <div class="input-box">
-                    <input type="password" id="password" required>
+                    <input type="password" class="item" name="password" id="password" required>
                     <label>Password</label>
                     <i class="fas fa-eye password-toggle" onclick="togglePassword('password', this)"></i>
                 </div>
@@ -308,27 +216,27 @@
                     <input type="checkbox" id="terms" required>
                     <label for="terms">I agree to the <a href="#">Terms & Conditions</a></label>
                 </div>
-                <button type="submit" class="btn">Sign Up</button>
-                <p>Already have an account? <a onclick="showLogin()">Sign In</a></p>
+                <button type="submit" class="btn signUpBtn authButton">Sign Up</button>
+                <p>Already have an account? <a href="<?= base_url() ?>auth?auth=login">Sign In</a></p>
             </form>
         </div>
 
         <!-- Login Form -->
-        <div class="container" id="login-container" style="display: none;">
+        <div class="container" id="login-container" style="display: <?= ($addClass == 'register') ? 'none' : ''; ?>">
             <h2>Login</h2>
             <form>
                 <div class="input-box">
-                    <input type="email" required>
+                    <input type="email" required class="item" name="email">
                     <label>Email</label>
                 </div>
                 <div class="input-box">
-                    <input type="password" id="login-password" required>
+                    <input type="password" id="login-password" required class="item" name="password">
                     <label>Password</label>
                     <i class="fas fa-eye password-toggle" onclick="togglePassword('login-password', this)"></i>
                 </div>
-                <p><a href="#">Forgot Password?</a></p>
-                <button type="submit" class="btn">Sign In</button>
-                <p>Don't have an account? <a onclick="showSignup()">Sign Up</a></p>
+                <p><a href="<?= base_url() ?>forgot-password">Forgot Password?</a></p>
+                <button type="submit" class="btn loginBtn authButton">Sign In</button>
+                <p>Don't have an account?<a href="<?= base_url() ?>auth?auth=register">">Sign Up</a></p>
             </form>
         </div>
     </div>
