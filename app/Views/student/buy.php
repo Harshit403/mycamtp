@@ -204,14 +204,15 @@
 <?= $this->endSection() ?>
 <?= $this->section('jsContent') ?>
 <script>
-  // Function to open the modal
+// Function to open the modal
 function openModal() {
     document.getElementById('modal').style.display = 'flex';
 }
 
-// Function to close the modal
+// Function to close the modal and go back to the previous page
 function closeModal() {
     document.getElementById('modal').style.display = 'none';
+    history.back(); // Navigates back to the previous page
 }
 
 // Automatically open the modal when the page loads
