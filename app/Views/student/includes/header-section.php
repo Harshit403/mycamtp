@@ -160,7 +160,7 @@
                     <a class="nav-link <?=($segment1=='plans' ? 'active' : '')?>" href="<?=base_url()?>/plans">Plans</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link <?=($segment1=='pricing' ? 'active' : '')?>" href="<?=base_url()?>">Pricing</a>
+                    <a class="nav-link <?=($segment1=='pricing' ? 'active' : '')?>" href="<?=base_url()?>/pricing">Pricing</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link <?=($segment1=='blog-list' ? 'active' : '')?>" href="<?=base_url()?>/blog-list">Blog</a>
