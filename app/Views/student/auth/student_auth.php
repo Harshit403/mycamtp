@@ -184,7 +184,7 @@
         <!-- Signup Form -->
         <div class="container" id="signup-container" style="display: <?= ($addClass == 'login') ? 'none' : ''; ?>">
             <h2>Sign Up</h2>
-            <form>
+            <form id="sign_up_form">
                 <div class="input-box">
                     <input type="text" required class="item" name="student_name" pattern="[A-Za-z\s]+" title="Name can only contain alphabets and spaces.">
                     <label>Student Name</label>
@@ -203,6 +203,9 @@
                 <div class="input-box">
                     <input type="text" required class="item" name="state_name" pattern="[A-Za-z\s]+" title="State can only contain alphabets and spaces.">
                     <label>State</label>
+                </div>
+                    <div class="inputBox" style="display: none;">
+                    <input type="text" class="item" name="city_name" value="N/A" required="required">
                 </div>
                 <div class="input-box">
                     <select required name="current_level" id="current_level"> </select>
@@ -224,7 +227,7 @@
         <!-- Login Form -->
         <div class="container" id="login-container" style="display: <?= ($addClass == 'register') ? 'none' : ''; ?>">
             <h2>Login</h2>
-            <form>
+            <form id="sign_in_form">
                 <div class="input-box">
                     <input type="email" required class="item" name="email">
                     <label>Email</label>
@@ -236,11 +239,10 @@
                 </div>
                 <p><a href="<?= base_url() ?>forgot-password">Forgot Password?</a></p>
                 <button type="submit" class="btn loginBtn authButton">Sign In</button>
-                <p>Don't have an account?<a href="<?= base_url() ?>auth?auth=register">">Sign Up</a></p>
+                <p>Don't have an account?<a href="<?= base_url() ?>auth?auth=register">Sign Up</a></p>
             </form>
         </div>
     </div>
-
     <script>
         function showLogin() {
             document.getElementById('signup-container').style.display = 'none';
