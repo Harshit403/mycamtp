@@ -191,7 +191,7 @@
 <div class="fullscreen"></div>
 <div class="modal" id="modal">
     <div class="modal-content">
-        <button class="close-modal" onclick="closeModal()">×</button>
+        <button class="close-modal" onclick="closeModala()">×</button>
         <div class="modal-header">Select Your Options</div>
         <div>
             <select id="select1"></select>
@@ -210,7 +210,7 @@ function openModal() {
 }
 
 // Function to close the modal and go back or redirect to homepage
-function closeModal() {
+function closeModala() {
     if (history.length > 1) {
         history.back(); // Go back if there's a previous page
     } else {
