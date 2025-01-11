@@ -483,7 +483,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 
 </style>
 
-<section class="faq-sec">
+<section class="faq-sec faq-section">
     <h1-not>FAQs</h1-not>
     <div class="accordion-a">
         <div class="accordion-a-item">
