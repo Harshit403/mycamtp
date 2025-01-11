@@ -199,7 +199,7 @@
             <button class="btn item authButton verifyOTP btn-custom btn-sm " onclick="event.preventDefault();" style="display:none;">Verify</button>
         </form>
         <div class="back-to-login">
-            <p><a href="login.html">Back to Login</a></p>
+            <p><a href="<?=base_url()?>auth?auth=login">Back to Login</a></p>
         </div>
     </div>
 </body>
