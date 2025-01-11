@@ -93,23 +93,23 @@ class DefaultController extends BaseController
 				$emailTemplate = str_replace('{login}', $login_url, $emailTemplate);
 				$emailTemplate = str_replace('{user_email}', $postData['email'], $emailTemplate);
 				$emailTemplate = str_replace('{user_password}', $password, $emailTemplate);
-				$subject = "Registration Confirmation";
+				$subject = "Your confirmation code for Mission CS Test Series";
 				$send_email = $this->sendMail($postData['email'], $subject, $emailTemplate, 'New Register');
 
 				$response = array(
 					'success' => true,
-					'message' => 'You are registered successfully',
+					'message' => 'Registration successfully completed.',
 				);
 			} else {
 				$response = array(
 					'success' => false,
-					'message' => 'Failed to add your account',
+					'message' => 'Something went wrong while registering your account.',
 				);
 			}
 		} else {
 			$response = array(
 				'success' => false,
-				'message' => 'User account already exists',
+				'message' => 'You have already registered with us.',
 			);
 		}
 		return json_encode($response);
@@ -135,15 +135,15 @@ class DefaultController extends BaseController
 					session()->set('studentDetails', $studentDetails);
 				} else {
 					$success = false;
-					$message = 'Your account has been blocked, please contact with admin';
+					$message = 'Your account has been blocked, please contact the admin.';
 				}
 			} else {
 				$success = false;
-				$message = 'You have entered wrong credentials';
+				$message = 'You have entered wrong credentials.';
 			}
 		} else {
 			$success = false;
-			$message = 'Student does not exist';
+			$message = 'Please Signup First, before login.';
 		}
 		$response = array(
 			'success' => $success,
@@ -168,7 +168,7 @@ class DefaultController extends BaseController
 					session()->set('studentDetails', $studentDetails);
 				} else {
 					$success = false;
-					$message = 'Your account has been blocked, please contact with admin';
+					$message = 'Your account has been blocked, please contact the admin';
 				}
 			} else {
 				$success = false;
@@ -176,7 +176,7 @@ class DefaultController extends BaseController
 			}
 		} else {
 			$success = false;
-			$message = 'Student does not exist';
+			$message = 'Please Signup First, before login.';
 		}
 		$response = array(
 			'success' => $success,
