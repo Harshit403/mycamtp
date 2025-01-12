@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>User <?= ($addClass == 'sign_up') ? ' Signup' : ' Login'; ?></title>
@@ -180,9 +180,6 @@
 </head>
 
     
-
-
-
 <body>
     <div class="form-container">
         <!-- Signup Form -->
@@ -217,7 +214,7 @@
                 <div class="input-box">
                     <input type="password" class="item" name="password" id="password" required>
                     <label>Password</label>
-                    <i class="fas fa-eye password-toggle" onclick="togglePassword('password', this)"></i>
+                    <i class="fas fa-eye password-toggle" onclick="togglPassword('password', this)"></i>
                 </div>
                 <div class="checkbox-container">
                     <input type="checkbox" id="terms" required>
@@ -230,6 +227,7 @@
 
         <!-- Login Form -->
         <div class="container" id="login-container" style="display: <?= ($addClass == 'register') ? 'none' : ''; ?>">
+            <div class="registration-form">
             <h2>Login</h2>
             <form id="sign_in_form">
                 <div class="input-box inputBox">
@@ -239,16 +237,18 @@
                 <div class="input-box inputBox">
                     <input type="password" id="login-password" required class="item" name="password">
                     <label>Password</label>
-                    <i class="fas fa-eye password-toggle" onclick="togglePassword('login-password', this)"></i>
+                    <i class="fas fa-eye password-toggle" onclick="togglPassword('login-password', this)"></i>
                 </div>
                 <p><a href="<?= base_url() ?>forgot-password">Forgot Password?</a></p>
-                <button class="btn span loginBtn authButton">Sign In</button>
+                <a class="loginBtn authButton"><button class="btn span">Sign In</button></a>
                 <p>Don't have an account?<a href="<?= base_url() ?>auth?auth=register">Sign Up</a></p>
             </form>
         </div>
     </div>
+    </div>
+</body>    
     <script>
-        function togglePassword(inputId, icon) {
+        function togglPassword(inputId, icon) {
             const passwordField = document.getElementById(inputId);
             if (passwordField.type === 'password') {
                 passwordField.type = 'text';
@@ -297,5 +297,4 @@
     </script>
     <script type="text/javascript" src="<?= base_url() ?>assets/student/js/student_auth.js?v=1.0.1"></script>
     </script>
-</body>
 </html>
