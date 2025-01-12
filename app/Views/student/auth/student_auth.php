@@ -240,7 +240,7 @@
                     <i class="fas fa-eye password-toggle" onclick="togglPassword('login-password', this)"></i>
                 </div>
                 <p><a href="<?= base_url() ?>forgot-password">Forgot Password?</a></p>
-                <a class="loginBtn authButton"><button class="btn span">Sign In</button></a>
+                <a class="loginBtn authButton"><button class="btn span" onclick="event.preventDefault();">Sign In</button></a>
                 <p>Don't have an account?<a href="<?= base_url() ?>auth?auth=register">Sign Up</a></p>
             </form>
         </div>
