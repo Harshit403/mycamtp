@@ -40,6 +40,96 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </style>
 <?php endif; ?>
 
+<style>
+  .cs-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensure responsiveness */
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .cs-text-section {
+    flex: 1;
+    min-width: 300px; /* Ensure minimum width for text section */
+  }
+
+  .cs-text-section h1 {
+    font-size: 2.5rem;
+    color: #000;
+    margin-bottom: 1rem;
+  }
+
+  .cs-highlight {
+    color: #e63e58;
+  }
+
+  .cs-description {
+    font-size: 1rem;
+    margin: 1rem 0;
+    color: #000000;
+  }
+
+  .cs-btn-demo {
+    background-color: #e63e58;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .cs-btn-demo:hover {
+    background-color: #bf3246;
+  }
+
+  .cs-image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center;
+    min-width: 300px; /* Ensure minimum width for image section */
+  }
+
+  .cs-desktop-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .cs-container {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center;
+      text-align: center;
+    }
+
+    .cs-text-section {
+      margin-bottom: 1rem;
+    }
+
+    .cs-text-section h1 {
+      font-size: 2rem;
+    }
+
+    .cs-description {
+      font-size: 0.9rem;
+    }
+
+    .cs-image-section {
+      width: 100%;
+    }
+
+    .cs-desktop-img {
+      max-width: 300px;
+    }
+  }
+</style>
+
 <div class="cs-container">
   <!-- Left Section -->
   <div class="cs-text-section">
