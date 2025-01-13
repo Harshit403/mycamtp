@@ -598,7 +598,7 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
     /* Sticky WhatsApp Icon Styles */
     .whatsapp-icon {
       position: fixed;
-      bottom: 40px;
+      bottom: 70px;
       right: 20px;
       width: 60px;
       height: 60px;
