@@ -40,10 +40,33 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </style>
 <?php endif; ?>
 
+<div class="cs-container">
+  <!-- Left Section -->
+  <div class="cs-text-section">
+    <h1>Mission <span class="cs-highlight">CS Test Series</span></h1>
+    <p class="cs-description text-start">We offer the most affordable and Quality CS Test series for CS Executive and CS Professional exams, along with live Mentorship from Rankers and Qualified Company Secretaries.</p>
+    <p class="cs-description text-start">Each of our test series is designed by AIRs considering the needs of CS Executive and Professional exams.</p>
+
+    <?php if (session()->get('studentDetails') !== null): ?>
+      <a href="<?=base_url()?>dashboard"> 
+        <button class="cs-btn-demo">Go to Dashboard</button>
+      </a>
+    <?php else: ?>
+      <a href="<?=base_url()?>auth?auth=register"> 
+        <button class="cs-btn-demo">Register Now</button>
+      </a>
+    <?php endif; ?>
+  </div>
+  <!-- Right Section -->
+  <div class="cs-image-section">
+    <img class="cs-desktop-img" src="https://executivetestseries.click/wp-content/uploads/2024/12/pie8.png" alt="Pie Chart">
+  </div>
+</div>
+
 <style>
   .cs-container {
     display: flex;
-    flex-wrap: wrap; /* Ensure responsiveness */
+    flex-direction: row; /* Default to row layout for desktop */
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
@@ -52,7 +75,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 
   .cs-text-section {
     flex: 1;
-    min-width: 300px; /* Ensure minimum width for text section */
   }
 
   .cs-text-section h1 {
@@ -89,9 +111,8 @@ cs test series, cstestseries , cs executive test series, cs professional test se
   .cs-image-section {
     flex: 1;
     display: flex;
-    justify-content: center; /* Center the image */
+    justify-content: center;
     align-items: center;
-    min-width: 300px; /* Ensure minimum width for image section */
   }
 
   .cs-desktop-img {
@@ -103,7 +124,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
   /* Responsive Design */
   @media screen and (max-width: 768px) {
     .cs-container {
-      flex-direction: column; /* Stack items vertically */
+      flex-direction: column; /* Switch to column layout for mobile */
       align-items: center;
       text-align: center;
     }
@@ -130,29 +151,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
   }
 </style>
 
-<div class="cs-container">
-  <!-- Left Section -->
-  <div class="cs-text-section">
-    <h1>Mission <span class="cs-highlight">CS Test Series</span></h1>
-    <p class="cs-description text-start">We offer the most affordable and Quality CS Test series for CS Executive and CS Professional exams, along with live Mentorship from Rankers and Qualified Company Secretaries.</p>
-    <p class="cs-description text-start">Each of our test series is designed by AIRs considering the needs of CS Executive and Professional exams.</p>
-
-    <?php if (session()->get('studentDetails') !== null): ?>
-      <a href="<?=base_url()?>dashboard"> 
-        <button class="cs-btn-demo">Go to Dashboard</button>
-      </a>
-    <?php else: ?>
-      <a href="<?=base_url()?>auth?auth=register"> 
-        <button class="cs-btn-demo">Register Now</button>
-      </a>
-    <?php endif; ?>
-  </div>
-</div>
-    <!-- Right Section -->
-    <div class="cs-image-section">
-      <img class="cs-desktop-img" src="https://executivetestseries.click/wp-content/uploads/2024/12/pie8.png" alt="Pie Chart">
-    </div>
-  </div>
 
 <style>
 @keyframes slideRight {
