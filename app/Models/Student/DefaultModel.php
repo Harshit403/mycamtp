@@ -460,4 +460,15 @@ class DefaultModel extends Model
 
 		return false;
 	}
+		public function getTypeInfo($postData){
+			$builder= $this->db->table('type_table');
+			$builder->select('type_table.*');
+			$builder->join('level_table','level_table.level_id = type_table.level_id','left');
+			$builder->where('type_table.deleted',0);
+			$builder->where('type_table.type_short_name',$postData['type']);
+			$builder->where('level_table.level_short_name',$postData['level']);
+			$result = $builder->get()->getRow();
+			return $result;
+		}
 }
+?>
