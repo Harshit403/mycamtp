@@ -610,6 +610,7 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
       align-items: center;
       cursor: pointer;
       z-index: 1000;
+      animation: pulse 1.5s infinite;
     }
 
     .whatsapp-icon img {
@@ -621,6 +622,20 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
       transform: scale(1.1);
       transition: transform 0.3s;
     }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
   </style>
 
 <body>
