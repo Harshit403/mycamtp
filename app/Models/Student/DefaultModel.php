@@ -21,41 +21,45 @@ class DefaultModel extends Model
 		return $response;
 	}
 
-	public function fetchTypeListModel($level_short_name = '')
-	{
-		$builder = $this->db->table('type_table');
-		$builder->select('type_table.*,level_table.level_short_name,category_table.category_short_name,type_table.type_name');
-		$builder->join('level_table', 'level_table.level_id=type_table.level_id', 'left');
-		$builder->join('category_table', 'category_table.category_id=level_table.category_id', 'left');
-		$builder->where('type_table.deleted', 0);
-		$builder->where('level_table.deleted', 0);
-		$builder->where('category_table.deleted', 0);
-		$builder->where('category_table.active', 1);
-		if (!empty($level_short_name)) {
-			$builder->where('level_table.level_short_name', $level_short_name);
+		public function fetchTypeListModel($getData=''){
+			$builder = $this->db->table('type_table');
+			$builder->select('type_table.*,level_table.level_short_name,category_table.category_short_name,type_table.type_name');
+			$builder->join('level_table','level_table.level_id=type_table.level_id','left');
+			$builder->join('category_table','category_table.category_id=level_table.category_id','left');
+			$builder->where('type_table.deleted',0);
+			$builder->where('level_table.deleted',0);
+			$builder->where('category_table.deleted',0);
+			$builder->where('category_table.active',1);
+			if (isset($getData['level'])) {
+				$builder->where('level_table.level_short_name',$getData['level']);
+			}
+			if (isset($getData['category'])) {
+				$builder->where('category_table.category_short_name',$getData['category']);
+			}
+			$response = $builder->get()->getResult();
+			return $response;
 		}
-		$response = $builder->get()->getResult();
-		return $response;
-	}
+		public function fetchSubjectListModel($getData=''){
+			$builder = $this->db->table('subject_table');
+			$builder->select('subject_table.*,level_table.level_short_name,category_table.category_short_name,type_table.type_short_name,level_table.level_name,type_table.type_name,category_table.category_name');
+			$builder->join('type_table','type_table.type_id=subject_table.type_id');
+			$builder->join('level_table','level_table.level_id=subject_table.level_id');
+			$builder->join('category_table','category_table.category_id=level_table.category_id');
+			$builder->where('subject_table.deleted',0);
+			$builder->where('type_table.deleted',0);
+			$builder->where('level_table.deleted',0);
+			$builder->where('category_table.deleted',0);
+			$builder->where('category_table.active',1);
+			if (isset($getData['type'])) {
+				$builder->where('type_table.type_short_name',$getData['type']);
+			}
+			if(isset($getData['level'])){
+				$builder->where('level_table.level_short_name',$getData['level']);
+			}
+			$response = $builder->get()->getResult();
+			return $response;
+		}
 
-	public function fetchSubjectListModel($type_short_name = '')
-	{
-		$builder = $this->db->table('subject_table');
-		$builder->select('subject_table.*,level_table.level_short_name,category_table.category_short_name,type_table.type_short_name,level_table.level_name,type_table.type_name,category_table.category_name');
-		$builder->join('type_table', 'type_table.type_id=subject_table.type_id');
-		$builder->join('level_table', 'level_table.level_id=subject_table.level_id');
-		$builder->join('category_table', 'category_table.category_id=level_table.category_id');
-		$builder->where('subject_table.deleted', 0);
-		$builder->where('type_table.deleted', 0);
-		$builder->where('level_table.deleted', 0);
-		$builder->where('category_table.deleted', 0);
-		$builder->where('category_table.active', 1);
-		if (!empty($type_short_name)) {
-			$builder->where('type_table.type_short_name', $type_short_name);
-		}
-		$response = $builder->get()->getResult();
-		return $response;
-	}
 
 	public function checkExistStudent($email = '', $mobile_no = '')
 	{
