@@ -57,7 +57,7 @@ $('#submit').on('click', function () {
                         card.classList.add('card-modal');
                         card.innerHTML = `
                             <div class="card-title">${plan.type_name}</div>
-                            <button class="card-btn view-product" data-type-id="${plan.type_id}" data-level-id="${plan.level_id}" >View Products</button>
+                            <button class="card-btn view-product" data-type-id="${plan.type_id}" data-level-id="${plan.level_id}" >View Test Series</button>
                             <button class="card-btn download-schedule" data-schedule="${plan.schedule_file}">
                                 <i class="bi bi-download"></i> Download Schedule
                             </button>
