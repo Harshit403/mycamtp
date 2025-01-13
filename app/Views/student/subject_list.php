@@ -10,7 +10,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 	<section class="container  mb-5 subject_container mainContainer">
-		<div class="row">
+		<div class="row" style="margin-top: 8rem;">
 			<div class="col-md-12">
 				<h2 class="text-center"><?=$type_info->type_info_heading?></h2>
 			</div>
