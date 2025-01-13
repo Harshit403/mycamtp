@@ -594,6 +594,50 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
 </section> 
 
 
+  <style>
+    /* Sticky WhatsApp Icon Styles */
+    .whatsapp-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #25d366;
+      border-radius: 50%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .whatsapp-icon img {
+      width: 35px;
+      height: 35px;
+    }
+
+    .whatsapp-icon:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s;
+    }
+  </style>
+
+<body>
+  <!-- WhatsApp Icon -->
+  <div class="whatsapp-icon" onclick="redirectToWhatsApp()">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon">
+  </div>
+
+  <script>
+    // Redirect to WhatsApp Chat
+    function redirectToWhatsApp() {
+      const phoneNumber = "+918929592998"; // Replace with your WhatsApp number
+      const message = "Hello! I would like to know more about your services."; // Optional initial message
+      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
+  </script>
 
 <style>
 .mcst-blog-section {
