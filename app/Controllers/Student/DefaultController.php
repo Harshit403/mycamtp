@@ -5,6 +5,7 @@ namespace App\Controllers\Student;
 use App\Models\BaseModel;
 use App\Controllers\BaseController;
 use App\Models\Student\DefaultModel;
+use Exception;
 
 class DefaultController extends BaseController
 {
@@ -53,23 +54,23 @@ class DefaultController extends BaseController
 		$getData = $this->request->getGet();
 		$category_short_name = $getData['category'];
 		$level_short_name = $getData['level'];
-		if (!empty($level_short_name)) {
-			$data['level_info'] = $this->common->getInfo('level_table', 'row', array('level_short_name' => $level_short_name));
-			$data['type_list'] = $this->defaultModel->fetchTypeListModel($level_short_name);
+		if (isset($getData['category']) && isset($getData['level'])) {
+			$data['level_info'] = $this->common->getInfo('level_table', 'row', array('level_short_name' => $getData['level']));
+			$data['type_list'] = $this->defaultModel->fetchTypeListModel($getData);
 			return view('student/type_list', $data);
 		}
 	}
 
-	public function fetchSubjectList()
-	{
-		$getData = $this->request->getGet();
-		$type_short_name = $getData['type'];
-		if (!empty($type_short_name)) {
-			$data['type_info'] = $this->common->getInfo('type_table', 'row', array('type_short_name' => $type_short_name));
-			$data['subject_list'] = $this->defaultModel->fetchSubjectListModel($type_short_name);
-			return view('student/subject_list', $data);
-		}
-	}
+	    public function fetchSubjectList(){
+	    	$getData = $this->request->getGet();
+	    	if (isset($getData['level']) && isset($getData['type'])) {
+	    		$data['type_info'] = $this->defaultModel->getTypeInfo($getData);
+	    		$data['subject_list'] = $this->defaultModel->fetchSubjectListModel($getData);
+	    		return view('student/subject_list',$data);
+	    	} else {
+				throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+			}
+	    }
 
 	public function addStudentDetails()
 	{
@@ -711,7 +712,7 @@ class DefaultController extends BaseController
 			$data['blog_item'] = $this->common->getInfo('blog_table', 'row', array('blog_short_name' => $getData['item']));
 			return view('student/blog_details', $data);
 		} else {
-			throw new Exception("Error Processing Request", 404);
+			throw new \Exception("Error Processing Request", 404);
 		}
 	}
 
