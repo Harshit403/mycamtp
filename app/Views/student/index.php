@@ -598,7 +598,7 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
     /* Sticky WhatsApp Icon Styles */
     .whatsapp-icon {
       position: fixed;
-      bottom: 20px;
+      bottom: 40px;
       right: 20px;
       width: 60px;
       height: 60px;
@@ -633,7 +633,7 @@ Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offer
     // Redirect to WhatsApp Chat
     function redirectToWhatsApp() {
       const phoneNumber = "+918929592998"; // Replace with your WhatsApp number
-      const message = "Hello! I would like to know more about your services."; // Optional initial message
+      const message = "Hello! I am looking for a test series."; // Optional initial message
       const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
       window.open(url, "_blank");
     }
