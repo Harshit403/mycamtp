@@ -10,8 +10,6 @@
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 	<section class="container contact_us_container mainContainer" style="margin-top: 6rem;">
-
-
     <style>
         /* Reset & Global Styles */
         * {
@@ -182,7 +180,7 @@
                 <h2>Contact Information</h2>
                 <div class="unique-info-item">
                     <span>Phone:</span>
-                    +91 9873045724
+                    +91 89295 92998
                 </div>
                 <div class="unique-info-item">
                     <span>Email:</span>
