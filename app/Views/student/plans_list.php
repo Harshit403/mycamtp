@@ -47,8 +47,8 @@
       </li>
     </ul>
     <div class="actions" style="margin-top: 20px;">
-     <a href=""> <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button> </a>
-     <a href=""> <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button> </a>
+     <a href="<?=base_url()?>buy"> <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button> </a>
+     <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/"> <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button> </a>
     </div>
   </div>
 
@@ -84,8 +84,8 @@
       </li>
     </ul>
     <div class="actions" style="margin-top: 20px;">
-     <a href=""> <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button> </a>
-     <a href=""> <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button></a>
+     <a href="<?=base_url()?>buy"> <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button> </a>
+     <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/"> <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button></a>
     </div>
   </div>
 
@@ -120,8 +120,8 @@
       </li>
     </ul>
     <div class="actions" style="margin-top: 20px;">
-    <a href="">  <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button></a>
-    <a href="">  <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button></a>
+    <a href="<?=base_url()?>buy">  <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button></a>
+    <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/">  <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button></a>
     </div>
   </div>
 
