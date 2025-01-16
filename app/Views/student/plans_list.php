@@ -1,4 +1,3 @@
-
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('title')?>
 	Plans 
@@ -12,8 +11,8 @@
 <?=$this->section('content')?>
 	<section class="container contact_us_container mainContainer">
 
-<body class="" style="margin-top: 15px;">
-<h1>CSEET Test Series</h1>
+<body>
+<h1 style="margin-top: 10px">CSEET Test Series</h1>
   <div class="card" style="width: 100%; max-width: 400px; background: #ffffff; border: 1px solid #e6e6e6; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
     <div class="header">
       <p class="tag" style="background-color: #e63e58; color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 12px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">New syllabus</p>
@@ -48,13 +47,13 @@
       </li>
     </ul>
     <div class="actions" style="margin-top: 20px;">
-      <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button>
-      <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button>
+     <a href=""> <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button> </a>
+     <a href=""> <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button> </a>
     </div>
   </div>
 
 
-  <div class="card" style="width: 100%; max-width: 400px; background: #ffffff; border: 1px solid #e6e6e6; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+  <div class="card" style="width: 100%; max-width: 400px; background: #ffffff; border: 1px solid #e6e6e6; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; margin: 8px;">
     <div class="header">
       <p class="tag" style="background-color: #e63e58; color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 12px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">New syllabus</p>
       <h2 style="font-size: 20px; color: #333; margin: 15px 0; font-weight: bold;">Unit-wise Test Series</h2>
@@ -85,8 +84,8 @@
       </li>
     </ul>
     <div class="actions" style="margin-top: 20px;">
-      <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button>
-      <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button>
+     <a href=""> <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button> </a>
+     <a href=""> <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button></a>
     </div>
   </div>
 
@@ -121,8 +120,8 @@
       </li>
     </ul>
     <div class="actions" style="margin-top: 20px;">
-      <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button>
-      <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button>
+    <a href="">  <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button></a>
+    <a href="">  <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button></a>
     </div>
   </div>
 
