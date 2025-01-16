@@ -64,7 +64,7 @@
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
                     <p><i class="fas fa-home mr-3"></i> Ghaziabad, Delhi NCR</p>
                     <p><i class="fas fa-envelope mr-3"></i> exam@missioncstestseries.com </p>
-                    <p><i class="fas fa-phone mr-3"></i> +91 9873045724</p>
+                    <p><i class="fas fa-phone mr-3"></i> +91 89295 92998</p>
                   </div>
                 </div>
               </div>
