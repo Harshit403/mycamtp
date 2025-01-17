@@ -1,7 +1,6 @@
-
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('title')?>
-	CSEET 
+	CS Executive
 <?=$this->endSection()?>
 <?= $this->section('meta_description') ?>
 <!-- enter your meta description -->
@@ -11,9 +10,8 @@
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 	<section class="container contact_us_container mainContainer">
-
-<body class="" style="margin-top: 15px;">
-<h1>CSEET Test Series</h1>
+<body>
+<h1 style="margin-top: 10px">CSEET Test Series</h1>
   <div class="card" style="width: 100%; max-width: 400px; background: #ffffff; border: 1px solid #e6e6e6; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
     <div class="header">
       <p class="tag" style="background-color: #e63e58; color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 12px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">New syllabus</p>
@@ -22,6 +20,9 @@
       <p class="subtag" style="background-color: #fbe7ec; color: #e63e58; font-size: 14px; padding: 6px 12px; border-radius: 20px; display: inline-block; margin-top: 10px;"></p>
     </div>
     <ul class="features" style="list-style: none; padding: 0; margin: 20px 0; text-align: left;">
+     <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Weekly Mentorship by AIR
+      </li>
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
         <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Chapter-Wise Test For Each Subject
       </li>
@@ -38,24 +39,24 @@
         <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Evaluation In 48 Hours
       </li>
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Question Paper & Suggested Answers Both Available
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Suggested Answers Available
       </li>
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Scheduled & UnScheduled Both Options !!
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Scheduled & UnScheduled Both Options 
       </li>
     </ul>
     <div class="actions" style="margin-top: 20px;">
-      <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button>
-      <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button>
+     <a href="<?=base_url()?>buy"> <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button> </a>
+     <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/"> <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button> </a>
     </div>
   </div>
 
 
-  <div class="card" style="width: 100%; max-width: 400px; background: #ffffff; border: 1px solid #e6e6e6; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+  <div class="card" style="width: 100%; max-width: 400px; background: #ffffff; border: 1px solid #e6e6e6; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; margin: 8px;">
     <div class="header">
       <p class="tag" style="background-color: #e63e58; color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 12px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">New syllabus</p>
       <h2 style="font-size: 20px; color: #333; margin: 15px 0; font-weight: bold;">Unit-wise Test Series</h2>
-      <h1 style="font-size: 36px; color: #e63e58; margin: 10px 0;">₹999</h1>
+      <h1 style="font-size: 36px; color: #e63e58; margin: 10px 0;">₹699</h1>
       <p class="subtag" style="background-color: #fbe7ec; color: #e63e58; font-size: 14px; padding: 6px 12px; border-radius: 20px; display: inline-block; margin-top: 10px;"></p>
     </div>
     <ul class="features" style="list-style: none; padding: 0; margin: 20px 0; text-align: left;">
@@ -69,7 +70,7 @@
         <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Target Based Approach
       </li>
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Membership  By AIRs- Twice  in a Month 
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Mentorship By AIRs- Twice  in a Month 
       </li>
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
         <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Evaluation In 48 Hours
@@ -78,15 +79,50 @@
         <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Suggested Answers for Reference 
       </li>
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Scheduled & UnScheduled Both Options !!
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Scheduled & UnScheduled Both Options 
       </li>
     </ul>
     <div class="actions" style="margin-top: 20px;">
-      <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button>
-      <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button>
+     <a href="<?=base_url()?>buy"> <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button> </a>
+     <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/"> <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button></a>
     </div>
   </div>
 
+  <div class="card" style="width: 100%; max-width: 400px; background: #ffffff; border: 1px solid #e6e6e6; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+    <div class="header">
+      <p class="tag" style="background-color: #e63e58; color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 12px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">New syllabus</p>
+      <h2 style="font-size: 20px; color: #333; margin: 15px 0; font-weight: bold;">Full Syllabus Test Series</h2>
+      <h1 style="font-size: 36px; color: #e63e58; margin: 10px 0;">₹1999</h1>
+      <p class="subtag" style="background-color: #fbe7ec; color: #e63e58; font-size: 14px; padding: 6px 12px; border-radius: 20px; display: inline-block; margin-top: 10px;"></p>
+    </div>
+    <ul class="features" style="list-style: none; padding: 0; margin: 20px 0; text-align: left;">
+      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> 1 full syllabus test for 100 marks
+      </li>
+      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> 2 Full Syllabus Test For Each Subject
+      </li>
+      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Target Based Approach
+      </li>
+      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Mentorship By AIRs- Twice  in a Month 
+      </li>
+      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Evaluation In 48 Hours
+      </li>
+      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Suggested Answers for Reference 
+      </li>
+      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Scheduled & UnScheduled Both Options 
+      </li>
+    </ul>
+    <div class="actions" style="margin-top: 20px;">
+    <a href="<?=base_url()?>buy">  <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button></a>
+    <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/">  <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button></a>
+    </div>
+  </div>
 
     <main>
         <section>
@@ -146,16 +182,8 @@
             </p>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 CS Test Series. All rights reserved.</p>
-    </footer>
-
-	
-
 </body>
-
-		
-	</section>
+</section>
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
 <?= $this->endSection() ?>
