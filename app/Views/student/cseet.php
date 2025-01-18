@@ -1,12 +1,12 @@
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('title')?>
-	CS Executive
+	CSEET Test Series
 <?=$this->endSection()?>
 <?= $this->section('meta_description') ?>
-<!-- enter your meta description -->
+CSEET TEST SERIES BY ALL INDIA RANKERS
 <?=$this->endSection()?>
 <?= $this->section('meta_keywords') ?>
-<!-- enter your meta keywords widthout tag -->
+CSEET, CSEET TEST SERIES, TEST SERIES, CSEET MOCK TEST SERIES, CSEET MOCK TEST, MOCK TEST SERIES, CS TEST SERIES, ICSI TEST SERIES, ICSI EXAMS, CS EXAM, ICSI, ICSI MOCK TEST,CS EXAMS, MISSION CS TEST SERIES, CSEET NOTES, CSEET LECTURES, CSEET FREE NOTES
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 	<section class="container contact_us_container mainContainer">
