@@ -1,12 +1,12 @@
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('title')?>
-	Plans 
+	CS TEST SERIES- PLANS
 <?=$this->endSection()?>
 <?= $this->section('meta_description') ?>
-<!-- enter your meta description -->
+CS TEST SERIES FOR JUNE 2025
 <?=$this->endSection()?>
 <?= $this->section('meta_keywords') ?>
-<!-- enter your meta keywords widthout tag -->
+CS TEST SERIES, CS EXAMS TEST SERIES, CSEET TEST SERIES,CS EXECUTIVE TEST SERIES, CS PROFESSIONAL TEST SERIES, FREE TEST SERIES, MOCK TEST SERIES, AFFORDABLE TEST SERIES, PREMIUM TEST SERIES, ICSI TEST SERIES, ICSI LECTURES, CS LECTURES, ICSI EXAMS, ICSI RESULT,ICSI NOTES, CS NOTES, CS EXECUTIVE LECTURES, CSEET TEST SERIES,CS PROFESSIONAL TEST SERIES, FREE CS TEST SERIES, FREE CS PROFESSIONAL TEST SERIES, ICSI FREE NOTES, CS TEST SERIES FOR JUNE 2025
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 	<section class="container contact_us_container mainContainer">
