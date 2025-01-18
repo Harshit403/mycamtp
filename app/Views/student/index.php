@@ -452,7 +452,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         <div class="card shadow-sm border-0 mb-3" style="border-radius: 15px;">
             <div class="card-body">
                 <div class="container-title-not">
-                  <h1-not>Why Mission CS Test Series?</h1-not>
+                  <h1-not>Why Test Series is Important?</h1-not>
                 </div>
                 <div class="text-start" style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
                  <p>Passing CS Exams Isn't Easy.
@@ -666,11 +666,11 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <section>
     <div class="super-custom-bg-wrapper">
         <div class="section-unique-solutions">
-            <h2 class="title-solutions-custom text-center">Years of Impact</h2>
-            <p class="subtitle-solutions-custom text-start">To help CS students, we Created Instagram page. Later on , many qualified CS and CA joined our team with the same motive.
-Since 2019, we have helped thousands of CSEET, CS Executive, and CS Professional students on their journey. We have Hosted many free live mentorship sessions for CS Students and also offered free Test Series for CS Students with evaluation. We also hosted many free Live Guidance Sessions for qualified CS to guide them in their professional Journey.
-Now, to help more CS students, we have launched MISSION CS TEST SERIES. It offers the most affordable and quality CS Test Series for CS exams, followed by live mentorship from Rankers.
-            </p>
+            <h2 class="title-solutions-custom text-center">Why Mission CS TEST SERIES?</h2>
+            <p class="subtitle-solutions-custom text-start">We have carefully  Designed  each Question Paper after analysing  the whole syllabus,  Past Trend,  and considering the Amendments. 
+<br>
+Each Questions  is selected  based on ABC Analysis  which means we focus on Important  topics. 
+This ensures  that  you Prepare  Smartly  not blindly</p>
         </div>
     </div>
 </section>
