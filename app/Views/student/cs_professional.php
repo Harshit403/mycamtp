@@ -1,12 +1,12 @@
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('title')?>
-	CS professional 
+	CS professional test series
 <?=$this->endSection()?>
 <?= $this->section('meta_description') ?>
-<!-- enter your meta description -->
+CS PROFESSIONAL TEST SERIES FOR JUNE 2025 
 <?=$this->endSection()?>
 <?= $this->section('meta_keywords') ?>
-<!-- enter your meta keywords widthout tag -->
+CS PROFESSIONAL TEST SERIES, CS PROFESSIONAL,CS PROFESSIONAL MOCK TEST,CS PROFESSIONAL MOCK TEST SERIES, CS PROFESSIONAL NEW SYLLABUS TEST SERIES, CS PROFESSIONAL FREE TEST SERIES, ICSI TEST SERIES, FREE TEST SERIES,CS EXAMS TEST SERIES, CS TEST SERIES, PREMIUM TEST SERIES, CS PROFESSIONAL NEW TEST SERIES, CS PROFESSIONAL NOTES, CS PROFESSIONAL CLASSES, CS PROFESSIONAL LECTURES
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 	<section class="container contact_us_container mainContainer">
