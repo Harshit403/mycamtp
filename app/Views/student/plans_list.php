@@ -57,7 +57,7 @@ CS TEST SERIES, CS EXAMS TEST SERIES, CSEET TEST SERIES,CS EXECUTIVE TEST SERIES
     <div class="header">
       <p class="tag" style="background-color: #e63e58; color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 12px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">New syllabus</p>
       <h2 style="font-size: 20px; color: #333; margin: 15px 0; font-weight: bold;">Unit-wise Test Series</h2>
-      <h1 style="font-size: 36px; color: #e63e58; margin: 10px 0;">₹699</h1>
+      <h1 style="font-size: 36px; color: #e63e58; margin: 10px 0;">₹499</h1>
       <p class="subtag" style="background-color: #fbe7ec; color: #e63e58; font-size: 14px; padding: 6px 12px; border-radius: 20px; display: inline-block; margin-top: 10px;"></p>
     </div>
     <ul class="features" style="list-style: none; padding: 0; margin: 20px 0; text-align: left;">
@@ -93,7 +93,7 @@ CS TEST SERIES, CS EXAMS TEST SERIES, CSEET TEST SERIES,CS EXECUTIVE TEST SERIES
     <div class="header">
       <p class="tag" style="background-color: #e63e58; color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 12px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">New syllabus</p>
       <h2 style="font-size: 20px; color: #333; margin: 15px 0; font-weight: bold;">Full Syllabus Test Series</h2>
-      <h1 style="font-size: 36px; color: #e63e58; margin: 10px 0;">₹1999</h1>
+      <h1 style="font-size: 36px; color: #e63e58; margin: 10px 0;">₹149</h1>
       <p class="subtag" style="background-color: #fbe7ec; color: #e63e58; font-size: 14px; padding: 6px 12px; border-radius: 20px; display: inline-block; margin-top: 10px;"></p>
     </div>
     <ul class="features" style="list-style: none; padding: 0; margin: 20px 0; text-align: left;">
