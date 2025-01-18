@@ -107,7 +107,7 @@ CS TEST SERIES, CS EXAMS TEST SERIES, CSEET TEST SERIES,CS EXECUTIVE TEST SERIES
         <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Target Based Approach
       </li>
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Mentorship By AIRs- Twice  in a Month 
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> 1 Mentorship SESSION By AIRs- Twice  in a Month 
       </li>
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
         <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Evaluation In 48 Hours
@@ -136,7 +136,7 @@ CS TEST SERIES, CS EXAMS TEST SERIES, CSEET TEST SERIES,CS EXECUTIVE TEST SERIES
         </section>
         <section>
             <p>
-                Since 2015, we have been one of the first platforms to provide <strong>online CS mock tests</strong>. Our team, which includes rank holders 
+                We have been one of the first platforms to provide <strong>online CS mock tests</strong>. Our team, which includes rank holders 
                 and experienced professionals, ensures high-quality <strong>CS test papers</strong> and provides proper feedback to students. Evaluated <strong>CS mock test</strong> 
                 sheets are returned within 1-2 days, along with valuable tips to improve. This quick feedback process allows students to improve before their next <strong>CS mock test</strong>.
             </p>
@@ -183,12 +183,7 @@ CS TEST SERIES, CS EXAMS TEST SERIES, CSEET TEST SERIES,CS EXECUTIVE TEST SERIES
             </p>
         </section>
     </main>
-
-	
-
-</body>
-
-		
+</body>	
 	</section>
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
