@@ -104,7 +104,7 @@ CS TEST SERIES, CS EXAMS TEST SERIES, CSEET TEST SERIES,CS EXECUTIVE TEST SERIES
         <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Target Based Approach
       </li>
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> 1 Mentorship SESSION By AIRs- Twice  in a Month 
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> 1 Mentorship Session By AIRs
       </li>
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
         <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Evaluation In 48 Hours
@@ -122,7 +122,7 @@ CS TEST SERIES, CS EXAMS TEST SERIES, CSEET TEST SERIES,CS EXECUTIVE TEST SERIES
     </div>
   </div>
 
-    <main>
+    <main class="text-start">
         <section>
             <p>
                 Our CS test series is designed to help students easily prepare and pass their CS exams like <strong>CS Executive</strong>, 
