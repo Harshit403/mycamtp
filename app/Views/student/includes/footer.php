@@ -19,13 +19,13 @@
                     <h6 class="text-uppercase fw-bold">Services</h6>
                     <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
                     <p>
-                      <a href="<?=base_url()?>cseet" class="text-white">CSEET</a>
+                      <a href="<?=base_url()?>cseet-test-series" class="text-white">CSEET</a>
                     </p>
                     <p>
-                      <a href="<?=base_url()?>cs-executive" class="text-white">CS Executive</a>
+                      <a href="<?=base_url()?>cs-executive-test-series" class="text-white">CS Executive</a>
                     </p>
                     <p>
-                      <a href="<?=base_url()?>cs-professional" class="text-white">CS Professional</a>
+                      <a href="<?=base_url()?>cs-professional-test-series" class="text-white">CS Professional</a>
                     </p>
                   </div>
                   <div class="col-md-4 mb-4" style="text-align: left;">
