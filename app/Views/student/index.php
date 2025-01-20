@@ -1035,8 +1035,8 @@ This ensures  that  you Prepare  Smartly  not blindly</p>
   <!-- Mini Install Bar -->
   <div id="custom-install-bar" style="display: none;">
     <div id="install-bar-content">
-      <p>🚀 Install <strong>Mission CS Test Series</strong> for a faster, smoother experience!</p>
-      <button id="install-app-button">Install Now</button>
+      <p>🚀 Install <strong>Mission CS Test Series</strong> app for a faster, smoother experience!</p>
+      <button class="install-app" id="install-app-button">Install Now</button>
       <button id="close-install-bar">&times;</button> <!-- Close button -->
     </div>
   </div>
