@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Install Mission CS Test Series app for a Faster experience. Enjoy faster access, offline support, and an enhanced user experience.">
+    <meta name="keywords" content="PWA, Progressive Web App, Install App, Offline Support, Fast Loading App, Mission CS Test Series, CS Test Series, Free Test Series, Mission CS, Mission CS app, Mission CS Test Series app, Free Test Series App, CSEET, CS Professional, CS Executive">
+    <meta name="author" content="Mission CS Test Series">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#e63e58">
+
+    <!-- Open Graph Meta Tags (for Social Sharing) -->
+    <meta property="og:title" content="Install Mission CS Test Series App for the Best Experience">
+    <meta property="og:description" content="Install Mission CS Test Series App and explore seamless functionality, offline support, and faster access.">
+    <meta property="og:url" content="https://missioncstestseries.com/install.html">
+    <meta property="og:image" content="https://missioncstestseries.com/images/icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Install Mission CS Test Series App">
+    <meta name="twitter:description" content="Get the best experience with Mission CS Test Series app. Click here to install now!">
+
+    <!-- Title -->
+    <title>Install Mission CS Test Series App | Fast, Secure, and Offline-Ready</title>
+
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://missioncstestseries.com/install.html">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Structured Data for Search Engines -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Mission CS Test Series ",
+        "url": "https://missioncstestseries.com/",
+        "applicationCategory": "Utilities",
+        "operatingSystem": "All",
+        "description": "Mission CS Test Series App offering fast loading, offline functionality, and a seamless user experience.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <!-- Style -->
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #e63e58;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #e63e58;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background-color: #fff;
+            color: #e63e58;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #fcafbd;
+            transform: scale(1.05);
+        }
+
+        button:focus {
+            outline: 3px solid #fff;
+            outline-offset: 4px;
+        }
+
+        .container {
+            color: #e63e58;
+            text-align: center;
+            padding: 20px;
+            background: #f7f7f7;
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #e63e58;
+        }
+
+        footer a {
+            color: #e63e58;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Install Our App</h1>
+        <p>Discover the convenience of our App. Faster, offline-ready, and optimized for your needs. Click below to install now!</p>
+        <button id="installBtn" style="display: none;">Install Now</button>
+    </div>
+    <footer>
+        © 2025 Mission CS Test Series | <a href="https://missioncstestseries.com/">Home</a>
+    </footer>
+
+    <script>
+        let deferredPrompt;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBtn').style.display = 'inline-block';
+
+            document.getElementById('installBtn').addEventListener('click', () => {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    } else {
+                        console.log('User dismissed the install prompt');
+                    }
+                    deferredPrompt = null;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
