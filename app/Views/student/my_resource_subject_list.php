@@ -104,7 +104,7 @@ cs test series, cstestseries, cs executive test series, cs professional test ser
                                style="flex: 1; max-width: 45%; background-color: #e63e58; color: white; font-size: 12px; text-transform: uppercase; font-weight: bold; border-radius: 6px; text-align: center;">
                                 <i class="bi bi-book"></i> View Paper
                             </a>
-                            <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/" 
+                            <a href="https://schedule.missioncstestseries.com" 
                                class="btn btn-sm" 
                                style="flex: 1; max-width: 45%; background-color: #333; color: white; font-size: 12px; text-transform: uppercase; font-weight: bold; border-radius: 6px; text-align: center;">
                                 <i class="bi bi-arrow-down-circle"></i> Schedule
