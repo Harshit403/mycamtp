@@ -121,64 +121,122 @@ CS EXECUTIVE TEST SERIES,CS EXECUTIVE, MOCK TEST,CS EXECUTIVE MOCK TEST SERIES, 
     <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/">  <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button></a>
     </div>
   </div>
-
+<style>
     <main class="text-start">
-        <section>
-            <p>
-                Our CS test series is designed to help students easily prepare and pass their CS exams like <strong>CS Executive</strong>, 
-                <strong>CS Professional</strong>, and <strong>CSEET</strong>. We strictly follow the new <strong>ICSI syllabus</strong> and exam pattern, 
-                ensuring students practice the right type of questions. The new ICSI syllabus includes tougher questions, and our <strong>CS mock tests</strong> match the same difficulty level. 
-                With over 8 years of experience, our team focuses on helping students identify and fix their mistakes to achieve better <strong>CS results</strong>.
-            </p>
-        </section>
-        <section>
-            <p>
-                We have been one of the first platforms to provide <strong>online CS mock tests</strong>. Our team, which includes rank holders 
-                and experienced professionals, ensures high-quality <strong>CS test papers</strong> and provides proper feedback to students. Evaluated <strong>CS mock test</strong> 
-                sheets are returned within 1-2 days, along with valuable tips to improve. This quick feedback process allows students to improve before their next <strong>CS mock test</strong>.
-            </p>
-        </section>
-        <section>
-            <h2>What Our CS Test Series Covers</h2>
-            <p>
-                For the <strong>June 2025 CS exams</strong>, we have prepared a comprehensive test series for all levels—<strong>CSEET</strong>, <strong>CS Executive</strong>, and <strong>CS Professional</strong>. 
-                Our <strong>CS mock tests</strong> are based on the latest <strong>ICSI syllabus</strong> and exam trends, helping students understand the type of questions to expect. 
-                Amendments are also included, ensuring students stay updated with the latest syllabus changes.
-            </p>
-        </section>
-        <section>
-            <h2>Common Challenges Faced by Students</h2>
-            <p>
-                Many students fail their <strong>CS Executive</strong> or <strong>CS Professional</strong> exams even after thorough revision. 
-                This often happens because they don’t know their weak areas or how to improve their approach. Our <strong>CS test series</strong> 
-                addresses this issue by helping students find and fix mistakes like poor presentation, lack of conceptual clarity, or slow writing speed. 
-                Our expert team provides step-by-step guidance to improve performance in the actual exams, resulting in better <strong>CS results</strong>.
-            </p>
-        </section>
-        <section>
-            <h2>How Our CS Test Series Helps</h2>
-            <ul>
-                <li><strong>Solid Concepts:</strong> We help students build a strong foundation of concepts, essential for scoring well in <strong>CS Executive</strong> and <strong>CS Professional</strong> exams.</li>
-                <li><strong>Proper Revision:</strong> Our <strong>CS mock tests</strong> are structured to ensure students revise the entire <strong>ICSI syllabus</strong> effectively.</li>
-                <li><strong>Mistake Analysis:</strong> Detailed feedback highlights over 130 common mistakes students make, helping them avoid losing marks in exams.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Proven Success and Affordable Pricing</h2>
-            <p>
-                Our <strong>CS test series</strong> has a proven success rate, with many students clearing their exams on the first attempt. 
-                Some have even achieved top ranks in <strong>CS results</strong>. We ensure our <strong>CS mock tests</strong> are affordable 
-                and provide excellent value for the time and effort students invest in their preparation.
-            </p>
-        </section>
-        <section>
-            <h2>Why Choose Our CS Test Series?</h2>
-            <p>
-                If you are preparing for the <strong>June 2025 CS exams</strong>, our <strong>CS test series</strong> is the perfect choice. 
-                From <strong>CS Executive</strong> to <strong>CS Professional</strong>, our team will guide you to improve your concepts, writing skills, and speed. 
-                With regular practice and feedback, you can confidently pass your <strong>CS exams</strong> and achieve excellent <strong>CS results</strong>.
-            </p>
-        </section>
+
+        h1, h2, h3 {
+            color: #e63e58;
+        }
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        .important {
+            color: #e63e58;
+            font-weight: bold;
+        }
+        .test-plan {
+            background-color: #f8f8f8;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .section-title {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+    <h1>CS Executive Test Series</h1>
+
+    <p>When preparing for professional exams like Company Secretary (CS) exams, it is crucial to focus on understanding each and every concept thoroughly, along with sufficient writing practice. Without adequate writing practice, you may face several challenges, such as time management issues and difficulties with presentation.</p>
+
+    <p>The Institute of Company Secretaries of India (ICSI) has significantly changed the pattern of CS exams (CS Executive and CS Professional). Instead of direct questions, the exams now include case-based questions. Writing answers to case-based questions can be challenging without sufficient practice before appearing for the ICSI exams.</p>
+
+    <p>By practicing enough case studies or case-based questions, you will develop the skills needed to perform satisfactorily in the exams.</p>
+
+    <p>When preparing for the CS Executive exams, do not ignore the ICSI module. While attending lectures, make sure to prepare your own handwritten notes. These notes will be helpful in revising the entire syllabus during the exam days.</p>
+
+    <p>A well-designed CS Mock Test Series can help you solve many challenges like time management and presentation skills. You will also be able to identify and improve small mistakes, which can help you gain an additional 8-10 marks in the ICSI exams.</p>
+
+    <p>The new syllabus of CS Executive has 7 subjects with different coverage:</p>
+    <ul>
+        <li><span class="important">Jurisprudence, Interpretation & General Laws (JIGL)</span></li>
+        <li><span class="important">Company Law</span></li>
+        <li><span class="important">Setting up of Business Entities & Closure</span></li>
+        <li><span class="important">Corporate Accounting & Financial Management</span></li>
+        <li><span class="important">Capital Market & Securities Laws</span></li>
+        <li><span class="important">Economic, Commercial & Intellectual Property Laws (ECIPL)</span></li>
+        <li><span class="important">Tax Laws (Income Tax and Goods and Services Tax)</span></li>
+    </ul>
+
+    <p>We have a Mock Test Series for each subject of CS Executive. Our CS Test Series has been designed by experts who have carefully selected each and every question considering its relevance to the ICSI exams. We have included case-based unseen questions in our Mock Test Papers to provide students with an environment similar to real exams.</p>
+
+    <p>We offer different types of CS Executive Test Series, designed for different categories of students:</p>
+
+    <div class="test-plan">
+        <h3>Chapter-wise Test Series</h3>
+        <p>In this Test Series plan, you will get:</p>
+        <ul>
+            <li>One test for each chapter (20 to 50 marks each).</li>
+            <li>Two full syllabus test papers (100 marks each).</li>
+        </ul>
+    </div>
+
+    <div class="test-plan">
+        <h3>Unit-wise Test Series</h3>
+        <p>In this Test Series plan, you will get:</p>
+        <ul>
+            <li>Four unit papers (20 to 50 marks each), with each test paper combining a few chapters.</li>
+            <li>One full syllabus test paper (100 marks).</li>
+        </ul>
+    </div>
+
+    <div class="test-plan">
+        <h3>Full Syllabus Test Series</h3>
+        <p>In this Test Series plan, you will get:</p>
+        <ul>
+            <li>One test paper of 100 marks.</li>
+        </ul>
+    </div>
+
+    <p>Each test paper will be evaluated within 48 hours, but in rare circumstances, it may take more time for evaluation.</p>
+
+    <p>Mock Test Series are very important for preparing for <span class="important">CS Executive</span> exams. They help you understand the exam pattern and make you more confident. The tests include case-based questions, which are often unseen and challenging. By practicing these questions, you learn how to analyze cases and write proper answers.</p>
+
+    <p>One of the biggest challenges in the <span class="important">CS Executive</span> exams is managing time. Many students struggle to complete their papers because they are not used to solving questions within the time limit. The <span class="important">CS Test Series</span> is designed to help you get better at this. By practicing timed tests, you will improve your speed and learn to finish the paper on time.</p>
+
+    <p>Another common problem is presenting answers properly. In professional exams like <span class="important">CS Executive</span>, it’s not just about knowing the answers; it’s also about how well you present them. <span class="important">CS Mock Test Series</span> gives you practice in writing answers neatly and clearly, using headings, subheadings, and bullet points. This makes it easier for examiners to read your answers and give you more marks.</p>
+
+    <p>The <span class="important">CS Executive Test Series</span> also helps you figure out your strong and weak areas. After every test, you can see where you are doing well and where you need to improve. This helps you focus on the topics that need more attention, saving time and effort.</p>
+
+    <p>For students who find certain subjects difficult, chapter-wise and unit-wise tests are very helpful. These tests let you focus on specific topics without feeling overwhelmed by the entire syllabus. By practicing one chapter or unit at a time, you can gradually build a strong base.</p>
+
+    <p>Full syllabus mock tests are also important because they give you an idea of what the real exam will feel like. You can check how prepared you are and adjust your study plan accordingly.</p>
+
+    <p>Our <span class="important">CS Executive Test Series</span> is carefully designed by experts. It includes detailed feedback after each test so that you know exactly where you made mistakes and how to fix them. This step-by-step improvement increases your chances of performing well in the <span class="important">CS Executive</span> exams.</p>
+
+    <h2>Why CS Test Series is Important</h2>
+
+    <ul>
+        <li><span class="important">Covers the Entire Syllabus</span>: Our <span class="important">CS Test Series</span> includes chapter-wise, unit-wise, and full syllabus tests, so you practice all topics properly.</li>
+        <li><span class="important">Case-Based Questions</span>: Since the exam pattern now focuses on case-based questions, our <span class="important">CS Mock Test Series</span> prepares you to handle these types of problems with confidence.</li>
+        <li><span class="important">Better Time Management</span>: Practicing timed tests helps you get used to managing your time in the actual exam.</li>
+        <li><span class="important">Improves Writing Skills</span>: You will learn how to present your answers in a structured way, which is important for getting good marks.</li>
+        <li><span class="important">Feedback for Improvement</span>: Every test is checked by experts, and you will get detailed feedback so you can fix your mistakes.</li>
+        <li><span class="important">Flexible Plans</span>: We offer different plans, such as chapter-wise, unit-wise, and full syllabus test series, so you can choose what works best for you.</li>
+    </ul>
+
+    <h2>How CS Mock Test Series Helps</h2>
+
+    <p>The <span class="important">CS Executive Test Series</span> is not just about practicing; it’s also about improving. When you keep solving mock tests regularly, you gain confidence and see steady progress. These tests help you manage time better, understand concepts clearly, and reduce silly mistakes.</p>
+
+    <p>Students who practice with <span class="important">CS Test Series</span> often perform much better because they are familiar with the question patterns and know how to structure their answers. It also helps reduce exam anxiety since you already know what to expect in the exam.</p>
+
+    <p>In addition, our mock tests include real-world scenarios and practical problems. This gives you experience in solving tough questions and prepares you for your future career as a Company Secretary.</p>
+
+    <p>In simple terms, the <span class="important">CS Executive Test Series</span> and <span class="important">CS Mock Test Series</span> are like a practice match before the big game. They help you prepare thoroughly, give you confidence, and ensure you are ready to clear the exams with good marks. By practicing regularly and improving step by step, you can achieve your goal of becoming a Company Secretary.</p>
+
+
     </main>
 </body>	
 </div>
