@@ -124,14 +124,6 @@ CS PROFESSIONAL TEST SERIES, CS PROFESSIONAL,CS PROFESSIONAL MOCK TEST,CS PROFES
 
     <main class="text-start">
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-size: 14px;
-            line-height: 1.6;
-            color: black;
-            margin: 20px;
-            padding: 0;
-        }
         h1, h2, h3 {
             color: #e63e58;
         }
