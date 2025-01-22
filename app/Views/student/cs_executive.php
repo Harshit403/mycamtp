@@ -122,8 +122,6 @@ CS EXECUTIVE TEST SERIES,CS EXECUTIVE, MOCK TEST,CS EXECUTIVE MOCK TEST SERIES, 
     </div>
   </div>
 <style>
-    <main class="text-start">
-
         h1, h2, h3 {
             color: #e63e58;
         }
@@ -146,6 +144,7 @@ CS EXECUTIVE TEST SERIES,CS EXECUTIVE, MOCK TEST,CS EXECUTIVE MOCK TEST SERIES, 
             margin-top: 20px;
         }
     </style>
+    <main class="text-start">
     <h1>CS Executive Test Series</h1>
 
     <p>When preparing for professional exams like Company Secretary (CS) exams, it is crucial to focus on understanding each and every concept thoroughly, along with sufficient writing practice. Without adequate writing practice, you may face several challenges, such as time management issues and difficulties with presentation.</p>
