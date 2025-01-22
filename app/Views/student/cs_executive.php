@@ -10,9 +10,9 @@ CS EXECUTIVE TEST SERIES,CS EXECUTIVE, MOCK TEST,CS EXECUTIVE MOCK TEST SERIES, 
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 <section class="container contact_us_container mainContainer">
-<div style="margin-top: 10px">
-<body>
-<h1 style="margin-top: 10px">CS Executive Test Series</h1>
+<div style="margin-top: 18px">
+<body style="margin-top: 18px">
+<h1 style="margin-top: 18px">CS Executive Test Series</h1>
   <div class="card" style="width: 100%; max-width: 400px; background: #ffffff; border: 1px solid #e6e6e6; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
     <div class="header">
       <p class="tag" style="background-color: #e63e58; color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 12px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">New syllabus</p>
