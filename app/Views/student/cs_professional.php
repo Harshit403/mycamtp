@@ -10,9 +10,9 @@ CS PROFESSIONAL TEST SERIES, CS PROFESSIONAL,CS PROFESSIONAL MOCK TEST,CS PROFES
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 <section class="container contact_us_container mainContainer">
-<div style="margin-top: 10px">
+<div style="margin-top: 18px">
 <body>
-<h1 style="margin-top: 10px">CS Professional Test Series</h1>
+<h1 style="margin-top: 18px">CS Professional Test Series</h1>
   <div class="card" style="width: 100%; max-width: 400px; background: #ffffff; border: 1px solid #e6e6e6; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
     <div class="header">
       <p class="tag" style="background-color: #e63e58; color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 12px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">New syllabus</p>
@@ -123,62 +123,120 @@ CS PROFESSIONAL TEST SERIES, CS PROFESSIONAL,CS PROFESSIONAL MOCK TEST,CS PROFES
   </div>
 
     <main class="text-start">
-        <section>
-            <p>
-                Our CS test series is designed to help students easily prepare and pass their CS exams like <strong>CS Executive</strong>, 
-                <strong>CS Professional</strong>, and <strong>CSEET</strong>. We strictly follow the new <strong>ICSI syllabus</strong> and exam pattern, 
-                ensuring students practice the right type of questions. The new ICSI syllabus includes tougher questions, and our <strong>CS mock tests</strong> match the same difficulty level. 
-                With over 8 years of experience, our team focuses on helping students identify and fix their mistakes to achieve better <strong>CS results</strong>.
-            </p>
-        </section>
-        <section>
-            <p>
-                We have been one of the first platforms to provide <strong>online CS mock tests</strong>. Our team, which includes rank holders 
-                and experienced professionals, ensures high-quality <strong>CS test papers</strong> and provides proper feedback to students. Evaluated <strong>CS mock test</strong> 
-                sheets are returned within 1-2 days, along with valuable tips to improve. This quick feedback process allows students to improve before their next <strong>CS mock test</strong>.
-            </p>
-        </section>
-        <section>
-            <h2>What Our CS Test Series Covers</h2>
-            <p>
-                For the <strong>June 2025 CS exams</strong>, we have prepared a comprehensive test series for all levels—<strong>CSEET</strong>, <strong>CS Executive</strong>, and <strong>CS Professional</strong>. 
-                Our <strong>CS mock tests</strong> are based on the latest <strong>ICSI syllabus</strong> and exam trends, helping students understand the type of questions to expect. 
-                Amendments are also included, ensuring students stay updated with the latest syllabus changes.
-            </p>
-        </section>
-        <section>
-            <h2>Common Challenges Faced by Students</h2>
-            <p>
-                Many students fail their <strong>CS Executive</strong> or <strong>CS Professional</strong> exams even after thorough revision. 
-                This often happens because they don’t know their weak areas or how to improve their approach. Our <strong>CS test series</strong> 
-                addresses this issue by helping students find and fix mistakes like poor presentation, lack of conceptual clarity, or slow writing speed. 
-                Our expert team provides step-by-step guidance to improve performance in the actual exams, resulting in better <strong>CS results</strong>.
-            </p>
-        </section>
-        <section>
-            <h2>How Our CS Test Series Helps</h2>
-            <ul>
-                <li><strong>Solid Concepts:</strong> We help students build a strong foundation of concepts, essential for scoring well in <strong>CS Executive</strong> and <strong>CS Professional</strong> exams.</li>
-                <li><strong>Proper Revision:</strong> Our <strong>CS mock tests</strong> are structured to ensure students revise the entire <strong>ICSI syllabus</strong> effectively.</li>
-                <li><strong>Mistake Analysis:</strong> Detailed feedback highlights over 130 common mistakes students make, helping them avoid losing marks in exams.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Proven Success and Affordable Pricing</h2>
-            <p>
-                Our <strong>CS test series</strong> has a proven success rate, with many students clearing their exams on the first attempt. 
-                Some have even achieved top ranks in <strong>CS results</strong>. We ensure our <strong>CS mock tests</strong> are affordable 
-                and provide excellent value for the time and effort students invest in their preparation.
-            </p>
-        </section>
-        <section>
-            <h2>Why Choose Our CS Test Series?</h2>
-            <p>
-                If you are preparing for the <strong>June 2025 CS exams</strong>, our <strong>CS test series</strong> is the perfect choice. 
-                From <strong>CS Executive</strong> to <strong>CS Professional</strong>, our team will guide you to improve your concepts, writing skills, and speed. 
-                With regular practice and feedback, you can confidently pass your <strong>CS exams</strong> and achieve excellent <strong>CS results</strong>.
-            </p>
-        </section>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: black;
+            margin: 20px;
+            padding: 0;
+        }
+        h1, h2, h3 {
+            color: #e63e58;
+        }
+        ul {
+            margin: 0 0 15px 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 10px;
+        }
+        .highlight {
+            color: #e63e58;
+        }
+    </style>
+
+    <div class="container text-start">
+        <h1>CS Professional Test Series</h1>
+        <p>
+            CS Professional exams are the final level of CS Exams, and after passing CS Professional, students become Company Secretaries. 
+            But this journey is not as simple as it seems.
+        </p>
+        <p>
+            CS Professional exams are one of the toughest exams in India. To clear this exam, students need to have an understanding of concepts 
+            and sufficient writing practice along with time management.
+        </p>
+        <h2>CS Subjects</h2>
+        <p>CS subjects have different coverage. These subjects are:</p>
+        <ul>
+            <li>Environmental, Social, and Governance</li>
+            <li>Drafting, Pleading, and Appearance</li>
+            <li>Compliance Management, Audit, and Due Diligence</li>
+            <li>Strategic Management and Corporate Finance</li>
+            <li>Corporate Restructuring, Valuation, and Insolvency</li>
+        </ul>
+        <p>
+            Each module of CS Professional has open book exams in which students can bring study materials to exam centers with them.
+        </p>
+        <p>
+            Our each test paper is amended as per the latest pattern of ICSI. These test papers also contain unseen case study-based questions.
+        </p>
+        <h2>Our CS Professional Test Series Plans</h2>
+        <ol>
+            <li>
+                <strong>Chapter-wise Test Series:</strong>
+                <ul>
+                    <li>One test for each chapter having 20 to 50 marks.</li>
+                    <li>Two full syllabus test papers of 100 marks each.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Unit-wise Test Series:</strong>
+                <ul>
+                    <li>Four unit tests by combining a few chapters.</li>
+                    <li>One full syllabus test series.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Full Syllabus Test Series:</strong>
+                <ul>
+                    <li>One test paper of 100 marks.</li>
+                </ul>
+            </li>
+        </ol>
+        <p>
+            Your answersheets will be evaluated by qualified CS within 48 working hours, but in rare circumstances, it may take more time depending 
+            on particular circumstances.
+        </p>
+        <h2>Why Our <span class="highlight">CS Test Series</span> is Important</h2>
+        <p>
+            Preparing for CS Professional exams requires more than just studying the syllabus. Our <span class="highlight">CS Professional Test Series</span> 
+            is designed to help students enhance their writing skills, improve time management, and gain familiarity with the types of questions they will face in the exams.
+        </p>
+        <h3>Key Features</h3>
+        <ul>
+            <li><strong>Latest ICSI Pattern:</strong> Each test paper in our <span class="highlight">CS Mock Test Series</span> is updated according to the latest exam pattern, ensuring complete alignment with ICSI standards.</li>
+            <li><strong>Comprehensive Coverage:</strong> Whether it's chapter-wise tests, unit-wise tests, or full syllabus mock exams, our test series ensures students cover every aspect of the CS Professional syllabus.</li>
+            <li><strong>Quick Evaluation:</strong> Answersheets are evaluated by qualified CS professionals within 48 hours (in rare cases, it may take longer).</li>
+        </ul>
+        <h3>Benefits</h3>
+        <ul>
+            <li><strong>Boost Conceptual Understanding:</strong> By practicing with our <span class="highlight">CS Test Series</span>, students gain a deeper understanding of each subject.</li>
+            <li><strong>Enhance Writing Speed:</strong> The regular writing practice helps students improve their speed and clarity in presenting answers.</li>
+            <li><strong>Develop Time Management Skills:</strong> Solving mock test papers teaches students how to allocate time efficiently during the actual exam.</li>
+            <li><strong>Reduce Exam Anxiety:</strong> Familiarity with the exam format and practice with unseen case studies builds confidence and reduces stress.</li>
+        </ul>
+        <h2>Success Stories Through Practice</h2>
+        <p>
+            Many students who have used our <span class="highlight">CS Professional Test Series</span> have achieved outstanding results in their exams. The structured approach provided by chapter-wise tests, unit tests, and full syllabus mock exams has been a game-changer for them.
+        </p>
+        <p>
+            Our <span class="highlight">CS Mock Test</span> not only prepares students for the exams but also helps them develop skills required in their professional journey. Solving unseen case studies enhances their analytical skills and prepares them for real-world corporate challenges.
+        </p>
+        <h2>Conclusion</h2>
+        <p>
+            CS Professional exams are not just about theoretical knowledge; they test practical application and analytical skills. With our <span class="highlight">CS Professional Test Series</span>, students can build a strong foundation, practice effectively, and boost their confidence.
+        </p>
+        <p>
+            Whether you choose the chapter-wise, unit-wise, or full syllabus plan, our <span class="highlight">CS Mock Test Series</span> ensures you are thoroughly prepared. Invest in your success with our <span class="highlight">CS Test Series</span> and take a step closer to becoming a Company Secretary.
+        </p>
+    </div>
+
     </main>
 </body>	
 </div>
