@@ -1,8 +1,8 @@
 const CACHE_NAME = "missioncs-cache-v2"; // Increment the cache version
 const urlsToCache = [
   "https://missioncstestseries.com/dashboard",
-  "<?=base_url()?>/assets/css/style.css",
-  "https://missioncstestseries.com//assetItems/image/logo.jpg",
+  "https://missioncstestseries.com/assets/css/style.css",
+  "https://missioncstestseries.com//assetItems/image/logo.png",
   "/offline.html",
 ];
 
