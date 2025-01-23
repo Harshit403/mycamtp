@@ -113,9 +113,9 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
         <!-- Button Section -->
         <div class="button-container" style="margin-top: 30px;">
             <a href="#buy-steps"><button class="buttons">How to Buy?</button></a>
-            <button class="buttons">Testimonials</button>
+            <a href="#"><button class="buttons">Testimonials</button></a>
             <a href="https://schedule.missioncstestseries.com/"><button class="buttons">Schedules</button></a>
-           <a href="<?=base_url()?>plans"><button class="buttons">Available Plans</button></a>
+            <a href="<?=base_url()?>plans"><button class="buttons">Available Plans</button></a>
         </div>
     </div>
 </section>
@@ -155,9 +155,18 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
         </div>
     </div>
 </section>
-<section class="buy-steps">
-
-	
+<section class="buy-steps" id="buy-steps">
+  <h1 style="color: #e63e58;">How to Buy Test Series</h1>
+  <ol style="padding-left: 20px;">
+    <li><span class="step" style="color: #e63e58; margin-bottom: 10px;">Step 1:</span> Choose the Category, i.e., CS Test Series.</li>
+    <li><span class="step" style="color: #e63e58; margin-bottom: 10px;">Step 2:</span> Select the Level of your Exams, i.e., CSEET, CS Executive, or CS Professional.</li>
+    <li><span class="step" style="color: #e63e58; margin-bottom: 10px;">Step 3:</span> Choose the Plans, i.e., Chapter-wise Test Series, Unit-wise Test Series, or Full Syllabus Test Series, as per your requirements.</li>
+    <li><span class="step" style="color: #e63e58; margin-bottom: 10px;">Step 4:</span> Choose the Subjects you want to buy.</li>
+    <li><span class="step" style="color: #e63e58; margin-bottom: 10px;">Step 5:</span> Add subjects to the cart from the subjects list.</li>
+    <li><span class="step" style="color: #e63e58; margin-bottom: 10px;">Step 6:</span> Click on the Cart Icon in the header of the website (located at the top).</li>
+    <li><span class="step" style="color: #e63e58; margin-bottom: 10px;">Step 7:</span> Apply Promocode for discounts.</li>
+    <li><span class="step" style="color: #e63e58; margin-bottom: 10px;">Step 8:</span> Make the payment. After successful payment, test papers, notes, and other resources will be credited to your Student's Dashboard.</li>
+  </ol>
 </section>		
 </main>	
 </section>
