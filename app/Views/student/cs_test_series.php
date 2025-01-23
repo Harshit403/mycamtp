@@ -1,6 +1,6 @@
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('title')?>
-	CS TEST SERIES - BY MISSION TEST SERIES
+CS TEST SERIES - BY MISSION TEST SERIES
 <?=$this->endSection()?>
 <?= $this->section('meta_description') ?>
 BEST TEST SERIES FOR CSEET , CS EXECUTIVE AND CS PROFESSIONAL 
@@ -18,11 +18,11 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://missioncstestseries.com/">
 <?=$this->section('content')?>
-<section class="container contact_us_container mainContainer" style="margin-top: 6rem;">
-<div style="margin-top: 10rem;">
+<section class="container mainContainer" style="margin-top: 6rem;">
+<main class="" style="margin-top: 10rem;">
 
 	
-</div>	
+</main>	
 </section>
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
