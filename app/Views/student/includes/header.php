@@ -30,6 +30,7 @@
      "@context": "https://schema.org",
      "@type": "WebSite",
      "name": "Mission CS Test Series",
+     "alternateName" : "MISSION CS TEST SERIES",
      "url": "https://missioncstestseries.com"
      }
      </script>
