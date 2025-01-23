@@ -119,6 +119,9 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
         </div>
     </div>
 </section>
+<div style="height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #f8f9fa;">
+    <img src="<?=base_url()?>assetItems/image/cs1.png" alt="Centered Image" style="max-width: 100%; height: auto;">
+</div>
 <section style="margin-top: 5px;">
     <div style="max-width: 900px; margin: 0 auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
         <h1 style="text-align: center; color: #e63e58; margin-bottom: 20px;">Mission CS Test Series</h1>
@@ -167,7 +170,10 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
     <li><span class="step" style="color: #e63e58; margin-bottom: 10px; font-size: 14px;">Step 7:</span> Apply Promocode for discounts.</li>
     <li><span class="step" style="color: #e63e58; margin-bottom: 10px; font-size: 14px;">Step 8:</span> Make the payment. After successful payment, test papers, notes, and other resources will be credited to your Student's Dashboard.</li>
   </ol>
-</section>		
+</section>
+  <div style="height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #f8f9fa;">
+    <img src="<?=base_url()?>assetItems/image/cs2.png" alt="Centered Image" style="max-width: 100%; height: auto;">
+</div>
 </main>	
 </section>
 <?= $this->endSection() ?>
