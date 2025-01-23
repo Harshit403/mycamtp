@@ -158,8 +158,8 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
         </div>
     </div>
 </section>
-<section class="buy-steps">
-  <h1 id="buy-steps" style="color: #e63e58;">How to Buy Test Series?</h1>
+<section>
+  <h1 class="buy-steps" id="buy-steps" style="color: #e63e58;">How to Buy Test Series?</h1>
   <ol class="text-start" style="padding-left: 20px;">
     <li><span class="step" style="color: #e63e58; margin-bottom: 10px; font-size: 14px;">Step 1:</span> Choose the Category, i.e., CS Test Series.</li>
     <li><span class="step" style="color: #e63e58; margin-bottom: 10px; font-size: 14px;">Step 2:</span> Select the Level of your Exams, i.e., CSEET, CS Executive, or CS Professional.</li>
