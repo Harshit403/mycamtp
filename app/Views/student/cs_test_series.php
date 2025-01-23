@@ -10,9 +10,9 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 	<section class="container contact_us_container mainContainer" style="margin-top: 6rem;">
-
+<div style="margin-top: 18rem;">
 <p>Rom Rom Bhaiyo</p>
-		
+</div>	
 	</section>
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
