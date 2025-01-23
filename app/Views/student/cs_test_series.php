@@ -23,27 +23,26 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
 	
 <section>
     <div style="max-width: 900px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        <h1 style="text-align: center; color: #e63e58;">CS Exams Preparation Hub</h1>
+        <h1 style="text-align: center; color: #e63e58;">CS Test Series By Mission CS</h1>
         
-        <!-- Features Section -->
         <div style="margin: 20px 0; display: flex; align-items: center;">
-            <i class="fas fa-book" style="font-size: 24px; color: #e63e58; margin-right: 15px;"></i>
-            <p style="margin: 0; font-size: 18px;">Unseen Case Based Questions</p>
+            <i class="fas fa-book" style="font-size: 14px; color: #e63e58; margin-right: 15px;"></i>
+            <p style="margin: 0; font-size: 14px;">Unseen Case Based Questions</p>
         </div>
 
         <div style="margin: 20px 0; display: flex; align-items: center;">
-            <i class="fas fa-file-alt" style="font-size: 24px; color: #e63e58; margin-right: 15px;"></i>
-            <p style="margin: 0; font-size: 18px;">Updated Materials and Notes for Revision</p>
+            <i class="fas fa-file-alt" style="font-size: 14px; color: #e63e58; margin-right: 15px;"></i>
+            <p style="margin: 0; font-size: 14px;">Updated Materials and Notes for Revision</p>
         </div>
 
         <div style="margin: 20px 0; display: flex; align-items: center;">
-            <i class="fas fa-user-graduate" style="font-size: 24px; color: #e63e58; margin-right: 15px;"></i>
-            <p style="margin: 0; font-size: 18px;">Live Mentorship Sessions with ICSI Rankers</p>
+            <i class="fas fa-user-graduate" style="font-size: 14px; color: #e63e58; margin-right: 15px;"></i>
+            <p style="margin: 0; font-size: 14px;">Live Mentorship Sessions with ICSI Rankers</p>
         </div>
 
         <div style="margin: 20px 0; display: flex; align-items: center;">
-            <i class="fas fa-map-signs" style="font-size: 24px; color: #e63e58; margin-right: 15px;"></i>
-            <p style="margin: 0; font-size: 18px;">Complete Roadmap for CS Exams</p>
+            <i class="fas fa-map-signs" style="font-size: 14px; color: #e63e58; margin-right: 15px;"></i>
+            <p style="margin: 0; font-size: 14px;">Complete Roadmap for CS Exams</p>
         </div>
 
         <!-- Course Cards Section -->
@@ -54,7 +53,6 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
                 onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.15)';">
                 <i class="fas fa-book-open" style="font-size: 40px; color: #e63e58; margin-bottom: 10px;"></i>
                 <h3 style="margin: 10px 0; color: #333;">CSEET Test Series</h3>
-                <p style="font-size: 14px; color: #666;">Prepare for your CSEET exams with expert guidance and materials.</p>
             </div>
             <!-- Card 2 -->
             <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;" 
@@ -62,7 +60,6 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
                 onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.15)';">
                 <i class="fas fa-tasks" style="font-size: 40px; color: #e63e58; margin-bottom: 10px;"></i>
                 <h3 style="margin: 10px 0; color: #333;">CS Executive Test Series</h3>
-                <p style="font-size: 14px; color: #666;">Comprehensive test series to prepare for CS Executive level.</p>
             </div>
             <!-- Card 3 -->
             <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;" 
@@ -70,7 +67,6 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
                 onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.15)';">
                 <i class="fas fa-certificate" style="font-size: 40px; color: #e63e58; margin-bottom: 10px;"></i>
                 <h3 style="margin: 10px 0; color: #333;">CS Professional Test Series</h3>
-                <p style="font-size: 14px; color: #666;">Advanced-level preparation for CS Professional exams.</p>
             </div>
         </div>
     </div>
@@ -116,10 +112,10 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
         
         <!-- Button Section -->
         <div class="button-container" style="margin-top: 30px;">
-            <button class="buttons">How to Buy?</button>
+            <a href="#buy-steps"><button class="buttons">How to Buy?</button></a>
             <button class="buttons">Testimonials</button>
-            <button class="buttons">Schedules</button>
-            <button class="buttons">Available Plans</button>
+            <a href="https://schedule.missioncstestseries.com/"><button class="buttons">Schedules</button></a>
+           <a href="https://missioncstestseries.com/plans"><button class="buttons">Available Plans</button></a>
         </div>
     </div>
 </section>
@@ -159,8 +155,7 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
         </div>
     </div>
 </section>
-	
-	
+		
 </main>	
 </section>
 <?= $this->endSection() ?>
