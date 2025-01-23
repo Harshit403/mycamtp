@@ -184,6 +184,7 @@
                         </div>
                       <?php else: ?>
                         <div class="d-flex justify-content-center align-items-center" style="gap:10px;">
+                            <a href="<?= base_url() ?>dashboard" class="btn text-white btn-sm btn-custom">Dashboard<i class="bi bi-arrow-right"></i></a>
                             <a href="<?= base_url() ?>logout" class="btn text-white btn-sm btn-custom">Logout<i class="bi bi-arrow-right"></i></a>
                         </div>
                       <?php endif ?>
