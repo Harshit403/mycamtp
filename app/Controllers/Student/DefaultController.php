@@ -925,6 +925,8 @@ class DefaultController extends BaseController
 	        public function loadPricing(){
 	    	        return view('student/pricing');
 	        }
+		public function loadCSTestSeries(){
+			return view('student/cs_test_series');
 	public function downloadInvoice()
 	{
 		$mpdf = new \Mpdf\Mpdf();
