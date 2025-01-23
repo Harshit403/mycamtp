@@ -119,7 +119,7 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
         </div>
     </div>
 </section>
-<div style="height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #f8f9fa;">
+<div style="display: flex; justify-content: center; align-items: center; background-color: #f8f9fa;">
     <img src="<?=base_url()?>assetItems/image/cs1.png" alt="Centered Image" style="max-width: 100%; height: auto;">
 </div>
 <section style="margin-top: 5px;">
@@ -171,7 +171,7 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
     <li><span class="step" style="color: #e63e58; margin-bottom: 10px; font-size: 14px;">Step 8:</span> Make the payment. After successful payment, test papers, notes, and other resources will be credited to your Student's Dashboard.</li>
   </ol>
 </section>
-  <div style="height: 100vh; display: flex; justify-content: center; align-items: center; background-color: #f8f9fa;">
+  <div style="display: flex; justify-content: center; align-items: center; background-color: #f8f9fa;">
     <img src="<?=base_url()?>assetItems/image/cs2.png" alt="Centered Image" style="max-width: 100%; height: auto;">
 </div>
 </main>	
