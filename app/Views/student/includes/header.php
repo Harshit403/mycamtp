@@ -1,7 +1,9 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title><?=$this->renderSection('title')?></title>
+    <title>
+    <?= $this->renderSection('title') ? $this->renderSection('title') : 'Mission CS Test Series' ?>
+    </title>
     <meta content="<?=$this->renderSection('meta_description')?>" name="description">
     <meta content="<?=$this->renderSection('meta_keywords')?>" name="keywords">
     <meta name="robots" content="index, follow" />
@@ -23,8 +25,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="manifest" href="<?=base_url()?>/manifest.json">
     <meta name="theme-color" content="#ffffff">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#ffffff">
     <script type="application/ld+json">
      {
      "@context": "https://schema.org",
@@ -33,4 +33,4 @@
      "url": "https://missioncstestseries.com"
      }
      </script>
-     </head>
+</head>
