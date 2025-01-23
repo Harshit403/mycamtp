@@ -48,26 +48,26 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
         <!-- Course Cards Section -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; text-align: center;">
             <!-- Card 1 -->
-            <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;" 
+            <a href="<?=base_url()?>type?category=cs-test-series&&level=cseet-test-series"><div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;" 
                 onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 12px rgba(0, 0, 0, 0.2)';" 
                 onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.15)';">
                 <i class="fas fa-book-open" style="font-size: 40px; color: #e63e58; margin-bottom: 10px;"></i>
                 <h3 style="margin: 10px 0; color: #333;">CSEET Test Series</h3>
-            </div>
+            </div> </a>
             <!-- Card 2 -->
-            <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;" 
+            <a href="<?=base_url()?>type?category=cs-test-series&&level=cs-executive-test-series"><div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;" 
                 onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 12px rgba(0, 0, 0, 0.2)';" 
                 onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.15)';">
                 <i class="fas fa-tasks" style="font-size: 40px; color: #e63e58; margin-bottom: 10px;"></i>
                 <h3 style="margin: 10px 0; color: #333;">CS Executive Test Series</h3>
-            </div>
+            </div></a>
             <!-- Card 3 -->
-            <div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;" 
+            <a href="<?=base_url()?>type?category=cs-test-series&&level=cs-professional-test-series"><div style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease;" 
                 onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 12px rgba(0, 0, 0, 0.2)';" 
                 onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 10px rgba(0, 0, 0, 0.15)';">
                 <i class="fas fa-certificate" style="font-size: 40px; color: #e63e58; margin-bottom: 10px;"></i>
                 <h3 style="margin: 10px 0; color: #333;">CS Professional Test Series</h3>
-            </div>
+            </div></a>
         </div>
     </div>
 </section>
@@ -94,7 +94,7 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
             background-color: #e63e58;
             color: white;
             padding: 15px 30px;
-            font-size: 16px;
+            font-size: 9px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -115,11 +115,11 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
             <a href="#buy-steps"><button class="buttons">How to Buy?</button></a>
             <button class="buttons">Testimonials</button>
             <a href="https://schedule.missioncstestseries.com/"><button class="buttons">Schedules</button></a>
-           <a href="https://missioncstestseries.com/plans"><button class="buttons">Available Plans</button></a>
+           <a href="<?=base_url()?>plans"><button class="buttons">Available Plans</button></a>
         </div>
     </div>
 </section>
-<section>
+<section style="margin-top: 5px;">
     <div style="max-width: 900px; margin: 0 auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
         <h1 style="text-align: center; color: #e63e58; margin-bottom: 20px;">Mission CS Test Series</h1>
 
@@ -155,7 +155,10 @@ CS TEST SERIS, CS EXECUTIVE TEST SERIES, CSEET TEST SERIES, CS PROFESSIONAL TEST
         </div>
     </div>
 </section>
-		
+<section class="buy-steps">
+
+	
+</section>		
 </main>	
 </section>
 <?= $this->endSection() ?>
