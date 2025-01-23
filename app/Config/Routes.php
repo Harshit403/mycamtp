@@ -43,6 +43,7 @@ $routes->get('/disclaimer',STUDENT.'DefaultController::loadDisclaimer');
 $routes->get('/plans',STUDENT.'DefaultController::loadPlans');
 $routes->get('/pricing',STUDENT.'DefaultController::loadPricing');
 $routes->get('/gplan',STUDENT.'DefaultController::loadGPlan');
+$routes->get('/cs-test-series',STUDENT.'DefaultController::loadCSTestSeries');
 $routes->get('/cs-executive-test-series',STUDENT.'DefaultController::loadCSExecutive');
 $routes->get('/cs-professional-test-series',STUDENT.'DefaultController::loadCSProfessional');
 $routes->get('/cseet',STUDENT.'DefaultController::loadCSEET');
