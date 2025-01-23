@@ -28,9 +28,9 @@
     <script type="application/ld+json">
      {
      "@context": "https://schema.org",
-     "@type": "WebPage",
+     "@type": "WebSite",
      "name": "Mission CS Test Series",
      "url": "https://missioncstestseries.com"
      }
      </script>
-</head>
+    </head>
