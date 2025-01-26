@@ -1101,7 +1101,13 @@ This ensures  that  you Prepare  Smartly  not blindly</p>
 
 <!-- start webpushr code --> <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BKyPm_qNFX-rSaSabH_2G-ub8FGSHPXSGzzM23zaP8NIm2N_rskcfDEVZ7qrSnOdO3sAWLPfMZeYTlbxjZBp1VQ' });</script><!-- end webpushr code -->
 
-
+<script>
+  // Check if the app is running in PWA mode
+  if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+    // Redirect to the dashboard
+    window.location.href = '/dashboard';
+  }
+</script>
 	
 
 <?= $this->endSection() ?>
