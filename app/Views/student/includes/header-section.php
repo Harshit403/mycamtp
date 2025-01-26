@@ -16,8 +16,7 @@
       transition: opacity 0.5s ease, visibility 0.5s ease;
     }
     #preloader.hidden {
-      opacity: 0;
-      visibility: hidden;
+      display: none !important;
     }
     dotlottie-player {
       width: 150px;
@@ -42,41 +41,43 @@
     }
   </style>
 
-<div id="preloader">
-  <div style="text-align: center;">
-    <dotlottie-player
-      src="https://lottie.host/e9ab34df-5bf4-4002-8133-b43d78b8fa5b/NJ8yWP7naE.lottie"
-      background="transparent"
-      speed="1"
-      loop
-      autoplay>
-    </dotlottie-player>
-    <p style="color: white; font-size: 18px; margin-top: 10px; font-family: Arial, sans-serif;">
-      Mission CS Test Series
-    </p>
-  </div>
-</div>
-
 <script>
-  window.addEventListener('load', () => {
-  const preloader = document.getElementById('preloader');
-  const mainContent = document.getElementById('main-content');
-
-  // Check if the app is running in standalone mode (PWA)
+window.addEventListener('DOMContentLoaded', () => {
+  // Check if the app is running in PWA mode
   if (window.matchMedia('(display-mode: standalone)').matches) {
-    // PWA: Show preloader
+    // If in PWA mode, inject preloader
+    const preloaderHTML = `
+      <div id="preloader">
+        <div style="text-align: center;">
+          <dotlottie-player
+            src="https://lottie.host/e9ab34df-5bf4-4002-8133-b43d78b8fa5b/NJ8yWP7naE.lottie"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay>
+          </dotlottie-player>
+          <p>Mission CS Test Series</p>
+        </div>
+      </div>
+    `;
+    
+    // Insert the preloader HTML into the body
+    document.body.insertAdjacentHTML('afterbegin', preloaderHTML);
+    
+    const preloader = document.getElementById('preloader');
+
+    // Hide the preloader after 1.5 seconds
     setTimeout(() => {
-      preloader.classList.add('hidden'); // Hide preloader with animation
-      mainContent.classList.add('active'); // Show main content
+      preloader.classList.add('hidden');
+      document.body.style.overflow = 'auto'; // Allow scrolling after preloader
     }, 1500); // Adjust delay as needed
   } else {
-    // Website: Completely remove the preloader
-    preloader.remove();
-    mainContent.classList.add('active');
+    // For website, skip adding the preloader and enable scrolling immediately
+    document.body.style.overflow = 'auto';
   }
 });
 </script>
-
+  
 <?php 
   $uri = service('uri'); 
   $segment1 = $uri->getSegment(1);
