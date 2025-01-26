@@ -1,9 +1,7 @@
 <!-- navbar -->
 <header>
-
   <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
   <style>
-
     #preloader {
       position: fixed;
       top: 0;
@@ -32,14 +30,20 @@
     #main-content.active {
       display: block;
     }
+    #preloader p {
+     color: white;
+     font-size: 18px;
+     margin-top: 10px;
+     font-family: Arial, sans-serif;
+    }
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
   </style>
 
-  <!-- Preloader -->
-  <div id="preloader">
+<div id="preloader">
+  <div style="text-align: center;">
     <dotlottie-player
       src="https://lottie.host/e9ab34df-5bf4-4002-8133-b43d78b8fa5b/NJ8yWP7naE.lottie"
       background="transparent"
@@ -47,24 +51,30 @@
       loop
       autoplay>
     </dotlottie-player>
+    <p style="color: white; font-size: 18px; margin-top: 10px; font-family: Arial, sans-serif;">
+      Mission CS Test Series
+    </p>
   </div>
-
+</div>
 
 <script>
   window.addEventListener('load', () => {
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-      const preloader = document.getElementById('preloader');
-      const mainContent = document.getElementById('main-content');
-      
-      setTimeout(() => {
-        preloader.classList.add('hidden'); // Hide preloader with animation
-        mainContent.classList.add('active'); // Show main content
-      }, 1500); // Adjust delay as needed
-    } else {
-      document.getElementById('preloader').remove(); // Remove preloader if not PWA
-      document.getElementById('main-content').classList.add('active');
-    }
-  });
+  const preloader = document.getElementById('preloader');
+  const mainContent = document.getElementById('main-content');
+
+  // Check if the app is running in standalone mode (PWA)
+  if (window.matchMedia('(display-mode: standalone)').matches) {
+    // PWA: Show preloader
+    setTimeout(() => {
+      preloader.classList.add('hidden'); // Hide preloader with animation
+      mainContent.classList.add('active'); // Show main content
+    }, 1500); // Adjust delay as needed
+  } else {
+    // Website: Completely remove the preloader
+    preloader.remove();
+    mainContent.classList.add('active');
+  }
+});
 </script>
 
 <?php 
