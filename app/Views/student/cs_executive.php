@@ -62,7 +62,7 @@ CS EXECUTIVE TEST SERIES,CS EXECUTIVE, MOCK TEST,CS EXECUTIVE MOCK TEST SERIES, 
     </div>
     <ul class="features" style="list-style: none; padding: 0; margin: 20px 0; text-align: left;">
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> 4 unit tests - each covering 25%
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span>  4 unit tests - each covering 25% of syllabus
       </li>
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
         <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> 1 Full Syllabus Test For Each Subject
