@@ -61,16 +61,16 @@ CS TEST SERIES, CS EXAMS TEST SERIES, CSEET TEST SERIES,CS EXECUTIVE TEST SERIES
     </div>
     <ul class="features" style="list-style: none; padding: 0; margin: 20px 0; text-align: left;">
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> 50%+50% Test For Each Subject
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span>  4 unit tests - each covering 25% of syllabus
       </li>
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> 2 Full Syllabus Test For Each Subject
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> 1 Full Syllabus Test For Each Subject
       </li>
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
         <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Target Based Approach
       </li>
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Mentorship By AIRs- Twice  in a Month 
+        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Mentorship By AIRs- Once in a Month 
       </li>
       <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
         <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Evaluation In 48 Hours
