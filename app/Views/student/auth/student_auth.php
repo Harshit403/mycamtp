@@ -93,6 +93,7 @@
                     <span>Confirm Password</span>
                 </div>
             </form>
+            <p>I have read <a href="https://missioncstestseries.com/terms-and-conditions">Terms and conditions</a> and <a href="https://missioncstestseries.com/privacy-policy">Privacy Policy</a></p>
             <a class="btn btn-sm btn-custom signUpBtn authButton  w-100">
                 <span class="span"><i class="bi bi-key-fill"></i> Sign Up</span>
             </a>
