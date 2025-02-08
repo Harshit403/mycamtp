@@ -69,7 +69,7 @@
                     <input type="text" class="item" name="state_name" required="required">
                     <span>State</span>
                 </div>
-             <!--   <div class="inputBox">
+                <div class="inputBox">
                     <select class="form-control mb-4" name="category_id" id="category_id">
                         <?php 
                         if(!empty($category_list)){
@@ -83,7 +83,7 @@
                         }
                         ?>
                     </select>
-                </div> -->
+                </div>
                 <div class="inputBox">
                     <select class="form-control mb-4" name="current_level" id="current_level">
                     </select>
@@ -116,7 +116,7 @@
     var pageType = "student_auth_page";
     var baseUrl = "<?=base_url()?>";
     </script>
-    <script type="text/javascript" src="<?=base_url()?>assets/student/js/student_auth.js?v=1.0.1"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/student/js/student_auth.js"></script>
 </body>
 
 </html>
