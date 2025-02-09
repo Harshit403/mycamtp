@@ -492,7 +492,7 @@ class DefaultController extends BaseController
 		$linkInfo = $this->cashfreePayment($studentDetails, $total_amt_to_pay, $order_id);
 		if (!empty($linkInfo)) {
 			$linkInfo = json_decode($linkInfo);
-			$linkInfo = json_decode($linkInfo);
+		
 		if (isset($linkInfo->cf_order_id)) {
 			$cfOrderId = $linkInfo->cf_order_id;
 		} else {
