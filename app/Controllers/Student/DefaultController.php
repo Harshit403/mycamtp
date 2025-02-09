@@ -490,16 +490,21 @@ class DefaultController extends BaseController
 		$student_id = $studentDetails['id'];
 		$order_id = 'OD' . uniqid($student_id . 'M');
 		$linkInfo = $this->cashfreePayment($studentDetails, $total_amt_to_pay, $order_id);
-		 echo '<pre>'; print_r($linkInfo);die;
+		 //echo '<pre>'; print_r($linkInfo);die;
+		// if (!empty($linkInfo)) {
+		// 	$linkInfo = json_decode($linkInfo);
+		// 	session()->set('link_id', isset($linkInfo->order_id) ? $linkInfo->order_id : '');
+		// }
 		if (!empty($linkInfo)) {
 			$linkInfo = json_decode($linkInfo);
-			session()->set('link_id', isset($linkInfo->order_id) ? $linkInfo->order_id : '');
+			session()->set('payment_session_id', isset($linkInfo->payment_session_id) ? $linkInfo->payment_session_id : '');
 		}
 		if (!empty($linkInfo)) {
 			$insertData = array();
 			$cartIdArray = $this->getCartId();
 			$insertData['cart_id'] = $cartIdArray['data'];
-			$insertData['cf_link_id'] = $linkInfo->cf_order_id;
+			$insertData['cf_link_id'] = $linkInfo->order_id;
+
 			$insertData['payment_request_id'] = $linkInfo->order_id;
 			$insertData['payment_mode'] = 'cashfree';
 			$insertData['total_payment_amount'] = $linkInfo->order_amount;
