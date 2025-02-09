@@ -540,7 +540,7 @@ class DefaultController extends BaseController
 				'customer_email' => $studentDetails['email']
 			],
 			'order_meta' => [
-				'return_url' => base_url() . 'purchase-status',
+				'return_url' => 'https://missioncstestseries.com/purchase-status',
 			],
 			'thank_you_msg' => 'Thank you for your purchase'
 		]),);
