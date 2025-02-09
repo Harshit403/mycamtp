@@ -492,8 +492,20 @@ class DefaultController extends BaseController
 		$linkInfo = $this->cashfreePayment($studentDetails, $total_amt_to_pay, $order_id);
 		if (!empty($linkInfo)) {
 			$linkInfo = json_decode($linkInfo);
+			$linkInfo = json_decode($linkInfo);
+		if (isset($linkInfo->cf_order_id)) {
+			$cfOrderId = $linkInfo->cf_order_id;
+		} else {
+			log_message('error', 'cf_order_id not found in API response');
+			$response = array('success' => false, 'message' => 'Something went wrong');
+			return json_encode($response);
+		}
 			session()->set('link_id', isset($linkInfo->order_id) ? $linkInfo->order_id : '');
 		}
+
+
+		
+
 		if (!empty($linkInfo)) {
 			$insertData = array();
 			$cartIdArray = $this->getCartId();
