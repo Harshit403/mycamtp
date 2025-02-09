@@ -480,93 +480,87 @@ class DefaultController extends BaseController
 	}
 
 	public function checkoutPayments()
-{
-    $getCartDetails = json_decode($this->getCartDetails());
-    $payableAmtArray = array_map(function ($v) {
-        return $v->amt_after_discount;
-    }, $getCartDetails);
-    $total_amt_to_pay = array_sum($payableAmtArray);
-    $studentDetails = session()->get('studentDetails');
-    $student_id = $studentDetails['id'];
-    $order_id = 'OD' . uniqid($student_id . 'M');
-    $linkInfo = $this->cashfreePayment($studentDetails, $total_amt_to_pay, $order_id);
-    if (!empty($linkInfo)) {
-        $linkInfo = json_decode($linkInfo);
-        session()->set('link_id', isset($linkInfo->order_id) ? $linkInfo->order_id : '');
-    }
-    if (!empty($linkInfo)) {
-        $insertData = array();
-        $cartIdArray = $this->getCartId();
-        $insertData['cart_id'] = $cartIdArray['data'];
-        $insertData['cf_link_id'] = $linkInfo->order_id; 
-        $insertData['payment_request_id'] = $linkInfo->order_id;
-        $insertData['payment_mode'] = 'cashfree';
-        $insertData['total_payment_amount'] = $linkInfo->order_amount;
-        $insertData['order_id'] = $order_id;
-        $insertData['student_id'] = $student_id;
-        $addPurchaseData = $this->common->dbAction('purchase_table', $insertData, 'insert', array());
+	{
+		$getCartDetails = json_decode($this->getCartDetails());
+		$payableAmtArray = array_map(function ($v) {
+			return $v->amt_after_discount;
+		}, $getCartDetails);
+		$total_amt_to_pay = array_sum($payableAmtArray);
+		$studentDetails = session()->get('studentDetails');
+		$student_id = $studentDetails['id'];
+		$order_id = 'OD' . uniqid($student_id . 'M');
+		$linkInfo = $this->cashfreePayment($studentDetails, $total_amt_to_pay, $order_id);
+		 echo '<pre>'; print_r($linkInfo);die;
+		if (!empty($linkInfo)) {
+			$linkInfo = json_decode($linkInfo);
+			session()->set('link_id', isset($linkInfo->order_id) ? $linkInfo->order_id : '');
+		}
+		if (!empty($linkInfo)) {
+			$insertData = array();
+			$cartIdArray = $this->getCartId();
+			$insertData['cart_id'] = $cartIdArray['data'];
+			$insertData['cf_link_id'] = $linkInfo->cf_order_id;
+			$insertData['payment_request_id'] = $linkInfo->order_id;
+			$insertData['payment_mode'] = 'cashfree';
+			$insertData['total_payment_amount'] = $linkInfo->order_amount;
+			$insertData['order_id'] = $order_id;
+			$insertData['student_id'] = $student_id;
+			$addPurchaseData = $this->common->dbAction('purchase_table', $insertData, 'insert', array());
 
-        if (!empty($addPurchaseData)) {
-            $response = array('success' => true, 'payment_session_id' => $linkInfo->payment_session_id);
-        } else {
-            log_message('error', 'Link info have not updated in purchase table');
-            $response = array('success' => false, 'message' => 'Something went wrong');
-        }
-    } else {
-        log_message('error', 'Failed to create link info properly');
-        $response = array('success' => false, 'message' => 'Something went wrong');
-    }
+			if (!empty($addPurchaseData)) {
+				$response = array('success' => true, 'payment_session_id' => $linkInfo->payment_session_id);
+			} else {
+				log_message('error', 'Link info have not updated in purchase table');
+				$response = array('success' => false, 'message' => 'Somthing went wrong');
+			}
+		} else {
+			log_message('error', 'Failed to create link info properly');
+			$response = array('success' => false, 'message' => 'Somthing went wrong');
+		}
 
-    return json_encode($response);
-}
+		return json_encode($response);
+	}
 
-public function cashfreePayment($studentDetails, $total_amt_to_pay = 0.00, $order_id = '')
-{
-    $student_id = $studentDetails['id'];
-    $link_id = uniqid($student_id);
-    $ch = curl_init();
 
-    curl_setopt($ch, CURLOPT_URL, SERVER_URL . '/pg/orders');
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
-        'order_amount' => $total_amt_to_pay,
-        'order_currency' => 'INR',
-        'customer_details' => [
-            'customer_id' => $studentDetails['id'],
-            'customer_name' => $studentDetails['student_name'],
-            'customer_phone' => $this->formatPhoneNumber($studentDetails['mobile_no']),
-            'customer_email' => $studentDetails['email']
-        ],
-        'order_meta' => [
-            'return_url' => 'https://missioncstestseries.com/purchase-status',
-        ],
-        'thank_you_msg' => 'Thank you for your purchase'
-    ]));
+	public function cashfreePayment($studentDetails, $total_amt_to_pay = 0.00, $order_id = '')
+	{
+		$student_id = $studentDetails['id'];
+		$link_id = uniqid($student_id);
+		$ch = curl_init();
 
-    $headers = array();
-    $headers[] = 'X-Client-Secret: ' . SECRET_KEY;
-    $headers[] = 'X-Client-Id: ' . CLIENT_ID;
-    $headers[] = 'X-Api-Version: ' . API_VERSION;
-    $headers[] = 'Content-Type: application/json';
-    $headers[] = 'Accept: application/json';
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+		curl_setopt($ch, CURLOPT_URL, SERVER_URL . '/pg/orders');
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
+			'order_amount' => $total_amt_to_pay,
+			'order_currency' => 'INR',
+			'customer_details' => [
+				'customer_id' => $studentDetails['id'],
+				'customer_name' => $studentDetails['student_name'],
+				'customer_phone' => $studentDetails['mobile_no'],
+				'customer_email' => $studentDetails['email']
+			],
+			'order_meta' => [
+				'return_url' => 'https://missioncstestseries.com/purchase-status',
+			],
+			'thank_you_msg' => 'Thank you for your purchase'
+		]),);
 
-    $result = curl_exec($ch);
-    if (curl_errno($ch)) {
-        echo 'Error:' . curl_error($ch);
-    }
-    curl_close($ch);
-    return $result;
-}
+		$headers = array();
+		$headers[] = 'X-Client-Secret: ' . SECRET_KEY . '';
+		$headers[] = 'X-Client-Id: ' . CLIENT_ID . '';
+		$headers[] = 'X-Api-Version: ' . API_VERSION . '';
+		$headers[] = 'Content-Type: application/json';
+		$headers[] = 'Accept: application/json';
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-private function formatPhoneNumber($phone)
-{
-    if (preg_match('/^\d{10}$/', $phone)) {
-        return '+91' . $phone;
-    }
-    return $phone;
-}
+		$result = curl_exec($ch);
+		if (curl_errno($ch)) {
+			echo 'Error:' . curl_error($ch);
+		}
+		curl_close($ch);
+		return $result;
+	}
 
 	public function purchaseStatus()
 	{
