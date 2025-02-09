@@ -490,6 +490,7 @@ class DefaultController extends BaseController
 		$student_id = $studentDetails['id'];
 		$order_id = 'OD' . uniqid($student_id . 'M');
 		$linkInfo = $this->cashfreePayment($studentDetails, $total_amt_to_pay, $order_id);
+		print_r($linkInfo); 
 		if (!empty($linkInfo)) {
 			$linkInfo = json_decode($linkInfo);
 		
