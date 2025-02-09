@@ -498,7 +498,7 @@ class DefaultController extends BaseController
         $insertData = array();
         $cartIdArray = $this->getCartId();
         $insertData['cart_id'] = $cartIdArray['data'];
-        $insertData['cf_link_id'] = $linkInfo->order_id; // cf_order_id को order_id से बदलें
+        $insertData['cf_link_id'] = $linkInfo->order_id; 
         $insertData['payment_request_id'] = $linkInfo->order_id;
         $insertData['payment_mode'] = 'cashfree';
         $insertData['total_payment_amount'] = $linkInfo->order_amount;
@@ -523,6 +523,7 @@ class DefaultController extends BaseController
 public function cashfreePayment($studentDetails, $total_amt_to_pay = 0.00, $order_id = '')
 {
     $student_id = $studentDetails['id'];
+    $link_id = uniqid($student_id);
     $ch = curl_init();
 
     curl_setopt($ch, CURLOPT_URL, SERVER_URL . '/pg/orders');
@@ -534,7 +535,7 @@ public function cashfreePayment($studentDetails, $total_amt_to_pay = 0.00, $orde
         'customer_details' => [
             'customer_id' => $studentDetails['id'],
             'customer_name' => $studentDetails['student_name'],
-            'customer_phone' => '+91' . substr($studentDetails['mobile_no'], -10), // फोन नंबर को सही प्रारूप में सेट करें
+            'customer_phone' => $this->formatPhoneNumber($studentDetails['mobile_no']),
             'customer_email' => $studentDetails['email']
         ],
         'order_meta' => [
@@ -557,6 +558,14 @@ public function cashfreePayment($studentDetails, $total_amt_to_pay = 0.00, $orde
     }
     curl_close($ch);
     return $result;
+}
+
+private function formatPhoneNumber($phone)
+{
+    if (preg_match('/^\d{10}$/', $phone)) {
+        return '+91' . $phone;
+    }
+    return $phone;
 }
 
 	public function purchaseStatus()
