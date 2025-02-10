@@ -24,7 +24,7 @@ $(document).ready(function () {
         var formData = $("#sign_up_form").serializeArray();
         var data = new FormData();
         var errors = new Array;
-        var mobilePattern = /^(?:\+91|91)?[6-9]\d{9}$/;
+        var mobilePattern = /^(?:\+91|91)?[6-9][0-9]{9}$/;
         var mobileNo = data.get('mobile_no');
         $.each(formData, function (i, v) {
             data.append(v.name, $.trim(v.value));
