@@ -9,7 +9,8 @@ $(document).ready(function () {
             $(this).closest(".inputBox").find('input').attr('type', 'password');
         }
     });
-
+    var mobilePattern = /^(?:\+91|91)?[6-9]\d{9}$/;
+    var mobileNo = data.get('mobile_no');
     var emailPattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
     var passwordPattern = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{7,}$/;
     $(".signUpBtn").on('click', function () {
@@ -43,8 +44,10 @@ $(document).ready(function () {
         if (data.get('email') != '' && !emailPattern.test(data.get('email'))) {
             errors.push('Email does not a valid email');
         }
-        if (data.get('mobile_no') == '') {
-            errors.push('Please enter a mobile no');
+        if (mobileNo == '') {
+            errors.push('please enter mobile number');
+        } else if (!mobilePattern.test(mobileNo)) {
+            errors.push('please eneter correct number');
         }
         if (password == '') {
             errors.push('Please enter a password');
