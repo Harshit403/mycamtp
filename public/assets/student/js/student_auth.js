@@ -45,9 +45,9 @@ $(document).ready(function () {
             errors.push('Email does not a valid email');
         }
         if (mobileNo == '') {
-            errors.push('please enter mobile number');
+            errors.push('Pease enter mobile number');
         } else if (!mobilePattern.test(mobileNo)) {
-            errors.push('please eneter correct number');
+            errors.push('Please eneter correct number');
         }
         if (password == '') {
             errors.push('Please enter a password');
