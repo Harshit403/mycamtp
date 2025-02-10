@@ -45,13 +45,10 @@ $(document).ready(function () {
         if (data.get('email') != '' && !emailPattern.test(data.get('email'))) {
             errors.push('Email does not a valid email');
         }
-        if (mobileNo.trim() == '') {  
-            errors.push('Please enter mobile number');
-        } else {
-            console.log("Checking Number:", mobileNo); 
-            if (!mobilePattern.test(mobileNo.trim())) {  
-                errors.push('Please enter correct number');
-            }
+        if (mobileNo == '') {
+            errors.push('please enter mobile number');
+        } else if (!mobilePattern.test(mobileNo)) {
+            errors.push('please eneter correct number');
         }
         if (password == '') {
             errors.push('Please enter a password');
