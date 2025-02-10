@@ -23,63 +23,85 @@ $(document).ready(function () {
     function addSignUpData() {
         var formData = $("#sign_up_form").serializeArray();
         var data = new FormData();
-        var errors = new Array;
-        var mobilePattern = /^(?:\+91|91)?[6-9][0-9]{9}$/;
-        var mobileNo = data.get('mobile_no');
+        var errors = []; 
+        
+        
         $.each(formData, function (i, v) {
             data.append(v.name, $.trim(v.value));
         });
+    
+       
         const urlParams = new URLSearchParams(window.location.search);
         const referralId = urlParams.get('ref');
-
         if (referralId) {
             data.append('referral_by_student_id', referralId);
         }
+    
+        
         var password = data.get('password');
-        if (data.get('student_name') == '') {
+        var mobileNo = data.get('mobile_no') ? String(data.get('mobile_no')).trim() : ""; 
+    
+        
+        if (data.get('student_name') === '') {
             errors.push('Please enter your name');
         }
-        if (data.get('email') == '') {
-            errors.push('Please enter a email');
+        if (data.get('email') === '') {
+            errors.push('Please enter an email');
         }
-        if (data.get('email') != '' && !emailPattern.test(data.get('email'))) {
-            errors.push('Email does not a valid email');
+        if (data.get('email') !== '' && !emailPattern.test(data.get('email'))) {
+            errors.push('Please enter a valid email');
         }
-        if (mobileNo == '') {
-            errors.push('please enter mobile number');
+    
+      
+        var mobilePattern = /^(?:\+91|91)?[6-9]\d{9}$/;
+    
+        if (mobileNo === '') {
+            errors.push('Please enter a mobile number');
         } else if (!mobilePattern.test(mobileNo)) {
-            errors.push('please eneter correct number');
+            console.log("Regex Test Failed for:", mobileNo);
+            errors.push('Please enter a correct mobile number');
+        } else {
+            console.log("✅ Valid Mobile Number:", mobileNo);
         }
-        if (password == '') {
+    
+        
+        if (password === '') {
             errors.push('Please enter a password');
-        }
-        if (data.get('password') != '') {
+        } else {
             if (password.length < 7) {
-                errors.push("Your password must be at least 7 characters");
+                errors.push("Your password must be at least 7 characters long.");
             }
-            if (password.search(/[a-z]/i) < 0) {
+            if (!/[a-zA-Z]/.test(password)) {
                 errors.push("Your password must contain at least one letter.");
             }
-            if (password.search(/[0-9]/) < 0) {
+            if (!/[0-9]/.test(password)) {
                 errors.push("Your password must contain at least one digit.");
             }
         }
-        if (data.get('password') != data.get('confirm_password')) {
-            errors.push('Password does not matched');
+    
+        
+        if (data.get('password') !== data.get('confirm_password')) {
+            errors.push('Passwords do not match');
         }
-        if (data.get('city_name') == '') {
+    
+       
+        if (data.get('city_name') === '') {
             errors.push('Please enter a city');
         }
-        if (data.get('state_name') == '') {
+        if (data.get('state_name') === '') {
             errors.push('Please enter a state');
         }
+    
+       
         if (errors.length > 0) {
             bootbox.alert({
                 closeButton: false,
-                message: errors.join("</br>"),
+                message: errors.join("<br>"), 
             });
             return false;
         }
+    
+        
         $.ajax({
             url: baseUrl + 'register-details',
             type: 'POST',
@@ -88,24 +110,24 @@ $(document).ready(function () {
             processData: false,
             contentType: false,
             success: function (response) {
-            if (response.success) {
-                    // Show success dialog
+                if (response.success) {
                     bootbox.alert({
                         message: 'Registration successful! You can now log in.',
                         closeButton: false,
                         callback: function() {
-                            window.location.href = baseUrl + "auth?auth=login"; // Redirect to login page
+                            window.location.href = baseUrl + "auth?auth=login"; 
                         }
                     });
                 } else {
                     bootbox.alert({
                         closeButton: false,
                         message: response.message,
-                    })
+                    });
                 }
             }
         });
     }
+    
 
     function validateSignInData() {
         var formData = $("#sign_in_form").serializeArray();
