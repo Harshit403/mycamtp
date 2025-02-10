@@ -9,8 +9,7 @@ $(document).ready(function () {
             $(this).closest(".inputBox").find('input').attr('type', 'password');
         }
     });
-    var mobilePattern = /^(?:\+91|91)?[6-9]\d{9}$/;
-    var mobileNo = data.get('mobile_no');
+   
     var emailPattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
     var passwordPattern = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{7,}$/;
     $(".signUpBtn").on('click', function () {
@@ -25,6 +24,8 @@ $(document).ready(function () {
         var formData = $("#sign_up_form").serializeArray();
         var data = new FormData();
         var errors = new Array;
+        var mobilePattern = /^(?:\+91|91)?[6-9]\d{9}$/;
+        var mobileNo = data.get('mobile_no');
         $.each(formData, function (i, v) {
             data.append(v.name, $.trim(v.value));
         });
