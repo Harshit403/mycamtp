@@ -61,7 +61,25 @@
                     <input type="text" class="item" name="mobile_no" required="required">
                     <span>Mobile No</span>
                 </div>
-               
+                <div class="inputBox">
+                    <select class="form-control mb-4" name="category_id" id="category_id">
+                        <?php 
+                        if(!empty($category_list)){
+                            foreach($category_list as $categorysRow){
+                                ?>
+                        <option value="<?=$categorysRow->category_id?>">
+                            <?=$categorysRow->category_name?>
+                        </option>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <select class="form-control mb-4" name="current_level" id="current_level">
+                    </select>
+                </div>
                             
                 <div class="inputBox">
                     <input type="password" class="item" name="password" required="required">
