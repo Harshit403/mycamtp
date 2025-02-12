@@ -488,7 +488,24 @@ class DefaultController extends BaseController
 		$total_amt_to_pay = array_sum($payableAmtArray);
 		$studentDetails = session()->get('studentDetails');
 		$student_id = $studentDetails['id'];
+		$city_name = $this->request->getPost('billingCity');
+		$state_name = $this->request->getPost('billingState');
+
 		$order_id = 'OD' . uniqid($student_id . 'M');
+		$updateData = [];
+
+		if (!empty($city_name)) {
+			$updateData['city_name'] = $city_name;
+		}
+
+		if (!empty($state_name)) {
+			$updateData['state_name'] = $state_name;
+		}
+		if (!empty($updateData)) {
+			$this->common->dbAction('student_table', $updateData, 'update', ['student_id' => $student_id]);
+			session()->set('billingDetails', $updateData);
+		}
+	
 		$linkInfo = $this->cashfreePayment($studentDetails, $total_amt_to_pay, $order_id);
 		if (!empty($linkInfo)) {
 			$linkInfo = json_decode($linkInfo);
@@ -497,6 +514,7 @@ class DefaultController extends BaseController
 		if (!empty($linkInfo)) {
 			$insertData = array();
 			$cartIdArray = $this->getCartId();
+
 			$insertData['cart_id'] = $cartIdArray['data'];
 			$insertData['cf_link_id'] = $linkInfo->cf_order_id;
 			$insertData['payment_request_id'] = $linkInfo->order_id;
@@ -520,6 +538,32 @@ class DefaultController extends BaseController
 		return json_encode($response);
 	}
 
+	public function getCheckoutData()
+	{
+		$studentDetails = session()->get('studentDetails');
+		$student_id = $studentDetails['id'];
+		$billingDetails = session()->get('billingDetails');
+		if (!$billingDetails) {
+			$studentData = $this->common->dbAction('student_table', [], 'select', ['student_id' => $student_id]);
+	
+			if (!empty($studentData)) {
+				$billingDetails = [
+					'city_name' => $studentData[0]['city_name'] ?? '',
+					'state_name' => $studentData[0]['state_name'] ?? '',
+				];
+				session()->set('billingDetails', $billingDetails);
+			} else {
+				$billingDetails = ['city_name' => '', 'state_name' => ''];
+			}
+		}
+		return $this->response->setJSON([
+			'success' => true,
+			'city_name' => $billingDetails['city_name'] ?? '',
+			'state_name' => $billingDetails['state_name'] ?? ''
+		]);
+		
+	}
+	
 
 	public function cashfreePayment($studentDetails, $total_amt_to_pay = 0.00, $order_id = '')
 	{
@@ -1337,30 +1381,5 @@ class DefaultController extends BaseController
 				return $this->response->setJSON(['success' => false, 'message' => 'Failed to request payout.']);
 			}
 		}
-	}
-	public function getCheckoutData()
-	{
-		$studentDetails = session()->get('studentDetails');
-		$student_id = $studentDetails['id'];
-		$billingDetails = session()->get('billingDetails');
-		if (!$billingDetails) {
-			$studentData = $this->common->dbAction('student_table', [], 'select', ['student_id' => $student_id]);
-	
-			if (!empty($studentData)) {
-				$billingDetails = [
-					'city_name' => $studentData[0]['city_name'] ?? '',
-					'state_name' => $studentData[0]['state_name'] ?? '',
-				];
-				session()->set('billingDetails', $billingDetails);
-			} else {
-				$billingDetails = ['city_name' => '', 'state_name' => ''];
-			}
-		}
-		return $this->response->setJSON([
-			'success' => true,
-			'city_name' => $billingDetails['city_name'] ?? '',
-			'state_name' => $billingDetails['state_name'] ?? ''
-		]);
-		
 	}
 }
