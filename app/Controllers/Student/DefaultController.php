@@ -61,16 +61,17 @@ class DefaultController extends BaseController
 		}
 	}
 
-	    public function fetchSubjectList(){
-	    	$getData = $this->request->getGet();
-	    	if (isset($getData['level']) && isset($getData['type'])) {
-	    		$data['type_info'] = $this->defaultModel->getTypeInfo($getData);
-	    		$data['subject_list'] = $this->defaultModel->fetchSubjectListModel($getData);
-	    		return view('student/subject_list',$data);
-	    	} else {
-				throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
-			}
-	    }
+	public function fetchSubjectList()
+	{
+		$getData = $this->request->getGet();
+		if (isset($getData['level']) && isset($getData['type'])) {
+			$data['type_info'] = $this->defaultModel->getTypeInfo($getData);
+			$data['subject_list'] = $this->defaultModel->fetchSubjectListModel($getData);
+			return view('student/subject_list', $data);
+		} else {
+			throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
+		}
+	}
 
 	public function addStudentDetails()
 	{
@@ -505,7 +506,7 @@ class DefaultController extends BaseController
 			$this->common->dbAction('student_table', $updateData, 'update', ['student_id' => $student_id]);
 			session()->set('billingDetails', $updateData);
 		}
-	
+
 		$linkInfo = $this->cashfreePayment($studentDetails, $total_amt_to_pay, $order_id);
 		if (!empty($linkInfo)) {
 			$linkInfo = json_decode($linkInfo);
@@ -541,12 +542,21 @@ class DefaultController extends BaseController
 	public function getCheckoutData()
 	{
 		$studentDetails = session()->get('studentDetails');
+
+		if (!$studentDetails || !isset($studentDetails['id'])) {
+			return $this->response->setJSON([
+				'success' => false,
+				'message' => 'Student details not found.'
+			]);
+		}
+
 		$student_id = $studentDetails['id'];
 		$billingDetails = session()->get('billingDetails');
+
 		if (!$billingDetails) {
 			$studentData = $this->common->dbAction('student_table', [], 'select', ['student_id' => $student_id]);
-	
-			if (!empty($studentData)) {
+
+			if (!empty($studentData) && isset($studentData[0])) {
 				$billingDetails = [
 					'city_name' => $studentData[0]['city_name'] ?? '',
 					'state_name' => $studentData[0]['state_name'] ?? '',
@@ -556,14 +566,15 @@ class DefaultController extends BaseController
 				$billingDetails = ['city_name' => '', 'state_name' => ''];
 			}
 		}
+
 		return $this->response->setJSON([
 			'success' => true,
 			'city_name' => $billingDetails['city_name'] ?? '',
 			'state_name' => $billingDetails['state_name'] ?? ''
 		]);
-		
 	}
-	
+
+
 
 	public function cashfreePayment($studentDetails, $total_amt_to_pay = 0.00, $order_id = '')
 	{
@@ -795,7 +806,7 @@ class DefaultController extends BaseController
 	{
 		return view('student/disclaimer');
 	}
-        public function loadBuy()
+	public function loadBuy()
 	{
 		return view('student/buy');
 	}
@@ -948,30 +959,38 @@ class DefaultController extends BaseController
 		}
 	}
 
-		public function loadContactUs(){
-			return view('student/contact_us');
-				}
-		public function loadCSEET(){
-			return view('student/cseet');
-		}
-		public function loadCSExecutive(){
-			return view('student/cs_executive');
-		}
-		public function loadCSProfessional(){
-			return view('student/cs_professional');
-		}
-		public function loadGPlan(){
-			return view('student/gplan');
-		}
-	        public function loadPlans(){
-	    	        return view('student/plans_list');
-	        }
-	        public function loadPricing(){
-	    	        return view('student/pricing');
-	        }
-		public function loadCSTestSeries(){
-			return view('student/cs_test_series');
-		}
+	public function loadContactUs()
+	{
+		return view('student/contact_us');
+	}
+	public function loadCSEET()
+	{
+		return view('student/cseet');
+	}
+	public function loadCSExecutive()
+	{
+		return view('student/cs_executive');
+	}
+	public function loadCSProfessional()
+	{
+		return view('student/cs_professional');
+	}
+	public function loadGPlan()
+	{
+		return view('student/gplan');
+	}
+	public function loadPlans()
+	{
+		return view('student/plans_list');
+	}
+	public function loadPricing()
+	{
+		return view('student/pricing');
+	}
+	public function loadCSTestSeries()
+	{
+		return view('student/cs_test_series');
+	}
 	public function downloadInvoice()
 	{
 		$mpdf = new \Mpdf\Mpdf();
