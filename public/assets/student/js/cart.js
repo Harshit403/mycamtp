@@ -109,7 +109,13 @@ $(document).ready(function () {
                         var billingCity = $(this).find('#billingCity').val();
                         var billingState = $(this).find('#billingState').val();
 
-                        console.log('dd' + billingState);
+                        if (!billingCity || !billingState) {
+                            bootbox.alert({
+                                message: "Please enter both City and State before proceeding to checkout.",
+                                closeButton: false
+                            });
+                            return false; 
+                        }
                         var totalPayablePrice = $(this).find('#payableAmount').val();
                         if (totalPayablePrice == '0.00') {
                             $.ajax({
