@@ -76,7 +76,7 @@
                         ?>
                     </select>
                 </div>
-                <div class="inputBox">
+                <div class="inputBox d-none">
                     <select class="form-control mb-4" name="current_level" id="current_level">
                     </select>
                 </div>
