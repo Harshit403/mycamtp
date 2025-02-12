@@ -1,10 +1,10 @@
-$(document).ready(function() {
-    $(".addToCartBtn").on('click', function() {
+$(document).ready(function () {
+    $(".addToCartBtn").on('click', function () {
         var subject_id = $(this).data('subject-id');
         addtoCart(subject_id);
     });
 
-    $(".addBuyNowBtn").on('click', function() {
+    $(".addBuyNowBtn").on('click', function () {
         var subject_id = $(this).data('subject-id');
         addtoCart(subject_id, 'buynow');
     })
@@ -21,13 +21,13 @@ $(document).ready(function() {
                     'subject_id': subject_id,
                 },
                 dataType: 'json',
-                success: function(response) {
+                success: function (response) {
                     if (response.success) {
                         if (btn_type == 'addtocart') {
                             bootbox.alert({
                                 message: response.message,
                                 closeButton: false,
-                                callback: function() {
+                                callback: function () {
                                     if (response.success) {
                                         $(".cartCount").html(response.totalQty);
                                     } else {
@@ -40,7 +40,7 @@ $(document).ready(function() {
                                 url: baseUrl + 'checkout-cart-items',
                                 type: 'POST',
                                 dataType: 'json',
-                                success: function(response) {
+                                success: function (response) {
                                     if (response.success) {
                                         // var ci_mode = ciEnv == 'production' ? 'production' : 'sandbox';
                                         var ci_mode = 'sandbox';
@@ -67,7 +67,7 @@ $(document).ready(function() {
                         bootbox.alert({
                             message: response.message,
                             closeButton: false,
-                            callback: function() {
+                            callback: function () {
                                 window.location.href = baseUrl + 'auth?auth=login';
                             }
                         });
@@ -79,7 +79,7 @@ $(document).ready(function() {
         }
     }
 
-    $(".showCartBtn").on('click', function() {
+    $(".showCartBtn").on('click', function () {
         showCartItems();
     });
     $(document).on('click', '#checkoutButton', function () {
@@ -87,6 +87,7 @@ $(document).ready(function() {
     });
     function showCartItems(displayButton = 'disabled') {
         fetchCartItems();
+        //  getBillAddress();
         var html = $('.cartPopUpContainer').clone();
 
         var dialog = bootbox.dialog({
@@ -97,21 +98,25 @@ $(document).ready(function() {
                 cancel: {
                     label: '<i class="bi bi-x"></i> Close',
                     className: 'btn-sm btn-secondary',
-                    callback: function() {
+                    callback: function () {
                         bootbox.hideAll();
                     }
                 },
                 yes: {
                     label: '<i class="bi bi-cart-check"></i> Checkout',
                     className: 'btn-sm btn-success checkoutBtn',
-                    callback: function() {
+                    callback: function () {
+                        var billingCity = $(this).find('#billingCity').val();
+                        var billingState = $(this).find('#billingState').val();
+
+                        console.log('dd' + billingState);
                         var totalPayablePrice = $(this).find('#payableAmount').val();
                         if (totalPayablePrice == '0.00') {
                             $.ajax({
                                 url: baseUrl + '/payment/free-payable-product',
                                 type: 'GET',
                                 dataType: 'json',
-                                success: function(response) {
+                                success: function (response) {
                                     if (response.success) {
                                         var url = response.url;
                                         window.open(url, '_self');
@@ -121,11 +126,16 @@ $(document).ready(function() {
                                 }
                             });
                         } else {
+
                             $.ajax({
                                 url: baseUrl + 'checkout-cart-items',
                                 type: 'POST',
                                 dataType: 'json',
-                                success: function(response) {
+                                data: {
+                                    billingCity: $(this).find('#billingCity').val(),
+                                    billingState: $(this).find('#billingState').val()
+                                },
+                                success: function (response) {
                                     if (response.success) {
                                         var ci_mode = ciEnv == 'production' ? 'production' : 'sandbox';
                                         const cashfree = Cashfree({
@@ -151,13 +161,13 @@ $(document).ready(function() {
                 },
             },
         });
-        dialog.init(function() {
+        dialog.init(function () {
             $(dialog).find('.checkoutBtn').hide();
-            $(dialog).find('.cartPopUpContainer').on('click', '.removeCartItems', function() {
+            $(dialog).find('.cartPopUpContainer').on('click', '.removeCartItems', function () {
                 var cart_items_id = $(this).data('cart-item-id');
                 removeCartItems(cart_items_id);
             });
-            setInterval(function() {
+            setInterval(function () {
                 var htmlVal = $('.cartPopUpContainer').html();
                 displayButton = (htmlVal == '<div class="d-flex align items-center justify-content-center h2">No items in cart</div>') ? false : true;
                 if (!displayButton) {
@@ -166,7 +176,7 @@ $(document).ready(function() {
                     $(dialog).find('.checkoutBtn').show();
                 }
             }, 800);
-            $(dialog).find('.cartPopUpContainer').on('click', '.applyPromocodeBtn', function() {
+            $(dialog).find('.cartPopUpContainer').on('click', '.applyPromocodeBtn', function () {
                 var code_name = $(dialog).find('#code_name').val();
                 var totalPriceDeciaml = $(dialog).find("#totalPriceDeciaml").val();
                 $.ajax({
@@ -177,11 +187,11 @@ $(document).ready(function() {
                         totalPriceDeciaml: totalPriceDeciaml,
                     },
                     dataType: 'json',
-                    success: function(response) {
+                    success: function (response) {
                         if (response.success == false) {
                             $(dialog).find('.promocodeContainer').css('border', '1px solid red');
                             $(dialog).find('.promocodeError').html(response.message);
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 $(dialog).find('.promocodeContainer').css('border', 'transparent');
                                 $(dialog).find('.promocodeError').html('');
                             }, 4000);
@@ -191,7 +201,7 @@ $(document).ready(function() {
                     }
                 })
             });
-            $(dialog).find(".cartPopUpContainer").on('click', '.removePromoCode', function() {
+            $(dialog).find(".cartPopUpContainer").on('click', '.removePromoCode', function () {
                 bootbox.dialog({
                     message: 'Are you sure you want to remove the promocode ?',
                     closeButton: false,
@@ -204,16 +214,16 @@ $(document).ready(function() {
                         yes: {
                             label: 'Yes',
                             className: 'btn-sm btn-success',
-                            callback: function() {
+                            callback: function () {
                                 $.ajax({
                                     url: baseUrl + 'promo/remove-promocode',
                                     type: 'POST',
                                     dataType: 'json',
-                                    success: function(response) {
+                                    success: function (response) {
                                         bootbox.alert({
                                             message: response.message,
                                             closeButton: false,
-                                            callback: function() {
+                                            callback: function () {
                                                 fetchCartItems();
                                             }
                                         });
@@ -226,6 +236,10 @@ $(document).ready(function() {
 
             });
         });
+        dialog.init(function () {
+            console.log("Bootbox Dialog Initialized" + dialog);
+            getBillAddress(dialog);
+        });
     }
 
     fetchCartItems();
@@ -235,7 +249,7 @@ $(document).ready(function() {
             url: baseUrl + 'fetch-active-cartitems',
             type: 'GET',
             dataType: 'json',
-            success: function(response) {
+            success: function (response) {
                 if (response.success) {
                     cartHTML(response.cartData);
                     $(".cartCount").html(response.cartData.length);
@@ -252,7 +266,7 @@ $(document).ready(function() {
             var totalPrice = 0;
             var discountPercent = 0;
             var discount_type = '';
-            $.each(cartData, function(i, v) {
+            $.each(cartData, function (i, v) {
                 totalPrice = Number(totalPrice.toFixed(2)) + Number(v.offer_price);
                 html += '<tr>' +
                     '<td>' +
@@ -301,12 +315,60 @@ $(document).ready(function() {
                 '</div>';
             html += '<input type="hidden" id="totalPriceDeciaml" name="totalPriceDeciaml" value="' + totalPriceDeciaml + '">';
             html += '<input type="hidden" id="payableAmount" value="' + payableAmount + '">';
+
+
+            html += '<div class="col-md-9 font-weight-bold billing-address">';
+
+
+            html += '<div class="form-group">';
+            html += '<label for="billingCity">Bill Address</label>';
+            html += '<input type="text" class="form-control" id="billingCity" name="billingCity" placeholder="Enter your adddress">';
+            html += '</div>';
+            html += '<div class="form-group">';
+            html += '<label for="billingState">State</label>';
+            html += '<input type="text" class="form-control" id="billingState" name="billingState" placeholder="Enter your state">';
+            html += '</div>';
+
+            html += '</div>';
         } else {
             html = '<div class="d-flex align items-center justify-content-center h2">No items in cart</div>';
         }
         $(".cartPopUpContainer").html(html);
     }
 
+    function getBillAddress(dialog) {
+        $.ajax({
+            url: baseUrl + 'get-billing-address',
+            type: 'GET',
+            dataType: 'json',
+            success: function (response) {
+                if (response.success) {
+                    console.log('Response:', response);
+
+                    dialog.init(function () {
+                        console.log("Bootbox Dialog Initialized");
+
+
+                        console.log('Billing');
+                        var $billingCity = $(dialog).find('#billingCity');
+                        var $billingState = $(dialog).find('#billingState');
+
+                        if ($billingCity.length > 0) {
+                            console.log("Billing City & State Found in DOM");
+                            $billingCity.val(response.city_name).trigger("change");
+                            $billingState.val(response.state_name).trigger("change");
+                        } else {
+                            console.log("Billing inputs not found in DOM!");
+                        }
+
+                    });
+                }
+            }
+        });
+    }
+
+
+    getBillAddress();
     function removeCartItems(cart_items_id = '') {
         $.ajax({
             url: baseUrl + 'remove-cart-items',
@@ -315,12 +377,11 @@ $(document).ready(function() {
                 cart_items_id: cart_items_id,
             },
             dataType: 'json',
-            success: function(response) {
+            success: function (response) {
                 if (response.success) {
                     fetchCartItems();
                 }
             }
         });
     }
-    
 })

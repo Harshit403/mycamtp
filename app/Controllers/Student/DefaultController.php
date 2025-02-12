@@ -1338,4 +1338,29 @@ class DefaultController extends BaseController
 			}
 		}
 	}
+	public function getCheckoutData()
+	{
+		$studentDetails = session()->get('studentDetails');
+		$student_id = $studentDetails['id'];
+		$billingDetails = session()->get('billingDetails');
+		if (!$billingDetails) {
+			$studentData = $this->common->dbAction('student_table', [], 'select', ['student_id' => $student_id]);
+	
+			if (!empty($studentData)) {
+				$billingDetails = [
+					'city_name' => $studentData[0]['city_name'] ?? '',
+					'state_name' => $studentData[0]['state_name'] ?? '',
+				];
+				session()->set('billingDetails', $billingDetails);
+			} else {
+				$billingDetails = ['city_name' => '', 'state_name' => ''];
+			}
+		}
+		return $this->response->setJSON([
+			'success' => true,
+			'city_name' => $billingDetails['city_name'] ?? '',
+			'state_name' => $billingDetails['state_name'] ?? ''
+		]);
+		
+	}
 }

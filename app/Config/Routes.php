@@ -8,6 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 
 
 // STUDENT
+$routes->get('/get-billing-address', STUDENT.'DefaultController::getCheckoutData',['filter'=>'studentAuth']);
 $routes->get('/', STUDENT.'DefaultController::index');
 $routes->get('/auth', STUDENT.'DefaultController::auth');
 $routes->get('/level', STUDENT.'DefaultController::fetchLevelList');

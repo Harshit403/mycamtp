@@ -61,43 +61,14 @@
                     <input type="text" class="item" name="mobile_no" required="required">
                     <span>Mobile No</span>
                 </div>
-                <div class="inputBox">
-                    <input type="text" class="item" name="city_name" required="required">
-                    <span>City</span>
-                </div>
-                <div class="inputBox">
-                    <input type="text" class="item" name="state_name" required="required">
-                    <span>State</span>
-                </div>
-                <div class="inputBox">
-                    <select class="form-control mb-4" name="category_id" id="category_id">
-                        <?php 
-                        if(!empty($category_list)){
-                            foreach($category_list as $categorysRow){
-                                ?>
-                        <option value="<?=$categorysRow->category_id?>">
-                            <?=$categorysRow->category_name?>
-                        </option>
-                        <?php
-                            }
-                        }
-                        ?>
-                    </select>
-                </div>
-                <div class="inputBox">
-                    <select class="form-control mb-4" name="current_level" id="current_level">
-                    </select>
-                </div>
+               
+                            
                 <div class="inputBox">
                     <input type="password" class="item" name="password" required="required">
                     <ion-icon name="eye-off-outline" class="viewPassWord" style="position: absolute;top: 1rem;right: 1rem;"></ion-icon>
                     <span>Password</span>
                 </div>
-                <div class="inputBox">
-                    <input type="password" class="item" name="confirm_password" required="required">
-                    <ion-icon name="eye-off-outline" class="viewPassWord" style="position: absolute;top: 1rem;right: 1rem;"></ion-icon>
-                    <span>Confirm Password</span>
-                </div>
+                
             </form>
             <a class="btn btn-sm btn-custom signUpBtn authButton  w-100">
                 <span class="span"><i class="bi bi-key-fill"></i> Sign Up</span>

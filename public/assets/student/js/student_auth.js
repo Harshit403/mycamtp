@@ -9,7 +9,7 @@ $(document).ready(function () {
             $(this).closest(".inputBox").find('input').attr('type', 'password');
         }
     });
-   
+
     var emailPattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
     var passwordPattern = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{7,}$/;
     $(".signUpBtn").on('click', function () {
@@ -23,85 +23,54 @@ $(document).ready(function () {
     function addSignUpData() {
         var formData = $("#sign_up_form").serializeArray();
         var data = new FormData();
-        var errors = []; 
-        
-        
+        var errors = new Array;
         $.each(formData, function (i, v) {
             data.append(v.name, $.trim(v.value));
         });
-    
-       
         const urlParams = new URLSearchParams(window.location.search);
         const referralId = urlParams.get('ref');
+        var mobilePattern = /^(?:\+91|91)?[6-9]\d{9}$/;
+        var mobileNo = data.get('mobile_no');
         if (referralId) {
             data.append('referral_by_student_id', referralId);
         }
-    
-        
         var password = data.get('password');
-        var mobileNo = data.get('mobile_no') ? String(data.get('mobile_no')).trim() : ""; 
-    
-        
-        if (data.get('student_name') === '') {
+        if (data.get('student_name') == '') {
             errors.push('Please enter your name');
         }
-        if (data.get('email') === '') {
-            errors.push('Please enter an email');
+        if (data.get('email') == '') {
+            errors.push('Please enter a email');
         }
-        if (data.get('email') !== '' && !emailPattern.test(data.get('email'))) {
-            errors.push('Please enter a valid email');
+        if (data.get('email') != '' && !emailPattern.test(data.get('email'))) {
+            errors.push('Email does not a valid email');
         }
-    
-      
-        var mobilePattern = /^(?:\+91|91)?[6-9]\d{9}$/;
-    
-        if (mobileNo === '') {
-            errors.push('Please enter a mobile number');
+        if (mobileNo == '') {
+            errors.push('please enter mobile number');
         } else if (!mobilePattern.test(mobileNo)) {
-            console.log("Regex Test Failed for:", mobileNo);
-            errors.push('Please enter a correct mobile number');
-        } else {
-            console.log("✅ Valid Mobile Number:", mobileNo);
+            errors.push('please eneter correct number');
         }
-    
-        
-        if (password === '') {
+        if (password == '') {
             errors.push('Please enter a password');
-        } else {
+        }
+        if (data.get('password') != '') {
             if (password.length < 7) {
-                errors.push("Your password must be at least 7 characters long.");
+                errors.push("Your password must be at least 7 characters");
             }
-            if (!/[a-zA-Z]/.test(password)) {
+            if (password.search(/[a-z]/i) < 0) {
                 errors.push("Your password must contain at least one letter.");
             }
-            if (!/[0-9]/.test(password)) {
+            if (password.search(/[0-9]/) < 0) {
                 errors.push("Your password must contain at least one digit.");
             }
         }
-    
-        
-        if (data.get('password') !== data.get('confirm_password')) {
-            errors.push('Passwords do not match');
-        }
-    
-       
-        if (data.get('city_name') === '') {
-            errors.push('Please enter a city');
-        }
-        if (data.get('state_name') === '') {
-            errors.push('Please enter a state');
-        }
-    
        
         if (errors.length > 0) {
             bootbox.alert({
                 closeButton: false,
-                message: errors.join("<br>"), 
+                message: errors.join("</br>"),
             });
             return false;
         }
-    
-        
         $.ajax({
             url: baseUrl + 'register-details',
             type: 'POST',
@@ -110,7 +79,8 @@ $(document).ready(function () {
             processData: false,
             contentType: false,
             success: function (response) {
-                if (response.success) {
+            if (response.success) {
+                    // Show success dialog
                     bootbox.alert({
                         message: 'Registration successful! You can now log in.',
                         closeButton: false,
@@ -122,12 +92,11 @@ $(document).ready(function () {
                     bootbox.alert({
                         closeButton: false,
                         message: response.message,
-                    });
+                    })
                 }
             }
         });
     }
-    
 
     function validateSignInData() {
         var formData = $("#sign_in_form").serializeArray();
