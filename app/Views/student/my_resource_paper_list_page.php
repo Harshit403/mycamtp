@@ -4,78 +4,79 @@
 <?= $this->endSection() ?>
 <?= $this->section('meta_description') ?>
 <!-- enter your meta description -->
-<?=$this->endSection()?>
+<?= $this->endSection() ?>
 <?= $this->section('meta_keywords') ?>
-<!-- enter your meta keywords widthout tag -->
-<?=$this->endSection()?>
+<!-- enter your meta keywords without tag -->
+<?= $this->endSection() ?>
 <?= $this->section('content') ?>
-    <section class="container mb-5 section mainContainer">
+<section class="container mb-5 section mainContainer">
         <div class="text-center">
             <h2>Paper List</h2>
         </div>
         <div class="row my-4 paperContainer">
-            <div class="col-md-12 text-center">
-                <div class="container" style="overflow-x: auto;">
-                <table class="table table-striped" id="paper_table">
-                    <thead>
-                        <tr>
-                            <th>Paper Name</th>
-                            <th>Download Question paper</th>
-                            <th>Download Answer paper</th>
-                            <?php if ($item_type!='free'): ?>
-                                <th>Upload Assignment</th>
-                            <?php endif ?>
-                        <tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                            if(!empty($getPaperDetails)){
-                                foreach($getPaperDetails as $paperRow){
-                                    $paper_name = str_replace('','_',trim($paperRow['paper_name']));
-                                    ?>
-                                        <tr>
-                                            <td><?=$paperRow['paper_name']?></td>
-                                            <td>    
-                                                <a href="<?=base_url().$paperRow['question_paper_upload']?>" class="btn btn-sm btn-success" download="<?=$paper_name?>question_paper.pdf"><i class="bi bi-arrow-down-circle"></i> Download</a>
-                                            </td>
-                                            <td> 
-                                                <div id="answerBtnContainer<?=$paperRow['paper_id']?>" class="answerBtnContainerClass" style="display:<?=$item_type!='free' ? 'none' : ''?>?;">
-                                                    <a href="<?=base_url().$paperRow['answer_paper_upload']?>" class="btn btn-sm btn-success" download="<?=$paper_name?>answer_paper.pdf"><i class="bi bi-arrow-down-circle"></i> Download</a>
-                                                </div>   
-                                            </td>
-                                            <?php if ($item_type!='free'): ?>
-                                                <td>  
-                                                    <div class="row" id="assignmentConatianer<?=$paperRow['paper_id']?>">
-                                                        <div class="col-md-8">
-                                                            <input type="file" class="form-control mr-2" id="assignmentFile<?=$paperRow['paper_id']?>" accept="application/pdf,image/*"/>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <a href="javascript:void(0)" class="btn btn-info btn-sm uploadAssignment" data-paper-id="<?=$paperRow['paper_id']?>"><i class="bi bi-file-arrow-up"></i></a></a>
-                                                        </div>
-                                                    </div>  
-                                                </td>
-                                            <?php endif ?>
-                                        </tr>
-                                    <?php
-                                }
-                            } else {
-                                ?>
-                                    <tr>
-                                        <td colspan="4">No Paper Available</td>
-                                    </tr>
-                                <?php
-                            }
-                        ?>
-                    </tbody>
-                </table>
-                </div>
-            </div>
+            <?php if(!empty($getPaperDetails)): ?>
+                <?php foreach($getPaperDetails as $paperRow): ?>
+                    <div class="subject-container">
+                        <h2><?= $paperRow['paper_name'] ?></h2>
+                        <p><strong>Duration:</strong> 30 - 180 Minutes</p>
+                        <p><strong>Marks:</strong> 20 - 100</p>
+                        <div class="btn-group">
+                            <a href="<?=base_url().$paperRow['question_paper_upload']?>" class="download-btn" download>Download Question Paper</a>
+                            <a href="<?=base_url().$paperRow['answer_paper_upload']?>" class="download-btn" download>Download Suggested Answer</a>
+                        </div>
+                        <?php if ($item_type!='free'): ?>
+                            <div class="upload-section">
+                                <input type="file" id="answersheet-<?= $paperRow['paper_id'] ?>" accept="application/pdf,image/*">
+                                <button class="upload-btn" onclick="handleUpload('<?= $paperRow['paper_id'] ?>')">Upload</button>
+                            </div>
+                            <div class="progress-container" id="progress-<?= $paperRow['paper_id'] ?>">
+                                <div class="progress-bar" id="progress-bar-<?= $paperRow['paper_id'] ?>"></div>
+                            </div>
+                            <p class="upload-status" id="upload-status-<?= $paperRow['paper_id'] ?>" style="display:none;">Successfully Uploaded!</p>
+                            <button class="download-btn checked-answersheet" id="checked-<?= $paperRow['paper_id'] ?>" style="display:none;">Download Checked Answersheet</button>
+                        <?php endif; ?>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No Paper Available</p>
+            <?php endif; ?>
         </div>
     </section>
 <?= $this->endSection() ?>
-<?= $this->section('jsContent')?>
+<?= $this->section('jsContent') ?>
     <script>
-        var pageType = 'paper-list';
+        function handleUpload(paperId) {
+            let fileInput = document.getElementById("answersheet-" + paperId);
+            let progressBar = document.getElementById("progress-bar-" + paperId);
+            let progressContainer = document.getElementById("progress-" + paperId);
+            let uploadStatus = document.getElementById("upload-status-" + paperId);
+            let checkedButton = document.getElementById("checked-" + paperId);
+
+            if (!fileInput.files.length) {
+                alert("Please select a file before uploading.");
+                return;
+            }
+
+            let confirmUpload = confirm("Are you sure you want to upload this? You’ll get only one chance.");
+            if (!confirmUpload) return;
+
+            progressContainer.style.display = "block";
+            uploadStatus.style.display = "none";
+            progressBar.style.width = "0%";
+
+            let progress = 0;
+            let interval = setInterval(() => {
+                progress += 10;
+                progressBar.style.width = progress + "%";
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    uploadStatus.style.display = "block";
+                    checkedButton.style.display = "block";
+                    fileInput.disabled = true;
+                }
+            }, 300);
+        }
     </script>
-    <script src="<?=base_url()?>assets/student/js/view.js?v=1.0.3"></script>
+        <script src="<?=base_url()?>assets/student/js/view.js?v=1.0.3"></script>
 <?= $this->endSection() ?>
