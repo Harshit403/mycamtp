@@ -187,37 +187,43 @@
 <?= $this->section('jsContent') ?>
     <script>
         function handleUpload(paperId) {
-            let fileInput = document.getElementById("answersheet-" + paperId);
-            let progressBar = document.getElementById("progress-bar-" + paperId);
-            let progressContainer = document.getElementById("progress-" + paperId);
-            let uploadStatus = document.getElementById("upload-status-" + paperId);
-            let checkedButton = document.getElementById("checked-" + paperId);
+    let fileInput = document.getElementById("answersheet-" + paperId);
+    let progressBar = document.getElementById("progress-bar-" + paperId);
+    let progressContainer = document.getElementById("progress-" + paperId);
+    let uploadStatus = document.getElementById("upload-status-" + paperId);
+    let checkedButton = document.getElementById("checked-" + paperId);
+    let suggestedAnswerBtn = document.querySelector(`a[href*='${paperId}'][download]`);
 
-            if (!fileInput.files.length) {
-                alert("Please select a file before uploading.");
-                return;
+    if (!fileInput.files.length) {
+        alert("Please select a file before uploading.");
+        return;
+    }
+
+    let confirmUpload = confirm("Are you sure you want to upload this? You’ll get only one chance.");
+    if (!confirmUpload) return;
+
+    progressContainer.style.display = "block";
+    uploadStatus.style.display = "none";
+    progressBar.style.width = "0%";
+
+    let progress = 0;
+    let interval = setInterval(() => {
+        progress += 10;
+        progressBar.style.width = progress + "%";
+        
+        if (progress >= 100) {
+            clearInterval(interval);
+            uploadStatus.style.display = "block";
+            checkedButton.style.display = "block";
+            fileInput.disabled = true;
+
+            if (suggestedAnswerBtn) {
+                suggestedAnswerBtn.style.display = "block";
             }
-
-            let confirmUpload = confirm("Are you sure you want to upload this? You’ll get only one chance.");
-            if (!confirmUpload) return;
-
-            progressContainer.style.display = "block";
-            uploadStatus.style.display = "none";
-            progressBar.style.width = "0%";
-
-            let progress = 0;
-            let interval = setInterval(() => {
-                progress += 10;
-                progressBar.style.width = progress + "%";
-                
-                if (progress >= 100) {
-                    clearInterval(interval);
-                    uploadStatus.style.display = "block";
-                    checkedButton.style.display = "block";
-                    fileInput.disabled = true;
-                }
-            }, 300);
         }
+    }, 300);
+}
+
     </script>
         <script src="<?=base_url()?>assets/student/js/view.js?v=1.0.3"></script>
 <?= $this->endSection() ?>
