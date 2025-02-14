@@ -186,7 +186,7 @@
 <?= $this->endSection() ?>
 <?= $this->section('jsContent') ?>
     <script>
-        function handleUpload(paperId) {
+   function handleUpload(paperId) {
     let fileInput = document.getElementById("answersheet-" + paperId);
     let progressBar = document.getElementById("progress-bar-" + paperId);
     let progressContainer = document.getElementById("progress-" + paperId);
@@ -195,33 +195,124 @@
     let suggestedAnswerBtn = document.querySelector(`a[href*='${paperId}'][download]`);
 
     if (!fileInput.files.length) {
-        alert("Please select a file before uploading.");
+        bootbox.alert("Please select a file before uploading.");
         return;
     }
 
-    let confirmUpload = confirm("Are you sure you want to upload this? You’ll get only one chance.");
-    if (!confirmUpload) return;
+    bootbox.confirm({
+        message: "Are you sure you want to upload this? You’ll get only one chance.",
+        buttons: {
+            cancel: {
+                label: 'No',
+                className: 'btn-secondary'
+            },
+            confirm: {
+                label: 'Yes',
+                className: 'btn-success'
+            }
+        },
+        callback: function(result) {
+            if (result) {
+                let file = fileInput.files[0];
+                let formData = new FormData();
+                let allowedExtensions = ['pdf', 'jpg', 'jpeg', 'png'];
+                let extension = file.name.split('.').pop().toLowerCase();
 
-    progressContainer.style.display = "block";
-    uploadStatus.style.display = "none";
-    progressBar.style.width = "0%";
+                if (!allowedExtensions.includes(extension)) {
+                    bootbox.alert("Please select a valid image or PDF file.");
+                    return;
+                }
 
-    let progress = 0;
-    let interval = setInterval(() => {
-        progress += 10;
-        progressBar.style.width = progress + "%";
-        
-        if (progress >= 100) {
-            clearInterval(interval);
-            uploadStatus.style.display = "block";
-            checkedButton.style.display = "block";
-            fileInput.disabled = true;
+                formData.append('paper_id', paperId);
+                formData.append('assignment_file', file);
 
-            if (suggestedAnswerBtn) {
-                suggestedAnswerBtn.style.display = "block";
+                progressContainer.style.display = "block";
+                progressBar.style.width = "0%";
+                uploadStatus.style.display = "none";
+
+                let progress = 0;
+                let interval = setInterval(() => {
+                    progress += 10;
+                    progressBar.style.width = progress + "%";
+
+                    if (progress >= 100) {
+                        clearInterval(interval);
+                    }
+                }, 300);
+
+                $.ajax({
+                    url: baseUrl + 'upload/assignment-file',
+                    type: 'POST',
+                    data: formData,
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.success) {
+                            uploadStatus.style.display = "block";
+                            checkedButton.style.display = "block";
+                            fileInput.disabled = true;
+                            
+                            if (suggestedAnswerBtn) {
+                                suggestedAnswerBtn.style.display = "block";
+                            }
+                            uploadAssignmentStatus();
+                        } else {
+                            bootbox.alert("Upload failed. Please try again.");
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        bootbox.alert("Upload failed: File size must be under 30MB.");
+                    }
+                });
             }
         }
-    }, 300);
+    });
+}
+
+function uploadAssignmentStatus() {
+    $.ajax({
+        url: baseUrl + 'fetch-assignment-status',
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            if (response.length > 0) {
+                $.each(response, function(i, v) {
+                    let container = $("#assignmentConatianer" + v.paper_id);
+                    let suggestedAnswerBtn = document.querySelector(`a[href*='${v.paper_id}'][download]`);
+                    
+                    if (v.assignment_status == 2) {
+                        container.html('<div class="col-md-12 text-center"><a href="' + baseUrl + v.assignment_checked_file + '" class="btn btn-success" download><i class="fas fa-download"></i> Download Checked AnswerSheet</a></div>');
+                    } else if (v.assignment_status == 1) {
+                        container.html('<div class="col-md-12 text-warning font-weight-bold text-center">Assignment Submitted</div>');
+                    } else {
+                        container.html(`
+                            <div class="col-md-8">
+                                <input type="file" class="form-control" id="assignmentFile${v.paper_id}" accept="application/pdf,image/*"/>
+                            </div>
+                            <div class="col-md-4">
+                                <button class="btn btn-info uploadAssignment" data-paper-id="${v.paper_id}" onclick="handleUpload('${v.paper_id}')">
+                                    <i class="fas fa-upload"></i>
+                                </button>
+                            </div>
+                        `);
+                        
+                        if (suggestedAnswerBtn) {
+                            suggestedAnswerBtn.style.display = "none";
+                        }
+                    }
+                });
+            } else {
+                $(".answerBtnContainerClass").hide();
+            }
+        }
+    });
+}
+
+if (pageType === 'paper-list') {
+    uploadAssignmentStatus();
+    setInterval(uploadAssignmentStatus, 20000);
 }
 
     </script>
