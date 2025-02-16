@@ -197,133 +197,148 @@ Paper List
     </div>
 </section>
 <?= $this->endSection() ?>
-<?= $this->section('jsContent') ?>
-<script>
-    var pageType = 'paper-list';
+<?= $this->section('jsContent')?>
+    <script>
+        var pageType = 'paper-list';
+    </script>
+    <script> 
 
-    function handleUpload(paperId) {
-        let fileInput = document.getElementById("answersheet-" + paperId);
-        let progressBar = document.getElementById("progress-bar-" + paperId);
-        let progressContainer = document.getElementById("progress-" + paperId);
-        let uploadStatus = document.getElementById("upload-status-" + paperId);
-        let checkedButton = document.getElementById("checked-" + paperId);
-        let suggestedAnswerBtn = document.querySelector(`a[href*='${paperId}'][download]`);
-
-        if (!fileInput.files.length) {
-            bootbox.alert("Please select a file before uploading.");
-            return;
+$(document).ready(function() {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    $(".uploadAssignment").on('click', function() {
+        var paper_id = $(this).data('paper-id');
+        var assignmentFilePath = $("#assignmentFile" + paper_id + "").val();
+        if (assignmentFilePath == '') {
+            bootbox.alert("Please select your assginment file");
+            return false;
         }
-
-        bootbox.confirm({
-            message: "Are you sure you want to upload this? You’ll get only one chance.",
+        let dialog = bootbox.dialog({
+            message: 'Are you sure you want to submit assignment',
+            size: 'medium',
+            onEscape: true,
+            backdrop: true,
             buttons: {
-                cancel: {
+                no: {
                     label: 'No',
-                    className: 'btn-secondary'
+                    className: 'btn-secondary',
+                    callback: function() {
+
+                    }
                 },
-                confirm: {
+                yes: {
                     label: 'Yes',
-                    className: 'btn-success'
+                    className: 'btn-success',
+                    callback: function() {
+                        uploadAssignmentFile(paper_id);
+                    }
+                },
+            }
+        })
+    });
+
+    function uploadAssignmentFile(paper_id = '') {
+        var formdata = new FormData();
+        var errors = new Array;
+        var assginmentFile = $("#assignmentFile" + paper_id + "").prop('files')[0];
+        var extension = assginmentFile['name'].split(".");
+        if (jQuery.inArray(extension[1], ['pdf', 'jpg', 'jpeg', 'png']) == -1) {
+            errors.push('Please select a image or pdf file to upload');
+            return false;
+        }
+        formdata.append('paper_id', paper_id);
+        formdata.append('assignment_file', assginmentFile);
+        $.ajax({
+            url: baseUrl + 'upload/assignment-file',
+            type: 'POST',
+            data: formdata,
+            cache: false,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            beforeSend: function() {
+                html = '<div class="col-md-12 text-warning font-weight-bold d-flex align-items-center justify-content-center">Upload In Progress <i class="fa-solid fa-spin fa-spinner ml-2"></i></div>';
+                $("#assignmentConatianer" + paper_id + "").html(html);
+            },
+            success: function(response) {
+                if (response.success) {
+                    $("#assignmentConatianer" + paper_id + "").html('');
+                    uploadAssigmentStatus();
                 }
             },
-            callback: function(result) {
-                if (result) {
-                    let file = fileInput.files[0];
-                    let formData = new FormData();
-                    let allowedExtensions = ['pdf', 'jpg', 'jpeg', 'png'];
-                    let extension = file.name.split('.').pop().toLowerCase();
-
-                    if (!allowedExtensions.includes(extension)) {
-                        bootbox.alert("Please select a valid image or PDF file.");
-                        return;
-                    }
-
-                    formData.append('paper_id', paperId);
-                    formData.append('assignment_file', file);
-
-                    progressContainer.style.display = "block";
-                    progressBar.style.width = "0%";
-                    uploadStatus.style.display = "none";
-
-                    // Simulated progress bar
-                    let progress = 0;
-                    let interval = setInterval(() => {
-                        progress += 10;
-                        progressBar.style.width = progress + "%";
-
-                        if (progress >= 100) {
-                            clearInterval(interval);
-                        }
-                    }, 300);
-
-                    // AJAX request to upload file
-                    $.ajax({
-                        url: baseUrl + 'upload/assignment-file',
-                        type: 'POST',
-                        data: formData,
-                        cache: false,
-                        processData: false,
-                        contentType: false,
-                        dataType: 'json',
-                        success: function(response) {
-                            if (response.success) {
-                                uploadStatus.style.display = "block";
-                                checkedButton.style.display = "block";
-                                fileInput.disabled = true;
-                                if (suggestedAnswerBtn) {
-                                    suggestedAnswerBtn.style.display = "block";
-                                }
-                                uploadAssignmentStatus();
-                            } else {
-                                bootbox.alert("Upload failed. Please try again.");
-                            }
-                        },
-                        error: function(xhr, status, error) {
-                            bootbox.alert("Upload failed: File size must be under 30MB.");
-                        }
-                    });
-                }
+            error: function(xhr, ajaxOptions, thrownError) {
+                html = '<div class="col-md-12 text-danger font-weight-bold d-flex align-items-center justify-content-center">Upload Process Failed<br>(File size limit exceed) Use max 30mb file <i class="fas fa-times ml-2"></i></div>';
+                $("#assignmentConatianer" + paper_id + "").html(html);
             }
         });
     }
 
-    function uploadAssignmentStatus() {
+    if (pageType != null && pageType == 'paper-list') {
+        uploadAssigmentStatus();
+        setInterval(function() {
+            uploadAssigmentStatus();
+        }, 20000);
+    }
+
+
+    function uploadAssigmentStatus() {
         $.ajax({
             url: baseUrl + 'fetch-assignment-status',
             type: 'GET',
             dataType: 'json',
             success: function(response) {
                 if (response.length > 0) {
+                    var assignmentStatus = 'Assignment Submitted';
+                    var statusColor = 'text-warning';
                     $.each(response, function(i, v) {
-                        let container = $("#assignmentConatianer" + v.paper_id);
                         if (v.assignment_status == 2) {
-                            container.html('<div class="col-md-12 text-center"><a href="' + baseUrl + v.assignment_checked_file + '" class="btn btn-success" download><i class="fas fa-download"></i> Download Checked AnswerSheet</a></div>');
+                            html = '<div class="col-md-12 text-center"><a href="' + baseUrl + v.assignment_checked_file + '" class="btn btn-success" download title="Download Checked AnswerSheet"><i class="fas fa-download"></i> Download</a></div>';
+                            $("#answerBtnContainer" + v.paper_id + "").show();
                         } else if (v.assignment_status == 1) {
-                            container.html('<div class="col-md-12 text-warning font-weight-bold text-center">Assignment Submitted</div>');
+                            html = '<div class="col-md-12 ' + statusColor + ' font-weight-bold d-flex align-items-center justify-content-center">' + assignmentStatus + '</div>';
+                            $("#answerBtnContainer" + v.paper_id + "").show();
                         } else {
-                            container.html(`
-                            <div class="col-md-8">
-                                <input type="file" class="form-control" id="assignmentFile${v.paper_id}" accept="application/pdf,image/*"/>
-                            </div>
-                            <div class="col-md-4">
-                                <button class="btn btn-info uploadAssignment" data-paper-id="${v.paper_id}" onclick="handleUpload('${v.paper_id}')">
-                                    <i class="fas fa-upload"></i>
-                                </button>
-                            </div>
-                        `);
+                            html = '<div class="col-md-8">' +
+                                '<input type="file" class="form-control mr-2" id="assignmentFile' + response.paper_id + '" accept="application/pdf,image/*"/>' +
+                                '</div>' +
+                                '<div class="col-md-4">' +
+                                '<a href="javascript:void(0)" class="btn btn-info uploadAssignment" data-paper-id="' + response.paper_id + '"><i class="fas fa-upload"></i></a></a>' +
+                                '</div>';
                         }
+                        $("#assignmentConatianer" + v.paper_id + "").html(html);
                     });
                 } else {
                     $(".answerBtnContainerClass").hide();
                 }
             }
-        });
+        })
     }
 
-    if (pageType === 'paper-list') {
-        uploadAssignmentStatus();
-        setInterval(uploadAssignmentStatus, 20000);
-    }
-</script>
+    $(".addNewsLetterBtn").on('click', function() {
+        var email = $(".newsLetterForm").val();
+        if (!regex.test(email)) {
+            bootbox.alert('Please enter a valid mail');
+            return false;
+        }
 
+        $.ajax({
+            url: baseUrl + 'newsletter/add-newsletter',
+            type: 'POST',
+            data: {
+                newsletter_email: email,
+            },
+            dataType: 'json',
+            success: function(res) {
+                bootbox.alert({
+                    message: res.message,
+                    closeButton: false,
+                    callback: function() {
+                        if (res.success) {}
+                    }
+                })
+            }
+        })
+
+    })
+})
+    </script>
 <?= $this->endSection() ?>
