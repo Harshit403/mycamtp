@@ -162,7 +162,9 @@ Paper List
     </div>
     <div class="row my-4 paperContainer">
         <?php if (!empty($getPaperDetails)): ?>
-            <?php foreach ($getPaperDetails as $paperRow): ?>
+            <?php foreach ($getPaperDetails as $paperRow){
+                $paper_name = str_replace('','_',trim($paperRow['paper_name']));
+                ?>
                 <div class="subject-container">
                     <h2><?= $paperRow['paper_name'] ?></h2>
                     <p><strong>Duration:</strong> 30 - 180 Minutes</p>
@@ -185,7 +187,7 @@ Paper List
                         <button class="download-btn checked-answersheet" id="checked-<?= $paperRow['paper_id'] ?>" style="display:none;">Download Checked Answersheet</button>
                     <?php endif; ?>
                 </div>
-            <?php endforeach; ?>
+            <?php } ?>
         <?php else: ?>
             <p>No Paper Available</p>
         <?php endif; ?>
