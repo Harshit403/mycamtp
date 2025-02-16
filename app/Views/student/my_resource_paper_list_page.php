@@ -155,7 +155,9 @@ Paper List
         }
     }
 </style>
-
+<?php 
+print_r($item_type);die;
+?>
 <section class="container mb-5 section mainContainer">
     <div class="text-center">
         <h2>Paper List</h2>
