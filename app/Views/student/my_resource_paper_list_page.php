@@ -165,7 +165,7 @@ Paper List
     <div class="row my-4 paperContainer">
         <?php if (!empty($getPaperDetails)): ?>
             <?php foreach ($getPaperDetails as $paperRow){
-              echo '<pre>';  print_r($paperRow);die;
+              echo '<pre>';  print_r($paperRow);
                 $paper_name = str_replace('','_',trim($paperRow['paper_name']));
                 ?>
                 <div class="subject-container">
