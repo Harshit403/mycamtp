@@ -296,32 +296,29 @@ Paper List
                 $.each(response, function(i, v) {
                     let checkedButton = document.getElementById("checked-" + v.paper_id);
                     let fileInput = document.getElementById("answersheet-" + v.paper_id);
-                    let suggestedAnswerBtn = document.querySelector(`#answerBtnContainer${v.paper_id} a`);
-                    let uploadContainer = document.getElementById("uploadContainer-" + v.paper_id);
+                    let answerBtnContainer = document.getElementById("answerBtnContainer" + v.paper_id);
+
+                    // Agar student ne answersheet upload ki hai toh "Download Suggested Answer" button dikhana hai
+                    if (v.assignment_status >= 1 && answerBtnContainer) {
+                        answerBtnContainer.style.display = "block";
+                    } else if (answerBtnContainer) {
+                        answerBtnContainer.style.display = "none";
+                    }
 
                     // Agar examiner ne checked file upload ki hai, toh "Download Checked Answersheet" button dikhana hai
-                    if (v.assignment_status == 2) {
+                    if (v.assignment_status == 2 && checkedButton) {
                         checkedButton.style.display = "block";
                         checkedButton.setAttribute("href", baseUrl + v.assignment_checked_file);
                         checkedButton.setAttribute("download", "Checked_AnswerSheet.pdf");
-                    } else {
+                    } else if (checkedButton) {
                         checkedButton.style.display = "none";
                     }
 
-                    // Agar student ne answersheet upload ki hai, toh "Download Suggested Answer" button dikhana hai
-                    if (v.assignment_status >= 1 && suggestedAnswerBtn) {
-                        suggestedAnswerBtn.style.display = "block";
-                    } else if (suggestedAnswerBtn) {
-                        suggestedAnswerBtn.style.display = "none";
-                    }
-
-                    // Agar answersheet upload ho chuki hai toh file input aur upload button hata do
-                    if (v.assignment_status > 0) {
-                        if (fileInput) fileInput.disabled = true;
-                        if (uploadContainer) uploadContainer.style.display = "none";
-                    } else {
-                        if (fileInput) fileInput.disabled = false;
-                        if (uploadContainer) uploadContainer.style.display = "block";
+                    // Agar answersheet upload ho chuki hai toh file input disable kar do
+                    if (v.assignment_status > 0 && fileInput) {
+                        fileInput.disabled = true;
+                    } else if (fileInput) {
+                        fileInput.disabled = false;
                     }
                 });
             }
