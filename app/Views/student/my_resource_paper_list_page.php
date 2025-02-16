@@ -297,6 +297,7 @@ Paper List
                     let checkedButton = document.getElementById("checked-" + v.paper_id);
                     let fileInput = document.getElementById("answersheet-" + v.paper_id);
                     let suggestedAnswerBtn = document.querySelector(`#answerBtnContainer${v.paper_id} a`);
+                    let uploadContainer = document.getElementById("uploadContainer-" + v.paper_id);
 
                     // Agar examiner ne checked file upload ki hai, toh "Download Checked Answersheet" button dikhana hai
                     if (v.assignment_status == 2) {
@@ -314,11 +315,13 @@ Paper List
                         suggestedAnswerBtn.style.display = "none";
                     }
 
-                    // Agar answersheet upload ho chuki hai toh file input disable kar do
-                    if (v.assignment_status > 0 && fileInput) {
-                        fileInput.disabled = true;
-                    } else if (fileInput) {
-                        fileInput.disabled = false;
+                    // Agar answersheet upload ho chuki hai toh file input aur upload button hata do
+                    if (v.assignment_status > 0) {
+                        if (fileInput) fileInput.disabled = true;
+                        if (uploadContainer) uploadContainer.style.display = "none";
+                    } else {
+                        if (fileInput) fileInput.disabled = false;
+                        if (uploadContainer) uploadContainer.style.display = "block";
                     }
                 });
             }
@@ -329,6 +332,7 @@ Paper List
 // Page load hone pe function run karo
 uploadAssignmentStatus();
 setInterval(uploadAssignmentStatus, 20000);
+
 </script>
 
 <?= $this->endSection() ?>
