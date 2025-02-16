@@ -168,25 +168,32 @@ Paper List
     }
 
     function uploadAssignmentStatus() {
-        $.ajax({
-            url: 'fetch-assignment-status',
-            type: 'GET',
-            dataType: 'json',
-            success: function(response) {
-                if (response.length > 0) {
-                    $.each(response, function(i, v) {
-                        let checkedButton = document.getElementById("checked-" + v.paper_id);
+    $.ajax({
+        url: 'fetch-assignment-status',
+        type: 'GET',
+        dataType: 'json',
+        success: function(response) {
+            if (response.length > 0) {
+                $.each(response, function(i, v) {
+                    let checkedButton = document.getElementById("checked-" + v.paper_id);
+                    let fileInput = document.getElementById("answersheet-" + v.paper_id);
 
-                        if (v.assignment_status == 2) {
-                            checkedButton.style.display = "block";
-                            checkedButton.setAttribute("href", v.assignment_checked_file);
-                            checkedButton.setAttribute("download", "Checked_AnswerSheet.pdf");
-                        }
-                    });
-                }
+                    if (v.assignment_status == 2) {
+                        checkedButton.style.display = "block";
+                        checkedButton.setAttribute("href", v.assignment_checked_file);
+                        checkedButton.setAttribute("download", "Checked_AnswerSheet.pdf");
+                    }
+                    
+                    // Agar file pehle se upload ho chuki hai, toh disable kar do
+                    if (v.assignment_status > 0 && fileInput) {
+                        fileInput.disabled = true;
+                    }
+                });
             }
-        });
-    }
+        }
+    });
+}
+
 
     uploadAssignmentStatus();
     setInterval(uploadAssignmentStatus, 20000);
