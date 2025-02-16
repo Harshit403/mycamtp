@@ -297,39 +297,28 @@ Paper List
                         let fileInput = document.getElementById("answersheet-" + v.paper_id);
                         let answerBtnContainer = document.getElementById("answerBtnContainer" + v.paper_id);
 
-
+                        
                         if (v.assignment_status >= 1 && answerBtnContainer) {
                             answerBtnContainer.style.display = "block";
                         } else if (answerBtnContainer) {
                             answerBtnContainer.style.display = "none";
                         }
 
-
+                      
                         if (v.assignment_status == 2 && checkedButton) {
                             checkedButton.style.display = "block";
-
-                            let fileUrl = baseUrl + v.assignment_checked_file;
-                            let fileExtension = fileUrl.split('.').pop().toLowerCase();
-
-                            checkedButton.setAttribute("href", fileUrl);
-
-                            if (fileExtension === "pdf") {
-                                checkedButton.setAttribute("download", "Checked_AnswerSheet.pdf");
-                            } else if (["jpg", "jpeg", "png"].includes(fileExtension)) {
-                                checkedButton.removeAttribute("download");
-                                checkedButton.setAttribute("target", "_blank");
-                            }
+                            checkedButton.setAttribute("href", baseUrl + v.assignment_checked_file);
+                            checkedButton.setAttribute("download", "Checked_AnswerSheet.pdf");
                         } else if (checkedButton) {
                             checkedButton.style.display = "none";
                         }
 
 
-
                         if (v.assignment_status > 0 && fileInput) {
                             fileInput.disabled = true;
                             if (uploadBtn && uploadBtn.classList.contains("upload-btn")) {
-                                uploadBtn.disabled = true;
-                                uploadBtn.style.opacity = "0.6";
+                                uploadBtn.disabled = true; 
+                                uploadBtn.style.opacity = "0.6"; 
                                 uploadBtn.style.cursor = "not-allowed";
                             }
                         }
