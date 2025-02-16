@@ -156,7 +156,7 @@ Paper List
     }
 </style>
 <?php 
-print_r($item_type);die;
+
 ?>
 <section class="container mb-5 section mainContainer">
     <div class="text-center">
@@ -165,6 +165,7 @@ print_r($item_type);die;
     <div class="row my-4 paperContainer">
         <?php if (!empty($getPaperDetails)): ?>
             <?php foreach ($getPaperDetails as $paperRow){
+              echo '<pre>';  print_r($paperRow);die;
                 $paper_name = str_replace('','_',trim($paperRow['paper_name']));
                 ?>
                 <div class="subject-container">
