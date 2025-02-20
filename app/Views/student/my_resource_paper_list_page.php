@@ -11,7 +11,11 @@ Paper List
 <?= $this->section('content') ?>
 <style>
     /* General Styles */
+    body {
 
+        flex-direction: row;
+        align-items: center;
+    }
     /* Subject Container */
     .subject-container {
         background-color: white;
@@ -30,7 +34,6 @@ Paper List
     h2 {
         color: #e63e58;
         font-size: 18px;
-        margin: 5px 0;
     }
 
     p {
@@ -126,6 +129,10 @@ Paper List
 
     /* Responsive Design */
     @media (max-width: 400px) {
+    body {
+        flex-direction: row;
+           align-items: center;
+        }
         .btn-group {
             flex-direction: column;
         }
