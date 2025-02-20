@@ -157,7 +157,7 @@ Paper List
     <div class="text-center">
         <h2>Paper List</h2>
     </div>
-    <div class="row my-4 paperContainer is-flex is-justify-content-center">
+    <div class="row my-4 paperContainer is-flex is-flex-direction-row is-justify-content-center">
         <?php if (!empty($getPaperDetails)): ?>
             <?php foreach ($getPaperDetails as $paperRow) {
                 $paper_name = str_replace('', '_', trim($paperRow['paper_name']));
