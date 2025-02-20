@@ -13,9 +13,10 @@ Paper List
     /* General Styles */
     body {
 
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
     }
+
     /* Subject Container */
     .subject-container {
         background-color: white;
@@ -34,6 +35,7 @@ Paper List
     h2 {
         color: #e63e58;
         font-size: 18px;
+        margin: 5px 0;
     }
 
     p {
@@ -129,10 +131,6 @@ Paper List
 
     /* Responsive Design */
     @media (max-width: 400px) {
-    body {
-        flex-direction: row;
-           align-items: center;
-        }
         .btn-group {
             flex-direction: column;
         }
@@ -164,7 +162,7 @@ Paper List
     <div class="text-center">
         <h2>Paper List</h2>
     </div>
-    <div class="row my-4 paperContainer is-flex is-flex-direction-row is-justify-content-center">
+    <div class="row my-4 paperContainer">
         <?php if (!empty($getPaperDetails)): ?>
             <?php foreach ($getPaperDetails as $paperRow) {
                 $paper_name = str_replace('', '_', trim($paperRow['paper_name']));
