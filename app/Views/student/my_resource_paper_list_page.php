@@ -11,11 +11,6 @@ Paper List
 <?= $this->section('content') ?>
 <style>
     /* General Styles */
-    body {
-
-        flex-direction: column;
-        align-items: center;
-    }
 
     /* Subject Container */
     .subject-container {
