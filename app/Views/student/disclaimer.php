@@ -31,6 +31,11 @@
     <p>
         Additionally, please note that we provide all resources in digital form, i.e., PDF, and not in physical mode.
     </p>
+		<p>
+			We offer free mentorship to all students who purchase the complete module test series. This mentorship is provided as a complimentary service to support students in their preparation. However, it does not constitute a contractual obligation, and the nature, duration, and scope of mentorship may be subject to change at our discretion.
+The test series and mentorship are designed for educational purposes only. While we strive to provide quality guidance, we do not guarantee specific results or outcomes. By purchasing the test series, students acknowledge that their success depends on various factors, including their own efforts and dedication.
+For any queries or further clarifications, please contact our support team.
+		</p>
     <p>
         Your feedback and cooperation are invaluable to us in ensuring the quality and accuracy of our educational resources. Thank you for your understanding.
     </p>
