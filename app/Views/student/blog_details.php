@@ -10,7 +10,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 <?=$this->endSection()?>
 <?= $this->section('content') ?>
 <section class="container  mb-5 section mainContainer" style="margin-top: 6rem;">
-    <div class="row py-3">
+    <div class="row py-3" style="margin-top: 9rem;">
         <div class="col-md-12 h2 text-center">
             <?=!empty($blog_item->blog_heading) ? $blog_item->blog_heading : ''?>
         </div>
