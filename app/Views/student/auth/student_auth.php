@@ -86,7 +86,12 @@
                     <ion-icon name="eye-off-outline" class="viewPassWord" style="position: absolute;top: 1rem;right: 1rem;"></ion-icon>
                     <span>Password</span>
                 </div>
-                
+                <label>
+  <input type="checkbox" id="agree" onchange="toggleButton()"> 
+  I have read and agree to the 
+  <a href="terms.html" target="_blank">Terms and Conditions</a> and 
+  <a href="privacy.html" target="_blank">Privacy Policy</a>.
+                </label>
             </form>
             <a class="btn btn-sm btn-custom signUpBtn authButton  w-100">
                 <span class="span"><i class="bi bi-key-fill"></i> Sign Up</span>
@@ -109,3 +114,31 @@
 </body>
 
 </html>
+
+
+<!--
+<br><br>
+
+<button id="signupBtn" disabled style="background-color: gray; cursor: not-allowed;" 
+  onclick="alert('Signed up successfully!')">
+  Sign Up
+</button>
+
+<script>
+  function toggleButton() {
+    var checkbox = document.getElementById("agree");
+    var button = document.getElementById("signupBtn");
+
+    if (checkbox.checked) {
+      button.disabled = false;
+      button.style.backgroundColor = "#28a745"; // Green when enabled
+      button.style.cursor = "pointer";
+    } else {
+      button.disabled = true;
+      button.style.backgroundColor = "gray"; // Gray when disabled
+      button.style.cursor = "not-allowed";
+    }
+  }
+</script>
+
+-->
