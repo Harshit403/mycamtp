@@ -93,7 +93,7 @@
   <a href="privacy.html" target="_blank">Privacy Policy</a>.
                 </label>
             </form>
-            <a class="btn btn-sm btn-custom signUpBtn authButton  w-100">
+            <a class="btn btn-sm btn-custom signUpBtn authButton  w-100" id="signupBtn" disabled style="background-color: gray; cursor: not-allowed;>
                 <span class="span"><i class="bi bi-key-fill"></i> Sign Up</span>
             </a>
             <div class="signup_link">
@@ -102,30 +102,8 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/jquery.min.js"></script>
-    <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/bootbox.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <script type="text/javascript">
-    var pageType = "student_auth_page";
-    var baseUrl = "<?=base_url()?>";
-    </script>
-    <script type="text/javascript" src="<?=base_url()?>assets/student/js/student_auth.js"></script>
-</body>
-
-</html>
-
-
-<!--
-<br><br>
-
-<button id="signupBtn" disabled style="background-color: gray; cursor: not-allowed;" 
-  onclick="alert('Signed up successfully!')">
-  Sign Up
-</button>
-
-<script>
-  function toggleButton() {
+    <script>
+    function toggleButton() {
     var checkbox = document.getElementById("agree");
     var button = document.getElementById("signupBtn");
 
@@ -140,5 +118,17 @@
     }
   }
 </script>
+    <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/jquery.min.js"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?=base_url()?>assets/cdn/js/bootbox.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script type="text/javascript">
+    var pageType = "student_auth_page";
+    var baseUrl = "<?=base_url()?>";
+    </script>
+    <script type="text/javascript" src="<?=base_url()?>assets/student/js/student_auth.js"></script>
+</body>
 
--->
+</html>
+
+
