@@ -90,7 +90,7 @@
   <input type="checkbox" id="agree" onchange="toggleButton()"> 
   I have read and agree to the 
   <a href="<?=base_url()?>terms-and-condition" target="_blank">Terms and Conditions</a> and 
-  <a href="<?=base_url()?>privacy-policy" target="_blank">Privacy Policy</a>.
+  <a href="<?=base_url()?>privacy-policy" target="_blank">Privacy Policy</a> and Disclaimer.
                 </label>
             </form>
             <a class="btn btn-sm btn-custom signUpBtn authButton  w-100" id="signupBtn" disabled style="background-color: gray; cursor: not-allowed;>
