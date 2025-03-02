@@ -270,10 +270,12 @@ $(document).ready(function () {
         if (cartData.length > 0) {
             var html = '<table class="table table-light table-striped table-hover">';
             var totalPrice = 0;
+            var originalPrice = 0; // new op
             var discountPercent = 0;
             var discount_type = '';
             $.each(cartData, function (i, v) {
                 totalPrice = Number(totalPrice.toFixed(2)) + Number(v.offer_price); 
+                originalPrice = Number(originalPrice.toFixed(2)) + Number(v.original_price); //var op
                 html += '<tr>' +
                     '<td>' +
                     '<div class="font-weight-bold"> ' + v.subject_name + '</div>' +
@@ -290,7 +292,7 @@ $(document).ready(function () {
             });
             var totalPriceDeciaml = (totalPrice.toFixed(2));
             if (discount_type == 'percent') {
-                var discountAmount = (((totalPrice) * discountPercent) / 100).toFixed(2);
+                var discountAmount = (((originalPrice) * discountPercent) / 100).toFixed(2); //new op
                 var sign = ' % ';
             } else {
                 var discountAmount = (discountPercent);
