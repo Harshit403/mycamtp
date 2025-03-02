@@ -290,7 +290,7 @@ $(document).ready(function () {
             });
             var totalPriceDeciaml = (totalPrice.toFixed(2));
             if (discount_type == 'percent') {
-                var discountAmount = (((v.original_price) * discountPercent) / 100).toFixed(2);
+                var discountAmount = (((totalPrice) * discountPercent) / 100).toFixed(2);
                 var sign = ' % ';
             } else {
                 var discountAmount = (discountPercent);
