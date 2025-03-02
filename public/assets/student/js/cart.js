@@ -293,6 +293,7 @@ $(document).ready(function () {
             var totalPriceDeciaml = (totalPrice.toFixed(2));
             if (discount_type == 'percent') {
                 var discountAmount = (((totalPrice * discountPercent) / 100).toFixed(2));
+                var totalSavings = (((originalPrice) * discountPercent) / 100).toFixed(2);
                 var sign = ' % ';
             } else {
                 var discountAmount = (discountPercent);
@@ -314,7 +315,7 @@ $(document).ready(function () {
             if (discountPercent != '0') {
                 html += '<div class="row">' +
                     '<div class="col-md-9 font-weight-bold">Discount<span class="text-success"> (' + (+discountPercent + +subjectDiscount) + sign + 'discount) </span></div>' +
-                    '<div class="col-md-3 d-flex align-items-center justify-content-between">&#x20B9;' + discountAmount + '<i class="bi bi-x text-danger removePromoCode ml-2"></i></div>' +
+                    '<div class="col-md-3 d-flex align-items-center justify-content-between">&#x20B9;' + totalSavings + '<i class="bi bi-x text-danger removePromoCode ml-2"></i></div>' +
                     '</div>';
             }
             html += '<div class="row">' +
