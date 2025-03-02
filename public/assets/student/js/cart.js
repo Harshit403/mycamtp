@@ -274,7 +274,7 @@ $(document).ready(function () {
             var discountPercent = 0;
             var discount_type = '';
             $.each(cartData, function (i, v) {
-                totalPrice = Number(totalPrice.toFixed(2)) + Number(v.offer_price); 
+                totalPrice = Number(totalPrice.toFixed(2)) + Number(v.offer_price);
                 originalPrice = Number(originalPrice.toFixed(2)) + Number(v.original_price); //var op
                 html += '<tr>' +
                     '<td>' +
@@ -292,13 +292,13 @@ $(document).ready(function () {
             });
             var totalPriceDeciaml = (totalPrice.toFixed(2));
             if (discount_type == 'percent') {
-                var discountAmount = (((totalPrice) * discountPercent) / 100).toFixed(2);
-                var totalSavings = (((originalPrice) * discountPercent) / 100).toFixed(2);
+                var discountAmount = (((totalPrice * discountPercent) / 100).toFixed(2));
                 var sign = ' % ';
             } else {
                 var discountAmount = (discountPercent);
                 var sign = ' &#8377 ';
             }
+            var subjectDiscount = (((originalPrice - totalPrice)/originalPrice)*100).toFixed(2);
             var payableAmount = ((totalPrice - discountAmount).toFixed(2));
             html += '</table>';
             html += '<div class="input-group mb-1 w-50 ml-auto promocodeContainer">' +
@@ -311,11 +311,10 @@ $(document).ready(function () {
                 '<div class="col-md-9 font-weight-bold">Subtotal</div>' +
                 '<div class="col-md-3">&#x20B9; ' + totalPriceDeciaml + '</div>' +
                 '</div>';
-            var subjectDiscount = (((originalPrice - totalPrice)/originalPrice)*100).toFixed(2);
             if (discountPercent != '0') {
                 html += '<div class="row">' +
-                    '<div class="col-md-9 font-weight-bold">Total Savings <span class="text-success"> (' + discountAmount + sign + 'discount) </span></div>' +
-                    '<div class="col-md-3 d-flex align-items-center justify-content-between">&#x20B9;' + totalSavings + '<i class="bi bi-x text-danger removePromoCode ml-2"></i></div>' +
+                    '<div class="col-md-9 font-weight-bold">Discount<span class="text-success"> (' + discountPercent + sign + 'discount) </span></div>' +
+                    '<div class="col-md-3 d-flex align-items-center justify-content-between">&#x20B9;' + discountAmount + '<i class="bi bi-x text-danger removePromoCode ml-2"></i></div>' +
                     '</div>';
             }
             html += '<div class="row">' +
