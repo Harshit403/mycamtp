@@ -311,10 +311,10 @@ $(document).ready(function () {
                 '<div class="col-md-9 font-weight-bold">Subtotal</div>' +
                 '<div class="col-md-3">&#x20B9; ' + totalPriceDeciaml + '</div>' +
                 '</div>';
-            var overallDiscount = (((originalPrice - payableAmount)/originalPrice)*100).toFixed(2);
+            var subjectDiscount = (((originalPrice - totalPrice)/originalPrice)*100).toFixed(2);
             if (discountPercent != '0') {
                 html += '<div class="row">' +
-                    '<div class="col-md-9 font-weight-bold">Total Savings <span class="text-success"> (' + overallDiscount + sign + 'discount) </span></div>' +
+                    '<div class="col-md-9 font-weight-bold">Total Savings <span class="text-success"> (' + discountAmount + subjectDiscount + sign + 'discount) </span></div>' +
                     '<div class="col-md-3 d-flex align-items-center justify-content-between">&#x20B9;' + totalSavings + '<i class="bi bi-x text-danger removePromoCode ml-2"></i></div>' +
                     '</div>';
             }
