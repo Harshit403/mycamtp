@@ -87,10 +87,12 @@
                     <span>Password</span>
                 </div>
                 <label>
-  <input type="checkbox" id="agree" onchange="toggleButton()"> 
-  I have read and agree to the 
-  <a href="<?=base_url()?>terms-and-condition" target="_blank">Terms and Conditions</a> and 
-  <a href="<?=base_url()?>privacy-policy" target="_blank">Privacy Policy</a> and Disclaimer.
+        <p style="font-size: 0.5em; color: #666; margin-top: 10px;">
+            By clicking "Sign Up", you agree to our 
+            <a href="<?=base_url()?>terms-and-condition" target="_blank" style="color: #666; text-decoration: underline;">Terms and Conditions</a>, 
+            <a href="<?=base_url()?>privacy-policy" target="_blank" style="color: #666; text-decoration: underline;">Privacy Policy</a>, and 
+            <a href="<?=base_url()?>/disclaimer" target="_blank" style="color: #666; text-decoration: underline;">Disclaimer</a>.
+    </p>
                 </label>
             </form>
             <a class="btn btn-sm btn-custom signUpBtn authButton  w-100" id="signupBtn" disabled style="background-color: gray; cursor: not-allowed;>
