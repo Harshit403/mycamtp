@@ -292,14 +292,15 @@ $(document).ready(function () {
             });
             var totalPriceDeciaml = (totalPrice.toFixed(2));
             if (discount_type == 'percent') {
-                var discountAmount = (((totalPrice) * discountPercent) / 100).toFixed(2); //new op
+                var discountAmount = (((totalPrice) * discountPercent) / 100).toFixed(2);
+                var totalSavings = (((originalPrice) * discountPercent) / 100).toFixed(2);
                 var sign = ' % ';
             } else {
                 var discountAmount = (discountPercent);
                 var sign = ' &#8377 ';
             }
             var payableAmount = ((totalPrice - discountAmount).toFixed(2));
-            var totalSavings = ((originalPrice - discountAmount).toFixed(2));
+          //  var totalSavings = ((originalPrice - discountAmount).toFixed(2));
             html += '</table>';
             html += '<div class="input-group mb-1 w-50 ml-auto promocodeContainer">' +
                 '<input type="text" class="form-control form-control-sm" placeholder="Enter Promocode" aria-label="Enter Promocode" aria-describedby="applyPromocodeBtn" id="code_name">' +
