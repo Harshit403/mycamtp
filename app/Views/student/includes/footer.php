@@ -66,15 +66,15 @@
                     <p><i class="fas fa-envelope mr-3"></i> exam@missioncstestseries.com </p>
                     <p><i class="fas fa-phone mr-3"></i> +91 89295 92998</p>
                   </div>
+                    <div class="working-hours col-md-4 mb-4 col-md-4 mb-4" style="text-align: left;">
+                    <h6>Working Hours</h6>
+                    <p><strong>Sales Support:</strong> 24/7</p>
+                    <p><strong>Other Departments:</strong> Monday to Friday, 10:00 AM to 6:00 PM</p>
+                   </div> 
                 </div>
               </div>
             </section>
-                 <section>
-              <div class="working-hours">
-  <h3>Working Hours</h3>
-  <p><strong>Sales Support:</strong> 24/7</p>
-  <p><strong>Other Departments:</strong> Monday to Friday, 10:00 AM to 6:00 PM</p>
-</div> </section>
+                 
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)" >
               © <?php echo date("Y"); ?> Copyright:
               <a class="text-white" href="<?=base_url()?>" style="text-decoration: none;">Mission CS Test Series</a>
