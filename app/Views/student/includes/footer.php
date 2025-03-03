@@ -69,7 +69,7 @@
                     <div class="working-hours col-md-4 mb-4 col-md-4 mb-4" style="text-align: left;">
                     <h6>Working Hours</h6>
                     <p><strong>Sales Support:</strong> 24/7</p>
-                    <p><strong>Other Departments:</strong> Monday to Friday, 10:00 AM to 6:00 PM</p>
+                    <p><strong>Other:</strong> Monday to Friday, 10:00 AM to 6:00 PM</p>
                    </div> 
                 </div>
               </div>
