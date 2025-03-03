@@ -314,7 +314,7 @@ $(document).ready(function () {
                 '</div>';
             if (discountPercent != '0') {
                 html += '<div class="row">' +
-                    '<div class="col-md-9 font-weight-bold">Discount<span class="text-success"> (' + (+discountPercent + +subjectDiscount) + sign + 'discount) </span></div>' +
+                    '<div class="col-md-9 font-weight-bold">Total Savings<span class="text-success"> (' + (+discountPercent + +subjectDiscount) + sign + 'discount) </span></div>' +
                     '<div class="col-md-3 d-flex align-items-center justify-content-between">&#x20B9;' + totalSavings + '<i class="bi bi-x text-danger removePromoCode ml-2"></i></div>' +
                     '</div>';
             }
