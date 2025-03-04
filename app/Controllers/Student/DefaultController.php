@@ -95,8 +95,8 @@ class DefaultController extends BaseController
 				$emailTemplate = str_replace('{login}', $login_url, $emailTemplate);
 				$emailTemplate = str_replace('{user_email}', $postData['email'], $emailTemplate);
 				$emailTemplate = str_replace('{user_password}', $password, $emailTemplate);
-				$subject = "Your confirmation code for Mission CS Test Series";
-				$send_email = $this->sendMail($postData['email'], $subject, $emailTemplate, 'New Register');
+				$subject = "Welcome to Mission CS Test Series.";
+				$send_email = $this->sendMail($postData['email'], $subject, $emailTemplate, 'Mission CS Test Series');
 
 				$response = array(
 					'success' => true,
