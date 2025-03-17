@@ -514,7 +514,6 @@ class DefaultController extends BaseController
 		}
 		if (!empty($linkInfo)) {
 			$insertData = array();
-			print_r($linkInfo);die;
 			$cartIdArray = $this->getCartId();
 			$insertData['cart_id'] = $cartIdArray['data'];
 			$insertData['cf_link_id'] = $linkInfo->cf_order_id;
@@ -581,7 +580,11 @@ class DefaultController extends BaseController
 		$student_id = $studentDetails['id'];
 		$link_id = uniqid($student_id);
 		$ch = curl_init();
+		$mobile_no = $studentDetails['mobile_no'];
 
+		if (strlen($mobile_no) > 10) {
+			$mobile_no = substr($mobile_no, -10);
+		}
 		curl_setopt($ch, CURLOPT_URL, SERVER_URL . '/pg/orders');
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_POST, 1);
@@ -591,7 +594,7 @@ class DefaultController extends BaseController
 			'customer_details' => [
 				'customer_id' => $studentDetails['id'],
 				'customer_name' => $studentDetails['student_name'],
-				'customer_phone' => $studentDetails['mobile_no'],
+				'customer_phone' => $mobile_no,
 				'customer_email' => $studentDetails['email']
 			],
 			'order_meta' => [
