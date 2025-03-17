@@ -515,9 +515,9 @@ class DefaultController extends BaseController
 		if (!empty($linkInfo)) {
 			$insertData = array();
 			$cartIdArray = $this->getCartId();
-
+log_message('error', 'Cashfree API Response: ' . print_r($linkInfo, true));
 			$insertData['cart_id'] = $cartIdArray['data'];
-			$insertData['cf_link_id'] = $linkInfo->order_id;
+			$insertData['cf_link_id'] = $linkInfo->cf_order_id;
 			$insertData['payment_request_id'] = $linkInfo->order_id;
 			$insertData['payment_mode'] = 'cashfree';
 			$insertData['total_payment_amount'] = $linkInfo->order_amount;
