@@ -42,6 +42,7 @@ For any queries or further clarifications, please contact our support team.
     <p>
         We disclaim any liability for any loss or damage, whether direct, indirect, incidental, special, or consequential, arising out of or in connection with the use of this website or any information, products, services, or materials provided herein. This includes but is not limited to loss of data, revenue, or profits.
     </p>
+		<p>The pass percentage shown in our advertisements is based on students who followed our chapterwise plan, participated consistently in our scheduled test series, and adhered to our study schedule. Results may vary depending on individual commitment and preparation.</p>
 	</section>
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
