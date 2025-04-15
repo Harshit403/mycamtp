@@ -1,6 +1,6 @@
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('title')?>
-	<?=$category_info->category_name?>
+    <?=$category_info->category_name?>
 <?=$this->endSection()?>
 <?= $this->section('meta_description') ?>
 <!-- enter your meta description -->
@@ -9,36 +9,54 @@
 <!-- enter your meta keywords widthout tag -->
 <?=$this->endSection()?>
 <?=$this->section('content')?>
-	<section class="container mb-5 section mainContainer">
+    <section class="container mb-5 section mainContainer">
 
-
-<style>
-@keyframes slideRight {
-    0%, 100% { transform: translateX(0); }
-    50% { transform: translateX(5px); }
-}
-</style>
-		<div class="d-flex justify-content-center" style="margin-top: 10rem;">
-			<div class="col-md-12">
-				<h2 class="text-center"><?=$category_info->category_more_details_heading?></h2>
-			</div>
-		</div>
-		<div class="">
-			<?php foreach ($level_list as $levelRow): ?>
-				<div class="col-md-3">
-                                <a href="<?=base_url()?>type?category=<?=$levelRow->category_short_name?>&&level=<?=$levelRow->level_short_name?>" class="btn" style="display: block; margin: 0.3rem; background-color: #e63e58; width: 88%; color: #fff; font-size: 14px; font-weight: bold; padding: 10px 20px; text-align: center; border-radius: 10px;"><?=$levelRow->level_name?><i class="fas fa-arrow-right" style="margin-left: 10px; animation: slideRight 1s infinite;"></i></a>
-				</div>
-			<?php endforeach ?>
-			
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<p>
-					<?=$category_info->category_more_details?>
-				</p>
-			</div>
-		</div>
-	</section>
+    <style>
+    @keyframes slideRight {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(5px); }
+    }
+    .level-btn {
+        display: block; 
+        margin: 0.3rem; 
+        background-color: #e63e58; 
+        width: 88%; 
+        color: #fff; 
+        font-size: 14px; 
+        font-weight: bold; 
+        padding: 10px 20px; 
+        text-align: center; 
+        border-radius: 10px;
+    }
+    .level-btn:hover {
+        color: #fff;
+        text-decoration: none;
+        background-color: #c9344d;
+    }
+    </style>
+        <div class="d-flex justify-content-center" style="margin-top: 10rem;">
+            <div class="col-md-12">
+                <h2 class="text-center"><?=$category_info->category_more_details_heading?></h2>
+            </div>
+        </div>
+        <div class="row">
+            <?php foreach ($level_list as $levelRow): ?>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+                    <a href="<?=base_url()?>type?category=<?=$levelRow->category_short_name?>&&level=<?=$levelRow->level_short_name?>" class="level-btn">
+                        <?=$levelRow->level_name?>
+                        <i class="fas fa-arrow-right" style="margin-left: 10px; animation: slideRight 1s infinite;"></i>
+                    </a>
+                </div>
+            <?php endforeach ?>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    <?=$category_info->category_more_details?>
+                </p>
+            </div>
+        </div>
+    </section>
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
 <?= $this->endSection() ?>
