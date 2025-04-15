@@ -124,12 +124,15 @@ $routes->get('/admin/add-level/(:any)',ADMIN.'DashboardController::loadAddLevelP
 $routes->post('/admin/add-level',ADMIN.'DashboardController::addLevel',['filter'=>'authGuard']);
 $routes->get('/admin/level-list',ADMIN.'DashboardController::loadLevelListPage',['filter'=>'authGuard']);
 $routes->post('/admin/fetch-level-list',ADMIN.'DashboardController::fetchLevelListPage');
+$routes->post('/admin/delete-level',ADMIN.'DashboardController::deleteLevel');
+
 // type routes
 $routes->get('/admin/add-type',ADMIN.'DashboardController::loadAddTypePage',['filter'=>'authGuard']);
 $routes->get('/admin/add-type/(:any)',ADMIN.'DashboardController::loadAddTypePage/$1',['filter'=>'authGuard']);
 $routes->post('/admin/add-type',ADMIN.'DashboardController::addType',['filter'=>'authGuard']);
 $routes->get('/admin/type-list',ADMIN.'DashboardController::loadTypeListPage',['filter'=>'authGuard']);
 $routes->post('/admin/fetch-type-list',ADMIN.'DashboardController::fetchTypeListPage',['filter'=>'authGuard']);
+$routes->post('/admin/delete-type',ADMIN.'DashboardController::deleteType');
 
 // subject routes
 $routes->get('/admin/add-subject',ADMIN.'DashboardController::loadAddSubjectPage',['filter'=>'authGuard']);
@@ -138,6 +141,7 @@ $routes->post('/admin/add-subject',ADMIN.'DashboardController::addSubject',['fil
 $routes->post('/admin/get-type-list',ADMIN.'DashboardController::getTypeInfo',['filter'=>'authGuard']);
 $routes->get('/admin/subject-list',ADMIN.'DashboardController::loadSubjectListPage',['filter'=>'authGuard']);
 $routes->post('/admin/fetch-subject-list',ADMIN.'DashboardController::fetchSubjectListPage',['filter'=>'authGuard']);
+$routes->post('/admin/delete-subject',ADMIN.'DashboardController::deleteSubject');
 
 // paper routes
 $routes->get('/admin/add-paper',ADMIN.'DashboardController::loadAddPaperPage',['filter'=>'authGuard']);
@@ -148,6 +152,7 @@ $routes->post('/admin/update-paper-status',ADMIN.'DashboardController::updatePap
 $routes->post('/admin/delete-paper',ADMIN.'DashboardController::deletePaper',['filter'=>'authGuard']);
 $routes->get('/admin/paper-list',ADMIN.'DashboardController::loadPaperListPage',['filter'=>'authGuard']);
 $routes->post('/admin/fetch-paper',ADMIN.'DashboardController::fetchedPaperList',['filter'=>'authGuard']);
+$routes->post('/admin/delete-paper',ADMIN.'DashboardController::deletePaper');
 
 // promocodes
 $routes->get('/admin/add-promocode',ADMIN.'DashboardController::loadAddPromocodePage',['filter'=>'authGuard']);
