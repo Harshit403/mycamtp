@@ -1,127 +1,199 @@
 <?= $this->extend('student/layout/layout') ?>
 <?=$this->section('title')?>
-	CSEET Test Series
+    CSEET Test Series
 <?=$this->endSection()?>
 <?= $this->section('meta_description') ?>
-CSEET TEST SERIES BY ALL INDIA RANKERS
+    CSEET TEST SERIES BY ALL INDIA RANKERS
 <?=$this->endSection()?>
 <?= $this->section('meta_keywords') ?>
-CSEET, CSEET TEST SERIES, TEST SERIES, CSEET MOCK TEST SERIES, CSEET MOCK TEST, MOCK TEST SERIES, CS TEST SERIES, ICSI TEST SERIES, ICSI EXAMS, CS EXAM, ICSI, ICSI MOCK TEST,CS EXAMS, MISSION CS TEST SERIES, CSEET NOTES, CSEET LECTURES, CSEET FREE NOTES
+    CSEET, CSEET TEST SERIES, TEST SERIES, CSEET MOCK TEST SERIES, CSEET MOCK TEST, MOCK TEST SERIES, CS TEST SERIES, ICSI TEST SERIES, ICSI EXAMS, CS EXAM, ICSI, ICSI MOCK TEST,CS EXAMS, MISSION CS TEST SERIES, CSEET NOTES, CSEET LECTURES, CSEET FREE NOTES
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 <section class="container contact_us_container mainContainer">
 
+<style>
+    @keyframes slideRight {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(5px); }
+    }
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px 0;
+    }
+    .card {
+        flex: 1;
+        min-width: 300px;
+        max-width: 400px;
+        background: #ffffff;
+        border: 1px solid #e6e6e6;
+        border-radius: 15px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 20px;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
+    .tag {
+        background-color: #e63e58;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        display: inline-block;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .subtag {
+        background-color: #fbe7ec;
+        color: #e63e58;
+        font-size: 14px;
+        padding: 6px 12px;
+        border-radius: 20px;
+        display: inline-block;
+        margin-top: 10px;
+    }
+    .features {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+        text-align: left;
+    }
+    .features li {
+        font-size: 14px;
+        color: #555;
+        margin: 8px 0;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px dashed #ddd;
+        padding-bottom: 8px;
+    }
+    .features li span {
+        color: #e63e58;
+        margin-right: 10px;
+        font-weight: bold;
+    }
+    .actions {
+        margin-top: 20px;
+    }
+    .buy-now, .schedule {
+        border: none;
+        padding: 12px 25px;
+        font-size: 14px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .buy-now {
+        background-color: #e63e58;
+        color: #fff;
+    }
+    .buy-now:hover {
+        background-color: #c9344d;
+        transform: scale(1.05);
+    }
+    .schedule {
+        background-color: #fbe7ec;
+        color: #e63e58;
+        margin-left: 10px;
+    }
+    .schedule:hover {
+        background-color: #f5d0d9;
+        transform: scale(1.05);
+    }
+    @media (max-width: 768px) {
+        .cards-container {
+            flex-direction: column;
+            align-items: center;
+        }
+        .card {
+            width: 90%;
+            max-width: 100%;
+        }
+    }
+</style>
+
 <body>
 <div class="" style="margin-top: 10px">
-<h1 style="margin-top: 10px">CSEET Test Series</h1>
-  <div class="card" style="width: 100%; max-width: 400px; background: #ffffff; border: 1px solid #e6e6e6; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-    <div class="header">
-      <p class="tag" style="background-color: #e63e58; color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 12px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">New syllabus</p>
-      <h2 style="font-size: 20px; color: #333; margin: 15px 0; font-weight: bold;">Chapterwise Test Series</h2>
-      <h1 style="font-size: 36px; color: #e63e58; margin: 10px 0;">₹999</h1>
-      <p class="subtag" style="background-color: #fbe7ec; color: #e63e58; font-size: 14px; padding: 6px 12px; border-radius: 20px; display: inline-block; margin-top: 10px;"></p>
-    </div>
-    <ul class="features" style="list-style: none; padding: 0; margin: 20px 0; text-align: left;">
-     <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Weekly Mentorship by AIR
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Chapter-Wise Test For Each Subject
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> 2 Full Syllabus Test For Each Subject
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Target Based Approach
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Revision Strategy By AIR
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Evaluation In 48 Hours
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Suggested Answers Available
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Scheduled & UnScheduled Both Options 
-      </li>
-    </ul>
-    <div class="actions" style="margin-top: 20px;">
-     <a href="<?=base_url()?>buy"> <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button> </a>
-     <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/"> <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button> </a>
-    </div>
-  </div>
+    <h1 style="margin-top: 10px">CSEET Test Series</h1>
+    
+    <div class="cards-container">
+        <!-- Chapterwise Test Series Card -->
+        <div class="card">
+            <div class="header">
+                <p class="tag">New syllabus</p>
+                <h2 style="font-size: 20px; color: #333; margin: 15px 0; font-weight: bold;">Chapterwise Test Series</h2>
+                <h1 style="font-size: 36px; color: #e63e58; margin: 10px 0;">₹999</h1>
+                <p class="subtag"></p>
+            </div>
+            <ul class="features">
+                <li><span>✔</span> Weekly Mentorship by AIR</li>
+                <li><span>✔</span> Chapter-Wise Test For Each Subject</li>
+                <li><span>✔</span> 2 Full Syllabus Test For Each Subject</li>
+                <li><span>✔</span> Target Based Approach</li>
+                <li><span>✔</span> Revision Strategy By AIR</li>
+                <li><span>✔</span> Evaluation In 48 Hours</li>
+                <li><span>✔</span> Suggested Answers Available</li>
+                <li><span>✔</span> Scheduled & UnScheduled Both Options</li>
+            </ul>
+            <div class="actions">
+                <a href="<?=base_url()?>buy"><button class="buy-now">Buy Now</button></a>
+                <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/"><button class="schedule">Schedule</button></a>
+            </div>
+        </div>
 
+        <!-- Unit-wise Test Series Card -->
+        <div class="card">
+            <div class="header">
+                <p class="tag">New syllabus</p>
+                <h2 style="font-size: 20px; color: #333; margin: 15px 0; font-weight: bold;">Unit-wise Test Series</h2>
+                <h1 style="font-size: 36px; color: #e63e58; margin: 10px 0;">₹499</h1>
+                <p class="subtag"></p>
+            </div>
+            <ul class="features">
+                <li><span>✔</span> 4 unit tests - each covering 25% of syllabus</li>
+                <li><span>✔</span> 1 Full Syllabus Test For Each Subject</li>
+                <li><span>✔</span> Target Based Approach</li>
+                <li><span>✔</span> Mentorship By AIRs- Once in a Month</li>
+                <li><span>✔</span> Evaluation In 48 Hours</li>
+                <li><span>✔</span> Suggested Answers for Reference</li>
+                <li><span>✔</span> Scheduled & UnScheduled Both Options</li>
+            </ul>
+            <div class="actions">
+                <a href="<?=base_url()?>buy"><button class="buy-now">Buy Now</button></a>
+                <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/"><button class="schedule">Schedule</button></a>
+            </div>
+        </div>
 
-  <div class="card" style="width: 100%; max-width: 400px; background: #ffffff; border: 1px solid #e6e6e6; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; margin: 8px;">
-    <div class="header">
-      <p class="tag" style="background-color: #e63e58; color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 12px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">New syllabus</p>
-      <h2 style="font-size: 20px; color: #333; margin: 15px 0; font-weight: bold;">Unit-wise Test Series</h2>
-      <h1 style="font-size: 36px; color: #e63e58; margin: 10px 0;">₹499</h1>
-      <p class="subtag" style="background-color: #fbe7ec; color: #e63e58; font-size: 14px; padding: 6px 12px; border-radius: 20px; display: inline-block; margin-top: 10px;"></p>
+        <!-- Full Syllabus Test Series Card -->
+        <div class="card">
+            <div class="header">
+                <p class="tag">New syllabus</p>
+                <h2 style="font-size: 20px; color: #333; margin: 15px 0; font-weight: bold;">Full Syllabus Test Series</h2>
+                <h1 style="font-size: 36px; color: #e63e58; margin: 10px 0;">₹149</h1>
+                <p class="subtag"></p>
+            </div>
+            <ul class="features">
+                <li><span>✔</span> 1 full syllabus test for 100 marks</li>
+                <li><span>✔</span> Target Based Approach</li>
+                <li><span>✔</span> 1 Mentorship Session By AIRs</li>
+                <li><span>✔</span> Evaluation In 48 Hours</li>
+                <li><span>✔</span> Suggested Answers for Reference</li>
+                <li><span>✔</span> Scheduled & UnScheduled Both Options</li>
+            </ul>
+            <div class="actions">
+                <a href="<?=base_url()?>buy"><button class="buy-now">Buy Now</button></a>
+                <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/"><button class="schedule">Schedule</button></a>
+            </div>
+        </div>
     </div>
-    <ul class="features" style="list-style: none; padding: 0; margin: 20px 0; text-align: left;">
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span>  4 unit tests - each covering 25% of syllabus
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> 1 Full Syllabus Test For Each Subject
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Target Based Approach
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Mentorship By AIRs- Once in a Month 
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Evaluation In 48 Hours
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Suggested Answers for Reference 
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Scheduled & UnScheduled Both Options 
-      </li>
-    </ul>
-    <div class="actions" style="margin-top: 20px;">
-     <a href="<?=base_url()?>buy"> <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button> </a>
-     <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/"> <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button></a>
-    </div>
-  </div>
-
-  <div class="card" style="width: 100%; max-width: 400px; background: #ffffff; border: 1px solid #e6e6e6; border-radius: 15px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-    <div class="header">
-      <p class="tag" style="background-color: #e63e58; color: #fff; padding: 5px 10px; border-radius: 20px; font-size: 12px; display: inline-block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">New syllabus</p>
-      <h2 style="font-size: 20px; color: #333; margin: 15px 0; font-weight: bold;">Full Syllabus Test Series</h2>
-      <h1 style="font-size: 36px; color: #e63e58; margin: 10px 0;">₹149</h1>
-      <p class="subtag" style="background-color: #fbe7ec; color: #e63e58; font-size: 14px; padding: 6px 12px; border-radius: 20px; display: inline-block; margin-top: 10px;"></p>
-    </div>
-    <ul class="features" style="list-style: none; padding: 0; margin: 20px 0; text-align: left;">
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> 1 full syllabus test for 100 marks
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Target Based Approach
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> 1 Mentorship Session By AIRs
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Evaluation In 48 Hours
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Suggested Answers for Reference 
-      </li>
-      <li style="font-size: 14px; color: #555; margin: 8px 0; display: flex; align-items: center; border-bottom: 1px dashed #ddd; padding-bottom: 8px;">
-        <span style="color: #e63e58; margin-right: 10px; font-weight: bold;">✔</span> Scheduled & UnScheduled Both Options 
-      </li>
-    </ul>
-    <div class="actions" style="margin-top: 20px;">
-    <a href="<?=base_url()?>buy">  <button class="buy-now" style="background-color: #e63e58; color: #fff; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease;">Buy Now</button></a>
-    <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/">  <button class="schedule" style="background-color: #fbe7ec; color: #e63e58; border: none; padding: 12px 25px; font-size: 14px; border-radius: 25px; cursor: pointer; margin-left: 10px; transition: background-color 0.3s ease, transform 0.3s ease;">Schedule</button></a>
-    </div>
-  </div>
 
     <main class="text-start">
         <section>
@@ -151,7 +223,7 @@ CSEET, CSEET TEST SERIES, TEST SERIES, CSEET MOCK TEST SERIES, CSEET MOCK TEST, 
             <h2>Common Challenges Faced by Students</h2>
             <p>
                 Many students fail their <strong>CS Executive</strong> or <strong>CS Professional</strong> exams even after thorough revision. 
-                This often happens because they don’t know their weak areas or how to improve their approach. Our <strong>CS test series</strong> 
+                This often happens because they don't know their weak areas or how to improve their approach. Our <strong>CS test series</strong> 
                 addresses this issue by helping students find and fix mistakes like poor presentation, lack of conceptual clarity, or slow writing speed. 
                 Our expert team provides step-by-step guidance to improve performance in the actual exams, resulting in better <strong>CS results</strong>.
             </p>
@@ -182,7 +254,7 @@ CSEET, CSEET TEST SERIES, TEST SERIES, CSEET MOCK TEST SERIES, CSEET MOCK TEST, 
         </section>
     </main>
 </div>
-</body>	
+</body>    
 
 </section>
 <?= $this->endSection() ?>
