@@ -12,214 +12,359 @@
 <section class="container contact_us_container mainContainer">
 
 <style>
-    @keyframes slideRight {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(5px); }
+    /* Color Scheme from Original */
+    :root {
+        --primary: #e63e58;
+        --primary-dark: #c9344d;
+        --secondary: #fbe7ec;
+        --light: #ffffff;
+        --dark: #333333;
+        --shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     }
-    .cards-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        margin: 20px 0;
+    
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
     }
-    .card {
-        flex: 1;
-        min-width: 300px;
-        max-width: 400px;
-        background: #ffffff;
-        border: 1px solid #e6e6e6;
-        border-radius: 15px;
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        padding: 20px;
+    
+    @keyframes iconBounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+    
+    /* Base Styles */
+    body {
+        font-family: 'Arial', sans-serif;
+        background: #f8f9fa;
+        line-height: 1.6;
+    }
+    
+    .page-heading {
+        font-size: 2.5rem;
+        color: var(--dark);
         text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        margin-bottom: 20px;
+        margin: 3rem 0;
+        position: relative;
+        animation: fadeIn 0.8s ease-out;
     }
+    
+    .page-heading::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: var(--primary);
+        margin: 15px auto;
+        border-radius: 2px;
+    }
+    
+    /* Cards Container */
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    /* Card Design */
+    .card {
+        background: var(--light);
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        position: relative;
+        animation: fadeIn 0.6s ease-out;
+    }
+    
     .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        transform: translateY(-10px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
     }
-    .tag {
-        background-color: #e63e58;
-        color: #fff;
-        padding: 5px 10px;
-        border-radius: 20px;
-        font-size: 12px;
-        display: inline-block;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+    
+    .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: var(--primary);
     }
-    .subtag {
-        background-color: #fbe7ec;
-        color: #e63e58;
-        font-size: 14px;
-        padding: 6px 12px;
-        border-radius: 20px;
-        display: inline-block;
-        margin-top: 10px;
+    
+    .card-content {
+        padding: 25px;
     }
+    
+    .card h2 {
+        font-size: 1.5rem;
+        color: var(--dark);
+        margin: 15px 0;
+        position: relative;
+    }
+    
+    .price-tag {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin: 15px 0;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .price-tag::before {
+        content: '₹';
+        font-size: 1.8rem;
+        margin-right: 5px;
+    }
+    
+    /* Features List */
     .features {
         list-style: none;
         padding: 0;
-        margin: 20px 0;
-        text-align: left;
+        margin: 25px 0;
     }
+    
     .features li {
-        font-size: 14px;
-        color: #555;
-        margin: 8px 0;
+        padding: 12px 0;
+        border-bottom: 1px dashed #eee;
         display: flex;
         align-items: center;
-        border-bottom: 1px dashed #ddd;
-        padding-bottom: 8px;
+        transition: all 0.3s ease;
     }
+    
+    .features li:hover {
+        transform: translateX(10px);
+    }
+    
     .features li span {
-        color: #e63e58;
+        color: var(--primary);
         margin-right: 10px;
-        font-weight: bold;
+        font-size: 1.2rem;
+        animation: iconBounce 2s infinite;
     }
-    .actions {
-        margin-top: 20px;
+    
+    /* Buttons */
+    .button-group {
+        display: flex;
+        gap: 10px;
+        margin-top: 25px;
+        flex-wrap: wrap;
     }
-    .buy-now, .schedule {
-        border: none;
+    
+    .btn-primary,
+    .btn-secondary {
+        flex: 1;
         padding: 12px 25px;
-        font-size: 14px;
         border-radius: 25px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.3s ease;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-width: 160px;
     }
-    .buy-now {
-        background-color: #e63e58;
-        color: #fff;
+    
+    .btn-primary {
+        background: var(--primary);
+        color: var(--light);
+        border: 2px solid var(--primary);
     }
-    .buy-now:hover {
-        background-color: #c9344d;
+    
+    .btn-primary:hover {
+        background: var(--primary-dark);
         transform: scale(1.05);
     }
-    .schedule {
-        background-color: #fbe7ec;
-        color: #e63e58;
-        margin-left: 10px;
+    
+    .btn-secondary {
+        background: var(--secondary);
+        color: var(--primary);
+        border: 2px solid var(--primary);
     }
-    .schedule:hover {
-        background-color: #f5d0d9;
+    
+    .btn-secondary:hover {
+        background: var(--primary);
+        color: var(--light);
         transform: scale(1.05);
     }
+    
+    /* Content Sections */
+    .content-section {
+        background: var(--light);
+        border-radius: 15px;
+        padding: 30px;
+        margin: 30px auto;
+        max-width: 800px;
+        box-shadow: var(--shadow);
+    }
+    
+    .content-section h2 {
+        color: var(--primary);
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        border-left: 4px solid var(--primary);
+    }
+    
+    .content-section p {
+        margin-bottom: 15px;
+    }
+    
+    .content-section ul {
+        padding-left: 20px;
+    }
+    
+    .content-section li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 25px;
+    }
+    
+    .content-section li::before {
+        content: '✓';
+        color: var(--primary);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+    
+    /* Responsive Design */
     @media (max-width: 768px) {
         .cards-container {
-            flex-direction: column;
-            align-items: center;
+            grid-template-columns: 1fr;
         }
-        .card {
-            width: 90%;
-            max-width: 100%;
+        
+        .button-group {
+            flex-direction: column;
+        }
+        
+        .btn-primary,
+        .btn-secondary {
+            width: 100%;
+        }
+        
+        .page-heading {
+            font-size: 2rem;
         }
     }
 </style>
 
 <body>
 <div class="" style="margin-top: 10px">
-    <h1 style="margin-top: 10px">CSEET Test Series</h1>
+    <h1 class="page-heading">CSEET Test Series</h1>
     
     <div class="cards-container">
         <!-- Chapterwise Test Series Card -->
         <div class="card">
-            <div class="header">
-                <p class="tag">New syllabus</p>
-                <h2 style="font-size: 20px; color: #333; margin: 15px 0; font-weight: bold;">Chapterwise Test Series</h2>
-                <h1 style="font-size: 36px; color: #e63e58; margin: 10px 0;">₹999</h1>
-                <p class="subtag"></p>
-            </div>
-            <ul class="features">
-                <li><span>✔</span> Weekly Mentorship by AIR</li>
-                <li><span>✔</span> Chapter-Wise Test For Each Subject</li>
-                <li><span>✔</span> 2 Full Syllabus Test For Each Subject</li>
-                <li><span>✔</span> Target Based Approach</li>
-                <li><span>✔</span> Revision Strategy By AIR</li>
-                <li><span>✔</span> Evaluation In 48 Hours</li>
-                <li><span>✔</span> Suggested Answers Available</li>
-                <li><span>✔</span> Scheduled & UnScheduled Both Options</li>
-            </ul>
-            <div class="actions">
-                <a href="<?=base_url()?>buy"><button class="buy-now">Buy Now</button></a>
-                <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/"><button class="schedule">Schedule</button></a>
+            <div class="card-content">
+                <h2>Chapterwise Test Series</h2>
+                <div class="price-tag">999</div>
+                <ul class="features">
+                    <li><span>✔</span>Weekly Mentorship by AIR</li>
+                    <li><span>✔</span>Chapter-Wise Tests</li>
+                    <li><span>✔</span>2 Full Syllabus Tests</li>
+                    <li><span>✔</span>Target Based Approach</li>
+                    <li><span>✔</span>Revision Strategy</li>
+                    <li><span>✔</span>48hr Evaluation</li>
+                    <li><span>✔</span>Suggested Answers</li>
+                    <li><span>✔</span>Flexible Scheduling</li>
+                </ul>
+                <div class="button-group">
+                    <a href="<?=base_url()?>buy" class="btn-primary">
+                        <i class="fas fa-shopping-cart"></i> Buy Now
+                    </a>
+                    <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/" class="btn-secondary">
+                        <i class="fas fa-calendar-alt"></i> Schedule
+                    </a>
+                </div>
             </div>
         </div>
 
         <!-- Unit-wise Test Series Card -->
         <div class="card">
-            <div class="header">
-                <p class="tag">New syllabus</p>
-                <h2 style="font-size: 20px; color: #333; margin: 15px 0; font-weight: bold;">Unit-wise Test Series</h2>
-                <h1 style="font-size: 36px; color: #e63e58; margin: 10px 0;">₹499</h1>
-                <p class="subtag"></p>
-            </div>
-            <ul class="features">
-                <li><span>✔</span> 4 unit tests - each covering 25% of syllabus</li>
-                <li><span>✔</span> 1 Full Syllabus Test For Each Subject</li>
-                <li><span>✔</span> Target Based Approach</li>
-                <li><span>✔</span> Mentorship By AIRs- Once in a Month</li>
-                <li><span>✔</span> Evaluation In 48 Hours</li>
-                <li><span>✔</span> Suggested Answers for Reference</li>
-                <li><span>✔</span> Scheduled & UnScheduled Both Options</li>
-            </ul>
-            <div class="actions">
-                <a href="<?=base_url()?>buy"><button class="buy-now">Buy Now</button></a>
-                <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/"><button class="schedule">Schedule</button></a>
+            <div class="card-content">
+                <h2>Unit-wise Test Series</h2>
+                <div class="price-tag">499</div>
+                <ul class="features">
+                    <li><span>✔</span>4 Unit Tests</li>
+                    <li><span>✔</span>1 Full Syllabus Test</li>
+                    <li><span>✔</span>Monthly Mentorship</li>
+                    <li><span>✔</span>Target Based Approach</li>
+                    <li><span>✔</span>48hr Evaluation</li>
+                    <li><span>✔</span>Suggested Answers</li>
+                    <li><span>✔</span>Flexible Scheduling</li>
+                </ul>
+                <div class="button-group">
+                    <a href="<?=base_url()?>buy" class="btn-primary">
+                        <i class="fas fa-shopping-cart"></i> Buy Now
+                    </a>
+                    <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/" class="btn-secondary">
+                        <i class="fas fa-calendar-alt"></i> Schedule
+                    </a>
+                </div>
             </div>
         </div>
 
         <!-- Full Syllabus Test Series Card -->
         <div class="card">
-            <div class="header">
-                <p class="tag">New syllabus</p>
-                <h2 style="font-size: 20px; color: #333; margin: 15px 0; font-weight: bold;">Full Syllabus Test Series</h2>
-                <h1 style="font-size: 36px; color: #e63e58; margin: 10px 0;">₹149</h1>
-                <p class="subtag"></p>
-            </div>
-            <ul class="features">
-                <li><span>✔</span> 1 full syllabus test for 100 marks</li>
-                <li><span>✔</span> Target Based Approach</li>
-                <li><span>✔</span> 1 Mentorship Session By AIRs</li>
-                <li><span>✔</span> Evaluation In 48 Hours</li>
-                <li><span>✔</span> Suggested Answers for Reference</li>
-                <li><span>✔</span> Scheduled & UnScheduled Both Options</li>
-            </ul>
-            <div class="actions">
-                <a href="<?=base_url()?>buy"><button class="buy-now">Buy Now</button></a>
-                <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/"><button class="schedule">Schedule</button></a>
+            <div class="card-content">
+                <h2>Full Syllabus Test Series</h2>
+                <div class="price-tag">149</div>
+                <ul class="features">
+                    <li><span>✔</span>1 Full Syllabus Test</li>
+                    <li><span>✔</span>Target Based Approach</li>
+                    <li><span>✔</span>1 Mentorship Session</li>
+                    <li><span>✔</span>48hr Evaluation</li>
+                    <li><span>✔</span>Suggested Answers</li>
+                    <li><span>✔</span>Flexible Scheduling</li>
+                </ul>
+                <div class="button-group">
+                    <a href="<?=base_url()?>buy" class="btn-primary">
+                        <i class="fas fa-shopping-cart"></i> Buy Now
+                    </a>
+                    <a href="https://urgent-maryanne-itzharshit-27371710.koyeb.app/" class="btn-secondary">
+                        <i class="fas fa-calendar-alt"></i> Schedule
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
-    <main class="text-start">
-        <section>
+    <main>
+        <div class="content-section">
+            <h2>About Our Test Series</h2>
             <p>
                 Our CS test series is designed to help students easily prepare and pass their CS exams like <strong>CS Executive</strong>, 
                 <strong>CS Professional</strong>, and <strong>CSEET</strong>. We strictly follow the new <strong>ICSI syllabus</strong> and exam pattern, 
                 ensuring students practice the right type of questions. The new ICSI syllabus includes tougher questions, and our <strong>CS mock tests</strong> match the same difficulty level. 
                 With over 8 years of experience, our team focuses on helping students identify and fix their mistakes to achieve better <strong>CS results</strong>.
             </p>
-        </section>
-        <section>
+        </div>
+        
+        <div class="content-section">
+            <h2>Our Experience</h2>
             <p>
                 We have been one of the first platforms to provide <strong>online CS mock tests</strong>. Our team, which includes rank holders 
                 and experienced professionals, ensures high-quality <strong>CS test papers</strong> and provides proper feedback to students. Evaluated <strong>CS mock test</strong> 
                 sheets are returned within 1-2 days, along with valuable tips to improve. This quick feedback process allows students to improve before their next <strong>CS mock test</strong>.
             </p>
-        </section>
-        <section>
+        </div>
+        
+        <div class="content-section">
             <h2>What Our CS Test Series Covers</h2>
             <p>
                 For the <strong>June 2025 CS exams</strong>, we have prepared a comprehensive test series for all levels—<strong>CSEET</strong>, <strong>CS Executive</strong>, and <strong>CS Professional</strong>. 
                 Our <strong>CS mock tests</strong> are based on the latest <strong>ICSI syllabus</strong> and exam trends, helping students understand the type of questions to expect. 
                 Amendments are also included, ensuring students stay updated with the latest syllabus changes.
             </p>
-        </section>
-        <section>
+        </div>
+        
+        <div class="content-section">
             <h2>Common Challenges Faced by Students</h2>
             <p>
                 Many students fail their <strong>CS Executive</strong> or <strong>CS Professional</strong> exams even after thorough revision. 
@@ -227,35 +372,41 @@
                 addresses this issue by helping students find and fix mistakes like poor presentation, lack of conceptual clarity, or slow writing speed. 
                 Our expert team provides step-by-step guidance to improve performance in the actual exams, resulting in better <strong>CS results</strong>.
             </p>
-        </section>
-        <section>
+        </div>
+        
+        <div class="content-section">
             <h2>How Our CS Test Series Helps</h2>
             <ul>
                 <li><strong>Solid Concepts:</strong> We help students build a strong foundation of concepts, essential for scoring well in <strong>CS Executive</strong> and <strong>CS Professional</strong> exams.</li>
                 <li><strong>Proper Revision:</strong> Our <strong>CS mock tests</strong> are structured to ensure students revise the entire <strong>ICSI syllabus</strong> effectively.</li>
                 <li><strong>Mistake Analysis:</strong> Detailed feedback highlights over 130 common mistakes students make, helping them avoid losing marks in exams.</li>
             </ul>
-        </section>
-        <section>
+        </div>
+        
+        <div class="content-section">
             <h2>Proven Success and Affordable Pricing</h2>
             <p>
                 Our <strong>CS test series</strong> has a proven success rate, with many students clearing their exams on the first attempt. 
                 Some have even achieved top ranks in <strong>CS results</strong>. We ensure our <strong>CS mock tests</strong> are affordable 
                 and provide excellent value for the time and effort students invest in their preparation.
             </p>
-        </section>
-        <section>
+        </div>
+        
+        <div class="content-section">
             <h2>Why Choose Our CS Test Series?</h2>
             <p>
                 If you are preparing for the <strong>June 2025 CS exams</strong>, our <strong>CS test series</strong> is the perfect choice. 
                 From <strong>CS Executive</strong> to <strong>CS Professional</strong>, our team will guide you to improve your concepts, writing skills, and speed. 
                 With regular practice and feedback, you can confidently pass your <strong>CS exams</strong> and achieve excellent <strong>CS results</strong>.
             </p>
-        </section>
+        </div>
     </main>
 </div>
-</body>    
 
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</body>    
 </section>
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
