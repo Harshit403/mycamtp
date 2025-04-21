@@ -9,6 +9,8 @@ Paper List
 <!-- enter your meta keywords widthout tag -->
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
+<div style="margin: 30px; border: 1px solid #000; padding: 10px;"></div>
+
 <style>
     /* General Styles */
     body {
