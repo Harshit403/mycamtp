@@ -377,7 +377,7 @@ class DashboardModel extends Model
             $data[] = !empty($row->mobile_no) ? $row->mobile_no : '';
             $data[] = !empty($row->city_name) ? $row->city_name : '';
             $data[] = !empty($row->state_name) ? $row->state_name : '';
-            $data[] = !empty($row->current_level) ? $levelArray[$row->current_level] : '';
+            $data[] = (!empty($row->current_level) && isset($levelArray[$row->current_level])) ? $levelArray[$row->current_level] : '';
             $data[] = '<div class="form-check form-switch text-center">
                         <input class="form-check-input flexSwitchCheckChecked" type="checkbox" role="switch"  '.$checked.' data-student-id ="'.$row->student_id.'">
                     </div>';
@@ -408,68 +408,14 @@ class DashboardModel extends Model
         if($searchValue!==''){
             $searchQuery  = '(level_name like "%' .$searchValue .'%")';
         }
-        $builder = $this->db->table('upload_assignment_table');
-        $builder->select('upload_assignment_table.*,paper_table.level_id,level_table.level_name');
-        $builder->join('paper_table','paper_table.paper_id=upload_assignment_table.paper_id','left');
-        $builder->join('level_table','level_table.level_id=paper_table.level_id','left');
-        if (session()->get('userData')['user_type']=='examinar') {
-            $examinar_id = session()->get('userData')['id'];
-            $builder->join('examinar_assign_table','examinar_assign_table.subject_id=paper_table.subject_id','left');
-            $builder->where('examinar_assign_table.examinar_id',$examinar_id);
-        }
-        $builder->where('upload_assignment_table.assignment_file!=','');
-        $builder->where('upload_assignment_table.deleted',0);
-        $builder->where('level_table.deleted',0);
-        $builder->groupBy('paper_table.level_id');
-        $records = $builder->get()->getResultArray();
-        $totalRecords = count($records);
-
-        $builder = $this->db->table('upload_assignment_table');
-        $builder->select('upload_assignment_table.*,paper_table.level_id,level_table.level_name');
-        $builder->join('paper_table','paper_table.paper_id=upload_assignment_table.paper_id','left');
-        $builder->join('level_table','level_table.level_id=paper_table.level_id','left');
-        if (session()->get('userData')['user_type']=='examinar') {
-            $examinar_id = session()->get('userData')['id'];
-            $builder->join('examinar_assign_table','examinar_assign_table.level_id=paper_table.level_id','left');
-            $builder->where('examinar_assign_table.examinar_id',$examinar_id);
-        }
-        $builder->where('upload_assignment_table.assignment_file!=','');
-        $builder->where('upload_assignment_table.deleted',0);
-        $builder->where('level_table.deleted',0);
-        $builder->groupBy('paper_table.level_id');
-        if(!empty($searchQuery)){
-            $builder->where($searchQuery);
-        }
-        $records = $builder->get()->getResult();
-        $totalRecordsWithFilter = count($records);
-
-        $builder = $this->db->table('upload_assignment_table');
-        $builder->select('upload_assignment_table.*,paper_table.level_id,level_table.level_name,count(upload_assignment_table.paper_id) as total_count,level_table.deleted');
-        $builder->join('paper_table','paper_table.paper_id=upload_assignment_table.paper_id','left');
-        $builder->join('level_table','level_table.level_id=paper_table.level_id','left');
-        
-        if (session()->get('userData')['user_type']=='examinar') {
-            $examinar_id = session()->get('userData')['id'];
-            $builder->join('examinar_assign_table','examinar_assign_table.level_id=paper_table.level_id','left');
-            $builder->where('examinar_assign_table.examinar_id',$examinar_id);
-        }
-        $builder->where('upload_assignment_table.assignment_file!=','');
-        $builder->where('upload_assignment_table.deleted',0);
-        $builder->where('level_table.deleted',0);
-        $builder->groupBy('paper_table.level_id');
-        if(!empty($searchQuery)){
-            $builder->where($searchQuery);
-        }
-        $builder->orderBy($columnName, $columnSortOrder);
-        $records =$builder->limit($rowperpage, $start)->get()->getResult();
 
         $builder = $this->db->table('upload_assignment_table');
         $builder->select('count(upload_assignment_table.paper_id) as total_uncheck_count,paper_table.level_id');
         $builder->join('paper_table','paper_table.paper_id=upload_assignment_table.paper_id','left');
         $builder->join('level_table','level_table.level_id=paper_table.level_id','left');
-        if (session()->get('userData')['user_type']=='examinar') {
+        if(session()->get('userData')['user_type']=='examinar'){
             $examinar_id = session()->get('userData')['id'];
-            $builder->join('examinar_assign_table','examinar_assign_table.level_id=paper_table.level_id','left');
+            $builder->join("examinar_assign_table",'examinar_assign_table.paper_id=upload_assignment_table.paper_id');
             $builder->where('examinar_assign_table.examinar_id',$examinar_id);
         }
         $builder->where('upload_assignment_table.assignment_file!=','');
@@ -477,13 +423,71 @@ class DashboardModel extends Model
         $builder->where('level_table.deleted',0);
         $builder->where('upload_assignment_table.assignment_status',1);
         $builder->groupBy('paper_table.level_id');
+        $records = $builder->get()->getResult();
+        $totalRecords = count($records);
+
+        $builder = $this->db->table('upload_assignment_table');
+        $builder->select('upload_assignment_table.*,paper_table.level_id,level_table.level_name');
+        $builder->join('paper_table','paper_table.paper_id=upload_assignment_table.paper_id','left');
+        $builder->join('level_table','level_table.level_id=paper_table.level_id','left');
+        if(session()->get('userData')['user_type']=='examinar'){
+            $examinar_id = session()->get('userData')['id'];
+            $builder->join("examinar_assign_table",'examinar_assign_table.paper_id=upload_assignment_table.paper_id');
+            $builder->where('examinar_assign_table.examinar_id',$examinar_id);
+        }
         if(!empty($searchQuery)){
             $builder->where($searchQuery);
         }
+        $builder->where('upload_assignment_table.assignment_file!=','');
+        $builder->where('upload_assignment_table.deleted',0);
+        $builder->where('level_table.deleted',0);
+        $builder->where('upload_assignment_table.assignment_status',1);
+        $builder->groupBy('paper_table.level_id');
+        $records = $builder->get()->getResult();
+        $totalRecordsWithFilter = count($records);
+
+        $builder = $this->db->table('upload_assignment_table');
+        $builder->select('upload_assignment_table.*,paper_table.level_id,level_table.level_name,count(upload_assignment_table.paper_id) as total_count,level_table.deleted');
+        $builder->join('paper_table','paper_table.paper_id=upload_assignment_table.paper_id','left');
+        $builder->join('level_table','level_table.level_id=paper_table.level_id','left');
+        if(session()->get('userData')['user_type']=='examinar'){
+            $examinar_id = session()->get('userData')['id'];
+            $builder->join("examinar_assign_table",'examinar_assign_table.paper_id=upload_assignment_table.paper_id');
+            $builder->where('examinar_assign_table.examinar_id',$examinar_id);
+        }
+        if(!empty($searchQuery)){
+            $builder->where($searchQuery);
+        }
+        $builder->where('upload_assignment_table.assignment_file!=','');
+        $builder->where('upload_assignment_table.deleted',0);
+        $builder->where('level_table.deleted',0);
+        $builder->where('upload_assignment_table.assignment_status',1);
+        $builder->groupBy('paper_table.level_id');
         $builder->orderBy($columnName, $columnSortOrder);
-        $uncheck_response = $builder->limit($rowperpage, $start)->get()->getResult();
+        $records =$builder->limit($rowperpage, $start)->get()->getResult();
+
+        $builder = $this->db->table('upload_assignment_table');
+        $builder->select('count(upload_assignment_table.paper_id) as total_uncheck_count,paper_table.level_id');
+        $builder->join('paper_table','paper_table.paper_id=upload_assignment_table.paper_id','left');
+        $builder->join('level_table','level_table.level_id=paper_table.level_id','left');
+        if(session()->get('userData')['user_type']=='examinar'){
+            $examinar_id = session()->get('userData')['id'];
+            $builder->join("examinar_assign_table",'examinar_assign_table.paper_id=upload_assignment_table.paper_id');
+            $builder->where('examinar_assign_table.examinar_id',$examinar_id);
+        }
+        if(!empty($searchQuery)){
+            $builder->where($searchQuery);
+        }
+        $builder->where('upload_assignment_table.assignment_file!=','');
+        $builder->where('upload_assignment_table.deleted',0);
+        $builder->where('level_table.deleted',0);
+        $builder->where('upload_assignment_table.assignment_status',1);
+        $builder->groupBy('paper_table.level_id');
+        $builder->orderBy($columnName, $columnSortOrder);
+        $unchecked_response =$builder->limit($rowperpage, $start)->get()->getResult();
+
         $response = array();
-        foreach ($uncheck_response as $value) {
+        foreach ($unchecked_response as $value) {
             $response[$value->level_id] = $value->total_uncheck_count;
         }
         $finalData = array();
@@ -518,11 +522,7 @@ class DashboardModel extends Model
         $start = $postData['start'];
         $rowperpage = $postData['length'];
         $order = $postData['order'];
-        // $columnIndex = $postData['order'][0]['column'];
-        // $columnName = $postData['columns'][$columnIndex]['data'];
-        // $columnSortOrder = $postData['order'][0]['dir'];
         $searchValue = trim($postData['search']['value']);
-        // $columnName = $fieldsArray[$columnName];
         
         $searchQuery = "";
         if($searchValue!==''){
@@ -540,6 +540,9 @@ class DashboardModel extends Model
         $builder->where('upload_assignment_table.assignment_status!=',0);
         $builder->where('upload_assignment_table.assignment_file!=','');
         if (session()->get('userData')['user_type']=='examinar') {
+            $examinar_id = session()->get('userData')['id'];
+            $builder->join('examinar_assign_table','examinar_assign_table.paper_id=paper_table.paper_id');
+            $builder->where('examinar_assign_table.examinar_id',$examinar_id);
             $builder->whereIn('upload_assignment_table.checked_by_email',[session()->get('userData')['email'],'']);
         }
         $builder->where('upload_assignment_table.assignment_file!=','');
@@ -557,6 +560,9 @@ class DashboardModel extends Model
         }
         $builder->where('upload_assignment_table.assignment_status!=',0);
         if (session()->get('userData')['user_type']=='examinar') {
+            $examinar_id = session()->get('userData')['id'];
+            $builder->join('examinar_assign_table','examinar_assign_table.paper_id=paper_table.paper_id');
+            $builder->where('examinar_assign_table.examinar_id',$examinar_id);
             $builder->whereIn('upload_assignment_table.checked_by_email',[session()->get('userData')['email'],'']);
         }
         $builder->where('upload_assignment_table.assignment_file!=','');
@@ -576,10 +582,12 @@ class DashboardModel extends Model
             $builder->where($searchQuery);
         }
         if (session()->get('userData')['user_type']=='examinar') {
+            $examinar_id = session()->get('userData')['id'];
+            $builder->join('examinar_assign_table','examinar_assign_table.paper_id=paper_table.paper_id');
+            $builder->where('examinar_assign_table.examinar_id',$examinar_id);
             $builder->whereIn('upload_assignment_table.checked_by_email',[session()->get('userData')['email'],'']);
         }
         $builder->where('upload_assignment_table.assignment_status!=',0);
-        // $builder->orderBy($columnName, $columnSortOrder);
         if (count($order) > 0) {
             foreach ($order as $orderName) {
                 $columnName = $fieldsArray[$orderName['column']];
@@ -602,8 +610,6 @@ class DashboardModel extends Model
             } else {
                 $data[] = '';
             }
-            // $file_name_array = explode('/',$row->assignment_file);
-            // $file_name = array_pop($file_name_array);
             $student_email_formated = str_replace('@','_',$row->email);
             $student_email_formated = str_replace('.','_',$student_email_formated);
             $student_email_formated = str_replace(' ','_',$student_email_formated);
@@ -644,7 +650,7 @@ class DashboardModel extends Model
     }
 
     public function fetchAssignSubListModel($postData=''){
-        $fieldsArray = array('subject_name', 'level_name', 'type_name', 'examinar_name', 'assign_id');
+        $fieldsArray = array('paper_name','subject_name', 'level_name', 'type_name', 'examinar_name', 'assign_id');
         $draw = $postData['draw'];
         $start = $postData['start'];
         $rowperpage = $postData['length'];
@@ -656,27 +662,30 @@ class DashboardModel extends Model
         
         $searchQuery = "";
         if($searchValue!==''){
-            $searchQuery  = '(subject_name like "%' .$searchValue .'%" or 
+            $searchQuery  = '(paper_name like "%' .$searchValue .'%" or
+                    subject_name like "%' .$searchValue .'%" or 
                     level_name like "%'.$searchValue.'%" or
                     type_name like "%'. $searchValue .'%" or 
                     examinar_name like "%'.$searchValue.'%")';
         }
         $builder = $this->db->table('examinar_assign_table');
-        $builder->select('examinar_assign_table.*,level_table.level_name,type_table.type_name,subject_table.subject_name');
+        $builder->select('examinar_assign_table.*,level_table.level_name,type_table.type_name,subject_table.subject_name,paper_table.paper_name,examinar_table.examinar_name');
+        $builder->join('examinar_table','examinar_table.examinar_id = examinar_assign_table.examinar_id','left');
         $builder->join('level_table','level_table.level_id = examinar_assign_table.level_id','left');
         $builder->join('type_table','type_table.type_id = examinar_assign_table.type_id','left');
         $builder->join('subject_table','subject_table.subject_id = examinar_assign_table.subject_id','left');
-
+        $builder->join('paper_table','paper_table.paper_id = examinar_assign_table.subject_id','left');
         $builder->where('examinar_assign_table.deleted',0);
         $records = $builder->get()->getResultArray();
         $totalRecords = count($records);
 
         $builder = $this->db->table('examinar_assign_table');
-        $builder->select('examinar_assign_table.*,level_table.level_name,type_table.type_name,subject_table.subject_name');
+        $builder->select('examinar_assign_table.*,level_table.level_name,type_table.type_name,subject_table.subject_name,paper_table.paper_name,examinar_table.examinar_name');
+        $builder->join('examinar_table','examinar_table.examinar_id = examinar_assign_table.examinar_id','left');
         $builder->join('level_table','level_table.level_id = examinar_assign_table.level_id','left');
         $builder->join('type_table','type_table.type_id = examinar_assign_table.type_id','left');
         $builder->join('subject_table','subject_table.subject_id = examinar_assign_table.subject_id','left');
-
+        $builder->join('paper_table','paper_table.paper_id = examinar_assign_table.subject_id','left');
         $builder->where('examinar_assign_table.deleted',0);
         if(!empty($searchQuery)){
             $builder->where($searchQuery);
@@ -685,11 +694,12 @@ class DashboardModel extends Model
         $totalRecordsWithFilter = count($records);
 
         $builder = $this->db->table('examinar_assign_table');
-        $builder->select('examinar_assign_table.*,level_table.level_name,type_table.type_name,subject_table.subject_name');
+        $builder->select('examinar_assign_table.*,level_table.level_name,type_table.type_name,subject_table.subject_name,paper_table.paper_name,examinar_table.examinar_name');
+        $builder->join('examinar_table','examinar_table.examinar_id = examinar_assign_table.examinar_id','left');
         $builder->join('level_table','level_table.level_id = examinar_assign_table.level_id','left');
         $builder->join('type_table','type_table.type_id = examinar_assign_table.type_id','left');
         $builder->join('subject_table','subject_table.subject_id = examinar_assign_table.subject_id','left');
-
+        $builder->join('paper_table','paper_table.paper_id = examinar_assign_table.subject_id','left');
         $builder->where('examinar_assign_table.deleted',0);
         if(!empty($searchQuery)){
             $builder->where($searchQuery);
@@ -699,10 +709,11 @@ class DashboardModel extends Model
         $finalData = array();
         foreach($records as $row){
             $data = [];
+            $data[] = $row->paper_name;
             $data[] = $row->subject_name;
             $data[] = $row->level_name;
             $data[] = $row->type_name;
-            $data[] = $row->examinar_id;
+            $data[] = $row->examinar_name;
             $data[] = '<a href="javascript:void(0)" class="btn btn-sm btn-danger text-white deleteAssignSubBtn" data-assign-id="'.$row->assign_id.'"><i class="bx bx-trash"></i></a>';
             $finalData[] = $data;
         }
