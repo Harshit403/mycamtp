@@ -19,7 +19,7 @@ CS test series, company secretary test series, CS online test series, CS mock te
 <meta property="og:url" content="https://missioncstestseries.com/">
 <meta property="og:image" content="https://missioncstestseries.com/assets/images/og-image.jpg">
 
-
+<?=$this->section('content')?>
 <style>
     /* Modern Color Variables */
     :root {
