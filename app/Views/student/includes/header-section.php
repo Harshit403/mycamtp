@@ -2488,13 +2488,13 @@ window.addEventListener('DOMContentLoaded', () => {
             
             <nav class="mcs-nav">
                 <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">Test Series</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Success Stories</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#mcs-cards-grid">Test Series</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Success Stories</a></li>
+                <li><a href="#faqs">FAQs</a></li>
+                <li><a href="#blogs">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             
