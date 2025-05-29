@@ -668,8 +668,8 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             <h2>Get Exam Tips & Special Offers</h2>
             <p>Subscribe to our newsletter and stay updated with the latest preparation strategies and exclusive discounts</p>
             <form class="mcs-newsletter-form">
-                <input type="email" placeholder="Enter your email address" required>
-                <button type="submit">Subscribe</button>
+                <input class="newsLetterForm" type="email" placeholder="Enter your email address" required>
+               <a href="javascript:void(0)" class="addNewsLetterBtn" <button type="submit">Subscribe</button> </a>
             </form>
         </div>
     </section>
