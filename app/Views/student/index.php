@@ -2411,68 +2411,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="mcs-header">
-        <div class="mcs-container mcs-header-container">
-            <div class="mcs-logo">
-                <img src="https://missioncstestseries.com//assetItems/image/logo.png" alt="Mission CS Logo">
-              <!-- <h1>Mission CS</h1> -->
-            </div>
-            
-            <nav class="mcs-nav">
-                <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">Test Series</a></li>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Success Stories</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            
-            <div class="mcs-header-actions">
-                <button class="mcs-btn mcs-btn-secondary">Login</button>
-                <button class="mcs-btn mcs-btn-primary">SignUp</button>
-                <a href="#" class="mcs-cart-button">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="mcs-cart-count">0</span>
-                </a>
-                <div class="mcs-menu-toggle" id="mcsMenuToggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <!-- Mobile Menu -->
-    <div class="mcs-mobile-menu" id="mcsMobileMenu">
-        <div class="mcs-mobile-menu-header">
-            <div class="mcs-logo">
-             <h1>Mission CS</h1> 
-            </div>
-            <div class="mcs-close-menu" id="mcsCloseMenu">
-                <i class="fas fa-times"></i>
-            </div>
-        </div>
-        
-        <div class="mcs-mobile-nav">
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Test Series</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Success Stories</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-        
-        <div class="mcs-mobile-actions">
-            <button class="mcs-btn mcs-btn-secondary">Login</button>
-            <button class="mcs-btn mcs-btn-primary">Sign Up</button>
-        </div>
-    </div>
     <div class="mcs-overlay" id="mcsOverlay"></div>
 
     <!-- Hero Section -->
