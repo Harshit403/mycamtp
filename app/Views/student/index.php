@@ -601,52 +601,58 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </div>
 </section> 
     <!-- Blog Section -->
-    <section class="mcs-blog mcs-section" data-aos="fade-up" id="blogs">
-        <div class="mcs-container">
-            <div class="mcs-section-title">
-                <h2>Latest From Our Blog</h2>
-                <p>Expert tips, strategies, and insights to help you excel in CS exams</p>
-            </div>
-            
-            <div class="mcs-blog-grid">
-                <div class="mcs-blog-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="mcs-blog-image">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="CS Exam Preparation">
-                    </div>
-                    <div class="mcs-blog-content">
-                        <span class="mcs-blog-date">June 15, 2025</span>
-                        <h3 class="mcs-blog-title">10 Proven Strategies to Ace Your CS Exams</h3>
-                        <p class="mcs-blog-excerpt">Discover the study techniques used by toppers to maximize retention and performance in CS exams...</p>
-                        <a href="#" class="mcs-read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <div class="mcs-blog-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="mcs-blog-image">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Time Management">
-                    </div>
-                    <div class="mcs-blog-content">
-                        <span class="mcs-blog-date">June 8, 2025</span>
-                        <h3 class="mcs-blog-title">Mastering Time Management in CS Exams</h3>
-                        <p class="mcs-blog-excerpt">Learn how to allocate time effectively across different sections to ensure you complete your paper...</p>
-                        <a href="#" class="mcs-read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                
-                <div class="mcs-blog-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="mcs-blog-image">
-                        <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="CS Career">
-                    </div>
-                    <div class="mcs-blog-content">
-                        <span class="mcs-blog-date">June 1, 2025</span>
-                        <h3 class="mcs-blog-title">Career Opportunities After CS: A Complete Guide</h3>
-                        <p class="mcs-blog-excerpt">Explore the diverse career paths available to CS professionals in corporate, legal, and consulting sectors...</p>
-                        <a href="#" class="mcs-read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
+<section class="mcs-blog mcs-section" data-aos="fade-up" id="blogs">
+    <div class="mcs-container">
+        <div class="mcs-section-title">
+            <h2>Latest From Our Blog</h2>
+            <p>Expert tips, strategies, and insights to help you excel in CS exams</p>
         </div>
-    </section>
+        
+        <div class="mcs-blog-grid">
+            <?php 
+            if (!empty($blog_list)): 
+                $limited_blogs = array_slice($blog_list, 0, 3); // Limit to 3
+                $delay = 100;
+                foreach ($limited_blogs as $blogRow): ?>
+                    <div class="mcs-blog-card" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
+                        <div class="mcs-blog-image">
+                            <img 
+                                data-src="<?= base_url() . htmlspecialchars($blogRow->blog_temp_image) ?>" 
+                                alt="<?= htmlspecialchars($blogRow->blog_heading) ?>" 
+                                class="mcs-lazy-image"
+                            >
+                        </div>
+                        <div class="mcs-blog-content">
+                            <span class="mcs-blog-date"><?= date("F j, Y", strtotime($blogRow->blog_created_date ?? 'now')) ?></span>
+                            <h3 class="mcs-blog-title"><?= htmlspecialchars($blogRow->blog_heading) ?></h3>
+                            <p class="mcs-blog-excerpt">
+                                <?php
+                                $blogText = !empty($blogRow->blog_text) ? strip_tags($blogRow->blog_text) : '';
+                                echo strlen($blogText) > 100 ? substr($blogText, 0, 100) . '...' : $blogText;
+                                ?>
+                            </p>
+                            <a href="<?= base_url() ?>blog?item=<?= htmlspecialchars($blogRow->blog_short_name) ?>" class="mcs-read-more">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <?php $delay += 100; ?>
+                <?php endforeach; ?>
+
+                <?php if (count($blog_list) > 3): ?>
+                    <div style="text-align: center; width: 100%; margin-top: 1.5rem;">
+                        <a href="<?= base_url() ?>blog-list">
+                            <button class="cs-btn-demo">Read More Blogs</button>
+                        </a>
+                    </div>
+                <?php endif; ?>
+            <?php else: ?>
+                <p class="mcs-no-blogs">No blogs available at the moment.</p>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+
 
     <!-- Newsletter Section -->
     <section class="mcs-newsletter mcs-section" data-aos="fade-up">
