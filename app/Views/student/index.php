@@ -260,7 +260,9 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                             <i class="fas fa-book"></i>
                         </div>
                         <h3><?= htmlspecialchars($levelRow->level_name) ?></h3>
-                        <button class="mcs-btn mcs-btn-primary">Buy Now</button>
+                        <a href="<?= base_url() ?>type?category=<?= htmlspecialchars($levelRow->category_short_name) ?>&&level=<?= htmlspecialchars($levelRow->level_short_name) ?>">
+                            <button class="mcs-btn mcs-btn-primary">Buy Now</button>
+                        </a>
                     </div>
                     <?php $delay += 100; ?>
                 <?php endforeach;
@@ -272,6 +274,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         </div>
     </div>
 </section>
+
 
 	
 <!-- <section class="mcs-cards-section mcs-section" data-aos="fade-up">
