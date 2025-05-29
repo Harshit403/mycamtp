@@ -3089,63 +3089,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="mcs-footer">
-        <div class="mcs-container">
-            <div class="mcs-footer-content">
-                <div class="mcs-footer-section">
-                    <h1 class="mcs-footer-logo">Mission CS</h1>
-                    <p class="mcs-footer-about">India's premier test series platform for CS aspirants, providing comprehensive preparation resources, expert mentorship, and performance analytics to help students excel in their exams.</p>
-                    <div class="mcs-footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="mcs-footer-section">
-                    <h3 class="mcs-footer-title">Quick Links</h3>
-                    <ul class="mcs-footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Test Series</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Features</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Success Stories</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
-                    </ul>
-                </div>
-                
-                <div class="mcs-footer-section">
-                    <h3 class="mcs-footer-title">Test Series</h3>
-                    <ul class="mcs-footer-links">
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> CS Foundation</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> CS Executive</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> CS Professional</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Module-wise Tests</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Previous Year Papers</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Free Sample Tests</a></li>
-                    </ul>
-                </div>
-                
-                <div class="mcs-footer-section">
-                    <h3 class="mcs-footer-title">Contact Us</h3>
-                    <div class="mcs-footer-contact">
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Education Street, Knowledge City, IN 110001</p>
-                        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-                        <p><i class="fas fa-envelope"></i> info@missioncs.com</p>
-                        <p><i class="fas fa-clock"></i> Mon-Sat: 9:00 AM - 6:00 PM</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mcs-footer-bottom">
-                <p>&copy; 2025 Mission CS Test Series. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a> | <a href="#">Refund Policy</a></p>
-            </div>
-        </div>
-    </footer>
-
     <!-- Back to Top Button -->
     <div class="mcs-back-to-top" id="mcsBackToTop">
         <i class="fas fa-arrow-up"></i>
@@ -3424,7 +3367,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     });
   </script>
 
-<!-- start webpushr code --> <script>(function(w,d, s, id) {if(typeof(w.webpushr)!=='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BKyPm_qNFX-rSaSabH_2G-ub8FGSHPXSGzzM23zaP8NIm2N_rskcfDEVZ7qrSnOdO3sAWLPfMZeYTlbxjZBp1VQ' });</script><!-- end webpushr code -->
 
 <script>
   // Check if the app is running in PWA mode
