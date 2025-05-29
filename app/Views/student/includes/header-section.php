@@ -2531,12 +2531,12 @@ window.addEventListener('DOMContentLoaded', () => {
         <div class="mcs-mobile-nav">
             <ul>
                 <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Test Series</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Success Stories</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="<?=base_url()?>#mcs-cards-grid">Test Series</a></li>
+                <li><a href="<?=base_url()?>#features">Features</a></li>
+                <li><a href="<?=base_url()?>#testimonials">Success Stories</a></li>
+                <li><a href="<?=base_url()?>#faqs">FAQs</a></li>
+                <li><a href="<?=base_url()?>#blogs">Blog</a></li>
+                <li><a href="<?=base_url()?>#contact">Contact</a></li>
             </ul>
         </div>
         
