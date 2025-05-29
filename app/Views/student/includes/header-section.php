@@ -108,13 +108,13 @@ window.addEventListener('DOMContentLoaded', () => {
             <div class="mcs-header-actions">
           <?php if (session()->get('studentDetails')==null): ?>
             <a href="<?=base_url()?>auth?auth=login"> <button class="mcs-btn mcs-btn-secondary">Login</button></a>
-            <a href="<?=base_url()?>auth?auth=register"> <button class="mcs-btn mcs-btn-primary">Sign Up</button></a>
+            <a href="<?=base_url()?>auth?auth=register"> <button class="mcs-btn mcs-btn-primary"><a href="<?=base_url()?>auth?auth=register">Sign Up</a></button></a>
           <?php else: ?>
               <a href="<?=base_url()?>dashboard"> <button class="mcs-btn mcs-btn-secondary">Dashboard</button></a>
             <a href="<?=base_url()?>logout"> <button class="mcs-btn mcs-btn-primary">Logout</button></a>
           <?php endif ?>
                 <div class="mcs-cart-button showCartBtn">
-                   <a href="javascript:void(0)" <i class="fas fa-shopping-cart showCartBtn"></i> </a>
+                   <a href="javascript:void(0)" <i class="fas fa-shopping-cart"></i> </a>
                     <span class="mcs-cart-count cartCount">0</span>
                 </div>
                 <div class="mcs-menu-toggle" id="mcsMenuToggle">
