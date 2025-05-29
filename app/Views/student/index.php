@@ -617,7 +617,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                     <div class="mcs-blog-card" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
                         <div class="mcs-blog-image">
                             <img 
-                                data-src="<?= base_url() . htmlspecialchars($blogRow->blog_temp_image) ?>" 
+                                data-src="<?=base_url().$blogRow->blog_temp_image?>" 
                                 alt="<?= htmlspecialchars($blogRow->blog_heading) ?>" 
                                 class="mcs-lazy-image"
                             >
