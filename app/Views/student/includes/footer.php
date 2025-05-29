@@ -57,7 +57,7 @@ text-decoration: none;
             </div>
             
             <div class="mcs-footer-bottom">
-                <p>&copy; <?php echo date("Y"); ?> Mission CS Test Series. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a> | <a href="#">Refund Policy</a></p>
+                <p>&copy; <?php echo date("Y"); ?> Mission CS Test Series. All Rights Reserved. | <a href="<?=base_url()?>privacy-policy">Privacy Policy</a> | <a href="<?=base_url()?>terms-and-condition">Terms & Conditions</a></p>
             </div>
         </div>
              <div class="_1a1a1a">
