@@ -113,7 +113,7 @@ window.addEventListener('DOMContentLoaded', () => {
               <a href="<?=base_url()?>dashboard"> <button class="mcs-btn mcs-btn-secondary">Dashboard</button></a>
             <a href="<?=base_url()?>logout"> <button class="mcs-btn mcs-btn-primary">Logout</button></a>
           <?php endif ?>
-                <div class="mcs-cart-button">
+                <div class="mcs-cart-button showCartBtn">
                    <a href="javascript:void(0)" <i class="fas fa-shopping-cart"></i> </a>
                     <span class="mcs-cart-count cartCount">0</span>
                 </div>
