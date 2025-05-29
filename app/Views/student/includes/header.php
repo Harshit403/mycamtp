@@ -4,6 +4,11 @@
     <title>
     <?= $this->renderSection('title') ? $this->renderSection('title') : 'Mission CS Test Series' ?>
     </title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    
     <meta content="<?=$this->renderSection('meta_description')?>" name="description">
     <meta content="<?=$this->renderSection('meta_keywords')?>" name="keywords">
     <meta name="robots" content="index, follow" />
