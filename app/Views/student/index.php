@@ -669,7 +669,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             <p>Subscribe to our newsletter and stay updated with the latest preparation strategies and exclusive discounts</p>
             <form class="mcs-newsletter-form">
                 <input class="newsLetterForm" type="email" placeholder="Enter your email address" required>
-               <a href="javascript:void(0)" class="addNewsLetterBtn" <button type="submit">Subscribe</button> </a>
+               <a class="addNewsLetterBtn" <button type="submit">Subscribe</button>
             </form>
         </div>
     </section>
