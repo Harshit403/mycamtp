@@ -190,7 +190,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </style>
 <div class="modal" id="modal">
     <div class="modal-content">
-        <button class="close-modal" onclick="closeModala()">×</button>
+        <button class="close-modal" onclick="closeModal()">×</button>
         <div class="modal-header">Select Your Options</div>
         <div>
             <select id="select1"></select>
@@ -751,6 +751,15 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+function closeModal() {
+    const modal = document.getElementById('modal');
+    if (modal) {
+        modal.style.display = 'none'; // Hides the modal
+    }
+}
+
+
+	    
         // Initialize AOS (Animate On Scroll)
         AOS.init({
             duration: 800,
