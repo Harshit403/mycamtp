@@ -81,195 +81,79 @@ window.addEventListener('DOMContentLoaded', () => {
 <?php 
   $uri = service('uri'); 
   $segment1 = $uri->getSegment(1);
-  ?>
-
-<?php if (session()->get('studentDetails') === null): ?>
-<style>
-    .navbar {
-        top: 50px; 
-    }
-</style>
-<?php endif; ?>
-
-   <style>
-       .navbar .nav-item .nav-link {
-          color: #000000; /* Change this to your desired color */
-          transition: color 0.3s ease; /* Optional: Adds a smooth transition effect */
-       }
-       .navbar .nav-item .nav-link:hover {
-          color: #000000; /* Change this to the hover color */
-       }
-       .cartCount {
-          background-color: red !important;
-          color: white; /* Optional: To make the text more visible */
-        }
-        .contact {
-            display: flex;
-            align-items: center;
-        }
-
-        .contact i {
-            margin-right: 15px; /* Add space between phone icon and number */
-            font-size: 1.2em;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        .contact span {
-            font-size: 1.2em;
-            vertical-align: middle;
-        }
-        
-       .auth-buttons {
-            display: flex;
-            align-items: center;
-        }
-
-        .auth-button {
-            background-color: white;
-            color: #000000;
-            border: 1px solid transparent;
-            padding: 6.8px 17px;
-            margin-right: 10px;
-            font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .auth-button:hover {
-            background-color: #e63e58;
-            color: white;
-            border-color: white;
-}
-        .banner {
-            background-color: #000000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            color: white;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1030;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 20px;
-        }
-
-        .icon {
-            color: white;
-            font-size: 1.5em;
-            text-decoration: none;
-        }
-
-        .icon:hover {
-            color: #ddd;
-        }
-        
-
-    @media (max-width: 768px) {
-      .offcanvas.offcanvas-start {
-        width: 80%; /* Increase width for smaller screens */
-      }
-    }
-   </style>
+?>
     <div style="display: none;">
         <div class="cartPopUpContainer"></div>
     </div>
-<?php if (session()->get('studentDetails') === null): ?>
-<section class="banner">
-    <div class="auth-buttons">
-        <a href="<?= base_url() ?>auth?auth=login" class="auth-button">Login</a>
-        <a href="<?= base_url() ?>auth?auth=register" class="auth-button">Register</a>
-    </div>
-    <div class="social-icons">
-        <a href="https://wa.me/919873045724/" class="icon whatsapp"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" class="icon youtube"><i class="fab fa-youtube"></i></a>
-        <a href="https://instagram.com/mission.cs" class="icon instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://telegram.me/csmission" class="icon telegram"><i class="fab fa-telegram-plane"></i></a>
-    </div>
-</section>
-<?php endif; ?>
-   <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm p-3 bg-body rounded">
-      <div class="container-fluid">
-        <a class="navbar-brand fs-4" href="<?=base_url()?>">
-          <img src="<?=base_url()?>/assetItems/image/logo.png" style="height:3rem;">
-        </a>
-        <ul class="navbar-nav">
-          <li class="nav-item forMobileSection">
-            <a class="nav-link showCartBtn" href="javascript:void(0)" class="btn">
-              <div style="position: relative;">
-                <i class="fa-solid fa-cart-shopping" style="font-size: 18px; color: black;"></i>
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary cartCount">0</span>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" style="margin-left: -4rem!important;border: none;margin-right: -1rem;">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-              <a href="<?=base_url()?>">
-                <img src="<?=base_url()?>/assetItems/image/logo.png" style="height:3rem;">
-              </a>
-            </h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item">
-                    <a class="nav-link <?=($segment1=='' ? 'active' : '')?>" aria-current="page" href="<?=base_url();?>">Home</a>
-                  </li>
-                  <?php if (session()->get('studentDetails')===null): ?>
-                    <li class="nav-item">
-                      <a class="nav-link" href="<?=base_url()?>/auth?auth=register">Register/Login</a>
-                    </li>
-                  <?php endif ?>
-                  <li class="nav-item">
-                    <a class="nav-link <?=($segment1=='plans' ? 'active' : '')?>" href="<?=base_url()?>/plans">Plans</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link <?=($segment1=='pricing' ? 'active' : '')?>" href="<?=base_url()?>/pricing">Pricing</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link <?=($segment1=='blog-list' ? 'active' : '')?>" href="<?=base_url()?>/blog-list">Blog</a>
-                  </li>
-                   <li class="nav-item">
-                    <a class="nav-link" href="<?=base_url()?>#faq-section">FAQ</a>
-                  </li>
-                  <li class="nav-item forDesktopSection">
-                    <a class="nav-link showCartBtn" href="javascript:void(0)" class="btn">
-                      <div style="position: relative;">
-                        <i class="fa-solid fa-cart-shopping" style="font-size: 18px; color: black;"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cartCount">0</span>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="nav-item" style="margin-left:1rem !important; ">
-                    <?php if (session()->get('studentDetails')==null): ?>
-                        <div class="d-flex justify-content-center align-items-center" style="gap:10px;">
-                            <a href="<?=base_url()?>auth?auth=login" class="btn text-white btn-sm btn-custom">Login <i class="bi bi-arrow-right"></i></a>
-                            <a href="<?=base_url()?>auth?auth=register" class="btn text-white btn-sm btn-custom">Sign Up <i class="bi bi-arrow-right"></i></a>
-                        </div>
-                      <?php else: ?>
-                        <div class="d-flex justify-content-center align-items-center" style="gap:10px;">
-                            <a href="<?= base_url() ?>dashboard" class="btn text-white btn-sm btn-custom">Dashboard<i class="bi bi-arrow-right"></i></a>
-                            <a href="<?= base_url() ?>logout" class="btn text-white btn-sm btn-custom">Logout<i class="bi bi-arrow-right"></i></a>
-                        </div>
-                      <?php endif ?>
-                  </li>
+  <!-- Header -->
+    <header class="mcs-header">
+        <div class="mcs-container mcs-header-container">
+            <div class="mcs-logo">
+                <img src="<?=base_url()?>/assetItems/image/logo.png" alt="Mission CS Logo">
+              <!-- <h1>Mission CS</h1> -->
+            </div>
+            
+            <nav class="mcs-nav">
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Test Series</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
-          </div>
+            </nav>
+            
+            <div class="mcs-header-actions">
+          <?php if (session()->get('studentDetails')==null): ?>
+            <a href="<?=base_url()?>auth?auth=login"> <button class="mcs-btn mcs-btn-secondary">Login</button></a>
+            <a href="<?=base_url()?>auth?auth=register"> <button class="mcs-btn mcs-btn-primary">Sign Up</button></a>
+          <?php else: ?>
+              <a href="<?=base_url()?>dashboard"> <button class="mcs-btn mcs-btn-secondary">Dashboard</button></a>
+            <a href="<?=base_url()?>logout"> <button class="mcs-btn mcs-btn-primary">Logout</button></a>
+          <?php endif ?>
+                <a href="#" class="mcs-cart-button">
+                    <i class="fas fa-shopping-cart showCartBtn" href="javascript:void(0)"></i>
+                    <span class="mcs-cart-count cartCount">0</span>
+                </a>
+                <div class="mcs-menu-toggle" id="mcsMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
         </div>
-      </div>
-    </nav>
-</header>
-   
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mcs-mobile-menu" id="mcsMobileMenu">
+        <div class="mcs-mobile-menu-header">
+            <div class="mcs-logo">
+             <h1>Mission CS</h1> 
+            </div>
+            <div class="mcs-close-menu" id="mcsCloseMenu">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        
+        <div class="mcs-mobile-nav">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Test Series</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Success Stories</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="mcs-mobile-actions">
+          <?php if (session()->get('studentDetails')==null): ?>
+            <a href="<?=base_url()?>auth?auth=login"> <button class="mcs-btn mcs-btn-secondary">Login</button></a>
+            <a href="<?=base_url()?>auth?auth=register"> <button class="mcs-btn mcs-btn-primary">Sign Up</button></a>
+          <?php else: ?>
+              <a href="<?=base_url()?>dashboard"> <button class="mcs-btn mcs-btn-secondary">Dashboard</button></a>
+            <a href="<?=base_url()?>logout"> <button class="mcs-btn mcs-btn-primary">Logout</button></a>
+          <?php endif ?>
+        </div>
+    </div>
