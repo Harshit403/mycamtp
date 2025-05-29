@@ -19,8 +19,8 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                 <h1 class="animate__animated animate__fadeInUp">Master CS Exams with Our Expert-Led Test Series</h1>
                 <p class="animate__animated animate__fadeInUp">Comprehensive mock tests, personalized mentorship, and advanced analytics to help you rank among the top candidates.</p>
                 <div class="mcs-hero-buttons animate__animated animate__fadeInUp">
-                    <button class="mcs-btn mcs-btn-primary">Get Started Now</button>
-                    <button class="mcs-btn mcs-btn-secondary">Free Demo Test</button>
+                  <a href="#schedules">  <button class="mcs-btn mcs-btn-primary">View Schedules</button> </a>
+                   <a href="#copies"> <button class="mcs-btn mcs-btn-secondary">View Demo Copies</button></a>
                 </div>
             </div>
             
@@ -133,7 +133,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </section>
 
     <!-- Features Section -->
-    <section class="mcs-features mcs-section" data-aos="fade-up">
+    <section class="mcs-features mcs-section" data-aos="fade-up" id="features" id="features">
         <div class="mcs-container">
             <div class="mcs-section-title">
                 <h2>Our Powerful Features</h2>
@@ -193,7 +193,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </section>
 
     <!-- Download Section -->
-    <section class="mcs-download-section mcs-section" data-aos="fade-up">
+    <section class="mcs-download-section mcs-section" data-aos="fade-up" id="copies" id="copies">
         <div class="mcs-container">
             <div class="mcs-section-title">
                 <h2>Get Free Sample Papers</h2>
@@ -263,7 +263,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </section>
 
     <!-- FAQs Section -->
-    <section class="mcs-faqs mcs-section" data-aos="fade-up">
+    <section class="mcs-faqs mcs-section" data-aos="fade-up" id="faqs">
         <div class="mcs-container">
             <div class="mcs-section-title">
                 <h2>Frequently Asked Questions</h2>
@@ -335,7 +335,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </section>
 
 <!-- Testimonials Section -->
-<section class="mcs-testimonials mcs-section" data-aos="fade-up">
+<section class="mcs-testimonials mcs-section" data-aos="fade-up" id="testimonials">
     <div class="mcs-container">
         <div class="mcs-section-title">
             <h2>Student Feedback</h2>
@@ -370,81 +370,9 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             </div>
         </div>
     </div>
-</section>
-
-
-
-<!--    <section class="mcs-testimonials mcs-section" data-aos="fade-up">
-        <div class="mcs-container">
-            <div class="mcs-section-title">
-                <h2>Success Stories</h2>
-                <p>Hear from our students who achieved their CS dreams with our guidance</p>
-            </div>
-            
-            <div class="mcs-testimonial-slider">
-                <div class="mcs-testimonial-track">
-                    <div class="mcs-testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Riya Sharma" class="mcs-testimonial-avatar">
-                        <p class="mcs-testimonial-text">"Mission CS Test Series was a game-changer for my preparation. The detailed analytics helped me identify my weak areas, and the mentorship guided me to improve them. I secured All India Rank 12 in CS Professional!"</p>
-                        <h4 class="mcs-testimonial-author">Riya Sharma</h4>
-                        <p class="mcs-testimonial-role">CS Professional, AIR 12</p>
-                        <div class="mcs-testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="mcs-testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Amit Patel" class="mcs-testimonial-avatar">
-                        <p class="mcs-testimonial-text">"The mock tests were so similar to the actual exam that I felt completely prepared on exam day. The time management strategies I learned helped me complete the paper with 30 minutes to spare!"</p>
-                        <h4 class="mcs-testimonial-author">Amit Patel</h4>
-                        <p class="mcs-testimonial-role">CS Executive, AIR 8</p>
-                        <div class="mcs-testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="mcs-testimonial-card" data-aos="fade-up" data-aos-delay="300">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Gupta" class="mcs-testimonial-avatar">
-                        <p class="mcs-testimonial-text">"As a working professional, I needed flexible study options. Mission CS allowed me to take tests at my convenience while providing the same quality as classroom coaching. Cleared all modules in first attempt!"</p>
-                        <h4 class="mcs-testimonial-author">Priya Gupta</h4>
-                        <p class="mcs-testimonial-role">CS Foundation, AIR 24</p>
-                        <div class="mcs-testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="mcs-testimonial-card" data-aos="fade-up" data-aos-delay="400">
-                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Rahul Verma" class="mcs-testimonial-avatar">
-                        <p class="mcs-testimonial-text">"The performance analytics were incredibly detailed, showing exactly where I needed to focus. My scores improved by 35% after just 2 months of using Mission CS test series."</p>
-                        <h4 class="mcs-testimonial-author">Rahul Verma</h4>
-                        <p class="mcs-testimonial-role">CS Executive, AIR 15</p>
-                        <div class="mcs-testimonial-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
+</section> 
     <!-- Blog Section -->
-    <section class="mcs-blog mcs-section" data-aos="fade-up">
+    <section class="mcs-blog mcs-section" data-aos="fade-up" id="blogs">
         <div class="mcs-container">
             <div class="mcs-section-title">
                 <h2>Latest From Our Blog</h2>
