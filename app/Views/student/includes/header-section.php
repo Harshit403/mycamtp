@@ -114,7 +114,7 @@ window.addEventListener('DOMContentLoaded', () => {
             <a href="<?=base_url()?>logout"> <button class="mcs-btn mcs-btn-primary">Logout</button></a>
           <?php endif ?>
                 <div class="mcs-cart-button">
-                    <i class="fas fa-shopping-cart showCartBtn" href="javascript:void(0)"></i>
+                   <a href="javascript:void(0)" <i class="fas fa-shopping-cart showCartBtn"></i> </a>
                     <span class="mcs-cart-count cartCount">0</span>
                 </div>
                 <div class="mcs-menu-toggle" id="mcsMenuToggle">
