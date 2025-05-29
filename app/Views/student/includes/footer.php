@@ -1,85 +1,66 @@
-       <style>
-            <?php
-             $_2e2eee = "._1a1a1a{width:100%}._1a1a1a ._2b2b2b{display:flex;justify-content:center;align-items:center;text-align:center;width:100%}._1a1a1a ._3c3c3c{background-color:#2FBCCD;color:white;width:100%;display:inline-block;padding:10px 0}._1a1a1a ._3c3c3c a{color:white;display:inline;font-weight:bold}";
-             echo base64_decode(base64_encode($_2e2eee));
-             ?>
-
-            .no-ul a {
-                text-decoration: none;
-              }
-        </style>
-
-        <section id="footer-section">
-        <div class=" mt-5">
-          <footer class="text-center text-lg-start text-white no-ul" style="background-color: #000000">
-            <section class="">
-              <div class="container text-center text-md-start mt-5">
-                <div class="row mt-3">
-                  <div class="col-md-4 mb-4" style="text-align: left;">
-                    <h6 class="text-uppercase fw-bold">Services</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
-                    <p>
-                      <a href="<?=base_url()?>cseet" class="text-white">CSEET</a>
-                    </p>
-                    <p>
-                      <a href="<?=base_url()?>cs-executive-test-series" class="text-white">CS Executive</a>
-                    </p>
-                    <p>
-                      <a href="<?=base_url()?>cs-professional-test-series" class="text-white">CS Professional</a>
-                    </p>
-                  </div>
-                  <div class="col-md-4 mb-4" style="text-align: left;">
-                    <h6 class="text-uppercase fw-bold">Useful Links</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
-                    <p>
-                      <a href="<?=base_url()?>terms-and-condition" class="text-white">Terms and conditions</a>
-                    </p>
-                    <p>
-                      <a href="<?=base_url()?>privacy-policy" class="text-white">Privacy Policy</a>
-                    </p>
-                    <p>
-                      <a href="<?=base_url()?>cancel-and-refund" class="text-white">Cancelation and Refund</a>
-                    </p>
-                    <p>
-                      <a href="<?=base_url()?>shipping-and-dlivery" class="text-white">Shipping and Delivery</a>
-                    </p>
-                     <p>
-                      <a href="<?=base_url()?>contact-us" class="text-white">Contact US</a>
-                     </p>
-                    <p>
-                      <a href="<?=base_url()?>about-us" class="text-white">About Us</a>
-                    </p>
-                    <p>
-                      <a href="<?=base_url()?>why-us" class="text-white">Why Us</a>
-                    </p>
-                    <p>
-                      <a href="<?=base_url()?>disclaimer" class="text-white">Disclaimer</a>
-                    </p>
-                         <p>
-                      <a href="<?=base_url()?>gplan" class="text-white">"Pass Guaranteed"-Plan T&C</a>
-                         </p>
-                  </div>
-                  <div class="col-md-4 mb-4" style="text-align: left;">
-                    <h6 class="text-uppercase fw-bold">Contact</h6>
-                    <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
-                    <p><i class="fas fa-home mr-3"></i> Ghaziabad, Delhi NCR</p>
-                    <p><i class="fas fa-envelope mr-3"></i> exam@missioncstestseries.com </p>
-                    <p><i class="fas fa-phone mr-3"></i> +91 89295 92998</p>
-                  </div>
-                    <div class="working-hours col-md-4 mb-4 col-md-4 mb-4" style="text-align: left;">
-                    <h6>Working Hours</h6>
-                    <p><strong>Sales Support:</strong> 24/7</p>
-                    <p><strong>Other:</strong> Monday to Friday, 10:00 AM to 6:00 PM</p>
-                   </div> 
+<style>
+<?php
+ $_2e2eee = "._1a1a1a{width:100%}._1a1a1a ._2b2b2b{display:flex;justify-content:center;align-items:center;text-align:center;width:100%}._1a1a1a ._3c3c3c{background-color:#2FBCCD;color:white;width:100%;display:inline-block;padding:10px 0}._1a1a1a ._3c3c3c a{color:white;display:inline;font-weight:bold}";
+echo base64_decode(base64_encode($_2e2eee));
+?>
+.no-ul a {
+text-decoration: none;
+}
+</style>
+<!-- Footer -->
+    <footer class="mcs-footer">
+        <div class="mcs-container">
+            <div class="mcs-footer-content">
+                <div class="mcs-footer-section">
+                    <h1 class="mcs-footer-logo">Mission CS</h1>
+                    <p class="mcs-footer-about">India's premier test series platform for CS aspirants, providing comprehensive preparation resources, expert mentorship, and performance analytics to help students excel in their exams.</p>
+                    <div class="mcs-footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://telegram.dog/csmission"><i class="fab fa-telegram"></i></a>
+                        <a href="https://instagram.com/mission.cs"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
-              </div>
-            </section>
-                 
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)" >
-              © <?php echo date("Y"); ?> Copyright:
-              <a class="text-white" href="<?=base_url()?>" style="text-decoration: none;">Mission CS Test Series</a>
+                
+                <div class="mcs-footer-section">
+                    <h3 class="mcs-footer-title">Quick Links</h3>
+                    <ul class="mcs-footer-links">
+                        <li><a href="<?=base_url()?>terms-and-condition"><i class="fas fa-chevron-right"></i> Terms and conditions</a></li>
+                        <li><a href="<?=base_url()?>privacy-policy"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="<?=base_url()?>cancel-and-refund"><i class="fas fa-chevron-right"></i> Cancelation and Refund</a></li>
+                        <li><a href="<?=base_url()?>shipping-and-dlivery"><i class="fas fa-chevron-right"></i> Shipping and Delivery</a></li>
+                        <li><a href="<?=base_url()?>contact-us"><i class="fas fa-chevron-right"></i> Contact US</a></li>
+                        <li><a href="<?=base_url()?>about-us"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="<?=base_url()?>why-us"><i class="fas fa-chevron-right"></i> Why Us</a></li>
+                        <li><a href="<?=base_url()?>disclaimer"><i class="fas fa-chevron-right"></i> Disclaimer</a></li>
+                        <li><a href="<?=base_url()?>gplan"><i class="fas fa-chevron-right"></i> Pass Guaranteed -Plan T&C</a></li>
+
+                    </ul>
+                </div>
+                
+                <div class="mcs-footer-section">
+                    <h3 class="mcs-footer-title">Test Series</h3>
+                    <ul class="mcs-footer-links">
+                        <li><a href="<?=base_url()?>cseet"><i class="fas fa-chevron-right"></i> CSEET</a></li>
+                        <li><a href="<?=base_url()?>cs-executive-test-series"><i class="fas fa-chevron-right"></i> CS Executive</a></li>
+                        <li><a href="<?=base_url()?>cs-professional-test-series"><i class="fas fa-chevron-right"></i> CS Professional</a></li>
+                    </ul>
+                </div>
+                
+                <div class="mcs-footer-section">
+                    <h3 class="mcs-footer-title">Contact Us</h3>
+                    <div class="mcs-footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Ghaziabad, Delhi NCR</p>
+                        <p><i class="fas fa-phone"></i> +91 89295 92998</p>
+                        <p><i class="fas fa-envelope"></i> exam@missioncstestseries.com</p>
+                    </div>
+                </div>
             </div>
-               <div class="_1a1a1a">
+            
+            <div class="mcs-footer-bottom">
+                <p>&copy; <?php echo date("Y"); ?> Mission CS Test Series. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a> | <a href="#">Refund Policy</a></p>
+            </div>
+        </div>
+             <div class="_1a1a1a">
               <div class="_2b2b2b">
                 <?php
                   function _9f8d4d8df($p1) {
@@ -95,6 +76,4 @@
                 ?>
               </div>
               </div>
-          </footer>
-        </div>
-    </section>
+       </footer>
