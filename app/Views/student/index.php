@@ -601,59 +601,56 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </div>
 </section> 
     <!-- Blog Section -->
-    <section class="mcs-blog mcs-section" data-aos="fade-up" id="blogs">
-    <div class="mcs-container">
-        <div class="mcs-section-title">
-            <h2>Latest From Our Blog</h2>
-            <p>Expert tips, strategies, and insights to help you excel in CS exams</p>
+  <section class="mcst-blog-section">
+    <div class="mcst-container">
+        <div class="mcst-header">
+            <h1 class="mcst-title">Our Blogs</h1>
         </div>
-        
-        <div class="mcs-blog-grid">
+        <div class="mcst-blog-grid">
             <?php 
             if (!empty($blog_list)): 
-                $limited_blogs = array_slice($blog_list, 0, 3); // Limit to 3 blogs
-                $delay = 100;
+                $limited_blogs = array_slice($blog_list, 0, 3); // Get only the first 3 blogs
                 foreach ($limited_blogs as $blogRow): 
             ?>
-                <div class="mcs-blog-card" data-aos="fade-up" data-aos-delay="<?=$delay?>">
-                    <div class="mcs-blog-image">
-                        <img 
-                            data-src="<?= base_url().$blogRow->blog_temp_image ?>" 
-                            alt="Blog Image" 
-                            class="mcs-lazy-image"
-                        >
+                    <div class="mcst-blog-card">
+                        <div class="mcst-blog-image">
+                            <img 
+                                data-src="<?=base_url().$blogRow->blog_temp_image?>" 
+                                alt="Blog Image" 
+                                class="mcst-lazy-image"
+                            >
+                        </div>
+                        <div class="mcst-blog-content">
+                            <h3 class="mcst-blog-heading"><?=$blogRow->blog_heading?></h3>
+                            <p class="mcst-blog-text">
+                                <?php
+                                $blogText = '';
+                                if (!empty($blogRow->blog_text)) {
+                                    $blogText = strip_tags($blogRow->blog_text);
+                                }
+                                $blogText = strlen($blogText) > 20  ? substr($blogText, 0,20).'...' : $blogText;
+                                echo $blogText;
+                                ?>
+                            </p>
+                            <a href="<?=base_url()?>blog?item=<?=$blogRow->blog_short_name?>" class="mcst-read-more">
+                                Read More <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="mcs-blog-content">
-                        <h3 class="mcs-blog-title"><?= $blogRow->blog_heading ?></h3>
-                        <p class="mcs-blog-excerpt">
-                            <?php
-                            $blogText = '';
-                            if (!empty($blogRow->blog_text)) {
-                                $blogText = strip_tags($blogRow->blog_text);
-                            }
-                            $blogText = strlen($blogText) > 20 ? substr($blogText, 0, 20).'...' : $blogText;
-                            echo $blogText;
-                            ?>
-                        </p>
-                        <a href="<?= base_url() ?>blog?item=<?= $blogRow->blog_short_name ?>" class="mcs-read-more">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
             <?php 
-                $delay += 100; // Increase delay for animation effect
                 endforeach; 
             ?>
-
-            <?php if (count($blog_list) > 3): ?>
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="<?= base_url() ?>blog-list"> 
-                        <button class="cs-btn-demo">Read More blogs</button>
+                <?php if (count($blog_list) > 3): ?>
+                   <div style="text-align: center;">
+                    <a href="<?=base_url()?>blog-list"> 
+                    <button class="cs-btn-demo">Read More blogs</button>
                     </a>
-                </div>
-            <?php endif; ?>
-            <?php else: ?>
-                <p class="mcs-no-blogs">No blogs available at the moment.</p>
+                   </div>
+                <?php endif; ?>
+            <?php 
+            else: 
+            ?>
+                <p class="mcst-no-blogs">No blogs available at the moment.</p>
             <?php endif; ?>
         </div>
     </div>
