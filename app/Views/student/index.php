@@ -238,15 +238,50 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         </div>
     </section>
 
-
+	
 <section class="mcs-cards-section mcs-section" data-aos="fade-up">
     <div class="mcs-container">
-        <div class="mcs-section-title">
+        <div class="mcs-section-title" id="mcs-cards-grid">
             <h2>Explore Our Test Series</h2>
             <p>Comprehensive test series designed for each stage of your CS journey</p>
         </div>
         
-        <div class="mcs-cards-grid" id="mcs-cards-grid">
+        <div class="mcs-cards-grid">
+            <?php
+            try {
+                if (!is_array($level_list) && !$level_list instanceof Traversable) {
+                    throw new Exception("Invalid data: Level list is not iterable.");
+                }
+
+                $delay = 100;
+                foreach ($level_list as $levelRow): ?>
+                    <div class="mcs-card" data-aos="fade-up" data-aos-delay="<?= $delay ?>">
+                        <div class="mcs-card-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3><?= htmlspecialchars($levelRow->level_name) ?></h3>
+                        <button class="mcs-btn mcs-btn-primary">Buy Now</button>
+                    </div>
+                    <?php $delay += 100; ?>
+                <?php endforeach;
+            } catch (Exception $e) { ?>
+                <div class="alert alert-danger" role="alert">
+                    Error: <?= htmlspecialchars($e->getMessage()) ?>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+</section>
+
+	
+<!-- <section class="mcs-cards-section mcs-section" data-aos="fade-up">
+    <div class="mcs-container">
+        <div class="mcs-section-title" id="mcs-cards-grid">
+            <h2>Explore Our Test Series</h2>
+            <p>Comprehensive test series designed for each stage of your CS journey</p>
+        </div>
+        
+        <div class="mcs-cards-grid">
             <div class="mcs-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="mcs-card-icon">
                     <i class="fas fa-book"></i>
@@ -282,7 +317,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
     <!-- Steps Section -->
     <section class="mcs-steps mcs-section" data-aos="fade-up">
