@@ -55,7 +55,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             <p>Comprehensive test series designed for each stage of your CS journey</p>
         </div>
         
-        <div class="mcs-cards-grid">
+        <div class="mcs-cards-grid" id="mcs-cards-grid">
             <div class="mcs-card" data-aos="fade-up" data-aos-delay="100">
                 <div class="mcs-card-icon">
                     <i class="fas fa-book"></i>
