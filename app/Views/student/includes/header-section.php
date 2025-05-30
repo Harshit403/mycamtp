@@ -2505,14 +2505,14 @@ window.addEventListener('DOMContentLoaded', () => {
                 <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            
+         
             <div class="mcs-header-actions">
           <?php if (session()->get('studentDetails')==null): ?>
-            <a href="<?=base_url()?>auth?auth=login"> <button class="mcs-btn mcs-btn-secondary">Login</button></a>
-            <a href="<?=base_url()?>auth?auth=register"> <button class="mcs-btn mcs-btn-primary"><a href="<?=base_url()?>auth?auth=register">Sign Up</a></button></a>
+            <button class="mcs-btn mcs-btn-secondary" onclick="window.location.href='<?=base_url()?>auth?auth=login'">Login</button>
+            <button class="mcs-btn mcs-btn-primary" onclick="window.location.href='<?=base_url()?>auth?auth=register'">Sign Up</button>
           <?php else: ?>
-              <a href="<?=base_url()?>dashboard"> <button class="mcs-btn mcs-btn-secondary">Dashboard</button></a>
-            <a href="<?=base_url()?>logout"> <button class="mcs-btn mcs-btn-primary">Logout</button></a>
+              <button onclick="window.location.href='<?=base_url()?>dashboard'" class="mcs-btn mcs-btn-secondary">Dashboard</button>
+              <button class="mcs-btn mcs-btn-primary" onclick="window.location.href='<?=base_url()?>logout'">Logout</button></a>
           <?php endif ?>
                 <div class="mcs-cart-button showCartBtn">
                    <a href="javascript:void(0)" <i class="fas fa-shopping-cart"></i> </a>
