@@ -188,6 +188,305 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         }
   }
 </style>
+
+
+    <style>
+        /* Popup Styles */
+        .mcs-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .mcs-popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .mcs-popup {
+            background-color: var(--mcs-white);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            transform: translateY(50px);
+            transition: all 0.5s ease;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border: 5px solid var(--mcs-primary-light);
+        }
+        
+        .mcs-popup-overlay.active .mcs-popup {
+            transform: translateY(0);
+        }
+        
+        .mcs-popup-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--mcs-primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: var(--mcs-primary-color);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.2);
+        }
+        
+        .mcs-popup h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--mcs-dark-color);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .mcs-popup p {
+            color: var(--mcs-text-light);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .mcs-popup-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .mcs-popup-btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--mcs-transition);
+            border: none;
+            font-size: 1rem;
+            min-width: 180px;
+        }
+        
+        .mcs-popup-btn-primary {
+            background-color: var(--mcs-primary-color);
+            color: var(--mcs-white);
+        }
+        
+        .mcs-popup-btn-primary:hover {
+            background-color: var(--mcs-primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(230, 57, 70, 0.3);
+        }
+        
+        .mcs-popup-btn-secondary {
+            background-color: transparent;
+            color: var(--mcs-text-color);
+            border: 2px solid var(--mcs-gray);
+        }
+        
+        .mcs-popup-btn-secondary:hover {
+            background-color: var(--mcs-gray);
+            transform: translateY(-3px);
+        }
+        
+        .mcs-popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--mcs-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--mcs-transition);
+            font-size: 1.2rem;
+            color: var(--mcs-text-light);
+        }
+        
+        .mcs-popup-close:hover {
+            background-color: var(--mcs-primary-color);
+            color: var(--mcs-white);
+            transform: rotate(90deg);
+        }
+        
+        .mcs-popup-scarcity {
+            color: var(--mcs-primary-color);
+            font-weight: 600;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            display: block;
+        }
+        
+        .mcs-popup-countdown {
+            font-size: 1.2rem;
+            color: var(--mcs-primary-dark);
+            font-weight: 700;
+            margin-top: 0.5rem;
+        }
+        
+        /* Psychological urgency elements */
+        .mcs-popup-urgency {
+            background-color: var(--mcs-primary-light);
+            padding: 0.8rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            font-weight: 600;
+            color: var(--mcs-primary-dark);
+            font-size: 0.95rem;
+        }
+        
+        .mcs-popup-testimonials {
+            font-style: italic;
+            color: var(--mcs-text-light);
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            position: relative;
+            padding-top: 1rem;
+        }
+        
+        .mcs-popup-testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background-color: var(--mcs-gray);
+        }
+    </style>
+    <!-- Previous body content remains the same until before the scripts -->
+    
+    <!-- Popup HTML -->
+    <div class="mcs-popup-overlay" id="mcsPopup">
+        <div class="mcs-popup">
+            <div class="mcs-popup-close" id="mcsPopupClose">
+                <i class="fas fa-times"></i>
+            </div>
+            
+            <div class="mcs-popup-icon">
+                <i class="fas fa-gift"></i>
+            </div>
+            
+            <h3>Limited Time Offer!</h3>
+            <p>Get <strong>20% OFF</strong> on all test series when you sign up today. Plus, receive a <strong>free study planner</strong> to boost your preparation!</p>
+            
+            <!-- Urgency element -->
+            <div class="mcs-popup-urgency">
+                <i class="fas fa-bolt"></i> Only 3 spots left at this price!
+            </div>
+            
+            <!-- Social proof -->
+            <div class="mcs-popup-testimonials">
+                "This test series helped me score AIR 12! The mock tests were exactly like the real exam." - Riya Sharma
+            </div>
+            
+            <!-- Scarcity and countdown -->
+            <span class="mcs-popup-scarcity">Offer expires in:</span>
+            <div class="mcs-popup-countdown" id="mcsCountdown">03:00</div>
+            
+            <div class="mcs-popup-buttons">
+                <button class="mcs-popup-btn mcs-popup-btn-primary" id="mcsClaimOffer">
+                    <i class="fas fa-check-circle"></i> Claim My 20% OFF
+                </button>
+                <button class="mcs-popup-btn mcs-popup-btn-secondary" id="mcsRejectOffer">
+                    No thanks, I'll pay full price
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Previous scripts remain the same -->
+    <!-- Add this new script for popup functionality -->
+    <script>
+        // Popup Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mcsPopup = document.getElementById('mcsPopup');
+            const mcsPopupClose = document.getElementById('mcsPopupClose');
+            const mcsClaimOffer = document.getElementById('mcsClaimOffer');
+            const mcsRejectOffer = document.getElementById('mcsRejectOffer');
+            const mcsCountdown = document.getElementById('mcsCountdown');
+            
+            // Show popup after 3 seconds
+            setTimeout(() => {
+                mcsPopup.classList.add('active');
+                
+                // Start countdown timer (5 minutes)
+                let minutes = 2;
+                let seconds = 59;
+                
+                const countdownInterval = setInterval(() => {
+                    seconds--;
+                    
+                    if (seconds < 0) {
+                        minutes--;
+                        seconds = 59;
+                    }
+                    
+                    if (minutes < 0) {
+                        clearInterval(countdownInterval);
+                        mcsPopup.classList.remove('active');
+                        return;
+                    }
+                    
+                    mcsCountdown.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                    
+                    // Change color when less than 1 minute
+                    if (minutes === 0) {
+                        mcsCountdown.style.color = 'var(--mcs-primary-color)';
+                    }
+                }, 1000);
+            }, 3000);
+            
+            // Close popup when clicking close button
+            mcsPopupClose.addEventListener('click', () => {
+                mcsPopup.classList.remove('active');
+            });
+            
+            // Close popup when clicking outside
+            mcsPopup.addEventListener('click', (e) => {
+                if (e.target === mcsPopup) {
+                    mcsPopup.classList.remove('active');
+                }
+            });
+            
+            // Claim Offer button - redirect to signup
+            mcsClaimOffer.addEventListener('click', () => {
+                window.location.href = "#"; // Replace with actual signup URL
+            });
+            
+            // Reject Offer button - uses psychological reactance
+            mcsRejectOffer.addEventListener('click', () => {
+                // Show confirmation with loss aversion technique
+                if (confirm("Are you sure? You'll lose your 20% discount and free study planner if you leave this page.")) {
+                    mcsPopup.classList.remove('active');
+                }
+            });
+            
+            // Close popup when pressing Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mcsPopup.classList.contains('active')) {
+                    mcsPopup.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+
 <div class="modal" id="modal">
     <div class="modal-content">
         <button class="close-modal" onclick="closeModal()">×</button>
