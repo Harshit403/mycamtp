@@ -2391,6 +2391,14 @@
             height: 35px; /* Smaller logo */
         }
     }
+      .mcs-btn-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.mcs-btn-link button {
+  width: 100%;
+}
     </style>
 
   
