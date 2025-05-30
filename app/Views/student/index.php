@@ -605,7 +605,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                             <img src="<?=base_url().$blogRow->blog_temp_image?>" alt="<?=$blogRow->blog_heading?>">
                         </div>
                         <div class="mcs-blog-content">
-                            <!-- <span class="mcs-blog-date"><?=date('F j, Y', strtotime($blogRow->created_at))?></span> -->
                             <h3 class="mcs-blog-title"><?=$blogRow->blog_heading?></h3>
                             <?php
                                 $blogText = '';
