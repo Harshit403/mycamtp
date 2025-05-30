@@ -10,66 +10,195 @@
 <?=$this->endSection()?>
 <?=$this->section('content')?>
 
-<style>
-    /* Base styles for all devices */
+  <style>
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: none;
+        justify-content: center;
+        align-items: flex-start;
+        z-index: 9999;
+        overflow-y: auto;
+        padding-top: 10px;
+    }
+
+    .modal-content {
+        background: #fff;
+        width: 90%;
+        max-width: 500px;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-header {
+        font-size: 20px;
+        font-weight: bold;
+        color: #e63e58;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .btn-submit {
+        background-color: #e63e58;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn:hover {
+        background-color: #d0344c;
+    }
+
+    .card-container {
+        margin-top: 20px;
+    }
+
+    .fa-download {
+        content: "\f019";
+    }
+
+    .card-modal {
+        background: linear-gradient(135deg, #fff, #f8f9fa);
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 15px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-title {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    .card-price {
+        font-size: 16px;
+        color: #e63e58;
+        margin: 10px 0;
+        font-weight: bold;
+    }
+
+    .card-btn {
+        background: #e63e58;
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .card-btn:hover {
+        background: #d0344c;
+    }
+
+    .close-modal {
+    position: absolute;
+    top: -17px;
+    right: 0px;
+    background: none;
+    border: none;
+    font-size: 43px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+    .close-modal:hover {
+        color: red;
+    }
+
+    .back-btn {
+        background: #e63e58;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        display: block;
+        text-align: center;
+        margin: 10px auto;
+        max-width: 150px;
+    }
+
+    .back-btn:hover {
+        background: #d0344c;
+    }
+
+    @media (max-width: 768px) {
+        .modal-content {
+            width: 95%;
+        }
+    }
+
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
     }
-    
-    .wrapper {
-      padding-bottom: 80px;
-    }
-    
     .pd-header {
       background-color: #e63e58;
       color: white;
       padding: 15px;
       text-align: center;
-      margin-bottom: 20px;
     }
-    
     .pd-header h1 {
       margin: 0;
       font-size: 20px;
     }
-    
     .pd-menu {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       gap: 10px;
       padding: 15px;
     }
-    
     .pd-menu-item {
       text-align: center;
       padding: 15px;
       background: white;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
+      transition: transform 0.3s ease;
     }
-    
     .pd-menu-item:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     }
-    
     .pd-menu-item p {
-      margin: 10px 0 0;
+      margin: 0;
       font-size: 14px;
       color: #333;
-      font-weight: 500;
     }
-    
-    .pd-menu-item i {
-      color: #e63e58;
-      font-size: 24px;
-      margin-bottom: 5px;
-    }
-    
     .pd-countdown-card {
       margin: 15px auto;
       max-width: 90%;
@@ -79,7 +208,6 @@
       padding: 15px;
       text-align: center;
     }
-    
     .pd-countdown-card button {
       width: 100%;
       padding: 10px;
@@ -91,39 +219,30 @@
       cursor: pointer;
       transition: background 0.3s ease;
     }
-    
     .pd-countdown-card button:hover {
       background: #d6374f;
     }
-    
+      
     .pd-switch-container {
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 20px 0;
-      background: white;
-      padding: 10px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      max-width: 90%;
-      margin-left: auto;
-      margin-right: auto;
     }
-    
     .toggle-switch {
       position: relative;
       display: inline-block;
-      width: 50px;
-      height: 24px;
-      margin-right: 10px;
+      width: 30px;
+      height: 17px;
+      margin-right: 5px;
     }
-    
+
     .toggle-switch input {
       opacity: 0;
       width: 0;
       height: 0;
     }
-    
+
     .slider {
       position: absolute;
       cursor: pointer;
@@ -133,35 +252,35 @@
       bottom: 0;
       background-color: #ccc;
       transition: 0.4s;
-      border-radius: 24px;
+      border-radius: 17px;
     }
-    
+
     .slider:before {
       position: absolute;
       content: "";
-      height: 18px;
-      width: 18px;
+      height: 13px;
+      width: 13px;
       left: 3px;
       bottom: 3px;
       background-color: white;
       transition: 0.4s;
       border-radius: 50%;
     }
-    
+
     input:checked + .slider {
       background-color: #e63e58;
     }
-    
+
     input:checked + .slider:before {
-      transform: translateX(26px);
+      transform: translateX(13px);
     }
-    
+
     .toggle-label {
-      font-size: 14px;
+      font-size: 8px;
       color: #333;
-      font-weight: 500;
+      font-weight: bold;
     }
-    
+
     .pd-social-media-card {
       margin: 15px auto;
       max-width: 90%;
@@ -170,92 +289,87 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       padding: 15px;
     }
-    
     .pd-social-media {
       display: flex;
       justify-content: space-around;
       align-items: center;
     }
-    
     .pd-social-media a {
       text-decoration: none;
       color: #e63e58;
       font-size: 24px;
-      transition: color 0.3s ease, transform 0.3s ease;
+      transition: color 0.3s ease;
     }
-    
     .pd-social-media a:hover {
       color: #d6374f;
-      transform: scale(1.1);
     }
-    
-    .referral-section {
-      margin: 15px auto;
-      max-width: 90%;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      text-align: center;
+    .pd-courses-section {
+      padding: 15px;
     }
-    
-    .referral-section h3 {
-      margin: 0 0 15px;
-      color: #333;
+    .pd-courses-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .pd-courses-header h2 {
+      margin: 0;
       font-size: 18px;
     }
-    
-    .referral-section h4 {
-      margin: 15px 0;
-      color: #333;
-      font-size: 16px;
-    }
-    
-    .referral-actions {
-      display: flex;
-      flex-direction: column;
+    .pd-courses {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 10px;
     }
-    
-    .referral-actions input {
-      width: 100%;
+    .pd-course-card {
+      background: white;
       padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .pd-course-card:hover {
+      transform: translateY(-5px);
+    }
+    .pd-course-card img {
+      max-width: 40px;
+      margin-bottom: 10px;
+    }
+    .pd-course-card h3 {
+      margin: 0;
       font-size: 14px;
+    }
+    .pd-course-card p {
+      margin: 0;
+      font-size: 12px;
+      color: #666;
+    }
+    .pd-footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 1px solid #ccc;
+    }
+    .pd-footer-item {
       text-align: center;
     }
-    
-    .action-buttons {
-      display: flex;
-      gap: 10px;
+    .pd-footer-item i {
+      font-size: 20px;
+      color: #666;
     }
-    
-    .action-button {
-      padding: 10px 15px;
-      background: #e63e58;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background 0.3s ease;
-      flex: 1;
+    .pd-footer-item p {
+      margin: 0;
+      font-size: 12px;
+      color: #666;
     }
-    
-    .action-button:hover {
-      background: #d0344c;
+    .pd-footer-item.active i, .pd-footer-item.active p {
+      color: #e63e58;
     }
-    
-    .action-button i {
-      margin-right: 5px;
-    }
-    
-    .action-button.withdraw {
-      width: 100%;
-      margin-top: 10px;
-    }
-    
     .unique-footer {
       position: fixed;
       bottom: 0;
@@ -264,114 +378,28 @@
       display: flex;
       justify-content: space-around;
       padding: 10px 0;
-      border-top: 1px solid #ddd;
-      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-      z-index: 100;
+      border-top: 1px solid #ccc;
     }
-    
     .unique-footer-item {
       text-align: center;
-      padding: 5px;
-      border-radius: 5px;
-      transition: background 0.3s ease;
     }
-    
-    .unique-footer-item:hover {
-      background: #f5f5f5;
-    }
-    
     .unique-footer-item-icon {
       font-size: 20px;
       color: #666;
       transition: color 0.3s ease;
     }
-    
     .unique-footer-item-text {
-      margin: 3px 0 0;
+      margin: 0;
       font-size: 12px;
       color: #666;
       transition: color 0.3s ease;
     }
-    
     .unique-footer-item.active .unique-footer-item-icon, 
     .unique-footer-item.active .unique-footer-item-text {
       color: #e63e58;
     }
-    
-    /* Modal styles */
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-    
-    .modal-content {
-      background: #fff;
-      width: 90%;
-      max-width: 500px;
-      border-radius: 10px;
-      padding: 25px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-      position: relative;
-    }
-    
-    .close-modal {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 30px;
-      color: #333;
-      cursor: pointer;
-      background: none;
-      border: none;
-      transition: color 0.3s ease;
-    }
-    
-    .close-modal:hover {
-      color: #e63e58;
-    }
-    
-    .modal-header {
-      font-size: 20px;
-      font-weight: bold;
-      color: #e63e58;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    
-    select {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-    
-    .btn-submit {
-      background-color: #e63e58;
-      color: white;
-      padding: 12px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      width: 100%;
-      transition: background 0.3s ease;
-    }
-    
-    .btn-submit:hover {
-      background-color: #d0344c;
-    }
-    
-    /* Logout modal */
+
+    /* Modal styling */
     #logoutModal {
       position: fixed;
       top: 0;
@@ -387,46 +415,45 @@
       transition: opacity 0.3s ease, visibility 0.3s ease;
       z-index: 1000;
     }
-    
+
     #logoutModal.show {
       opacity: 1;
       visibility: visible;
     }
-    
+
     .logout-modal-content {
       background: white;
       border-radius: 10px;
-      padding: 25px;
+      padding: 20px;
       text-align: center;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-      transform: scale(0.9);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transform: scale(0.8);
       transition: transform 0.3s ease;
       width: 90%;
       max-width: 400px;
     }
-    
+
     #logoutModal.show .logout-modal-content {
       transform: scale(1);
     }
-    
+
     .logout-modal-content h2 {
-      margin: 0 0 15px;
+      margin: 0 0 10px;
       font-size: 20px;
       color: #333;
     }
-    
+
     .logout-modal-content p {
-      margin: 0 0 25px;
+      margin: 0 0 20px;
       color: #555;
-      font-size: 15px;
     }
-    
+
     .logout-modal-buttons {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 10px;
     }
-    
+
     .logout-modal-cancel,
     .logout-modal-confirm {
       padding: 10px 20px;
@@ -436,124 +463,354 @@
       font-size: 14px;
       font-weight: bold;
       transition: background 0.3s ease;
-      flex: 1;
     }
-    
+
     .logout-modal-cancel {
-      background: #f0f0f0;
+      background: #ccc;
       color: #333;
     }
-    
+
     .logout-modal-confirm {
       background: #e63e58;
       color: white;
     }
-    
+
     .logout-modal-cancel:hover {
-      background: #e0e0e0;
+      background: #bbb;
     }
-    
+
     .logout-modal-confirm:hover {
       background: #d6374f;
     }
-    
-    /* Mentorship modal */
-    .mentorship-modal {
+
+.mentorship-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.mentorship-modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.mentorship-modal-content {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.mentorship-modal.show .mentorship-modal-content {
+  transform: scale(1);
+}
+
+.mentorship-lock-content, .mentorship-whatsapp-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mentorship-lock-icon, .mentorship-whatsapp-icon {
+  font-size: 50px;
+  margin-bottom: 10px;
+  color: #e63e58;
+}
+
+.mentorship-modal-content h2 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.mentorship-modal-content p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.mentorship-modal-button {
+  padding: 10px 20px;
+  background: #e63e58;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.mentorship-modal-button:hover {
+  background: #d6374f;
+}
+
+.mentorship-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #555;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.mentorship-close-button:hover {
+  color: #e63e58;
+      }
+
+@media (min-width: 768px) {
+      .wrapper {
+        margin-left: 100px;
+        padding: 20px;
+        transform: scale(.75);
+        transform-origin: top center;
+    }
+      .unique-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 100vh;
+        padding: 20px 0;
+        background: white;
+        border-right: 1px solid #ccc
+      }
+      .unique-footer .unique-footer-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 15%;
+        cursor: pointer;
+      }
+
+    .pd-social-media-card {
+      margin: 15px auto;
+      max-width: auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      }
+    .pd-countdown-card {
+      margin: 15px auto;
+      max-width: auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      text-align: center;
+        }
+    .pd-header {
+      max-width: auto;
+      background-color: #e63e58;
+      color: white;
+      padding: 15px;
+      text-align: center;
+        }
+    .content {
+        margin-left: 100px;
+        padding: 20px;
+    }
+    #logoutModal .modal-content {
+        max-width: 400px;
+      }
+    .referral-section {
+      margin: 15px auto;
+      max-width: auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+          }
+}
+      
+    .buyNowModal {
+        z-index: 9999; 
+    }
+    .button-buy-now-hyper-unique {
+      background-color: #e63e58;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 20px auto;
+      display: block;
+      text-align: center;
+      width: 200px;
+      text-transform: uppercase;
+    }
+    .button-buy-now-hyper-unique:hover {
+      background-color: #d0344c;
+    }
+    .overlay-modal-ultra-unique {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      display: flex;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
       justify-content: center;
-      align-items: center;
-      visibility: hidden;
-      opacity: 0;
-      transition: visibility 0.3s ease, opacity 0.3s ease;
-      z-index: 1000;
+      align-items: flex-start;
+      z-index: 9999;
+      overflow-y: auto;
+      padding-top: 10px;
     }
-    
-    .mentorship-modal.show {
-      visibility: visible;
-      opacity: 1;
-    }
-    
-    .mentorship-modal-content {
-      background: white;
-      border-radius: 10px;
-      padding: 30px;
-      text-align: center;
+    .modal-box-super-unique {
+      background: #fff;
       width: 90%;
-      max-width: 400px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-      transform: scale(0.9);
-      transition: transform 0.3s ease;
+      max-width: 500px;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       position: relative;
+      z-index: 10000; /* Set a very high z-index */
     }
-    
-    .mentorship-modal.show .mentorship-modal-content {
-      transform: scale(1);
-    }
-    
-    .mentorship-lock-content, 
-    .mentorship-whatsapp-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .mentorship-lock-icon, 
-    .mentorship-whatsapp-icon {
-      font-size: 50px;
-      margin-bottom: 15px;
-      color: #e63e58;
-    }
-    
-    .mentorship-modal-content h2 {
+    .modal-title-mega-unique {
       font-size: 20px;
-      margin: 10px 0;
-      color: #333;
-    }
-    
-    .mentorship-modal-content p {
-      color: #555;
+      font-weight: bold;
+      color: #e63e58;
+      text-align: center;
       margin-bottom: 20px;
-      font-size: 15px;
     }
-    
-    .mentorship-modal-button {
-      padding: 12px 25px;
+    .dropdown-select-absolutely-unique {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .submit-button-extremely-unique {
+      background-color: #e63e58;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      text-align: center;
+    }
+    .submit-button-extremely-unique:hover {
+      background-color: #d0344c;
+    }
+    .container-plans-super-unique {
+      margin-top: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+    .container-plans-super-unique.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .card-plan-ultra-unique {
+      background: linear-gradient(135deg, #fff, #f8f9fa);
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-plan-ultra-unique:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+    .title-plan-extra-unique {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .price-tag-ultra-unique {
+      font-size: 16px;
+      color: #e63e58;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+    .button-add-to-cart-unique {
+      background: #e63e58;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .button-add-to-cart-unique:hover {
+      background: #d0344c;
+    }
+    .button-close-modal-extremely-unique {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 18px;
+      cursor: pointer;
+      color: #fff;
+    }
+    .button-back-to-plans-unmatched {
       background: #e63e58;
       color: white;
       border: none;
+      padding: 8px 15px;
       border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-    
-    .mentorship-modal-button:hover {
-      background: #d6374f;
-    }
-    
-    .mentorship-close-button {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      font-size: 24px;
-      color: #555;
-      background: none;
-      border: none;
+      font-size: 14px;
       cursor: pointer;
-      transition: color 0.3s ease;
+      display: block;
+      text-align: center;
+      margin: 10px auto;
+      max-width: 150px;
     }
-    
-    .mentorship-close-button:hover {
-      color: #e63e58;
+    .button-back-to-plans-unmatched:hover {
+      background: #d0344c;
     }
-    
-    /* Withdraw popup */
+    .button-dummy-hidden-special {
+      background: green;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      z-index: 2000;
+    }
+    .button-dummy-hidden-special:hover {
+      background: #d0344c;
+    }
+    @media (max-width: 768px) {
+      .modal-box-super-unique {
+        width: 95%;
+      }
+    }
+
     #withdrawPopup {
       display: none;
       position: fixed;
@@ -563,59 +820,37 @@
       width: 90%;
       max-width: 400px;
       background: white;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       border-radius: 10px;
-      padding: 25px;
-      z-index: 1001;
+      padding: 20px;
+      z-index: 1000;
     }
-    
     #withdrawPopup h3 {
       margin-top: 0;
-      margin-bottom: 20px;
       font-size: 18px;
       color: #e63e58;
-      text-align: center;
     }
-    
     #withdrawPopup input {
       width: 100%;
-      margin-bottom: 15px;
-      padding: 12px;
-      border: 1px solid #ddd;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
       border-radius: 5px;
-      font-size: 14px;
     }
-    
     #withdrawPopup button {
-      padding: 12px;
+      padding: 10px;
       margin: 5px 0;
+      width: calc(50% - 5px);
       background: #e63e58;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      font-size: 14px;
-      transition: background 0.3s ease;
     }
-    
-    #withdrawPopup button:hover {
-      background: #d0344c;
-    }
-    
     #withdrawPopup button.cancel {
-      background: #f0f0f0;
+      background: #ccc;
       color: #333;
     }
-    
-    #withdrawPopup button.cancel:hover {
-      background: #e0e0e0;
-    }
-    
-    #withdrawPopup .button-group {
-      display: flex;
-      gap: 10px;
-    }
-    
     #popupOverlay {
       display: none;
       position: fixed;
@@ -624,175 +859,26 @@
       width: 100%;
       height: 100%;
       background: rgba(0, 0, 0, 0.5);
-      z-index: 1000;
+      z-index: 999;
     }
-    
-    /* Share popup */
-    #sharePopup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 25px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-      z-index: 1001;
-      width: 90%;
-      max-width: 350px;
-      text-align: center;
-    }
-    
-    #sharePopup h3 {
-      margin-bottom: 20px;
-      font-size: 18px;
-      color: #333;
-    }
-    
-    .share-icons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 20px;
-    }
-    
-    .share-icons a {
-      color: inherit;
-      font-size: 28px;
-      transition: transform 0.3s ease;
-    }
-    
-    .share-icons a:hover {
-      transform: scale(1.1);
-    }
-    
-    #closePopup {
-      padding: 10px 20px;
-      border: none;
-      background: #e63e58;
-      color: #fff;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: background 0.3s ease;
-    }
-    
-    #closePopup:hover {
-      background: #d0344c;
-    }
-    
-    /* Desktop styles */
-    @media (min-width: 768px) {
-      body {
-        padding-bottom: 0;
-      }
-      
-      .wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-        display: grid;
-        grid-template-columns: 1fr 300px;
-        gap: 20px;
-        align-items: start;
-      }
-      
-      .main-content {
-        grid-column: 1;
-      }
-      
-      .sidebar {
-        grid-column: 2;
-        position: sticky;
-        top: 20px;
-      }
-      
-      .pd-header {
-        border-radius: 10px;
-        margin-bottom: 30px;
-      }
-      
-      .pd-menu {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      
-      .pd-countdown-card,
-      .pd-social-media-card,
-      .pd-switch-container,
-      .referral-section {
-        max-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-      }
-      
-      .unique-footer {
-        display: none;
-      }
-      
-      /* Sidebar navigation for desktop */
-      .desktop-sidebar {
-        display: flex;
-        flex-direction: column;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 15px 0;
-      }
-      
-      .desktop-sidebar-item {
-        padding: 15px 20px;
-        display: flex;
-        align-items: center;
-        color: #666;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        border-left: 3px solid transparent;
-      }
-      
-      .desktop-sidebar-item:hover {
-        background: #f9f9f9;
-        color: #e63e58;
-      }
-      
-      .desktop-sidebar-item.active {
-        color: #e63e58;
-        border-left: 3px solid #e63e58;
-        background: #fdf2f4;
-      }
-      
-      .desktop-sidebar-item i {
-        margin-right: 10px;
-        font-size: 18px;
-        width: 20px;
-        text-align: center;
-      }
-      
-      .desktop-sidebar-item-text {
-        font-size: 14px;
+
+    @media (max-width: 480px) {
+      #withdrawPopup {
+        width: 95%;
       }
     }
-    
-    @media (min-width: 992px) {
-      .pd-menu {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      
-      .wrapper {
-        grid-template-columns: 1fr 350px;
-      }
-    }
-</style>
+  </style>
+</head>
 
 <body style="margin-top: 6rem;">
 <div class="wrapper">
-  <div class="main-content">
-    <div class="pd-header">
-      <?php
-        date_default_timezone_set('Asia/Kolkata');
+<div class="pd-header">
+    <?php
+        date_default_timezone_set('Asia/Kolkata'); // Set your timezone here
+
         $studentData = (session()->get('studentDetails') !== null) ? session()->get('studentDetails') : '';
-        $hour = date('H');
-        
+        $hour = date('H'); // Get the current hour in 24-hour format
+
         if ($hour < 12) {
             $greeting = 'morning';
         } elseif ($hour < 18) {
@@ -800,156 +886,237 @@
         } else {
             $greeting = 'evening';
         }
-      ?>
-      <h1>Good <?= $greeting ?>, <?= $studentData['student_name'] ?? 'Guest' ?></h1>
-    </div>
+    ?>
+    <h1>Good <?= $greeting ?>, <?= $studentData['student_name'] ?? 'Guest' ?></h1>
+</div>
 
-    <!-- Toggle Switch for Free Content -->
-    <div class="pd-switch-container">
-      <label class="toggle-switch">
-        <input type="checkbox" id="contentToggle">
-        <span class="slider"></span>
-      </label>
-      <span class="toggle-label" id="toggleLabel">Switch to Free Content</span>
-    </div>
+<!-- Toggle Switch for Free Content -->
+<div class="pd-switch-container">
+  <label class="toggle-switch">
+    <input type="checkbox" id="contentToggle">
+    <span class="slider"></span>
+  </label>
+  <span class="toggle-label" id="toggleLabel">Switch to Free Content</span>
+</div>
 
-    <div class="pd-countdown-card">
-      <?php
-        $date1=date_create(EXAM_DATE);
-        $date2=date_create(date('Y-m-d'));
-        $diff=date_diff($date1,$date2);
-        $daysLeft = $diff->days;
-        if ($date2 > $date1) {
-          $daysLeft = "Exam has passed!";
-        }
-      ?>
-      <button><?= ($daysLeft === "Exam has passed!") ? $daysLeft : "⏳ $daysLeft Days Left For Exam" ?></button>
-    </div>
+<div class="pd-countdown-card">
+ <?php
+      $date1=date_create(EXAM_DATE);
+      $date2=date_create(date('Y-m-d'));
+      $diff=date_diff($date1,$date2);
+      $daysLeft = $diff->days;
+      if ($date2 > $date1) {
+                $daysLeft = "Exam has passed!";
+      }
+  ?>
+  <button><?= ($daysLeft === "Exam has passed!") ? $daysLeft : "⏳ $daysLeft Days Left For Exam" ?></button>
+</div>
 
-    <div class="pd-menu">
-      <a href="<?=base_url()?>my-resources/subject" class="menu-link" style="text-decoration: none;">
-        <div class="pd-menu-item">
-          <i class="fa-solid fa-pencil"></i>
-          <p>Test Paper</p>
-        </div>
-      </a>
-      <a href="<?=base_url()?>my-resources/notes/subject-list" class="menu-link" style="text-decoration: none;">
-        <div class="pd-menu-item">
-          <i class="fa-solid fa-book-open"></i>
-          <p>Notes</p>
-        </div>
-      </a>
-      <a href="<?=base_url()?>my-resources/amendment/subject-list" id="amendmentMenu" class="menu-link" style="text-decoration: none;">
-        <div class="pd-menu-item">
-          <i class="fas fa-book"></i>
-          <p>Amendments</p>
-        </div>
-      </a>
-      <a href="<?=base_url()?>my-resources/qbank/subject-list" id="qbankMenu" class="menu-link" style="text-decoration: none;">
-        <div class="pd-menu-item">
-          <i class="fa-solid fa-book-open"></i>
-          <p>Que. Bank</p>
-        </div>
-      </a>
-      <a href="javascript:void(0)" class="menu-link" onclick="openModal()" style="text-decoration: none;">
-        <div class="pd-menu-item">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <p>Buy Now</p>
-        </div>
-      </a>
-      <a href="#" id="mentorshipMenu" class="menu-link" style="text-decoration: none;">
-        <div class="pd-menu-item">
-          <i class="fas fa-user-tie"></i>
-          <p>Mentorship</p>
-        </div>
-      </a>
-    </div>
+<div class="pd-social-media-card">
+  <div class="pd-social-media">
+    <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://telegram.me/csmission" target="_blank"><i class="fab fa-telegram"></i></a>
+    <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
   </div>
-  
-  <!-- Sidebar for desktop -->
-  <div class="sidebar">
-    <div class="pd-social-media-card">
-      <div class="pd-social-media">
-        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://telegram.me/csmission" target="_blank"><i class="fab fa-telegram"></i></a>
-        <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
-      </div>
+</div>
+
+<div class="pd-menu">
+  <a href="<?=base_url()?>my-resources/subject" class="menu-link" style="text-decoration: none;">
+    <div class="pd-menu-item">
+      <i class="fa-solid fa-pencil" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
+      <p>Test Paper</p>
     </div>
-    
-    <div class="referral-section">
-      <h3>Your Referral Link</h3>
-      <div class="referral-actions">
-        <input type="text" id="referralLink" value="<?= base_url() ?>auth?auth=register&ref=<?= $studentData['id'] ?>" readonly>
-        <div class="action-buttons">
-          <button onclick="copyReferralLink()" class="action-button">
-            <i class="fas fa-copy"></i> Copy
-          </button>
-          <button id="shareButton" class="action-button share">
-            <i class="fas fa-share-alt"></i> Share
-          </button>
-        </div>
-      </div>
-      <h4>Referral Balance: ₹<span id="referralBalance"><?= number_format($balance, 2) ?></span></h4>
-      <button onclick="openWithdrawPopup()" class="action-button withdraw">
-        Withdraw
+  </a>
+  <a href="<?=base_url()?>my-resources/notes/subject-list" class="menu-link" style="text-decoration: none;">
+    <div class="pd-menu-item">
+      <i class="fa-solid fa-book-open" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
+      <p>Notes</p>
+    </div>
+  </a>
+  <a href="<?=base_url()?>my-resources/amendment/subject-list" id="amendmentMenu"class="menu-link" style="text-decoration: none;">
+    <div class="pd-menu-item">
+      <i class="fas fa-book" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
+      <p>Amendments</p>
+    </div>
+  </a>
+  <a href="<?=base_url()?>my-resources/qbank/subject-list" id="qbankMenu" class="menu-link" style="text-decoration: none;">
+    <div class="pd-menu-item">
+      <i class="fa-solid fa-book-open" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
+      <p>Que. Bank</p>
+    </div>
+  </a>
+  <a href="javascript:void(0)" class="menu-link" onclick="openModal()" style="text-decoration: none;">
+    <div class="pd-menu-item">
+      <i class="fa-solid fa-cart-shopping" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
+      <p>Buy Now</p>
+    </div>
+  </a>
+  <a href="#" id="mentorshipMenu" class="menu-link" style="text-decoration: none;">
+    <div class="pd-menu-item">
+      <i class="fas fa-user-tie" style="color: #e63e58; margin-bottom: 10px; font-size: 24px;"></i>
+      <p>Mentorship</p>
+    </div>
+  </a>
+</div>
+<style>
+    .referral-section {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .referral-section h3, 
+    .referral-section h4 {
+      margin: 0 0 15px;
+      color: #333;
+    }
+
+    .referral-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Center the content horizontally */
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .referral-actions input {
+      flex: 2 1 auto;
+      max-width: 300px;
+      min-width: 200px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      text-align: center; /* Align the text in the input box */
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .action-button {
+      padding: 8px 12px;
+      background: #e63e58;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      white-space: nowrap;
+      font-size: 14px;
+    }
+
+    .action-button i {
+      font-size: 14px;
+    }
+
+    .action-button.share {
+      background: #e63e58;
+    }
+
+    .action-button.withdraw {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 480px) {
+      .referral-actions {
+        flex-direction: column;
+        align-items: center; /* Align center on small screens */
+      }
+
+      .referral-actions input {
+        width: 100%;
+      }
+
+      .action-buttons {
+        justify-content: center;
+      }
+
+      .action-buttons .action-button {
+        flex: 1;
+      }
+
+      .action-button.withdraw {
+        width: 100%; /* Stretch Withdraw button to fill the available width */
+      }
+    }
+  </style>
+<div class="referral-section" style="padding: 20px; padding-bottom: 70px;">
+  <h3>Your Referral Link</h3>
+  <div class="referral-actions">
+    <input type="text" id="referralLink" value="<?= base_url() ?>auth?auth=register&ref=<?= $studentData['id'] ?>" readonly>
+    <div class="action-buttons">
+      <button onclick="copyReferralLink()" class="action-button">
+        <i class="fas fa-copy"></i> Copy
+      </button>
+      <button id="shareButton" class="action-button share">
+        <i class="fas fa-share-alt"></i> Share
       </button>
     </div>
-    
-    <!-- Desktop sidebar navigation -->
-    <div class="desktop-sidebar">
-      <a href="<?=base_url()?>dashboard" class="desktop-sidebar-item active">
-        <i class="fas fa-home"></i>
-        <span class="desktop-sidebar-item-text">Home</span>
-      </a>
-      <a href="<?=base_url()?>profile" class="desktop-sidebar-item">
-        <i class="fas fa-user"></i>
-        <span class="desktop-sidebar-item-text">Profile</span>
-      </a>
-      <a href="<?=base_url()?>invoice" class="desktop-sidebar-item">
-        <i class="fas fa-file-invoice"></i>
-        <span class="desktop-sidebar-item-text">Invoice</span>
-      </a>
-      <a href="#" id="desktopLogoutButton" class="desktop-sidebar-item">
-        <i class="fas fa-sign-out-alt"></i>
-        <span class="desktop-sidebar-item-text">Logout</span>
-      </a>
-    </div>
   </div>
+  <h4>Referral Balance: ₹<span id="referralBalance"><?= number_format($balance, 2) ?></span></h4>
+  <button onclick="openWithdrawPopup()" class="action-button withdraw">
+    Withdraw
+  </button>
+</div>
+<div id="popupOverlay" onclick="closeWithdrawPopup()"></div>
+  <div id="withdrawPopup">
+    <h3>Withdraw Balance</h3>
+    <input type="number" name="amount" id="amount" placeholder="Enter Amount" required>
+    <input type="text" id="upiId" name="upiId" placeholder="Enter UPI ID" required>
+    <div style="display: flex; gap: 10px;">
+      <button id="requestPayout">Submit</button>
+      <button class="cancel" onclick="closeWithdrawPopup()">Cancel</button>
+    </div>
+</div>
+</div>
 </div>
 
-<!-- Mobile footer -->
-<div class="unique-footer">
-  <a href="<?=base_url()?>dashboard" class="unique-footer-item active">
-    <i class="fas fa-home unique-footer-item-icon"></i>
-    <p class="unique-footer-item-text">Home</p>
-  </a>
-  <a href="<?=base_url()?>profile" class="unique-footer-item">
-    <i class="fas fa-user unique-footer-item-icon"></i>
-    <p class="unique-footer-item-text">Profile</p>
-  </a>
-  <a href="<?=base_url()?>invoice" class="unique-footer-item">
-    <i class="fas fa-file-invoice unique-footer-item-icon"></i>
-    <p class="unique-footer-item-text">Invoice</p>
-  </a>
-  <a href="#" id="logoutButton" class="unique-footer-item">
-    <i class="fas fa-sign-out-alt unique-footer-item-icon"></i>
-    <p class="unique-footer-item-text">Logout</p>
-  </a>
+<div class="unique-footer" style="margin-top: 5rem;">
+    <a href="<?=base_url()?>dashboard" class="unique-footer-item active" style="text-decoration: none;">
+      <i class="fas fa-home unique-footer-item-icon"></i>
+      <p class="unique-footer-item-text">Home</p>
+    </a>
+    <a href="<?=base_url()?>profile" class="unique-footer-item" style="text-decoration: none;">
+      <i class="fas fa-user unique-footer-item-icon"></i>
+      <p class="unique-footer-item-text">Profile</p>
+    </a>
+    <a href="<?=base_url()?>invoice" class="unique-footer-item" style="text-decoration: none;">
+      <i class="fas fa-file-invoice unique-footer-item-icon"></i>
+      <p class="unique-footer-item-text">Invoice</p>
+    </a>
+    <a href="#" id="logoutButton" class="unique-footer-item" style="text-decoration: none;">
+      <i class="fas fa-sign-out-alt unique-footer-item-icon"></i>
+      <p class="unique-footer-item-text">Logout</p>
+    </a>
 </div>
 
-<!-- Modals -->
 <div class="modal" id="modal">
-  <div class="modal-content">
-    <button class="close-modal" onclick="closeModal()">×</button>
-    <div class="modal-header">Select Your Options</div>
-    <div>
-      <select id="select1"></select>
-      <select id="select2"></select>
-      <button class="btn btn-submit" id="submit">Submit</button>
+    <div class="modal-content">
+        <button class="close-modal" onclick="closeModal()">×</button>
+        <div class="modal-header">Select Your Options</div>
+        <div>
+            <select id="select1"></select>
+            <select id="select2"></select>
+            <button class="btn btn-submit" id="submit">Submit</button>
+        </div>
+        <div id="contentArea"></div>
     </div>
-    <div id="contentArea"></div>
-  </div>
 </div>
 
 <div id="logoutModal">
@@ -966,7 +1133,7 @@
 <!-- Mentorship Modal -->
 <div id="mentorshipModal" class="mentorship-modal">
   <div class="mentorship-modal-content">
-    <?php if (!empty($notes_sub)): ?>
+     <?php if (!empty($notes_sub)): ?>
       <div class="mentorship-whatsapp-content">
         <i class="fab fa-whatsapp mentorship-whatsapp-icon"></i>
         <h2>Contact Mentor</h2>
@@ -985,44 +1152,36 @@
   </div>
 </div>
 
-<!-- Withdraw Popup -->
-<div id="popupOverlay" onclick="closeWithdrawPopup()"></div>
-<div id="withdrawPopup">
-  <h3>Withdraw Balance</h3>
-  <input type="number" name="amount" id="amount" placeholder="Enter Amount" required>
-  <input type="text" id="upiId" name="upiId" placeholder="Enter UPI ID" required>
-  <div class="button-group">
-    <button id="requestPayout">Submit</button>
-    <button class="cancel" onclick="closeWithdrawPopup()">Cancel</button>
+<!-- Share Popup -->
+<div id="sharePopup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); z-index: 1000;">
+  <h3 style="margin-bottom: 10px;">Share Referral Link</h3>
+  <div style="display: flex; gap: 15px;">
+    <!-- WhatsApp -->
+    <a id="shareWhatsApp" target="_blank" title="Share on WhatsApp">
+      <i class="fab fa-whatsapp" style="font-size: 24px; color: #25D366;"></i>
+    </a>
+    <!-- Facebook -->
+    <a id="shareFacebook" target="_blank" title="Share on Facebook">
+      <i class="fab fa-facebook" style="font-size: 24px; color: #4267B2;"></i>
+    </a>
+    <!-- Twitter -->
+    <a id="shareTwitter" target="_blank" title="Share on Twitter">
+      <i class="fab fa-twitter" style="font-size: 24px; color: #1DA1F2;"></i>
+    </a>
+    <!-- Email -->
+    <a id="shareEmail" target="_blank" title="Share via Email">
+      <i class="fas fa-envelope" style="font-size: 24px; color: #DD4B39;"></i>
+    </a>
   </div>
+  <button id="closePopup" style="margin-top: 15px; padding: 5px 10px; border: none; background: #e63e58; color: #fff; border-radius: 4px; cursor: pointer;">Close</button>
 </div>
 
-<!-- Share Popup -->
-<div id="sharePopup">
-  <h3>Share Referral Link</h3>
-  <div class="share-icons">
-    <a id="shareWhatsApp" target="_blank" title="Share on WhatsApp">
-      <i class="fab fa-whatsapp" style="color: #25D366;"></i>
-    </a>
-    <a id="shareFacebook" target="_blank" title="Share on Facebook">
-      <i class="fab fa-facebook" style="color: #4267B2;"></i>
-    </a>
-    <a id="shareTwitter" target="_blank" title="Share on Twitter">
-      <i class="fab fa-twitter" style="color: #1DA1F2;"></i>
-    </a>
-    <a id="shareEmail" target="_blank" title="Share via Email">
-      <i class="fas fa-envelope" style="color: #DD4B39;"></i>
-    </a>
-  </div>
-  <button id="closePopup">Close</button>
-</div>
 
 </body>
 <?=$this->endSection()?>
 <?=$this->section('jsContent')?>
 <script type="text/javascript" src="<?= base_url() ?>assets/student/js/buy-now-modal.js?v=1"></script>
 <script>
-  // Initialize referral link sharing
   const referralLink = document.getElementById('referralLink').value;
 
   // Update share links dynamically
@@ -1031,7 +1190,6 @@
   document.getElementById('shareTwitter').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(referralLink)}&text=Join%20now%20via%20my%20referral%20link!`;
   document.getElementById('shareEmail').href = `mailto:?subject=Join this amazing website&body=Use my referral link to join: ${encodeURIComponent(referralLink)}`;
 
-  // Share button functionality
   const shareButton = document.getElementById('shareButton');
   const sharePopup = document.getElementById('sharePopup');
   const closePopup = document.getElementById('closePopup');
@@ -1057,44 +1215,83 @@
   closePopup.addEventListener('click', () => {
     sharePopup.style.display = 'none';
   });
+</script>
+<script>
+    function openWithdrawPopup() {
+      document.getElementById("popupOverlay").style.display = "block";
+      document.getElementById("withdrawPopup").style.display = "block";
+    }
 
-  // Withdraw popup functions
-  function openWithdrawPopup() {
-    document.getElementById("popupOverlay").style.display = "block";
-    document.getElementById("withdrawPopup").style.display = "block";
-  }
-
-  function closeWithdrawPopup() {
-    document.getElementById("popupOverlay").style.display = "none";
-    document.getElementById("withdrawPopup").style.display = "none";
-  }
-
-  // Copy referral link
-  function copyReferralLink() {
-    const link = document.querySelector("#referralLink").value;
-    navigator.clipboard.writeText(link).then(() => {
-      alert("Referral link copied!");
-    }).catch((err) => {
-      console.error("Failed to copy the link: ", err);
+    function closeWithdrawPopup() {
+      document.getElementById("popupOverlay").style.display = "none";
+      document.getElementById("withdrawPopup").style.display = "none";
+    }
+</script>
+<script>
+    function copyReferralLink() {
+        const link = document.querySelector("#referralLink").value;
+        navigator.clipboard.writeText(link).then(() => {
+            alert("Referral link copied!");
+        }).catch((err) => {
+            console.error("Failed to copy the link: ", err);
+        });
+    }
+    $('#requestPayout').on('click', function() {
+        let upiId = $('#upiId').val().trim();
+        let amount = $('#amount').val().trim();
+        if (upiId === '') {
+            alert('Please enter a valid UPI ID.');
+            return;
+        }
+        let upiRegex = /^[a-zA-Z0-9.\-_]{2,}@[a-zA-Z]{2,}$/;
+        if (!upiRegex.test(upiId)) {
+            alert('Please enter a valid UPI ID (e.g., abc@upi).');
+            return;
+        }
+        if (amount === '' || isNaN(amount) || amount <= 0) {
+            alert('Please enter a valid amount.');
+            return;
+        }
+        let maxBalance = <?= json_encode(number_format($balance, 2)) ?>;
+        if (amount > maxBalance) {
+            alert('Entered amount exceeds your available balance.');
+            return;
+        }
+        let studentData = {
+            amount: amount,
+            upi_id: upiId
+        };
+        $.ajax({
+            url: baseUrl + 'requestPayout',
+            type: 'POST',
+            data: JSON.stringify(studentData),
+            contentType: 'application/json',
+            success: function(response) {
+                if (response.success) {
+                    alert(response.message);
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function(error) {
+                console.error('Error:', error);
+                alert('Something went wrong.');
+            }
+        });
     });
-  }
-
-  // Logout modal functionality
+</script>
+<script>
   document.addEventListener('DOMContentLoaded', function () {
     const logoutButton = document.getElementById('logoutButton');
-    const desktopLogoutButton = document.getElementById('desktopLogoutButton');
     const modal = document.getElementById('logoutModal');
     const cancelLogout = document.getElementById('cancelLogout');
     const confirmLogout = document.getElementById('confirmLogout');
 
     // Show modal with animation
-    function showLogoutModal(e) {
-      if (e) e.preventDefault();
+    logoutButton.addEventListener('click', function (e) {
+      e.preventDefault();
       modal.classList.add('show');
-    }
-
-    logoutButton.addEventListener('click', showLogoutModal);
-    desktopLogoutButton.addEventListener('click', showLogoutModal);
+    });
 
     // Hide modal with animation
     cancelLogout.addEventListener('click', function () {
@@ -1150,82 +1347,97 @@
       toggle.checked = isFree;
       updateMenuLinks(isFree);
     })();
+  });
 
-    // Mentorship modal functionality
-    const mentorshipMenu = document.getElementById("mentorshipMenu");
-    const mentorshipModal = document.getElementById("mentorshipModal");
-    const closeMentorshipModal = document.getElementById("closeMentorshipModal");
+  document.addEventListener('DOMContentLoaded', function () {
+  const contentToggle = document.getElementById('contentToggle');
+  const amendmentMenu = document.getElementById('amendmentMenu');
+  const qbankMenu = document.getElementById('qbankMenu');
+  const mentorshipMenu = document.getElementById('mentorshipMenu');
+  const menuItems = document.querySelectorAll('.pd-menu-item p');
+  const icons = document.querySelectorAll('.pd-menu-item i');
 
-    if (mentorshipMenu) {
-      mentorshipMenu.addEventListener("click", function (e) {
-        e.preventDefault();
-        mentorshipModal.classList.add("show");
+  // Restore the toggle state and color from localStorage
+  const toggleState = localStorage.getItem('contentToggleState');
+  const iconColor = localStorage.getItem('iconColor');
+
+  if (toggleState === 'true') {
+    contentToggle.checked = true;
+    toggleContent(true);
+  } else {
+    contentToggle.checked = false;
+    toggleContent(false);
+  }
+
+  // Add event listener for the toggle
+  contentToggle.addEventListener('change', function () {
+    const isChecked = this.checked;
+    localStorage.setItem('contentToggleState', isChecked); // Save the state in localStorage
+    toggleContent(isChecked);
+  });
+
+  function toggleContent(isChecked) {
+    if (isChecked) {
+      amendmentMenu.style.display = 'none';
+      qbankMenu.style.display = 'none';
+      mentorshipMenu.style.display = 'none';
+
+      // Change menu item text and icon color to black
+      menuItems.forEach(item => {
+        item.style.color = 'black';
       });
-    }
+      icons.forEach(icon => {
+        icon.style.color = 'black';
+      });
 
-    closeMentorshipModal.addEventListener("click", function () {
+      // Save the black icon color to localStorage
+      localStorage.setItem('iconColor', 'black');
+    } else {
+      amendmentMenu.style.display = '';
+      qbankMenu.style.display = '';
+      mentorshipMenu.style.display = '';
+
+      // Reset menu item text and icon color
+      menuItems.forEach(item => {
+        item.style.color = '';
+      });
+      icons.forEach(icon => {
+        icon.style.color = '#e63e58';
+      });
+
+      // Save the default icon color to localStorage
+      localStorage.setItem('iconColor', '#e63e58');
+    }
+  }
+});
+    document.addEventListener("DOMContentLoaded", function () {
+  const mentorshipMenu = document.getElementById("mentorshipMenu");
+  const mentorshipModal = document.getElementById("mentorshipModal");
+  const closeModal = document.getElementById("closeMentorshipModal");
+
+  // Ensure mentorshipMenu exists
+  if (!mentorshipMenu) {
+    console.error('Mentorship menu not found!');
+    return;
+  }
+
+  // Event to show the modal
+  mentorshipMenu.addEventListener("click", function (e) {
+    e.preventDefault();
+    mentorshipModal.classList.add("show");
+  });
+
+  // Event to close the modal
+  closeModal.addEventListener("click", function () {
+    mentorshipModal.classList.remove("show");
+  });
+
+  // Close modal on outside click
+  window.addEventListener("click", function (e) {
+    if (e.target === mentorshipModal) {
       mentorshipModal.classList.remove("show");
-    });
-
-    window.addEventListener("click", function (e) {
-      if (e.target === mentorshipModal) {
-        mentorshipModal.classList.remove("show");
-      }
-    });
+    }
   });
-
-  // Request payout functionality
-  $('#requestPayout').on('click', function() {
-    let upiId = $('#upiId').val().trim();
-    let amount = $('#amount').val().trim();
-    
-    if (upiId === '') {
-      alert('Please enter a valid UPI ID.');
-      return;
-    }
-    
-    let upiRegex = /^[a-zA-Z0-9.\-_]{2,}@[a-zA-Z]{2,}$/;
-    if (!upiRegex.test(upiId)) {
-      alert('Please enter a valid UPI ID (e.g., abc@upi).');
-      return;
-    }
-    
-    if (amount === '' || isNaN(amount) || amount <= 0) {
-      alert('Please enter a valid amount.');
-      return;
-    }
-    
-    let maxBalance = <?= json_encode(number_format($balance, 2)) ?>;
-    if (amount > maxBalance) {
-      alert('Entered amount exceeds your available balance.');
-      return;
-    }
-    
-    let studentData = {
-      amount: amount,
-      upi_id: upiId
-    };
-    
-    $.ajax({
-      url: baseUrl + 'requestPayout',
-      type: 'POST',
-      data: JSON.stringify(studentData),
-      contentType: 'application/json',
-      success: function(response) {
-        if (response.success) {
-          alert(response.message);
-          closeWithdrawPopup();
-          // Optionally update the balance display
-          $('#referralBalance').text(response.newBalance || <?= json_encode(number_format($balance, 2)) ?>);
-        } else {
-          alert(response.message);
-        }
-      },
-      error: function(error) {
-        console.error('Error:', error);
-        alert('Something went wrong.');
-      }
-    });
-  });
+});
 </script>
 <?=$this->endSection()?>
