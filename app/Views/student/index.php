@@ -187,16 +187,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             width: 95%;
         }
   }
-</style>
-
-
-                
-        
-
-    <!-- Previous head content remains the same -->
-    <!-- Updated popup styles for responsiveness -->
-    <style>
-        /* Popup Styles */
         .mcs-popup-overlay {
             position: fixed;
             top: 0;
@@ -440,9 +430,10 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         }
     </style>
 
-    <!-- Previous body content remains the same until before the scripts -->
-    
-    <!-- Popup HTML -->
+          
+
+    <!-- Popup SignUp -->
+<?php if (session()->get('studentDetails')==null): ?>
     <div class="mcs-popup-overlay" id="mcsPopup">
         <div class="mcs-popup">
             <div class="mcs-popup-close" id="mcsPopupClose">
@@ -471,7 +462,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             <div class="mcs-popup-countdown" id="mcsCountdown">03:00</div>
             
             <div class="mcs-popup-buttons">
-                <button class="mcs-popup-btn mcs-popup-btn-primary" id="mcsClaimOffer">
+                <button class="mcs-popup-btn mcs-popup-btn-primary" id="mcsClaimOffer" onclick="window.location.href='<?=base_url()?>auth?auth=register'">
                     <i class="fas fa-check-circle"></i> Claim My 20% OFF
                 </button>
                 <button class="mcs-popup-btn mcs-popup-btn-secondary" id="mcsRejectOffer">
@@ -480,117 +471,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             </div>
         </div>
     </div>
-
-    <!-- Previous scripts remain the same -->
-    <!-- Updated script with local storage functionality -->
-    <script>
-        // Popup Functionality with Local Storage
-        document.addEventListener('DOMContentLoaded', function() {
-            const mcsPopup = document.getElementById('mcsPopup');
-            const mcsPopupClose = document.getElementById('mcsPopupClose');
-            const mcsClaimOffer = document.getElementById('mcsClaimOffer');
-            const mcsRejectOffer = document.getElementById('mcsRejectOffer');
-            const mcsCountdown = document.getElementById('mcsCountdown');
-            
-            // Check local storage for user's previous choice
-            const popupStatus = localStorage.getItem('popupStatus');
-            const popupRejectedDate = localStorage.getItem('popupRejectedDate');
-            
-            // If user previously claimed offer, don't show popup
-            if (popupStatus === 'claimed') {
-                return;
-            }
-            
-            // If user rejected offer less than 3 days ago, don't show popup
-            if (popupStatus === 'rejected' && popupRejectedDate) {
-                const rejectedDate = new Date(popupRejectedDate);
-                const currentDate = new Date();
-                const daysSinceRejection = (currentDate - rejectedDate) / (1000 * 60 * 60 * 24);
-                
-                if (daysSinceRejection < 3) {
-                    return;
-                }
-            }
-            
-            // Show popup after 3 seconds if conditions are met
-            setTimeout(() => {
-                mcsPopup.classList.add('active');
-                
-                // Start countdown timer (3 minutes)
-                let minutes = 2;
-                let seconds = 59;
-                
-                const countdownInterval = setInterval(() => {
-                    seconds--;
-                    
-                    if (seconds < 0) {
-                        minutes--;
-                        seconds = 59;
-                    }
-                    
-                    if (minutes < 0) {
-                        clearInterval(countdownInterval);
-                        mcsPopup.classList.remove('active');
-                        return;
-                    }
-                    
-                    mcsCountdown.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-                    
-                    // Change color when less than 1 minute
-                    if (minutes === 0) {
-                        mcsCountdown.style.color = 'var(--mcs-primary-color)';
-                    }
-                }, 1000);
-            }, 3000);
-            
-            // Close popup when clicking close button
-            mcsPopupClose.addEventListener('click', () => {
-                mcsPopup.classList.remove('active');
-                // Store rejection with current date
-                localStorage.setItem('popupStatus', 'rejected');
-                localStorage.setItem('popupRejectedDate', new Date().toISOString());
-            });
-            
-            // Close popup when clicking outside
-            mcsPopup.addEventListener('click', (e) => {
-                if (e.target === mcsPopup) {
-                    mcsPopup.classList.remove('active');
-                    // Store rejection with current date
-                    localStorage.setItem('popupStatus', 'rejected');
-                    localStorage.setItem('popupRejectedDate', new Date().toISOString());
-                }
-            });
-            
-            // Claim Offer button - redirect to signup and store choice
-            mcsClaimOffer.addEventListener('click', () => {
-                localStorage.setItem('popupStatus', 'claimed');
-                window.location.href = "#"; // Replace with actual signup URL
-            });
-            
-            // Reject Offer button - uses psychological reactance
-            mcsRejectOffer.addEventListener('click', () => {
-                // Show confirmation with loss aversion technique
-                if (confirm("Are you sure? You'll lose your 20% discount and free study planner if you leave this page.")) {
-                    mcsPopup.classList.remove('active');
-                    // Store rejection with current date
-                    localStorage.setItem('popupStatus', 'rejected');
-                    localStorage.setItem('popupRejectedDate', new Date().toISOString());
-                }
-            });
-            
-            // Close popup when pressing Escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && mcsPopup.classList.contains('active')) {
-                    mcsPopup.classList.remove('active');
-                    // Store rejection with current date
-                    localStorage.setItem('popupStatus', 'rejected');
-                    localStorage.setItem('popupRejectedDate', new Date().toISOString());
-                }
-            });
-        });
-    </script>
-
-
+<?php endif ?>
 
 <div class="modal" id="modal">
     <div class="modal-content">
@@ -1435,7 +1316,113 @@ document.querySelectorAll('.mcs-mobile-nav a').forEach(link => {
   }
 </script>
 	
-
+    <script>
+        // Popup Functionality with Local Storage
+        document.addEventListener('DOMContentLoaded', function() {
+            const mcsPopup = document.getElementById('mcsPopup');
+            const mcsPopupClose = document.getElementById('mcsPopupClose');
+            const mcsClaimOffer = document.getElementById('mcsClaimOffer');
+            const mcsRejectOffer = document.getElementById('mcsRejectOffer');
+            const mcsCountdown = document.getElementById('mcsCountdown');
+            
+            // Check local storage for user's previous choice
+            const popupStatus = localStorage.getItem('popupStatus');
+            const popupRejectedDate = localStorage.getItem('popupRejectedDate');
+            
+            // If user previously claimed offer, don't show popup
+            if (popupStatus === 'claimed') {
+                return;
+            }
+            
+            // If user rejected offer less than 3 days ago, don't show popup
+            if (popupStatus === 'rejected' && popupRejectedDate) {
+                const rejectedDate = new Date(popupRejectedDate);
+                const currentDate = new Date();
+                const daysSinceRejection = (currentDate - rejectedDate) / (1000 * 60 * 60 * 24);
+                
+                if (daysSinceRejection < 3) {
+                    return;
+                }
+            }
+            
+            // Show popup after 3 seconds if conditions are met
+            setTimeout(() => {
+                mcsPopup.classList.add('active');
+                
+                // Start countdown timer (3 minutes)
+                let minutes = 2;
+                let seconds = 59;
+                
+                const countdownInterval = setInterval(() => {
+                    seconds--;
+                    
+                    if (seconds < 0) {
+                        minutes--;
+                        seconds = 59;
+                    }
+                    
+                    if (minutes < 0) {
+                        clearInterval(countdownInterval);
+                        mcsPopup.classList.remove('active');
+                        return;
+                    }
+                    
+                    mcsCountdown.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                    
+                    // Change color when less than 1 minute
+                    if (minutes === 0) {
+                        mcsCountdown.style.color = 'var(--mcs-primary-color)';
+                    }
+                }, 1000);
+            }, 3000);
+            
+            // Close popup when clicking close button
+            mcsPopupClose.addEventListener('click', () => {
+                mcsPopup.classList.remove('active');
+                // Store rejection with current date
+                localStorage.setItem('popupStatus', 'rejected');
+                localStorage.setItem('popupRejectedDate', new Date().toISOString());
+            });
+            
+            // Close popup when clicking outside
+            mcsPopup.addEventListener('click', (e) => {
+                if (e.target === mcsPopup) {
+                    mcsPopup.classList.remove('active');
+                    // Store rejection with current date
+                    localStorage.setItem('popupStatus', 'rejected');
+                    localStorage.setItem('popupRejectedDate', new Date().toISOString());
+                }
+            });
+            
+            // Claim Offer button - redirect to signup and store choice
+            mcsClaimOffer.addEventListener('click', () => {
+                localStorage.setItem('popupStatus', 'claimed');
+                window.location.href = "#"; // Replace with actual signup URL
+            });
+            
+            // Reject Offer button - uses psychological reactance
+            mcsRejectOffer.addEventListener('click', () => {
+                // Show confirmation with loss aversion technique
+                if (confirm("Are you sure? You'll lose your 20% discount and free study planner if you leave this page.")) {
+                    mcsPopup.classList.remove('active');
+                    // Store rejection with current date
+                    localStorage.setItem('popupStatus', 'rejected');
+                    localStorage.setItem('popupRejectedDate', new Date().toISOString());
+                }
+            });
+            
+            // Close popup when pressing Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mcsPopup.classList.contains('active')) {
+                    mcsPopup.classList.remove('active');
+                    // Store rejection with current date
+                    localStorage.setItem('popupStatus', 'rejected');
+                    localStorage.setItem('popupRejectedDate', new Date().toISOString());
+                }
+            });
+        });
+    </script>
+	
 <?= $this->endSection() ?>
 <?=$this->section('jsContent')?>
   <script type="text/javascript">
