@@ -1029,7 +1029,7 @@ function closeModal() {
 	    
         // Initialize AOS (Animate On Scroll)
         AOS.init({
-            duration: 300,
+            duration: 150,
             easing: 'ease-in-out',
             once: false,
             mirror: true,
