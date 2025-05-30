@@ -190,6 +190,11 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </style>
 
 
+                
+        
+
+    <!-- Previous head content remains the same -->
+    <!-- Updated popup styles for responsiveness -->
     <style>
         /* Popup Styles */
         .mcs-popup-overlay {
@@ -207,6 +212,8 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             visibility: hidden;
             transition: all 0.5s ease;
             backdrop-filter: blur(5px);
+            padding: 20px;
+            box-sizing: border-box;
         }
         
         .mcs-popup-overlay.active {
@@ -217,15 +224,17 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         .mcs-popup {
             background-color: var(--mcs-white);
             border-radius: 20px;
-            padding: 3rem;
+            padding: 2rem;
             max-width: 450px;
-            width: 90%;
+            width: 100%;
             text-align: center;
             position: relative;
             transform: translateY(50px);
             transition: all 0.5s ease;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
             border: 5px solid var(--mcs-primary-light);
+            max-height: 90vh;
+            overflow-y: auto;
         }
         
         .mcs-popup-overlay.active .mcs-popup {
@@ -233,31 +242,32 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         }
         
         .mcs-popup-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             background-color: var(--mcs-primary-light);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1.5rem;
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--mcs-primary-color);
             box-shadow: 0 10px 30px rgba(230, 57, 70, 0.2);
         }
         
         .mcs-popup h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--mcs-dark-color);
             font-family: 'Montserrat', sans-serif;
+            line-height: 1.3;
         }
         
         .mcs-popup p {
             color: var(--mcs-text-light);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.6;
         }
         
         .mcs-popup-buttons {
@@ -265,17 +275,20 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 1.5rem;
         }
         
         .mcs-popup-btn {
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
             transition: var(--mcs-transition);
             border: none;
-            font-size: 1rem;
-            min-width: 180px;
+            font-size: 0.9rem;
+            min-width: 160px;
+            flex: 1;
+            white-space: nowrap;
         }
         
         .mcs-popup-btn-primary {
@@ -302,10 +315,10 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         
         .mcs-popup-close {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
+            top: 15px;
+            right: 15px;
+            width: 35px;
+            height: 35px;
             background-color: var(--mcs-gray);
             border-radius: 50%;
             display: flex;
@@ -313,7 +326,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             justify-content: center;
             cursor: pointer;
             transition: var(--mcs-transition);
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--mcs-text-light);
         }
         
@@ -326,34 +339,34 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         .mcs-popup-scarcity {
             color: var(--mcs-primary-color);
             font-weight: 600;
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
+            margin-top: 1rem;
+            font-size: 0.85rem;
             display: block;
         }
         
         .mcs-popup-countdown {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--mcs-primary-dark);
             font-weight: 700;
-            margin-top: 0.5rem;
+            margin-top: 0.3rem;
         }
         
         /* Psychological urgency elements */
         .mcs-popup-urgency {
             background-color: var(--mcs-primary-light);
-            padding: 0.8rem;
+            padding: 0.6rem;
             border-radius: 10px;
-            margin: 1.5rem 0;
+            margin: 1rem 0;
             font-weight: 600;
             color: var(--mcs-primary-dark);
-            font-size: 0.95rem;
+            font-size: 0.85rem;
         }
         
         .mcs-popup-testimonials {
             font-style: italic;
             color: var(--mcs-text-light);
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
+            margin-top: 1rem;
+            font-size: 0.85rem;
             position: relative;
             padding-top: 1rem;
         }
@@ -368,7 +381,65 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             height: 2px;
             background-color: var(--mcs-gray);
         }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .mcs-popup {
+                padding: 1.5rem;
+            }
+            
+            .mcs-popup-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+            
+            .mcs-popup h3 {
+                font-size: 1.3rem;
+            }
+            
+            .mcs-popup p {
+                font-size: 0.95rem;
+                margin-bottom: 1rem;
+            }
+            
+            .mcs-popup-btn {
+                padding: 0.7rem 1rem;
+                font-size: 0.85rem;
+                min-width: 140px;
+            }
+            
+            .mcs-popup-urgency {
+                font-size: 0.8rem;
+                padding: 0.5rem;
+            }
+            
+            .mcs-popup-testimonials {
+                font-size: 0.8rem;
+            }
+            
+            .mcs-popup-close {
+                top: 10px;
+                right: 10px;
+                width: 30px;
+                height: 30px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .mcs-popup-buttons {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            
+            .mcs-popup-btn {
+                width: 100%;
+            }
+        }
     </style>
+
     <!-- Previous body content remains the same until before the scripts -->
     
     <!-- Popup HTML -->
@@ -411,9 +482,9 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     </div>
 
     <!-- Previous scripts remain the same -->
-    <!-- Add this new script for popup functionality -->
+    <!-- Updated script with local storage functionality -->
     <script>
-        // Popup Functionality
+        // Popup Functionality with Local Storage
         document.addEventListener('DOMContentLoaded', function() {
             const mcsPopup = document.getElementById('mcsPopup');
             const mcsPopupClose = document.getElementById('mcsPopupClose');
@@ -421,11 +492,31 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             const mcsRejectOffer = document.getElementById('mcsRejectOffer');
             const mcsCountdown = document.getElementById('mcsCountdown');
             
-            // Show popup after 3 seconds
+            // Check local storage for user's previous choice
+            const popupStatus = localStorage.getItem('popupStatus');
+            const popupRejectedDate = localStorage.getItem('popupRejectedDate');
+            
+            // If user previously claimed offer, don't show popup
+            if (popupStatus === 'claimed') {
+                return;
+            }
+            
+            // If user rejected offer less than 3 days ago, don't show popup
+            if (popupStatus === 'rejected' && popupRejectedDate) {
+                const rejectedDate = new Date(popupRejectedDate);
+                const currentDate = new Date();
+                const daysSinceRejection = (currentDate - rejectedDate) / (1000 * 60 * 60 * 24);
+                
+                if (daysSinceRejection < 3) {
+                    return;
+                }
+            }
+            
+            // Show popup after 3 seconds if conditions are met
             setTimeout(() => {
                 mcsPopup.classList.add('active');
                 
-                // Start countdown timer (5 minutes)
+                // Start countdown timer (3 minutes)
                 let minutes = 2;
                 let seconds = 59;
                 
@@ -455,17 +546,24 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             // Close popup when clicking close button
             mcsPopupClose.addEventListener('click', () => {
                 mcsPopup.classList.remove('active');
+                // Store rejection with current date
+                localStorage.setItem('popupStatus', 'rejected');
+                localStorage.setItem('popupRejectedDate', new Date().toISOString());
             });
             
             // Close popup when clicking outside
             mcsPopup.addEventListener('click', (e) => {
                 if (e.target === mcsPopup) {
                     mcsPopup.classList.remove('active');
+                    // Store rejection with current date
+                    localStorage.setItem('popupStatus', 'rejected');
+                    localStorage.setItem('popupRejectedDate', new Date().toISOString());
                 }
             });
             
-            // Claim Offer button - redirect to signup
+            // Claim Offer button - redirect to signup and store choice
             mcsClaimOffer.addEventListener('click', () => {
+                localStorage.setItem('popupStatus', 'claimed');
                 window.location.href = "#"; // Replace with actual signup URL
             });
             
@@ -474,6 +572,9 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                 // Show confirmation with loss aversion technique
                 if (confirm("Are you sure? You'll lose your 20% discount and free study planner if you leave this page.")) {
                     mcsPopup.classList.remove('active');
+                    // Store rejection with current date
+                    localStorage.setItem('popupStatus', 'rejected');
+                    localStorage.setItem('popupRejectedDate', new Date().toISOString());
                 }
             });
             
@@ -481,10 +582,14 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && mcsPopup.classList.contains('active')) {
                     mcsPopup.classList.remove('active');
+                    // Store rejection with current date
+                    localStorage.setItem('popupStatus', 'rejected');
+                    localStorage.setItem('popupRejectedDate', new Date().toISOString());
                 }
             });
         });
     </script>
+
 
 
 <div class="modal" id="modal">
