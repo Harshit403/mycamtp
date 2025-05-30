@@ -553,7 +553,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </section> 
 
 
-<section class="py-5 container" id="blog-section">
+<!-- <section class="py-5 container" id="blog-section">
         <h1 class="text-uppercase text-center">Blogs</h1>
         <div class="row">
             <?php if (!empty($blog_list)): ?>
@@ -586,11 +586,11 @@ cs test series, cstestseries , cs executive test series, cs professional test se
               </div>
           </div>
         <?php endif ?>
-    </section>
+    </section> -->
 
 
-    <!-- Blog Section -->
-<!-- <section class="mcs-blog mcs-section" data-aos="fade-up" id="blogs">
+<!-- Blog Section -->
+<section class="mcs-blog mcs-section" data-aos="fade-up">
     <div class="mcs-container">
         <div class="mcs-section-title">
             <h2>Latest From Our Blog</h2>
@@ -598,55 +598,37 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         </div>
         
         <div class="mcs-blog-grid">
-            <?php 
-            if (!empty($blog_list)): 
-                $limited_blogs = array_slice($blog_list, 0, 3); // Limit to 3 blogs
-                $delay = 100;
-                foreach ($limited_blogs as $blogRow): 
-            ?>
-                <div class="mcs-blog-card" data-aos="fade-up" data-aos-delay="<?=$delay?>">
-                    <div class="mcs-blog-image">
-                        <img 
-                            data-src="<?= base_url().$blogRow->blog_temp_image ?>" 
-                            alt="Blog Image" 
-                            class="mcs-lazy-image"
-                        >
-                    </div>
-                    <div class="mcs-blog-content">
-                        <h3 class="mcs-blog-title"><?= $blogRow->blog_heading ?></h3>
-                        <p class="mcs-blog-excerpt">
+            <?php if (!empty($blog_list)): ?>
+                <?php foreach ($blog_list as $blogRow): ?>
+                    <div class="mcs-blog-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="mcs-blog-image">
+                            <img src="<?=base_url().$blogRow->blog_temp_image?>" alt="<?=$blogRow->blog_heading?>">
+                        </div>
+                        <div class="mcs-blog-content">
+                            <!-- <span class="mcs-blog-date"><?=date('F j, Y', strtotime($blogRow->created_at))?></span> -->
+                            <h3 class="mcs-blog-title"><?=$blogRow->blog_heading?></h3>
                             <?php
-                            $blogText = '';
-                            if (!empty($blogRow->blog_text)) {
-                                $blogText = strip_tags($blogRow->blog_text);
-                            }
-                            $blogText = strlen($blogText) > 20 ? substr($blogText, 0, 20).'...' : $blogText;
-                            echo $blogText;
+                                $blogText = '';
+                                if (!empty($blogRow->blog_text)) {
+                                    $blogText = strip_tags($blogRow->blog_text);
+                                }
+                                $blogText = strlen($blogText) > 20 ? substr($blogText, 0, 20).'...' : $blogText;
                             ?>
-                        </p>
-                        <a href="<?= base_url() ?>blog?item=<?= $blogRow->blog_short_name ?>" class="mcs-read-more">
-                            Read More <i class="fas fa-arrow-right"></i>
-                        </a>
+                            <p class="mcs-blog-excerpt"><?=$blogText?></p>
+                            <a href="<?=base_url()?>blog?item=<?=$blogRow->blog_short_name?>" class="mcs-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                </div>
-            <?php 
-                $delay += 100; // Increase delay for animation effect
-                endforeach; 
-            ?>
-
-            <?php if (count($blog_list) > 3): ?>
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="<?= base_url() ?>blog-list"> 
-                        <button class="cs-btn-demo">Read More blogs</button>
-                    </a>
-                </div>
-            <?php endif; ?>
-            <?php else: ?>
-                <p class="mcs-no-blogs">No blogs available at the moment.</p>
-            <?php endif; ?>
+                <?php endforeach ?>
+            <?php endif ?>
         </div>
+        
+        <?php if (!empty($blog_list) && count($blog_list) > 3): ?>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="<?=base_url()?>blog-list" class="mcs-btn mcs-btn-primary">View More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        <?php endif ?>
     </div>
-</section> -->
+</section>
 
     <!-- Newsletter Section -->
     <section class="mcs-newsletter mcs-section" id="newsletter" data-aos="fade-up">
