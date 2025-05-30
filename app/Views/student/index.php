@@ -232,7 +232,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
             <div class="mcs-category-card">
                 <h2>Select Your CS Stage</h2>
                 <form class="mcs-category-form">
-                    <a href="javascript:void(0)" <button type="button" onclick="openModal()" class="mcs-btn mcs-btn-primary">Choose Test Series</button> </a>
+                    <button type="button" onclick="openModal()" class="mcs-btn mcs-btn-primary">Choose Test Series</button>
                 </form>
             </div>
         </div>
