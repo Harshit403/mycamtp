@@ -611,7 +611,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 </section>
 
     <!-- Newsletter Section -->
-    <section class="mcs-newsletter mcs-section" data-aos="fade-up">
+    <section class="mcs-newsletter mcs-section" id="newsletter" data-aos="fade-up">
         <div class="mcs-container">
             <h2>Get Exam Tips & Special Offers</h2>
             <p>Subscribe to our newsletter and stay updated with the latest preparation strategies and exclusive discounts</p>
