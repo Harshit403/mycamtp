@@ -2502,7 +2502,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 <li><a href="#testimonials">Success Stories</a></li>
                 <li><a href="#faqs">FAQs</a></li>
                 <li><a href="#blogs">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#newsletter">Contact</a></li>
                 </ul>
             </nav>
          
@@ -2544,7 +2544,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 <li><a href="#testimonials">Success Stories</a></li>
                 <li><a href="#faqs">FAQs</a></li>
                 <li><a href="#blogs">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#newsletter">Contact</a></li>
             </ul>
         </div>
         
