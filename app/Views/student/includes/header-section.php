@@ -2551,10 +2551,10 @@ window.addEventListener('DOMContentLoaded', () => {
         <div class="mcs-mobile-actions">
           <?php if (session()->get('studentDetails')==null): ?>
             <a href="<?=base_url()?>auth?auth=login"> <button class="mcs-btn mcs-btn-secondary">Login</button></a>
-            <a href="<?=base_url()?>auth?auth=register"> <button class="mcs-btn mcs-btn-primary">Sign Up</button></a>
+            <button class="mcs-btn mcs-btn-primary" onclick="window.location.href='<?=base_url()?>auth?auth=register'">Sign Up</button>
           <?php else: ?>
               <a href="<?=base_url()?>dashboard"> <button class="mcs-btn mcs-btn-secondary">Dashboard</button></a>
-            <a href="<?=base_url()?>logout"> <button class="mcs-btn mcs-btn-primary">Logout</button></a>
+              <button class="mcs-btn mcs-btn-primary" onclick="window.location.href='<?=base_url()?>auth?auth=register'">Logout</button>
           <?php endif ?>
         </div>
     </div>
