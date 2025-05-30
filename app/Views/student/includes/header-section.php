@@ -2509,7 +2509,7 @@ window.addEventListener('DOMContentLoaded', () => {
             <div class="mcs-header-actions">
           <?php if (session()->get('studentDetails')==null): ?>
             <button class="mcs-btn mcs-btn-secondary" onclick="window.location.href='<?=base_url()?>auth?auth=login'">Login</button>
-            <button class="mcs-btn mcs-btn-primary" onclick="window.location.href='<?=base_url()?>auth?auth=register'">Sign Up</button>
+            <button class="mcs-btn mcs-btn-primary" onclick="window.location.href='<?=base_url()?>auth?auth=register'">SignUp</button>
           <?php else: ?>
               <button onclick="window.location.href='<?=base_url()?>dashboard'" class="mcs-btn mcs-btn-secondary">Dashboard</button>
               <button class="mcs-btn mcs-btn-primary" onclick="window.location.href='<?=base_url()?>logout'">Logout</button></a>
