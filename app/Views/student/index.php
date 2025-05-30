@@ -744,7 +744,7 @@ function closeModal() {
 	    
         // Initialize AOS (Animate On Scroll)
         AOS.init({
-            duration: 800,
+            duration: 300,
             easing: 'ease-in-out',
             once: false,
             mirror: true,
@@ -862,7 +862,7 @@ function closeModal() {
 
         // Counter Animation for Stats
         const mcsCounters = document.querySelectorAll('.mcs-stat-number');
-        const speed = 200;
+        const speed = 100;
 
         function animateCounters() {
             mcsCounters.forEach(counter => {
