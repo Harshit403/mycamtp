@@ -960,7 +960,16 @@ function closeModal() {
     </script>
 
 
-
+<script>
+// Close mobile menu when a link is clicked
+document.querySelectorAll('.mcs-mobile-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        mcsMobileMenu.classList.remove('active');
+        mcsOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});	
+</script>
 
 
 
