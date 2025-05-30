@@ -210,7 +210,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                 <h1 class="animate__animated animate__fadeInUp">Master CS Exams with Our Expert-Led Test Series</h1>
                 <p class="animate__animated animate__fadeInUp">Comprehensive mock tests, personalized mentorship, and advanced analytics to help you rank among the top candidates.</p>
                 <div class="mcs-hero-buttons animate__animated animate__fadeInUp">
-                  <a href="#schedules">  <button class="mcs-btn mcs-btn-primary">View Schedules</button> </a>
+                  <button class="mcs-btn mcs-btn-primary" onclick="window.location.href='<?=base_url()?>'">View Schedules</button>
                    <a href="#copies"> <button class="mcs-btn mcs-btn-secondary">View Demo Copies</button></a>
                 </div>
             </div>
@@ -260,9 +260,7 @@ cs test series, cstestseries , cs executive test series, cs professional test se
                             <i class="fas fa-book"></i>
                         </div>
                         <h3><?= htmlspecialchars($levelRow->level_name) ?></h3>
-                        <a href="<?= base_url() ?>type?category=<?= htmlspecialchars($levelRow->category_short_name) ?>&&level=<?= htmlspecialchars($levelRow->level_short_name) ?>">
-                            <button class="mcs-btn mcs-btn-primary">Buy Now</button>
-                        </a>
+                            <button class="mcs-btn mcs-btn-primary" onclick="window.location.href='<?= base_url() ?>type?category=<?= htmlspecialchars($levelRow->category_short_name) ?>&&level=<?= htmlspecialchars($levelRow->level_short_name) ?>'">Buy Now</button>
                     </div>
                     <?php $delay += 100; ?>
                 <?php endforeach;
@@ -274,53 +272,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         </div>
     </div>
 </section>
-
-
-	
-<!-- <section class="mcs-cards-section mcs-section" data-aos="fade-up">
-    <div class="mcs-container">
-        <div class="mcs-section-title" id="mcs-cards-grid">
-            <h2>Explore Our Test Series</h2>
-            <p>Comprehensive test series designed for each stage of your CS journey</p>
-        </div>
-        
-        <div class="mcs-cards-grid">
-            <div class="mcs-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="mcs-card-icon">
-                    <i class="fas fa-book"></i>
-                </div>
-                <h3>CSEET</h3>
-                <button class="mcs-btn mcs-btn-primary">Buy Now</button>
-            </div>
-            
-            <div class="mcs-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="mcs-card-icon">
-                    <i class="fas fa-book"></i>
-                </div>
-                <h3>CS Executive</h3>
-                <ul class="mcs-card-features">
-                    <li>30+ Module-wise Mock Tests</li>
-                    <li>Previous Year Solved Papers</li>
-                    <li>Advanced Performance Analytics</li>
-                </ul>
-                <button class="mcs-btn mcs-btn-primary">Buy Now</button>
-            </div>
-            
-            <div class="mcs-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="mcs-card-icon">
-                    <i class="fas fa-book"></i>
-                </div>
-                <h3>CS Professional</h3>
-                <ul class="mcs-card-features">
-                    <li>40+ Comprehensive Mock Tests</li>
-                    <li>Expert Mentorship Sessions</li>
-                    <li>Time Management Strategies</li>
-                </ul>
-                <button class="mcs-btn mcs-btn-primary">Buy Now</button>
-            </div>
-        </div>
-    </div>
-</section> -->
 
     <!-- Steps Section -->
     <section class="mcs-steps mcs-section" data-aos="fade-up">
