@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Best CS Test Series for CS Executive & Professional exams - Chapterwise, Detailed & Full Syllabus test series with solutions. Enroll now for premium CS exam preparation.">
+    <meta name="keywords" content="CS test series, CS Executive test series, CS Professional test series, company secretary exam preparation, CS module tests">
+    <title>Premium CS Test Series | CS Executive & Professional Exam Preparation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #20b994;
+            --primary-dark: #189577;
+            --secondary: #2c3e50;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --danger: #dc3545;
+            --warning: #ffc107;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-right: 0.5rem;
+        }
+
+        .logo h1 {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #f1f3f5;
+            border-radius: 30px;
+            padding: 0.5rem 1rem;
+            width: 300px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            width: 100%;
+            padding: 0.5rem;
+            outline: none;
+        }
+
+        .search-bar button {
+            background: transparent;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h3 {
+            font-size: 2rem;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--light-gray);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.3s;
+            margin: 0.2rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(32, 185, 148, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(32, 185, 148, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(32, 185, 148, 0);
+            }
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .product-header h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-header .level {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .rating {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 0.2rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .rating .stars {
+            color: var(--warning);
+            margin-right: 0.3rem;
+        }
+
+        .rating .count {
+            font-size: 0.7rem;
+            color: var(--dark);
+        }
+
+        .product-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .features {
+            margin-bottom: 1.5rem;
+        }
+
+        .features li {
+            list-style: none;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .features li:last-child {
+            border-bottom: none;
+        }
+
+        .features i {
+            color: var(--primary);
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .price {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .original-price {
+            font-size: 1.2rem;
+            color: var(--gray);
+            text-decoration: line-through;
+            margin-right: 0.5rem;
+        }
+
+        .amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .discount-badge {
+            background-color: var(--danger);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .duration {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .testimonials {
+            background-color: white;
+            border-radius: 10px;
+            padding: 3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 4rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--primary);
+            opacity: 0.1;
+            position: absolute;
+            top: -1rem;
+            left: 0.5rem;
+        }
+
+        .testimonial-text {
+            margin-bottom: 1rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        /* Content Toggle Styles */
+        .content-toggle {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        
+        .content-toggle-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--light-gray);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+            transition: all 0.3s;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+        }
+        
+        .content-toggle-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .seo-content {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 0 1rem;
+            text-align: center;
+        }
+        
+        .content-section {
+            display: none;
+            text-align: left;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .seo-content h2 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .seo-content h3 {
+            color: var(--primary-dark);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.4rem;
+        }
+
+        .seo-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .seo-content ul {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        .seo-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.8rem;
+        }
+
+        /* Cart Summary Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            padding: 2rem;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            color: var(--gray);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .modal-title {
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+            text-align: center;
+        }
+
+        .cart-items {
+            margin-bottom: 1.5rem;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+        }
+
+        .cart-item-price {
+            text-align: right;
+        }
+
+        .original {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .discounted {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .cart-total {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--primary);
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .savings-message {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .terms-checkbox {
+            margin: 1rem 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .terms-checkbox input {
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .terms-checkbox label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .terms-checkbox a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .terms-checkbox a:hover {
+            text-decoration: underline;
+        }
+
+        .razorpay-btn {
+            width: 100%;
+            margin-top: 1rem;
+            opacity: 0.5;
+            pointer-events: none;
+            transition: opacity 0.3s;
+            display: flex;
+            justify-content: center;
+        }
+
+        .razorpay-btn.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .razorpay-btn form {
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .terms-error {
+            color: var(--danger);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            text-align: center;
+            display: none;
+        }
+
+        /* Confirmation Modal */
+        .confirmation-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .confirmation-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .confirmation-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            padding: 2rem;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .confirmation-modal.active .confirmation-content {
+            transform: translateY(0);
+        }
+
+        .confirmation-title {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+            text-align: center;
+        }
+
+        .confirmation-text {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .confirmation-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn-danger {
+            background-color: var(--danger);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+
+        /* Enhanced Celebration Animation */
+        .celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1002;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            animation: sparkle-fly 1.5s ease-out forwards;
+            opacity: 0;
+            background-color: var(--primary);
+        }
+
+        @keyframes sparkle-fly {
+            0% {
+                transform: translate(0, 0) scale(0);
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: 
+                    translate(
+                        calc(var(--random-x) * 300px - 150px), 
+                        calc(var(--random-y) * 300px - 150px))
+                    scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* Add subtle scale animation to modal when celebration occurs */
+        .modal-content {
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-content.celebrate {
+            animation: modal-pulse 0.5s ease;
+        }
+
+        @keyframes modal-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .logo {
+                margin-bottom: 1rem;
+            }
+
+            .nav-links {
+                margin-bottom: 1rem;
+            }
+
+            .search-bar {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .action-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .confirmation-actions {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>CS TEST SERIES</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#products">Test Series</a></li>
+                <li><a href="#testimonials">Success Stories</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search test series...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>CS Exam Test Series</h2>
+        <p>Comprehensive chapterwise, detailed and full syllabus test series designed by experts to help you master the CS Executive and Professional exams.</p>
+        <a href="#products" class="btn btn-outline">View All Test Series</a>
+    </section>
+
+    <section class="container" id="products">
+        <div class="section-title">
+            <h3>Our Test Series Plans</h3>
+        </div>
+
+        <div class="tab-container">
+            <button class="tab-btn active" data-tab="executive">CS Executive</button>
+            <button class="tab-btn" data-tab="professional">CS Professional</button>
+        </div>
+
+        <div class="tab-content active" id="executive">
+            <div class="products">
+                <!-- Chapterwise Tests -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                            <span class="count">(42)</span>
+                        </div>
+                        <h4>CS Executive Module 1</h4>
+                        <span class="level">Chapterwise Tests</span>
+                        <p>Complete coverage of Module 1 syllabus</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 50+ Chapterwise Tests</li>
+                            <li><i class="fas fa-check"></i> 5 Full Syllabus Tests</li>
+                            <li><i class="fas fa-check"></i> Concept Builder Questions</li>
+                            <li><i class="fas fa-check"></i> Weakness Identification</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹4,999</span>
+                            <span class="amount">₹3,299</span>
+                            <span class="discount-badge">34% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Executive Module 1 - Chapterwise" data-original="4999" data-price="3299">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="executive-mod1-chapterwise">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN1" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <span class="count">(38)</span>
+                        </div>
+                        <h4>CS Executive Module 2</h4>
+                        <span class="level">Chapterwise Tests</span>
+                        <p>Complete coverage of Module 2 syllabus</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 40+ Chapterwise Tests</li>
+                            <li><i class="fas fa-check"></i> 5 Full Syllabus Tests</li>
+                            <li><i class="fas fa-check"></i> Concept Builder Questions</li>
+                            <li><i class="fas fa-check"></i> Weakness Identification</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹4,999</span>
+                            <span class="amount">₹3,299</span>
+                            <span class="discount-badge">34% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Executive Module 2 - Chapterwise" data-original="4999" data-price="3299">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="executive-mod2-chapterwise">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN2" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="count">(56)</span>
+                        </div>
+                        <h4>CS Executive Both Modules</h4>
+                        <span class="level">Chapterwise Tests</span>
+                        <p>Complete coverage of both modules</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 90+ Chapterwise Tests</li>
+                            <li><i class="fas fa-check"></i> 10 Full Syllabus Tests</li>
+                            <li><i class="fas fa-check"></i> Concept Builder Questions</li>
+                            <li><i class="fas fa-check"></i> Weakness Identification</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹8,999</span>
+                            <span class="amount">₹5,999</span>
+                            <span class="discount-badge">33% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Executive Both Modules - Chapterwise" data-original="8999" data-price="5999">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="executive-both-chapterwise">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN3" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Test Series -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                            <span class="count">(47)</span>
+                        </div>
+                        <h4>CS Executive Module 1</h4>
+                        <span class="level">Detailed Test Series</span>
+                        <p>Complete coverage of Module 1 syllabus</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 12 Full-length Mock Tests</li>
+                            <li><i class="fas fa-check"></i> 5 Previous Year Paper Sets</li>
+                            <li><i class="fas fa-check"></i> Detailed Solutions & Analysis</li>
+                            <li><i class="fas fa-check"></i> Subject-wise Performance Reports</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹3,999</span>
+                            <span class="amount">₹2,499</span>
+                            <span class="discount-badge">38% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Executive Module 1 - Detailed" data-original="3999" data-price="2499">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="executive-mod1-detailed">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN4" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <span class="count">(35)</span>
+                        </div>
+                        <h4>CS Executive Module 2</h4>
+                        <span class="level">Detailed Test Series</span>
+                        <p>Complete coverage of Module 2 syllabus</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 10 Full-length Mock Tests</li>
+                            <li><i class="fas fa-check"></i> 5 Previous Year Paper Sets</li>
+                            <li><i class="fas fa-check"></i> Case Study Based Questions</li>
+                            <li><i class="fas fa-check"></i> Detailed Legal Drafting Tests</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹3,999</span>
+                            <span class="amount">₹2,499</span>
+                            <span class="discount-badge">38% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Executive Module 2 - Detailed" data-original="3999" data-price="2499">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="executive-mod2-detailed">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN5" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                            <span class="count">(51)</span>
+                        </div>
+                        <h4>CS Executive Both Modules</h4>
+                        <span class="level">Detailed Test Series</span>
+                        <p>Complete coverage of both modules</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 22 Full-length Mock Tests</li>
+                            <li><i class="fas fa-check"></i> 10 Previous Year Paper Sets</li>
+                            <li><i class="fas fa-check"></i> Case Study Based Questions</li>
+                            <li><i class="fas fa-check"></i> Detailed Legal Drafting Tests</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹6,999</span>
+                            <span class="amount">₹4,499</span>
+                            <span class="discount-badge">36% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Executive Both Modules - Detailed" data-original="6999" data-price="4499">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="executive-both-detailed">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN6" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Syllabus Tests -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="count">(62)</span>
+                        </div>
+                        <h4>CS Executive Module 1</h4>
+                        <span class="level">Full Syllabus Tests</span>
+                        <p>Complete coverage of Module 1 syllabus</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 15 Full Syllabus Tests</li>
+                            <li><i class="fas fa-check"></i> 8 Previous Year Paper Sets</li>
+                            <li><i class="fas fa-check"></i> Timed Exam Simulation</li>
+                            <li><i class="fas fa-check"></i> Performance Analytics</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹4,999</span>
+                            <span class="amount">₹3,499</span>
+                            <span class="discount-badge">30% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Executive Module 1 - Full Syllabus" data-original="4999" data-price="3499">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="executive-mod1-full">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN7" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <span class="count">(39)</span>
+                        </div>
+                        <h4>CS Executive Module 2</h4>
+                        <span class="level">Full Syllabus Tests</span>
+                        <p>Complete coverage of Module 2 syllabus</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 12 Full Syllabus Tests</li>
+                            <li><i class="fas fa-check"></i> 6 Previous Year Paper Sets</li>
+                            <li><i class="fas fa-check"></i> Timed Exam Simulation</li>
+                            <li><i class="fas fa-check"></i> Performance Analytics</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹4,999</span>
+                            <span class="amount">₹3,499</span>
+                            <span class="discount-badge">30% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Executive Module 2 - Full Syllabus" data-original="4999" data-price="3499">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="executive-mod2-full">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN8" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="count">(67)</span>
+                        </div>
+                        <h4>CS Executive Both Modules</h4>
+                        <span class="level">Full Syllabus Tests</span>
+                        <p>Complete coverage of both modules</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 27 Full Syllabus Tests</li>
+                            <li><i class="fas fa-check"></i> 14 Previous Year Paper Sets</li>
+                            <li><i class="fas fa-check"></i> Timed Exam Simulation</li>
+                            <li><i class="fas fa-check"></i> Performance Analytics</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹8,999</span>
+                            <span class="amount">₹5,999</span>
+                            <span class="discount-badge">33% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Executive Both Modules - Full Syllabus" data-original="8999" data-price="5999">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="executive-both-full">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN9" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="professional">
+            <div class="products">
+                <!-- Chapterwise Tests -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                            <span class="count">(45)</span>
+                        </div>
+                        <h4>CS Professional Module 1</h4>
+                        <span class="level">Chapterwise Tests</span>
+                        <p>Complete coverage of Module 1 syllabus</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 45+ Chapterwise Tests</li>
+                            <li><i class="fas fa-check"></i> 5 Full Syllabus Tests</li>
+                            <li><i class="fas fa-check"></i> Concept Builder Questions</li>
+                            <li><i class="fas fa-check"></i> Weakness Identification</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹5,999</span>
+                            <span class="amount">₹3,999</span>
+                            <span class="discount-badge">33% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Professional Module 1 - Chapterwise" data-original="5999" data-price="3999">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="professional-mod1-chapterwise">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN10" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <span class="count">(37)</span>
+                        </div>
+                        <h4>CS Professional Module 2</h4>
+                        <span class="level">Chapterwise Tests</span>
+                        <p>Complete coverage of Module 2 syllabus</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 40+ Chapterwise Tests</li>
+                            <li><i class="fas fa-check"></i> 5 Full Syllabus Tests</li>
+                            <li><i class="fas fa-check"></i> Concept Builder Questions</li>
+                            <li><i class="fas fa-check"></i> Weakness Identification</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹5,999</span>
+                            <span class="amount">₹3,999</span>
+                            <span class="discount-badge">33% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Professional Module 2 - Chapterwise" data-original="5999" data-price="3999">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="professional-mod2-chapterwise">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN11" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="count">(59)</span>
+                        </div>
+                        <h4>CS Professional Both Modules</h4>
+                        <span class="level">Chapterwise Tests</span>
+                        <p>Complete coverage of both modules</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 85+ Chapterwise Tests</li>
+                            <li><i class="fas fa-check"></i> 10 Full Syllabus Tests</li>
+                            <li><i class="fas fa-check"></i> Concept Builder Questions</li>
+                            <li><i class="fas fa-check"></i> Weakness Identification</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹10,999</span>
+                            <span class="amount">₹7,499</span>
+                            <span class="discount-badge">32% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Professional Both Modules - Chapterwise" data-original="10999" data-price="7499">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="professional-both-chapterwise">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN12" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Test Series -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                            <span class="count">(48)</span>
+                        </div>
+                        <h4>CS Professional Module 1</h4>
+                        <span class="level">Detailed Test Series</span>
+                        <p>Complete coverage of Module 1 syllabus</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 15 Full-length Mock Tests</li>
+                            <li><i class="fas fa-check"></i> 8 Previous Year Paper Sets</li>
+                            <li><i class="fas fa-check"></i> Advanced Case Studies</li>
+                            <li><i class="fas fa-check"></i> Expert Video Solutions</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹4,999</span>
+                            <span class="amount">₹3,499</span>
+                            <span class="discount-badge">30% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Professional Module 1 - Detailed" data-original="4999" data-price="3499">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="professional-mod1-detailed">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN13" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <span class="count">(41)</span>
+                        </div>
+                        <h4>CS Professional Module 2</h4>
+                        <span class="level">Detailed Test Series</span>
+                        <p>Complete coverage of Module 2 syllabus</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 12 Full-length Mock Tests</li>
+                            <li><i class="fas fa-check"></i> 6 Previous Year Paper Sets</li>
+                            <li><i class="fas fa-check"></i> Drafting & Case Analysis</li>
+                            <li><i class="fas fa-check"></i> Subject-wise Performance</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹4,999</span>
+                            <span class="amount">₹3,499</span>
+                            <span class="discount-badge">30% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Professional Module 2 - Detailed" data-original="4999" data-price="3499">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="professional-mod2-detailed">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN14" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="count">(63)</span>
+                        </div>
+                        <h4>CS Professional Both Modules</h4>
+                        <span class="level">Detailed Test Series</span>
+                        <p>Complete coverage of both modules</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 27 Full-length Mock Tests</li>
+                            <li><i class="fas fa-check"></i> 14 Previous Year Paper Sets</li>
+                            <li><i class="fas fa-check"></i> Drafting & Case Analysis</li>
+                            <li><i class="fas fa-check"></i> Subject-wise Performance</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹8,999</span>
+                            <span class="amount">₹5,999</span>
+                            <span class="discount-badge">33% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Professional Both Modules - Detailed" data-original="8999" data-price="5999">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="professional-both-detailed">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN15" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Syllabus Tests -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                            <span class="count">(52)</span>
+                        </div>
+                        <h4>CS Professional Module 1</h4>
+                        <span class="level">Full Syllabus Tests</span>
+                        <p>Complete coverage of Module 1 syllabus</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 18 Full Syllabus Tests</li>
+                            <li><i class="fas fa-check"></i> 10 Previous Year Paper Sets</li>
+                            <li><i class="fas fa-check"></i> Timed Exam Simulation</li>
+                            <li><i class="fas fa-check"></i> Performance Analytics</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹5,999</span>
+                            <span class="amount">₹3,999</span>
+                            <span class="discount-badge">33% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Professional Module 1 - Full Syllabus" data-original="5999" data-price="3999">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="professional-mod1-full">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN16" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <span class="count">(44)</span>
+                        </div>
+                        <h4>CS Professional Module 2</h4>
+                        <span class="level">Full Syllabus Tests</span>
+                        <p>Complete coverage of Module 2 syllabus</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 15 Full Syllabus Tests</li>
+                            <li><i class="fas fa-check"></i> 8 Previous Year Paper Sets</li>
+                            <li><i class="fas fa-check"></i> Timed Exam Simulation</li>
+                            <li><i class="fas fa-check"></i> Performance Analytics</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹5,999</span>
+                            <span class="amount">₹3,999</span>
+                            <span class="discount-badge">33% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Professional Module 2 - Full Syllabus" data-original="5999" data-price="3999">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="professional-mod2-full">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN17" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-header">
+                        <div class="rating">
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="count">(71)</span>
+                        </div>
+                        <h4>CS Professional Both Modules</h4>
+                        <span class="level">Full Syllabus Tests</span>
+                        <p>Complete coverage of both modules</p>
+                    </div>
+                    <div class="product-body">
+                        <ul class="features">
+                            <li><i class="fas fa-check"></i> 33 Full Syllabus Tests</li>
+                            <li><i class="fas fa-check"></i> 18 Previous Year Paper Sets</li>
+                            <li><i class="fas fa-check"></i> Timed Exam Simulation</li>
+                            <li><i class="fas fa-check"></i> Performance Analytics</li>
+                            <li><i class="fas fa-check"></i> 24/7 Access to Portal</li>
+                        </ul>
+                        <div class="price">
+                            <span class="original-price">₹10,999</span>
+                            <span class="amount">₹7,499</span>
+                            <span class="discount-badge">32% OFF</span>
+                            <div class="duration">for 6 months access</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-primary buy-now" data-name="CS Professional Both Modules - Full Syllabus" data-original="10999" data-price="7499">Buy Now</button>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-download"></i> Schedule</a>
+                        </div>
+                        <div class="razorpay-btn" data-product="professional-both-full">
+                            <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_KlVfEeYZ5zMQffNN18" async> </script> </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container seo-content">
+        <div class="content-toggle">
+            <button class="content-toggle-btn active" data-content="executive">CS Executive</button>
+            <button class="content-toggle-btn" data-content="professional">CS Professional</button>
+            <button class="content-toggle-btn" data-content="importance">Importance of Test Series</button>
+        </div>
+        
+        <div class="content-section active" id="executive-content">
+            <h2>Best CS Executive Test Series for Exam Preparation</h2>
+            <p>Our comprehensive CS Executive test series is designed to help students master both Module 1 and Module 2 of the Company Secretary examination. We offer three types of test series for each module:</p>
+            
+            <h3>Chapterwise Tests for CS Executive</h3>
+            <p>Master each concept individually with our focused chapterwise tests. These tests help you:</p>
+            <ul>
+                <li>Build strong fundamentals in each subject</li>
+                <li>Identify weak areas that need more attention</li>
+                <li>Practice application of concepts through MCQs and case studies</li>
+                <li>Track progress in each topic separately</li>
+            </ul>
+            
+            <h3>Detailed Test Series for CS Executive</h3>
+            <p>Our comprehensive test series includes:</p>
+            <ul>
+                <li>Full-length mock exams with varying difficulty levels</li>
+                <li>Detailed solutions with expert explanations</li>
+                <li>Performance analysis to track your progress</li>
+                <li>Subject-wise breakdown of scores</li>
+                <li>Previous year question patterns analysis</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <h4>CS Executive Full Syllabus Tests</h4>
+                <p>Simulate the actual exam experience with our full syllabus tests that cover the entire module in exam-like conditions. These tests help in:</p>
+                <ul>
+                    <li>Improving time management skills</li>
+                    <li>Building exam temperament</li>
+                    <li>Practicing under timed conditions</li>
+                    <li>Identifying strong and weak subjects</li>
+                </ul>
+            </div>
+            
+            <p>All our CS Executive test series are regularly updated to reflect the latest syllabus and exam patterns. Join thousands of successful CS students who have cleared their exams with our proven methodology.</p>
+        </div>
+        
+        <div class="content-section" id="professional-content">
+            <h2>Advanced CS Professional Test Series for Final Preparation</h2>
+            <p>Prepare for your CS Professional exams with our specialized test series covering all three modules. We offer three distinct test formats for each module:</p>
+            
+            <h3>Chapterwise Tests for CS Professional</h3>
+            <p>Deep dive into each topic with our focused chapterwise tests that help you:</p>
+            <ul>
+                <li>Master complex concepts through targeted practice</li>
+                <li>Understand practical applications of theoretical knowledge</li>
+                <li>Prepare for both descriptive and case study questions</li>
+                <li>Focus on weak areas with customized practice</li>
+            </ul>
+            
+            <h3>Detailed Test Series for CS Professional</h3>
+            <p>Our advanced test series includes:</p>
+            <ul>
+                <li>Case-based questions with model answers</li>
+                <li>Drafting exercises for practical papers</li>
+                <li>Strategic management scenarios</li>
+                <li>Subject-wise performance tracking</li>
+                <li>Comparative ranking with other aspirants</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <h4>CS Professional Full Syllabus Tests</h4>
+                <p>Experience the actual professional exam environment with our full syllabus tests that:</p>
+                <ul>
+                    <li>Challenge your time management skills</li>
+                    <li>Improve problem-solving abilities</li>
+                    <li>Provide realistic exam simulation</li>
+                    <li>Help build stamina for lengthy papers</li>
+                </ul>
+            </div>
+            
+            <p>The CS Professional test series provides detailed model answers, reference materials, and video explanations for complex questions. Our performance tracking system helps you monitor your progress and focus on areas needing improvement.</p>
+        </div>
+        
+        <div class="content-section" id="importance-content">
+            <h2>Why Test Series is Crucial for Clearing CS Exams</h2>
+            <p>Test series play a pivotal role in the preparation strategy for CS Executive and CS Professional exams. Here's why our test series are essential for your success:</p>
+            
+            <h3>1. Exam Pattern Familiarity</h3>
+            <p>Our test series are designed exactly as per the latest exam patterns, helping you understand:</p>
+            <ul>
+                <li>Question paper format and structure</li>
+                <li>Marking scheme and weightage</li>
+                <li>Types of questions asked</li>
+                <li>Difficulty level variations</li>
+            </ul>
+            
+            <h3>2. Performance Benchmarking</h3>
+            <p>Regular testing helps you:</p>
+            <ul>
+                <li>Measure your preparation level</li>
+                <li>Compare performance with peers</li>
+                <li>Identify areas needing improvement</li>
+                <li>Track progress over time</li>
+            </ul>
+            
+            <h3>3. Time Management Skills</h3>
+            <p>CS exams are time-bound, and our test series help you:</p>
+            <ul>
+                <li>Practice completing papers within time limits</li>
+                <li>Develop strategies for question prioritization</li>
+                <li>Improve writing speed for descriptive papers</li>
+                <li>Reduce exam anxiety through repeated practice</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <h4>4. Conceptual Clarity and Application</h4>
+                <p>Our test series go beyond rote learning by:</p>
+                <ul>
+                    <li>Testing application of concepts in practical scenarios</li>
+                    <li>Providing detailed solutions for better understanding</li>
+                    <li>Including case studies for professional level papers</li>
+                    <li>Offering expert guidance on answer presentation</li>
+                </ul>
+            </div>
+            
+            <h3>5. Confidence Building</h3>
+            <p>Regular practice with our test series:</p>
+            <ul>
+                <li>Reduces exam fear and nervousness</li>
+                <li>Builds confidence in subject knowledge</li>
+                <li>Prepares you for unexpected question patterns</li>
+                <li>Ensures you're exam-ready well before the actual test</li>
+            </ul>
+            
+            <p>Thousands of successful CS students have benefited from our structured test series approach, which provides the perfect blend of conceptual testing and exam simulation.</p>
+        </div>
+    </section>
+
+    <section class="container" id="testimonials">
+        <div class="testimonials">
+            <div class="section-title">
+                <h3>Success Stories</h3>
+                <p>What our students say about our test series</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The CS Executive Module 1 test series was incredibly helpful. The chapterwise tests helped me build strong fundamentals before attempting full syllabus tests. The detailed solutions were exactly what I needed to understand complex concepts.</p>
+                    <div class="testimonial-author">- Rohan Sharma (Rank 12 in CS Executive)</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The detailed test series for CS Professional Module 2 was exactly what I needed. The case studies and drafting exercises matched the actual exam difficulty. I couldn't have cleared the exam without this practice.</p>
+                    <div class="testimonial-author">- Priya Patel (Rank 8 in CS Professional)</div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">The full syllabus tests helped me improve my time management significantly. The performance analytics showed exactly where I needed to focus. This test series was crucial for my All India Rank 3 in CS Professional.</p>
+                    <div class="testimonial-author">- Amit Kumar (Rank 3 in CS Professional)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Summary Modal -->
+    <div class="modal-overlay" id="cartModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <h3 class="modal-title">Order Summary</h3>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be added here dynamically -->
+            </div>
+            <div class="savings-message" id="savingsMessage">
+                <!-- Savings message will be added here dynamically -->
+            </div>
+            <div class="cart-total">
+                <span>Total Amount:</span>
+                <span id="totalAmount">₹0</span>
+            </div>
+            <div class="terms-checkbox">
+                <input type="checkbox" id="termsCheckbox">
+                <label for="termsCheckbox">I have read and agree to the <a href="#">Terms & Conditions</a>, <a href="#">Privacy Policy</a>, and <a href="#">Disclaimer</a> of the website.</label>
+            </div>
+            <div class="terms-error" id="termsError">
+                Please check the box before proceeding with payment
+            </div>
+            <div class="razorpay-btn" id="modalRazorpayBtn">
+                <!-- Payment button will be inserted here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="confirmation-modal" id="confirmationModal">
+        <div class="confirmation-content">
+            <h3 class="confirmation-title">Are you sure?</h3>
+            <p class="confirmation-text" id="confirmationText">
+                <!-- Text will be inserted here dynamically -->
+            </p>
+            <div class="confirmation-actions">
+                <button class="btn btn-outline" id="continueOrder">Continue Order</button>
+                <button class="btn btn-danger" id="confirmCancel">Cancel Anyway</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>CS TEST SERIES</h4>
+                <p>Providing high-quality test series for CS Executive and Professional exam preparation.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#products">Test Series</a></li>
+                    <li><a href="#testimonials">Success Stories</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Test Series</h4>
+                <ul>
+                    <li><a href="#">CS Executive Module 1</a></li>
+                    <li><a href="#">CS Executive Module 2</a></li>
+                    <li><a href="#">CS Professional Module 1</a></li>
+                    <li><a href="#">CS Professional Module 2</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Education Street, Delhi, India</li>
+                    <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                    <li><i class="fas fa-envelope"></i> info@cstestseries.com</li>
+                    <li><i class="fas fa-clock"></i> Mon-Sat: 9AM - 6PM</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 CS TEST SERIES. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                btn.classList.add('active');
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Content toggle functionality
+        const contentToggleBtns = document.querySelectorAll('.content-toggle-btn');
+        const contentSections = document.querySelectorAll('.content-section');
+        
+        contentToggleBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and sections
+                contentToggleBtns.forEach(btn => btn.classList.remove('active'));
+                contentSections.forEach(section => section.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding section
+                btn.classList.add('active');
+                const contentId = btn.getAttribute('data-content') + '-content';
+                document.getElementById(contentId).classList.add('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Cart functionality
+        const buyNowButtons = document.querySelectorAll('.buy-now');
+        const cartModal = document.getElementById('cartModal');
+        const closeModal = document.querySelector('.close-modal');
+        const cartItems = document.getElementById('cartItems');
+        const totalAmount = document.getElementById('totalAmount');
+        const savingsMessage = document.getElementById('savingsMessage');
+        const confirmationModal = document.getElementById('confirmationModal');
+        const confirmationText = document.getElementById('confirmationText');
+        const continueOrderBtn = document.getElementById('continueOrder');
+        const confirmCancelBtn = document.getElementById('confirmCancel');
+        const termsCheckbox = document.getElementById('termsCheckbox');
+        const modalRazorpayBtn = document.getElementById('modalRazorpayBtn');
+        const termsError = document.getElementById('termsError');
+
+        let cart = [];
+        let currentSavings = 0;
+        let currentProductId = '';
+
+        // Create enhanced celebration effect with sparkles
+        function createCelebration() {
+            // Add pulse effect to modal
+            const modalContent = document.querySelector('.modal-content');
+            modalContent.classList.add('celebrate');
+            setTimeout(() => {
+                modalContent.classList.remove('celebrate');
+            }, 500);
+
+            // Create celebration container
+            const celebration = document.createElement('div');
+            celebration.className = 'celebration';
+            
+            // Create 200 sparkles (very dense)
+            for (let i = 0; i < 200; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                
+                // Set random positions
+                sparkle.style.left = `${Math.random() * 100}%`;
+                sparkle.style.top = `${Math.random() * 100}%`;
+                
+                // Set random animation delays for staggered effect
+                sparkle.style.animationDelay = `${Math.random() * 0.5}s`;
+                
+                // Set random size between 8px and 16px
+                const size = 8 + Math.random() * 8;
+                sparkle.style.width = `${size}px`;
+                sparkle.style.height = `${size}px`;
+                
+                // Random colors from a palette
+                const colors = ['#20b994', '#2c3e50', '#dc3545', '#ffc107', '#17a2b8'];
+                sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                // Set random movement direction
+                sparkle.style.setProperty('--random-x', Math.random());
+                sparkle.style.setProperty('--random-y', Math.random());
+                
+                celebration.appendChild(sparkle);
+            }
+            
+            // Add to modal overlay
+            const modalOverlay = document.querySelector('.modal-overlay.active');
+            modalOverlay.appendChild(celebration);
+            
+            // Remove after animation completes
+            setTimeout(() => {
+                if (celebration.parentNode) {
+                    celebration.remove();
+                }
+            }, 2000);
+        }
+
+        // Handle terms checkbox change
+        termsCheckbox.addEventListener('change', function() {
+            if(this.checked) {
+                modalRazorpayBtn.querySelector('form').style.opacity = '1';
+                modalRazorpayBtn.querySelector('form').style.pointerEvents = 'auto';
+                termsError.style.display = 'none';
+            } else {
+                modalRazorpayBtn.querySelector('form').style.opacity = '0.5';
+                modalRazorpayBtn.querySelector('form').style.pointerEvents = 'none';
+            }
+        });
+
+        // Prevent form submission when terms not checked
+        document.addEventListener('submit', function(e) {
+            if (e.target.closest('.razorpay-btn form')) {
+                if (!termsCheckbox.checked) {
+                    e.preventDefault();
+                    termsError.style.display = 'block';
+                    // Scroll to error message
+                    termsError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+
+        buyNowButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const originalPrice = parseInt(button.getAttribute('data-original'));
+                const price = parseInt(button.getAttribute('data-price'));
+                const productCard = button.closest('.product-card');
+                const razorpayBtn = productCard.querySelector('.razorpay-btn');
+                const razorpayForm = razorpayBtn.querySelector('form');
+                
+                // Add item to cart
+                cart = [{ name, originalPrice, price }];
+                currentSavings = originalPrice - price;
+                currentProductId = razorpayBtn.getAttribute('data-product');
+                
+                // Update cart display
+                updateCart();
+                
+                // Clone the Razorpay button to modal
+                modalRazorpayBtn.innerHTML = '';
+                const clonedForm = razorpayForm.cloneNode(true);
+                modalRazorpayBtn.appendChild(clonedForm);
+                
+                // Reset terms checkbox and error
+                termsCheckbox.checked = false;
+                termsError.style.display = 'none';
+                clonedForm.style.opacity = '0.5';
+                clonedForm.style.pointerEvents = 'none';
+                
+                // Show modal
+                cartModal.classList.add('active');
+                
+                // Create celebration effect
+                createCelebration();
+            });
+        });
+
+        function updateCart() {
+            // Clear cart items
+            cartItems.innerHTML = '';
+            
+            let total = 0;
+            let totalSavings = 0;
+            
+            // Add items to cart
+            cart.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'cart-item';
+                itemElement.innerHTML = `
+                    <div class="cart-item-name">${item.name}</div>
+                    <div class="cart-item-price">
+                        <div class="original">₹${item.originalPrice}</div>
+                        <div class="discounted">₹${item.price}</div>
+                    </div>
+                `;
+                cartItems.appendChild(itemElement);
+                
+                total += item.price;
+                totalSavings += (item.originalPrice - item.price);
+            });
+            
+            // Update total
+            totalAmount.textContent = `₹${total}`;
+            
+            // Update savings message
+            savingsMessage.innerHTML = `
+                <i class="fas fa-gift"></i> You saved ₹${totalSavings} on this order!
+            `;
+        }
+
+        // Close modal with confirmation
+        closeModal.addEventListener('click', () => {
+            if (cart.length > 0) {
+                confirmationText.textContent = `You'll lose your savings of ₹${currentSavings} if you cancel this order. Are you sure you want to proceed?`;
+                confirmationModal.classList.add('active');
+            } else {
+                cartModal.classList.remove('active');
+            }
+        });
+
+        // Continue order button
+        continueOrderBtn.addEventListener('click', () => {
+            confirmationModal.classList.remove('active');
+        });
+
+        // Confirm cancel button
+        confirmCancelBtn.addEventListener('click', () => {
+            cartModal.classList.remove('active');
+            confirmationModal.classList.remove('active');
+            cart = [];
+            currentSavings = 0;
+        });
+
+        // Close modal when clicking outside
+        cartModal.addEventListener('click', (e) => {
+            if (e.target === cartModal) {
+                if (cart.length > 0) {
+                    confirmationText.textContent = `You'll lose your savings of ₹${currentSavings} if you cancel this order. Are you sure you want to proceed?`;
+                    confirmationModal.classList.add('active');
+                } else {
+                    cartModal.classList.remove('active');
+                }
+            }
+        });
+
+        // Close confirmation modal when clicking outside
+        confirmationModal.addEventListener('click', (e) => {
+            if (e.target === confirmationModal) {
+                confirmationModal.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
