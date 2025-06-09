@@ -1,149 +1,625 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Offline - Mission CS Test Series</title>
-  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-  <style>
-    /* Reset styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* App-like structure */
-    body {
-      font-family: 'Poppins', Arial, sans-serif;
-      background: #ffffff; /* Pure white background */
-      color: #333333;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      min-height: 100vh;
-      overflow: hidden; /* Prevent scrolling */
-    }
-
-    /* Animation Styling */
-    dotlottie-player {
-      width: 220px;
-      height: 220px;
-      margin-bottom: 20px;
-    }
-
-    /* Heading */
-    h1 {
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: #e63e58;
-      letter-spacing: 0.5px;
-      text-shadow: 0 2px 4px rgba(230, 62, 88, 0.3);
-    }
-
-    /* Message */
-    p {
-      font-size: 18px;
-      margin-bottom: 20px;
-      line-height: 1.6;
-      color: #555555;
-    }
-
-    /* Fact Section */
-    #fact-container {
-      background: #f9f9f9;
-      border: 1px solid #eeeeee;
-      border-radius: 8px;
-      padding: 20px;
-      margin-top: 15px;
-      width: 90%;
-      max-width: 400px;
-      margin-bottom: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    #fact-container h2 {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 7px;
-      color: #333333;
-    }
-
-    #fact-container p {
-      font-size: 16px;
-      color: #666666;
-    }
-
-    /* Footer */
-    footer {
-      position: absolute;
-      bottom: 20px;
-      text-align: center;
-      font-size: 14px;
-      color: #888888;
-    }
-
-    footer a {
-      color: #e63e58;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission CS Test Series - Offline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #e63e58;
+            --primary-light: #ff6b81;
+            --primary-dark: #c22540;
+            --secondary: #3498db;
+            --accent: #f39c12;
+            --dark: #2c3e50;
+            --light: #f5f7fa;
+            --success: #2ecc71;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        /* Floating Background Elements */
+        .bg-element {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+        
+        .bg-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            top: -100px;
+            left: -100px;
+            animation: float 12s infinite ease-in-out;
+        }
+        
+        .bg-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--secondary);
+            bottom: -150px;
+            right: -100px;
+            animation: float 15s infinite ease-in-out reverse;
+        }
+        
+        .bg-3 {
+            width: 200px;
+            height: 200px;
+            background: var(--accent);
+            top: 50%;
+            left: 30%;
+            animation: float 10s infinite ease-in-out 2s;
+        }
+        
+        /* Header Styles */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInDown 0.8s ease both;
+        }
+        
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .logo-highlight {
+            color: var(--primary);
+        }
+        
+        .logo-icon {
+            margin-right: 15px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 20px rgba(230, 62, 88, 0.3);
+            animation: pulse 2.5s infinite ease-in-out;
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            font-weight: 300;
+            color: var(--dark);
+            margin-top: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tagline::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+        
+        /* Main Content */
+        .offline-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            animation: fadeInUp 0.8s ease both 0.3s;
+            position: relative;
+        }
+        
+        .connection-visualization {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2.5rem;
+            position: relative;
+        }
+        
+        .signal {
+            position: absolute;
+            border: 2px solid var(--primary-light);
+            border-radius: 50%;
+            animation: ripple 3s infinite ease-out;
+        }
+        
+        .signal-1 {
+            width: 100%;
+            height: 100%;
+            border-color: var(--primary-light);
+            animation-delay: 0s;
+        }
+        
+        .signal-2 {
+            width: 70%;
+            height: 70%;
+            top: 15%;
+            left: 15%;
+            border-color: var(--primary);
+            animation-delay: 0.5s;
+        }
+        
+        .signal-3 {
+            width: 40%;
+            height: 40%;
+            top: 30%;
+            left: 30%;
+            border-color: var(--primary-dark);
+            animation-delay: 1s;
+        }
+        
+        .connection-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 10px 30px rgba(230, 62, 88, 0.4);
+            animation: pulse 2s infinite ease-in-out;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        h1 span {
+            color: var(--primary);
+            position: relative;
+        }
+        
+        h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: rgba(230, 62, 88, 0.2);
+            z-index: -1;
+            border-radius: 4px;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #5a6a7e;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(230, 62, 88, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--primary-light);
+        }
+        
+        .btn-secondary:hover {
+            background: #f9f9f9;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-icon {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+        
+        /* Connection Status */
+        .connection-status {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            color: var(--dark);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            animation: slideUp 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.28) both 0.8s;
+            z-index: 10;
+        }
+        
+        .status-icon {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            margin-right: 10px;
+            position: relative;
+        }
+        
+        .status-icon::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 50%;
+            background: rgba(230, 62, 88, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            width: 100px;
+            height: 4px;
+            background: #e0e5eb;
+            border-radius: 2px;
+            margin-left: 15px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            border-radius: 2px;
+            transition: width 0.3s ease;
+            animation: progressPulse 2s infinite ease-in-out;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            animation: fadeIn 1s ease both 0.5s;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from { 
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes ripple {
+            0% { transform: scale(0.8); opacity: 0.6; }
+            70% { transform: scale(1.3); opacity: 0; }
+            100% { opacity: 0; }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0) rotate(0deg); }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translate(-50%, 30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+        }
+        
+        @keyframes progressPulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            p {
+                font-size: 1.1rem;
+            }
+            
+            .connection-visualization {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .connection-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .connection-status {
+                width: 90%;
+                text-align: center;
+                justify-content: center;
+                padding: 0.8rem 1rem;
+            }
+            
+            .progress-container {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Lottie Animation -->
-  <dotlottie-player
-    src="https://lottie.host/49beb6eb-4573-46c6-b1f0-7b1e427f2d4c/VpWRyMxQUj.lottie"
-    background="transparent"
-    speed="1"
-    loop
-    autoplay>
-  </dotlottie-player>
-
-  <!-- Offline Message -->
-  <h1>Seems like you're offline.!</h1>
-  <p>You're currently offline. We're trying to reconnect. Please check your internet connection or wait while we attempt to restore it.</p>
-
-  <!-- Static Fact Section -->
-  <div id="fact-container">
-    <h2>Did You Know?</h2>
-    <p id="fact"></p>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    Powered by <a href="https://missioncstestseries.com">Mission CS Test Series</a>
-  </footer>
-
-  <script>
-    // Retry connection every 3 seconds
-    function checkConnection() {
-      if (navigator.onLine) {
-        window.location.reload(); // Reload the page when back online
-      }
-    }
-    setInterval(checkConnection, 5000); // Retry every 3 seconds
-
-    // Facts about missioncstestseries.com
-    const facts = [
-      "Mission CS Test Series has helped thousands of students ace their exams!",
-      "We provide the most affordable test series for CS exams.",
-      "Our detailed analytics helps students identify weak areas.",
-      "Mission CS Test Series is trusted by top rankers nationwide.",
-      "We cover 100% of the syllabus with high-quality questions.",
-      "Our platform is user-friendly and designed for smooth learning."
-    ];
-
-    // Display a random fact on every reload
-    const randomFact = facts[Math.floor(Math.random() * facts.length)];
-    document.getElementById("fact").textContent = randomFact;
-  </script>
+    <!-- Background Elements -->
+    <div class="bg-element bg-1"></div>
+    <div class="bg-element bg-2"></div>
+    <div class="bg-element bg-3"></div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">M</div>
+                <div>Mission <span class="logo-highlight">CS</span> Test Series</div>
+            </div>
+            <div class="tagline">India's #1 TEST SERIES For CS</div>
+        </header>
+        
+        <div class="offline-content">
+            <div class="connection-visualization">
+                <div class="signal signal-1"></div>
+                <div class="signal signal-2"></div>
+                <div class="signal signal-3"></div>
+                <div class="connection-icon">!</div>
+            </div>
+            
+            <h1>Connection <span>Interrupted</span></h1>
+            <p>We can't establish a connection to our servers right now. Please check your Internet Connection!</p>
+            <p>While we work to restore your access, here are some things you can try:</p>
+            
+            <div class="action-buttons">
+                <button class="btn btn-primary" id="retry-btn">
+                    <span class="btn-icon">↻</span>
+                    <span>Retry Connection</span>
+                </button>
+                <button class="btn btn-secondary" id="check-btn">
+                    <span class="btn-icon">🔍</span>
+                    <span>Check Network</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="connection-status" id="connection-status">
+        <div class="status-icon"></div>
+        <span>Attempting to reconnect...</span>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        &copy; 2025 Mission CS Test Series. All rights reserved.
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const retryBtn = document.getElementById('retry-btn');
+            const checkBtn = document.getElementById('check-btn');
+            const connectionStatus = document.getElementById('connection-status');
+            const progressBar = document.getElementById('progress-bar');
+            
+            // Simulate progress bar animation
+            function animateProgressBar() {
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += Math.random() * 10;
+                    if (progress >= 100) {
+                        progress = 100;
+                        clearInterval(interval);
+                        checkConnection();
+                    }
+                    progressBar.style.width = `${progress}%`;
+                }, 300);
+            }
+            
+            // Check connection status
+            function checkConnection() {
+                if (navigator.onLine) {
+                    // Connection restored
+                    connectionStatus.innerHTML = `
+                        <div class="status-icon" style="background: var(--success)"></div>
+                        <span>Connection restored! Redirecting...</span>
+                    `;
+                    
+                    // Change status icon to green
+                    const statusIcon = connectionStatus.querySelector('.status-icon');
+                    if (statusIcon) {
+                        statusIcon.style.background = 'var(--success)';
+                        statusIcon.style.animation = 'none';
+                    }
+                    
+                    // Hide progress bar
+                    const progressContainer = connectionStatus.querySelector('.progress-container');
+                    if (progressContainer) progressContainer.style.display = 'none';
+                    
+                    // Redirect after delay
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000);
+                } else {
+                    // Still offline
+                    progressBar.style.width = '0%';
+                    setTimeout(() => {
+                        animateProgressBar();
+                    }, 1000);
+                }
+            }
+            
+            // Initialize
+            animateProgressBar();
+            
+            // Event listeners
+            retryBtn.addEventListener('click', () => {
+                progressBar.style.width = '0%';
+                animateProgressBar();
+                connectionStatus.innerHTML = `
+                    <div class="status-icon"></div>
+                    <span>Attempting to reconnect...</span>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                `;
+                progressBar = document.getElementById('progress-bar');
+            });
+            
+            checkBtn.addEventListener('click', () => {
+                alert("Please check your device's network settings or try connecting to a different network.");
+            });
+            
+            // Check connection status periodically
+            window.addEventListener('online', checkConnection);
+            window.addEventListener('offline', checkConnection);
+            setInterval(checkConnection, 5000);
+        });
+    </script>
 </body>
 </html>
