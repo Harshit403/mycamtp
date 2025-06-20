@@ -15,7 +15,7 @@
     margin: 10px auto;
     padding: 12px 24px; /* Slightly bigger for emphasis */
     text-align: center;
-    background-color: #4a6bff; /* Modern vibrant blue (like Stripe) */
+    background-color: #4a6bff !important; /* Modern vibrant blue (like Stripe) */
     color: white;
     font-weight: bold; /* Improves readability */
     border: none;
