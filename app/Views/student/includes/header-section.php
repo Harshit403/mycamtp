@@ -2490,7 +2490,7 @@ window.addEventListener('DOMContentLoaded', () => {
     <header class="mcs-header">
         <div class="mcs-container mcs-header-container">
             <div class="mcs-logo">
-                <img src="<?=base_url()?>/assetItems/image/logo.png" alt="Mission CS Logo">
+             <a href="<?=base_url()?>">  <img src="<?=base_url()?>/assetItems/image/logo.png" alt="Mission CS Logo"></a>
               <!-- <h1>Mission CS</h1> -->
             </div>
             
