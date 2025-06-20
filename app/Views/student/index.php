@@ -169,29 +169,37 @@ cs test series, cstestseries , cs executive test series, cs professional test se
 .checkout-btn {
     display: block;
     margin: 10px auto;
-    padding: 10px;
+    padding: 12px 24px; /* Slightly bigger for emphasis */
     text-align: center;
-    background-color: #198754;
+    background-color: #4a6bff; /* Modern vibrant blue (like Stripe) */
     color: white;
+    font-weight: bold; /* Improves readability */
     border: none;
-    border-radius: 5px;
+    border-radius: 8px; /* Slightly more rounded */
     cursor: pointer;
-    box-shadow: 0 0 0 rgba(25, 135, 84, 0.7);
-    animation: pulse 2s infinite;
+    box-shadow: 0 0 0 rgba(74, 107, 255, 0.7);
+    animation: pulse 1s infinite; /* Faster pulse (1s instead of 2s) */
+    transition: all 0.2s ease; /* Smooth hover effect */
 }
 
+/* Hover effect for extra interactivity */
+.checkout-btn:hover {
+    background-color: #3a5bef; /* Slightly darker on hover */
+    transform: translateY(-1px); /* Subtle lift */
+}
+
+/* Faster, more intense pulse */
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(25, 135, 84, 0.7);
+        box-shadow: 0 0 0 0 rgba(74, 107, 255, 0.7);
     }
     70% {
-        box-shadow: 0 0 0 10px rgba(25, 135, 84, 0);
+        box-shadow: 0 0 0 12px rgba(74, 107, 255, 0); /* Bigger glow */
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(25, 135, 84, 0);
+        box-shadow: 0 0 0 0 rgba(74, 107, 255, 0);
     }
 }
-
         .mcs-popup-overlay {
             position: fixed;
             top: 0;
