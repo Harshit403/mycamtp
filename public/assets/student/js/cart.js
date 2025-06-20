@@ -1,4 +1,97 @@
 $(document).ready(function () {
+    // Add the animation CSS dynamically
+    $('head').append(`
+        <style>
+            .mcs-cart-button {
+                position: relative;
+                transition: all 0.3s ease;
+            }
+            
+            .cartCount {
+                position: absolute;
+                top: -8px;
+                right: -8px;
+                background: #ff4757;
+                color: white;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                transition: all 0.3s ease;
+            }
+            
+            .cart-pulse {
+                animation: cartPulse 0.8s cubic-bezier(0.4, 0, 0.6, 1) 2;
+            }
+            
+            .cart-bounce {
+                animation: cartBounce 0.6s ease;
+            }
+            
+            .cart-count-pop {
+                animation: countPop 0.5s ease;
+            }
+            
+            @keyframes cartPulse {
+                0%, 100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.2);
+                }
+            }
+            
+            @keyframes cartBounce {
+                0%, 100% {
+                    transform: translateY(0);
+                }
+                30% {
+                    transform: translateY(-10px);
+                }
+                60% {
+                    transform: translateY(5px);
+                }
+            }
+            
+            @keyframes countPop {
+                0% {
+                    transform: scale(0);
+                }
+                80% {
+                    transform: scale(1.2);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+            
+            .plus-one {
+                position: absolute;
+                top: -25px;
+                right: -15px;
+                color: #4CAF50;
+                font-weight: bold;
+                font-size: 14px;
+                opacity: 0;
+                animation: floatUp 1s ease-out;
+            }
+            
+            @keyframes floatUp {
+                0% {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(-30px);
+                    opacity: 0;
+                }
+            }
+        </style>
+    `);
+
     $(".addToCartBtn").on('click', function () {
         var subject_id = $(this).data('subject-id');
         addtoCart(subject_id);
@@ -9,9 +102,63 @@ $(document).ready(function () {
         addtoCart(subject_id, 'buynow');
     })
 
+    function updateCartCount(newCount) {
+        const $cartBtn = $('.showCartBtn');
+        const $cartCount = $('.cartCount');
+        const currentCount = parseInt($cartCount.text()) || 0;
+        
+        // Update the count
+        $cartCount.text(newCount);
+        
+        // Only animate if the count increased
+        if (newCount > currentCount) {
+            // Clear any existing animations
+            $cartBtn.removeClass('cart-pulse cart-bounce');
+            $cartCount.removeClass('cart-count-pop');
+            $('.plus-one').remove();
+            
+            // Add the "+1" indicator
+            if (newCount - currentCount === 1) {
+                $cartBtn.append('<span class="plus-one">+1</span>');
+            } else {
+                $cartBtn.append(`<span class="plus-one">+${newCount - currentCount}</span>`);
+            }
+            
+            // Trigger animations
+            $cartBtn.addClass('cart-pulse');
+            $cartCount.addClass('cart-count-pop');
+            
+            // After a delay, add the bounce effect
+            setTimeout(() => {
+                $cartBtn.addClass('cart-bounce');
+            }, 300);
+            
+            // Remove animation classes after they complete
+            setTimeout(() => {
+                $cartBtn.removeClass('cart-pulse cart-bounce');
+                $cartCount.removeClass('cart-count-pop');
+            }, 1000);
+        }
+        
+        // Make cart more visible if it was empty
+        if (currentCount === 0 && newCount > 0) {
+            $cartBtn.css({
+                'transform': 'scale(1.1)',
+                'color': '#ff4757'
+            });
+            
+            setTimeout(() => {
+                $cartBtn.css({
+                    'transform': 'scale(1)',
+                    'color': ''
+                });
+            }, 1000);
+        }
+    }
+
     function addtoCart(subject_id = '', btn_type = 'addtocart') {
         if (subject_id == '') {
-            bootbox.alert('Something went wronqg');
+            bootbox.alert('Something went wrong');
             return false;
         } else {
             $.ajax({
@@ -29,7 +176,7 @@ $(document).ready(function () {
                                 closeButton: false,
                                 callback: function () {
                                     if (response.success) {
-                                        $(".cartCount").html(response.totalQty);
+                                        updateCartCount(response.totalQty);
                                     } else {
                                         window.location.href = baseUrl + 'auth?auth=login';
                                     }
@@ -42,15 +189,13 @@ $(document).ready(function () {
                                 dataType: 'json',
                                 success: function (response) {
                                     if (response.success) {
-                                        // var ci_mode = ciEnv == 'production' ? 'production' : 'sandbox';
                                         var ci_mode = 'sandbox';
                                         const cashfree = Cashfree({
-                                            mode: ci_mode //or sandbox
-                                            // mode: "production" //or production
+                                            mode: ci_mode
                                         });
                                         let checkoutOptions = {
                                             paymentSessionId: response.payment_session_id,
-                                            redirectTarget: "_self" //optional (_self or _blank)
+                                            redirectTarget: "_self"
                                         }
 
                                         cashfree.checkout(checkoutOptions);
@@ -72,8 +217,6 @@ $(document).ready(function () {
                             }
                         });
                     }
-
-
                 }
             })
         }
@@ -82,12 +225,13 @@ $(document).ready(function () {
     $(".showCartBtn").on('click', function () {
         showCartItems();
     });
+    
     $(document).on('click', '#checkoutButton', function () {
         showCartItems();
     });
+    
     function showCartItems(displayButton = 'disabled') {
         fetchCartItems();
-        //  getBillAddress();
         var html = $('.cartPopUpContainer').clone();
 
         var dialog = bootbox.dialog({
@@ -132,7 +276,6 @@ $(document).ready(function () {
                                 }
                             });
                         } else {
-
                             $.ajax({
                                 url: baseUrl + 'checkout-cart-items',
                                 type: 'POST',
@@ -145,12 +288,11 @@ $(document).ready(function () {
                                     if (response.success) {
                                         var ci_mode = ciEnv == 'production' ? 'production' : 'sandbox';
                                         const cashfree = Cashfree({
-                                            mode: ci_mode //or sandbox
-                                            // mode: "production" //or production
+                                            mode: ci_mode
                                         });
                                         let checkoutOptions = {
                                             paymentSessionId: response.payment_session_id,
-                                            redirectTarget: "_self" //optional (_self or _blank)
+                                            redirectTarget: "_self"
                                         }
 
                                         cashfree.checkout(checkoutOptions);
@@ -167,12 +309,14 @@ $(document).ready(function () {
                 },
             },
         });
+        
         dialog.init(function () {
             $(dialog).find('.checkoutBtn').hide();
             $(dialog).find('.cartPopUpContainer').on('click', '.removeCartItems', function () {
                 var cart_items_id = $(this).data('cart-item-id');
                 removeCartItems(cart_items_id);
             });
+            
             setInterval(function () {
                 var htmlVal = $('.cartPopUpContainer').html();
                 displayButton = (htmlVal == '<div class="d-flex align items-center justify-content-center h2">No items in cart</div>') ? false : true;
@@ -182,6 +326,7 @@ $(document).ready(function () {
                     $(dialog).find('.checkoutBtn').show();
                 }
             }, 800);
+            
             $(dialog).find('.cartPopUpContainer').on('click', '.applyPromocodeBtn', function () {
                 var code_name = $(dialog).find('#code_name').val();
                 var totalPriceDeciaml = $(dialog).find("#totalPriceDeciaml").val();
@@ -207,6 +352,7 @@ $(document).ready(function () {
                     }
                 })
             });
+            
             $(dialog).find(".cartPopUpContainer").on('click', '.removePromoCode', function () {
                 bootbox.dialog({
                     message: 'Are you sure you want to remove the promocode ?',
@@ -239,9 +385,9 @@ $(document).ready(function () {
                         }
                     }
                 })
-
             });
         });
+        
         dialog.init(function () {
             console.log("Bootbox Dialog Initialized" + dialog);
             getBillAddress(dialog);
@@ -258,7 +404,7 @@ $(document).ready(function () {
             success: function (response) {
                 if (response.success) {
                     cartHTML(response.cartData);
-                    $(".cartCount").html(response.cartData.length);
+                    updateCartCount(response.cartData.length);
                 }
             }
         })
@@ -322,10 +468,7 @@ $(document).ready(function () {
             html += '<input type="hidden" id="totalPriceDeciaml" name="totalPriceDeciaml" value="' + totalPriceDeciaml + '">';
             html += '<input type="hidden" id="payableAmount" value="' + payableAmount + '">';
 
-
             html += '<div class="col-md-9 font-weight-bold billing-address">';
-
-
             html += '<div class="form-group">';
             html += '<label for="billingCity">Bill Address</label>';
             html += '<input type="text" class="form-control" id="billingCity" name="billingCity" placeholder="Enter your adddress">';
@@ -334,7 +477,6 @@ $(document).ready(function () {
             html += '<label for="billingState">State</label>';
             html += '<input type="text" class="form-control" id="billingState" name="billingState" placeholder="Enter your state">';
             html += '</div>';
-
             html += '</div>';
         } else {
             html = '<div class="d-flex align items-center justify-content-center h2">No items in cart</div>';
@@ -354,7 +496,6 @@ $(document).ready(function () {
                     dialog.init(function () {
                         console.log("Bootbox Dialog Initialized");
 
-
                         console.log('Billing');
                         var $billingCity = $(dialog).find('#billingCity');
                         var $billingState = $(dialog).find('#billingState');
@@ -366,15 +507,14 @@ $(document).ready(function () {
                         } else {
                             console.log("Billing inputs not found in DOM!");
                         }
-
                     });
                 }
             }
         });
     }
 
-
     getBillAddress();
+    
     function removeCartItems(cart_items_id = '') {
         $.ajax({
             url: baseUrl + 'remove-cart-items',
@@ -390,4 +530,4 @@ $(document).ready(function () {
             }
         });
     }
-})
+});
