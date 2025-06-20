@@ -166,17 +166,29 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         background: #d0344c;
     }
 
-    .checkout-btn {
-        display: block;
-        margin: 10px auto;
-        padding: 10px;
-        text-align: center;
-        background-color: #198754;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+
+.checkout-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+    background-color: #198754;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: breathe 3s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
     }
+    50% {
+        transform: scale(1.05);
+    }
+	}
 
     .checkout-btn:hover {
         background-color: #e63939;
