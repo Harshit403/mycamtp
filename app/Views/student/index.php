@@ -166,7 +166,6 @@ cs test series, cstestseries , cs executive test series, cs professional test se
         background: #d0344c;
     }
 
-
 .checkout-btn {
     display: block;
     margin: 10px auto;
@@ -177,28 +176,22 @@ cs test series, cstestseries , cs executive test series, cs professional test se
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.3s ease;
-    animation: breathe 3s ease-in-out infinite;
+    box-shadow: 0 0 0 rgba(25, 135, 84, 0.7);
+    animation: pulse 2s infinite;
 }
 
-@keyframes breathe {
-    0%, 100% {
-        transform: scale(1);
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(25, 135, 84, 0.7);
     }
-    50% {
-        transform: scale(1.05);
+    70% {
+        box-shadow: 0 0 0 10px rgba(25, 135, 84, 0);
     }
-	}
+    100% {
+        box-shadow: 0 0 0 0 rgba(25, 135, 84, 0);
+    }
+}
 
-    .checkout-btn:hover {
-        background-color: #e63939;
-    }
-
-    @media (max-width: 768px) {
-        .modal-content {
-            width: 95%;
-        }
-  }
         .mcs-popup-overlay {
             position: fixed;
             top: 0;
