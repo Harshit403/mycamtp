@@ -510,10 +510,7 @@ class DefaultController extends BaseController
 
 		
 		$linkInfo = $this->cashfreePayment($studentDetails, $total_amt_to_pay, $order_id);
-$linkInfo = json_decode($linkInfo);
-echo '<pre>';
-print_r($linkInfo);
-exit;
+
 		if (!empty($linkInfo)) {
 			$linkInfo = json_decode($linkInfo);
 			session()->set('link_id', isset($linkInfo->order_id) ? $linkInfo->order_id : '');
