@@ -486,7 +486,8 @@ class DefaultController extends BaseController
 		$payableAmtArray = array_map(function ($v) {
 			return $v->amt_after_discount;
 		}, $getCartDetails);
-		$total_amt_to_pay = array_sum($payableAmtArray);
+		//$total_amt_to_pay = array_sum($payableAmtArray);
+		$total_amt_to_pay = number_format(array_sum($payableAmtArray), 2, '.', '');
 		$studentDetails = session()->get('studentDetails');
 		$student_id = $studentDetails['id'];
 		$city_name = $this->request->getPost('billingCity');
