@@ -1173,7 +1173,7 @@
         <i class="fab fa-whatsapp mentorship-whatsapp-icon"></i>
         <h2>Contact Mentor</h2>
         <p>Reach out to your mentor for assistance.</p>
-        <a href="#" class="mentorship-modal-button">Contact Mentor</a>
+        <a href="https://wa.me/918929592998?text=I%20have%20successfully%20enrolled%20in%20the%20Full%20Module%20Test%20Series%20and%20would%20like%20to%20request%20access%20to%20the%20mentorship%20program%2C%20as%20it%20is%20now%20unlocked%20with%20my%20enrollment." class="mentorship-modal-button">Contact Mentor</a>
       </div>
     <?php else: ?>
       <div class="mentorship-lock-content">
