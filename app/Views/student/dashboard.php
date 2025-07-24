@@ -1091,24 +1091,155 @@
       }
     }
   </style>
-<div class="referral-section" style="padding: 20px; padding-bottom: 70px;">
-  <h3>Your Referral Link</h3>
-  <div class="referral-actions">
-    <input type="text" id="referralLink" value="<?= base_url() ?>auth?auth=register&ref=<?= $studentData['id'] ?>" readonly>
-    <div class="action-buttons">
-      <button onclick="copyReferralLink()" class="action-button">
-        <i class="fas fa-copy"></i> Copy
-      </button>
-      <button id="shareButton" class="action-button share">
-        <i class="fas fa-share-alt"></i> Share
-      </button>
+<style>
+    /* --- Referral Section Styles (Integrated) --- */
+    .referral-section {
+        max-width: 500px; /* Can be wider on desktop if needed, responsive */
+        margin: 20px auto; /* Center the section */
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+        position: relative; /* Needed for potential pseudo-elements or absolute positioning within */
+    }
+
+    .referral-section h3,
+    .referral-section h4 {
+        margin: 0 0 15px; /* Adjusted margin */
+        color: #333;
+    }
+
+    /* --- New Styles for Commission Info --- */
+    .referral-commission-info {
+        background-color: #f8f9fa; /* Light background */
+        border-left: 4px solid #e63e58; /* Brand color accent */
+        padding: 12px 15px;
+        margin: 15px 0; /* Space above and below */
+        border-radius: 0 5px 5px 0; /* Subtle rounded corner on non-accent side */
+        text-align: left; /* Align text to the left for readability */
+        font-size: 14px; /* Slightly smaller text */
+        color: #555; /* Softer text color */
+    }
+    .referral-commission-info strong {
+        color: #e63e58; /* Highlight key info (percentage) */
+    }
+
+    .referral-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 15px; /* Adjusted margin */
+    }
+
+    .referral-actions input {
+        flex: 2 1 auto;
+        max-width: 300px;
+        min-width: 200px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .action-button {
+        padding: 8px 12px;
+        background: #e63e58;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        white-space: nowrap;
+        font-size: 14px;
+    }
+
+    .action-button i {
+        font-size: 14px;
+    }
+
+    .action-button.share {
+        background: #e63e58;
+    }
+
+    .action-button.withdraw {
+        width: 100%;
+        margin-top: 15px; /* Space above Withdraw button */
+    }
+
+    button:hover {
+        opacity: 0.9;
+    }
+
+    @media (max-width: 480px) {
+        .referral-section {
+            padding: 15px; /* Slightly less padding on small screens */
+        }
+        .referral-actions {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .referral-actions input {
+            width: 100%;
+        }
+
+        .action-buttons {
+            justify-content: center;
+            width: 100%; /* Ensure buttons take full width if stacked */
+        }
+
+        .action-buttons .action-button {
+            flex: 1; /* Distribute space equally if side-by-side on small screen */
+            min-width: 45%; /* Minimum width for buttons */
+        }
+
+        .action-button.withdraw {
+            width: 100%;
+            min-width: auto; /* Override min-width for stacked withdraw button */
+        }
+    }
+</style>
+
+<!-- --- Referral Section HTML (Replace your existing section) --- -->
+<div class="referral-section" style="padding-bottom: 70px;"> <!-- Added pb for footer space -->
+    <h3>Your Referral Link</h3>
+    <div class="referral-actions">
+        <input type="text" id="referralLink"
+            value="<?= base_url() ?>auth?auth=register&ref=<?= $studentData['id'] ?>" readonly>
+        <div class="action-buttons">
+            <button onclick="copyReferralLink()" class="action-button">
+                <i class="fas fa-copy"></i> Copy
+            </button>
+            <button id="shareButton" class="action-button share">
+                <i class="fas fa-share-alt"></i> Share
+            </button>
+        </div>
     </div>
-  </div>
-  <h4>Referral Balance: ₹<span id="referralBalance"><?= number_format($balance, 2) ?></span></h4>
-  <button onclick="openWithdrawPopup()" class="action-button withdraw">
-    Withdraw
-  </button>
+
+    <!-- --- New Commission Info Block --- -->
+    <div class="referral-commission-info">
+        <strong>Earn 10% flat!</strong> You will receive 10% of the sale price for every purchase made by a user who signs up using your referral link.
+    </div>
+    <!-- --- End Commission Info Block --- -->
+
+    <h4>Referral Balance: ₹<span id="referralBalance"><?= number_format($balance, 2) ?></span></h4>
+    <button onclick="openWithdrawPopup()" class="action-button withdraw">
+        Withdraw
+    </button>
 </div>
+<!-- --- End Referral Section HTML --- -->
 <div id="popupOverlay" onclick="closeWithdrawPopup()"></div>
   <div id="withdrawPopup">
     <h3>Withdraw Balance</h3>
