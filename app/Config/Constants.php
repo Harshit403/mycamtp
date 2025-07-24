@@ -96,7 +96,7 @@ define('EVENT_PRIORITY_HIGH', 10);
 define('ADMIN', 'Admin\\');
 define('STUDENT', 'Student\\');
 defined('PUBLIC_PATH') || define('PUBLIC_PATH', ROOTPATH . 'public');
-define('EXAM_DATE', '2025-06-01');
+define('EXAM_DATE', '2025-12-25');
 
 // email Config
 define('EMAIL_ID', 'smtp@mailtrap.io');//enter your email address
