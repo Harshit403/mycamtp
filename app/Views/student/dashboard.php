@@ -19,9 +19,7 @@ Student Dashboard
 
     .wrapper {
         padding: 20px;
-        /* Add padding to prevent content from touching edges */
-        padding-bottom: 80px;
-        /* Space for fixed footer on mobile */
+        padding-bottom: 80px; /* Space for fixed footer on mobile */
     }
 
     /* --- Checkout Button --- */
@@ -219,8 +217,8 @@ Student Dashboard
         color: white;
         padding: 15px;
         text-align: center;
-        border-radius: 10px; /* Rounded corners */
-        margin-bottom: 20px; /* Space below header */
+        border-radius: 10px;
+        margin-bottom: 20px;
     }
 
     .pd-header h1 {
@@ -231,10 +229,37 @@ Student Dashboard
     /* --- Menu --- */
     .pd-menu {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        /* Default: 2 columns on smallest screens */
+        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
         padding: 15px;
-        margin-bottom: 20px; /* Space below menu */
+        margin-bottom: 20px;
+    }
+
+    /* Adjust for 3 columns on screens wider than 400px */
+    @media (min-width: 400px) {
+        .pd-menu {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    /* Adjust for 3 columns on screens wider than 500px (if needed, or keep 3 from 400px) */
+    @media (min-width: 500px) {
+        .pd-menu {
+            grid-template-columns: repeat(3, 1fr); /* Ensure 3 columns */
+            /* Or adjust gap/padding if needed for larger screens */
+            /* gap: 15px; */
+            /* padding: 20px; */
+        }
+    }
+
+    /* Adjust for 6 columns on larger desktop screens if desired */
+    @media (min-width: 768px) {
+        .pd-menu {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            /* gap: 10px; */
+            /* padding: 15px; */
+        }
     }
 
     .pd-menu-item {
@@ -265,7 +290,7 @@ Student Dashboard
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         padding: 15px;
         text-align: center;
-        margin-bottom: 20px; /* Space below card */
+        margin-bottom: 20px;
     }
 
     .pd-countdown-card button {
@@ -352,7 +377,7 @@ Student Dashboard
         border-radius: 10px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         padding: 15px;
-        margin-bottom: 20px; /* Space below card */
+        margin-bottom: 20px;
     }
 
     .pd-social-media {
@@ -427,16 +452,14 @@ Student Dashboard
     /* --- Referral Section --- */
     .referral-section {
         max-width: 500px;
-        /* Limit width on desktop */
         margin: 20px auto;
-        /* Center the section */
         padding: 20px;
         background-color: #ffffff;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         text-align: center;
         position: relative;
-        margin-bottom: 20px; /* Space below section */
+        margin-bottom: 20px;
     }
 
     .referral-section h3,
@@ -448,25 +471,17 @@ Student Dashboard
     /* --- New Styles for Commission Info --- */
     .referral-commission-info {
         background-color: #f8f9fa;
-        /* Light background */
         border-left: 4px solid #e63e58;
-        /* Brand color accent */
         padding: 12px 15px;
         margin: 15px 0;
-        /* Space above and below */
         border-radius: 0 5px 5px 0;
-        /* Subtle rounded corner on non-accent side */
         text-align: left;
-        /* Align text to the left for readability */
         font-size: 14px;
-        /* Slightly smaller text */
         color: #555;
-        /* Softer text color */
     }
 
     .referral-commission-info strong {
         color: #e63e58;
-        /* Highlight key info (percentage) */
     }
 
     .referral-actions {
@@ -520,7 +535,6 @@ Student Dashboard
     .action-button.withdraw {
         width: 100%;
         margin-top: 15px;
-        /* Space above Withdraw button */
     }
 
     button:hover {
@@ -530,8 +544,7 @@ Student Dashboard
     @media (max-width: 480px) {
         .referral-section {
             padding: 15px;
-            /* Slightly less padding on small screens */
-            margin: 10px; /* Adjust margin on small screens */
+            margin: 10px;
         }
 
         .referral-actions {
@@ -546,24 +559,21 @@ Student Dashboard
         .action-buttons {
             justify-content: center;
             width: 100%;
-            /* Ensure buttons take full width if stacked */
         }
 
         .action-buttons .action-button {
             flex: 1;
-            /* Distribute space equally if side-by-side on small screen */
             min-width: 45%;
-            /* Minimum width for buttons */
         }
 
         .action-button.withdraw {
             width: 100%;
             min-width: auto;
-            /* Override min-width for stacked withdraw button */
         }
     }
 
     /* --- Footer --- */
+    /* Default: Horizontal bar at the bottom */
     .unique-footer {
         position: fixed;
         bottom: 0;
@@ -573,13 +583,13 @@ Student Dashboard
         justify-content: space-around;
         padding: 10px 0;
         border-top: 1px solid #ccc;
-        z-index: 100; /* Ensure it's above other content */
+        z-index: 100;
     }
 
     .unique-footer-item {
         text-align: center;
-        text-decoration: none !important; /* Override any inherited styles */
-        color: inherit; /* Inherit color from parent or default */
+        text-decoration: none !important;
+        color: inherit;
     }
 
     .unique-footer-item-icon {
@@ -598,6 +608,73 @@ Student Dashboard
     .unique-footer-item.active .unique-footer-item-icon,
     .unique-footer-item.active .unique-footer-item-text {
         color: #e63e58;
+    }
+
+    /* --- Desktop Adjustments for Footer (Vertical Sidebar) --- */
+    @media (min-width: 768px) {
+        .wrapper {
+            margin-left: 80px; /* Adjust for sidebar width */
+            padding: 20px;
+            padding-bottom: 20px; /* Less padding needed as footer is sidebar */
+        }
+
+        /* Transform the footer into a vertical sidebar */
+        .unique-footer {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 100vh;
+            padding: 20px 0;
+            background: white;
+            border-right: 1px solid #ccc;
+            /* Reset bottom positioning */
+            bottom: auto;
+        }
+
+        .unique-footer .unique-footer-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 15%; /* Distribute items vertically */
+            cursor: pointer;
+        }
+
+        /* Ensure referral section and other cards look good on desktop */
+        .referral-section,
+        .pd-social-media-card,
+        .pd-countdown-card,
+        .pd-header {
+            max-width: none; /* Allow full width within wrapper */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #logoutModal .modal-content {
+            max-width: 400px;
+        }
+
+        /* Ensure modals are centered correctly on desktop */
+        .modal {
+            align-items: center;
+            padding-top: 0;
+        }
+
+        .overlay-modal-ultra-unique {
+            align-items: center;
+            padding-top: 0;
+        }
+
+        #withdrawPopup,
+        #sharePopup {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 
     /* --- Logout Modal --- */
@@ -716,7 +793,7 @@ Student Dashboard
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         transform: scale(0.8);
         transition: transform 0.3s ease;
-        position: relative; /* For close button */
+        position: relative;
     }
 
     .mentorship-modal.show .mentorship-modal-content {
@@ -1104,92 +1181,11 @@ Student Dashboard
     #closePopup:hover {
         background: #d0344c;
     }
-
-
-    /* --- Desktop Adjustments --- */
-    @media (min-width: 768px) {
-        .wrapper {
-            /* Adjust margin/padding if sidebar is present */
-            margin-left: 0; /* Adjust if needed based on your layout */
-            padding: 20px;
-            padding-bottom: 80px; /* Ensure space for footer */
-            /* transform: scale(.75);  Removed scaling for better responsiveness */
-            /* transform-origin: top center; */
-        }
-
-        /* Adjust footer for desktop sidebar */
-        .unique-footer {
-            /* If you have a sidebar, adjust width and position */
-            width: calc(100% - 0px); /* Adjust 0px if sidebar width changes */
-            left: 0px; /* Match sidebar width if applicable */
-            /* Optional: Change layout to vertical sidebar */
-            /*
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 80px;
-            height: 100vh;
-            padding: 20px 0;
-            background: white;
-            border-right: 1px solid #ccc;
-            */
-        }
-
-        .unique-footer .unique-footer-item {
-            /* Adjust if footer becomes vertical sidebar */
-            /*
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 15%;
-            cursor: pointer;
-            */
-        }
-
-        /* Ensure referral section looks good on desktop */
-        .referral-section {
-             max-width: 500px; /* Keep max width */
-             margin: 20px auto; /* Center it */
-             /* padding: 20px; */ /* Already defined, keep consistent */
-        }
-
-        /* Ensure other cards look good */
-        .pd-social-media-card,
-        .pd-countdown-card,
-        .pd-header {
-             max-width: none; /* Allow full width within wrapper */
-             margin-left: auto;
-             margin-right: auto;
-        }
-
-        #logoutModal .modal-content {
-            max-width: 400px;
-        }
-
-         /* Ensure modals are centered correctly on desktop */
-        .modal {
-             align-items: center; /* Vertically center */
-             padding-top: 0; /* Remove top padding */
-        }
-        .overlay-modal-ultra-unique {
-             align-items: center;
-             padding-top: 0;
-        }
-        #withdrawPopup, #sharePopup {
-             top: 50%;
-             left: 50%;
-             transform: translate(-50%, -50%);
-        }
-    }
 </style>
 
 </head>
 
-<body style="margin-top: 6rem;"> <!-- Keep existing top margin -->
+<body style="margin-top: 6rem;">
     <div class="wrapper">
         <div class="pd-header">
             <?php
@@ -1663,7 +1659,7 @@ Student Dashboard
         function updateMenuLinks(isFree) {
             menuLinks.forEach(link => {
                 let href = link.getAttribute("href");
-                if (href) { // Check if href exists
+                if (href) {
                     href = href.replace(/\/free$/, "");
                     if (isFree) {
                         if (!href.endsWith("/free")) {
@@ -1711,16 +1707,10 @@ Student Dashboard
                     item.style.color = isChecked ? 'black' : '';
                 });
                 icons.forEach(icon => {
-                    // Only change color if it's not explicitly set inline (like the red #e63e58)
-                    // A more robust way would be to remove a specific class or use CSS classes.
-                    // For now, we'll assume the default color is #e63e58 and black is for free mode.
                     if (!isChecked) {
-                        // Reset to default red if it was changed to black
                         if (icon.style.color === 'black') {
                              icon.style.color = '#e63e58';
                         }
-                        // If it was originally red, it might not have an inline style.
-                        // This logic might need refinement based on how initial colors are set.
                     } else {
                         icon.style.color = 'black';
                     }
@@ -1767,7 +1757,6 @@ Student Dashboard
             });
         } else {
             if (!mentorshipMenu) console.error('Mentorship menu not found!');
-            // Others are optional depending on $notes_sub
         }
     });
     // --- End Mentorship Modal Logic ---
